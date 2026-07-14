@@ -1,0 +1,90 @@
+{
+  "case_id": "CommenSence/select_billiards_common_sense/example5",
+  "category": "CommenSence",
+  "task_name": "select_billiards_common_sense",
+  "example_name": "example5",
+  "example_index": 5,
+  "input_image_path": "${VLABENCH_PUBLIC_ROOT}/CommenSence/select_billiards_common_sense/example5/input.png",
+  "input_mask_path": "${VLABENCH_PUBLIC_ROOT}/CommenSence/select_billiards_common_sense/example5/input_mask.png",
+  "gt_operation_sequence_path": "${VLABENCH_GT_ROOT}/CommenSence/select_billiards_common_sense/example5/output/operation_sequence.json",
+  "used_official_prompt": true,
+  "used_official_scorer": true,
+  "gt_used_for_prompt": false,
+  "message_block_count": 8,
+  "elapsed_sec": 4.26427960395813,
+  "usage": {
+    "prompt_tokens": 6293,
+    "total_tokens": 6576,
+    "completion_tokens": 283,
+    "prompt_tokens_details": null
+  },
+  "served_model": "OpenGVLab/InternVL3-8B",
+  "raw_response": {
+    "id": "chatcmpl-86332b682e807a24",
+    "object": "chat.completion",
+    "created": 1783414323,
+    "model": "OpenGVLab/InternVL3-8B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "To fulfill the task instruction \"Please put the ball worth 1 score in hole,\" we need to identify the ball worth 1 score and place it into a hole. Based on the labeled images, we can determine the target ball and the target hole.\n\n### Steps:\n\n1. **Extract Task Instruction**: The task is to \"put the ball worth 1 score in hole.\"\n\n2. **Combine with Image Information**: \n   - The labeled images show multiple balls, with one ball labeled as \"1.\"\n   - The holes are also labeled, but the instruction does not specify a particular hole, so we assume a general placement into a hole.\n\n3. **Generate Skill Call Sequence**:\n   - The skill required is \"pick\" to grasp the ball.\n   - The skill required is \"place\" to put the ball into a hole.\n\n4. **Output Format**:\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"1\"\n        }\n    },\n    {\n        \"name\": \"place\",\n        \"params\": {\n            \"target_container_name\": \"0\"  // Assuming \"0\" is a hole\n        }\n    }\n]\n```\n\nThis sequence follows the pattern `[\"pick\", \"place\"]`, which is appropriate for picking up an object and placing it somewhere, in this case, into a hole.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 6293,
+      "total_tokens": 6576,
+      "completion_tokens": 283,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "origin_output": "To fulfill the task instruction \"Please put the ball worth 1 score in hole,\" we need to identify the ball worth 1 score and place it into a hole. Based on the labeled images, we can determine the target ball and the target hole.\n\n### Steps:\n\n1. **Extract Task Instruction**: The task is to \"put the ball worth 1 score in hole.\"\n\n2. **Combine with Image Information**: \n   - The labeled images show multiple balls, with one ball labeled as \"1.\"\n   - The holes are also labeled, but the instruction does not specify a particular hole, so we assume a general placement into a hole.\n\n3. **Generate Skill Call Sequence**:\n   - The skill required is \"pick\" to grasp the ball.\n   - The skill required is \"place\" to put the ball into a hole.\n\n4. **Output Format**:\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"1\"\n        }\n    },\n    {\n        \"name\": \"place\",\n        \"params\": {\n            \"target_container_name\": \"0\"  // Assuming \"0\" is a hole\n        }\n    }\n]\n```\n\nThis sequence follows the pattern `[\"pick\", \"place\"]`, which is appropriate for picking up an object and placing it somewhere, in this case, into a hole.",
+  "format_error": true,
+  "parse_status": "failed",
+  "skill_match_score": 0,
+  "entity_match_score": 0,
+  "skill_with_entity_match_score": 0,
+  "exact_match_score": 0,
+  "total_score": 0,
+  "official_dependency": "format_error",
+  "symbolic_success": false,
+  "type_normalized_skill_match_score": 0,
+  "type_normalized_entity_match_score": 0,
+  "type_normalized_skill_with_entity_match_score": 0,
+  "type_normalized_exact_match_score": 0,
+  "type_normalized_total_score": 0,
+  "type_normalized_symbolic_success": false,
+  "type_normalized_numeric_cast_applied": false,
+  "ok": true,
+  "gt_skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": 1
+      }
+    },
+    {
+      "name": "place",
+      "params": {
+        "target_container_name": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+audit_class,model_case_count,share_of_first_attempt_b_only
+A sequence and target mismatch,35,0.3398058252427184
+A sequence/skill mismatch only,33,0.3203883495145631
+A target/entity mismatch only,35,0.3398058252427184
+Total,103,1.0

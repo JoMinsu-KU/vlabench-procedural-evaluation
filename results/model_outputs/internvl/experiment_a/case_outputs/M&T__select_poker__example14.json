@@ -1,0 +1,96 @@
+{
+  "case_id": "M&T/select_poker/example14",
+  "category": "M&T",
+  "task_name": "select_poker",
+  "example_name": "example14",
+  "example_index": 14,
+  "input_image_path": "${VLABENCH_PUBLIC_ROOT}/M&T/select_poker/example14/input.png",
+  "input_mask_path": "${VLABENCH_PUBLIC_ROOT}/M&T/select_poker/example14/input_mask.png",
+  "gt_operation_sequence_path": "${VLABENCH_GT_ROOT}/M&T/select_poker/example14/output/operation_sequence.json",
+  "used_official_prompt": true,
+  "used_official_scorer": true,
+  "gt_used_for_prompt": false,
+  "message_block_count": 8,
+  "elapsed_sec": 2.3745763301849365,
+  "usage": {
+    "prompt_tokens": 6290,
+    "total_tokens": 6458,
+    "completion_tokens": 168,
+    "prompt_tokens_details": null
+  },
+  "served_model": "OpenGVLab/InternVL3-8B",
+  "raw_response": {
+    "id": "chatcmpl-ac23084e3a9098b9",
+    "object": "chat.completion",
+    "created": 1783417342,
+    "model": "OpenGVLab/InternVL3-8B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "To fulfill the task instruction \"Please pick the poker queen of clubs,\" we need to identify the target object and generate the appropriate skill call sequence.\n\n### Steps:\n\n1. **Extract Task Instruction**: The task is to pick the poker queen of clubs.\n2. **Combine with Image Information**: In the labeled image, we need to find the object corresponding to the poker queen of clubs. Let's assume the labeled image shows the poker queen of clubs as object number 1.\n3. **Generate Skill Call Sequence**: The skill required is \"pick\" with the target entity number 1.\n\n### Output Format:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": 1\n        }\n    }\n]\n```\n\nThis sequence follows the required pattern for picking an object.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 6290,
+      "total_tokens": 6458,
+      "completion_tokens": 168,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "origin_output": "To fulfill the task instruction \"Please pick the poker queen of clubs,\" we need to identify the target object and generate the appropriate skill call sequence.\n\n### Steps:\n\n1. **Extract Task Instruction**: The task is to pick the poker queen of clubs.\n2. **Combine with Image Information**: In the labeled image, we need to find the object corresponding to the poker queen of clubs. Let's assume the labeled image shows the poker queen of clubs as object number 1.\n3. **Generate Skill Call Sequence**: The skill required is \"pick\" with the target entity number 1.\n\n### Output Format:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": 1\n        }\n    }\n]\n```\n\nThis sequence follows the required pattern for picking an object.",
+  "skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": 1
+      }
+    }
+  ],
+  "parse_status": "parsed_list",
+  "skill_match_score": 50.0,
+  "entity_match_score": 0.0,
+  "skill_with_entity_match_score": 0.0,
+  "exact_match_score": 0.0,
+  "total_score": 20.0,
+  "official_dependency": "Sequential",
+  "symbolic_success": false,
+  "type_normalized_skill_match_score": 50.0,
+  "type_normalized_entity_match_score": 0.0,
+  "type_normalized_skill_with_entity_match_score": 0.0,
+  "type_normalized_exact_match_score": 0.0,
+  "type_normalized_total_score": 20.0,
+  "type_normalized_symbolic_success": false,
+  "type_normalized_numeric_cast_applied": false,
+  "ok": true,
+  "format_error": false,
+  "gt_skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": 4
+      }
+    },
+    {
+      "name": "lift",
+      "params": {}
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "case_id": "Semantic/select_poker_semantic/example42",
+  "category": "Semantic",
+  "task_name": "select_poker_semantic",
+  "example_name": "example42",
+  "example_index": 42,
+  "input_image_path": "${VLABENCH_PUBLIC_ROOT}/Semantic/select_poker_semantic/example42/input.png",
+  "input_mask_path": "${VLABENCH_PUBLIC_ROOT}/Semantic/select_poker_semantic/example42/input_mask.png",
+  "gt_operation_sequence_path": "${VLABENCH_GT_ROOT}/Semantic/select_poker_semantic/example42/output/operation_sequence.json",
+  "used_official_prompt": true,
+  "used_official_scorer": true,
+  "gt_used_for_prompt": false,
+  "message_block_count": 8,
+  "elapsed_sec": 4.552051782608032,
+  "usage": {
+    "prompt_tokens": 6306,
+    "total_tokens": 6482,
+    "completion_tokens": 176,
+    "prompt_tokens_details": null
+  },
+  "served_model": "OpenGVLab/InternVL3-8B",
+  "raw_response": {
+    "id": "chatcmpl-9f4915eac4832add",
+    "object": "chat.completion",
+    "created": 1783419314,
+    "model": "OpenGVLab/InternVL3-8B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "To fulfill the task of completing a playing deck for a Hearts tournament by obtaining the 9_of_hearts, we need to follow these steps:\n\n1. **Extract Task Instruction**: The task requires picking up the 9_of_hearts card.\n2. **Combine with Image Information**: Identify the 9_of_hearts card in the images. It is located on the table in the bottom left corner of the first image and labeled as \"6\" in the second image.\n3. **Generate Skill Call Sequence**: Use the \"pick\" skill with the target entity number \"6\".\n\nHere is the skill call sequence:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"6\"\n        }\n    }\n]\n```\n\nThis sequence correctly identifies and picks up the 9_of_hearts card as required.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 6306,
+      "total_tokens": 6482,
+      "completion_tokens": 176,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "origin_output": "To fulfill the task of completing a playing deck for a Hearts tournament by obtaining the 9_of_hearts, we need to follow these steps:\n\n1. **Extract Task Instruction**: The task requires picking up the 9_of_hearts card.\n2. **Combine with Image Information**: Identify the 9_of_hearts card in the images. It is located on the table in the bottom left corner of the first image and labeled as \"6\" in the second image.\n3. **Generate Skill Call Sequence**: Use the \"pick\" skill with the target entity number \"6\".\n\nHere is the skill call sequence:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"6\"\n        }\n    }\n]\n```\n\nThis sequence correctly identifies and picks up the 9_of_hearts card as required.",
+  "skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": "6"
+      }
+    }
+  ],
+  "parse_status": "parsed_list",
+  "skill_match_score": 50.0,
+  "entity_match_score": 0.0,
+  "skill_with_entity_match_score": 0.0,
+  "exact_match_score": 0.0,
+  "total_score": 20.0,
+  "official_dependency": "Sequential",
+  "symbolic_success": false,
+  "type_normalized_skill_match_score": 50.0,
+  "type_normalized_entity_match_score": 100.0,
+  "type_normalized_skill_with_entity_match_score": 50.0,
+  "type_normalized_exact_match_score": 0.0,
+  "type_normalized_total_score": 60.0,
+  "type_normalized_symbolic_success": false,
+  "type_normalized_numeric_cast_applied": true,
+  "ok": true,
+  "format_error": false,
+  "gt_skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": 6
+      }
+    },
+    {
+      "name": "lift",
+      "params": {}
+    }
+  ]
+}

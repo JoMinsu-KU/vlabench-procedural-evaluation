@@ -1,0 +1,19 @@
+model,stage_order,stage,count,unconditional_rate,transition_rate
+Qwen3-VL-8B,0,All cases,2133,1.0,1.0
+Qwen3-VL-8B,1,Parse/required fields valid,1923,0.9015471167369902,0.9015471167369902
+Qwen3-VL-8B,2,Procedural structure valid,479,0.22456633849038912,0.24908996359854393
+Qwen3-VL-8B,3,Target/context compatible,172,0.0806375996249414,0.35908141962421714
+Qwen3-VL-8B,4,Native execution completed,172,0.0806375996249414,1.0
+Qwen3-VL-8B,5,Final condition satisfied,80,0.03750586029067042,0.46511627906976744
+Gemma-3-12B-it,0,All cases,2133,1.0,1.0
+Gemma-3-12B-it,1,Parse/required fields valid,1882,0.8823253633380216,0.8823253633380216
+Gemma-3-12B-it,2,Procedural structure valid,724,0.3394280356305673,0.3846971307120085
+Gemma-3-12B-it,3,Target/context compatible,140,0.06563525550867323,0.19337016574585636
+Gemma-3-12B-it,4,Native execution completed,138,0.06469760900140648,0.9857142857142858
+Gemma-3-12B-it,5,Final condition satisfied,57,0.026722925457102673,0.41304347826086957
+InternVL3-8B,0,All cases,2133,1.0,1.0
+InternVL3-8B,1,Parse/required fields valid,783,0.3670886075949367,0.3670886075949367
+InternVL3-8B,2,Procedural structure valid,428,0.20065635255508674,0.5466155810983397
+InternVL3-8B,3,Target/context compatible,124,0.058134083450539144,0.2897196261682243
+InternVL3-8B,4,Native execution completed,121,0.05672761368963901,0.9758064516129032
+InternVL3-8B,5,Final condition satisfied,40,0.01875293014533521,0.3305785123966942

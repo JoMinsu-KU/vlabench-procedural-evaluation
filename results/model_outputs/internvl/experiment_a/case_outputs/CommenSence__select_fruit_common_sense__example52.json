@@ -1,0 +1,110 @@
+{
+  "case_id": "CommenSence/select_fruit_common_sense/example52",
+  "category": "CommenSence",
+  "task_name": "select_fruit_common_sense",
+  "example_name": "example52",
+  "example_index": 52,
+  "input_image_path": "${VLABENCH_PUBLIC_ROOT}/CommenSence/select_fruit_common_sense/example52/input.png",
+  "input_mask_path": "${VLABENCH_PUBLIC_ROOT}/CommenSence/select_fruit_common_sense/example52/input_mask.png",
+  "gt_operation_sequence_path": "${VLABENCH_GT_ROOT}/CommenSence/select_fruit_common_sense/example52/output/operation_sequence.json",
+  "used_official_prompt": true,
+  "used_official_scorer": true,
+  "gt_used_for_prompt": false,
+  "message_block_count": 8,
+  "elapsed_sec": 5.325568437576294,
+  "usage": {
+    "prompt_tokens": 6295,
+    "total_tokens": 6727,
+    "completion_tokens": 432,
+    "prompt_tokens_details": null
+  },
+  "served_model": "OpenGVLab/InternVL3-8B",
+  "raw_response": {
+    "id": "chatcmpl-8a50d582ba654a9a",
+    "object": "chat.completion",
+    "created": 1783415169,
+    "model": "OpenGVLab/InternVL3-8B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "To fulfill the task instruction of picking a fruit that can be red, green, or yellow, we need to identify the corresponding fruit from the images and generate the appropriate skill calls.\n\n### Steps:\n\n1. **Extract Task Instruction**: The task is to pick a fruit that is red, green, or yellow.\n\n2. **Combine with Image Information**: \n   - In the first image, there are fruits labeled with numbers. The red fruit is labeled as 3, and the green fruit is labeled as 2.\n   - In the second image, the yellow fruit is labeled as 3.\n\n3. **Generate Skill Call Sequence**: \n   - We need to pick the fruit based on its color. The red fruit (3) and the green fruit (2) are visible in the first image, and the yellow fruit (3) is visible in the second image.\n\n### Skill Calls:\n\n- **Pick the red fruit (3)**:\n  ```json\n  {\n    \"name\": \"pick\",\n    \"params\": {\n      \"target_entity_name\": 3\n    }\n  }\n  ```\n\n- **Pick the green fruit (2)**:\n  ```json\n  {\n    \"name\": \"pick\",\n    \"params\": {\n      \"target_entity_name\": 2\n    }\n  }\n  ```\n\n- **Pick the yellow fruit (3)**:\n  ```json\n  {\n    \"name\": \"pick\",\n    \"params\": {\n      \"target_entity_name\": 3\n    }\n  }\n  ```\n\n### Output:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": 3\n        }\n    },\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": 2\n        }\n    },\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": 3\n        }\n    }\n]\n```\n\nThis sequence ensures that all fruits matching the color criteria (red, green, or yellow) are picked according to their identifiers from the images.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 6295,
+      "total_tokens": 6727,
+      "completion_tokens": 432,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "origin_output": "To fulfill the task instruction of picking a fruit that can be red, green, or yellow, we need to identify the corresponding fruit from the images and generate the appropriate skill calls.\n\n### Steps:\n\n1. **Extract Task Instruction**: The task is to pick a fruit that is red, green, or yellow.\n\n2. **Combine with Image Information**: \n   - In the first image, there are fruits labeled with numbers. The red fruit is labeled as 3, and the green fruit is labeled as 2.\n   - In the second image, the yellow fruit is labeled as 3.\n\n3. **Generate Skill Call Sequence**: \n   - We need to pick the fruit based on its color. The red fruit (3) and the green fruit (2) are visible in the first image, and the yellow fruit (3) is visible in the second image.\n\n### Skill Calls:\n\n- **Pick the red fruit (3)**:\n  ```json\n  {\n    \"name\": \"pick\",\n    \"params\": {\n      \"target_entity_name\": 3\n    }\n  }\n  ```\n\n- **Pick the green fruit (2)**:\n  ```json\n  {\n    \"name\": \"pick\",\n    \"params\": {\n      \"target_entity_name\": 2\n    }\n  }\n  ```\n\n- **Pick the yellow fruit (3)**:\n  ```json\n  {\n    \"name\": \"pick\",\n    \"params\": {\n      \"target_entity_name\": 3\n    }\n  }\n  ```\n\n### Output:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": 3\n        }\n    },\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": 2\n        }\n    },\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": 3\n        }\n    }\n]\n```\n\nThis sequence ensures that all fruits matching the color criteria (red, green, or yellow) are picked according to their identifiers from the images.",
+  "skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": 3
+      }
+    },
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": 2
+      }
+    },
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": 3
+      }
+    }
+  ],
+  "parse_status": "parsed_list",
+  "skill_match_score": 50.0,
+  "entity_match_score": 50.0,
+  "skill_with_entity_match_score": 50.0,
+  "exact_match_score": 0.0,
+  "total_score": 40.0,
+  "official_dependency": "Sequential",
+  "symbolic_success": false,
+  "type_normalized_skill_match_score": 50.0,
+  "type_normalized_entity_match_score": 50.0,
+  "type_normalized_skill_with_entity_match_score": 50.0,
+  "type_normalized_exact_match_score": 0.0,
+  "type_normalized_total_score": 40.0,
+  "type_normalized_symbolic_success": false,
+  "type_normalized_numeric_cast_applied": false,
+  "ok": true,
+  "format_error": false,
+  "gt_skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": 2
+      }
+    },
+    {
+      "name": "place",
+      "params": {
+        "target_container_name": 1
+      }
+    }
+  ]
+}

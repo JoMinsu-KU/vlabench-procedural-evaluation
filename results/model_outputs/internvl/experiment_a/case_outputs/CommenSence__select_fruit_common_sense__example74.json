@@ -1,0 +1,98 @@
+{
+  "case_id": "CommenSence/select_fruit_common_sense/example74",
+  "category": "CommenSence",
+  "task_name": "select_fruit_common_sense",
+  "example_name": "example74",
+  "example_index": 74,
+  "input_image_path": "${VLABENCH_PUBLIC_ROOT}/CommenSence/select_fruit_common_sense/example74/input.png",
+  "input_mask_path": "${VLABENCH_PUBLIC_ROOT}/CommenSence/select_fruit_common_sense/example74/input_mask.png",
+  "gt_operation_sequence_path": "${VLABENCH_GT_ROOT}/CommenSence/select_fruit_common_sense/example74/output/operation_sequence.json",
+  "used_official_prompt": true,
+  "used_official_scorer": true,
+  "gt_used_for_prompt": false,
+  "message_block_count": 8,
+  "elapsed_sec": 3.5806026458740234,
+  "usage": {
+    "prompt_tokens": 6298,
+    "total_tokens": 6491,
+    "completion_tokens": 193,
+    "prompt_tokens_details": null
+  },
+  "served_model": "OpenGVLab/InternVL3-8B",
+  "raw_response": {
+    "id": "chatcmpl-9f316126ac1bdb20",
+    "object": "chat.completion",
+    "created": 1783415264,
+    "model": "OpenGVLab/InternVL3-8B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "To fulfill the task instruction, we need to identify a fruit that can be eaten fresh, cooked, or made into sauce. Apples fit this description. Based on the images provided, we can see apples labeled with numbers. The task requires picking an apple.\n\n### Steps:\n1. **Extract Task Instruction**: The task is to pick a fruit suitable for eating fresh, cooking, or making into sauce. An apple is a suitable choice.\n2. **Combine with Image Information**: Identify the apple in the images. The apple is labeled with the number 1 in the first image.\n3. **Generate Skill Call Sequence**: Use the \"pick\" skill with the identified apple number.\n\n### Output:\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"1\"\n        }\n    }\n]\n```\n\nThis sequence follows the required pattern for picking an object, which is appropriate for handling fruits.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 6298,
+      "total_tokens": 6491,
+      "completion_tokens": 193,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "origin_output": "To fulfill the task instruction, we need to identify a fruit that can be eaten fresh, cooked, or made into sauce. Apples fit this description. Based on the images provided, we can see apples labeled with numbers. The task requires picking an apple.\n\n### Steps:\n1. **Extract Task Instruction**: The task is to pick a fruit suitable for eating fresh, cooking, or making into sauce. An apple is a suitable choice.\n2. **Combine with Image Information**: Identify the apple in the images. The apple is labeled with the number 1 in the first image.\n3. **Generate Skill Call Sequence**: Use the \"pick\" skill with the identified apple number.\n\n### Output:\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"1\"\n        }\n    }\n]\n```\n\nThis sequence follows the required pattern for picking an object, which is appropriate for handling fruits.",
+  "skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": "1"
+      }
+    }
+  ],
+  "parse_status": "parsed_list",
+  "skill_match_score": 50.0,
+  "entity_match_score": 0.0,
+  "skill_with_entity_match_score": 0.0,
+  "exact_match_score": 0.0,
+  "total_score": 20.0,
+  "official_dependency": "Sequential",
+  "symbolic_success": false,
+  "type_normalized_skill_match_score": 50.0,
+  "type_normalized_entity_match_score": 0.0,
+  "type_normalized_skill_with_entity_match_score": 0.0,
+  "type_normalized_exact_match_score": 0.0,
+  "type_normalized_total_score": 20.0,
+  "type_normalized_symbolic_success": false,
+  "type_normalized_numeric_cast_applied": true,
+  "ok": true,
+  "format_error": false,
+  "gt_skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": 2
+      }
+    },
+    {
+      "name": "place",
+      "params": {
+        "target_container_name": 1
+      }
+    }
+  ]
+}

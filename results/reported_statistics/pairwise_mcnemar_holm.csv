@@ -1,0 +1,7 @@
+metric,first_model,second_model,first_only,second_only,both,neither,raw_p,holm_adjusted_p,significant_at_0_05
+A type-normalized PM-based full-match (derived),Qwen3-VL-8B,Gemma-3-12B-it,214,155,66,1698,0.0024868003074027855,0.0024868003074027855,True
+A type-normalized PM-based full-match (derived),Qwen3-VL-8B,InternVL3-8B,235,43,45,1810,3.354490535517644e-33,1.0063471606552932e-32,True
+A type-normalized PM-based full-match (derived),Gemma-3-12B-it,InternVL3-8B,191,58,30,1854,9.387513378294733e-18,1.8775026756589466e-17,True
+B first-attempt procedural success,Qwen3-VL-8B,Gemma-3-12B-it,71,48,9,2005,0.04326826257460872,0.08653652514921743,False
+B first-attempt procedural success,Qwen3-VL-8B,InternVL3-8B,80,40,0,2013,0.00033040001839131815,0.0009912000551739544,True
+B first-attempt procedural success,Gemma-3-12B-it,InternVL3-8B,55,38,2,2038,0.09656519729770463,0.09656519729770463,False

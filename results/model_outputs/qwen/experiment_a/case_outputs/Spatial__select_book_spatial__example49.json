@@ -1,0 +1,58 @@
+{
+  "case_id": "Spatial/select_book_spatial/example49",
+  "category": "Spatial",
+  "task_name": "select_book_spatial",
+  "example_name": "example49",
+  "example_index": 49,
+  "input_image_path": "${VLABENCH_PUBLIC_ROOT}/Spatial/select_book_spatial/example49/input.png",
+  "input_mask_path": "${VLABENCH_PUBLIC_ROOT}/Spatial/select_book_spatial/example49/input_mask.png",
+  "gt_operation_sequence_path": "${VLABENCH_GT_ROOT}/Spatial/select_book_spatial/example49/output/operation_sequence.json",
+  "used_official_prompt": true,
+  "used_official_scorer": true,
+  "gt_used_for_prompt": false,
+  "message_block_count": 8,
+  "score_only_source": "${PROJECT_ROOT}/outputs/official_sequence_eval/qwen_full_2133_20260701/case_outputs/Spatial__select_book_spatial__example49.json",
+  "elapsed_sec": 0,
+  "origin_output": "```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"5\"\n        }\n    },\n    {\n        \"name\": \"lift\",\n        \"params\": {}\n    }\n]\n```",
+  "skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": "5"
+      }
+    },
+    {
+      "name": "lift",
+      "params": {}
+    }
+  ],
+  "parse_status": "parsed_list",
+  "skill_match_score": 50.0,
+  "entity_match_score": 0.0,
+  "skill_with_entity_match_score": 0.0,
+  "exact_match_score": 0.0,
+  "total_score": 20.0,
+  "official_dependency": "Sequential",
+  "symbolic_success": false,
+  "type_normalized_skill_match_score": 50.0,
+  "type_normalized_entity_match_score": 0.0,
+  "type_normalized_skill_with_entity_match_score": 0.0,
+  "type_normalized_exact_match_score": 0.0,
+  "type_normalized_total_score": 20.0,
+  "type_normalized_symbolic_success": false,
+  "type_normalized_numeric_cast_applied": true,
+  "ok": true,
+  "format_error": false,
+  "gt_skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": 6
+      }
+    },
+    {
+      "name": "pull",
+      "params": {}
+    }
+  ]
+}

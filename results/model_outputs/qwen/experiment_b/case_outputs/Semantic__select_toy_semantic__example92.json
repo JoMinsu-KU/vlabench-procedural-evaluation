@@ -1,0 +1,257 @@
+{
+  "case_id": "Semantic/select_toy_semantic/example92",
+  "category": "Semantic",
+  "task_name": "select_toy_semantic",
+  "example_name": "example92",
+  "example_index": 92,
+  "input_image_path": "${VLABENCH_PUBLIC_ROOT}/Semantic/select_toy_semantic/example92/input.png",
+  "input_mask_path": "${VLABENCH_PUBLIC_ROOT}/Semantic/select_toy_semantic/example92/input_mask.png",
+  "gt_used_for_prompt": false,
+  "counts_as_model_evaluation": true,
+  "prompt_only": false,
+  "inference_only": false,
+  "message_block_count": 8,
+  "elapsed_sec": 1.8945143222808838,
+  "served_model": "Qwen/Qwen3-VL-8B-Instruct",
+  "usage": {
+    "prompt_tokens": 3008,
+    "total_tokens": 3084,
+    "completion_tokens": 76,
+    "prompt_tokens_details": null
+  },
+  "raw_response": {
+    "id": "chatcmpl-ba39606d72cdcc48",
+    "object": "chat.completion",
+    "created": 1782992083,
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n    \"steps\": [\n        {\n            \"skill\": \"pick\",\n            \"target\": 2\n        },\n        {\n            \"skill\": \"lift\"\n        },\n        {\n            \"skill\": \"moveto\",\n            \"target\": 1\n        },\n        {\n            \"skill\": \"place\",\n            \"target\": 1\n        }\n    ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 3008,
+      "total_tokens": 3084,
+      "completion_tokens": 76,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "origin_output": "{\n    \"steps\": [\n        {\n            \"skill\": \"pick\",\n            \"target\": 2\n        },\n        {\n            \"skill\": \"lift\"\n        },\n        {\n            \"skill\": \"moveto\",\n            \"target\": 1\n        },\n        {\n            \"skill\": \"place\",\n            \"target\": 1\n        }\n    ]\n}",
+  "json_extraction_status": "direct_json_object",
+  "strict_parsed_plan": {
+    "ok": true,
+    "steps": [
+      {
+        "skill": "pick",
+        "target": 2
+      },
+      {
+        "skill": "lift"
+      },
+      {
+        "skill": "moveto",
+        "target": 1
+      },
+      {
+        "skill": "place",
+        "target": 1
+      }
+    ],
+    "status": {
+      "code": "",
+      "label": "",
+      "subtype": "",
+      "detail": ""
+    }
+  },
+  "strict_parse_ok": true,
+  "normalization_policy": "integer-string-target-only",
+  "target_numeric_cast_applied": false,
+  "semantic_repair_applied": false,
+  "raw_steps": [
+    {
+      "skill": "pick",
+      "target": 2
+    },
+    {
+      "skill": "lift"
+    },
+    {
+      "skill": "moveto",
+      "target": 1
+    },
+    {
+      "skill": "place",
+      "target": 1
+    }
+  ],
+  "normalized_steps": [
+    {
+      "skill": "pick",
+      "target": 2
+    },
+    {
+      "skill": "lift"
+    },
+    {
+      "skill": "moveto",
+      "target": 1
+    },
+    {
+      "skill": "place",
+      "target": 1
+    }
+  ],
+  "type_normalized_parsed_plan": {
+    "ok": true,
+    "steps": [
+      {
+        "skill": "pick",
+        "target": 2
+      },
+      {
+        "skill": "lift"
+      },
+      {
+        "skill": "moveto",
+        "target": 1
+      },
+      {
+        "skill": "place",
+        "target": 1
+      }
+    ],
+    "status": {
+      "code": "",
+      "label": "",
+      "subtype": "",
+      "detail": ""
+    }
+  },
+  "type_normalized_parse_ok": true,
+  "parsed_plan": {
+    "ok": true,
+    "steps": [
+      {
+        "skill": "pick",
+        "target": 2
+      },
+      {
+        "skill": "lift"
+      },
+      {
+        "skill": "moveto",
+        "target": 1
+      },
+      {
+        "skill": "place",
+        "target": 1
+      }
+    ],
+    "status": {
+      "code": "",
+      "label": "",
+      "subtype": "",
+      "detail": ""
+    }
+  },
+  "model_parse_ok": true,
+  "execution_used_type_normalized_plan": false,
+  "fixture": {
+    "fixture_id": "model_eval__Semantic__select_toy_semantic__example92",
+    "fixture_version": "model_procedural_v1_no_gt_no_role",
+    "fixture_mode": "model_evaluation",
+    "family": "select_toy_semantic",
+    "negative_type": "",
+    "fixture_generated_from_gt": false,
+    "fixture_generation_phase": "model_inference",
+    "source_fields_used": [
+      "input.png",
+      "input_mask.png",
+      "instruction.txt",
+      "vlm_response"
+    ],
+    "frozen_after_generation": true,
+    "dataset_snapshot": "vlabench_vlm4500_public_2133_matched",
+    "source_case_id": "Semantic/select_toy_semantic/example92",
+    "target_source": "vlm_numbered_mask",
+    "counts_as_model_evaluation": true,
+    "native_execution_should_run": true,
+    "expected_gate1_ok": null,
+    "expected_native_ok": null,
+    "expected_condition_success": null,
+    "steps": [
+      {
+        "skill": "pick",
+        "target": 2
+      },
+      {
+        "skill": "lift"
+      },
+      {
+        "skill": "moveto",
+        "target": 1
+      },
+      {
+        "skill": "place",
+        "target": 1
+      }
+    ],
+    "human_readable_targets": {}
+  },
+  "fixture_id": "model_eval__Semantic__select_toy_semantic__example92",
+  "family": "select_toy_semantic",
+  "fixture_mode": "model_evaluation",
+  "negative_type": "",
+  "source_case_id": "Semantic/select_toy_semantic/example92",
+  "fixture_generated_from_gt": false,
+  "gt_used_during_execution": false,
+  "adapter_read_conditions": false,
+  "lowerer_read_conditions": false,
+  "operation_sequence_read": false,
+  "expert_sequence_called": false,
+  "target_source": "vlm_numbered_mask",
+  "native_execution_attempted": false,
+  "native_execution_should_run": true,
+  "native_retry_policy": "",
+  "native_max_attempts": 0,
+  "native_attempt_count": 0,
+  "native_selected_attempt": 0,
+  "native_attempt_summaries": "[]",
+  "expected_gate1_ok": null,
+  "expected_native_ok": null,
+  "expected_condition_success": null,
+  "actual_gate1_ok": false,
+  "actual_native_ok": false,
+  "actual_condition_success": false,
+  "procedural_success": false,
+  "actual_failure_code": "C3",
+  "actual_failure_subtype": "extra_phase",
+  "actual_failure_detail": "expected 3 steps, got 4",
+  "exception_type": "",
+  "episode_config_added_fields": "",
+  "before_contact_sheet": "",
+  "after_contact_sheet": "",
+  "passed": false,
+  "trace_dir": "${PROJECT_ROOT}/outputs/procedural_eval/qwen_trackb_full_2133_prompt_aligned_20260702/execution_traces/model_eval__Semantic__select_toy_semantic__example92",
+  "ok": true
+}

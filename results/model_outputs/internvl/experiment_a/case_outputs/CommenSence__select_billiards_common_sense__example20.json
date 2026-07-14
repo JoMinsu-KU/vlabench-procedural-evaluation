@@ -1,0 +1,104 @@
+{
+  "case_id": "CommenSence/select_billiards_common_sense/example20",
+  "category": "CommenSence",
+  "task_name": "select_billiards_common_sense",
+  "example_name": "example20",
+  "example_index": 20,
+  "input_image_path": "${VLABENCH_PUBLIC_ROOT}/CommenSence/select_billiards_common_sense/example20/input.png",
+  "input_mask_path": "${VLABENCH_PUBLIC_ROOT}/CommenSence/select_billiards_common_sense/example20/input_mask.png",
+  "gt_operation_sequence_path": "${VLABENCH_GT_ROOT}/CommenSence/select_billiards_common_sense/example20/output/operation_sequence.json",
+  "used_official_prompt": true,
+  "used_official_scorer": true,
+  "gt_used_for_prompt": false,
+  "message_block_count": 8,
+  "elapsed_sec": 3.3260416984558105,
+  "usage": {
+    "prompt_tokens": 6293,
+    "total_tokens": 6531,
+    "completion_tokens": 238,
+    "prompt_tokens_details": null
+  },
+  "served_model": "OpenGVLab/InternVL3-8B",
+  "raw_response": {
+    "id": "chatcmpl-9b69937807222e68",
+    "object": "chat.completion",
+    "created": 1783414375,
+    "model": "OpenGVLab/InternVL3-8B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "To fulfill the task instruction \"Please put the ball worth 1 score in hole,\" we need to identify the ball worth 1 score and place it into a hole. Based on the labeled images, we can determine the target ball and hole.\n\n### Steps:\n\n1. **Extract Task Instruction**: The task is to \"put the ball worth 1 score in hole.\"\n\n2. **Combine with Image Information**: \n   - The ball worth 1 score is labeled as \"1\" in the images.\n   - The holes are labeled as \"0\" in the images.\n\n3. **Generate Skill Call Sequence**:\n   - **Skill**: \"pick\" to grasp the ball.\n   - **Skill**: \"place\" to put the ball into the hole.\n\n### Skill Call Sequence:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"1\"\n        }\n    },\n    {\n        \"name\": \"place\",\n        \"params\": {\n            \"target_container_name\": \"0\"\n        }\n    }\n]\n```\n\nThis sequence follows the pattern `[\"pick\", \"place\"] to correctly execute the task.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 6293,
+      "total_tokens": 6531,
+      "completion_tokens": 238,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "origin_output": "To fulfill the task instruction \"Please put the ball worth 1 score in hole,\" we need to identify the ball worth 1 score and place it into a hole. Based on the labeled images, we can determine the target ball and hole.\n\n### Steps:\n\n1. **Extract Task Instruction**: The task is to \"put the ball worth 1 score in hole.\"\n\n2. **Combine with Image Information**: \n   - The ball worth 1 score is labeled as \"1\" in the images.\n   - The holes are labeled as \"0\" in the images.\n\n3. **Generate Skill Call Sequence**:\n   - **Skill**: \"pick\" to grasp the ball.\n   - **Skill**: \"place\" to put the ball into the hole.\n\n### Skill Call Sequence:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"1\"\n        }\n    },\n    {\n        \"name\": \"place\",\n        \"params\": {\n            \"target_container_name\": \"0\"\n        }\n    }\n]\n```\n\nThis sequence follows the pattern `[\"pick\", \"place\"] to correctly execute the task.",
+  "skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": "1"
+      }
+    },
+    {
+      "name": "place",
+      "params": {
+        "target_container_name": "0"
+      }
+    }
+  ],
+  "parse_status": "parsed_list",
+  "skill_match_score": 100.0,
+  "entity_match_score": 0.0,
+  "skill_with_entity_match_score": 0.0,
+  "exact_match_score": 0.0,
+  "total_score": 40.0,
+  "official_dependency": "Sequential",
+  "symbolic_success": false,
+  "type_normalized_skill_match_score": 100.0,
+  "type_normalized_entity_match_score": 100.0,
+  "type_normalized_skill_with_entity_match_score": 100.0,
+  "type_normalized_exact_match_score": 100.0,
+  "type_normalized_total_score": 80.0,
+  "type_normalized_symbolic_success": true,
+  "type_normalized_numeric_cast_applied": true,
+  "ok": true,
+  "format_error": false,
+  "gt_skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": 1
+      }
+    },
+    {
+      "name": "place",
+      "params": {
+        "target_container_name": 0
+      }
+    }
+  ]
+}

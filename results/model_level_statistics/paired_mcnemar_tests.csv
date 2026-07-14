@@ -1,0 +1,7 @@
+﻿n11_both_success,n10_first_only,n01_second_only,n00_both_failure,discordant,exact_p_value,metric,first_model,second_model,n
+66,214,155,1698,369,0.002486800307402803,A_type_exact,qwen,gemma,2133
+45,235,43,1810,278,3.3544905355176036e-33,A_type_exact,qwen,internvl,2133
+30,191,58,1854,249,9.387513378294603e-18,A_type_exact,gemma,internvl,2133
+10,74,52,1997,126,0.06093825261566013,B_success,qwen,gemma,2133
+0,84,41,2008,125,0.0001501334225702849,B_success,qwen,internvl,2133
+2,60,39,2032,99,0.0438752935870152,B_success,gemma,internvl,2133

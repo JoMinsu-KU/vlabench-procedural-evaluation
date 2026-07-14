@@ -1,0 +1,104 @@
+{
+  "case_id": "Semantic/select_fruit_semantic/example17",
+  "category": "Semantic",
+  "task_name": "select_fruit_semantic",
+  "example_name": "example17",
+  "example_index": 17,
+  "input_image_path": "${VLABENCH_PUBLIC_ROOT}/Semantic/select_fruit_semantic/example17/input.png",
+  "input_mask_path": "${VLABENCH_PUBLIC_ROOT}/Semantic/select_fruit_semantic/example17/input_mask.png",
+  "gt_operation_sequence_path": "${VLABENCH_GT_ROOT}/Semantic/select_fruit_semantic/example17/output/operation_sequence.json",
+  "used_official_prompt": true,
+  "used_official_scorer": true,
+  "gt_used_for_prompt": false,
+  "message_block_count": 8,
+  "elapsed_sec": 4.30633807182312,
+  "usage": {
+    "prompt_tokens": 6299,
+    "total_tokens": 6618,
+    "completion_tokens": 319,
+    "prompt_tokens_details": null
+  },
+  "served_model": "OpenGVLab/InternVL3-8B",
+  "raw_response": {
+    "id": "chatcmpl-81ac6315ccf11978",
+    "object": "chat.completion",
+    "created": 1783418839,
+    "model": "OpenGVLab/InternVL3-8B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "To address the task instruction \"I've heard that a certain crunchy fruit might help keep the doctor away if eaten daily,\" we need to identify the relevant fruit and determine the appropriate sequence of skills to pick and place it.\n\n### Step-by-Step Solution:\n\n1. **Identify the Fruit**:\n   - The instruction mentions a \"crunchy fruit.\" Based on common knowledge, apples are often considered crunchy fruits.\n   - In the images, we need to locate the apple. From the labeled images, we can see that the apple is labeled as \"1.\"\n\n2. **Determine the Skill Sequence**:\n   - The task involves picking up the apple and placing it somewhere. The most straightforward sequence is `[\"pick\", \"place\"]`.\n\n3. **Match with Image Information**:\n   - The apple is labeled as \"1\" in the images.\n\n### Skill Call Sequence:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"1\"\n        }\n    },\n    {\n        \"name\": \"place\",\n        \"params\": {\n            \"target_container_name\": \"0\"\n        }\n    }\n]\n```\n\n### Explanation:\n\n- **pick**: This skill is used to grasp and pick up the apple, which is identified as \"1\" in the images.\n- **place**: This skill is used to place the apple into a container, identified as \"0\" in the images.\n\nThis sequence follows the pattern `[\"pick\", \"place\"] and ensures the apple is picked up and placed correctly.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 6299,
+      "total_tokens": 6618,
+      "completion_tokens": 319,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "origin_output": "To address the task instruction \"I've heard that a certain crunchy fruit might help keep the doctor away if eaten daily,\" we need to identify the relevant fruit and determine the appropriate sequence of skills to pick and place it.\n\n### Step-by-Step Solution:\n\n1. **Identify the Fruit**:\n   - The instruction mentions a \"crunchy fruit.\" Based on common knowledge, apples are often considered crunchy fruits.\n   - In the images, we need to locate the apple. From the labeled images, we can see that the apple is labeled as \"1.\"\n\n2. **Determine the Skill Sequence**:\n   - The task involves picking up the apple and placing it somewhere. The most straightforward sequence is `[\"pick\", \"place\"]`.\n\n3. **Match with Image Information**:\n   - The apple is labeled as \"1\" in the images.\n\n### Skill Call Sequence:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"1\"\n        }\n    },\n    {\n        \"name\": \"place\",\n        \"params\": {\n            \"target_container_name\": \"0\"\n        }\n    }\n]\n```\n\n### Explanation:\n\n- **pick**: This skill is used to grasp and pick up the apple, which is identified as \"1\" in the images.\n- **place**: This skill is used to place the apple into a container, identified as \"0\" in the images.\n\nThis sequence follows the pattern `[\"pick\", \"place\"] and ensures the apple is picked up and placed correctly.",
+  "skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": "1"
+      }
+    },
+    {
+      "name": "place",
+      "params": {
+        "target_container_name": "0"
+      }
+    }
+  ],
+  "parse_status": "parsed_list",
+  "skill_match_score": 100.0,
+  "entity_match_score": 0.0,
+  "skill_with_entity_match_score": 0.0,
+  "exact_match_score": 0.0,
+  "total_score": 40.0,
+  "official_dependency": "Sequential",
+  "symbolic_success": false,
+  "type_normalized_skill_match_score": 100.0,
+  "type_normalized_entity_match_score": 0.0,
+  "type_normalized_skill_with_entity_match_score": 0.0,
+  "type_normalized_exact_match_score": 0.0,
+  "type_normalized_total_score": 40.0,
+  "type_normalized_symbolic_success": false,
+  "type_normalized_numeric_cast_applied": true,
+  "ok": true,
+  "format_error": false,
+  "gt_skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": 2
+      }
+    },
+    {
+      "name": "place",
+      "params": {
+        "target_container_name": 1
+      }
+    }
+  ]
+}

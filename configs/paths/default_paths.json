@@ -1,0 +1,8 @@
+{
+  "project_root": ".",
+  "source_vlabench_dataset_root": "SET_WITH_CLI_OR_ENV",
+  "public_view_root": "SET_WITH_CLI_OR_ENV",
+  "matched_2133_manifest": "datasets/manifests/matched_2133_symbolic_procedural_cases.json",
+  "verified_subset_manifest": "datasets/manifests/verified_subset_2133_cases.json",
+  "outputs_root": "outputs"
+}

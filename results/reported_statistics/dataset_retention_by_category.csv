@@ -1,0 +1,6 @@
+category,initial_cases,retained_cases,retention_rate
+CommenSence,800,519,0.64875
+M&T,900,616,0.6844444444444444
+PhysicsLaw,600,42,0.07
+Semantic,900,507,0.5633333333333334
+Spatial,800,449,0.56125

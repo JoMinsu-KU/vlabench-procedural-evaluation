@@ -1,0 +1,17 @@
+﻿{
+    "status":  "passed",
+    "report_rows":  2133,
+    "unique_case_ids":  2133,
+    "unique_fixture_ids":  2133,
+    "all_rows_passed":  true,
+    "gt_used_during_execution_true_count":  0,
+    "operation_sequence_read_true_count":  0,
+    "expert_sequence_called_true_count":  0,
+    "adapter_read_conditions_true_count":  0,
+    "lowerer_read_conditions_true_count":  0,
+    "portable_path_columns_removed":  [
+                                          "before_contact_sheet",
+                                          "after_contact_sheet",
+                                          "trace_dir"
+                                      ]
+}

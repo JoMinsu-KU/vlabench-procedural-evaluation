@@ -1,0 +1,4 @@
+model,first_attempt_success_count,first_attempt_success_rate,success_within_10_attempts_count,success_within_10_attempts_rate,additional_successes_after_retry
+Qwen3-VL-8B,80,0.03750586029067042,84,0.03938115330520394,4
+Gemma-3-12B-it,57,0.026722925457102673,62,0.029067041725269572,5
+InternVL3-8B,40,0.01875293014533521,41,0.01922175339896859,1

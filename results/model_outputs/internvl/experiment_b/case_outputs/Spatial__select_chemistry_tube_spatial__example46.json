@@ -1,0 +1,138 @@
+{
+  "case_id": "Spatial/select_chemistry_tube_spatial/example46",
+  "category": "Spatial",
+  "task_name": "select_chemistry_tube_spatial",
+  "example_name": "example46",
+  "example_index": 46,
+  "input_image_path": "${VLABENCH_PUBLIC_ROOT}/Spatial/select_chemistry_tube_spatial/example46/input.png",
+  "input_mask_path": "${VLABENCH_PUBLIC_ROOT}/Spatial/select_chemistry_tube_spatial/example46/input_mask.png",
+  "gt_used_for_prompt": false,
+  "counts_as_model_evaluation": true,
+  "prompt_only": false,
+  "inference_only": false,
+  "message_block_count": 8,
+  "elapsed_sec": 3.003330707550049,
+  "served_model": "OpenGVLab/InternVL3-8B",
+  "usage": {
+    "prompt_tokens": 6362,
+    "total_tokens": 6431,
+    "completion_tokens": 69,
+    "prompt_tokens_details": null
+  },
+  "raw_response": {
+    "id": "chatcmpl-8e61f69526e1145f",
+    "object": "chat.completion",
+    "created": 1783605959,
+    "model": "OpenGVLab/InternVL3-8B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n    \"steps\": [\n        {\n            \"skill\": \"pick\",\n            \"target\": 2\n        },\n        {\n            \"skill\": \"lift\"\n        },\n        {\n            \"skill\": \"moveto\",\n            \"target\": 1\n        },\n        {\n            \"skill\": \"place\"\n        }\n    ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 6362,
+      "total_tokens": 6431,
+      "completion_tokens": 69,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "origin_output": "{\n    \"steps\": [\n        {\n            \"skill\": \"pick\",\n            \"target\": 2\n        },\n        {\n            \"skill\": \"lift\"\n        },\n        {\n            \"skill\": \"moveto\",\n            \"target\": 1\n        },\n        {\n            \"skill\": \"place\"\n        }\n    ]\n}",
+  "json_extraction_status": "direct_json_object",
+  "strict_parsed_plan": {
+    "ok": false,
+    "status": {
+      "code": "C2",
+      "label": "Parser or Schema Conversion Failure",
+      "subtype": "missing_target",
+      "detail": "step=4, skill=place"
+    }
+  },
+  "strict_parse_ok": false,
+  "normalization_policy": "integer-string-target-only",
+  "target_numeric_cast_applied": false,
+  "semantic_repair_applied": false,
+  "raw_steps": [
+    {
+      "skill": "pick",
+      "target": 2
+    },
+    {
+      "skill": "lift"
+    },
+    {
+      "skill": "moveto",
+      "target": 1
+    },
+    {
+      "skill": "place"
+    }
+  ],
+  "normalized_steps": [
+    {
+      "skill": "pick",
+      "target": 2
+    },
+    {
+      "skill": "lift"
+    },
+    {
+      "skill": "moveto",
+      "target": 1
+    },
+    {
+      "skill": "place"
+    }
+  ],
+  "type_normalized_parsed_plan": {
+    "ok": false,
+    "status": {
+      "code": "C2",
+      "label": "Parser or Schema Conversion Failure",
+      "subtype": "missing_target",
+      "detail": "step=4, skill=place"
+    }
+  },
+  "type_normalized_parse_ok": false,
+  "parsed_plan": {
+    "ok": false,
+    "status": {
+      "code": "C2",
+      "label": "Parser or Schema Conversion Failure",
+      "subtype": "missing_target",
+      "detail": "step=4, skill=place"
+    }
+  },
+  "model_parse_ok": false,
+  "execution_used_type_normalized_plan": false,
+  "ok": true,
+  "actual_gate1_ok": false,
+  "native_execution_attempted": false,
+  "actual_native_ok": false,
+  "actual_condition_success": false,
+  "procedural_success": false,
+  "actual_failure_code": "C2",
+  "actual_failure_subtype": "missing_target",
+  "actual_failure_detail": "step=4, skill=place",
+  "native_attempt_count": 0,
+  "native_selected_attempt": 0,
+  "trace_dir": ""
+}

@@ -1,0 +1,102 @@
+{
+  "case_id": "Semantic/select_drink_semantic/example63",
+  "category": "Semantic",
+  "task_name": "select_drink_semantic",
+  "example_name": "example63",
+  "example_index": 63,
+  "input_image_path": "${VLABENCH_PUBLIC_ROOT}/Semantic/select_drink_semantic/example63/input.png",
+  "input_mask_path": "${VLABENCH_PUBLIC_ROOT}/Semantic/select_drink_semantic/example63/input_mask.png",
+  "gt_operation_sequence_path": "${VLABENCH_GT_ROOT}/Semantic/select_drink_semantic/example63/output/operation_sequence.json",
+  "used_official_prompt": true,
+  "used_official_scorer": true,
+  "gt_used_for_prompt": false,
+  "message_block_count": 8,
+  "elapsed_sec": 3.229623556137085,
+  "usage": {
+    "prompt_tokens": 6294,
+    "total_tokens": 6581,
+    "completion_tokens": 287,
+    "prompt_tokens_details": null
+  },
+  "served_model": "OpenGVLab/InternVL3-8B",
+  "raw_response": {
+    "id": "chatcmpl-a062484f916b70de",
+    "object": "chat.completion",
+    "created": 1783418729,
+    "model": "OpenGVLab/InternVL3-8B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "To fulfill the task instruction \"I'm looking for a beverage with a bit of a bite,\" we need to identify the appropriate beverage from the labeled images and use the corresponding skill calls to pick and place it.\n\n### Steps:\n\n1. **Extract Task Instruction**: The task is to find a beverage with a bit of a bite, which typically refers to an energy drink.\n\n2. **Combine with Image Information**: \n   - The labeled images show two energy drink cans: Monster (black) and Jolt (orange).\n   - The task likely refers to the Monster energy drink.\n\n3. **Generate Skill Call Sequence**:\n   - We need to pick up the Monster energy drink.\n   - Then, we can place it in a suitable location.\n\n### Skill Calls:\n\n- **Pick**: To grasp and pick up the Monster energy drink.\n- **Place**: To place the Monster energy drink in a container or location.\n\n### Output:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"1\"\n        }\n    },\n    {\n        \"name\": \"place\",\n        \"params\": {\n            \"target_container_name\": \"0\"\n        }\n    }\n]\n```\n\nThis sequence assumes the Monster energy drink is labeled as \"1\" and the target container or location is labeled as \"0\". Adjust the target numbers as per the actual labels in the images.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 6294,
+      "total_tokens": 6581,
+      "completion_tokens": 287,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "origin_output": "To fulfill the task instruction \"I'm looking for a beverage with a bit of a bite,\" we need to identify the appropriate beverage from the labeled images and use the corresponding skill calls to pick and place it.\n\n### Steps:\n\n1. **Extract Task Instruction**: The task is to find a beverage with a bit of a bite, which typically refers to an energy drink.\n\n2. **Combine with Image Information**: \n   - The labeled images show two energy drink cans: Monster (black) and Jolt (orange).\n   - The task likely refers to the Monster energy drink.\n\n3. **Generate Skill Call Sequence**:\n   - We need to pick up the Monster energy drink.\n   - Then, we can place it in a suitable location.\n\n### Skill Calls:\n\n- **Pick**: To grasp and pick up the Monster energy drink.\n- **Place**: To place the Monster energy drink in a container or location.\n\n### Output:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"1\"\n        }\n    },\n    {\n        \"name\": \"place\",\n        \"params\": {\n            \"target_container_name\": \"0\"\n        }\n    }\n]\n```\n\nThis sequence assumes the Monster energy drink is labeled as \"1\" and the target container or location is labeled as \"0\". Adjust the target numbers as per the actual labels in the images.",
+  "skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": "1"
+      }
+    },
+    {
+      "name": "place",
+      "params": {
+        "target_container_name": "0"
+      }
+    }
+  ],
+  "parse_status": "parsed_list",
+  "skill_match_score": 50.0,
+  "entity_match_score": 0.0,
+  "skill_with_entity_match_score": 0.0,
+  "exact_match_score": 0.0,
+  "total_score": 20.0,
+  "official_dependency": "Sequential",
+  "symbolic_success": false,
+  "type_normalized_skill_match_score": 50.0,
+  "type_normalized_entity_match_score": 0.0,
+  "type_normalized_skill_with_entity_match_score": 0.0,
+  "type_normalized_exact_match_score": 0.0,
+  "type_normalized_total_score": 20.0,
+  "type_normalized_symbolic_success": false,
+  "type_normalized_numeric_cast_applied": true,
+  "ok": true,
+  "format_error": false,
+  "gt_skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": 2
+      }
+    },
+    {
+      "name": "pull",
+      "params": {}
+    }
+  ]
+}

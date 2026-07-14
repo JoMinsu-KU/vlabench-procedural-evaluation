@@ -1,0 +1,96 @@
+{
+  "case_id": "M&T/select_book/example0",
+  "category": "M&T",
+  "task_name": "select_book",
+  "example_name": "example0",
+  "example_index": 0,
+  "input_image_path": "${VLABENCH_PUBLIC_ROOT}/M&T/select_book/example0/input.png",
+  "input_mask_path": "${VLABENCH_PUBLIC_ROOT}/M&T/select_book/example0/input_mask.png",
+  "gt_operation_sequence_path": "${VLABENCH_GT_ROOT}/M&T/select_book/example0/output/operation_sequence.json",
+  "used_official_prompt": true,
+  "used_official_scorer": true,
+  "gt_used_for_prompt": false,
+  "message_block_count": 8,
+  "elapsed_sec": 3.3550171852111816,
+  "usage": {
+    "prompt_tokens": 6296,
+    "total_tokens": 6513,
+    "completion_tokens": 217,
+    "prompt_tokens_details": null
+  },
+  "served_model": "OpenGVLab/InternVL3-8B",
+  "raw_response": {
+    "id": "chatcmpl-b51c75a8315b731e",
+    "object": "chat.completion",
+    "created": 1783416335,
+    "model": "OpenGVLab/InternVL3-8B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "To fulfill the task instruction \"Please take the book the_life_of_samuel_johnson,\" we need to identify the target object and generate the appropriate skill call sequence.\n\n### Steps:\n\n1. **Extract Task Instruction**: The task is to pick up the book titled \"The Life of Samuel Johnson.\"\n\n2. **Combine with Image Information**: \n   - The labeled image shows four books on a shelf. \n   - The book \"The Life of Samuel Johnson\" is labeled with the number 4.\n\n3. **Generate Skill Call Sequence**: \n   - The skill required is \"pick\" to grasp and pick up the target object.\n\n4. **Output Format**:\n   - The skill call sequence should include the \"pick\" operation with the target entity number 4.\n\n### Skill Call Sequence:\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": 4\n        }\n    }\n]\n```\n\nThis sequence correctly identifies the target book and uses the \"pick\" skill to fulfill the task instruction.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 6296,
+      "total_tokens": 6513,
+      "completion_tokens": 217,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "origin_output": "To fulfill the task instruction \"Please take the book the_life_of_samuel_johnson,\" we need to identify the target object and generate the appropriate skill call sequence.\n\n### Steps:\n\n1. **Extract Task Instruction**: The task is to pick up the book titled \"The Life of Samuel Johnson.\"\n\n2. **Combine with Image Information**: \n   - The labeled image shows four books on a shelf. \n   - The book \"The Life of Samuel Johnson\" is labeled with the number 4.\n\n3. **Generate Skill Call Sequence**: \n   - The skill required is \"pick\" to grasp and pick up the target object.\n\n4. **Output Format**:\n   - The skill call sequence should include the \"pick\" operation with the target entity number 4.\n\n### Skill Call Sequence:\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": 4\n        }\n    }\n]\n```\n\nThis sequence correctly identifies the target book and uses the \"pick\" skill to fulfill the task instruction.",
+  "skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": 4
+      }
+    }
+  ],
+  "parse_status": "parsed_list",
+  "skill_match_score": 50.0,
+  "entity_match_score": 100.0,
+  "skill_with_entity_match_score": 50.0,
+  "exact_match_score": 0.0,
+  "total_score": 60.0,
+  "official_dependency": "Sequential",
+  "symbolic_success": false,
+  "type_normalized_skill_match_score": 50.0,
+  "type_normalized_entity_match_score": 100.0,
+  "type_normalized_skill_with_entity_match_score": 50.0,
+  "type_normalized_exact_match_score": 0.0,
+  "type_normalized_total_score": 60.0,
+  "type_normalized_symbolic_success": false,
+  "type_normalized_numeric_cast_applied": false,
+  "ok": true,
+  "format_error": false,
+  "gt_skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": 4
+      }
+    },
+    {
+      "name": "pull",
+      "params": {}
+    }
+  ]
+}

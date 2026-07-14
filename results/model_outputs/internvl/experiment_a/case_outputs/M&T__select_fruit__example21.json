@@ -1,0 +1,104 @@
+{
+  "case_id": "M&T/select_fruit/example21",
+  "category": "M&T",
+  "task_name": "select_fruit",
+  "example_name": "example21",
+  "example_index": 21,
+  "input_image_path": "${VLABENCH_PUBLIC_ROOT}/M&T/select_fruit/example21/input.png",
+  "input_mask_path": "${VLABENCH_PUBLIC_ROOT}/M&T/select_fruit/example21/input_mask.png",
+  "gt_operation_sequence_path": "${VLABENCH_GT_ROOT}/M&T/select_fruit/example21/output/operation_sequence.json",
+  "used_official_prompt": true,
+  "used_official_scorer": true,
+  "gt_used_for_prompt": false,
+  "message_block_count": 8,
+  "elapsed_sec": 3.4119606018066406,
+  "usage": {
+    "prompt_tokens": 6290,
+    "total_tokens": 6495,
+    "completion_tokens": 205,
+    "prompt_tokens_details": null
+  },
+  "served_model": "OpenGVLab/InternVL3-8B",
+  "raw_response": {
+    "id": "chatcmpl-8d2b2a26b77c37b1",
+    "object": "chat.completion",
+    "created": 1783417121,
+    "model": "OpenGVLab/InternVL3-8B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "To complete the task of putting the pear into the plate, we need to follow these steps:\n\n1. **Identify the Target Object**: The task mentions a \"pear,\" which corresponds to object number 3 in the labeled image.\n2. **Identify the Target Container**: The target container is the plate, which corresponds to object number 1 in the labeled image.\n\nBased on the task instruction and the image information, the sequence of skill calls should be:\n\n- **pick**: To grasp the pear.\n- **insert**: To place the pear into the plate.\n\nHere is the skill call sequence in JSON format:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": 3\n        }\n    },\n    {\n        \"name\": \"insert\",\n        \"params\": {\n            \"target_container_name\": 1\n        }\n    }\n]\n```\n\nThis sequence follows the required pattern of [\"pick\", \"insert\"] to correctly execute the task.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 6290,
+      "total_tokens": 6495,
+      "completion_tokens": 205,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "origin_output": "To complete the task of putting the pear into the plate, we need to follow these steps:\n\n1. **Identify the Target Object**: The task mentions a \"pear,\" which corresponds to object number 3 in the labeled image.\n2. **Identify the Target Container**: The target container is the plate, which corresponds to object number 1 in the labeled image.\n\nBased on the task instruction and the image information, the sequence of skill calls should be:\n\n- **pick**: To grasp the pear.\n- **insert**: To place the pear into the plate.\n\nHere is the skill call sequence in JSON format:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": 3\n        }\n    },\n    {\n        \"name\": \"insert\",\n        \"params\": {\n            \"target_container_name\": 1\n        }\n    }\n]\n```\n\nThis sequence follows the required pattern of [\"pick\", \"insert\"] to correctly execute the task.",
+  "skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": 3
+      }
+    },
+    {
+      "name": "insert",
+      "params": {
+        "target_container_name": 1
+      }
+    }
+  ],
+  "parse_status": "parsed_list",
+  "skill_match_score": 50.0,
+  "entity_match_score": 50.0,
+  "skill_with_entity_match_score": 0.0,
+  "exact_match_score": 0.0,
+  "total_score": 40.0,
+  "official_dependency": "Sequential",
+  "symbolic_success": false,
+  "type_normalized_skill_match_score": 50.0,
+  "type_normalized_entity_match_score": 50.0,
+  "type_normalized_skill_with_entity_match_score": 0.0,
+  "type_normalized_exact_match_score": 0.0,
+  "type_normalized_total_score": 40.0,
+  "type_normalized_symbolic_success": false,
+  "type_normalized_numeric_cast_applied": false,
+  "ok": true,
+  "format_error": false,
+  "gt_skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": 2
+      }
+    },
+    {
+      "name": "place",
+      "params": {
+        "target_container_name": 1
+      }
+    }
+  ]
+}

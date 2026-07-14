@@ -1,0 +1,19 @@
+model,outcome,count,rate
+Qwen3-VL-8B,Output/schema failure,210,0.09845288326300984
+Qwen3-VL-8B,Procedural-structure failure,1444,0.6769807782466011
+Qwen3-VL-8B,Target/context incompatibility,307,0.14392873886544771
+Qwen3-VL-8B,Native execution failure,0,0.0
+Qwen3-VL-8B,Final-condition failure,92,0.04313173933427098
+Qwen3-VL-8B,Success,80,0.03750586029067042
+Gemma-3-12B-it,Output/schema failure,251,0.11767463666197843
+Gemma-3-12B-it,Procedural-structure failure,1158,0.5428973277074542
+Gemma-3-12B-it,Target/context incompatibility,584,0.27379278012189406
+Gemma-3-12B-it,Native execution failure,2,0.0009376465072667605
+Gemma-3-12B-it,Final-condition failure,81,0.0379746835443038
+Gemma-3-12B-it,Success,57,0.026722925457102673
+InternVL3-8B,Output/schema failure,1350,0.6329113924050633
+InternVL3-8B,Procedural-structure failure,355,0.16643225503984999
+InternVL3-8B,Target/context incompatibility,304,0.14252226910454757
+InternVL3-8B,Native execution failure,3,0.0014064697609001407
+InternVL3-8B,Final-condition failure,81,0.0379746835443038
+InternVL3-8B,Success,40,0.01875293014533521

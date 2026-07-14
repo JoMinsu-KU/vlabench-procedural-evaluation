@@ -1,0 +1,96 @@
+{
+  "case_id": "M&T/select_poker/example96",
+  "category": "M&T",
+  "task_name": "select_poker",
+  "example_name": "example96",
+  "example_index": 96,
+  "input_image_path": "${VLABENCH_PUBLIC_ROOT}/M&T/select_poker/example96/input.png",
+  "input_mask_path": "${VLABENCH_PUBLIC_ROOT}/M&T/select_poker/example96/input_mask.png",
+  "gt_operation_sequence_path": "${VLABENCH_GT_ROOT}/M&T/select_poker/example96/output/operation_sequence.json",
+  "used_official_prompt": true,
+  "used_official_scorer": true,
+  "gt_used_for_prompt": false,
+  "message_block_count": 8,
+  "elapsed_sec": 2.888032913208008,
+  "usage": {
+    "prompt_tokens": 6292,
+    "total_tokens": 6459,
+    "completion_tokens": 167,
+    "prompt_tokens_details": null
+  },
+  "served_model": "OpenGVLab/InternVL3-8B",
+  "raw_response": {
+    "id": "chatcmpl-8b278eb00b9802cb",
+    "object": "chat.completion",
+    "created": 1783417591,
+    "model": "OpenGVLab/InternVL3-8B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "To generate the skill call sequence based on the provided input, we need to follow the outlined steps:\n\n1. **Extract Task Instruction**: The task is to pick the poker 9 of spades.\n2. **Combine with Image Information**: We need to identify the target object (poker 9 of spades) from the labeled images.\n3. **Generate Skill Call Sequence**: Use the \"pick\" skill with the appropriate target number.\n\nFrom the labeled images, the poker 9 of spades corresponds to the object labeled with the number 1.\n\nHere is the skill call sequence:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": 1\n        }\n    }\n]\n```\n\nThis sequence follows the required pattern and accurately reflects the task instruction.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 6292,
+      "total_tokens": 6459,
+      "completion_tokens": 167,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "origin_output": "To generate the skill call sequence based on the provided input, we need to follow the outlined steps:\n\n1. **Extract Task Instruction**: The task is to pick the poker 9 of spades.\n2. **Combine with Image Information**: We need to identify the target object (poker 9 of spades) from the labeled images.\n3. **Generate Skill Call Sequence**: Use the \"pick\" skill with the appropriate target number.\n\nFrom the labeled images, the poker 9 of spades corresponds to the object labeled with the number 1.\n\nHere is the skill call sequence:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": 1\n        }\n    }\n]\n```\n\nThis sequence follows the required pattern and accurately reflects the task instruction.",
+  "skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": 1
+      }
+    }
+  ],
+  "parse_status": "parsed_list",
+  "skill_match_score": 50.0,
+  "entity_match_score": 0.0,
+  "skill_with_entity_match_score": 0.0,
+  "exact_match_score": 0.0,
+  "total_score": 20.0,
+  "official_dependency": "Sequential",
+  "symbolic_success": false,
+  "type_normalized_skill_match_score": 50.0,
+  "type_normalized_entity_match_score": 0.0,
+  "type_normalized_skill_with_entity_match_score": 0.0,
+  "type_normalized_exact_match_score": 0.0,
+  "type_normalized_total_score": 20.0,
+  "type_normalized_symbolic_success": false,
+  "type_normalized_numeric_cast_applied": false,
+  "ok": true,
+  "format_error": false,
+  "gt_skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": 4
+      }
+    },
+    {
+      "name": "lift",
+      "params": {}
+    }
+  ]
+}

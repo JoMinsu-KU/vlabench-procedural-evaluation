@@ -1,0 +1,209 @@
+{
+  "case_id": "CommenSence/select_fruit_common_sense/example81",
+  "category": "CommenSence",
+  "task_name": "select_fruit_common_sense",
+  "example_name": "example81",
+  "example_index": 81,
+  "input_image_path": "${VLABENCH_PUBLIC_ROOT}/CommenSence/select_fruit_common_sense/example81/input.png",
+  "input_mask_path": "${VLABENCH_PUBLIC_ROOT}/CommenSence/select_fruit_common_sense/example81/input_mask.png",
+  "gt_used_for_prompt": false,
+  "counts_as_model_evaluation": true,
+  "prompt_only": false,
+  "inference_only": false,
+  "message_block_count": 8,
+  "elapsed_sec": 2.207704544067383,
+  "served_model": "google/gemma-3-12b-it",
+  "usage": {
+    "prompt_tokens": 1818,
+    "total_tokens": 1842,
+    "completion_tokens": 24,
+    "prompt_tokens_details": null
+  },
+  "raw_response": {
+    "id": "chatcmpl-bebba65233f85e75",
+    "object": "chat.completion",
+    "created": 1783178286,
+    "model": "google/gemma-3-12b-it",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"steps\": [{\"skill\": \"pick\", \"target\": 2}, {\"skill\": \"lift\"} ]}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 1818,
+      "total_tokens": 1842,
+      "completion_tokens": 24,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "origin_output": "{\"steps\": [{\"skill\": \"pick\", \"target\": 2}, {\"skill\": \"lift\"} ]}",
+  "json_extraction_status": "direct_json_object",
+  "strict_parsed_plan": {
+    "ok": true,
+    "steps": [
+      {
+        "skill": "pick",
+        "target": 2
+      },
+      {
+        "skill": "lift"
+      }
+    ],
+    "status": {
+      "code": "",
+      "label": "",
+      "subtype": "",
+      "detail": ""
+    }
+  },
+  "strict_parse_ok": true,
+  "normalization_policy": "integer-string-target-only",
+  "target_numeric_cast_applied": false,
+  "semantic_repair_applied": false,
+  "raw_steps": [
+    {
+      "skill": "pick",
+      "target": 2
+    },
+    {
+      "skill": "lift"
+    }
+  ],
+  "normalized_steps": [
+    {
+      "skill": "pick",
+      "target": 2
+    },
+    {
+      "skill": "lift"
+    }
+  ],
+  "type_normalized_parsed_plan": {
+    "ok": true,
+    "steps": [
+      {
+        "skill": "pick",
+        "target": 2
+      },
+      {
+        "skill": "lift"
+      }
+    ],
+    "status": {
+      "code": "",
+      "label": "",
+      "subtype": "",
+      "detail": ""
+    }
+  },
+  "type_normalized_parse_ok": true,
+  "parsed_plan": {
+    "ok": true,
+    "steps": [
+      {
+        "skill": "pick",
+        "target": 2
+      },
+      {
+        "skill": "lift"
+      }
+    ],
+    "status": {
+      "code": "",
+      "label": "",
+      "subtype": "",
+      "detail": ""
+    }
+  },
+  "model_parse_ok": true,
+  "execution_used_type_normalized_plan": false,
+  "fixture": {
+    "fixture_id": "model_eval__CommenSence__select_fruit_common_sense__example81",
+    "fixture_version": "model_procedural_v1_no_gt_no_role",
+    "fixture_mode": "model_evaluation",
+    "family": "select_fruit_common_sense",
+    "negative_type": "",
+    "fixture_generated_from_gt": false,
+    "fixture_generation_phase": "model_inference",
+    "source_fields_used": [
+      "input.png",
+      "input_mask.png",
+      "instruction.txt",
+      "vlm_response"
+    ],
+    "frozen_after_generation": true,
+    "dataset_snapshot": "vlabench_vlm4500_public_2133_matched",
+    "source_case_id": "CommenSence/select_fruit_common_sense/example81",
+    "target_source": "vlm_numbered_mask",
+    "counts_as_model_evaluation": true,
+    "native_execution_should_run": true,
+    "expected_gate1_ok": null,
+    "expected_native_ok": null,
+    "expected_condition_success": null,
+    "steps": [
+      {
+        "skill": "pick",
+        "target": 2
+      },
+      {
+        "skill": "lift"
+      }
+    ],
+    "human_readable_targets": {}
+  },
+  "fixture_id": "model_eval__CommenSence__select_fruit_common_sense__example81",
+  "family": "select_fruit_common_sense",
+  "fixture_mode": "model_evaluation",
+  "negative_type": "",
+  "source_case_id": "CommenSence/select_fruit_common_sense/example81",
+  "fixture_generated_from_gt": false,
+  "gt_used_during_execution": false,
+  "adapter_read_conditions": false,
+  "lowerer_read_conditions": false,
+  "operation_sequence_read": false,
+  "expert_sequence_called": false,
+  "target_source": "vlm_numbered_mask",
+  "native_execution_attempted": false,
+  "native_execution_should_run": true,
+  "native_retry_policy": "",
+  "native_max_attempts": 0,
+  "native_attempt_count": 0,
+  "native_selected_attempt": 0,
+  "native_attempt_summaries": "[]",
+  "expected_gate1_ok": null,
+  "expected_native_ok": null,
+  "expected_condition_success": null,
+  "actual_gate1_ok": false,
+  "actual_native_ok": false,
+  "actual_condition_success": false,
+  "procedural_success": false,
+  "actual_failure_code": "C3",
+  "actual_failure_subtype": "phase_skill_mismatch",
+  "actual_failure_detail": "phase 2 expected place, got lift",
+  "exception_type": "",
+  "episode_config_added_fields": "",
+  "before_contact_sheet": "",
+  "after_contact_sheet": "",
+  "passed": false,
+  "trace_dir": "${PROJECT_ROOT}/outputs/procedural_eval/gemma_trackb_full_2133_20260704/execution_traces/model_eval__CommenSence__select_fruit_common_sense__example81",
+  "ok": true
+}

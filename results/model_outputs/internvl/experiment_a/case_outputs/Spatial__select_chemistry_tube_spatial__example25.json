@@ -1,0 +1,100 @@
+{
+  "case_id": "Spatial/select_chemistry_tube_spatial/example25",
+  "category": "Spatial",
+  "task_name": "select_chemistry_tube_spatial",
+  "example_name": "example25",
+  "example_index": 25,
+  "input_image_path": "${VLABENCH_PUBLIC_ROOT}/Spatial/select_chemistry_tube_spatial/example25/input.png",
+  "input_mask_path": "${VLABENCH_PUBLIC_ROOT}/Spatial/select_chemistry_tube_spatial/example25/input_mask.png",
+  "gt_operation_sequence_path": "${VLABENCH_GT_ROOT}/Spatial/select_chemistry_tube_spatial/example25/output/operation_sequence.json",
+  "used_official_prompt": true,
+  "used_official_scorer": true,
+  "gt_used_for_prompt": false,
+  "message_block_count": 8,
+  "elapsed_sec": 3.248281955718994,
+  "usage": {
+    "prompt_tokens": 6298,
+    "total_tokens": 6348,
+    "completion_tokens": 50,
+    "prompt_tokens_details": null
+  },
+  "served_model": "OpenGVLab/InternVL3-8B",
+  "raw_response": {
+    "id": "chatcmpl-8c01c731acba35a4",
+    "object": "chat.completion",
+    "created": 1783420255,
+    "model": "OpenGVLab/InternVL3-8B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"1\"\n        }\n    },\n    {\n        \"name\": \"pull\",\n        \"params\": {}\n    }\n]\n```",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 6298,
+      "total_tokens": 6348,
+      "completion_tokens": 50,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "origin_output": "```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"1\"\n        }\n    },\n    {\n        \"name\": \"pull\",\n        \"params\": {}\n    }\n]\n```",
+  "skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": "1"
+      }
+    },
+    {
+      "name": "pull",
+      "params": {}
+    }
+  ],
+  "parse_status": "parsed_list",
+  "skill_match_score": 50.0,
+  "entity_match_score": 0.0,
+  "skill_with_entity_match_score": 0.0,
+  "exact_match_score": 0.0,
+  "total_score": 20.0,
+  "official_dependency": "Sequential",
+  "symbolic_success": false,
+  "type_normalized_skill_match_score": 50.0,
+  "type_normalized_entity_match_score": 0.0,
+  "type_normalized_skill_with_entity_match_score": 0.0,
+  "type_normalized_exact_match_score": 0.0,
+  "type_normalized_total_score": 20.0,
+  "type_normalized_symbolic_success": false,
+  "type_normalized_numeric_cast_applied": true,
+  "ok": true,
+  "format_error": false,
+  "gt_skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": 2
+      }
+    },
+    {
+      "name": "lift",
+      "params": {}
+    }
+  ]
+}

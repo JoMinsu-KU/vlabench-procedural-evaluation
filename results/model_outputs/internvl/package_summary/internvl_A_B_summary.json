@@ -1,0 +1,57 @@
+{
+  "package_created": "20260711",
+  "model_key": "internvl",
+  "display_name": "InternVL3-8B",
+  "model_id": "OpenGVLab/InternVL3-8B",
+  "dataset_cases": 2133,
+  "experiment_A": {
+    "output_dir": "${PROJECT_ROOT}\\outputs\\official_sequence_eval\\internvl_full_2133_nojson_20260707",
+    "total_cases": 2133,
+    "completed_rows": 2133,
+    "format_errors": 5,
+    "runtime_errors": 0,
+    "strict_exact_success": 2,
+    "strict_exact_success_rate": 0.0009376465072667605,
+    "type_normalized_exact_success": 88,
+    "type_normalized_exact_success_rate": 0.04125644631973746,
+    "official_total_score": 25.75714955461791,
+    "type_normalized_total_score": 36.43694327238631
+  },
+  "experiment_B": {
+    "output_dir": "${PROJECT_ROOT}\\outputs\\procedural_eval\\internvl_trackb_full_2133_20260709",
+    "total_cases": 2133,
+    "completed_rows": 2133,
+    "parse_ok": 783,
+    "parse_ok_rate": 0.3670886075949367,
+    "gate1_ok": 124,
+    "gate1_ok_rate": 0.058134083450539144,
+    "native_ok": 121,
+    "native_ok_rate": 0.05672761368963901,
+    "procedural_success": 41,
+    "procedural_success_rate": 0.01922175339896859,
+    "runtime_errors": 0,
+    "failure_codes": {
+      "C2": 1350,
+      "C3": 659,
+      "C0": 41,
+      "C1": 80,
+      "C5": 3
+    },
+    "failure_subtypes": {
+      "C2:missing_target": 1340,
+      "C3:missing_phase": 133,
+      "C3:incompatible_target_affordance": 301,
+      "C3:extra_phase": 78,
+      "C3:phase_skill_mismatch": 144,
+      "C0:": 41,
+      "C1:": 80,
+      "C2:unexpected_target": 2,
+      "C5:AttributeError": 3,
+      "C2:missing_or_invalid_skill": 4,
+      "C3:invalid_gripper_context": 1,
+      "C2:steps_not_nonempty_list": 3,
+      "C3:target_out_of_range": 2,
+      "C2:invalid_json": 1
+    }
+  }
+}

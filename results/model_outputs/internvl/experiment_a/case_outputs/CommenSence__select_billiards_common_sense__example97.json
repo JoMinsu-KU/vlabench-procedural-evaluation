@@ -1,0 +1,104 @@
+{
+  "case_id": "CommenSence/select_billiards_common_sense/example97",
+  "category": "CommenSence",
+  "task_name": "select_billiards_common_sense",
+  "example_name": "example97",
+  "example_index": 97,
+  "input_image_path": "${VLABENCH_PUBLIC_ROOT}/CommenSence/select_billiards_common_sense/example97/input.png",
+  "input_mask_path": "${VLABENCH_PUBLIC_ROOT}/CommenSence/select_billiards_common_sense/example97/input_mask.png",
+  "gt_operation_sequence_path": "${VLABENCH_GT_ROOT}/CommenSence/select_billiards_common_sense/example97/output/operation_sequence.json",
+  "used_official_prompt": true,
+  "used_official_scorer": true,
+  "gt_used_for_prompt": false,
+  "message_block_count": 8,
+  "elapsed_sec": 3.443866014480591,
+  "usage": {
+    "prompt_tokens": 6293,
+    "total_tokens": 6586,
+    "completion_tokens": 293,
+    "prompt_tokens_details": null
+  },
+  "served_model": "OpenGVLab/InternVL3-8B",
+  "raw_response": {
+    "id": "chatcmpl-946589017d373561",
+    "object": "chat.completion",
+    "created": 1783414596,
+    "model": "OpenGVLab/InternVL3-8B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "To complete the task of putting the ball worth 5 score in the hole, we need to identify the ball and the hole from the images and generate the appropriate skill sequence.\n\n### Steps:\n\n1. **Extract Task Instruction**: The task is to \"put the ball worth 5 score in hole.\"\n\n2. **Combine with Image Information**: \n   - The labeled image shows four balls, each with a number. The ball worth 5 score is not directly labeled, but we can infer it based on the context. Assuming the ball labeled \"4\" is the one worth 5 score (as it's the highest number visible), we need to identify the hole it should be placed in. The hole is typically at the end of the table, which is labeled \"0\" in the images.\n\n3. **Generate Skill Call Sequence**:\n   - **Pick**: Grasp the ball.\n   - **Place**: Put the ball into the hole.\n\n### Skill Call Sequence:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"4\"\n        }\n    },\n    {\n        \"name\": \"place\",\n        \"params\": {\n            \"target_container_name\": \"0\"\n        }\n    }\n]\n```\n\nThis sequence follows the pattern `[\"pick\", \"place\"]`, which is appropriate for picking up an object and placing it into a container (in this case, a hole).",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 6293,
+      "total_tokens": 6586,
+      "completion_tokens": 293,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "origin_output": "To complete the task of putting the ball worth 5 score in the hole, we need to identify the ball and the hole from the images and generate the appropriate skill sequence.\n\n### Steps:\n\n1. **Extract Task Instruction**: The task is to \"put the ball worth 5 score in hole.\"\n\n2. **Combine with Image Information**: \n   - The labeled image shows four balls, each with a number. The ball worth 5 score is not directly labeled, but we can infer it based on the context. Assuming the ball labeled \"4\" is the one worth 5 score (as it's the highest number visible), we need to identify the hole it should be placed in. The hole is typically at the end of the table, which is labeled \"0\" in the images.\n\n3. **Generate Skill Call Sequence**:\n   - **Pick**: Grasp the ball.\n   - **Place**: Put the ball into the hole.\n\n### Skill Call Sequence:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"4\"\n        }\n    },\n    {\n        \"name\": \"place\",\n        \"params\": {\n            \"target_container_name\": \"0\"\n        }\n    }\n]\n```\n\nThis sequence follows the pattern `[\"pick\", \"place\"]`, which is appropriate for picking up an object and placing it into a container (in this case, a hole).",
+  "skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": "4"
+      }
+    },
+    {
+      "name": "place",
+      "params": {
+        "target_container_name": "0"
+      }
+    }
+  ],
+  "parse_status": "parsed_list",
+  "skill_match_score": 100.0,
+  "entity_match_score": 0.0,
+  "skill_with_entity_match_score": 0.0,
+  "exact_match_score": 0.0,
+  "total_score": 40.0,
+  "official_dependency": "Sequential",
+  "symbolic_success": false,
+  "type_normalized_skill_match_score": 100.0,
+  "type_normalized_entity_match_score": 50.0,
+  "type_normalized_skill_with_entity_match_score": 50.0,
+  "type_normalized_exact_match_score": 0.0,
+  "type_normalized_total_score": 60.0,
+  "type_normalized_symbolic_success": false,
+  "type_normalized_numeric_cast_applied": true,
+  "ok": true,
+  "format_error": false,
+  "gt_skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": 1
+      }
+    },
+    {
+      "name": "place",
+      "params": {
+        "target_container_name": 0
+      }
+    }
+  ]
+}

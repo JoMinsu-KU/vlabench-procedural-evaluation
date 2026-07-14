@@ -1,0 +1,51 @@
+{
+  "package_created": "20260711",
+  "model_key": "qwen",
+  "display_name": "Qwen3-VL-8B-class",
+  "model_id": "Qwen/Qwen3-VL-8B-Instruct",
+  "dataset_cases": 2133,
+  "experiment_A": {
+    "output_dir": "${PROJECT_ROOT}\\outputs\\official_sequence_eval\\qwen_full_2133_20260701",
+    "total_cases": 2133,
+    "completed_rows": 2133,
+    "format_errors": 0,
+    "runtime_errors": 0,
+    "strict_exact_success": 7,
+    "strict_exact_success_rate": 0.0032817627754336614,
+    "type_normalized_exact_success": 280,
+    "type_normalized_exact_success_rate": 0.13127051101734646,
+    "official_total_score": 28.054383497421473,
+    "type_normalized_total_score": 44.6601031411158
+  },
+  "experiment_B": {
+    "output_dir": "${PROJECT_ROOT}\\outputs\\procedural_eval\\qwen_trackb_full_2133_prompt_aligned_20260702",
+    "total_cases": 2133,
+    "completed_rows": 2133,
+    "parse_ok": 1923,
+    "parse_ok_rate": 0.9015471167369902,
+    "gate1_ok": 172,
+    "gate1_ok_rate": 0.0806375996249414,
+    "native_ok": 172,
+    "native_ok_rate": 0.0806375996249414,
+    "procedural_success": 84,
+    "procedural_success_rate": 0.03938115330520394,
+    "runtime_errors": 0,
+    "failure_codes": {
+      "C3": 1751,
+      "C2": 210,
+      "C1": 88,
+      "C0": 84
+    },
+    "failure_subtypes": {
+      "C3:missing_phase": 307,
+      "C3:phase_skill_mismatch": 299,
+      "C3:incompatible_target_affordance": 303,
+      "C2:missing_target": 180,
+      "C1:": 88,
+      "C3:extra_phase": 838,
+      "C0:": 84,
+      "C2:steps_not_nonempty_list": 30,
+      "C3:invalid_gripper_context": 4
+    }
+  }
+}

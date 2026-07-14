@@ -1,0 +1,98 @@
+{
+  "case_id": "Semantic/select_toy_semantic/example64",
+  "category": "Semantic",
+  "task_name": "select_toy_semantic",
+  "example_name": "example64",
+  "example_index": 64,
+  "input_image_path": "${VLABENCH_PUBLIC_ROOT}/Semantic/select_toy_semantic/example64/input.png",
+  "input_mask_path": "${VLABENCH_PUBLIC_ROOT}/Semantic/select_toy_semantic/example64/input_mask.png",
+  "gt_operation_sequence_path": "${VLABENCH_GT_ROOT}/Semantic/select_toy_semantic/example64/output/operation_sequence.json",
+  "used_official_prompt": true,
+  "used_official_scorer": true,
+  "gt_used_for_prompt": false,
+  "message_block_count": 8,
+  "elapsed_sec": 3.614144802093506,
+  "usage": {
+    "prompt_tokens": 6300,
+    "total_tokens": 6528,
+    "completion_tokens": 228,
+    "prompt_tokens_details": null
+  },
+  "served_model": "OpenGVLab/InternVL3-8B",
+  "raw_response": {
+    "id": "chatcmpl-a48eb22e7139eb79",
+    "object": "chat.completion",
+    "created": 1783419658,
+    "model": "OpenGVLab/InternVL3-8B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "To fulfill the task instruction \"Its superhero trivia night and I need something that represents a perfect blend of technology and humanity,\" we need to identify objects that symbolize this blend. Typically, a robot or a figure that combines human and technological elements would be suitable. \n\nFrom the images provided, we can see various objects, but the most fitting would be a figure that combines both human and technological aspects. In this case, we can consider the humanoid robot figures as they represent a blend of technology and humanity.\n\nAssuming the humanoid robot figures are labeled in the images, we can use the \"pick\" skill to select one of them. Since the instruction does not specify a particular figure, we can choose any. Let's assume figure \"0\" is the humanoid robot we want to pick.\n\nHere is the skill call sequence:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"0\"\n        }\n    }\n]\n```\n\nThis sequence assumes we are picking a humanoid robot figure labeled as \"0\" to represent the blend of technology and humanity for the trivia night.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 6300,
+      "total_tokens": 6528,
+      "completion_tokens": 228,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "origin_output": "To fulfill the task instruction \"Its superhero trivia night and I need something that represents a perfect blend of technology and humanity,\" we need to identify objects that symbolize this blend. Typically, a robot or a figure that combines human and technological elements would be suitable. \n\nFrom the images provided, we can see various objects, but the most fitting would be a figure that combines both human and technological aspects. In this case, we can consider the humanoid robot figures as they represent a blend of technology and humanity.\n\nAssuming the humanoid robot figures are labeled in the images, we can use the \"pick\" skill to select one of them. Since the instruction does not specify a particular figure, we can choose any. Let's assume figure \"0\" is the humanoid robot we want to pick.\n\nHere is the skill call sequence:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"0\"\n        }\n    }\n]\n```\n\nThis sequence assumes we are picking a humanoid robot figure labeled as \"0\" to represent the blend of technology and humanity for the trivia night.",
+  "skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": "0"
+      }
+    }
+  ],
+  "parse_status": "parsed_list",
+  "skill_match_score": 50.0,
+  "entity_match_score": 0.0,
+  "skill_with_entity_match_score": 0.0,
+  "exact_match_score": 0.0,
+  "total_score": 20.0,
+  "official_dependency": "Sequential",
+  "symbolic_success": false,
+  "type_normalized_skill_match_score": 50.0,
+  "type_normalized_entity_match_score": 0.0,
+  "type_normalized_skill_with_entity_match_score": 0.0,
+  "type_normalized_exact_match_score": 0.0,
+  "type_normalized_total_score": 20.0,
+  "type_normalized_symbolic_success": false,
+  "type_normalized_numeric_cast_applied": true,
+  "ok": true,
+  "format_error": false,
+  "gt_skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": 2
+      }
+    },
+    {
+      "name": "place",
+      "params": {
+        "target_container_name": 1
+      }
+    }
+  ]
+}

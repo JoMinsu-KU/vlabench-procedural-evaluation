@@ -1,0 +1,100 @@
+{
+  "case_id": "M&T/select_poker/example49",
+  "category": "M&T",
+  "task_name": "select_poker",
+  "example_name": "example49",
+  "example_index": 49,
+  "input_image_path": "${VLABENCH_PUBLIC_ROOT}/M&T/select_poker/example49/input.png",
+  "input_mask_path": "${VLABENCH_PUBLIC_ROOT}/M&T/select_poker/example49/input_mask.png",
+  "gt_operation_sequence_path": "${VLABENCH_GT_ROOT}/M&T/select_poker/example49/output/operation_sequence.json",
+  "used_official_prompt": true,
+  "used_official_scorer": true,
+  "gt_used_for_prompt": false,
+  "message_block_count": 8,
+  "elapsed_sec": 3.107358932495117,
+  "usage": {
+    "prompt_tokens": 1768,
+    "total_tokens": 1832,
+    "completion_tokens": 64,
+    "prompt_tokens_details": null
+  },
+  "served_model": "google/gemma-3-12b-it",
+  "raw_response": {
+    "id": "chatcmpl-b194d9f91b586923",
+    "object": "chat.completion",
+    "created": 1783046697,
+    "model": "google/gemma-3-12b-it",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"4\"\n        }\n    },\n    {\n        \"name\": \"lift\",\n        \"params\": {}\n    }\n]\n```",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": 106,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 1768,
+      "total_tokens": 1832,
+      "completion_tokens": 64,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "origin_output": "```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"4\"\n        }\n    },\n    {\n        \"name\": \"lift\",\n        \"params\": {}\n    }\n]\n```",
+  "skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": "4"
+      }
+    },
+    {
+      "name": "lift",
+      "params": {}
+    }
+  ],
+  "parse_status": "parsed_list",
+  "skill_match_score": 100.0,
+  "entity_match_score": 0.0,
+  "skill_with_entity_match_score": 50.0,
+  "exact_match_score": 0.0,
+  "total_score": 40.0,
+  "official_dependency": "Sequential",
+  "symbolic_success": false,
+  "type_normalized_skill_match_score": 100.0,
+  "type_normalized_entity_match_score": 0.0,
+  "type_normalized_skill_with_entity_match_score": 50.0,
+  "type_normalized_exact_match_score": 0.0,
+  "type_normalized_total_score": 40.0,
+  "type_normalized_symbolic_success": false,
+  "type_normalized_numeric_cast_applied": true,
+  "ok": true,
+  "format_error": false,
+  "gt_skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": 6
+      }
+    },
+    {
+      "name": "lift",
+      "params": {}
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "case_id": "Semantic/select_fruit_semantic/example16",
+  "category": "Semantic",
+  "task_name": "select_fruit_semantic",
+  "example_name": "example16",
+  "example_index": 16,
+  "input_image_path": "${VLABENCH_PUBLIC_ROOT}/Semantic/select_fruit_semantic/example16/input.png",
+  "input_mask_path": "${VLABENCH_PUBLIC_ROOT}/Semantic/select_fruit_semantic/example16/input_mask.png",
+  "gt_operation_sequence_path": "${VLABENCH_GT_ROOT}/Semantic/select_fruit_semantic/example16/output/operation_sequence.json",
+  "used_official_prompt": true,
+  "used_official_scorer": true,
+  "gt_used_for_prompt": false,
+  "message_block_count": 8,
+  "elapsed_sec": 3.8851561546325684,
+  "usage": {
+    "prompt_tokens": 6296,
+    "total_tokens": 6544,
+    "completion_tokens": 248,
+    "prompt_tokens_details": null
+  },
+  "served_model": "OpenGVLab/InternVL3-8B",
+  "raw_response": {
+    "id": "chatcmpl-837ed8f33844a040",
+    "object": "chat.completion",
+    "created": 1783418835,
+    "model": "OpenGVLab/InternVL3-8B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "To prepare a snack that's easy to eat during your morning commute, we need to follow these steps:\n\n1. **Pick up the banana** - This will be our target object for the snack.\n2. **Place the banana** - We'll place it in a convenient location for easy access.\n\n### Step-by-Step Explanation:\n\n1. **Identify the Target Object**:\n   - The task requires picking up a banana. In the labeled image, the banana is labeled as **2**.\n\n2. **Generate Skill Calls**:\n   - **Skill: pick**\n     - **Parameter**: target_entity_name = 2 (the banana)\n   - **Skill: place**\n     - **Parameter**: target_container_name = 1 (a suitable location for easy access during the commute)\n\n### Skill Call Sequence:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": 2\n        }\n    },\n    {\n        \"name\": \"place\",\n        \"params\": {\n            \"target_container_name\": 1\n        }\n    }\n]\n```\n\nThis sequence ensures the banana is picked up and placed in a convenient spot for easy access during your commute.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 6296,
+      "total_tokens": 6544,
+      "completion_tokens": 248,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "origin_output": "To prepare a snack that's easy to eat during your morning commute, we need to follow these steps:\n\n1. **Pick up the banana** - This will be our target object for the snack.\n2. **Place the banana** - We'll place it in a convenient location for easy access.\n\n### Step-by-Step Explanation:\n\n1. **Identify the Target Object**:\n   - The task requires picking up a banana. In the labeled image, the banana is labeled as **2**.\n\n2. **Generate Skill Calls**:\n   - **Skill: pick**\n     - **Parameter**: target_entity_name = 2 (the banana)\n   - **Skill: place**\n     - **Parameter**: target_container_name = 1 (a suitable location for easy access during the commute)\n\n### Skill Call Sequence:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": 2\n        }\n    },\n    {\n        \"name\": \"place\",\n        \"params\": {\n            \"target_container_name\": 1\n        }\n    }\n]\n```\n\nThis sequence ensures the banana is picked up and placed in a convenient spot for easy access during your commute.",
+  "skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": 2
+      }
+    },
+    {
+      "name": "place",
+      "params": {
+        "target_container_name": 1
+      }
+    }
+  ],
+  "parse_status": "parsed_list",
+  "skill_match_score": 100.0,
+  "entity_match_score": 100.0,
+  "skill_with_entity_match_score": 100.0,
+  "exact_match_score": 100.0,
+  "total_score": 80.0,
+  "official_dependency": "Sequential",
+  "symbolic_success": true,
+  "type_normalized_skill_match_score": 100.0,
+  "type_normalized_entity_match_score": 100.0,
+  "type_normalized_skill_with_entity_match_score": 100.0,
+  "type_normalized_exact_match_score": 100.0,
+  "type_normalized_total_score": 80.0,
+  "type_normalized_symbolic_success": true,
+  "type_normalized_numeric_cast_applied": false,
+  "ok": true,
+  "format_error": false,
+  "gt_skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": 2
+      }
+    },
+    {
+      "name": "place",
+      "params": {
+        "target_container_name": 1
+      }
+    }
+  ]
+}

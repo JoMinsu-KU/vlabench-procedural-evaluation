@@ -1,0 +1,7 @@
+﻿Python 3.10.20
+Name: mujoco
+Version: 3.2.2
+Name: numpy
+Version: 1.25.0
+Name: dm_control
+Version: 1.0.22

@@ -1,0 +1,96 @@
+{
+  "case_id": "CommenSence/select_nth_largest_poker/example22",
+  "category": "CommenSence",
+  "task_name": "select_nth_largest_poker",
+  "example_name": "example22",
+  "example_index": 22,
+  "input_image_path": "${VLABENCH_PUBLIC_ROOT}/CommenSence/select_nth_largest_poker/example22/input.png",
+  "input_mask_path": "${VLABENCH_PUBLIC_ROOT}/CommenSence/select_nth_largest_poker/example22/input_mask.png",
+  "gt_operation_sequence_path": "${VLABENCH_GT_ROOT}/CommenSence/select_nth_largest_poker/example22/output/operation_sequence.json",
+  "used_official_prompt": true,
+  "used_official_scorer": true,
+  "gt_used_for_prompt": false,
+  "message_block_count": 8,
+  "elapsed_sec": 4.759581565856934,
+  "usage": {
+    "prompt_tokens": 6289,
+    "total_tokens": 6531,
+    "completion_tokens": 242,
+    "prompt_tokens_details": null
+  },
+  "served_model": "OpenGVLab/InternVL3-8B",
+  "raw_response": {
+    "id": "chatcmpl-8609fb0835cb19f1",
+    "object": "chat.completion",
+    "created": 1783415465,
+    "model": "OpenGVLab/InternVL3-8B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "To fulfill the task instruction \"Please pick the the largest poker,\" we need to identify the largest poker from the labeled images and generate the appropriate skill call sequence.\n\n### Steps:\n\n1. **Extract Task Instruction**: The task is to pick the largest poker.\n2. **Combine with Image Information**: The labeled images show different perspectives of the objects. We need to determine which object is the largest based on the labels.\n3. **Generate Skill Call Sequence**: The skill required is \"pick\" since we need to grasp and pick up the object.\n\n### Analysis:\n\n- The labeled images show multiple objects, likely representing different cards or pokers.\n- The instruction specifies picking the \"largest\" poker, which implies selecting the object with the highest identifier or the most significant size.\n\n### Skill Call Sequence:\n\nBased on the labeled images, the largest poker is likely the one with the highest number. From the labeled images, the highest number visible is 8.\n\n### Output:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"8\"\n        }\n    }\n]\n```\n\nThis sequence follows the required pattern and accurately reflects the task instruction.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 6289,
+      "total_tokens": 6531,
+      "completion_tokens": 242,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "origin_output": "To fulfill the task instruction \"Please pick the the largest poker,\" we need to identify the largest poker from the labeled images and generate the appropriate skill call sequence.\n\n### Steps:\n\n1. **Extract Task Instruction**: The task is to pick the largest poker.\n2. **Combine with Image Information**: The labeled images show different perspectives of the objects. We need to determine which object is the largest based on the labels.\n3. **Generate Skill Call Sequence**: The skill required is \"pick\" since we need to grasp and pick up the object.\n\n### Analysis:\n\n- The labeled images show multiple objects, likely representing different cards or pokers.\n- The instruction specifies picking the \"largest\" poker, which implies selecting the object with the highest identifier or the most significant size.\n\n### Skill Call Sequence:\n\nBased on the labeled images, the largest poker is likely the one with the highest number. From the labeled images, the highest number visible is 8.\n\n### Output:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"8\"\n        }\n    }\n]\n```\n\nThis sequence follows the required pattern and accurately reflects the task instruction.",
+  "skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": "8"
+      }
+    }
+  ],
+  "parse_status": "parsed_list",
+  "skill_match_score": 50.0,
+  "entity_match_score": 0.0,
+  "skill_with_entity_match_score": 0.0,
+  "exact_match_score": 0.0,
+  "total_score": 20.0,
+  "official_dependency": "Sequential",
+  "symbolic_success": false,
+  "type_normalized_skill_match_score": 50.0,
+  "type_normalized_entity_match_score": 0.0,
+  "type_normalized_skill_with_entity_match_score": 0.0,
+  "type_normalized_exact_match_score": 0.0,
+  "type_normalized_total_score": 20.0,
+  "type_normalized_symbolic_success": false,
+  "type_normalized_numeric_cast_applied": true,
+  "ok": true,
+  "format_error": false,
+  "gt_skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": 4
+      }
+    },
+    {
+      "name": "lift",
+      "params": {}
+    }
+  ]
+}

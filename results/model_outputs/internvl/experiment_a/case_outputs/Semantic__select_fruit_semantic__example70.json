@@ -1,0 +1,98 @@
+{
+  "case_id": "Semantic/select_fruit_semantic/example70",
+  "category": "Semantic",
+  "task_name": "select_fruit_semantic",
+  "example_name": "example70",
+  "example_index": 70,
+  "input_image_path": "${VLABENCH_PUBLIC_ROOT}/Semantic/select_fruit_semantic/example70/input.png",
+  "input_mask_path": "${VLABENCH_PUBLIC_ROOT}/Semantic/select_fruit_semantic/example70/input_mask.png",
+  "gt_operation_sequence_path": "${VLABENCH_GT_ROOT}/Semantic/select_fruit_semantic/example70/output/operation_sequence.json",
+  "used_official_prompt": true,
+  "used_official_scorer": true,
+  "gt_used_for_prompt": false,
+  "message_block_count": 8,
+  "elapsed_sec": 3.8522820472717285,
+  "usage": {
+    "prompt_tokens": 6299,
+    "total_tokens": 6453,
+    "completion_tokens": 154,
+    "prompt_tokens_details": null
+  },
+  "served_model": "OpenGVLab/InternVL3-8B",
+  "raw_response": {
+    "id": "chatcmpl-975090dd7df968f9",
+    "object": "chat.completion",
+    "created": 1783419045,
+    "model": "OpenGVLab/InternVL3-8B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Based on the language instruction \"Maybe a touch of zest would improve this recipe, something vibrant and tangy!\" and the images provided, it seems the task is to pick up a lemon (or similar citrus fruit) to add zest to a recipe. The labeled images show various fruits, and we need to identify the lemon.\n\nFrom the labeled images, we can see that the lemon is labeled as \"3\" in one of the views. \n\nHere is the skill call sequence to pick up the lemon:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"3\"\n        }\n    }\n]\n```\n\nThis sequence assumes the robot needs to pick up the lemon to add zest to the recipe.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 6299,
+      "total_tokens": 6453,
+      "completion_tokens": 154,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "origin_output": "Based on the language instruction \"Maybe a touch of zest would improve this recipe, something vibrant and tangy!\" and the images provided, it seems the task is to pick up a lemon (or similar citrus fruit) to add zest to a recipe. The labeled images show various fruits, and we need to identify the lemon.\n\nFrom the labeled images, we can see that the lemon is labeled as \"3\" in one of the views. \n\nHere is the skill call sequence to pick up the lemon:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"3\"\n        }\n    }\n]\n```\n\nThis sequence assumes the robot needs to pick up the lemon to add zest to the recipe.",
+  "skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": "3"
+      }
+    }
+  ],
+  "parse_status": "parsed_list",
+  "skill_match_score": 50.0,
+  "entity_match_score": 0.0,
+  "skill_with_entity_match_score": 0.0,
+  "exact_match_score": 0.0,
+  "total_score": 20.0,
+  "official_dependency": "Sequential",
+  "symbolic_success": false,
+  "type_normalized_skill_match_score": 50.0,
+  "type_normalized_entity_match_score": 0.0,
+  "type_normalized_skill_with_entity_match_score": 0.0,
+  "type_normalized_exact_match_score": 0.0,
+  "type_normalized_total_score": 20.0,
+  "type_normalized_symbolic_success": false,
+  "type_normalized_numeric_cast_applied": true,
+  "ok": true,
+  "format_error": false,
+  "gt_skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": 2
+      }
+    },
+    {
+      "name": "place",
+      "params": {
+        "target_container_name": 1
+      }
+    }
+  ]
+}

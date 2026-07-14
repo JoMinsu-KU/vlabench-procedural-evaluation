@@ -1,0 +1,96 @@
+{
+  "case_id": "CommenSence/select_nth_largest_poker/example61",
+  "category": "CommenSence",
+  "task_name": "select_nth_largest_poker",
+  "example_name": "example61",
+  "example_index": 61,
+  "input_image_path": "${VLABENCH_PUBLIC_ROOT}/CommenSence/select_nth_largest_poker/example61/input.png",
+  "input_mask_path": "${VLABENCH_PUBLIC_ROOT}/CommenSence/select_nth_largest_poker/example61/input_mask.png",
+  "gt_operation_sequence_path": "${VLABENCH_GT_ROOT}/CommenSence/select_nth_largest_poker/example61/output/operation_sequence.json",
+  "used_official_prompt": true,
+  "used_official_scorer": true,
+  "gt_used_for_prompt": false,
+  "message_block_count": 8,
+  "elapsed_sec": 4.591244459152222,
+  "usage": {
+    "prompt_tokens": 6289,
+    "total_tokens": 6470,
+    "completion_tokens": 181,
+    "prompt_tokens_details": null
+  },
+  "served_model": "OpenGVLab/InternVL3-8B",
+  "raw_response": {
+    "id": "chatcmpl-aecbef53a90134be",
+    "object": "chat.completion",
+    "created": 1783415649,
+    "model": "OpenGVLab/InternVL3-8B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "To fulfill the task instruction of picking the largest poker, we need to identify the target object and match it with the appropriate skill call sequence. Here's the step-by-step process:\n\n1. **Extract Task Instruction**: The task is to pick the largest poker.\n\n2. **Combine with Image Information**: The labeled image shows various objects, including poker cards. The largest poker card is labeled with the number 8.\n\n3. **Generate Skill Call Sequence**: The skill required is \"pick\" with the target entity number 8.\n\n4. **Output Format**: The skill call sequence should be in JSON format.\n\nHere is the skill call sequence:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": 8\n        }\n    }\n]\n```\n\nThis sequence follows the required pattern for picking an object by specifying the target entity number.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 6289,
+      "total_tokens": 6470,
+      "completion_tokens": 181,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "origin_output": "To fulfill the task instruction of picking the largest poker, we need to identify the target object and match it with the appropriate skill call sequence. Here's the step-by-step process:\n\n1. **Extract Task Instruction**: The task is to pick the largest poker.\n\n2. **Combine with Image Information**: The labeled image shows various objects, including poker cards. The largest poker card is labeled with the number 8.\n\n3. **Generate Skill Call Sequence**: The skill required is \"pick\" with the target entity number 8.\n\n4. **Output Format**: The skill call sequence should be in JSON format.\n\nHere is the skill call sequence:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": 8\n        }\n    }\n]\n```\n\nThis sequence follows the required pattern for picking an object by specifying the target entity number.",
+  "skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": 8
+      }
+    }
+  ],
+  "parse_status": "parsed_list",
+  "skill_match_score": 50.0,
+  "entity_match_score": 0.0,
+  "skill_with_entity_match_score": 0.0,
+  "exact_match_score": 0.0,
+  "total_score": 20.0,
+  "official_dependency": "Sequential",
+  "symbolic_success": false,
+  "type_normalized_skill_match_score": 50.0,
+  "type_normalized_entity_match_score": 0.0,
+  "type_normalized_skill_with_entity_match_score": 0.0,
+  "type_normalized_exact_match_score": 0.0,
+  "type_normalized_total_score": 20.0,
+  "type_normalized_symbolic_success": false,
+  "type_normalized_numeric_cast_applied": false,
+  "ok": true,
+  "format_error": false,
+  "gt_skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": 4
+      }
+    },
+    {
+      "name": "lift",
+      "params": {}
+    }
+  ]
+}

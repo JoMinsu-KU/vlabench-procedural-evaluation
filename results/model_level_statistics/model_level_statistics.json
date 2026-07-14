@@ -1,0 +1,214 @@
+{
+  "packages": [
+    {
+      "model": "qwen",
+      "package_dir": "${PROJECT_ROOT}\\evidence_packages\\qwen_A_symbolic_B_procedural_2133_20260703",
+      "files": 14429,
+      "size_mb": 196.12
+    },
+    {
+      "model": "gemma",
+      "package_dir": "${PROJECT_ROOT}\\evidence_packages\\gemma_A_symbolic_B_procedural_2133_20260711",
+      "files": 15369,
+      "size_mb": 244.79
+    },
+    {
+      "model": "internvl",
+      "package_dir": "${PROJECT_ROOT}\\evidence_packages\\internvl_A_symbolic_B_procedural_2133_20260711",
+      "files": 10954,
+      "size_mb": 234.56
+    }
+  ],
+  "model_statistics": {
+    "qwen": {
+      "model_key": "qwen",
+      "display_name": "Qwen3-VL-8B-class",
+      "model_id": "Qwen/Qwen3-VL-8B-Instruct",
+      "n": 2133,
+      "A_type_normalized_total_score": 44.6601031411158,
+      "A_type_normalized_exact_success": 280,
+      "A_type_normalized_exact_rate": 0.13127051101734646,
+      "A_type_normalized_exact_wilson95_low": 0.11759987039905344,
+      "A_type_normalized_exact_wilson95_high": 0.1462669019780951,
+      "A_format_errors": 0,
+      "A_runtime_errors": 0,
+      "B_parse_ok": 1923,
+      "B_parse_ok_rate": 0.9015471167369902,
+      "B_gate1_ok": 172,
+      "B_gate1_ok_rate": 0.0806375996249414,
+      "B_native_ok": 172,
+      "B_native_ok_rate": 0.0806375996249414,
+      "B_procedural_success": 84,
+      "B_procedural_success_rate": 0.03938115330520394,
+      "B_procedural_success_wilson95_low": 0.03192102230490118,
+      "B_procedural_success_wilson95_high": 0.0484974187129608,
+      "B_runtime_errors": 0,
+      "B_failure_codes": {
+        "C3": 1751,
+        "C2": 210,
+        "C1": 88,
+        "C0": 84
+      },
+      "A_vs_B_type_exact_vs_procedural_mcnemar": {
+        "n11_both_success": 35,
+        "n10_first_only": 245,
+        "n01_second_only": 49,
+        "n00_both_failure": 1804,
+        "discordant": 294,
+        "exact_p_value": 1.6500328599136742e-32
+      }
+    },
+    "gemma": {
+      "model_key": "gemma",
+      "display_name": "Gemma-3-12B-it",
+      "model_id": "google/gemma-3-12b-it",
+      "n": 2133,
+      "A_type_normalized_total_score": 44.060009376465075,
+      "A_type_normalized_exact_success": 221,
+      "A_type_normalized_exact_rate": 0.10360993905297702,
+      "A_type_normalized_exact_wilson95_low": 0.09138145833549013,
+      "A_type_normalized_exact_wilson95_high": 0.117263622459016,
+      "A_format_errors": 0,
+      "A_runtime_errors": 0,
+      "B_parse_ok": 1882,
+      "B_parse_ok_rate": 0.8823253633380216,
+      "B_gate1_ok": 140,
+      "B_gate1_ok_rate": 0.06563525550867323,
+      "B_native_ok": 138,
+      "B_native_ok_rate": 0.06469760900140648,
+      "B_procedural_success": 62,
+      "B_procedural_success_rate": 0.029067041725269572,
+      "B_procedural_success_wilson95_low": 0.022740612322791332,
+      "B_procedural_success_wilson95_high": 0.03708668946086501,
+      "B_runtime_errors": 0,
+      "B_failure_codes": {
+        "C2": 251,
+        "C3": 1742,
+        "C1": 76,
+        "C0": 62,
+        "C5": 2
+      },
+      "A_vs_B_type_exact_vs_procedural_mcnemar": {
+        "n11_both_success": 39,
+        "n10_first_only": 182,
+        "n01_second_only": 23,
+        "n00_both_failure": 1889,
+        "discordant": 205,
+        "exact_p_value": 7.061274590003148e-32
+      }
+    },
+    "internvl": {
+      "model_key": "internvl",
+      "display_name": "InternVL3-8B",
+      "model_id": "OpenGVLab/InternVL3-8B",
+      "n": 2133,
+      "A_type_normalized_total_score": 36.43694327238631,
+      "A_type_normalized_exact_success": 88,
+      "A_type_normalized_exact_rate": 0.04125644631973746,
+      "A_type_normalized_exact_wilson95_low": 0.03360835801976941,
+      "A_type_normalized_exact_wilson95_high": 0.05055392649522086,
+      "A_format_errors": 5,
+      "A_runtime_errors": 0,
+      "B_parse_ok": 783,
+      "B_parse_ok_rate": 0.3670886075949367,
+      "B_gate1_ok": 124,
+      "B_gate1_ok_rate": 0.058134083450539144,
+      "B_native_ok": 121,
+      "B_native_ok_rate": 0.05672761368963901,
+      "B_procedural_success": 41,
+      "B_procedural_success_rate": 0.01922175339896859,
+      "B_procedural_success_wilson95_low": 0.014200631548830141,
+      "B_procedural_success_wilson95_high": 0.025971491874902643,
+      "B_runtime_errors": 0,
+      "B_failure_codes": {
+        "C2": 1350,
+        "C3": 659,
+        "C0": 41,
+        "C1": 80,
+        "C5": 3
+      },
+      "A_vs_B_type_exact_vs_procedural_mcnemar": {
+        "n11_both_success": 7,
+        "n10_first_only": 81,
+        "n01_second_only": 34,
+        "n00_both_failure": 2011,
+        "discordant": 115,
+        "exact_p_value": 1.380034491780059e-05
+      }
+    }
+  },
+  "paired_mcnemar_tests": [
+    {
+      "n11_both_success": 66,
+      "n10_first_only": 214,
+      "n01_second_only": 155,
+      "n00_both_failure": 1698,
+      "discordant": 369,
+      "exact_p_value": 0.002486800307402803,
+      "metric": "A_type_exact",
+      "first_model": "qwen",
+      "second_model": "gemma",
+      "n": 2133
+    },
+    {
+      "n11_both_success": 45,
+      "n10_first_only": 235,
+      "n01_second_only": 43,
+      "n00_both_failure": 1810,
+      "discordant": 278,
+      "exact_p_value": 3.3544905355176036e-33,
+      "metric": "A_type_exact",
+      "first_model": "qwen",
+      "second_model": "internvl",
+      "n": 2133
+    },
+    {
+      "n11_both_success": 30,
+      "n10_first_only": 191,
+      "n01_second_only": 58,
+      "n00_both_failure": 1854,
+      "discordant": 249,
+      "exact_p_value": 9.387513378294603e-18,
+      "metric": "A_type_exact",
+      "first_model": "gemma",
+      "second_model": "internvl",
+      "n": 2133
+    },
+    {
+      "n11_both_success": 10,
+      "n10_first_only": 74,
+      "n01_second_only": 52,
+      "n00_both_failure": 1997,
+      "discordant": 126,
+      "exact_p_value": 0.06093825261566013,
+      "metric": "B_success",
+      "first_model": "qwen",
+      "second_model": "gemma",
+      "n": 2133
+    },
+    {
+      "n11_both_success": 0,
+      "n10_first_only": 84,
+      "n01_second_only": 41,
+      "n00_both_failure": 2008,
+      "discordant": 125,
+      "exact_p_value": 0.0001501334225702849,
+      "metric": "B_success",
+      "first_model": "qwen",
+      "second_model": "internvl",
+      "n": 2133
+    },
+    {
+      "n11_both_success": 2,
+      "n10_first_only": 60,
+      "n01_second_only": 39,
+      "n00_both_failure": 2032,
+      "discordant": 99,
+      "exact_p_value": 0.0438752935870152,
+      "metric": "B_success",
+      "first_model": "gemma",
+      "second_model": "internvl",
+      "n": 2133
+    }
+  ]
+}

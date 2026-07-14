@@ -1,0 +1,23 @@
+{
+  "vlabench_root": "${VLABENCH_ROOT}",
+  "selected_case_count": 2133,
+  "args": {
+    "manifest": "${PROJECT_ROOT}/datasets/manifests/matched_2133_symbolic_procedural_cases.json",
+    "public_root": "${VLABENCH_PUBLIC_ROOT}",
+    "gt_root": "${VLABENCH_GT_ROOT}",
+    "prompt_path": "${PROJECT_ROOT}/vlabench_official_eval/prompts/eval_vlm_en.txt",
+    "output_root": "${PROJECT_ROOT}/outputs/official_sequence_eval/qwen_full_2133_20260701",
+    "case_list_file": null,
+    "max_cases": 0,
+    "base_url": "http://127.0.0.1:8000/v1",
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "temperature": 0.0,
+    "max_tokens": 512,
+    "timeout_sec": 180,
+    "save_interval": 1,
+    "with_cot": false,
+    "response_format_json": false,
+    "score_only": true,
+    "resume": false
+  }
+}

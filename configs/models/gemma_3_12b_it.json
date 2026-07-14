@@ -1,0 +1,7 @@
+{
+  "model_id": "google/gemma-3-12b-it",
+  "temperature": 0,
+  "sampling": false,
+  "max_tokens_symbolic": 512,
+  "max_tokens_procedural": 1024
+}

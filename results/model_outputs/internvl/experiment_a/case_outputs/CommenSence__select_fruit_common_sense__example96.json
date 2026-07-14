@@ -1,0 +1,104 @@
+{
+  "case_id": "CommenSence/select_fruit_common_sense/example96",
+  "category": "CommenSence",
+  "task_name": "select_fruit_common_sense",
+  "example_name": "example96",
+  "example_index": 96,
+  "input_image_path": "${VLABENCH_PUBLIC_ROOT}/CommenSence/select_fruit_common_sense/example96/input.png",
+  "input_mask_path": "${VLABENCH_PUBLIC_ROOT}/CommenSence/select_fruit_common_sense/example96/input_mask.png",
+  "gt_operation_sequence_path": "${VLABENCH_GT_ROOT}/CommenSence/select_fruit_common_sense/example96/output/operation_sequence.json",
+  "used_official_prompt": true,
+  "used_official_scorer": true,
+  "gt_used_for_prompt": false,
+  "message_block_count": 8,
+  "elapsed_sec": 3.975266218185425,
+  "usage": {
+    "prompt_tokens": 6297,
+    "total_tokens": 6615,
+    "completion_tokens": 318,
+    "prompt_tokens_details": null
+  },
+  "served_model": "OpenGVLab/InternVL3-8B",
+  "raw_response": {
+    "id": "chatcmpl-874c5b4a5f936880",
+    "object": "chat.completion",
+    "created": 1783415354,
+    "model": "OpenGVLab/InternVL3-8B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "To address the task instruction, we need to identify the fruit that is best eaten when slightly soft. Based on common knowledge, this fruit is likely a plum. In the images provided, we need to locate the plum and determine the appropriate sequence of skills to pick it up and place it somewhere.\n\n### Steps:\n\n1. **Identify the Plum**:\n   - From the labeled images, we see objects numbered 0, 1, 2, 3, and 4.\n   - The plum is typically round and can be identified visually. In the second image, object 4 appears to be a plum.\n\n2. **Skill Selection**:\n   - The task involves picking up the plum, which corresponds to the \"pick\" skill.\n   - Since there's no specific instruction on where to place the plum, we'll assume a general placement skill like \"place\" is appropriate.\n\n### Skill Call Sequence:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"4\"\n        }\n    },\n    {\n        \"name\": \"place\",\n        \"params\": {\n            \"target_container_name\": \"1\"\n        }\n    }\n]\n```\n\n### Explanation:\n\n- **pick**: The robot arm will grasp and pick up the plum, identified as object 4.\n- **place**: The robot arm will place the plum into a container or location, identified as object 1.\n\nThis sequence follows the pattern `[\"pick\", \"place\"]`, which is one of the valid sub-skill sequences.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 6297,
+      "total_tokens": 6615,
+      "completion_tokens": 318,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "origin_output": "To address the task instruction, we need to identify the fruit that is best eaten when slightly soft. Based on common knowledge, this fruit is likely a plum. In the images provided, we need to locate the plum and determine the appropriate sequence of skills to pick it up and place it somewhere.\n\n### Steps:\n\n1. **Identify the Plum**:\n   - From the labeled images, we see objects numbered 0, 1, 2, 3, and 4.\n   - The plum is typically round and can be identified visually. In the second image, object 4 appears to be a plum.\n\n2. **Skill Selection**:\n   - The task involves picking up the plum, which corresponds to the \"pick\" skill.\n   - Since there's no specific instruction on where to place the plum, we'll assume a general placement skill like \"place\" is appropriate.\n\n### Skill Call Sequence:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"4\"\n        }\n    },\n    {\n        \"name\": \"place\",\n        \"params\": {\n            \"target_container_name\": \"1\"\n        }\n    }\n]\n```\n\n### Explanation:\n\n- **pick**: The robot arm will grasp and pick up the plum, identified as object 4.\n- **place**: The robot arm will place the plum into a container or location, identified as object 1.\n\nThis sequence follows the pattern `[\"pick\", \"place\"]`, which is one of the valid sub-skill sequences.",
+  "skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": "4"
+      }
+    },
+    {
+      "name": "place",
+      "params": {
+        "target_container_name": "1"
+      }
+    }
+  ],
+  "parse_status": "parsed_list",
+  "skill_match_score": 100.0,
+  "entity_match_score": 0.0,
+  "skill_with_entity_match_score": 0.0,
+  "exact_match_score": 0.0,
+  "total_score": 40.0,
+  "official_dependency": "Sequential",
+  "symbolic_success": false,
+  "type_normalized_skill_match_score": 100.0,
+  "type_normalized_entity_match_score": 50.0,
+  "type_normalized_skill_with_entity_match_score": 50.0,
+  "type_normalized_exact_match_score": 0.0,
+  "type_normalized_total_score": 60.0,
+  "type_normalized_symbolic_success": false,
+  "type_normalized_numeric_cast_applied": true,
+  "ok": true,
+  "format_error": false,
+  "gt_skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": 2
+      }
+    },
+    {
+      "name": "place",
+      "params": {
+        "target_container_name": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "case_id": "M&T/select_billiards/example50",
+  "category": "M&T",
+  "task_name": "select_billiards",
+  "example_name": "example50",
+  "example_index": 50,
+  "input_image_path": "${VLABENCH_PUBLIC_ROOT}/M&T/select_billiards/example50/input.png",
+  "input_mask_path": "${VLABENCH_PUBLIC_ROOT}/M&T/select_billiards/example50/input_mask.png",
+  "gt_operation_sequence_path": "${VLABENCH_GT_ROOT}/M&T/select_billiards/example50/output/operation_sequence.json",
+  "used_official_prompt": true,
+  "used_official_scorer": true,
+  "gt_used_for_prompt": false,
+  "message_block_count": 8,
+  "elapsed_sec": 2.9922149181365967,
+  "usage": {
+    "prompt_tokens": 6293,
+    "total_tokens": 6506,
+    "completion_tokens": 213,
+    "prompt_tokens_details": null
+  },
+  "served_model": "OpenGVLab/InternVL3-8B",
+  "raw_response": {
+    "id": "chatcmpl-b58d06dd987ac4d6",
+    "object": "chat.completion",
+    "created": 1783416222,
+    "model": "OpenGVLab/InternVL3-8B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "To fulfill the task instruction \"Please put the striped_10 in any hole,\" we need to identify the target object and the appropriate skill sequence. Here's the step-by-step process:\n\n1. **Extract Task Instruction**: The task is to place an object (striped_10) into a hole.\n\n2. **Combine with Image Information**: \n   - The labeled image shows various balls on a pool table.\n   - The striped_10 ball is labeled as \"3\" in the image.\n\n3. **Generate Skill Call Sequence**:\n   - The skill required is \"place\" since we need to put the object into a hole.\n   - The target container (hole) is not specified by number, but we can use a general \"place\" skill.\n\nThe skill call sequence should be:\n\n```json\n[\n    {\n        \"name\": \"place\",\n        \"params\": {\n            \"target_container_name\": \"3\"\n        }\n    }\n]\n```\n\nThis sequence matches the required pattern for placing an object into a container.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 6293,
+      "total_tokens": 6506,
+      "completion_tokens": 213,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "origin_output": "To fulfill the task instruction \"Please put the striped_10 in any hole,\" we need to identify the target object and the appropriate skill sequence. Here's the step-by-step process:\n\n1. **Extract Task Instruction**: The task is to place an object (striped_10) into a hole.\n\n2. **Combine with Image Information**: \n   - The labeled image shows various balls on a pool table.\n   - The striped_10 ball is labeled as \"3\" in the image.\n\n3. **Generate Skill Call Sequence**:\n   - The skill required is \"place\" since we need to put the object into a hole.\n   - The target container (hole) is not specified by number, but we can use a general \"place\" skill.\n\nThe skill call sequence should be:\n\n```json\n[\n    {\n        \"name\": \"place\",\n        \"params\": {\n            \"target_container_name\": \"3\"\n        }\n    }\n]\n```\n\nThis sequence matches the required pattern for placing an object into a container.",
+  "skill_sequence": [
+    {
+      "name": "place",
+      "params": {
+        "target_container_name": "3"
+      }
+    }
+  ],
+  "parse_status": "parsed_list",
+  "skill_match_score": 50.0,
+  "entity_match_score": 0.0,
+  "skill_with_entity_match_score": 0.0,
+  "exact_match_score": 0.0,
+  "total_score": 20.0,
+  "official_dependency": "Sequential",
+  "symbolic_success": false,
+  "type_normalized_skill_match_score": 50.0,
+  "type_normalized_entity_match_score": 0.0,
+  "type_normalized_skill_with_entity_match_score": 0.0,
+  "type_normalized_exact_match_score": 0.0,
+  "type_normalized_total_score": 20.0,
+  "type_normalized_symbolic_success": false,
+  "type_normalized_numeric_cast_applied": true,
+  "ok": true,
+  "format_error": false,
+  "gt_skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": 1
+      }
+    },
+    {
+      "name": "place",
+      "params": {
+        "target_container_name": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "case_id": "CommenSence/select_billiards_common_sense/example95",
+  "category": "CommenSence",
+  "task_name": "select_billiards_common_sense",
+  "example_name": "example95",
+  "example_index": 95,
+  "input_image_path": "${VLABENCH_PUBLIC_ROOT}/CommenSence/select_billiards_common_sense/example95/input.png",
+  "input_mask_path": "${VLABENCH_PUBLIC_ROOT}/CommenSence/select_billiards_common_sense/example95/input_mask.png",
+  "gt_operation_sequence_path": "${VLABENCH_GT_ROOT}/CommenSence/select_billiards_common_sense/example95/output/operation_sequence.json",
+  "used_official_prompt": true,
+  "used_official_scorer": true,
+  "gt_used_for_prompt": false,
+  "message_block_count": 8,
+  "elapsed_sec": 2.700787305831909,
+  "usage": {
+    "prompt_tokens": 6293,
+    "total_tokens": 6492,
+    "completion_tokens": 199,
+    "prompt_tokens_details": null
+  },
+  "served_model": "OpenGVLab/InternVL3-8B",
+  "raw_response": {
+    "id": "chatcmpl-9ba61e2c12c097c6",
+    "object": "chat.completion",
+    "created": 1783414590,
+    "model": "OpenGVLab/InternVL3-8B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "To complete the task of putting the ball worth 4 score in the hole, we need to follow these steps:\n\n1. **Identify the Target Ball**: The ball worth 4 score is labeled as \"4\" in the images.\n2. **Determine the Action**: The task is to place the ball in a hole, which corresponds to the \"place\" skill.\n3. **Match with Image Information**: The labeled image shows the ball with the number \"4\" on the table.\n\nBased on the task instruction and the labeled images, the sequence of skill calls should be:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"4\"\n        }\n    },\n    {\n        \"name\": \"place\",\n        \"params\": {\n            \"target_container_name\": \"hole\"\n        }\n    }\n]\n```\n\nThis sequence first picks up the ball labeled \"4\" and then places it into the hole.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 6293,
+      "total_tokens": 6492,
+      "completion_tokens": 199,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "origin_output": "To complete the task of putting the ball worth 4 score in the hole, we need to follow these steps:\n\n1. **Identify the Target Ball**: The ball worth 4 score is labeled as \"4\" in the images.\n2. **Determine the Action**: The task is to place the ball in a hole, which corresponds to the \"place\" skill.\n3. **Match with Image Information**: The labeled image shows the ball with the number \"4\" on the table.\n\nBased on the task instruction and the labeled images, the sequence of skill calls should be:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"4\"\n        }\n    },\n    {\n        \"name\": \"place\",\n        \"params\": {\n            \"target_container_name\": \"hole\"\n        }\n    }\n]\n```\n\nThis sequence first picks up the ball labeled \"4\" and then places it into the hole.",
+  "skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": "4"
+      }
+    },
+    {
+      "name": "place",
+      "params": {
+        "target_container_name": "hole"
+      }
+    }
+  ],
+  "parse_status": "parsed_list",
+  "skill_match_score": 100.0,
+  "entity_match_score": 0.0,
+  "skill_with_entity_match_score": 0.0,
+  "exact_match_score": 0.0,
+  "total_score": 40.0,
+  "official_dependency": "Sequential",
+  "symbolic_success": false,
+  "type_normalized_skill_match_score": 100.0,
+  "type_normalized_entity_match_score": 0.0,
+  "type_normalized_skill_with_entity_match_score": 0.0,
+  "type_normalized_exact_match_score": 0.0,
+  "type_normalized_total_score": 40.0,
+  "type_normalized_symbolic_success": false,
+  "type_normalized_numeric_cast_applied": true,
+  "ok": true,
+  "format_error": false,
+  "gt_skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": 1
+      }
+    },
+    {
+      "name": "place",
+      "params": {
+        "target_container_name": 0
+      }
+    }
+  ]
+}

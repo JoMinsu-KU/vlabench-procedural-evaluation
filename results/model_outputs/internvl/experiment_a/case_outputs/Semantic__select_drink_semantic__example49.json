@@ -1,0 +1,102 @@
+{
+  "case_id": "Semantic/select_drink_semantic/example49",
+  "category": "Semantic",
+  "task_name": "select_drink_semantic",
+  "example_name": "example49",
+  "example_index": 49,
+  "input_image_path": "${VLABENCH_PUBLIC_ROOT}/Semantic/select_drink_semantic/example49/input.png",
+  "input_mask_path": "${VLABENCH_PUBLIC_ROOT}/Semantic/select_drink_semantic/example49/input_mask.png",
+  "gt_operation_sequence_path": "${VLABENCH_GT_ROOT}/Semantic/select_drink_semantic/example49/output/operation_sequence.json",
+  "used_official_prompt": true,
+  "used_official_scorer": true,
+  "gt_used_for_prompt": false,
+  "message_block_count": 8,
+  "elapsed_sec": 2.7425944805145264,
+  "usage": {
+    "prompt_tokens": 6292,
+    "total_tokens": 6468,
+    "completion_tokens": 176,
+    "prompt_tokens_details": null
+  },
+  "served_model": "OpenGVLab/InternVL3-8B",
+  "raw_response": {
+    "id": "chatcmpl-be225051fea8df9b",
+    "object": "chat.completion",
+    "created": 1783418715,
+    "model": "OpenGVLab/InternVL3-8B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Based on the provided images and the language instruction, it seems the task is to pick up an object and place it somewhere. However, the instruction \"Long drive ahead. I need to stay alert. Please give the output skill sequence\" is not clear on the specific object or location. \n\nAssuming the task is to pick up and place a specific object, here's a possible sequence:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"2\"\n        }\n    },\n    {\n        \"name\": \"place\",\n        \"params\": {\n            \"target_container_name\": \"3\"\n        }\n    }\n]\n```\n\nThis sequence assumes you want to pick up the object labeled \"2\" and place it in the container labeled \"3\". Adjust the numbers as needed based on the actual task requirements.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 6292,
+      "total_tokens": 6468,
+      "completion_tokens": 176,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "origin_output": "Based on the provided images and the language instruction, it seems the task is to pick up an object and place it somewhere. However, the instruction \"Long drive ahead. I need to stay alert. Please give the output skill sequence\" is not clear on the specific object or location. \n\nAssuming the task is to pick up and place a specific object, here's a possible sequence:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"2\"\n        }\n    },\n    {\n        \"name\": \"place\",\n        \"params\": {\n            \"target_container_name\": \"3\"\n        }\n    }\n]\n```\n\nThis sequence assumes you want to pick up the object labeled \"2\" and place it in the container labeled \"3\". Adjust the numbers as needed based on the actual task requirements.",
+  "skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": "2"
+      }
+    },
+    {
+      "name": "place",
+      "params": {
+        "target_container_name": "3"
+      }
+    }
+  ],
+  "parse_status": "parsed_list",
+  "skill_match_score": 50.0,
+  "entity_match_score": 0.0,
+  "skill_with_entity_match_score": 0.0,
+  "exact_match_score": 0.0,
+  "total_score": 20.0,
+  "official_dependency": "Sequential",
+  "symbolic_success": false,
+  "type_normalized_skill_match_score": 50.0,
+  "type_normalized_entity_match_score": 100.0,
+  "type_normalized_skill_with_entity_match_score": 50.0,
+  "type_normalized_exact_match_score": 0.0,
+  "type_normalized_total_score": 60.0,
+  "type_normalized_symbolic_success": false,
+  "type_normalized_numeric_cast_applied": true,
+  "ok": true,
+  "format_error": false,
+  "gt_skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": 2
+      }
+    },
+    {
+      "name": "pull",
+      "params": {}
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "selected_case_count": 2133,
+  "args": {
+    "manifest": "${PROJECT_ROOT}/datasets/manifests/matched_2133_symbolic_procedural_cases.json",
+    "public_root": "${VLABENCH_PUBLIC_ROOT}",
+    "output_root": "${PROJECT_ROOT}/outputs/procedural_eval/qwen_trackb_full_2133_prompt_aligned_20260702",
+    "case_list_file": "${PROJECT_ROOT}/datasets/manifests/matched_2133_symbolic_procedural_cases.txt",
+    "max_cases": 0,
+    "base_url": "http://127.0.0.1:8000/v1",
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "temperature": 0.0,
+    "max_tokens": 1024,
+    "timeout_sec": 180,
+    "native_timeout_sec": 240,
+    "native_max_attempts": 10,
+    "save_interval": 1,
+    "response_format_json": true,
+    "resume": false,
+    "prompt_only": false,
+    "inference_only": false
+  },
+  "gt_used_for_prompt": false,
+  "operation_sequence_used_for_scoring": false,
+  "counts_as_model_evaluation": true,
+  "normalization_policy": "integer-string-target-only",
+  "semantic_repair_applied": false
+}

@@ -1,0 +1,96 @@
+{
+  "case_id": "CommenSence/select_nth_largest_poker/example93",
+  "category": "CommenSence",
+  "task_name": "select_nth_largest_poker",
+  "example_name": "example93",
+  "example_index": 93,
+  "input_image_path": "${VLABENCH_PUBLIC_ROOT}/CommenSence/select_nth_largest_poker/example93/input.png",
+  "input_mask_path": "${VLABENCH_PUBLIC_ROOT}/CommenSence/select_nth_largest_poker/example93/input_mask.png",
+  "gt_operation_sequence_path": "${VLABENCH_GT_ROOT}/CommenSence/select_nth_largest_poker/example93/output/operation_sequence.json",
+  "used_official_prompt": true,
+  "used_official_scorer": true,
+  "gt_used_for_prompt": false,
+  "message_block_count": 8,
+  "elapsed_sec": 3.262085199356079,
+  "usage": {
+    "prompt_tokens": 6289,
+    "total_tokens": 6390,
+    "completion_tokens": 101,
+    "prompt_tokens_details": null
+  },
+  "served_model": "OpenGVLab/InternVL3-8B",
+  "raw_response": {
+    "id": "chatcmpl-b424b35ccbb8f72f",
+    "object": "chat.completion",
+    "created": 1783415772,
+    "model": "OpenGVLab/InternVL3-8B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "To fulfill the task instruction of picking the smallest poker, we need to identify the target object and its corresponding number from the labeled images. The smallest poker is identified as number 1.\n\nHere is the sequence of skill calls:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"1\"\n        }\n    }\n]\n```\n\nThis sequence uses the \"pick\" skill with the target entity number 1 to pick the smallest poker.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 6289,
+      "total_tokens": 6390,
+      "completion_tokens": 101,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "origin_output": "To fulfill the task instruction of picking the smallest poker, we need to identify the target object and its corresponding number from the labeled images. The smallest poker is identified as number 1.\n\nHere is the sequence of skill calls:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"1\"\n        }\n    }\n]\n```\n\nThis sequence uses the \"pick\" skill with the target entity number 1 to pick the smallest poker.",
+  "skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": "1"
+      }
+    }
+  ],
+  "parse_status": "parsed_list",
+  "skill_match_score": 50.0,
+  "entity_match_score": 0.0,
+  "skill_with_entity_match_score": 0.0,
+  "exact_match_score": 0.0,
+  "total_score": 20.0,
+  "official_dependency": "Sequential",
+  "symbolic_success": false,
+  "type_normalized_skill_match_score": 50.0,
+  "type_normalized_entity_match_score": 0.0,
+  "type_normalized_skill_with_entity_match_score": 0.0,
+  "type_normalized_exact_match_score": 0.0,
+  "type_normalized_total_score": 20.0,
+  "type_normalized_symbolic_success": false,
+  "type_normalized_numeric_cast_applied": true,
+  "ok": true,
+  "format_error": false,
+  "gt_skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": 8
+      }
+    },
+    {
+      "name": "lift",
+      "params": {}
+    }
+  ]
+}

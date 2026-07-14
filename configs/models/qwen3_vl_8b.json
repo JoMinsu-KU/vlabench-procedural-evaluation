@@ -1,0 +1,7 @@
+{
+  "model_id": "Qwen/Qwen3-VL-8B-Instruct",
+  "temperature": 0,
+  "sampling": false,
+  "max_tokens_symbolic": 512,
+  "max_tokens_procedural": 1024
+}

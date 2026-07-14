@@ -1,0 +1,110 @@
+{
+  "case_id": "CommenSence/select_fruit_common_sense/example76",
+  "category": "CommenSence",
+  "task_name": "select_fruit_common_sense",
+  "example_name": "example76",
+  "example_index": 76,
+  "input_image_path": "${VLABENCH_PUBLIC_ROOT}/CommenSence/select_fruit_common_sense/example76/input.png",
+  "input_mask_path": "${VLABENCH_PUBLIC_ROOT}/CommenSence/select_fruit_common_sense/example76/input_mask.png",
+  "gt_operation_sequence_path": "${VLABENCH_GT_ROOT}/CommenSence/select_fruit_common_sense/example76/output/operation_sequence.json",
+  "used_official_prompt": true,
+  "used_official_scorer": true,
+  "gt_used_for_prompt": false,
+  "message_block_count": 8,
+  "elapsed_sec": 5.4700026512146,
+  "usage": {
+    "prompt_tokens": 6301,
+    "total_tokens": 6771,
+    "completion_tokens": 470,
+    "prompt_tokens_details": null
+  },
+  "served_model": "OpenGVLab/InternVL3-8B",
+  "raw_response": {
+    "id": "chatcmpl-9c5256d1edc3e3af",
+    "object": "chat.completion",
+    "created": 1783415271,
+    "model": "OpenGVLab/InternVL3-8B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "To complete the task of retrieving the fruit which is available in varieties like navel, valencia, and blood orange, we need to identify the corresponding objects from the images and generate the appropriate skill calls.\n\n### Step-by-Step Solution:\n\n1. **Extract Task Instruction**:\n   - The task is to retrieve specific types of fruits: navel, valencia, and blood orange.\n\n2. **Combine with Image Information**:\n   - From the images, we can see various fruits labeled with numbers. We need to match these numbers to the described fruit types.\n   - In the first image, the fruits are labeled as follows:\n     - 0: Blood orange\n     - 1: Navel orange\n     - 2: Valencia orange\n     - 3: Yellow fruit (not specified)\n     - 4: Another fruit (not specified)\n   - In the second image, the fruits are labeled similarly.\n\n3. **Generate Skill Call Sequence**:\n   - We need to pick up the blood orange (0), navel orange (1), and Valencia orange (2).\n\n### Skill Calls:\n\n- **Pick up the blood orange (0)**:\n  ```json\n  {\n    \"name\": \"pick\",\n    \"params\": {\n      \"target_entity_name\": \"0\"\n    }\n  }\n  ```\n\n- **Pick up the navel orange (1)**:\n  ```json\n  {\n    \"name\": \"pick\",\n    \"params\": {\n      \"target_entity_name\": \"1\"\n    }\n  }\n  ```\n\n- **Pick up the Valencia orange (2)**:\n  ```json\n  {\n    \"name\": \"pick\",\n    \"params\": {\n      \"target_entity_name\": \"2\"\n    }\n  }\n  ```\n\n### Output:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"0\"\n        }\n    },\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"1\"\n        }\n    },\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"2\"\n        }\n    }\n]\n```\n\nThis sequence ensures that each specified fruit is picked up according to the task instruction.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 6301,
+      "total_tokens": 6771,
+      "completion_tokens": 470,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "origin_output": "To complete the task of retrieving the fruit which is available in varieties like navel, valencia, and blood orange, we need to identify the corresponding objects from the images and generate the appropriate skill calls.\n\n### Step-by-Step Solution:\n\n1. **Extract Task Instruction**:\n   - The task is to retrieve specific types of fruits: navel, valencia, and blood orange.\n\n2. **Combine with Image Information**:\n   - From the images, we can see various fruits labeled with numbers. We need to match these numbers to the described fruit types.\n   - In the first image, the fruits are labeled as follows:\n     - 0: Blood orange\n     - 1: Navel orange\n     - 2: Valencia orange\n     - 3: Yellow fruit (not specified)\n     - 4: Another fruit (not specified)\n   - In the second image, the fruits are labeled similarly.\n\n3. **Generate Skill Call Sequence**:\n   - We need to pick up the blood orange (0), navel orange (1), and Valencia orange (2).\n\n### Skill Calls:\n\n- **Pick up the blood orange (0)**:\n  ```json\n  {\n    \"name\": \"pick\",\n    \"params\": {\n      \"target_entity_name\": \"0\"\n    }\n  }\n  ```\n\n- **Pick up the navel orange (1)**:\n  ```json\n  {\n    \"name\": \"pick\",\n    \"params\": {\n      \"target_entity_name\": \"1\"\n    }\n  }\n  ```\n\n- **Pick up the Valencia orange (2)**:\n  ```json\n  {\n    \"name\": \"pick\",\n    \"params\": {\n      \"target_entity_name\": \"2\"\n    }\n  }\n  ```\n\n### Output:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"0\"\n        }\n    },\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"1\"\n        }\n    },\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"2\"\n        }\n    }\n]\n```\n\nThis sequence ensures that each specified fruit is picked up according to the task instruction.",
+  "skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": "0"
+      }
+    },
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": "1"
+      }
+    },
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": "2"
+      }
+    }
+  ],
+  "parse_status": "parsed_list",
+  "skill_match_score": 50.0,
+  "entity_match_score": 0.0,
+  "skill_with_entity_match_score": 0.0,
+  "exact_match_score": 0.0,
+  "total_score": 20.0,
+  "official_dependency": "Sequential",
+  "symbolic_success": false,
+  "type_normalized_skill_match_score": 50.0,
+  "type_normalized_entity_match_score": 50.0,
+  "type_normalized_skill_with_entity_match_score": 50.0,
+  "type_normalized_exact_match_score": 0.0,
+  "type_normalized_total_score": 40.0,
+  "type_normalized_symbolic_success": false,
+  "type_normalized_numeric_cast_applied": true,
+  "ok": true,
+  "format_error": false,
+  "gt_skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": 2
+      }
+    },
+    {
+      "name": "place",
+      "params": {
+        "target_container_name": 1
+      }
+    }
+  ]
+}

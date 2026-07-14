@@ -1,0 +1,5 @@
+stage,cases,tasks,case_rate
+Initial non-complex set,4000,40,1.0
+GT replay 1 success,2341,37,0.58525
+GT replay 2 success,2316,35,0.579
+Success in both replays,2133,34,0.53325

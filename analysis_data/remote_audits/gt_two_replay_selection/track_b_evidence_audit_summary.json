@@ -1,0 +1,31 @@
+﻿{
+    "results_rows":  4000,
+    "unique_sample_indices":  4000,
+    "data_root":  "${GT_REPLAY_RESULT_ROOT}",
+    "case_dirs":  4000,
+    "status_counts":  {
+                          "B1_condition_failure":  1217,
+                          "B5_nondeterministic_mismatch":  379,
+                          "B3_native_exception":  214,
+                          "B0_official_eligible":  2133,
+                          "B4_timeout":  57
+                      },
+    "attempt_status_counts":  {
+                                  "completed":  7481,
+                                  "exception":  406,
+                                  "native_process_crash":  3,
+                                  "native_process_timeout":  110
+                              },
+    "execution_result_json_files":  9071,
+    "orchestrator_log_files":  9083,
+    "initial_mosaic_png_files":  7481,
+    "final_mosaic_png_files":  7473,
+    "png_files_total":  74850,
+    "rows_with_missing_evidence":  0,
+    "missing_file_counts":  {
+
+                            },
+    "missing_examples_first_50":  [
+
+                                  ]
+}

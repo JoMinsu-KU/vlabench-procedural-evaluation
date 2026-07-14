@@ -1,0 +1,316 @@
+{
+  "status": "completed",
+  "time": "2026-07-07 19:43:52",
+  "elapsed_sec": 6807.328613042831,
+  "manifest": "${PROJECT_ROOT}/datasets/manifests/matched_2133_symbolic_procedural_cases.json",
+  "public_root": "${VLABENCH_PUBLIC_ROOT}",
+  "gt_root": "${VLABENCH_GT_ROOT}",
+  "prompt_path": "${PROJECT_ROOT}/vlabench_official_eval/prompts/eval_vlm_en.txt",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "model": "OpenGVLab/InternVL3-8B",
+  "temperature": 0.0,
+  "max_tokens": 512,
+  "with_cot": false,
+  "response_format_json": false,
+  "score_only": false,
+  "total_cases": 2133,
+  "completed_rows": 2133,
+  "symbolic_success": 2,
+  "symbolic_success_rate": 0.0009376465072667605,
+  "type_normalized_symbolic_success": 88,
+  "type_normalized_symbolic_success_rate": 0.04125644631973746,
+  "type_normalized_numeric_cast_applied": 1757,
+  "format_errors": 5,
+  "runtime_errors": 0,
+  "metric_means": {
+    "skill_match_score": 62.142522269104546,
+    "entity_match_score": 2.250351617440225,
+    "skill_with_entity_match_score": 1.4533520862634786,
+    "exact_match_score": 0.09376465072667604,
+    "total_score": 25.75714955461791
+  },
+  "type_normalized_metric_means": {
+    "type_normalized_skill_match_score": 62.142522269104546,
+    "type_normalized_entity_match_score": 28.94983591186123,
+    "type_normalized_skill_with_entity_match_score": 19.24519456165026,
+    "type_normalized_exact_match_score": 4.125644631973746,
+    "type_normalized_total_score": 36.43694327238631
+  },
+  "by_category": {
+    "CommenSence": {
+      "total": 519,
+      "symbolic_success": 1,
+      "type_normalized_symbolic_success": 22,
+      "format_error": 1,
+      "runtime_error": 0
+    },
+    "M&T": {
+      "total": 616,
+      "symbolic_success": 0,
+      "type_normalized_symbolic_success": 37,
+      "format_error": 2,
+      "runtime_error": 0
+    },
+    "PhysicsLaw": {
+      "total": 42,
+      "symbolic_success": 0,
+      "type_normalized_symbolic_success": 0,
+      "format_error": 0,
+      "runtime_error": 0
+    },
+    "Semantic": {
+      "total": 507,
+      "symbolic_success": 1,
+      "type_normalized_symbolic_success": 13,
+      "format_error": 2,
+      "runtime_error": 0
+    },
+    "Spatial": {
+      "total": 449,
+      "symbolic_success": 0,
+      "type_normalized_symbolic_success": 16,
+      "format_error": 0,
+      "runtime_error": 0
+    }
+  },
+  "by_task": {
+    "CommenSence/insert_flower_common_sense": {
+      "total": 27,
+      "symbolic_success": 0,
+      "type_normalized_symbolic_success": 0,
+      "format_error": 0,
+      "runtime_error": 0
+    },
+    "CommenSence/select_billiards_common_sense": {
+      "total": 97,
+      "symbolic_success": 0,
+      "type_normalized_symbolic_success": 15,
+      "format_error": 1,
+      "runtime_error": 0
+    },
+    "CommenSence/select_chemistry_tube_common_sense": {
+      "total": 84,
+      "symbolic_success": 0,
+      "type_normalized_symbolic_success": 0,
+      "format_error": 0,
+      "runtime_error": 0
+    },
+    "CommenSence/select_drink_common_sense": {
+      "total": 41,
+      "symbolic_success": 0,
+      "type_normalized_symbolic_success": 0,
+      "format_error": 0,
+      "runtime_error": 0
+    },
+    "CommenSence/select_fruit_common_sense": {
+      "total": 97,
+      "symbolic_success": 1,
+      "type_normalized_symbolic_success": 7,
+      "format_error": 0,
+      "runtime_error": 0
+    },
+    "CommenSence/select_nth_largest_poker": {
+      "total": 99,
+      "symbolic_success": 0,
+      "type_normalized_symbolic_success": 0,
+      "format_error": 0,
+      "runtime_error": 0
+    },
+    "CommenSence/select_toy_common_sense": {
+      "total": 74,
+      "symbolic_success": 0,
+      "type_normalized_symbolic_success": 0,
+      "format_error": 0,
+      "runtime_error": 0
+    },
+    "M&T/add_condiment": {
+      "total": 1,
+      "symbolic_success": 0,
+      "type_normalized_symbolic_success": 0,
+      "format_error": 0,
+      "runtime_error": 0
+    },
+    "M&T/insert_flower": {
+      "total": 31,
+      "symbolic_success": 0,
+      "type_normalized_symbolic_success": 9,
+      "format_error": 0,
+      "runtime_error": 0
+    },
+    "M&T/select_billiards": {
+      "total": 100,
+      "symbolic_success": 0,
+      "type_normalized_symbolic_success": 8,
+      "format_error": 1,
+      "runtime_error": 0
+    },
+    "M&T/select_book": {
+      "total": 73,
+      "symbolic_success": 0,
+      "type_normalized_symbolic_success": 0,
+      "format_error": 0,
+      "runtime_error": 0
+    },
+    "M&T/select_chemistry_tube": {
+      "total": 94,
+      "symbolic_success": 0,
+      "type_normalized_symbolic_success": 0,
+      "format_error": 0,
+      "runtime_error": 0
+    },
+    "M&T/select_drink": {
+      "total": 44,
+      "symbolic_success": 0,
+      "type_normalized_symbolic_success": 0,
+      "format_error": 0,
+      "runtime_error": 0
+    },
+    "M&T/select_fruit": {
+      "total": 97,
+      "symbolic_success": 0,
+      "type_normalized_symbolic_success": 20,
+      "format_error": 0,
+      "runtime_error": 0
+    },
+    "M&T/select_poker": {
+      "total": 100,
+      "symbolic_success": 0,
+      "type_normalized_symbolic_success": 0,
+      "format_error": 1,
+      "runtime_error": 0
+    },
+    "M&T/select_toy": {
+      "total": 76,
+      "symbolic_success": 0,
+      "type_normalized_symbolic_success": 0,
+      "format_error": 0,
+      "runtime_error": 0
+    },
+    "PhysicsLaw/density_qa": {
+      "total": 9,
+      "symbolic_success": 0,
+      "type_normalized_symbolic_success": 0,
+      "format_error": 0,
+      "runtime_error": 0
+    },
+    "PhysicsLaw/friction_qa": {
+      "total": 9,
+      "symbolic_success": 0,
+      "type_normalized_symbolic_success": 0,
+      "format_error": 0,
+      "runtime_error": 0
+    },
+    "PhysicsLaw/magnetism_qa": {
+      "total": 6,
+      "symbolic_success": 0,
+      "type_normalized_symbolic_success": 0,
+      "format_error": 0,
+      "runtime_error": 0
+    },
+    "PhysicsLaw/speed_of_sound_qa": {
+      "total": 11,
+      "symbolic_success": 0,
+      "type_normalized_symbolic_success": 0,
+      "format_error": 0,
+      "runtime_error": 0
+    },
+    "PhysicsLaw/thermal_expansion_qa": {
+      "total": 7,
+      "symbolic_success": 0,
+      "type_normalized_symbolic_success": 0,
+      "format_error": 0,
+      "runtime_error": 0
+    },
+    "Semantic/insert_flower_semantic": {
+      "total": 26,
+      "symbolic_success": 0,
+      "type_normalized_symbolic_success": 1,
+      "format_error": 0,
+      "runtime_error": 0
+    },
+    "Semantic/select_book_semantic": {
+      "total": 78,
+      "symbolic_success": 0,
+      "type_normalized_symbolic_success": 0,
+      "format_error": 1,
+      "runtime_error": 0
+    },
+    "Semantic/select_chemistry_tube_semantic": {
+      "total": 94,
+      "symbolic_success": 0,
+      "type_normalized_symbolic_success": 0,
+      "format_error": 0,
+      "runtime_error": 0
+    },
+    "Semantic/select_drink_semantic": {
+      "total": 40,
+      "symbolic_success": 0,
+      "type_normalized_symbolic_success": 0,
+      "format_error": 0,
+      "runtime_error": 0
+    },
+    "Semantic/select_fruit_semantic": {
+      "total": 97,
+      "symbolic_success": 1,
+      "type_normalized_symbolic_success": 12,
+      "format_error": 0,
+      "runtime_error": 0
+    },
+    "Semantic/select_poker_semantic": {
+      "total": 100,
+      "symbolic_success": 0,
+      "type_normalized_symbolic_success": 0,
+      "format_error": 0,
+      "runtime_error": 0
+    },
+    "Semantic/select_toy_semantic": {
+      "total": 72,
+      "symbolic_success": 0,
+      "type_normalized_symbolic_success": 0,
+      "format_error": 1,
+      "runtime_error": 0
+    },
+    "Spatial/insert_bloom_flower": {
+      "total": 28,
+      "symbolic_success": 0,
+      "type_normalized_symbolic_success": 10,
+      "format_error": 0,
+      "runtime_error": 0
+    },
+    "Spatial/select_billiards_spatial": {
+      "total": 60,
+      "symbolic_success": 0,
+      "type_normalized_symbolic_success": 0,
+      "format_error": 0,
+      "runtime_error": 0
+    },
+    "Spatial/select_book_spatial": {
+      "total": 85,
+      "symbolic_success": 0,
+      "type_normalized_symbolic_success": 0,
+      "format_error": 0,
+      "runtime_error": 0
+    },
+    "Spatial/select_chemistry_tube_spatial": {
+      "total": 92,
+      "symbolic_success": 0,
+      "type_normalized_symbolic_success": 0,
+      "format_error": 0,
+      "runtime_error": 0
+    },
+    "Spatial/select_poker_spatial": {
+      "total": 100,
+      "symbolic_success": 0,
+      "type_normalized_symbolic_success": 0,
+      "format_error": 0,
+      "runtime_error": 0
+    },
+    "Spatial/select_toy_spatial": {
+      "total": 84,
+      "symbolic_success": 0,
+      "type_normalized_symbolic_success": 6,
+      "format_error": 0,
+      "runtime_error": 0
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "time": "2026-05-23 21:27:17",
+  "started_at": "2026-05-23 18:09:46",
+  "phase": "s0_full_4000_preload_target",
+  "completed": true,
+  "total_manifest_rows": 4000,
+  "processed_rows": 4000,
+  "remaining_rows": 0,
+  "official_eligible": 2133,
+  "status_counts": {
+    "B0_official_eligible": 2133,
+    "B1_condition_failure": 1217,
+    "B3_native_exception": 214,
+    "B4_timeout": 57,
+    "B5_nondeterministic_mismatch": 379
+  }
+}

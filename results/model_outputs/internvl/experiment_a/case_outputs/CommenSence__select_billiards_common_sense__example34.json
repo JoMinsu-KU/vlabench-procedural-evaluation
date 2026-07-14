@@ -1,0 +1,104 @@
+{
+  "case_id": "CommenSence/select_billiards_common_sense/example34",
+  "category": "CommenSence",
+  "task_name": "select_billiards_common_sense",
+  "example_name": "example34",
+  "example_index": 34,
+  "input_image_path": "${VLABENCH_PUBLIC_ROOT}/CommenSence/select_billiards_common_sense/example34/input.png",
+  "input_mask_path": "${VLABENCH_PUBLIC_ROOT}/CommenSence/select_billiards_common_sense/example34/input_mask.png",
+  "gt_operation_sequence_path": "${VLABENCH_GT_ROOT}/CommenSence/select_billiards_common_sense/example34/output/operation_sequence.json",
+  "used_official_prompt": true,
+  "used_official_scorer": true,
+  "gt_used_for_prompt": false,
+  "message_block_count": 8,
+  "elapsed_sec": 7.484253883361816,
+  "usage": {
+    "prompt_tokens": 6293,
+    "total_tokens": 6491,
+    "completion_tokens": 198,
+    "prompt_tokens_details": null
+  },
+  "served_model": "OpenGVLab/InternVL3-8B",
+  "raw_response": {
+    "id": "chatcmpl-850bc1b18fe47959",
+    "object": "chat.completion",
+    "created": 1783414422,
+    "model": "OpenGVLab/InternVL3-8B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "To complete the task of putting the ball worth 7 points in the hole, we need to follow these steps:\n\n1. **Identify the Ball**: The ball worth 7 points is likely the black ball, as it is often the highest-scoring ball in pool.\n2. **Locate the Ball**: Based on the images, the black ball is labeled as number 5.\n3. **Skill Selection**: The appropriate skill to use here is \"insert\" to place the ball into the hole.\n\nHere is the sequence of skill calls:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"5\"\n        }\n    },\n    {\n        \"name\": \"insert\",\n        \"params\": {\n            \"target_container_name\": \"5\"\n        }\n    }\n]\n```\n\nThis sequence first picks up the black ball (number 5) and then inserts it into the hole (also number 5).",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 6293,
+      "total_tokens": 6491,
+      "completion_tokens": 198,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "origin_output": "To complete the task of putting the ball worth 7 points in the hole, we need to follow these steps:\n\n1. **Identify the Ball**: The ball worth 7 points is likely the black ball, as it is often the highest-scoring ball in pool.\n2. **Locate the Ball**: Based on the images, the black ball is labeled as number 5.\n3. **Skill Selection**: The appropriate skill to use here is \"insert\" to place the ball into the hole.\n\nHere is the sequence of skill calls:\n\n```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"5\"\n        }\n    },\n    {\n        \"name\": \"insert\",\n        \"params\": {\n            \"target_container_name\": \"5\"\n        }\n    }\n]\n```\n\nThis sequence first picks up the black ball (number 5) and then inserts it into the hole (also number 5).",
+  "skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": "5"
+      }
+    },
+    {
+      "name": "insert",
+      "params": {
+        "target_container_name": "5"
+      }
+    }
+  ],
+  "parse_status": "parsed_list",
+  "skill_match_score": 50.0,
+  "entity_match_score": 0.0,
+  "skill_with_entity_match_score": 0.0,
+  "exact_match_score": 0.0,
+  "total_score": 20.0,
+  "official_dependency": "Sequential",
+  "symbolic_success": false,
+  "type_normalized_skill_match_score": 50.0,
+  "type_normalized_entity_match_score": 0.0,
+  "type_normalized_skill_with_entity_match_score": 0.0,
+  "type_normalized_exact_match_score": 0.0,
+  "type_normalized_total_score": 20.0,
+  "type_normalized_symbolic_success": false,
+  "type_normalized_numeric_cast_applied": true,
+  "ok": true,
+  "format_error": false,
+  "gt_skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": 1
+      }
+    },
+    {
+      "name": "place",
+      "params": {
+        "target_container_name": 0
+      }
+    }
+  ]
+}

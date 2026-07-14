@@ -1,0 +1,100 @@
+{
+  "case_id": "CommenSence/select_nth_largest_poker/example3",
+  "category": "CommenSence",
+  "task_name": "select_nth_largest_poker",
+  "example_name": "example3",
+  "example_index": 3,
+  "input_image_path": "${VLABENCH_PUBLIC_ROOT}/CommenSence/select_nth_largest_poker/example3/input.png",
+  "input_mask_path": "${VLABENCH_PUBLIC_ROOT}/CommenSence/select_nth_largest_poker/example3/input_mask.png",
+  "gt_operation_sequence_path": "${VLABENCH_GT_ROOT}/CommenSence/select_nth_largest_poker/example3/output/operation_sequence.json",
+  "used_official_prompt": true,
+  "used_official_scorer": true,
+  "gt_used_for_prompt": false,
+  "message_block_count": 8,
+  "elapsed_sec": 2.65374493598938,
+  "usage": {
+    "prompt_tokens": 1770,
+    "total_tokens": 1834,
+    "completion_tokens": 64,
+    "prompt_tokens_details": null
+  },
+  "served_model": "google/gemma-3-12b-it",
+  "raw_response": {
+    "id": "chatcmpl-8f1f0aabcfd2db40",
+    "object": "chat.completion",
+    "created": 1783044812,
+    "model": "google/gemma-3-12b-it",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"3\"\n        }\n    },\n    {\n        \"name\": \"lift\",\n        \"params\": {}\n    }\n]\n```",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": 106,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 1770,
+      "total_tokens": 1834,
+      "completion_tokens": 64,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "origin_output": "```json\n[\n    {\n        \"name\": \"pick\",\n        \"params\": {\n            \"target_entity_name\": \"3\"\n        }\n    },\n    {\n        \"name\": \"lift\",\n        \"params\": {}\n    }\n]\n```",
+  "skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": "3"
+      }
+    },
+    {
+      "name": "lift",
+      "params": {}
+    }
+  ],
+  "parse_status": "parsed_list",
+  "skill_match_score": 100.0,
+  "entity_match_score": 0.0,
+  "skill_with_entity_match_score": 50.0,
+  "exact_match_score": 0.0,
+  "total_score": 40.0,
+  "official_dependency": "Sequential",
+  "symbolic_success": false,
+  "type_normalized_skill_match_score": 100.0,
+  "type_normalized_entity_match_score": 0.0,
+  "type_normalized_skill_with_entity_match_score": 50.0,
+  "type_normalized_exact_match_score": 0.0,
+  "type_normalized_total_score": 40.0,
+  "type_normalized_symbolic_success": false,
+  "type_normalized_numeric_cast_applied": true,
+  "ok": true,
+  "format_error": false,
+  "gt_skill_sequence": [
+    {
+      "name": "pick",
+      "params": {
+        "target_entity_name": 6
+      }
+    },
+    {
+      "name": "lift",
+      "params": {}
+    }
+  ]
+}

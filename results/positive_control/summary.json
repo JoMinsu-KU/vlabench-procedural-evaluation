@@ -1,0 +1,37 @@
+﻿{
+    "control_name":  "canonical_procedure_control",
+    "purpose":  "Interface viability and runtime compatibility for frozen canonical procedures",
+    "counts_as_model_evaluation":  false,
+    "case_count":  2133,
+    "validation_and_binding_success":  2133,
+    "native_completion_success":  2133,
+    "first_attempt_condition_success":  2062,
+    "first_attempt_condition_success_rate":  0.96671354899203,
+    "condition_success_within_retry_policy":  2133,
+    "success_after_same_plan_retry":  71,
+    "same_plan_retry_policy":  "same_plan_same_target_condition_failure_only",
+    "maximum_allowed_attempts":  10,
+    "maximum_selected_attempt_observed":  8,
+    "selected_attempt_distribution":  {
+                                          "1":  2062,
+                                          "2":  46,
+                                          "3":  17,
+                                          "4":  2,
+                                          "5":  3,
+                                          "6":  2,
+                                          "8":  1
+                                      },
+    "fixture_construction":  {
+                                 "fixture_version":  "canonical_procedure_control_v1",
+                                 "phase":  "offline_gt_metadata",
+                                 "source_fields":  [
+                                                       "env_config.task.conditions",
+                                                       "env_config.task.components"
+                                                   ],
+                                 "runtime_input":  "frozen numeric procedural fixture",
+                                 "expert_operation_sequence_used_during_execution":  false,
+                                 "reference_metadata_read_by_adapter_or_lowerer":  false
+                             },
+    "portable_report":  "gt_procedural_positive_control_report.csv",
+    "provenance_fixture_manifest":  "provenance/fixtures.json"
+}

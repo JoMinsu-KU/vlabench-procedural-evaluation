@@ -1,0 +1,6 @@
+numpy
+Pillow
+requests
+dm-control
+mujoco
+openai

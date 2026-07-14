@@ -1,0 +1,10 @@
+﻿{
+    "purpose":  "Consolidation provenance for the portable 2,133-case control report",
+    "base_case_count":  2133,
+    "validated_replacement_case_count":  19,
+    "final_case_count":  2133,
+    "merge_key":  "source_case_id",
+    "selection_rule":  "Use the validated replacement row for each selected case and preserve all other base rows",
+    "full_native_traces_in_repository":  false,
+    "counts_as_model_evaluation":  false
+}

@@ -1,0 +1,13 @@
+{
+  "source_root": "${PROJECT_ROOT}",
+  "manifest_cases": 2133,
+  "first_attempt_b_only_model_cases": 103,
+  "first_attempt_b_only_unique_cases": 101,
+  "b_only_audit_classes": {
+    "A target/entity mismatch only": 35,
+    "A sequence/skill mismatch only": 33,
+    "A sequence and target mismatch": 35
+  },
+  "complexity_case_rows": 2133,
+  "status": "passed"
+}

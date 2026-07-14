@@ -1,0 +1,12 @@
+{
+  "model_id": "Qwen/Qwen3-VL-8B-Instruct",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "serving_backend": "vLLM",
+  "served_sequentially": true,
+  "temperature": 0,
+  "sampling": false,
+  "max_tokens_symbolic": 512,
+  "max_tokens_procedural": 768,
+  "response_format_json_for_procedural": true
+}
+
