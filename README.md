@@ -78,7 +78,7 @@ python analysis/reproduce_reported_statistics.py
 python tests/verify_release.py .
 ```
 
-The first command regenerates the A/B and Oracle tables and figures. The second checks the 2,133-case manifest, six A/B files, six Oracle runs, manifest order, success counts, clustered-interval claim boundaries, adjudication counts, anonymity constraints, and repository checksums.
+The first command regenerates the A/B and Oracle tables and figures. The second checks the 2,133-case manifest, six A/B files, six Oracle runs, manifest order, success counts, clustered-interval claim boundaries, adjudication counts, the recovered Oracle validation evidence, anonymity constraints, and repository checksums.
 
 Oracle-specific analysis can also be run independently:
 
@@ -92,7 +92,7 @@ Model-specific native traces are distributed as separate release archives becaus
 
 ## Provenance notes
 
-The final 2,133-row CSV for each condition is the canonical scoring source. Canonical Oracle JSONL files preserve the first occurrence of each exact raw line; the duplicate counts found in the InternVL source logs are recorded in `results/outcome_audits/oracle_release_build.json`. Observed first-failure stages and responsibility-adjudicated failure classes are stored separately. See `KNOWN_ISSUES.md` for the complete boundary.
+The final 2,133-row CSV for each condition is the canonical scoring source. Canonical Oracle JSONL files preserve the first occurrence of each exact raw line; the duplicate counts found in the InternVL source logs are recorded in `results/outcome_audits/oracle_release_build.json`. The recovered Oracle validation report verifies 2,133 cases, 34 tasks, 3,100 target slots, and 6,357 no-repair mutations. Observed first-failure stages and responsibility-adjudicated failure classes are stored separately. See `KNOWN_ISSUES.md` for the complete boundary.
 
 ## License
 

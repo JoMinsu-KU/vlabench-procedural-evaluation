@@ -1,0 +1,45 @@
+{
+  "fixture_id": "oracle_path_validation__target_oracle__M_and_T__select_poker__example0",
+  "fixture_version": "model_procedural_v1_no_gt_no_role",
+  "fixture_mode": "oracle_path_validation_not_model_result",
+  "family": "select_poker",
+  "negative_type": "",
+  "fixture_generated_from_gt": true,
+  "fixture_generation_phase": "model_inference_target_oracle",
+  "source_fields_used": [
+    "input.png",
+    "input_mask.png",
+    "instruction.txt",
+    "vlm_response",
+    "conditions",
+    "components"
+  ],
+  "frozen_after_generation": true,
+  "dataset_snapshot": "vlabench_vlm4500_public_2133_matched",
+  "source_case_id": "M&T/select_poker/example0",
+  "target_source": "oracle_conditions_components",
+  "phase_source": "vlm_output",
+  "ablation_mode": "target_oracle",
+  "phase_oracle_used": false,
+  "target_oracle_used": true,
+  "ground_truth_target_used": true,
+  "oracle_used_during_execution": true,
+  "oracle_builder_read_conditions": true,
+  "counts_as_model_evaluation": false,
+  "native_execution_should_run": true,
+  "expected_gate1_ok": null,
+  "expected_native_ok": null,
+  "expected_condition_success": null,
+  "steps": [
+    {
+      "skill": "pick",
+      "target": 2
+    },
+    {
+      "skill": "lift"
+    }
+  ],
+  "human_readable_targets": {
+    "2": "2_of_clubs"
+  }
+}

@@ -55,6 +55,17 @@
       "sha256": "174343bdf61c4d1497a84d6400f2bd8a6255d20adaeec9ecbc5788cf36f66cd2"
     }
   },
+  "recovered_validation_evidence": {
+    "recovered_on": "2026-07-20",
+    "canonical_report": "results/validation_evidence/oracle_ablation_validation_20260715.json",
+    "original_sha256": "6a8a95247c8118851d20bb230ab2143b247f15b6572453d66e21105f6e8c49a4",
+    "public_sha256": "ce1ef08e83b913ef38ef75c380e3b8c4d90eeb623b73eb3eee88b088249039b2",
+    "source_files": 40,
+    "implementation_evidence_groups": [
+      "oracle_native_path_smoke_20260715",
+      "internvl_oracle_live_inference_smoke_20260715"
+    ]
+  },
   "sanitization": {
     "project_paths": "${PROJECT_ROOT}",
     "dataset_paths": "${VLABENCH_PUBLIC_ROOT}",

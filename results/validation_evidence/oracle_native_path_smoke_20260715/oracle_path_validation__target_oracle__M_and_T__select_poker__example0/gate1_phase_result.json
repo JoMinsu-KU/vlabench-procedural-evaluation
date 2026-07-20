@@ -1,0 +1,102 @@
+{
+  "ok": true,
+  "status": {
+    "code": "",
+    "label": "",
+    "subtype": "",
+    "detail": ""
+  },
+  "parsed": {
+    "ok": true,
+    "steps": [
+      {
+        "skill": "pick",
+        "target": 2
+      },
+      {
+        "skill": "lift"
+      }
+    ],
+    "status": {
+      "code": "",
+      "label": "",
+      "subtype": "",
+      "detail": ""
+    }
+  },
+  "phase_trace": [
+    {
+      "vlm_step_index": 1,
+      "phase_cursor_before": 1,
+      "phase_cursor_source": "deterministic_task_phase_cursor",
+      "vlm_skill": "pick",
+      "vlm_target": 2,
+      "expected_skill_for_phase": "pick",
+      "skill_matches_phase": true,
+      "matched_phase_template": "select_poker.phase_1.pick",
+      "template_parameter_source": "primitive/select_poker_series.py:SelectPokerTask.get_expert_skill_sequence",
+      "target_binding": {
+        "ok": true,
+        "target_number": 2,
+        "entity_name": "2_of_clubs",
+        "entity_class": "Poker",
+        "target_source": "oracle_conditions_components",
+        "ground_truth_target_used": true
+      },
+      "sequence_reordered": false,
+      "missing_phase_inserted": false,
+      "gt_target_used": true,
+      "ground_truth_target_used": true,
+      "operation_sequence_used": false,
+      "expert_sequence_called": false
+    },
+    {
+      "vlm_step_index": 2,
+      "phase_cursor_before": 2,
+      "phase_cursor_source": "deterministic_task_phase_cursor",
+      "vlm_skill": "lift",
+      "vlm_target": "",
+      "expected_skill_for_phase": "lift",
+      "skill_matches_phase": true,
+      "matched_phase_template": "select_poker.phase_2.lift",
+      "template_parameter_source": "primitive/select_poker_series.py:SelectPokerTask.get_expert_skill_sequence",
+      "target_binding": null,
+      "sequence_reordered": false,
+      "missing_phase_inserted": false,
+      "gt_target_used": false,
+      "ground_truth_target_used": false,
+      "operation_sequence_used": false,
+      "expert_sequence_called": false
+    }
+  ],
+  "executable_steps": [
+    {
+      "index": 0,
+      "skill": "pick",
+      "matched_phase_template": "select_poker.phase_1.pick",
+      "phase_cursor_source": "deterministic_task_phase_cursor",
+      "sequence_reordered": false,
+      "missing_phase_inserted": false,
+      "gt_target_used": true,
+      "operation_sequence_used": false,
+      "expert_sequence_called": false,
+      "target": {
+        "number": 2,
+        "entity_name": "2_of_clubs",
+        "entity_class": "Poker",
+        "target_source": "oracle_conditions_components"
+      }
+    },
+    {
+      "index": 1,
+      "skill": "lift",
+      "matched_phase_template": "select_poker.phase_2.lift",
+      "phase_cursor_source": "deterministic_task_phase_cursor",
+      "sequence_reordered": false,
+      "missing_phase_inserted": false,
+      "gt_target_used": false,
+      "operation_sequence_used": false,
+      "expert_sequence_called": false
+    }
+  ]
+}

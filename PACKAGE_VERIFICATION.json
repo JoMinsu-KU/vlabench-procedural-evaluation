@@ -6,5 +6,8 @@
   "model_result_pairs": 3,
   "oracle_model_condition_runs": 6,
   "oracle_adjudication_rows": 472,
-  "checksummed_files": 13039
+  "oracle_validation_cases": 2133,
+  "oracle_validation_mutation_checks": 6357,
+  "recovered_validation_source_files": 40,
+  "checksummed_files": 13082
 }

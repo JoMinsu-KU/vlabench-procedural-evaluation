@@ -22,6 +22,7 @@ Intervals use the same 34 `category/task_name` clusters, 20,000 percentile-boots
 - Each condition's prompt archive contains 2,133 files. Prompt names and content digests were identical across the three models within a condition.
 - Target-oracle accessed reference targets only after the generated phase sequence passed the frozen contract: 501 Qwen, 602 Gemma, and 210 InternVL cases. It accessed targets for zero invalid sequences.
 - One Gemma Target-oracle response ended at the token limit; it was recorded as a C2 JSON-parse failure and not counted as success.
+- The recovered static validation report covers 2,133 cases, 34 tasks, 3,100 target slots, and 6,357 no-repair mutations. It records no `operation_sequence` read, no expert-sequence call, no semantic repair, and no errors.
 
 Detailed checks are in `oracle_run_integrity_audit.csv` and `oracle_jsonl_deduplication_audit.csv` in this directory.
 
@@ -40,10 +41,10 @@ The release preserves observed first-failure codes separately from responsibilit
 
 Canonical sources are `../reported_statistics/oracle_failure_taxonomy_observed.csv`, `../reported_statistics/oracle_failure_taxonomy_adjudicated.csv`, and `oracle_attribute_error_adjudication.csv`.
 
-## Recorded provenance exceptions
+## Recorded provenance transformations and recovery
 
 1. The source InternVL Phase-oracle JSONL had 4,266 lines, including 2,133 exact duplicates. The source InternVL Target-oracle JSONL had 2,682 lines, including 549 exact duplicates. Public JSONL files retain the first occurrence of each exact line and contain 2,133 cases. Final CSVs were already complete and are the canonical scoring source.
-2. The protocol referenced a standalone external file named `oracle_ablation_validation_20260715.json`, but it was absent from the handoff snapshot. The release verifier independently checks the final CSVs, summaries, manifest order, success counts, and claim boundaries. `procedural_interface/scripts/validate_oracle_ablations.py` reproduces the static Oracle-contract checks when the public-view dataset is available.
+2. The protocol's standalone validation JSON was omitted from the handoff snapshot but recovered intact from the experiment workstation on 2026-07-20. The original and public-copy digests, the compact implementation evidence, and deliberate exclusions are documented in `REMOTE_VALIDATION_EVIDENCE_RECONCILIATION.md`.
 3. The as-run static procedural schema did not exactly encode the runtime parser's conditional target contract. The public schema is aligned with the as-run runtime behavior; this documentation correction does not alter stored outcomes. See `SCHEMA_RUNTIME_CONTRACT_AUDIT.md`.
 
 ## Reporting boundaries
@@ -66,6 +67,8 @@ Canonical sources are `../reported_statistics/oracle_failure_taxonomy_observed.c
 - `oracle_jsonl_deduplication_audit.csv`
 - `oracle_attribute_error_adjudication.csv`
 - `oracle_preintegration_validation_summary.json`
+- `../validation_evidence/oracle_ablation_validation_20260715.json`
+- `REMOTE_VALIDATION_EVIDENCE_RECONCILIATION.md`
 
 Regenerate the published Oracle tables from the repository root with:
 

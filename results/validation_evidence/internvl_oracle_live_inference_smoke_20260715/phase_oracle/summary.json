@@ -1,0 +1,72 @@
+{
+  "status": "completed",
+  "time": "2026-07-15 11:15:42",
+  "elapsed_sec": 2.8949809074401855,
+  "experiment": "B_phase_oracle_ablation",
+  "ablation_mode": "phase_oracle",
+  "manifest": "${PROJECT_ROOT}/datasets/manifests/matched_2133_symbolic_procedural_cases.json",
+  "public_root": "${VLABENCH_PUBLIC_ROOT}",
+  "output_root": "${PROJECT_ROOT}/outputs/oracle_ablations/internvl_oracle_live_inference_smoke_20260715/phase_oracle",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "model": "OpenGVLab/InternVL3-8B",
+  "temperature": 0.0,
+  "max_tokens": 1024,
+  "response_format_json": false,
+  "inference_only": true,
+  "native_timeout_sec": 240,
+  "native_max_attempts": 1,
+  "native_retry_policy": "same_plan_same_target_condition_failure_only",
+  "total_cases": 1,
+  "completed_rows": 1,
+  "parse_ok": 1,
+  "parse_ok_rate": 1.0,
+  "strict_parse_ok": 1,
+  "strict_parse_ok_rate": 1.0,
+  "type_normalized_parse_ok": 1,
+  "type_normalized_parse_ok_rate": 1.0,
+  "execution_used_type_normalized_plan": 0,
+  "target_numeric_cast_applied": 0,
+  "normalization_policy": "integer-string-target-only",
+  "semantic_repair_applied": false,
+  "gate1_ok": 0,
+  "gate1_ok_rate": 0.0,
+  "native_attempted": 0,
+  "native_attempted_rate": 0.0,
+  "native_ok": 0,
+  "native_ok_rate": 0.0,
+  "procedural_success": 0,
+  "procedural_success_rate": 0.0,
+  "runtime_errors": 0,
+  "failure_codes": {
+    "UNCLASSIFIED": 1
+  },
+  "failure_subtypes": {
+    "UNCLASSIFIED:inference_only": 1
+  },
+  "by_category": {
+    "CommenSence": {
+      "total": 1,
+      "parse_ok": 1,
+      "strict_parse_ok": 1,
+      "type_normalized_parse_ok": 1,
+      "target_numeric_cast_applied": 0,
+      "gate1_ok": 0,
+      "native_attempted": 0,
+      "native_ok": 0,
+      "procedural_success": 0
+    }
+  },
+  "by_task": {
+    "CommenSence/insert_flower_common_sense": {
+      "total": 1,
+      "parse_ok": 1,
+      "strict_parse_ok": 1,
+      "type_normalized_parse_ok": 1,
+      "target_numeric_cast_applied": 0,
+      "gate1_ok": 0,
+      "native_attempted": 0,
+      "native_ok": 0,
+      "procedural_success": 0
+    }
+  }
+}

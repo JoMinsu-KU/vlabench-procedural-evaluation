@@ -48,6 +48,13 @@ def count_jsonl(path: Path) -> tuple[int, int]:
     return rows, len(case_ids)
 
 
+def read_single_jsonl(path: Path) -> dict[str, object]:
+    rows = [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
+    if len(rows) != 1:
+        raise ValueError(f"{path} contains {len(rows)} rows, expected one")
+    return rows[0]
+
+
 def is_pinned_dependency_version(text: str, match: re.Match[str]) -> bool:
     line_start = text.rfind("\n", 0, match.start()) + 1
     line_end = text.find("\n", match.end())
@@ -135,6 +142,105 @@ def main() -> None:
     if len(alternatives) != 2:
         errors.append("procedural schema does not separate target-taking and no-target skills")
 
+    validation_root = root / "results" / "validation_evidence"
+    validation_path = validation_root / "oracle_ablation_validation_20260715.json"
+    validation = json.loads(validation_path.read_text(encoding="utf-8"))
+    validation_expected = {
+        "status": "passed",
+        "case_count": 2_133,
+        "task_count": 34,
+        "target_slots_checked": 3_100,
+        "mutation_checks": 6_357,
+        "operation_sequence_read": False,
+        "expert_sequence_called": False,
+        "semantic_repair_applied": False,
+        "errors": [],
+    }
+    for field, expected in validation_expected.items():
+        if validation.get(field) != expected:
+            errors.append(
+                f"oracle validation field {field!r}: expected {expected!r}, found {validation.get(field)!r}"
+            )
+    validation_public_sha = hashlib.sha256(validation_path.read_bytes()).hexdigest()
+    if validation_public_sha != "ce1ef08e83b913ef38ef75c380e3b8c4d90eeb623b73eb3eee88b088249039b2":
+        errors.append("public Oracle validation JSON digest does not match the recorded sanitized copy")
+
+    native_smoke = json.loads(
+        (validation_root / "oracle_native_path_smoke_20260715" / "summary.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    for condition in ("phase_oracle", "target_oracle"):
+        row = native_smoke.get(condition, {})
+        for field in (
+            "actual_gate1_ok",
+            "native_execution_attempted",
+            "actual_native_ok",
+            "actual_condition_success",
+            "procedural_success",
+        ):
+            if row.get(field) is not True:
+                errors.append(f"native smoke {condition}/{field} is not true")
+        if row.get("actual_failure_code") != "C0":
+            errors.append(f"native smoke {condition} did not finish with C0")
+    if native_smoke["phase_oracle"].get("phase_source") != "benchmark_derived_task_registry":
+        errors.append("Phase-oracle native smoke has an unexpected phase source")
+    if native_smoke["phase_oracle"].get("target_source") != "vlm_numbered_mask":
+        errors.append("Phase-oracle native smoke has an unexpected target source")
+    if native_smoke["phase_oracle"].get("ground_truth_target_used") is not False:
+        errors.append("Phase-oracle native smoke unexpectedly used a ground-truth target")
+    if native_smoke["target_oracle"].get("phase_source") != "vlm_output":
+        errors.append("Target-oracle native smoke has an unexpected phase source")
+    if native_smoke["target_oracle"].get("target_source") != "oracle_conditions_components":
+        errors.append("Target-oracle native smoke has an unexpected target source")
+    if native_smoke["target_oracle"].get("ground_truth_target_used") is not True:
+        errors.append("Target-oracle native smoke did not use its controlled reference target")
+
+    live_smoke_root = validation_root / "internvl_oracle_live_inference_smoke_20260715"
+    try:
+        live_phase = read_single_jsonl(
+            live_smoke_root / "phase_oracle" / "procedural_vlm_execution_rows.jsonl"
+        )
+        live_target = read_single_jsonl(
+            live_smoke_root / "target_oracle" / "procedural_vlm_execution_rows.jsonl"
+        )
+    except ValueError as exc:
+        errors.append(str(exc))
+        live_phase = {}
+        live_target = {}
+    if not (
+        live_phase.get("ablation_mode") == "phase_oracle"
+        and live_phase.get("model_parse_ok") is True
+        and live_phase.get("strict_parse_ok") is True
+        and live_phase.get("semantic_repair_applied") is False
+        and live_phase.get("inference_only") is True
+    ):
+        errors.append("InternVL Phase-oracle live-parser smoke does not match the recorded contract")
+    if not (
+        live_target.get("ablation_mode") == "target_oracle"
+        and live_target.get("model_parse_ok") is True
+        and live_target.get("strict_parse_ok") is True
+        and live_target.get("oracle_target_read") is False
+        and live_target.get("actual_failure_code") == "C3"
+        and live_target.get("actual_failure_subtype") == "missing_phase"
+        and live_target.get("native_execution_attempted") is False
+    ):
+        errors.append("InternVL Target-oracle access-order smoke does not match the recorded contract")
+
+    source_checksum_lines = [
+        line
+        for line in (validation_root / "SOURCE_SHA256SUMS.txt").read_text(encoding="utf-8").splitlines()
+        if line.strip()
+    ]
+    if len(source_checksum_lines) != 40:
+        errors.append(f"recovered-source checksum manifest contains {len(source_checksum_lines)}, not 40 rows")
+    expected_source_validation = (
+        "6a8a95247c8118851d20bb230ab2143b247f15b6572453d66e21105f6e8c49a4  "
+        "oracle_ablation_validation_20260715.json"
+    )
+    if expected_source_validation not in source_checksum_lines:
+        errors.append("recovered-source checksum manifest lacks the original validation JSON digest")
+
     findings: list[dict[str, object]] = []
     for path in root.rglob("*"):
         if ".git" in path.parts or "__pycache__" in path.parts or path.suffix == ".pyc":
@@ -181,6 +287,9 @@ def main() -> None:
         "model_result_pairs": 3,
         "oracle_model_condition_runs": 6,
         "oracle_adjudication_rows": adjudication_rows,
+        "oracle_validation_cases": validation.get("case_count"),
+        "oracle_validation_mutation_checks": validation.get("mutation_checks"),
+        "recovered_validation_source_files": len(source_checksum_lines),
         "checksummed_files": len(checksum_rows),
     }
     (root / "PACKAGE_VERIFICATION.json").write_text(json.dumps(report, indent=2), encoding="utf-8")

@@ -9,6 +9,7 @@ Included evidence:
 - GT-derived procedural positive control;
 - three-backbone Phase-oracle and Target-oracle full runs;
 - task-clustered confidence intervals, paired recovery, task-level results, and two-layer failure taxonomy;
+- recovered Oracle contract validation plus compact native-path and live-parser evidence;
 - portable as-run evaluation code, prompt archives, environment capture, integrity tests, and checksums.
 
 The artifact excludes abandoned exploratory study branches and historical manuscript drafts.

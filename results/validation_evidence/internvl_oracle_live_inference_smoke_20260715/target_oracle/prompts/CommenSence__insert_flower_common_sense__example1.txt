@@ -1,0 +1,119 @@
+In Skill Lab, we provide a series of robot skills to support efficient automated operations for various tasks. Each skill has a specific call format, which includes the skill name and corresponding parameters.
+
+The available skills are as follows:
+
+1. **pick**: Used to grasp and pick up a target object.
+   - Call format:
+     ```json
+     {
+       "skill": "pick",
+       "target": Target Number
+     }
+     ```
+
+2. **lift**: Lift the robotic arm vertically.
+   - Call format:
+     ```json
+     {
+       "skill": "lift"
+     }
+     ```
+
+3. **moveto**: Move the robotic arm to a specified target object or location.
+   - Call format:
+     ```json
+     {
+       "skill": "moveto",
+       "target": Target Number
+     }
+     ```
+
+4. **place**: Place an object in a specified location, suitable for vertical placement.
+   - Call format:
+     ```json
+     {
+       "skill": "place",
+       "target": Target Number
+     }
+     ```
+
+5. **pull**: Pull the robotic arm horizontally.
+   - Call format:
+     ```json
+     {
+       "skill": "pull"
+     }
+     ```
+
+6. **pour**: Pour a liquid or granular substance.
+   - Call format:
+     ```json
+     {
+       "skill": "pour"
+     }
+     ```
+
+7. **press**: Press a specified location or button.
+   - Call format:
+     ```json
+     {
+       "skill": "press",
+       "target": Target Number
+     }
+     ```
+
+8. **push**: Push a target object horizontally.
+   - Call format:
+     ```json
+     {
+       "skill": "push",
+       "target": Target Number
+     }
+     ```
+
+9. **wait**: Wait for a task-defined duration.
+   - Call format:
+     ```json
+     {
+       "skill": "wait"
+     }
+     ```
+
+10. **move_offset**: Move the robotic arm by a task-defined offset.
+   - Call format:
+     ```json
+     {
+       "skill": "move_offset"
+     }
+     ```
+
+11. **open_gripper**: Open the robotic gripper.
+   - Call format:
+     ```json
+     {
+       "skill": "open_gripper"
+     }
+     ```
+
+These call formats ensure that each skill operation has clearly defined parameters, allowing the system to accurately execute the specified automated tasks.
+
+---
+
+You will receive the following input:
+
+1. **Image input**: Two images
+   - The first image shows four different perspectives of objects (without labels).
+   - The second image contains the same four perspectives of objects, but each view is labeled with a number (representing each object's identifier).
+
+2. **Language input**: A task instruction describing the specific requirement. All directional references in the language are relative to the robot arm as the central origin.
+
+Return one JSON object only. Do not use Markdown code fences or explanatory text.
+
+### Target-oracle condition
+
+Reference target identities are supplied by the evaluator after parsing and are not part of your output. Generate only the complete ordered procedural skill sequence required for the instruction. Do not output targets, phase numbers, roles, or geometric parameters.
+
+Output format:
+{"skills": ["pick", "lift", "moveto", "place"]}
+
+Every item must be one of the 11 available skill names. The evaluator will not add, delete, reorder, or replace any model-emitted skill.

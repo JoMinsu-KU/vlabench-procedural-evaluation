@@ -1,0 +1,26 @@
+{
+  "phase_oracle": {
+    "actual_gate1_ok": true,
+    "native_execution_attempted": true,
+    "actual_native_ok": true,
+    "actual_condition_success": true,
+    "procedural_success": true,
+    "actual_failure_code": "C0",
+    "actual_failure_subtype": "",
+    "phase_source": "benchmark_derived_task_registry",
+    "target_source": "vlm_numbered_mask",
+    "ground_truth_target_used": false
+  },
+  "target_oracle": {
+    "actual_gate1_ok": true,
+    "native_execution_attempted": true,
+    "actual_native_ok": true,
+    "actual_condition_success": true,
+    "procedural_success": true,
+    "actual_failure_code": "C0",
+    "actual_failure_subtype": "",
+    "phase_source": "vlm_output",
+    "target_source": "oracle_conditions_components",
+    "ground_truth_target_used": true
+  }
+}

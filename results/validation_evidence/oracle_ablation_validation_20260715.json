@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "manifest": "${PROJECT_ROOT}/datasets/manifests/matched_2133_symbolic_procedural_cases.json",
+  "public_root": "${VLABENCH_PUBLIC_ROOT}",
+  "case_count": 2133,
+  "task_count": 34,
+  "target_slots_checked": 3100,
+  "mutation_checks": 6357,
+  "phase_oracle_target_source": "model_numbered_mask",
+  "phase_oracle_phase_source": "benchmark_derived_task_registry",
+  "target_oracle_target_source": "conditions_and_components_after_sequence_validation",
+  "target_oracle_phase_source": "model_output",
+  "operation_sequence_read": false,
+  "expert_sequence_called": false,
+  "semantic_repair_applied": false,
+  "errors": []
+}
