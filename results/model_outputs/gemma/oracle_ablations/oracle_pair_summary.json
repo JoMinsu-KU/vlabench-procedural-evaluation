@@ -1,0 +1,53 @@
+{
+    "status":  "completed",
+    "run_label":  "gemma3_12b_oracle_full_2133_20260718",
+    "model":  "google/gemma-3-12b-it",
+    "base_url":  "http://127.0.0.1:8000/v1",
+    "case_list_file":  "",
+    "selected_case_count":  2133,
+    "temperature":  0,
+    "max_tokens":  1024,
+    "native_max_attempts":  1,
+    "primary_endpoint":  "first_attempt_condition_success",
+    "phase_oracle":  {
+                         "parse_ok":  2130,
+                         "gate1_ok":  1052,
+                         "native_ok":  879,
+                         "condition_success":  344,
+                         "failure_codes":  {
+                                               "C1":  535,
+                                               "C3":  1078,
+                                               "C0":  344,
+                                               "C5":  173,
+                                               "C2":  3
+                                           },
+                         "failure_subtypes":  {
+                                                  "C1:":  535,
+                                                  "C3:incompatible_target_affordance":  1048,
+                                                  "C0:":  344,
+                                                  "C5:AttributeError":  173,
+                                                  "C3:target_out_of_range":  30,
+                                                  "C2:target_slot_count_mismatch":  3
+                                              }
+                     },
+    "target_oracle":  {
+                          "parse_ok":  2132,
+                          "gate1_ok":  602,
+                          "native_ok":  602,
+                          "condition_success":  585,
+                          "failure_codes":  {
+                                                "C3":  1530,
+                                                "C0":  585,
+                                                "C1":  17,
+                                                "C2":  1
+                                            },
+                          "failure_subtypes":  {
+                                                   "C3:phase_skill_mismatch":  348,
+                                                   "C3:missing_phase":  182,
+                                                   "C0:":  585,
+                                                   "C3:extra_phase":  1000,
+                                                   "C1:":  17,
+                                                   "C2:invalid_json":  1
+                                               }
+                      }
+}

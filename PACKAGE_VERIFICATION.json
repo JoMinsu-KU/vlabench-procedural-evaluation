@@ -4,5 +4,7 @@
   "anonymity_findings": [],
   "manifest_cases": 2133,
   "model_result_pairs": 3,
-  "checksummed_files": 12979
+  "oracle_model_condition_runs": 6,
+  "oracle_adjudication_rows": 472,
+  "checksummed_files": 13039
 }

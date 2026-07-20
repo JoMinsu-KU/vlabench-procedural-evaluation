@@ -1,11 +1,23 @@
 # VLABench Symbolic and Procedural Planning Evaluation
 
-This repository provides code and case-level results for two matched VLM planning evaluations on VLABench. Both evaluations use the same 2,133 non-complex cases and the same three model families, but they expose planning at different levels of abstraction.
+This repository provides code and case-level results for two matched VLM planning evaluations and two diagnostic oracle controls on VLABench. Every reported model comparison uses the same 2,133 dual-replay-qualified non-complex cases and the same three model families.
 
 - **Symbolic evaluation** follows the released VLABench VLM protocol. Generated high-level skill sequences are scored with Skill Recall (SR), Parameter Recall (PR), Skill-Parameter Recall (SPR), and Precise Matching (PM).
 - **Procedural evaluation** asks the model to select an expanded sequence of discrete skills, numeric targets, and order decisions. A target- and order-preserving interface lowers the generated procedure to VLABench SkillLib and MuJoCo execution.
+- **Phase-oracle** fixes the benchmark-derived phase/order contract and asks the model to select numeric targets.
+- **Target-oracle** asks the model to generate the phase/order sequence and inserts reference targets only after that sequence passes the frozen phase contract.
 
-The two evaluations generate different outputs. Their results should be interpreted as measurements under two planning contracts rather than as repeated scoring of one plan.
+The symbolic and procedural evaluations generate different outputs. Their results should be interpreted as measurements under two planning contracts rather than as repeated scoring of one plan. The oracle conditions simplify different parts of the procedural output contract and are diagnostic controls, not isolated causal interventions.
+
+## Primary results
+
+| Model | Symbolic full match | Full procedural | Phase-oracle | Target-oracle |
+|---|---:|---:|---:|---:|
+| Qwen3-VL-8B | 280/2,133 (13.13%) | 80/2,133 (3.75%) | 427/2,133 (20.02%) | 488/2,133 (22.88%) |
+| Gemma-3-12B-it | 221/2,133 (10.36%) | 57/2,133 (2.67%) | 344/2,133 (16.13%) | 585/2,133 (27.43%) |
+| InternVL3-8B | 88/2,133 (4.13%) | 40/2,133 (1.88%) | 314/2,133 (14.72%) | 191/2,133 (8.95%) |
+
+All six oracle-versus-full task-clustered 95% confidence intervals exclude zero. All three Target-oracle-versus-Phase-oracle intervals include zero, so the relative ordering of the two controls is descriptive only. Absolute oracle success remains below 30%.
 
 ## Repository structure
 
@@ -15,7 +27,7 @@ analysis_data/              Compact paired inputs for the analysis
 configs/                    Portable model and runtime configuration
 datasets/                   Fixed manifests, preparation tools, and selection audit
 procedural_interface/       Parser, validation, target binding, adapters, and execution
-prompts/                    Complete prompts for both evaluations
+prompts/                    Evaluation and diagnostic-control prompts
 results/                    Model outputs, controls, audits, and reported statistics
 shared/                     Shared schemas and utilities
 tests/                      Package integrity and anonymity verification
@@ -55,7 +67,9 @@ The complete prompts are stored in `prompts/`. The symbolic runner is available 
 
 For symbolic evaluation, the repository reports raw and type-normalized SR, PR, SPR, and PM. The released-code total and a recomputed four-metric weighted score are retained as separate audit values. The binary endpoint used in paired analysis is the derived indicator `PM_norm == 100`.
 
-For procedural evaluation, the primary endpoint is first-attempt task-condition success. Result files also report success within up to ten native attempts of the same generated plan. Native retries do not alter the selected skill, target, or order.
+For procedural evaluation and both oracle controls, the primary endpoint is first-attempt task-condition success. Result files also report success within up to ten native attempts of the same generated plan for the full condition. Native retries do not alter the selected skill, target, or order. Oracle runs used one native attempt.
+
+The runner exposes `--ablation-mode full|phase_oracle|target_oracle`. The complete case prompts are stored once per oracle condition under `prompts/oracle/` because their contents were identical across backbones within a condition.
 
 ## Reproducing the analysis
 
@@ -64,11 +78,21 @@ python analysis/reproduce_reported_statistics.py
 python tests/verify_release.py .
 ```
 
-The first command regenerates the reported tables and figures. The second checks the 2,133-case manifest, six paired model result files, anonymity constraints, and repository checksums.
+The first command regenerates the A/B and Oracle tables and figures. The second checks the 2,133-case manifest, six A/B files, six Oracle runs, manifest order, success counts, clustered-interval claim boundaries, adjudication counts, anonymity constraints, and repository checksums.
+
+Oracle-specific analysis can also be run independently:
+
+```bash
+python analysis/reproduce_oracle_statistics.py
+```
 
 ## Execution traces
 
 Model-specific native traces are distributed as separate release archives because of their size. Verify each archive against the release-level `SHA256SUMS.txt` before use.
+
+## Provenance notes
+
+The final 2,133-row CSV for each condition is the canonical scoring source. Canonical Oracle JSONL files preserve the first occurrence of each exact raw line; the duplicate counts found in the InternVL source logs are recorded in `results/outcome_audits/oracle_release_build.json`. Observed first-failure stages and responsibility-adjudicated failure classes are stored separately. See `KNOWN_ISSUES.md` for the complete boundary.
 
 ## License
 

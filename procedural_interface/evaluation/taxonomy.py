@@ -1,4 +1,4 @@
-"""Canonical the procedural evaluation project status labels."""
+"""Canonical legacy status labels."""
 
 from __future__ import annotations
 
@@ -9,7 +9,9 @@ from dataclasses import dataclass
 class Status:
     """Structured failure/success code used in audit rows."""
 
+    # Short code used by CSV/JSON aggregators.
     code: str
+    # Human-readable label used in reports.
     label: str
 
 
@@ -25,4 +27,5 @@ INFRASTRUCTURE_FAILURE = Status("INFRA", "Infrastructure Failure")
 def status_record(status: Status, subtype: str = "", detail: str = "") -> dict[str, str]:
     """Create a compact status dictionary."""
 
+    # Keep status serialization consistent across parser, phase binder, and gates.
     return {"code": status.code, "label": status.label, "subtype": subtype, "detail": detail}

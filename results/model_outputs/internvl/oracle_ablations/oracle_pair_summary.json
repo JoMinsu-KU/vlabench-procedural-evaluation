@@ -1,0 +1,51 @@
+{
+    "status":  "completed",
+    "run_label":  "internvl3_8b_oracle_full_2133_20260715",
+    "model":  "OpenGVLab/InternVL3-8B",
+    "base_url":  "http://127.0.0.1:8000/v1",
+    "case_list_file":  "",
+    "selected_case_count":  2133,
+    "temperature":  0,
+    "max_tokens":  1024,
+    "native_max_attempts":  1,
+    "primary_endpoint":  "first_attempt_condition_success",
+    "phase_oracle":  {
+                         "parse_ok":  1423,
+                         "gate1_ok":  974,
+                         "native_ok":  817,
+                         "condition_success":  314,
+                         "failure_codes":  {
+                                               "C3":  449,
+                                               "C1":  503,
+                                               "C0":  314,
+                                               "C5":  157,
+                                               "C2":  710
+                                           },
+                         "failure_subtypes":  {
+                                                  "C3:incompatible_target_affordance":  447,
+                                                  "C1:":  503,
+                                                  "C0:":  314,
+                                                  "C5:AttributeError":  157,
+                                                  "C2:target_slot_count_mismatch":  710,
+                                                  "C3:target_out_of_range":  2
+                                              }
+                     },
+    "target_oracle":  {
+                          "parse_ok":  2133,
+                          "gate1_ok":  210,
+                          "native_ok":  210,
+                          "condition_success":  191,
+                          "failure_codes":  {
+                                                "C3":  1923,
+                                                "C0":  191,
+                                                "C1":  19
+                                            },
+                          "failure_subtypes":  {
+                                                   "C3:missing_phase":  92,
+                                                   "C3:phase_skill_mismatch":  365,
+                                                   "C0:":  191,
+                                                   "C3:extra_phase":  1466,
+                                                   "C1:":  19
+                                               }
+                      }
+}

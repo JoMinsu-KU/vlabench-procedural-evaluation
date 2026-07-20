@@ -755,6 +755,8 @@ def plot_agreement(agreement: pd.DataFrame) -> None:
 
 
 def main() -> None:
+    from reproduce_oracle_statistics import main as reproduce_oracle_statistics
+
     plt.rcParams.update(
         {
             "font.family": "DejaVu Sans",
@@ -775,6 +777,7 @@ def main() -> None:
     plot_main_results(main_results)
     plot_agreement(agreement)
     plot_pooled_failure_taxonomy(failure)
+    reproduce_oracle_statistics()
     print(main_results.to_string(index=False))
     print(agreement.to_string(index=False))
     print(expansion_stratified.to_string(index=False))

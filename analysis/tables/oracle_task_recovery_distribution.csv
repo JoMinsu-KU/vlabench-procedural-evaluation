@@ -1,0 +1,10 @@
+model,first_condition,second_condition,positive_task_clusters,zero_task_clusters,negative_task_clusters,median_task_difference,minimum_task_difference,maximum_task_difference
+Qwen3-VL-8B,full,phase,24,8,2,0.11,-0.15217391304347827,0.6216216216216216
+Qwen3-VL-8B,full,target,13,20,1,0.0,-0.17525773195876293,1.0
+Qwen3-VL-8B,phase,target,12,6,16,0.0,-0.6216216216216216,1.0
+Gemma-3-12B-it,full,phase,22,9,3,0.03095744680851064,-0.14285714285714285,0.6575342465753424
+Gemma-3-12B-it,full,target,15,18,1,0.0,-0.010869565217391304,1.0
+Gemma-3-12B-it,phase,target,12,9,13,0.0,-0.6575342465753424,1.0
+InternVL3-8B,full,phase,23,10,1,0.05808080808080808,-0.061855670103092786,0.46153846153846156
+InternVL3-8B,full,target,10,23,1,0.0,-0.021739130434782608,0.8214285714285714
+InternVL3-8B,phase,target,8,9,17,-0.005,-0.46153846153846156,0.5360824742268041

@@ -1,0 +1,31 @@
+{
+  "status": "PASS_WITH_RECORDED_PROVENANCE_EXCEPTIONS",
+  "generated_at_package_date": "2026-07-20",
+  "manifest_cases": 2133,
+  "task_clusters": 34,
+  "models": 3,
+  "oracle_model_condition_runs": 6,
+  "all_core_run_checks_pass": true,
+  "prompt_contents_identical_across_models_within_condition": true,
+  "internvl_phase_jsonl_exact_duplicate_rows": 2133,
+  "internvl_target_jsonl_exact_duplicate_rows": 549,
+  "attribute_error_cases_adjudicated": 472,
+  "primary_success_counts_changed_by_adjudication": false,
+  "external_protocol_validation_json_present": false,
+  "external_protocol_validation_json_expected_path": "C:/VLABenchProcEval/outputs/validation/oracle_ablation_validation_20260715.json",
+  "bootstrap": {
+    "unit": "category/task_name cluster",
+    "clusters": 34,
+    "replicates": 20000,
+    "seed": 20260711,
+    "interval": "percentile 95% CI"
+  },
+  "canonical_tables": [
+    "results/reported_statistics/oracle_main_results_clustered.csv",
+    "results/reported_statistics/oracle_paired_recovery.csv",
+    "results/reported_statistics/oracle_task_level_results.csv",
+    "results/reported_statistics/oracle_task_recovery_distribution.csv",
+    "results/reported_statistics/oracle_failure_taxonomy_observed.csv",
+    "results/reported_statistics/oracle_failure_taxonomy_adjudicated.csv"
+  ]
+}

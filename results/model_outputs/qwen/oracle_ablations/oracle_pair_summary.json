@@ -1,0 +1,50 @@
+{
+    "status":  "completed",
+    "run_label":  "qwen3_vl_8b_oracle_full_2133_20260717",
+    "model":  "Qwen/Qwen3-VL-8B-Instruct",
+    "base_url":  "http://127.0.0.1:8000/v1",
+    "case_list_file":  "",
+    "selected_case_count":  2133,
+    "temperature":  0,
+    "max_tokens":  1024,
+    "native_max_attempts":  1,
+    "primary_endpoint":  "first_attempt_condition_success",
+    "phase_oracle":  {
+                         "parse_ok":  1388,
+                         "gate1_ok":  1178,
+                         "native_ok":  1041,
+                         "condition_success":  427,
+                         "failure_codes":  {
+                                               "C1":  614,
+                                               "C0":  427,
+                                               "C5":  137,
+                                               "C2":  745,
+                                               "C3":  210
+                                           },
+                         "failure_subtypes":  {
+                                                  "C1:":  614,
+                                                  "C0:":  427,
+                                                  "C5:AttributeError":  137,
+                                                  "C2:target_slot_count_mismatch":  745,
+                                                  "C3:incompatible_target_affordance":  210
+                                              }
+                     },
+    "target_oracle":  {
+                          "parse_ok":  2133,
+                          "gate1_ok":  501,
+                          "native_ok":  501,
+                          "condition_success":  488,
+                          "failure_codes":  {
+                                                "C3":  1632,
+                                                "C0":  488,
+                                                "C1":  13
+                                            },
+                          "failure_subtypes":  {
+                                                   "C3:phase_skill_mismatch":  304,
+                                                   "C3:missing_phase":  95,
+                                                   "C0:":  488,
+                                                   "C1:":  13,
+                                                   "C3:extra_phase":  1233
+                                               }
+                      }
+}

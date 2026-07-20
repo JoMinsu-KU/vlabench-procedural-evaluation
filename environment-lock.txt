@@ -73,7 +73,7 @@ numpy==1.25.0
 open3d==0.18.0
 openai==2.37.0
 opencv-python==4.11.0.86
-packaging @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_packaging_1777103621/work
+packaging  # source build; the pip-freeze record contained only a machine-local build path
 pandas==2.3.3
 parso==0.8.7
 pexpect==4.9.0

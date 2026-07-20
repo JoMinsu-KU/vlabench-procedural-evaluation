@@ -1,0 +1,32 @@
+{
+  "selected_case_count": 2133,
+  "args": {
+    "manifest": "${PROJECT_ROOT}/datasets/manifests/matched_2133_symbolic_procedural_cases.json",
+    "public_root": "${VLABENCH_PUBLIC_ROOT}",
+    "output_root": "${PROJECT_ROOT}/outputs/oracle_ablations/internvl3_8b_oracle_full_2133_20260715/phase_oracle",
+    "case_list_file": null,
+    "max_cases": 0,
+    "base_url": "http://127.0.0.1:8000/v1",
+    "model": "OpenGVLab/InternVL3-8B",
+    "ablation_mode": "phase_oracle",
+    "temperature": 0.0,
+    "max_tokens": 1024,
+    "timeout_sec": 180,
+    "native_timeout_sec": 240,
+    "native_max_attempts": 1,
+    "save_interval": 1,
+    "response_format_json": true,
+    "resume": true,
+    "prompt_only": false,
+    "inference_only": false
+  },
+  "gt_used_for_prompt": false,
+  "ablation_mode": "phase_oracle",
+  "phase_oracle_used_for_prompt": true,
+  "target_oracle_used_for_prompt": false,
+  "target_oracle_applied_after_valid_model_sequence": false,
+  "operation_sequence_used_for_scoring": false,
+  "counts_as_model_evaluation": true,
+  "normalization_policy": "integer-string-target-only",
+  "semantic_repair_applied": false
+}
