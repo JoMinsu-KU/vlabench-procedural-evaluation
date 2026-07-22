@@ -1,0 +1,4 @@
+mutation_control,checks,expected_behavior,validation_errors
+Phase-oracle: remove one target slot,2133,Reject without inferring or repairing the missing target,0
+Target-oracle: remove one skill,2133,Reject before reference-target access,0
+Target-oracle: swap the first two skills when possible,2091,Reject without reordering and before reference-target access,0

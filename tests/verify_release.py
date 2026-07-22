@@ -55,6 +55,13 @@ def read_single_jsonl(path: Path) -> dict[str, object]:
     return rows[0]
 
 
+def canonical_text_sha256(path: Path) -> str:
+    """Hash UTF-8 text with LF endings so verification is cross-platform."""
+
+    text = path.read_text(encoding="utf-8-sig").replace("\r\n", "\n")
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+
 def is_pinned_dependency_version(text: str, match: re.Match[str]) -> bool:
     line_start = text.rfind("\n", 0, match.start()) + 1
     line_end = text.find("\n", match.end())
@@ -122,18 +129,110 @@ def main() -> None:
     else:
         for row in oracle_main:
             if float(row["phase_minus_full_ci_low"]) <= 0 or float(row["target_minus_full_ci_low"]) <= 0:
-                errors.append(f"{row['model']}: an oracle-vs-full clustered interval includes zero")
+                errors.append(f"{row['model']}: a pointwise oracle-vs-full task-cluster interval includes zero")
             if not (
                 float(row["target_minus_phase_ci_low"]) <= 0
                 <= float(row["target_minus_phase_ci_high"])
             ):
-                errors.append(f"{row['model']}: target-vs-phase clustered interval excludes zero")
+                errors.append(f"{row['model']}: target-vs-phase task-cluster interval excludes zero")
+
+    simultaneous = read_csv(
+        root / "results" / "reported_statistics" / "oracle_primary_contrasts_simultaneous.csv"
+    )
+    if len(simultaneous) != 6:
+        errors.append("oracle simultaneous table does not contain six contrasts")
+    else:
+        excluding = [row for row in simultaneous if row["simultaneous_excludes_zero"].lower() == "true"]
+        if len(excluding) != 5:
+            errors.append(f"expected five zero-excluding simultaneous intervals, found {len(excluding)}")
+        internvl_target = [
+            row
+            for row in simultaneous
+            if row["model"] == "InternVL3-8B" and row["contrast"] == "Target-oracle - Full B"
+        ]
+        if len(internvl_target) != 1 or not (
+            float(internvl_target[0]["simultaneous_ci_low"]) <= 0
+            <= float(internvl_target[0]["simultaneous_ci_high"])
+        ):
+            errors.append("InternVL Target-minus-Full-B simultaneous interval does not include zero")
+
+    endpoint_sensitivity = read_csv(
+        root
+        / "results"
+        / "reported_statistics"
+        / "symbolic_endpoint_representation_sensitivity.csv"
+    )
+    expected_endpoint_counts = {
+        "Qwen3-VL-8B": (7, 280, 80),
+        "Gemma-3-12B-it": (17, 221, 57),
+        "InternVL3-8B": (2, 88, 40),
+    }
+    if len(endpoint_sensitivity) != 3:
+        errors.append("symbolic endpoint-sensitivity table does not contain three models")
+    else:
+        for row in endpoint_sensitivity:
+            expected = expected_endpoint_counts.get(row["model"])
+            actual = (
+                int(row["raw_a_full_match_count"]),
+                int(row["normalized_a_full_match_count"]),
+                int(row["b_first_attempt_success_count"]),
+            )
+            if expected != actual:
+                errors.append(f"{row['model']}: unexpected endpoint-sensitivity counts {actual}")
+            if float(row["raw_a_minus_b"]) >= 0 or float(row["normalized_a_minus_b"]) <= 0:
+                errors.append(f"{row['model']}: endpoint-sensitivity ordering did not reverse")
+
+    full_b_taxonomy = read_csv(
+        root / "results" / "reported_statistics" / "procedural_failure_outcomes.csv"
+    )
+    expected_full_b = {
+        ("Qwen3-VL-8B", "Target/context incompatibility"): 307,
+        ("Gemma-3-12B-it", "Target/context incompatibility"): 586,
+        ("InternVL3-8B", "Target/context incompatibility"): 307,
+        ("Qwen3-VL-8B", "Native execution failure"): 0,
+        ("Gemma-3-12B-it", "Native execution failure"): 0,
+        ("InternVL3-8B", "Native execution failure"): 0,
+    }
+    indexed_full_b = {(row["model"], row["outcome"]): row for row in full_b_taxonomy}
+    for key, expected in expected_full_b.items():
+        row = indexed_full_b.get(key)
+        if row is None or int(row["count"]) != expected:
+            errors.append(f"Full-B adjudicated taxonomy mismatch for {key}: expected {expected}")
+        elif row.get("classification_layer") != "responsibility_adjudicated":
+            errors.append(f"Full-B taxonomy lacks responsibility-adjudicated label for {key}")
 
     adjudication_rows = count_csv(
         root / "results" / "outcome_audits" / "oracle_attribute_error_adjudication.csv"
     )
     if adjudication_rows != 472:
         errors.append(f"oracle AttributeError adjudication contains {adjudication_rows}, not 472 rows")
+
+    corrected_gate_path = (
+        root / "results" / "outcome_audits" / "corrected_affordance_revalidation_20260721.json"
+    )
+    corrected_gate = json.loads(corrected_gate_path.read_text(encoding="utf-8"))
+    corrected_expected = {
+        "status": "passed",
+        "unique_model_condition_case_keys": 19_197,
+        "expected_adjudicated_c5_cases": 472,
+        "corrected_gate_flagged_cases": 1_074,
+        "already_c3_additional_flags": 602,
+        "additional_non_c3_outcomes": 0,
+        "flagged_original_successes": 0,
+        "success_labels_changed": False,
+    }
+    for field, expected in corrected_expected.items():
+        if corrected_gate.get(field) != expected:
+            errors.append(
+                f"corrected-gate field {field!r}: expected {expected!r}, found {corrected_gate.get(field)!r}"
+            )
+    corrected_rows = read_csv(
+        root / "results" / "outcome_audits" / "corrected_affordance_revalidation_20260721.csv"
+    )
+    if len(corrected_rows) != 1_074:
+        errors.append(f"corrected-gate mapping contains {len(corrected_rows)}, not 1,074 rows")
+    if any(row["original_success"].lower() == "true" for row in corrected_rows):
+        errors.append("corrected-gate mapping flags a successful row")
 
     schema = json.loads(
         (root / "shared" / "schemas" / "procedural_plan_schema.json").read_text(encoding="utf-8")
@@ -161,7 +260,57 @@ def main() -> None:
             errors.append(
                 f"oracle validation field {field!r}: expected {expected!r}, found {validation.get(field)!r}"
             )
-    validation_public_sha = hashlib.sha256(validation_path.read_bytes()).hexdigest()
+
+    full_b_no_repair = json.loads(
+        (validation_root / "full_b_no_repair_validation_20260721.json").read_text(encoding="utf-8")
+    )
+    full_b_no_repair_expected = {
+        "status": "passed",
+        "case_count": 2_133,
+        "task_count": 34,
+        "total_mutation_checks": 10_623,
+        "validation_error_count": 0,
+        "semantic_repair_applied": False,
+        "errors": [],
+    }
+    for field, expected in full_b_no_repair_expected.items():
+        if full_b_no_repair.get(field) != expected:
+            errors.append(
+                f"Full-B no-repair field {field!r}: expected {expected!r}, found {full_b_no_repair.get(field)!r}"
+            )
+    full_b_mutation_table = read_csv(
+        root / "results" / "reported_statistics" / "full_b_no_repair_mutation_controls.csv"
+    )
+    if sum(int(row["checks"]) for row in full_b_mutation_table) != 10_623:
+        errors.append("Full-B no-repair table does not sum to 10,623 checks")
+
+    protocol_path = validation_root / "VLABench_phase_target_oracle_ablation_protocol_20260715.md"
+    protocol_digest = canonical_text_sha256(protocol_path)
+    if protocol_digest != "147bc2c55c3912a4282fe518f0408246c91c2a77c414611244c725ae232e5a30":
+        errors.append("sanitized Oracle protocol digest does not match the frozen public copy")
+    protocol_text = protocol_path.read_text(encoding="utf-8")
+    if "B5596BAD1C4B1C488382ED100BF8C3BF26E7C5FD026ADB3EB2CD16B1C79E364F" not in protocol_text:
+        errors.append("sanitized Oracle protocol does not record the original source digest")
+
+    required_figures = {
+        "fig_dual_interface_results.png",
+        "fig_oracle_responsibility_controls.png",
+        "fig_reference_procedure_expansion.png",
+        "fig_procedural_failure_taxonomy.png",
+    }
+    figure_dir = root / "analysis" / "figures"
+    for filename in required_figures:
+        if not (figure_dir / filename).is_file():
+            errors.append(f"missing final figure: {filename}")
+    for filename in (
+        "fig_responsibility_exposure_results.png",
+        "fig_responsibility_exposure_results.svg",
+        "fig_procedural_expansion.png",
+        "fig_procedural_expansion.svg",
+    ):
+        if (figure_dir / filename).exists():
+            errors.append(f"superseded figure remains in release: {filename}")
+    validation_public_sha = canonical_text_sha256(validation_path)
     if validation_public_sha != "ce1ef08e83b913ef38ef75c380e3b8c4d90eeb623b73eb3eee88b088249039b2":
         errors.append("public Oracle validation JSON digest does not match the recorded sanitized copy")
 
@@ -289,6 +438,14 @@ def main() -> None:
         "oracle_adjudication_rows": adjudication_rows,
         "oracle_validation_cases": validation.get("case_count"),
         "oracle_validation_mutation_checks": validation.get("mutation_checks"),
+        "full_b_no_repair_mutation_checks": full_b_no_repair.get("total_mutation_checks"),
+        "oracle_simultaneous_zero_excluding_contrasts": sum(
+            row["simultaneous_excludes_zero"].lower() == "true" for row in simultaneous
+        ),
+        "corrected_gate_mapping_rows": len(corrected_rows),
+        "corrected_gate_adjudicated_c5_recovered": corrected_gate.get(
+            "expected_adjudicated_c5_cases"
+        ),
         "recovered_validation_source_files": len(source_checksum_lines),
         "checksummed_files": len(checksum_rows),
     }

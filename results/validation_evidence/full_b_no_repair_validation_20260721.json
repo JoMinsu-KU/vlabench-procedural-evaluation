@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "case_count": 2133,
+  "task_count": 34,
+  "source_fixture": "results/positive_control/provenance/fixtures.json",
+  "source_code": ".",
+  "checks": {
+    "missing_phase": 2133,
+    "adjacent_phase_swap": 2091,
+    "extra_phase": 2133,
+    "missing_target": 2133,
+    "alternative_target_preserved": 2133
+  },
+  "total_mutation_checks": 10623,
+  "validation_error_count": 0,
+  "semantic_repair_applied": false,
+  "scope_note": "The alternative-target check uses a synthetic named component registry to test numeric-target preservation in the Full-B parser and phase binder. It is not an affordance or task-success test.",
+  "errors": []
+}

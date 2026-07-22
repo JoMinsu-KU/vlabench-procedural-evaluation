@@ -6,13 +6,13 @@ The six Oracle model-condition runs pass the release integrity checks with recor
 
 ## Main results
 
-| Model | Full B | Phase-oracle | Target-oracle | Phase − Full, clustered 95% CI | Target − Full, clustered 95% CI | Target − Phase, clustered 95% CI |
+| Model | Full B | Phase-oracle | Target-oracle | Phase − Full, 95% task-cluster bootstrap interval | Target − Full, 95% task-cluster bootstrap interval | Target − Phase, 95% task-cluster bootstrap interval |
 |---|---:|---:|---:|---:|---:|---:|
 | Qwen3-VL-8B | 80/2,133 (3.75%) | 427/2,133 (20.02%) | 488/2,133 (22.88%) | +16.27 pp [10.33, 22.54] | +19.13 pp [7.38, 32.34] | +2.86 pp [−12.51, 18.89] |
 | Gemma-3-12B-it | 57/2,133 (2.67%) | 344/2,133 (16.13%) | 585/2,133 (27.43%) | +13.46 pp [7.11, 20.95] | +24.75 pp [11.78, 39.02] | +11.30 pp [−5.99, 28.72] |
 | InternVL3-8B | 40/2,133 (1.88%) | 314/2,133 (14.72%) | 191/2,133 (8.95%) | +12.85 pp [7.71, 18.45] | +7.08 pp [2.38, 12.97] | −5.77 pp [−13.88, 3.02] |
 
-Intervals use the same 34 `category/task_name` clusters, 20,000 percentile-bootstrap resamples, and seed `20260711` as the A/B analysis. All six Oracle-versus-Full intervals exclude zero. All three Target-versus-Phase intervals include zero, so the ordering of the two Oracle conditions is descriptive only.
+Intervals use the same 34 `category/task_name` clusters, 20,000 percentile-bootstrap resamples, and seed `20260711` as the A/B analysis. All six pointwise Oracle-versus-Full intervals exclude zero. In the jointly resampled six-contrast max-|T| sensitivity analysis, five simultaneous intervals exclude zero; the InternVL Target-minus-Full-B interval is [−0.09, 14.25]. All three Target-versus-Phase intervals include zero, so the ordering of the two Oracle conditions is descriptive only. These intervals assess sensitivity to reweighting the 34 retained tasks, not inference to unseen tasks.
 
 ## Run integrity
 
@@ -29,6 +29,8 @@ Detailed checks are in `oracle_run_integrity_audit.csv` and `oracle_jsonl_dedupl
 ## Failure responsibility adjudication
 
 The release preserves observed first-failure codes separately from responsibility adjudication. Five Full-B and 467 Phase-oracle C5 `AttributeError` outcomes were native exceptions caused by target-object method incompatibilities that the pre-execution affordance gate did not detect. The responsibility layer therefore labels these 472 cases `target_context_failure` with reason `affordance_gate_false_negative` without changing success labels.
+
+Offline corrected-gate revalidation flags all 472 adjudicated C5 rows, 602 additional rows already classified as C3 target/context failures, and no successful or other-class row. It is a rejection-only refinement: raw runtime codes and success labels remain unchanged. The JSON summary and 1,074-row mapping are `corrected_affordance_revalidation_20260721.json` and `.csv` in this directory.
 
 | Condition/model | Adjudicated cases |
 |---|---:|
@@ -49,16 +51,18 @@ Canonical sources are `../reported_statistics/oracle_failure_taxonomy_observed.c
 
 ## Reporting boundaries
 
-- Both Oracle controls outperform Full B for all three models under the task-clustered intervals.
-- The pattern supports the diagnostic conclusion that phase/order generation and target grounding both contribute to low full-contract success.
+- Both responsibility-relaxed scaffolds have higher aggregate point estimates than Full B for all three evaluated models; five of six family-wise simultaneous intervals exclude zero.
+- The contrasts characterize scaffold-conditioned recovery associated with relaxed phase/order or target requirements. They do not decompose the causal sources of Full-B failure.
 - Oracle success remains below 30%; it is not evidence of high procedural-planning accuracy.
-- The controls simplify different contract components and are not isolated single-factor causal interventions.
+- Each condition generates a separate plan under a different output scaffold and is not an isolated single-factor causal intervention or same-plan repair.
 - Success sets are not nested, and the data do not support an inferential ranking of Target-oracle versus Phase-oracle.
 
 ## Canonical outputs
 
 - `../reported_statistics/oracle_main_results_clustered.csv`
 - `../reported_statistics/oracle_paired_recovery.csv`
+- `../reported_statistics/oracle_primary_contrasts_simultaneous.csv`
+- `../reported_statistics/oracle_no_repair_mutation_controls.csv`
 - `../reported_statistics/oracle_task_level_results.csv`
 - `../reported_statistics/oracle_task_recovery_distribution.csv`
 - `../reported_statistics/oracle_failure_taxonomy_observed.csv`
@@ -68,10 +72,15 @@ Canonical sources are `../reported_statistics/oracle_failure_taxonomy_observed.c
 - `oracle_attribute_error_adjudication.csv`
 - `oracle_preintegration_validation_summary.json`
 - `../validation_evidence/oracle_ablation_validation_20260715.json`
+- `../validation_evidence/VLABench_phase_target_oracle_ablation_protocol_20260715.md`
+- `../validation_evidence/full_b_no_repair_validation_20260721.json`
+- `corrected_affordance_revalidation_20260721.json`
+- `corrected_affordance_revalidation_20260721.csv`
 - `REMOTE_VALIDATION_EVIDENCE_RECONCILIATION.md`
 
 Regenerate the published Oracle tables from the repository root with:
 
 ```bash
 python analysis/reproduce_oracle_statistics.py
+python analysis/generate_oracle_manuscript_assets.py
 ```

@@ -1,0 +1,6 @@
+mutation_control,checks,expected_behavior,validation_errors
+Full B: remove final phase,2133,Reject without phase insertion,0
+Full B: swap first two phases when possible,2091,Reject without sequence reordering,0
+Full B: append one extra phase,2133,Reject without phase deletion or skipping,0
+Full B: remove one required target,2133,Reject without target insertion,0
+Full B: substitute one in-range numeric target,2133,Preserve the selected target without GT replacement,0

@@ -8,6 +8,10 @@
   "oracle_adjudication_rows": 472,
   "oracle_validation_cases": 2133,
   "oracle_validation_mutation_checks": 6357,
+  "full_b_no_repair_mutation_checks": 10623,
+  "oracle_simultaneous_zero_excluding_contrasts": 5,
+  "corrected_gate_mapping_rows": 1074,
+  "corrected_gate_adjudicated_c5_recovered": 472,
   "recovered_validation_source_files": 40,
-  "checksummed_files": 13082
+  "checksummed_files": 13100
 }

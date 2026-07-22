@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import csv
 from pathlib import Path
+from shutil import copy2
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -755,32 +756,19 @@ def plot_agreement(agreement: pd.DataFrame) -> None:
 
 
 def main() -> None:
+    from generate_oracle_manuscript_assets import main as generate_oracle_manuscript_assets
+    from generate_revision_assets import main as generate_revision_assets
     from reproduce_oracle_statistics import main as reproduce_oracle_statistics
 
-    plt.rcParams.update(
-        {
-            "font.family": "DejaVu Sans",
-            "font.size": 9,
-            "axes.titlesize": 10,
-            "axes.labelsize": 9,
-            "legend.fontsize": 8,
-            "svg.fonttype": "none",
-        }
-    )
-    main_results, agreement, funnel = build_tables()
-    _, selection_categories = build_dataset_selection_tables()
-    expansion_stratified = build_expansion_stratified_table()
-    failure = pd.read_csv(TABLE_DIR / "procedural_failure_outcomes.csv")
-    plot_evaluation_framework()
-    plot_procedural_expansion()
-    plot_dataset_selection(selection_categories)
-    plot_main_results(main_results)
-    plot_agreement(agreement)
-    plot_pooled_failure_taxonomy(failure)
+    generate_revision_assets()
     reproduce_oracle_statistics()
-    print(main_results.to_string(index=False))
-    print(agreement.to_string(index=False))
-    print(expansion_stratified.to_string(index=False))
+    generate_oracle_manuscript_assets()
+
+    reported_statistics = REPOSITORY_ROOT / "results" / "reported_statistics"
+    reported_statistics.mkdir(parents=True, exist_ok=True)
+    for table in TABLE_DIR.glob("*.csv"):
+        copy2(table, reported_statistics / table.name)
+    print("Submission tables and figures regenerated; reported-statistics mirrors synchronized.")
 
 
 if __name__ == "__main__":

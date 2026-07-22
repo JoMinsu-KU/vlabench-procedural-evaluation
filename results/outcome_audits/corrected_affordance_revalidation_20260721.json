@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "model_condition_rows": 19197,
+  "unique_model_condition_case_keys": 19197,
+  "source_duplicate_rows_ignored_by_case_id": 2682,
+  "expected_adjudicated_c5_cases": 472,
+  "corrected_gate_flagged_cases": 1074,
+  "all_adjudicated_c5_recovered": true,
+  "already_c3_additional_flags": 602,
+  "additional_non_c3_outcomes": 0,
+  "missing_from_corrected_gate": [],
+  "additional_corrected_gate_flag_count": 602,
+  "flagged_original_successes": 0,
+  "success_labels_changed": false,
+  "rules": {
+    "pick": {
+      "BilliardTable": "missing get_grasped_keypoints"
+    },
+    "place": {
+      "BilliardBall": "missing get_place_point",
+      "Fruit": "missing get_place_point",
+      "Toy": "missing get_place_point"
+    }
+  },
+  "scope": "Offline revalidation of frozen Full-B, Phase-oracle, and Target-oracle outputs. No model inference or native rollout was performed, and raw observed failure codes were not overwritten."
+}

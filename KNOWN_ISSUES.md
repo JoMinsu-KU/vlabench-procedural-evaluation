@@ -1,10 +1,10 @@
 # Known issues and reporting boundaries
 
-## Canonical Oracle JSONL
+## Public Oracle JSONL
 
 The source InternVL Phase-oracle JSONL contained 4,266 lines with 2,133 exact duplicate lines. The source InternVL Target-oracle JSONL contained 2,682 lines with 549 exact duplicate lines. The public JSONL files apply exact-line deduplication while preserving the first occurrence, yielding 2,133 lines and 2,133 unique case IDs per condition.
 
-The final result CSVs were already complete and unaffected. They are the canonical scoring source. Source and canonical counts are recorded in `results/outcome_audits/oracle_release_build.json` and `oracle_jsonl_deduplication_audit.csv`.
+The final result CSVs were already complete and unaffected. They are the authoritative scoring source. Source and public counts are recorded in `results/outcome_audits/oracle_release_build.json` and `oracle_jsonl_deduplication_audit.csv`.
 
 ## Recovered validation report
 
@@ -18,16 +18,34 @@ Five Full-B and 467 Phase-oracle C5 `AttributeError` outcomes occurred after the
 
 This adjudication does not change any primary success outcome.
 
+Offline revalidation with the corrected method-availability rules flagged all 472 adjudicated C5 rows, 602 additional rows already rejected as C3 target/context failures, and no successful or other-class row. The corrected gate is therefore documented as a rejection-only refinement: it changes responsibility localization and counterfactual termination order, not raw runtime codes or success labels. Evidence is in `results/outcome_audits/corrected_affordance_revalidation_20260721.{json,csv}`.
+
+The responsibility-adjudicated Full-B table assigns the five raw C5 rows to target/context and zero rows to intrinsic-native responsibility. This does not mean that no raw native exception occurred.
+
 ## Static schema alignment
 
 The as-run static JSON schema required a `target` field on every step, while the runtime parser required integer targets only for target-taking skills and prohibited targets on no-target skills. The public schema is aligned with the runtime contract. This documentation fix does not alter stored experimental outcomes.
 
 ## Statistical interpretation
 
-- All six Oracle-versus-Full task-clustered 95% confidence intervals exclude zero.
+- All six pointwise Oracle-versus-Full task-cluster bootstrap intervals exclude zero.
+- Five of six max-|T| family-wise simultaneous intervals exclude zero; the InternVL Target-minus-Full-B interval includes zero.
 - All three Target-oracle-versus-Phase-oracle intervals include zero.
-- Oracle controls simplify different output-contract components and are not pure causal interventions.
+- The task-cluster bootstrap assesses sensitivity to the empirical composition of the 34 retained tasks; it is not interpreted as inference to unseen tasks.
+- Phase-oracle and Target-oracle use different scaffolds and separately generated plans. Their outcome differences are diagnostic associations, not pure causal interventions or same-plan repairs.
 - Absolute Oracle success remains below 30% and must not be described as high procedural accuracy.
+
+## Symbolic endpoint representation sensitivity
+
+Digit-only target strings are deterministically cast to integers in the type-normalized symbolic endpoint. Under raw released PM, Full-B success is numerically higher than symbolic full match for all three backbones; normalization reverses the ordering. Neither direction establishes metric superiority. Both representations and their paired differences are released in `results/reported_statistics/symbolic_endpoint_representation_sensitivity.csv`.
+
+## Fixed analysis manifest and reference contract
+
+All findings are conditional on the fixed 2,133-case dual-replay-qualified non-complex analysis manifest. Category retention is uneven, and the manifest does not represent the full VLABench case distribution. The benchmark-derived reference procedure is the fixed execution contract used by this evaluation; it does not enumerate every physically valid procedure.
+
+## Ownership and no-repair controls
+
+The recovered Oracle validation report records 6,357 mutation checks. A separate released Full-B battery applies 10,623 missing-phase, phase-swap, extra-phase, missing-target, and alternative-target preservation checks to the positive-control fixtures. Both batteries report zero semantic repair and zero validation errors. These are offline interface checks, not additional model inference or native-rollout outcomes.
 
 ## Path sanitization
 
