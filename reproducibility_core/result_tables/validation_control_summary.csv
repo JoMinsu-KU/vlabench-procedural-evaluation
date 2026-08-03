@@ -1,0 +1,9 @@
+control,unit,count,total,rate_or_status,claim_supported,claim_not_supported,source
+GT-derived positive control,case validation and binding,2133,2133,passed,The frozen reference procedures traverse the released validation and binding path,Procedure uniqueness or coverage of every valid alternative,results/positive_control/summary.json
+GT-derived positive control,accepted reference steps,4881,4881,passed,Operational coverage of all registered steps on the retained manifest,Human-independent registry transcription validity,reproducibility_core/registry_audit/final/source_registry_crosswalk.csv
+GT-derived positive control,first-attempt final-condition success,2062,2133,96.67%,Observed first-attempt viability under the frozen valid procedures,A theoretical execution ceiling or deterministic simulator guarantee,results/positive_control/summary.json
+GT-derived positive control,success within unchanged-plan retry policy,2133,2133,100%,All frozen valid procedures succeeded within at most ten unchanged-plan attempts,Model success under retries,results/positive_control/summary.json
+GT-derived positive control,privileged runtime/reference access,0,2133,0,Reference metadata was not read by adapter/lowerer during execution,Absence of offline GT use in fixture construction,results/positive_control/verification_report.json
+Full-B mutation control,adversarial no-repair checks,10623,10623,passed,Missing/reordered/extra phases and missing/alternative targets are not silently repaired,Physical invalidity of every rejected plan,results/validation_evidence/full_b_no_repair_validation_20260721.json
+Scaffold mutation control,adversarial no-repair checks,6357,6357,passed,Relaxed-condition ownership fields are not silently repaired,Same-plan causal isolation,results/validation_evidence/oracle_ablation_validation_20260715.json
+

@@ -240,8 +240,8 @@ def plot_oracle_responsibility_analysis(main: pd.DataFrame) -> None:
     width = 0.25
     conditions = [
         ("full", "Full B", "full_success_rate", "full_cluster_ci_low", "full_cluster_ci_high", "full_success_count"),
-        ("phase", "Phase-oracle", "phase_success_rate", "phase_cluster_ci_low", "phase_cluster_ci_high", "phase_success_count"),
-        ("target", "Target-oracle", "target_success_rate", "target_cluster_ci_low", "target_cluster_ci_high", "target_success_count"),
+        ("phase", "Reference-phase scaffold", "phase_success_rate", "phase_cluster_ci_low", "phase_cluster_ci_high", "phase_success_count"),
+        ("target", "Reference-target scaffold", "target_success_rate", "target_cluster_ci_low", "target_cluster_ci_high", "target_success_count"),
     ]
     offsets = [-width, 0.0, width]
     for offset, (color_key, label, rate_col, low_col, high_col, count_col) in zip(offsets, conditions):
@@ -276,14 +276,14 @@ def plot_oracle_responsibility_analysis(main: pd.DataFrame) -> None:
     ax.legend(frameon=False, loc="upper left", ncols=3, fontsize=8)
     ax.set_title("A  Condition-level success", loc="left", fontsize=10, weight="bold")
 
-    # Panel B: oracle-minus-full task-clustered contrasts.
+    # Panel B: scaffold-minus-full task-clustered contrasts.
     ax = axes[1]
     y = np.arange(len(main))
     shift = 0.14
     contrast_specs = [
         (
             "phase",
-            "Phase − Full B",
+            "Reference phase - Full B",
             "phase_minus_full",
             "phase_minus_full_ci_low",
             "phase_minus_full_ci_high",
@@ -291,7 +291,7 @@ def plot_oracle_responsibility_analysis(main: pd.DataFrame) -> None:
         ),
         (
             "target",
-            "Target − Full B",
+            "Reference target - Full B",
             "target_minus_full",
             "target_minus_full_ci_low",
             "target_minus_full_ci_high",
@@ -319,7 +319,7 @@ def plot_oracle_responsibility_analysis(main: pd.DataFrame) -> None:
     ax.set_yticks(y, MODEL_LABELS)
     ax.invert_yaxis()
     ax.set_xlim(-2, 42)
-    ax.set_xlabel("Oracle − Full B difference (percentage points)\n95% task-cluster bootstrap interval")
+    ax.set_xlabel("Scaffold - Full B difference (percentage points)\n95% task-cluster bootstrap interval")
     ax.grid(axis="x", color="#E0E0E0", linewidth=0.7)
     ax.set_axisbelow(True)
     ax.spines[["top", "right"]].set_visible(False)

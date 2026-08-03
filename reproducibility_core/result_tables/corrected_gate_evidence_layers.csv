@@ -1,0 +1,10 @@
+evidence_layer,scope,count,interpretation,success_label_change,source
+observed_runtime,Full B raw C5 AttributeError,5,Original first-termination code preserved,0,analysis/tables/oracle_failure_taxonomy_observed.csv
+observed_runtime,Reference-phase scaffold raw C5 AttributeError,467,Original first-termination code preserved,0,analysis/tables/oracle_failure_taxonomy_observed.csv
+responsibility_adjudication,All gate-related C5 rows,472,Assigned to target/context responsibility because an incompatible model-selected target passed the incomplete gate,0,results/outcome_audits/oracle_attribute_error_adjudication.csv
+offline_corrected_gate,All frozen model-condition-case outputs,19197,Rejection-only offline revalidation; no inference or native rollout,0,results/outcome_audits/corrected_affordance_revalidation_20260721.json
+offline_corrected_gate,All adjudicated gate-related C5 rows recovered,472,All adjudicated C5 rows flagged,0,results/outcome_audits/corrected_affordance_revalidation_20260721.json
+offline_corrected_gate,Existing C3 target/context rows additionally flagged,602,Already-unsuccessful target/context outputs,0,results/outcome_audits/corrected_affordance_revalidation_20260721.json
+offline_corrected_gate,All flagged outputs,1074,472 adjudicated C5 plus 602 existing C3,0,results/outcome_audits/corrected_affordance_revalidation_20260721.json
+offline_corrected_gate,Successful outputs flagged,0,No successful output was rejected by the corrected rule,0,results/outcome_audits/corrected_affordance_revalidation_20260721.json
+

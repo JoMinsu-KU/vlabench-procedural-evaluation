@@ -1,0 +1,52 @@
+{
+  "status": "passed",
+  "interpretation": "fixed-manifest task/category-composition sensitivity; not inference to unseen tasks",
+  "model_count": 3,
+  "cases_per_model": 2133,
+  "pooled_model_case_rows": 6399,
+  "task_clusters": 34,
+  "categories": 5,
+  "baseline": {
+    "scope": "pooled",
+    "exclusion_type": "none",
+    "excluded_unit": "none",
+    "retained_rows": 6399,
+    "retained_task_clusters": 34,
+    "retained_categories": 5,
+    "both": 74,
+    "a_only": 515,
+    "b_only": 103,
+    "neither": 5707,
+    "union_success": 692,
+    "success_set_jaccard": 0.1069364161849711,
+    "single_interface_success_count": 618,
+    "single_interface_share_union": 0.8930635838150289,
+    "a_only_rate_all": 0.08048132520706361,
+    "b_only_rate_all": 0.016096265041412722,
+    "a_only_share_union": 0.7442196531791907,
+    "b_only_share_union": 0.14884393063583815,
+    "success_sets_nonnested": true,
+    "a_success_rate": 0.09204563213002032,
+    "b_success_rate": 0.027660571964369433,
+    "normalized_a_minus_b": 0.06438506016565088,
+    "phase_success_rate": 0.16955774339740584,
+    "target_success_rate": 0.19753086419753085,
+    "phase_minus_full_b": 0.1418971714330364,
+    "target_minus_full_b": 0.1698702922331614,
+    "full_b_failure_count": 6222,
+    "pre_native_responsibility_count": 5968,
+    "pre_native_share_full_b_failures": 0.9591771134683381,
+    "pre_native_share_all_full_b_outputs": 0.9326457258946711
+  },
+  "loto": {
+    "pooled_exclusions": 34,
+    "all_success_sets_nonnested": true,
+    "all_single_interface_majority": true
+  },
+  "loco": {
+    "pooled_exclusions": 5,
+    "all_success_sets_nonnested": true,
+    "all_single_interface_majority": true
+  },
+  "labels_modified": 0
+}

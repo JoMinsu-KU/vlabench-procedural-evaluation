@@ -606,37 +606,110 @@ def _arrow(ax, start: tuple[float, float], end: tuple[float, float]) -> None:
 
 
 def plot_evaluation_framework() -> None:
-    fig, ax = plt.subplots(figsize=(9.5, 6.1))
+    fig, ax = plt.subplots(figsize=(10.4, 6.4))
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 1)
     ax.axis("off")
-    _box(ax, 0.31, 0.87, 0.38, 0.09, "Same 2,133 VLABench cases\nSame VLM backbones", "#F2F2F2", "#777777")
-    _arrow(ax, (0.5, 0.87), (0.25, 0.77))
-    _arrow(ax, (0.5, 0.87), (0.75, 0.77))
-    ax.text(0.25, 0.80, "Experiment A", ha="center", fontsize=11, weight="bold", color="#315A86")
-    ax.text(0.75, 0.80, "Experiment B", ha="center", fontsize=11, weight="bold", color="#A33D3B")
-    left = [
-        (0.08, 0.66, "Official-style symbolic interface"),
-        (0.08, 0.49, "High-level skill sequence\n(skill + target + order)"),
-        (0.08, 0.32, "Expert-DAG sequence scoring"),
-        (0.08, 0.15, "Type-normalized PM-based\nfull-match (derived)"),
-    ]
-    right = [
-        (0.58, 0.66, "Benchmark-derived reference-\nprocedure interface"),
-        (0.58, 0.49, "Reference procedure\n(skill + target + order)"),
-        (0.58, 0.32, "Validation + target binding\n+ native execution"),
-        (0.58, 0.15, "First-attempt reference-procedure\ntask success"),
-    ]
-    for x, y, text_value in left:
-        _box(ax, x, y, 0.34, 0.10, text_value, "#EAF2FA", "#4C78A8")
-    for x, y, text_value in right:
-        _box(ax, x, y, 0.34, 0.10, text_value, "#FCEDEC", "#E45756")
-    for x in (0.25, 0.75):
-        _arrow(ax, (x, 0.66), (x, 0.59))
-        _arrow(ax, (x, 0.49), (x, 0.42))
-        _arrow(ax, (x, 0.32), (x, 0.25))
-    ax.text(0.5, 0.06, "Matched cases and backbones; separately generated plans and non-interchangeable endpoints",
-            ha="center", fontsize=8.5, color="#444444")
+    _box(
+        ax,
+        0.29,
+        0.88,
+        0.42,
+        0.08,
+        "Task instruction + scene + numbered objects\nSame 2,133 cases and VLM backbones",
+        "#F2F2F2",
+        "#777777",
+    )
+    _arrow(ax, (0.46, 0.88), (0.25, 0.79))
+    _arrow(ax, (0.54, 0.88), (0.75, 0.79))
+    ax.text(0.25, 0.81, "A  High-level symbolic planning", ha="center", fontsize=10.5, weight="bold", color="#315A86")
+    ax.text(0.75, 0.81, "B  Reference-procedure planning", ha="center", fontsize=10.5, weight="bold", color="#A33D3B")
+
+    _box(
+        ax,
+        0.06,
+        0.62,
+        0.38,
+        0.13,
+        "VLM-owned\nHigh-level skill, coarse target, order",
+        "#EAF2FA",
+        "#4C78A8",
+    )
+    _box(
+        ax,
+        0.56,
+        0.62,
+        0.38,
+        0.13,
+        "VLM-owned\nProcedural phase, phase order,\nstep-specific target",
+        "#FCEDEC",
+        "#E45756",
+    )
+    _box(
+        ax,
+        0.06,
+        0.43,
+        0.38,
+        0.11,
+        "Expert-DAG sequence scoring\nType-normalized PM-based full-match",
+        "#EAF2FA",
+        "#4C78A8",
+    )
+    _box(
+        ax,
+        0.56,
+        0.43,
+        0.38,
+        0.11,
+        "Reference-contract validation\nNo insertion, reordering, or target replacement",
+        "#FCEDEC",
+        "#E45756",
+    )
+    _arrow(ax, (0.25, 0.62), (0.25, 0.54))
+    _arrow(ax, (0.75, 0.62), (0.75, 0.54))
+
+    ax.text(
+        0.50,
+        0.58,
+        "Responsibility reallocation:\nexecutor-abstracted discrete decisions in A become model-visible in B",
+        ha="center",
+        va="center",
+        fontsize=7.4,
+        color="#555555",
+        bbox=dict(boxstyle="round,pad=0.22", facecolor="white", edgecolor="#BBBBBB", linewidth=0.7),
+        zorder=5,
+    )
+
+    _arrow(ax, (0.75, 0.43), (0.75, 0.35))
+    _box(
+        ax,
+        0.18,
+        0.18,
+        0.64,
+        0.13,
+        "Fixed native backend for accepted B plans\nBackend-owned: pose, orientation, motion parameters, trajectory,\ngripper/joint control, MuJoCo rollout and final-condition check",
+        "#EEF5EE",
+        "#4C8C5A",
+    )
+    _box(
+        ax,
+        0.35,
+        0.06,
+        0.30,
+        0.07,
+        "First-attempt reference-procedure\ntask success",
+        "#FFF7E8",
+        "#C78A2A",
+    )
+    _arrow(ax, (0.50, 0.18), (0.50, 0.13))
+    ax.text(
+        0.5,
+        0.015,
+        "Complementary, independently elicited outputs; Experiment A is not expanded into Experiment B.",
+        ha="center",
+        fontsize=8.2,
+        color="#444444",
+    )
     fig.tight_layout()
     save_figure(fig, "fig_evaluation_framework")
 

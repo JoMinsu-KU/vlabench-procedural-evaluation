@@ -1,0 +1,15 @@
+{
+  "audit_status": "STRUCTURAL_PASS_SEMANTIC_REVIEW_PENDING",
+  "artifact_baseline_commit": "31f4c8ce50943ac8282b4bab0d567cc5a597d730",
+  "source_commit": "cf588fe60c0c7282174fe979f5913170cfe69017",
+  "manifest_case_count": 2133,
+  "retained_task_count": 34,
+  "registry_sha256": "f7c18ca17aadf7b604ce6a2de03d2bef4b203a128738f7702b48a201619f569c",
+  "manifest_sha256": "529c748f1701c413a27a00c06a38f2c2201b26b32d3ac75ba95210e4bbf15721",
+  "source_traceable_task_count": 34,
+  "structural_pass_task_count": 34,
+  "critical_structural_findings": [],
+  "tasks_requiring_branch_review": [],
+  "semantic_review_status": "PENDING_AUTHOR_LED_REVIEW",
+  "labels_modified": 0
+}

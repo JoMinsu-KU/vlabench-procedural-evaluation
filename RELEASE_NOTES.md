@@ -1,4 +1,21 @@
-# Reproducibility artifact v1.1
+# Reproducibility artifact v1.2 release candidate
+
+This release candidate preserves every authoritative v1.1 model output and success label while adding source-linked registry provenance, fixed-manifest composition-sensitivity diagnostics, and the claim-boundary records used for the revised manuscript.
+
+New in v1.2:
+
+- a 34-task source-to-registry crosswalk pinned to VLABench commit `cf588fe60c0c7282174fe979f5913170cfe69017`;
+- deterministic structural checks plus a documented author-led semantic source review;
+- explicit inheritance, effective-method, source-permalink, target-taking-phase, and branch-handling provenance;
+- zero D3 substantive mismatches, zero unresolved task or case-to-branch assignments, and zero registry or result-label changes;
+- leave-one-task-out and leave-one-category-out composition-sensitivity tables for the primary cross-interface discordance metrics and secondary rate contrasts;
+- explicit separation of observed runtime codes, responsibility adjudication, and offline corrected-gate evidence;
+- provisional and final claim matrices plus a terminology glossary, separated from the reproducibility core as editorial provenance;
+- regenerated framework and scaffold figures using manuscript-facing terminology.
+
+The registry review is not an independent human or inter-rater validation and does not assess whether the fixed contract is unique or enumerates all physically valid procedures. The composition diagnostics characterize the fixed 2,133-case analysis manifest and do not support inference to unseen VLABench tasks.
+
+## v1.1 baseline
 
 This release integrates the completed Oracle runs with the final construct-validity framing, endpoint-sensitivity analysis, task-composition sensitivity, ownership controls, and responsibility adjudication used by the submission manuscript.
 

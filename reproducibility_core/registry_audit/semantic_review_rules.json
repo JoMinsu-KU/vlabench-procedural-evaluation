@@ -1,0 +1,81 @@
+{
+  "review_type": "documented source-linked provenance audit",
+  "independent_human_review": false,
+  "review_note": "The audit combines deterministic AST checks with documented source inspection in the revision workflow; it is not an independent human or inter-rater validation.",
+  "source_commit": "cf588fe60c0c7282174fe979f5913170cfe69017",
+  "review_scope": "effective get_expert_skill_sequence definitions used by the 34 retained task registrations",
+  "procedure_uniqueness_assessed": false,
+  "alternative_validity_assessed": false,
+  "families": {
+    "AddCondimentTask": {
+      "source": "primitive/add_condiment_series.py",
+      "lines": "96-104",
+      "expected_sequence": ["pick", "lift", "moveto", "pour"],
+      "target_taking_phases": [1, 3],
+      "rationale": "The source binds pick to self.target_entity and derives the moveto position from self.target_container; lift and pour operate on the held object without a new model-selected component."
+    },
+    "PressButtonTask": {
+      "source": "primitive/base.py",
+      "lines": "80-85",
+      "expected_sequence": ["press"],
+      "target_taking_phases": [1],
+      "rationale": "The inherited source derives the press position from self.target_button, so the single press phase retains a model-selected component target."
+    },
+    "InsertFlowerTask": {
+      "source": "primitive/insert_flower_series.py",
+      "lines": "108-116",
+      "expected_sequence": ["pick", "lift", "moveto", "lift"],
+      "target_taking_phases": [1, 3],
+      "rationale": "The source binds pick to self.target_entity and derives the moveto placement point from self.target_container; both lift phases use task-defined geometry without a new component target."
+    },
+    "SelectBilliardsTask": {
+      "source": "primitive/select_billiards_series.py",
+      "lines": "122-127",
+      "expected_sequence": ["pick", "place"],
+      "target_taking_phases": [1, 2],
+      "rationale": "The source binds pick to self.target_entity and place to self.target_container."
+    },
+    "SelectBookTask": {
+      "source": "primitive/select_book_series.py",
+      "lines": "149-154",
+      "expected_sequence": ["pick", "pull"],
+      "target_taking_phases": [1],
+      "rationale": "The source binds pick to self.target_entity; pull continues the task-defined motion on the held object and introduces no new component target."
+    },
+    "SelectChemistryTubeTask": {
+      "source": "primitive/select_chemistry_tube_series.py",
+      "lines": "181-186",
+      "expected_sequence": ["pick", "lift"],
+      "target_taking_phases": [1],
+      "rationale": "The source binds pick to self.target_entity; lift introduces no new component target."
+    },
+    "SelectDrinkTask": {
+      "source": "primitive/select_drink_series.py",
+      "lines": "165-171",
+      "expected_sequence": ["pick", "lift", "pull"],
+      "target_taking_phases": [1],
+      "rationale": "The source binds pick to self.target_entity; lift and pull use task-defined motion parameters without a new component target."
+    },
+    "SelectFruitTask": {
+      "source": "primitive/select_fruit_series.py",
+      "lines": "92-97",
+      "expected_sequence": ["pick", "place"],
+      "target_taking_phases": [1, 2],
+      "rationale": "The source binds pick to self.target_entity and place to self.target_container."
+    },
+    "SelectPokerTask": {
+      "source": "primitive/select_poker_series.py",
+      "lines": "163-168",
+      "expected_sequence": ["pick", "lift"],
+      "target_taking_phases": [1],
+      "rationale": "The source binds pick to self.target_entity; lift introduces no new component target."
+    },
+    "SelectToyTask": {
+      "source": "primitive/select_toy_series.py",
+      "lines": "76-83",
+      "expected_sequence": ["pick", "lift", "place"],
+      "target_taking_phases": [1, 3],
+      "rationale": "The source binds pick to self.target_entity and place to self.target_container; lift introduces no new component target."
+    }
+  }
+}

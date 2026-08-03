@@ -345,6 +345,124 @@ def main() -> None:
     if native_smoke["target_oracle"].get("ground_truth_target_used") is not True:
         errors.append("Target-oracle native smoke did not use its controlled reference target")
 
+    registry_audit_path = (
+        root
+        / "reproducibility_core"
+        / "registry_audit"
+        / "final"
+        / "registry_audit_summary.json"
+    )
+    registry_audit = json.loads(registry_audit_path.read_text(encoding="utf-8"))
+    registry_expected = {
+        "audit_status": "PASS",
+        "source_commit": "cf588fe60c0c7282174fe979f5913170cfe69017",
+        "retained_task_count": 34,
+        "source_traceable_task_count": 34,
+        "structural_pass_task_count": 34,
+        "semantic_review_pass_task_count": 34,
+        "d2_equivalent_abstraction_task_count": 0,
+        "d3_substantive_mismatch_task_count": 0,
+        "unresolved_task_count": 0,
+        "unresolved_case_to_branch_assignment_count": 0,
+        "procedure_uniqueness_assessed": False,
+        "alternative_validity_assessed": False,
+        "independent_human_review": False,
+        "registry_modified": False,
+        "result_labels_modified": 0,
+    }
+    for field, expected in registry_expected.items():
+        if registry_audit.get(field) != expected:
+            errors.append(
+                f"registry-audit field {field!r}: expected {expected!r}, "
+                f"found {registry_audit.get(field)!r}"
+            )
+    registry_crosswalk = read_csv(
+        root
+        / "reproducibility_core"
+        / "registry_audit"
+        / "final"
+        / "source_registry_crosswalk.csv"
+    )
+    if len(registry_crosswalk) != 34:
+        errors.append(f"source-registry crosswalk contains {len(registry_crosswalk)}, not 34 rows")
+    if any(row["discrepancy_class"] == "D3" for row in registry_crosswalk):
+        errors.append("source-registry crosswalk contains a D3 substantive mismatch")
+    if any(row["semantic_review"] != "PASS_SOURCE_LINKED_REVIEW" for row in registry_crosswalk):
+        errors.append("source-registry crosswalk contains an unreviewed task")
+
+    composition_path = (
+        root
+        / "reproducibility_core"
+        / "robustness"
+        / "composition_sensitivity_summary.json"
+    )
+    composition = json.loads(composition_path.read_text(encoding="utf-8"))
+    baseline = composition.get("baseline", {})
+    composition_expected = {
+        "status": "passed",
+        "model_count": 3,
+        "cases_per_model": 2_133,
+        "pooled_model_case_rows": 6_399,
+        "task_clusters": 34,
+        "categories": 5,
+        "labels_modified": 0,
+    }
+    for field, expected in composition_expected.items():
+        if composition.get(field) != expected:
+            errors.append(
+                f"composition-sensitivity field {field!r}: expected {expected!r}, "
+                f"found {composition.get(field)!r}"
+            )
+    baseline_expected = {
+        "both": 74,
+        "a_only": 515,
+        "b_only": 103,
+        "neither": 5_707,
+        "union_success": 692,
+        "single_interface_success_count": 618,
+        "full_b_failure_count": 6_222,
+        "pre_native_responsibility_count": 5_968,
+        "success_sets_nonnested": True,
+    }
+    for field, expected in baseline_expected.items():
+        if baseline.get(field) != expected:
+            errors.append(
+                f"composition baseline field {field!r}: expected {expected!r}, "
+                f"found {baseline.get(field)!r}"
+            )
+    if not composition.get("loto", {}).get("all_success_sets_nonnested"):
+        errors.append("a leave-one-task-out omission produced nested A/B success sets")
+    if not composition.get("loto", {}).get("all_single_interface_majority"):
+        errors.append("a leave-one-task-out omission removed the single-interface majority")
+    if not composition.get("loco", {}).get("all_success_sets_nonnested"):
+        errors.append("a leave-one-category-out omission produced nested A/B success sets")
+    if not composition.get("loco", {}).get("all_single_interface_majority"):
+        errors.append("a leave-one-category-out omission removed the single-interface majority")
+
+    evidence_layers = read_csv(
+        root
+        / "reproducibility_core"
+        / "result_tables"
+        / "corrected_gate_evidence_layers.csv"
+    )
+    if len(evidence_layers) != 8:
+        errors.append(f"corrected-gate evidence-layer table contains {len(evidence_layers)}, not 8 rows")
+    evidence_counts = {(row["evidence_layer"], row["scope"]): int(row["count"]) for row in evidence_layers}
+    evidence_expected = {
+        ("observed_runtime", "Full B raw C5 AttributeError"): 5,
+        ("observed_runtime", "Reference-phase scaffold raw C5 AttributeError"): 467,
+        ("responsibility_adjudication", "All gate-related C5 rows"): 472,
+        ("offline_corrected_gate", "All frozen model-condition-case outputs"): 19_197,
+        ("offline_corrected_gate", "All adjudicated gate-related C5 rows recovered"): 472,
+        ("offline_corrected_gate", "Existing C3 target/context rows additionally flagged"): 602,
+        ("offline_corrected_gate", "All flagged outputs"): 1_074,
+        ("offline_corrected_gate", "Successful outputs flagged"): 0,
+    }
+    if evidence_counts != evidence_expected:
+        errors.append("corrected-gate evidence-layer counts do not match the frozen audit")
+    if any(int(row["success_label_change"]) != 0 for row in evidence_layers):
+        errors.append("corrected-gate evidence-layer table reports a success-label change")
+
     live_smoke_root = validation_root / "internvl_oracle_live_inference_smoke_20260715"
     try:
         live_phase = read_single_jsonl(
@@ -446,6 +564,14 @@ def main() -> None:
         "corrected_gate_adjudicated_c5_recovered": corrected_gate.get(
             "expected_adjudicated_c5_cases"
         ),
+        "registry_audit_tasks": registry_audit.get("retained_task_count"),
+        "registry_audit_substantive_mismatches": registry_audit.get(
+            "d3_substantive_mismatch_task_count"
+        ),
+        "registry_audit_unresolved_tasks": registry_audit.get("unresolved_task_count"),
+        "composition_loto_omissions": composition.get("loto", {}).get("pooled_exclusions"),
+        "composition_loco_omissions": composition.get("loco", {}).get("pooled_exclusions"),
+        "composition_labels_modified": composition.get("labels_modified"),
         "recovered_validation_source_files": len(source_checksum_lines),
         "checksummed_files": len(checksum_rows),
     }
