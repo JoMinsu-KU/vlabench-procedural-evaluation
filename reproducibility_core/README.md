@@ -6,6 +6,6 @@ This directory contains evidence that can be recomputed or independently inspect
 - `robustness/` contains leave-one-task-out and leave-one-category-out composition-sensitivity results. These are descriptive diagnostics for the fixed analysis manifest, not inference to unseen tasks.
 - `result_tables/` separates observed runtime evidence, responsibility adjudication, offline corrected-gate validation, positive controls, and mutation controls.
 - `scripts/` contains the standard-library-only audit and sensitivity programs.
-- `checksums/` records the immutable v1.1 baseline used to construct this release candidate.
+- `checksums/` records the immutable v1.1 baseline used to construct this release.
 
 No script in this directory modifies a model output, native trace, registry entry, or case-level success label.

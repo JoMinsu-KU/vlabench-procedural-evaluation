@@ -1,6 +1,6 @@
-# Reproducibility artifact v1.2 release candidate
+# Reproducibility artifact v1.2
 
-This release candidate preserves every authoritative v1.1 model output and success label while adding source-linked registry provenance, fixed-manifest composition-sensitivity diagnostics, and the claim-boundary records used for the revised manuscript.
+This release preserves every authoritative v1.1 model output and success label while adding source-linked registry provenance, fixed-manifest composition-sensitivity diagnostics, and the claim-boundary records used for the revised manuscript.
 
 New in v1.2:
 
