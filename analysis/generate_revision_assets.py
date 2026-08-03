@@ -671,10 +671,10 @@ def plot_evaluation_framework() -> None:
     ax.text(
         0.50,
         0.58,
-        "Responsibility reallocation:\nexecutor-abstracted discrete decisions in A become model-visible in B",
+        "Responsibility reallocation\nExecutor-abstracted decisions become model-visible in B",
         ha="center",
         va="center",
-        fontsize=7.4,
+        fontsize=8.7,
         color="#555555",
         bbox=dict(boxstyle="round,pad=0.22", facecolor="white", edgecolor="#BBBBBB", linewidth=0.7),
         zorder=5,
