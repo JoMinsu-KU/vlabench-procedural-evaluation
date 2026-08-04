@@ -239,9 +239,9 @@ def plot_oracle_responsibility_analysis(main: pd.DataFrame) -> None:
     x = np.arange(len(main))
     width = 0.25
     conditions = [
-        ("full", "Full B", "full_success_rate", "full_cluster_ci_low", "full_cluster_ci_high", "full_success_count"),
-        ("phase", "Reference-phase scaffold", "phase_success_rate", "phase_cluster_ci_low", "phase_cluster_ci_high", "phase_success_count"),
-        ("target", "Reference-target scaffold", "target_success_rate", "target_cluster_ci_low", "target_cluster_ci_high", "target_success_count"),
+        ("full", "Full Procedure", "full_success_rate", "full_cluster_ci_low", "full_cluster_ci_high", "full_success_count"),
+        ("phase", "Phase Scaffold", "phase_success_rate", "phase_cluster_ci_low", "phase_cluster_ci_high", "phase_success_count"),
+        ("target", "Target Scaffold", "target_success_rate", "target_cluster_ci_low", "target_cluster_ci_high", "target_success_count"),
     ]
     offsets = [-width, 0.0, width]
     for offset, (color_key, label, rate_col, low_col, high_col, count_col) in zip(offsets, conditions):
@@ -283,7 +283,7 @@ def plot_oracle_responsibility_analysis(main: pd.DataFrame) -> None:
     contrast_specs = [
         (
             "phase",
-            "Reference phase - Full B",
+            "Phase Scaffold - Full Procedure",
             "phase_minus_full",
             "phase_minus_full_ci_low",
             "phase_minus_full_ci_high",
@@ -291,7 +291,7 @@ def plot_oracle_responsibility_analysis(main: pd.DataFrame) -> None:
         ),
         (
             "target",
-            "Reference target - Full B",
+            "Target Scaffold - Full Procedure",
             "target_minus_full",
             "target_minus_full_ci_low",
             "target_minus_full_ci_high",
@@ -319,7 +319,7 @@ def plot_oracle_responsibility_analysis(main: pd.DataFrame) -> None:
     ax.set_yticks(y, MODEL_LABELS)
     ax.invert_yaxis()
     ax.set_xlim(-2, 42)
-    ax.set_xlabel("Scaffold - Full B difference (percentage points)\n95% task-cluster bootstrap interval")
+    ax.set_xlabel("Scaffold - Full Procedure difference (percentage points)\n95% task-cluster bootstrap interval")
     ax.grid(axis="x", color="#E0E0E0", linewidth=0.7)
     ax.set_axisbelow(True)
     ax.spines[["top", "right"]].set_visible(False)

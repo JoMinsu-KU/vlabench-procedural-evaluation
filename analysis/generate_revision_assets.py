@@ -582,7 +582,7 @@ def plot_main_results(main: pd.DataFrame) -> None:
     axes[1].axvline(0, color="#A0A0A0", linewidth=1, linestyle="--")
     axes[1].set_yticks(y, main["model"])
     axes[1].invert_yaxis()
-    axes[1].set_xlabel("Paired A-B difference (pp)\nTask-clustered 95% CI")
+    axes[1].set_xlabel("Symbolic - Procedure difference (pp)\n95% task-cluster bootstrap interval")
     axes[1].grid(axis="x", color="#E0E0E0", linewidth=0.7)
     axes[1].set_axisbelow(True)
     axes[1].spines[["top", "right"]].set_visible(False)
@@ -622,8 +622,8 @@ def plot_evaluation_framework() -> None:
     )
     _arrow(ax, (0.46, 0.88), (0.25, 0.79))
     _arrow(ax, (0.54, 0.88), (0.75, 0.79))
-    ax.text(0.25, 0.81, "A  High-level symbolic planning", ha="center", fontsize=10.5, weight="bold", color="#315A86")
-    ax.text(0.75, 0.81, "B  Reference-procedure planning", ha="center", fontsize=10.5, weight="bold", color="#A33D3B")
+    ax.text(0.25, 0.81, "High-Level Symbolic Interface", ha="center", fontsize=10.5, weight="bold", color="#315A86")
+    ax.text(0.75, 0.81, "Reference-Procedure Interface", ha="center", fontsize=10.5, weight="bold", color="#A33D3B")
 
     _box(
         ax,
@@ -671,10 +671,10 @@ def plot_evaluation_framework() -> None:
     ax.text(
         0.50,
         0.58,
-        "Responsibility reallocation\nExecutor-abstracted decisions become model-visible in B",
+        "Responsibility reallocation\nExecutor-abstracted decisions become model-visible",
         ha="center",
         va="center",
-        fontsize=8.7,
+        fontsize=9.2,
         color="#555555",
         bbox=dict(boxstyle="round,pad=0.22", facecolor="white", edgecolor="#BBBBBB", linewidth=0.7),
         zorder=5,
@@ -687,7 +687,7 @@ def plot_evaluation_framework() -> None:
         0.18,
         0.64,
         0.13,
-        "Fixed native backend for accepted B plans\nBackend-owned: pose, orientation, motion parameters, trajectory,\ngripper/joint control, MuJoCo rollout and final-condition check",
+        "Native backend for accepted reference-procedure plans\nBackend-owned: pose, orientation, motion parameters, trajectory,\ngripper/joint control, MuJoCo rollout and final-condition check",
         "#EEF5EE",
         "#4C8C5A",
     )
@@ -705,7 +705,7 @@ def plot_evaluation_framework() -> None:
     ax.text(
         0.5,
         0.015,
-        "Complementary, independently elicited outputs; Experiment A is not expanded into Experiment B.",
+        "The two interfaces independently elicit plans at different abstraction levels.",
         ha="center",
         fontsize=8.2,
         color="#444444",
@@ -824,7 +824,7 @@ def plot_pooled_failure_taxonomy(failure: pd.DataFrame) -> None:
 
 def plot_agreement(agreement: pd.DataFrame) -> None:
     outcomes = ["both", "a_only", "b_only", "neither"]
-    labels = ["Both", "A only", "B only", "Neither"]
+    labels = ["Both", "Symbolic only", "Procedure only", "Neither"]
     colors = [COLORS["both"], COLORS["a_only"], COLORS["b_only"], COLORS["neither"]]
     fig, axes = plt.subplots(1, 2, figsize=(11.4, 4.6), gridspec_kw={"width_ratios": [1.25, 1]})
 
@@ -854,7 +854,7 @@ def plot_agreement(agreement: pd.DataFrame) -> None:
             if value >= 8:
                 axes[1].text(start + value / 2, index, f"{int(count)}", ha="center", va="center", fontsize=8)
         left += values
-    axes[1].set_xlabel("Composition among cases successful in A or B (%)")
+    axes[1].set_xlabel("Composition among cases successful in either interface (%)")
     axes[1].set_xlim(0, 100)
     axes[1].grid(axis="x", color="#E0E0E0", linewidth=0.7)
     axes[1].set_axisbelow(True)

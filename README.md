@@ -1,25 +1,34 @@
 # VLABench Symbolic and Reference-Procedure Planning Evaluation
 
-This repository provides code, case-level results, audit evidence, and release checks for two deliberately non-equivalent VLM planning interfaces and two responsibility-relaxed diagnostic scaffolds on VLABench. Every reported comparison uses the same fixed 2,133-case dual-replay-qualified non-complex analysis manifest and the same three model families.
+This repository provides code, case-level results, audit evidence, and release checks for two deliberately non-equivalent VLM planning interfaces and two reference-scaffold conditions on VLABench. Every reported comparison uses the same 2,133-case dual-replay-qualified non-complex analysis manifest and the same three model families.
 
 - **Symbolic evaluation** follows the released VLABench VLM protocol. Generated high-level skill sequences are scored with Skill Recall (SR), Parameter Recall (PR), Skill-Parameter Recall (SPR), and Precise Matching (PM).
-- **Reference-procedure evaluation (Full B)** asks the model to select a benchmark-derived sequence of discrete skills, numeric targets, and order decisions. A target- and order-preserving interface lowers accepted outputs to VLABench SkillLib and MuJoCo execution.
+- **Full Reference-Procedure Condition** asks the model to select a benchmark-derived sequence of discrete skills, numeric targets, and order decisions. A target- and order-preserving interface lowers accepted outputs to VLABench SkillLib and MuJoCo execution.
 - **Reference-phase scaffold** (artifact field: `phase_oracle`) fixes the benchmark-derived phase/order contract and asks the model to select numeric targets.
 - **Reference-target scaffold** (artifact field: `target_oracle`) asks the model to generate the phase/order sequence and inserts reference targets only after that sequence passes the frozen phase contract.
 
-The symbolic and reference-procedure interfaces generate different outputs under different prompts, schemas, and endpoints. Their results are interface-conditioned classifications rather than interchangeable measurements or the causal effect of adding one component. The reference-phase and reference-target conditions each generate a separate plan under a relaxed scaffold; their contrasts with Full B are scaffold-conditioned diagnostic associations, not same-plan repairs or causal decomposition.
+The symbolic and reference-procedure interfaces generate different outputs under different prompts, schemas, and endpoints. Their results are interface-conditioned classifications rather than interchangeable measurements or the causal effect of adding one component. The reference-phase and reference-target conditions each generate a separate plan; their contrasts with the full condition are scaffold-conditioned diagnostic associations, not same-plan repairs or causal decomposition.
+
+For continuity with released files and scripts, the manuscript display names map to artifact identifiers as follows:
+
+| Manuscript display name | Artifact condition |
+|---|---|
+| Symbolic Interface | `experiment_a` |
+| Full Reference-Procedure Condition | `full_b` |
+| Reference-Phase Scaffold | `phase_oracle` |
+| Reference-Target Scaffold | `target_oracle` |
 
 ## Primary results
 
-| Model | Type-normalized symbolic full match | Full B first-attempt success | Reference-phase scaffold | Reference-target scaffold |
+| Model | Type-normalized symbolic full match | Full-procedure first-attempt success | Reference-phase scaffold | Reference-target scaffold |
 |---|---:|---:|---:|---:|
 | Qwen3-VL-8B | 280/2,133 (13.13%) | 80/2,133 (3.75%) | 427/2,133 (20.02%) | 488/2,133 (22.88%) |
 | Gemma-3-12B-it | 221/2,133 (10.36%) | 57/2,133 (2.67%) | 344/2,133 (16.13%) | 585/2,133 (27.43%) |
 | InternVL3-8B | 88/2,133 (4.13%) | 40/2,133 (1.88%) | 314/2,133 (14.72%) | 191/2,133 (8.95%) |
 
-All six pointwise oracle-minus-Full-B task-cluster bootstrap intervals exclude zero. A six-contrast max-|T| family-wise task-composition sensitivity analysis retains zero-excluding simultaneous intervals for five contrasts; the InternVL Target-minus-Full-B interval includes zero. All three direct Target-minus-Phase intervals include zero. These intervals assess sensitivity to reweighting the 34 retained tasks and are not interpreted as inference to unseen VLABench tasks.
+All six pointwise scaffold-minus-full-procedure task-cluster bootstrap intervals exclude zero. A six-contrast max-|T| family-wise task-composition sensitivity analysis retains zero-excluding simultaneous intervals for five contrasts; the InternVL reference-target-scaffold-minus-full-procedure interval includes zero. All three direct reference-target-minus-reference-phase intervals include zero. These intervals assess sensitivity to reweighting the 34 retained tasks and are not interpreted as inference to unseen VLABench tasks.
 
-The numerical A--B ordering is representation-sensitive: raw released PM places Full-B success above symbolic full match for all three backbones, whereas deterministic digit-string normalization reverses the ordering. The release therefore treats low success-set overlap and non-interchangeable classification, rather than metric superiority, as the stable cross-interface finding.
+The symbolic-versus-procedure ordering is representation-sensitive: raw released PM places full-procedure success above symbolic full match for all three backbones, whereas deterministic digit-string normalization reverses the ordering. The release therefore treats low success-set overlap and non-interchangeable classification, rather than metric superiority, as the stable cross-interface finding.
 
 ## Repository structure
 
@@ -71,9 +80,9 @@ The complete prompts are stored in `prompts/`. The symbolic runner is available 
 
 For symbolic evaluation, the repository reports raw and type-normalized SR, PR, SPR, and PM. The released-code total and a recomputed four-metric weighted score are retained as separate audit values. The binary endpoint used in paired analysis is the derived indicator `PM_norm == 100`.
 
-For Full B and both oracle-scaffolded conditions, the primary endpoint is first-attempt reference-procedure task success. Result files also report success within up to ten native attempts of the same generated Full-B plan. Native retries do not alter the selected skill, target, or order. Oracle runs used one native attempt.
+For the full reference-procedure condition and both reference-scaffold conditions, the primary endpoint is first-attempt reference-procedure task success. Result files also report success within up to ten native attempts of the same generated full-condition plan. Native retries do not alter the selected skill, target, or order. Scaffold-condition runs used one native attempt.
 
-The runner exposes `--ablation-mode full|phase_oracle|target_oracle`. The complete case prompts are stored once per oracle condition under `prompts/oracle/` because their contents were identical across backbones within a condition.
+The runner exposes `--ablation-mode full|phase_oracle|target_oracle`. The complete case prompts are stored once per scaffold condition under the legacy path `prompts/oracle/` because their contents were identical across backbones within a condition.
 
 ## Reproducing the analysis
 
@@ -84,9 +93,9 @@ python reproducibility_core/scripts/compute_composition_sensitivity.py --repo-ro
 python tests/verify_release.py .
 ```
 
-The first command regenerates the final A/B, scaffold, endpoint-sensitivity, simultaneous-interval, and responsibility-adjudicated tables and figures, then synchronizes `results/reported_statistics/`. The second reproduces 10,623 Full-B parser/binder ownership and no-repair checks from the released positive-control fixtures. The composition-sensitivity command recomputes leave-one-task-out and leave-one-category-out diagnostics without changing any case-level label. The verifier checks the 2,133-case manifest, six A/B files, six scaffold runs, manifest order, success counts, pointwise and simultaneous claim boundaries, observed/adjudicated counts, no-repair evidence, corrected-gate evidence, the frozen source-registry audit, composition-sensitivity outputs, anonymity constraints, and repository checksums.
+The first command regenerates the final cross-interface, scaffold, endpoint-sensitivity, simultaneous-interval, and responsibility-adjudicated tables and figures, then synchronizes `results/reported_statistics/`. The second reproduces 10,623 full-procedure parser/binder ownership and no-repair checks from the released positive-control fixtures. The composition-sensitivity command recomputes leave-one-task-out and leave-one-category-out diagnostics without changing any case-level label. The verifier checks the 2,133-case manifest, six symbolic/full-procedure files, six scaffold runs, manifest order, success counts, pointwise and simultaneous claim boundaries, observed/adjudicated counts, no-repair evidence, corrected-gate evidence, the frozen source-registry audit, composition-sensitivity outputs, anonymity constraints, and repository checksums.
 
-Oracle-specific analysis can also be run independently:
+Scaffold-specific analysis can also be run independently through the legacy analysis entry points:
 
 ```bash
 python analysis/reproduce_oracle_statistics.py
@@ -106,7 +115,7 @@ Model-specific native traces are distributed as separate release archives becaus
 
 ## Provenance notes
 
-The final 2,133-row CSV for each condition is the authoritative scoring source. Public Oracle JSONL files preserve the first occurrence of each exact raw line; the duplicate counts found in the InternVL source logs are recorded in `results/outcome_audits/oracle_release_build.json`. The recovered Oracle validation report verifies 2,133 cases, 34 tasks, 3,100 target slots, and 6,357 no-repair mutations. The separate Full-B battery verifies 10,623 parser/binder ownership and no-repair behaviors. Corrected-gate offline revalidation flags all 472 adjudicated C5 rows, 602 rows already classified C3, and no successful row. Raw first-failure codes and responsibility-adjudicated classes remain separate. See `KNOWN_ISSUES.md` for the complete boundary.
+The final 2,133-row CSV for each condition is the authoritative scoring source. Public scaffold-condition JSONL files preserve the first occurrence of each exact raw line; the duplicate counts found in the InternVL source logs are recorded in `results/outcome_audits/oracle_release_build.json`. The recovered scaffold-validation report verifies 2,133 cases, 34 tasks, 3,100 target slots, and 6,357 no-repair mutations. The separate full-procedure battery verifies 10,623 parser/binder ownership and no-repair behaviors. Corrected-gate offline revalidation flags all 472 adjudicated C5 rows, 602 rows already classified C3, and no successful row. Raw first-failure codes and responsibility-adjudicated classes remain separate. See `KNOWN_ISSUES.md` for the complete boundary.
 
 The v1.2 source-registry audit traces all 34 retained task types to the pinned VLABench source revision and records effective methods, call order, target-taking phases, inheritance, and branch handling. It is a documented author-led provenance audit, not an independent human or inter-rater validation. No substantive registry mismatch, unresolved case-to-branch assignment, registry modification, or result-label change was found. Leave-one-task-out and leave-one-category-out diagnostics assess sensitivity to the empirical composition of the fixed manifest; they are not inference to unseen tasks.
 
