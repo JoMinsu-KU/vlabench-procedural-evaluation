@@ -1,0 +1,215 @@
+[
+  {
+    "control": "wrong_target_preserved",
+    "passed": true,
+    "status": "projected_drop_intermediate_lift",
+    "source": [
+      {
+        "skill": "pick",
+        "target": 9
+      },
+      {
+        "skill": "lift"
+      },
+      {
+        "skill": "place",
+        "target": 1
+      }
+    ],
+    "projected": [
+      {
+        "name": "pick",
+        "params": {
+          "target_entity_name": 9
+        }
+      },
+      {
+        "name": "place",
+        "params": {
+          "target_container_name": 1
+        }
+      }
+    ],
+    "expected": [
+      {
+        "name": "pick",
+        "params": {
+          "target_entity_name": 9
+        }
+      },
+      {
+        "name": "place",
+        "params": {
+          "target_container_name": 1
+        }
+      }
+    ]
+  },
+  {
+    "control": "order_swap_preserved",
+    "passed": true,
+    "status": "projected_drop_intermediate_lift",
+    "source": [
+      {
+        "skill": "place",
+        "target": 1
+      },
+      {
+        "skill": "pick",
+        "target": 2
+      }
+    ],
+    "projected": [
+      {
+        "name": "place",
+        "params": {
+          "target_container_name": 1
+        }
+      },
+      {
+        "name": "pick",
+        "params": {
+          "target_entity_name": 2
+        }
+      }
+    ],
+    "expected": [
+      {
+        "name": "place",
+        "params": {
+          "target_container_name": 1
+        }
+      },
+      {
+        "name": "pick",
+        "params": {
+          "target_entity_name": 2
+        }
+      }
+    ]
+  },
+  {
+    "control": "missing_action_not_inserted",
+    "passed": true,
+    "status": "projected_drop_intermediate_lift",
+    "source": [
+      {
+        "skill": "pick",
+        "target": 2
+      }
+    ],
+    "projected": [
+      {
+        "name": "pick",
+        "params": {
+          "target_entity_name": 2
+        }
+      }
+    ],
+    "expected": [
+      {
+        "name": "pick",
+        "params": {
+          "target_entity_name": 2
+        }
+      }
+    ]
+  },
+  {
+    "control": "unexpected_action_preserved",
+    "passed": true,
+    "status": "projected_drop_intermediate_lift",
+    "source": [
+      {
+        "skill": "pick",
+        "target": 2
+      },
+      {
+        "skill": "push",
+        "target": 4
+      },
+      {
+        "skill": "place",
+        "target": 1
+      }
+    ],
+    "projected": [
+      {
+        "name": "pick",
+        "params": {
+          "target_entity_name": 2
+        }
+      },
+      {
+        "name": "push",
+        "params": {
+          "target_entity_name": 4
+        }
+      },
+      {
+        "name": "place",
+        "params": {
+          "target_container_name": 1
+        }
+      }
+    ],
+    "expected": [
+      {
+        "name": "pick",
+        "params": {
+          "target_entity_name": 2
+        }
+      },
+      {
+        "name": "push",
+        "params": {
+          "target_entity_name": 4
+        }
+      },
+      {
+        "name": "place",
+        "params": {
+          "target_container_name": 1
+        }
+      }
+    ]
+  },
+  {
+    "control": "missing_container_target_not_repaired",
+    "passed": true,
+    "status": "projected_add_condiment_macro",
+    "source": [
+      {
+        "skill": "pick",
+        "target": 2
+      },
+      {
+        "skill": "pour"
+      }
+    ],
+    "projected": [
+      {
+        "name": "pick",
+        "params": {
+          "target_entity_name": 2
+        }
+      },
+      {
+        "name": "pour",
+        "params": {}
+      }
+    ],
+    "expected": [
+      {
+        "name": "pick",
+        "params": {
+          "target_entity_name": 2
+        }
+      },
+      {
+        "name": "pour",
+        "params": {}
+      }
+    ]
+  }
+]

@@ -592,13 +592,105 @@ def plot_main_results(main: pd.DataFrame) -> None:
     save_figure(fig, "fig_dual_interface_results")
 
 
-def _box(ax, x: float, y: float, w: float, h: float, text: str, facecolor: str, edgecolor: str) -> None:
+def plot_main_result_panels(main: pd.DataFrame) -> None:
+    """Render the two main-result views as independent manuscript figures."""
+    x = np.arange(len(main))
+    width = 0.34
+    symbolic = main["a_exact_rate"].to_numpy() * 100
+    procedure = main["b_success_rate"].to_numpy() * 100
+    symbolic_low = (main["a_exact_rate"] - main["a_cluster_ci_low"]).to_numpy() * 100
+    symbolic_high = (main["a_cluster_ci_high"] - main["a_exact_rate"]).to_numpy() * 100
+    procedure_low = (main["b_success_rate"] - main["b_cluster_ci_low"]).to_numpy() * 100
+    procedure_high = (main["b_cluster_ci_high"] - main["b_success_rate"]).to_numpy() * 100
+
+    fig, ax = plt.subplots(figsize=(3.45, 3.05))
+    bars_symbolic = ax.bar(
+        x - width / 2,
+        symbolic,
+        width,
+        color=COLORS["symbolic"],
+        label="Symbolic full-match",
+        yerr=np.vstack([symbolic_low, symbolic_high]),
+        capsize=4,
+    )
+    bars_procedure = ax.bar(
+        x + width / 2,
+        procedure,
+        width,
+        color=COLORS["procedural"],
+        label="Procedure success",
+        yerr=np.vstack([procedure_low, procedure_high]),
+        capsize=4,
+    )
+    for bars in [bars_symbolic, bars_procedure]:
+        for bar in bars:
+            ax.text(
+                bar.get_x() + bar.get_width() / 2,
+                bar.get_height() + 0.55,
+                f"{bar.get_height():.2f}%",
+                ha="center",
+                va="bottom",
+                fontsize=7.0,
+                zorder=6,
+                bbox=dict(facecolor="white", edgecolor="none", alpha=0.92, pad=0.25),
+            )
+    ax.set_ylabel("Case-level success rate (%)")
+    ax.set_xticks(x, ["Qwen", "Gemma", "InternVL"])
+    ax.tick_params(axis="both", labelsize=7)
+    ax.set_ylim(0, max(symbolic_high + symbolic) + 5.0)
+    ax.grid(axis="y", color="#D9D9D9", linewidth=0.7)
+    ax.set_axisbelow(True)
+    ax.spines[["top", "right"]].set_visible(False)
+    ax.legend(frameon=False, loc="upper right", fontsize=7.0)
+    fig.tight_layout()
+    save_figure(fig, "fig_interface_success_rates")
+
+    difference = main["paired_difference"].to_numpy() * 100
+    difference_low = difference - main["difference_cluster_ci_low"].to_numpy() * 100
+    difference_high = main["difference_cluster_ci_high"].to_numpy() * 100 - difference
+    y = np.arange(len(main))
+    fig, ax = plt.subplots(figsize=(3.45, 2.55))
+    ax.errorbar(
+        difference,
+        y,
+        xerr=np.vstack([difference_low, difference_high]),
+        fmt="o",
+        color="#333333",
+        ecolor="#777777",
+        capsize=4,
+        markersize=6,
+    )
+    ax.axvline(0, color="#A0A0A0", linewidth=1, linestyle="--")
+    ax.set_yticks(y, ["Qwen", "Gemma", "InternVL"])
+    ax.tick_params(axis="both", labelsize=7)
+    ax.invert_yaxis()
+    ax.set_xlabel("Symbolic - Procedure (pp)\nTask-cluster bootstrap interval")
+    ax.grid(axis="x", color="#E0E0E0", linewidth=0.7)
+    ax.set_axisbelow(True)
+    ax.spines[["top", "right"]].set_visible(False)
+    for index, value in enumerate(difference):
+        ax.text(value + 0.35, index, f"{value:+.2f}", va="center", fontsize=6.5)
+    fig.tight_layout()
+    save_figure(fig, "fig_symbolic_procedure_contrasts")
+
+
+def _box(
+    ax,
+    x: float,
+    y: float,
+    w: float,
+    h: float,
+    text: str,
+    facecolor: str,
+    edgecolor: str,
+    fontsize: float = 8.5,
+) -> None:
     patch = FancyBboxPatch(
         (x, y), w, h, boxstyle="round,pad=0.018,rounding_size=0.025",
         linewidth=1.2, edgecolor=edgecolor, facecolor=facecolor,
     )
     ax.add_patch(patch)
-    ax.text(x + w / 2, y + h / 2, text, ha="center", va="center", fontsize=8.5)
+    ax.text(x + w / 2, y + h / 2, text, ha="center", va="center", fontsize=fontsize)
 
 
 def _arrow(ax, start: tuple[float, float], end: tuple[float, float]) -> None:
@@ -606,141 +698,125 @@ def _arrow(ax, start: tuple[float, float], end: tuple[float, float]) -> None:
 
 
 def plot_evaluation_framework() -> None:
-    fig, ax = plt.subplots(figsize=(10.4, 6.4))
+    """Render two balanced interface paths that meet only at paired analysis."""
+    ink = "#262626"
+    edge = "#555555"
+    light = "#F1F1F1"
+    open_fill = "#FAFAFA"
+    backend_fill = "#E4E4E4"
+
+    fig, ax = plt.subplots(figsize=(10.4, 6.15))
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 1)
     ax.axis("off")
     _box(
-        ax,
-        0.29,
-        0.88,
-        0.42,
-        0.08,
-        "Task instruction + scene + numbered objects\nSame 2,133 cases and VLM backbones",
-        "#F2F2F2",
-        "#777777",
+        ax, 0.30, 0.88, 0.40, 0.08,
+        "Task instruction + scene\n2,133 cases; same VLM backbones",
+        open_fill, edge, 10.2,
     )
-    _arrow(ax, (0.46, 0.88), (0.25, 0.79))
-    _arrow(ax, (0.54, 0.88), (0.75, 0.79))
-    ax.text(0.25, 0.81, "High-Level Symbolic Interface", ha="center", fontsize=10.5, weight="bold", color="#315A86")
-    ax.text(0.75, 0.81, "Reference-Procedure Interface", ha="center", fontsize=10.5, weight="bold", color="#A33D3B")
+    _arrow(ax, (0.46, 0.88), (0.25, 0.765))
+    _arrow(ax, (0.54, 0.88), (0.75, 0.765))
+    header_box = dict(facecolor="white", edgecolor="none", pad=0.25)
+    ax.text(0.25, 0.815, "HIGH-LEVEL SYMBOLIC INTERFACE", ha="center", fontsize=11.3, weight="bold", color=ink, bbox=header_box)
+    ax.text(0.75, 0.815, "REFERENCE-PROCEDURE INTERFACE", ha="center", fontsize=11.3, weight="bold", color=ink, bbox=header_box)
 
+    left_x, right_x, box_w = 0.06, 0.56, 0.38
+    row_h = 0.115
+    _box(ax, left_x, 0.64, box_w, row_h, "VLM-OWNED PLAN\nskill | target | order", light, edge, 10.0)
+    _box(ax, right_x, 0.64, box_w, row_h, "VLM-OWNED PLAN\nphase | order | step target", open_fill, ink, 10.0)
+    _box(ax, left_x, 0.455, box_w, row_h, "SYMBOLIC EVALUATOR\nsequence and type-normalized full-match", light, edge, 9.5)
+    _box(ax, right_x, 0.455, box_w, row_h, "REFERENCE VALIDATOR\nno insertion | reordering | replacement", open_fill, ink, 9.5)
+    _box(ax, left_x, 0.265, box_w, row_h, "SYMBOLIC ENDPOINT\nfull-match outcome | no native rollout", backend_fill, edge, 9.4)
     _box(
-        ax,
-        0.06,
-        0.62,
-        0.38,
-        0.13,
-        "VLM-owned\nHigh-level skill, coarse target, order",
-        "#EAF2FA",
-        "#4C78A8",
+        ax, right_x, 0.265, box_w, row_h,
+        "REFERENCE-PROCEDURE ENDPOINT\nnative task outcome | backend control",
+        backend_fill, ink, 9.2,
     )
-    _box(
-        ax,
-        0.56,
-        0.62,
-        0.38,
-        0.13,
-        "VLM-owned\nProcedural phase, phase order,\nstep-specific target",
-        "#FCEDEC",
-        "#E45756",
-    )
-    _box(
-        ax,
-        0.06,
-        0.43,
-        0.38,
-        0.11,
-        "Expert-DAG sequence scoring\nType-normalized PM-based full-match",
-        "#EAF2FA",
-        "#4C78A8",
-    )
-    _box(
-        ax,
-        0.56,
-        0.43,
-        0.38,
-        0.11,
-        "Reference-contract validation\nNo insertion, reordering, or target replacement",
-        "#FCEDEC",
-        "#E45756",
-    )
-    _arrow(ax, (0.25, 0.62), (0.25, 0.54))
-    _arrow(ax, (0.75, 0.62), (0.75, 0.54))
+    for center in (0.25, 0.75):
+        _arrow(ax, (center, 0.64), (center, 0.57))
+        _arrow(ax, (center, 0.455), (center, 0.38))
 
     ax.text(
-        0.50,
-        0.58,
-        "Responsibility reallocation\nExecutor-abstracted decisions become model-visible",
-        ha="center",
-        va="center",
-        fontsize=9.2,
-        color="#555555",
-        bbox=dict(boxstyle="round,pad=0.22", facecolor="white", edgecolor="#BBBBBB", linewidth=0.7),
+        0.50, 0.605,
+        "RESPONSIBILITY REALLOCATION\nexecutor decisions to model fields",
+        ha="center", va="center", fontsize=9.1, weight="bold", color=ink,
+        bbox=dict(boxstyle="round,pad=0.24", facecolor="white", edgecolor="#777777", linewidth=0.9),
         zorder=5,
     )
-
-    _arrow(ax, (0.75, 0.43), (0.75, 0.35))
     _box(
-        ax,
-        0.18,
-        0.18,
-        0.64,
-        0.13,
-        "Native backend for accepted reference-procedure plans\nBackend-owned: pose, orientation, motion parameters, trajectory,\ngripper/joint control, MuJoCo rollout and final-condition check",
-        "#EEF5EE",
-        "#4C8C5A",
+        ax, 0.29, 0.075, 0.42, 0.09,
+        "PAIRED MODEL-CASE OUTCOME ANALYSIS\nagreement | discordance | success-set overlap",
+        open_fill, ink, 9.4,
     )
-    _box(
-        ax,
-        0.35,
-        0.06,
-        0.30,
-        0.07,
-        "First-attempt reference-procedure\ntask success",
-        "#FFF7E8",
-        "#C78A2A",
-    )
-    _arrow(ax, (0.50, 0.18), (0.50, 0.13))
-    ax.text(
-        0.5,
-        0.015,
-        "The two interfaces independently elicit plans at different abstraction levels.",
-        ha="center",
-        fontsize=8.2,
-        color="#444444",
-    )
+    _arrow(ax, (0.25, 0.265), (0.43, 0.165))
+    _arrow(ax, (0.75, 0.265), (0.57, 0.165))
     fig.tight_layout()
     save_figure(fig, "fig_evaluation_framework")
 
 
 def plot_procedural_expansion() -> None:
-    fig, ax = plt.subplots(figsize=(9.4, 5.8))
+    """Render aligned symbolic and reference-procedure lanes for select_toy."""
+    ink = "#262626"
+    edge = "#555555"
+    light = "#F1F1F1"
+    open_fill = "#FAFAFA"
+    highlight = "#D8D8D8"
+    backend_fill = "#E4E4E4"
+
+    fig, ax = plt.subplots(figsize=(9.4, 5.55))
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 1)
     ax.axis("off")
-    ax.text(0.5, 0.95, "Representative task: select_toy", ha="center", fontsize=11, weight="bold")
-    ax.text(0.19, 0.86, "Official-style symbolic interface", ha="center", fontsize=10, weight="bold", color="#315A86")
-    _box(ax, 0.05, 0.66, 0.28, 0.10, "pick(target object)", "#EAF2FA", "#4C78A8")
-    _arrow(ax, (0.19, 0.66), (0.19, 0.57))
-    _box(ax, 0.05, 0.42, 0.28, 0.10, "place(target container)", "#EAF2FA", "#4C78A8")
+    ax.text(0.5, 0.955, "select_toy: executor-expanded phase exposed to the VLM", ha="center", fontsize=12, weight="bold", color=ink)
+    ax.text(0.25, 0.865, "HIGH-LEVEL SYMBOLIC", ha="center", fontsize=11, weight="bold", color=ink)
+    ax.text(0.75, 0.865, "REFERENCE PROCEDURE", ha="center", fontsize=11, weight="bold", color=ink)
 
-    ax.text(0.66, 0.86, "Benchmark-derived reference procedure", ha="center", fontsize=10, weight="bold", color="#A33D3B")
-    procedural = [
-        (0.48, 0.70, "pick(target object)"),
-        (0.48, 0.54, "lift()"),
-        (0.48, 0.38, "place(target container)"),
-    ]
-    for x, y, text_value in procedural:
-        _box(ax, x, y, 0.36, 0.09, text_value, "#FCEDEC", "#E45756")
-    _arrow(ax, (0.66, 0.70), (0.66, 0.63))
-    _arrow(ax, (0.66, 0.54), (0.66, 0.47))
-    ax.text(0.66, 0.25, "VLM explicitly selects each reference skill,\nits required target, and the complete order.",
-            ha="center", va="center", fontsize=8.5)
-    _box(ax, 0.15, 0.08, 0.70, 0.09,
-         "Fixed native backend: pose, orientation, offset, trajectory, gripper and MuJoCo control",
-         "#EEF5EE", "#4C8C5A")
-    _arrow(ax, (0.66, 0.38), (0.66, 0.17))
+    left_x, right_x, box_w, box_h = 0.07, 0.57, 0.36, 0.105
+    row_y = [0.69, 0.515, 0.34]
+    _box(ax, left_x, row_y[0], box_w, box_h, "pick (target object)", light, edge, 10.1)
+    placeholder = FancyBboxPatch(
+        (left_x, row_y[1]), box_w, box_h,
+        boxstyle="round,pad=0.018,rounding_size=0.025",
+        linewidth=1.2, linestyle="--", edgecolor="#777777", facecolor="#FAFAFA",
+    )
+    ax.add_patch(placeholder)
+    ax.text(
+        left_x + box_w / 2, row_y[1] + box_h / 2,
+        "not separately exposed",
+        ha="center", va="center", fontsize=9.4, color="#555555", style="italic",
+    )
+    _box(ax, left_x, row_y[2], box_w, box_h, "place (target container)", light, edge, 10.1)
+
+    _box(ax, right_x, row_y[0], box_w, box_h, "pick (target object)", open_fill, ink, 10.1)
+    _box(ax, right_x, row_y[1], box_w, box_h, "lift()", highlight, ink, 10.1)
+    _box(ax, right_x, row_y[2], box_w, box_h, "place (target container)", open_fill, ink, 10.1)
+    for center in (0.25, 0.75):
+        _arrow(ax, (center, row_y[0]), (center, row_y[1] + box_h))
+        _arrow(ax, (center, row_y[1]), (center, row_y[2] + box_h))
+
+    ax.text(
+        0.50, row_y[1] + box_h / 2,
+        "PHASE\nEXPOSED",
+        ha="center", va="center", fontsize=8.7, weight="bold", color=ink,
+    )
+    _arrow(ax, (0.44, row_y[1] + box_h / 2), (0.56, row_y[1] + box_h / 2))
+
+    _box(ax, left_x, 0.17, box_w, box_h, "SYMBOLIC ENDPOINT\nsequence full-match", backend_fill, edge, 9.6)
+    _box(
+        ax, right_x, 0.17, box_w, box_h,
+        "REFERENCE-PROCEDURE ENDPOINT\nvalidation + native task success",
+        backend_fill, ink, 9.3,
+    )
+    _arrow(ax, (0.25, row_y[2]), (0.25, 0.17 + box_h))
+    _arrow(ax, (0.75, row_y[2]), (0.75, 0.17 + box_h))
+
+    _box(
+        ax, 0.30, 0.035, 0.40, 0.075,
+        "PAIRED MODEL-CASE OUTCOME ANALYSIS",
+        open_fill, ink, 9.3,
+    )
+    _arrow(ax, (0.25, 0.17), (0.43, 0.11))
+    _arrow(ax, (0.75, 0.17), (0.57, 0.11))
     fig.tight_layout()
     save_figure(fig, "fig_reference_procedure_expansion")
 
@@ -759,7 +835,7 @@ def plot_dataset_selection(categories: pd.DataFrame) -> None:
     _arrow(ax, (0.27, 0.52), (0.43, 0.35))
     _arrow(ax, (0.73, 0.52), (0.57, 0.35))
     _box(ax, 0.25, 0.20, 0.50, 0.14, "Intersection fixed before VLM evaluation\n2,133 cases (53.33%)\n34 task types", "#EEF5EE", "#4C8C5A")
-    ax.text(0.5, 0.08, "The same fixed manifest is used in Experiments A and B.", ha="center", fontsize=8.5, color="#444444")
+    ax.text(0.5, 0.08, "The same analysis manifest is used for both interfaces.", ha="center", fontsize=8.5, color="#444444")
 
     ax = axes[1]
     values = categories["retention_rate"].to_numpy() * 100
@@ -778,6 +854,49 @@ def plot_dataset_selection(categories: pd.DataFrame) -> None:
     ax.tick_params(axis="y", length=0)
     fig.tight_layout(w_pad=2.2)
     save_figure(fig, "fig_dataset_selection")
+
+
+def plot_dataset_selection_panels(categories: pd.DataFrame) -> None:
+    """Render manifest construction and category retention independently."""
+    fig, ax = plt.subplots(figsize=(3.45, 3.55))
+    ax.set_xlim(0, 1)
+    ax.set_ylim(0, 1)
+    ax.axis("off")
+    _box(ax, 0.25, 0.82, 0.50, 0.11, "4,000 non-complex cases\n40 task types", "#FAFAFA", "#555555", 7.0)
+    _arrow(ax, (0.50, 0.82), (0.27, 0.65))
+    _arrow(ax, (0.50, 0.82), (0.73, 0.65))
+    _box(ax, 0.04, 0.50, 0.44, 0.16, "GT native replay 1\n2,341 passed (58.53%)\n37 task types", "#EEEEEE", "#666666", 6.2)
+    _box(ax, 0.52, 0.50, 0.44, 0.16, "GT native replay 2\n2,316 passed (57.90%)\n35 task types", "#EEEEEE", "#666666", 6.2)
+    _arrow(ax, (0.27, 0.52), (0.43, 0.35))
+    _arrow(ax, (0.73, 0.52), (0.57, 0.35))
+    _box(ax, 0.20, 0.18, 0.60, 0.17, "Intersection fixed before\nVLM evaluation\n2,133 cases (53.33%); 34 task types", "#DADADA", "#333333", 6.5)
+    ax.text(0.5, 0.06, "Same analysis manifest for both interfaces", ha="center", fontsize=6.2, color="#333333")
+    fig.tight_layout()
+    save_figure(fig, "fig_dataset_selection_flow")
+
+    fig, ax = plt.subplots(figsize=(3.45, 2.75))
+    values = categories["retention_rate"].to_numpy() * 100
+    bars = ax.barh(categories["category"], values, color="#4C78A8", height=0.62)
+    for bar, retained, initial, value in zip(
+        bars, categories["retained_cases"], categories["initial_cases"], values
+    ):
+        ax.text(
+            value + 1.2,
+            bar.get_y() + bar.get_height() / 2,
+            f"{retained}/{initial} ({value:.2f}%)",
+            va="center",
+            fontsize=6.5,
+        )
+    ax.set_xlabel("Retained after two GT replays (%)")
+    ax.set_xlim(0, 80)
+    ax.tick_params(axis="both", labelsize=7)
+    ax.invert_yaxis()
+    ax.grid(axis="x", color="#E0E0E0", linewidth=0.7)
+    ax.set_axisbelow(True)
+    ax.spines[["top", "right", "left"]].set_visible(False)
+    ax.tick_params(axis="y", length=0)
+    fig.tight_layout()
+    save_figure(fig, "fig_category_retention")
 
 
 def plot_pooled_failure_taxonomy(failure: pd.DataFrame) -> None:
@@ -870,6 +989,60 @@ def plot_agreement(agreement: pd.DataFrame) -> None:
     save_figure(fig, "fig_ab_agreement")
 
 
+def plot_agreement_panels(agreement: pd.DataFrame) -> None:
+    """Render unconditional and success-conditioned agreement independently."""
+    outcomes = ["both", "a_only", "b_only", "neither"]
+    labels = ["Both", "Symbolic only", "Procedure only", "Neither"]
+    colors = [COLORS["both"], COLORS["a_only"], COLORS["b_only"], COLORS["neither"]]
+
+    fig, ax = plt.subplots(figsize=(3.45, 2.45))
+    left = np.zeros(len(agreement))
+    for outcome, label, color in zip(outcomes, labels, colors):
+        values = agreement[outcome].to_numpy() / 2_133 * 100
+        ax.barh(agreement["model"], values, left=left, label=label, color=color, height=0.62)
+        for index, (start, value, count) in enumerate(zip(left, values, agreement[outcome])):
+            if value >= 4.0:
+                ax.text(start + value / 2, index, f"{int(count)}", ha="center", va="center", fontsize=6.5)
+        left += values
+    ax.set_xlabel("Share of all 2,133 cases (%)")
+    ax.set_xlim(0, 100)
+    ax.grid(axis="x", color="#E0E0E0", linewidth=0.7)
+    ax.set_axisbelow(True)
+    ax.spines[["top", "right", "left"]].set_visible(False)
+    ax.tick_params(axis="y", length=0)
+    ax.tick_params(axis="both", labelsize=7)
+    ax.invert_yaxis()
+    ax.legend(frameon=False, ncol=2, loc="lower center", bbox_to_anchor=(0.5, 1.01), fontsize=6.5)
+    fig.tight_layout()
+    save_figure(fig, "fig_cross_interface_all_cases")
+
+    union = agreement[["both", "a_only", "b_only"]].sum(axis=1)
+    y = np.arange(len(agreement))
+    fig, ax = plt.subplots(figsize=(3.45, 2.45))
+    left = np.zeros(len(agreement))
+    for outcome, label, color in zip(outcomes[:3], labels[:3], colors[:3]):
+        values = agreement[outcome].to_numpy() / union.to_numpy() * 100
+        ax.barh(y, values, left=left, label=label, color=color, height=0.62)
+        for index, (start, value, count) in enumerate(zip(left, values, agreement[outcome])):
+            if value >= 8:
+                ax.text(start + value / 2, index, f"{int(count)}", ha="center", va="center", fontsize=6.5)
+        left += values
+    for index, row in agreement.reset_index(drop=True).iterrows():
+        ax.text(102, index, f"J={row['success_set_jaccard'] * 100:.1f}%", va="center", fontsize=6.5)
+    ax.set_xlabel("Composition of interface-success cases (%)")
+    ax.set_yticks(y, agreement["model"])
+    ax.set_xlim(0, 118)
+    ax.grid(axis="x", color="#E0E0E0", linewidth=0.7)
+    ax.set_axisbelow(True)
+    ax.spines[["top", "right", "left"]].set_visible(False)
+    ax.tick_params(axis="y", length=0)
+    ax.tick_params(axis="both", labelsize=7)
+    ax.invert_yaxis()
+    ax.legend(frameon=False, ncol=3, loc="lower center", bbox_to_anchor=(0.5, 1.01), fontsize=6.3)
+    fig.tight_layout()
+    save_figure(fig, "fig_cross_interface_successful_cases")
+
+
 def main() -> None:
     plt.rcParams.update(
         {
@@ -888,8 +1061,11 @@ def main() -> None:
     plot_evaluation_framework()
     plot_procedural_expansion()
     plot_dataset_selection(selection_categories)
+    plot_dataset_selection_panels(selection_categories)
     plot_main_results(main_results)
+    plot_main_result_panels(main_results)
     plot_agreement(agreement)
+    plot_agreement_panels(agreement)
     plot_pooled_failure_taxonomy(failure)
     print(main_results.to_string(index=False))
     print(agreement.to_string(index=False))

@@ -239,9 +239,9 @@ def plot_oracle_responsibility_analysis(main: pd.DataFrame) -> None:
     x = np.arange(len(main))
     width = 0.25
     conditions = [
-        ("full", "Full Procedure", "full_success_rate", "full_cluster_ci_low", "full_cluster_ci_high", "full_success_count"),
-        ("phase", "Phase Scaffold", "phase_success_rate", "phase_cluster_ci_low", "phase_cluster_ci_high", "phase_success_count"),
-        ("target", "Target Scaffold", "target_success_rate", "target_cluster_ci_low", "target_cluster_ci_high", "target_success_count"),
+        ("full", "Full", "full_success_rate", "full_cluster_ci_low", "full_cluster_ci_high", "full_success_count"),
+        ("phase", "Phase", "phase_success_rate", "phase_cluster_ci_low", "phase_cluster_ci_high", "phase_success_count"),
+        ("target", "Target", "target_success_rate", "target_cluster_ci_low", "target_cluster_ci_high", "target_success_count"),
     ]
     offsets = [-width, 0.0, width]
     for offset, (color_key, label, rate_col, low_col, high_col, count_col) in zip(offsets, conditions):
@@ -330,6 +330,115 @@ def plot_oracle_responsibility_analysis(main: pd.DataFrame) -> None:
     _save(fig, "fig_oracle_responsibility_controls")
 
 
+def plot_oracle_responsibility_panels(main: pd.DataFrame) -> None:
+    """Render the scaffold outcome rates and contrasts as independent figures."""
+    x = np.arange(len(main))
+    width = 0.25
+    conditions = [
+        ("full", "Full", "full_success_rate", "full_cluster_ci_low", "full_cluster_ci_high", "full_success_count"),
+        ("phase", "Phase", "phase_success_rate", "phase_cluster_ci_low", "phase_cluster_ci_high", "phase_success_count"),
+        ("target", "Target", "target_success_rate", "target_cluster_ci_low", "target_cluster_ci_high", "target_success_count"),
+    ]
+    offsets = [-width, 0.0, width]
+    fig, ax = plt.subplots(figsize=(3.45, 3.05))
+    for offset, (color_key, label, rate_col, low_col, high_col, count_col) in zip(offsets, conditions):
+        rates = main[rate_col].to_numpy() * 100
+        lower = (main[rate_col] - main[low_col]).to_numpy() * 100
+        upper = (main[high_col] - main[rate_col]).to_numpy() * 100
+        bars = ax.bar(
+            x + offset,
+            rates,
+            width,
+            label=label,
+            color=COLORS[color_key],
+            yerr=np.vstack([lower, upper]),
+            capsize=3.5,
+            error_kw={"elinewidth": 1.0},
+        )
+        for bar, rate, count in zip(bars, rates, main[count_col]):
+            ax.text(
+                bar.get_x() + bar.get_width() / 2,
+                bar.get_height() + 0.75,
+                f"{rate:.2f}%",
+                ha="center",
+                va="bottom",
+                fontsize=7.0,
+                zorder=6,
+                bbox=dict(facecolor="white", edgecolor="none", alpha=0.92, pad=0.25),
+            )
+    ax.set_xticks(x, ["Qwen", "Gemma", "InternVL"])
+    ax.tick_params(axis="both", labelsize=7)
+    ax.set_ylabel("First-attempt success (%)")
+    ax.set_ylim(0, 48)
+    ax.grid(axis="y", color="#E0E0E0", linewidth=0.7)
+    ax.set_axisbelow(True)
+    ax.spines[["top", "right"]].set_visible(False)
+    ax.legend(frameon=False, loc="upper left", ncols=3, fontsize=7.0)
+    fig.tight_layout()
+    _save(fig, "fig_scaffold_success_rates")
+
+    y = np.arange(len(main))
+    shift = 0.14
+    contrast_specs = [
+        (
+            "phase",
+            "Phase scaffold",
+            "phase_minus_full",
+            "phase_minus_full_ci_low",
+            "phase_minus_full_ci_high",
+            -shift,
+        ),
+        (
+            "target",
+            "Target scaffold",
+            "target_minus_full",
+            "target_minus_full_ci_low",
+            "target_minus_full_ci_high",
+            shift,
+        ),
+    ]
+    fig, ax = plt.subplots(figsize=(3.45, 2.80))
+    for color_key, label, value_col, low_col, high_col, offset in contrast_specs:
+        values = main[value_col].to_numpy() * 100
+        lower = (main[value_col] - main[low_col]).to_numpy() * 100
+        upper = (main[high_col] - main[value_col]).to_numpy() * 100
+        ax.errorbar(
+            values,
+            y + offset,
+            xerr=np.vstack([lower, upper]),
+            fmt="o",
+            color=COLORS[color_key],
+            ecolor=COLORS[color_key],
+            capsize=4.0,
+            markersize=6.0,
+            elinewidth=1.1,
+            label=label,
+        )
+        for value, y_value in zip(values, y + offset):
+            ax.text(
+                value + 0.70,
+                y_value,
+                f"{value:+.2f}",
+                va="center",
+                fontsize=6.8,
+                color="#222222",
+                zorder=6,
+                bbox=dict(facecolor="white", edgecolor="none", alpha=0.92, pad=0.25),
+            )
+    ax.axvline(0, color="#999999", linestyle="--", linewidth=1.0)
+    ax.set_yticks(y, ["Qwen", "Gemma", "InternVL"])
+    ax.tick_params(axis="both", labelsize=7)
+    ax.invert_yaxis()
+    ax.set_xlim(-2, 42)
+    ax.set_xlabel("Scaffold - Full Procedure (pp)\nTask-cluster bootstrap interval")
+    ax.grid(axis="x", color="#E0E0E0", linewidth=0.7)
+    ax.set_axisbelow(True)
+    ax.spines[["top", "right"]].set_visible(False)
+    ax.legend(frameon=False, ncols=2, loc="lower center", bbox_to_anchor=(0.5, 1.01), fontsize=6.8)
+    fig.tight_layout()
+    _save(fig, "fig_scaffold_full_contrasts")
+
+
 def write_adjudicated_full_b_table(taxonomy: pd.DataFrame) -> pd.DataFrame:
     label_map = {
         "output_schema_failure": "Output/schema failure",
@@ -363,7 +472,7 @@ def plot_adjudicated_full_b_taxonomy(full: pd.DataFrame) -> None:
     failures = total - int(pooled.loc["Success"])
     pre_native_responsibility = int(pooled.iloc[:3].sum())
 
-    fig, ax = plt.subplots(figsize=(8.8, 4.8))
+    fig, ax = plt.subplots(figsize=(3.45, 2.55))
     bars = ax.barh(labels[::-1], pooled.to_numpy()[::-1], color=colors[::-1], height=0.68)
     for bar, count in zip(bars, pooled.to_numpy()[::-1]):
         ax.text(
@@ -371,26 +480,21 @@ def plot_adjudicated_full_b_taxonomy(full: pd.DataFrame) -> None:
             bar.get_y() + bar.get_height() / 2,
             f"{int(count):,} ({count / total * 100:.1f}%)",
             va="center",
-            fontsize=8.5,
+            fontsize=6.4,
         )
-    ax.text(
-        0.98,
-        0.03,
-        f"Pre-native responsibility: {pre_native_responsibility:,}/{failures:,} failures "
-        f"({pre_native_responsibility / failures * 100:.1f}%)",
-        transform=ax.transAxes,
-        ha="right",
-        va="bottom",
-        fontsize=8.5,
-        weight="bold",
-    )
-    ax.set_xlabel("Full-B model-case outcomes pooled across three backbones")
+    ax.set_xlabel("Pooled model-case outcomes")
     ax.set_xlim(0, max(pooled) * 1.22)
     ax.grid(axis="x", color="#E0E0E0", linewidth=0.7)
     ax.set_axisbelow(True)
     ax.spines[["top", "right", "left"]].set_visible(False)
     ax.tick_params(axis="y", length=0)
-    ax.set_title("Responsibility-adjudicated first-attempt outcome taxonomy", loc="left", fontsize=10, weight="bold")
+    ax.tick_params(axis="both", labelsize=6.5)
+    ax.set_title(
+        f"Adjudicated taxonomy: {pre_native_responsibility / failures * 100:.1f}% pre-native failures",
+        loc="left",
+        fontsize=7.0,
+        weight="bold",
+    )
     fig.tight_layout()
     _save(fig, "fig_procedural_failure_taxonomy")
 
@@ -404,6 +508,7 @@ def main() -> None:
     full_b = write_adjudicated_full_b_table(taxonomy)
     plot_adjudicated_full_b_taxonomy(full_b)
     plot_oracle_responsibility_analysis(main_results)
+    plot_oracle_responsibility_panels(main_results)
     print("Oracle manuscript assets generated from validated reference-procedure tables.")
 
 

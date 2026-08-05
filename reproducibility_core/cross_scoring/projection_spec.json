@@ -1,0 +1,41 @@
+{
+  "protocol_version": "frozen_full_to_symbolic_v1",
+  "primary_endpoint": "type_normalized_symbolic_exact_match",
+  "input_policy": "archived type-normalized Full-Procedure parse only",
+  "default": "identity projection; preserve emitted order, skill labels, and targets",
+  "drop_lift_tasks": [
+    "select_drink",
+    "select_drink_common_sense",
+    "select_drink_semantic",
+    "select_toy",
+    "select_toy_common_sense",
+    "select_toy_semantic",
+    "select_toy_spatial"
+  ],
+  "insert_tasks": {
+    "tasks": [
+      "insert_bloom_flower",
+      "insert_flower",
+      "insert_flower_common_sense",
+      "insert_flower_semantic"
+    ],
+    "mapping": "drop lift; relabel each emitted moveto(target) as insert(target); preserve all other emitted actions",
+    "rationale": "source-derived macro projection from the executor phase vocabulary to the symbolic contract"
+  },
+  "add_condiment_tasks": {
+    "tasks": [
+      "add_condiment",
+      "add_condiment_common_sense",
+      "add_condiment_semantic",
+      "add_condiment_spatial"
+    ],
+    "mapping": "drop lift; consume exactly one emitted moveto target as the emitted pour target; preserve all other emitted actions"
+  },
+  "forbidden": [
+    "target replacement",
+    "action reordering",
+    "missing target insertion",
+    "reference action substitution",
+    "invalid output recovery"
+  ]
+}

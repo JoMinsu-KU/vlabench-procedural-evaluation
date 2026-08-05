@@ -1,4 +1,20 @@
-# Reproducibility artifact v1.2
+# Reproducibility artifact v1.3
+
+This release adds a frozen-output cross-evaluation to the v1.2 provenance and robustness evidence. It introduces no model inference and no native rollout.
+
+New in v1.3:
+
+- deterministic projection of all 6,399 archived full-procedure outputs onto the symbolic representation where the source-derived mapping is defined;
+- 4,588 projectable outputs (71.70%) and 1,811 explicitly unprojectable outputs, with no semantic repair;
+- 450 projected symbolic successes, including 273 that failed the full-procedure first-attempt endpoint;
+- 24.28% pooled success-set Jaccard overlap between original symbolic outputs and projected full outputs;
+- exact reproduction of all 6,399 archived type-normalized symbolic labels before cross-scoring;
+- five passing no-repair projection controls and a row-level audit table;
+- an explicit feasibility finding that no verified model-choice-preserving symbolic-to-native expansion path exists in the released symbolic branch.
+
+The cross-evaluation separates evidence for prompt-conditioned high-level plan elicitation from downstream procedure-specific termination only to the extent supported by the deterministic, lossy projection. It is not a causal comparison, and no reverse symbolic-to-native score is claimed.
+
+## v1.2 provenance and composition-sensitivity update
 
 This release preserves every authoritative v1.1 model output and success label while adding source-linked registry provenance, fixed-manifest composition-sensitivity diagnostics, and the claim-boundary records used for the revised manuscript.
 
@@ -38,4 +54,4 @@ The artifact excludes abandoned exploratory study branches and historical manusc
 
 ## Interpretation boundary
 
-The symbolic and reference-procedure interfaces are deliberately non-equivalent evaluation contracts. Phase-oracle and Target-oracle generate separate plans under responsibility-relaxed scaffolds. Cross-condition differences are descriptive or scaffold-conditioned diagnostic associations, not causal decomposition or same-plan repair. Findings are conditional on the fixed 2,133-case analysis manifest and the benchmark-derived reference-procedure contract.
+The symbolic and reference-procedure interfaces are deliberately different evaluation contracts. Reference-phase and reference-target scaffolds generate separate plans. Cross-condition differences are descriptive or scaffold-conditioned diagnostic associations, not causal decomposition or same-plan repair. Findings are conditional on the fixed 2,133-case retained manifest, deterministic cross-interface transformations, and the source-derived reference-procedure contract.

@@ -18,6 +18,13 @@
   "composition_loto_omissions": 34,
   "composition_loco_omissions": 5,
   "composition_labels_modified": 0,
+  "cross_scoring_input_rows": 6399,
+  "cross_scoring_projectable_rows": "4588",
+  "cross_scoring_projected_symbolic_successes": "450",
+  "cross_scoring_projected_success_full_failure": "273",
+  "cross_scoring_no_repair_controls_passed": 5,
+  "cross_scoring_model_inference_calls": 0,
+  "cross_scoring_native_rollouts": 0,
   "recovered_validation_source_files": 40,
-  "checksummed_files": 13126
+  "checksummed_files": 13151
 }

@@ -1,0 +1,5 @@
+model,n,full_output_projection_possible_n,full_output_projection_possible_pct,original_symbolic_success_n,original_symbolic_success_pct,projected_full_symbolic_success_n,projected_full_symbolic_success_pct,full_procedure_success_n,full_procedure_success_pct,projected_success_full_failure_n,projected_success_full_failure_pct,full_success_projected_failure_n,original_vs_projected_agreement_n,original_vs_projected_agreement_pct,original_vs_projected_both_n,original_only_n,projected_only_n,original_vs_projected_jaccard_pct
+Qwen3-VL-8B,2133,1923,90.15,280,13.13,254,11.91,80,3.75,174,8.16,0,1841,86.31,121,159,133,29.30
+Gemma-3-12B-it,2133,1882,88.23,221,10.36,139,6.52,57,2.67,82,3.84,0,1919,89.97,73,148,66,25.44
+InternVL3-8B,2133,783,36.71,88,4.13,57,2.67,40,1.88,17,0.80,0,2006,94.05,9,79,48,6.62
+Pooled,6399,4588,71.70,589,9.20,450,7.03,177,2.77,273,4.27,0,5766,90.11,203,386,247,24.28

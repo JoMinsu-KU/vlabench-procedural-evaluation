@@ -434,8 +434,8 @@ def build_expansion_stratified_table() -> pd.DataFrame:
         "InternVL3-8B": ("internvl3_a_success", "internvl3_b_first_success"),
     }
     subset_masks = {
-        "No added canonical phase": complexity["added_procedural_steps"].eq(0),
-        "At least one added canonical phase": complexity["added_procedural_steps"].ge(1),
+        "No added reference phase": complexity["added_procedural_steps"].eq(0),
+        "At least one added reference phase": complexity["added_procedural_steps"].ge(1),
     }
     rows = []
     for subset_name, subset_mask in subset_masks.items():
@@ -502,7 +502,7 @@ def plot_main_results(main: pd.DataFrame) -> None:
         b,
         width,
         color=COLORS["procedural"],
-        label="First-attempt canonical procedural success",
+        label="First-attempt reference-procedure task success",
         yerr=np.vstack([b_low, b_high]),
         capsize=4,
     )
@@ -540,7 +540,7 @@ def plot_main_results(main: pd.DataFrame) -> None:
     axes[1].axvline(0, color="#A0A0A0", linewidth=1, linestyle="--")
     axes[1].set_yticks(y, main["model"])
     axes[1].invert_yaxis()
-    axes[1].set_xlabel("Paired A-B difference (%p)\nTask-clustered 95% CI")
+    axes[1].set_xlabel("Symbolic - Procedure difference (%p)\nTask-clustered 95% CI")
     axes[1].grid(axis="x", color="#E0E0E0", linewidth=0.7)
     axes[1].set_axisbelow(True)
     axes[1].spines[["top", "right"]].set_visible(False)
@@ -571,16 +571,16 @@ def plot_evaluation_framework() -> None:
     _box(ax, 0.31, 0.87, 0.38, 0.09, "Same 2,133 VLABench cases\nSame VLM backbones", "#F2F2F2", "#777777")
     _arrow(ax, (0.5, 0.87), (0.25, 0.77))
     _arrow(ax, (0.5, 0.87), (0.75, 0.77))
-    ax.text(0.25, 0.80, "Experiment A", ha="center", fontsize=11, weight="bold", color="#315A86")
-    ax.text(0.75, 0.80, "Experiment B", ha="center", fontsize=11, weight="bold", color="#A33D3B")
+    ax.text(0.25, 0.80, "High-Level Symbolic Interface", ha="center", fontsize=11, weight="bold", color="#315A86")
+    ax.text(0.75, 0.80, "Reference-Procedure Interface", ha="center", fontsize=11, weight="bold", color="#A33D3B")
     left = [
-        (0.08, 0.66, "Official-style symbolic interface"),
+        (0.08, 0.66, "High-level symbolic plan"),
         (0.08, 0.49, "High-level skill sequence\n(skill + target + order)"),
         (0.08, 0.32, "Expert-DAG sequence scoring"),
         (0.08, 0.15, "Type-normalized PM-based\nfull-match (derived)"),
     ]
     right = [
-        (0.58, 0.66, "Executor-derived canonical\nprocedural interface"),
+        (0.58, 0.66, "Benchmark-derived\nreference-procedure plan"),
         (0.58, 0.49, "Executor-derived phases\n(skill + target + order)"),
         (0.58, 0.32, "Validation + target binding\n+ native execution"),
         (0.58, 0.15, "First-attempt native\ntask-condition success"),
@@ -610,7 +610,7 @@ def plot_procedural_expansion() -> None:
     _arrow(ax, (0.19, 0.66), (0.19, 0.57))
     _box(ax, 0.05, 0.42, 0.28, 0.10, "place(target container)", "#EAF2FA", "#4C78A8")
 
-    ax.text(0.66, 0.86, "Executor-derived canonical procedure", ha="center", fontsize=10, weight="bold", color="#A33D3B")
+    ax.text(0.66, 0.86, "Reference-Procedure Interface", ha="center", fontsize=10, weight="bold", color="#A33D3B")
     procedural = [
         (0.48, 0.70, "pick(target object)"),
         (0.48, 0.54, "lift()"),
@@ -620,7 +620,7 @@ def plot_procedural_expansion() -> None:
         _box(ax, x, y, 0.36, 0.09, text_value, "#FCEDEC", "#E45756")
     _arrow(ax, (0.66, 0.70), (0.66, 0.63))
     _arrow(ax, (0.66, 0.54), (0.66, 0.47))
-    ax.text(0.66, 0.25, "VLM explicitly selects each canonical skill,\nits required target, and the complete order.",
+    ax.text(0.66, 0.25, "VLM explicitly selects each reference skill,\nits required target, and the complete order.",
             ha="center", va="center", fontsize=8.5)
     _box(ax, 0.15, 0.08, 0.70, 0.09,
          "Fixed native backend: pose, orientation, offset, trajectory, gripper and MuJoCo control",
@@ -644,7 +644,7 @@ def plot_dataset_selection(categories: pd.DataFrame) -> None:
     _arrow(ax, (0.27, 0.52), (0.43, 0.35))
     _arrow(ax, (0.73, 0.52), (0.57, 0.35))
     _box(ax, 0.25, 0.20, 0.50, 0.14, "Intersection fixed before VLM evaluation\n2,133 cases (53.33%)\n34 task types", "#EEF5EE", "#4C8C5A")
-    ax.text(0.5, 0.08, "The same fixed manifest is used in Experiments A and B.", ha="center", fontsize=8.5, color="#444444")
+    ax.text(0.5, 0.08, "The same analysis manifest is used for both interfaces.", ha="center", fontsize=8.5, color="#444444")
 
     ax = axes[1]
     values = categories["retention_rate"].to_numpy() * 100
@@ -709,7 +709,7 @@ def plot_pooled_failure_taxonomy(failure: pd.DataFrame) -> None:
 
 def plot_agreement(agreement: pd.DataFrame) -> None:
     outcomes = ["both", "a_only", "b_only", "neither"]
-    labels = ["Both", "A only", "B only", "Neither"]
+    labels = ["Both", "Symbolic only", "Procedure only", "Neither"]
     colors = [COLORS["both"], COLORS["a_only"], COLORS["b_only"], COLORS["neither"]]
     fig, axes = plt.subplots(1, 2, figsize=(11.4, 4.6), gridspec_kw={"width_ratios": [1.25, 1]})
 

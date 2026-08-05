@@ -7,7 +7,7 @@ This repository provides code, case-level results, audit evidence, and release c
 - **Reference-phase scaffold** (artifact field: `phase_oracle`) fixes the benchmark-derived phase/order contract and asks the model to select numeric targets.
 - **Reference-target scaffold** (artifact field: `target_oracle`) asks the model to generate the phase/order sequence and inserts reference targets only after that sequence passes the frozen phase contract.
 
-The symbolic and reference-procedure interfaces generate different outputs under different prompts, schemas, and endpoints. Their results are interface-conditioned classifications rather than interchangeable measurements or the causal effect of adding one component. The reference-phase and reference-target conditions each generate a separate plan; their contrasts with the full condition are scaffold-conditioned diagnostic associations, not same-plan repairs or causal decomposition.
+The symbolic and reference-procedure interfaces generate different outputs under different prompts, schemas, and endpoints. Their original results are interface-conditioned classifications rather than the causal effect of adding one component. Artifact v1.3 additionally projects the already generated full-procedure outputs onto the symbolic representation without model inference or semantic repair. The reference-phase and reference-target conditions each generate a separate plan; their contrasts with the full condition are secondary scaffold-conditioned diagnostics, not same-plan repairs or causal decomposition.
 
 For continuity with released files and scripts, the manuscript display names map to artifact identifiers as follows:
 
@@ -28,7 +28,20 @@ For continuity with released files and scripts, the manuscript display names map
 
 All six pointwise scaffold-minus-full-procedure task-cluster bootstrap intervals exclude zero. A six-contrast max-|T| family-wise task-composition sensitivity analysis retains zero-excluding simultaneous intervals for five contrasts; the InternVL reference-target-scaffold-minus-full-procedure interval includes zero. All three direct reference-target-minus-reference-phase intervals include zero. These intervals assess sensitivity to reweighting the 34 retained tasks and are not interpreted as inference to unseen VLABench tasks.
 
-The symbolic-versus-procedure ordering is representation-sensitive: raw released PM places full-procedure success above symbolic full match for all three backbones, whereas deterministic digit-string normalization reverses the ordering. The release therefore treats low success-set overlap and non-interchangeable classification, rather than metric superiority, as the stable cross-interface finding.
+The symbolic-versus-procedure ordering is representation-sensitive: raw released PM places full-procedure success above symbolic full match for all three backbones, whereas deterministic digit-string normalization reverses the ordering. The release therefore treats low cross-interface agreement and stage-wise termination, rather than metric superiority, as the stable findings.
+
+## Frozen-output cross-evaluation
+
+The v1.3 audit deterministically projects archived full-procedure outputs onto the symbolic skill--target graph. It does not reparse rejected output, insert actions or targets, reorder actions, replace model-selected targets, or invoke a model or simulator. The archived type-normalized symbolic labels are reproduced with zero mismatch before projection is accepted.
+
+| Model | Projectable full outputs | Projected symbolic success | Projected success / full-procedure failure | Original/projected success-set Jaccard |
+|---|---:|---:|---:|---:|
+| Qwen3-VL-8B | 1,923/2,133 (90.15%) | 254/2,133 (11.91%) | 174 | 29.30% |
+| Gemma-3-12B-it | 1,882/2,133 (88.23%) | 139/2,133 (6.52%) | 82 | 25.44% |
+| InternVL3-8B | 783/2,133 (36.71%) | 57/2,133 (2.67%) | 17 | 6.62% |
+| **Pooled** | **4,588/6,399 (71.70%)** | **450/6,399 (7.03%)** | **273** | **24.28%** |
+
+These results show both endpoint-specific termination (273 projected symbolic successes that failed the full-procedure endpoint) and prompt-conditioned high-level elicitation differences (24.28% overlap between original and projected symbolic success sets). A reverse symbolic-to-native score is not reported because the released symbolic branch contains no verified model-choice-preserving native expansion path; adding one would require a new adapter and native experiment.
 
 ## Repository structure
 
@@ -88,12 +101,13 @@ The runner exposes `--ablation-mode full|phase_oracle|target_oracle`. The comple
 
 ```bash
 python analysis/reproduce_reported_statistics.py
+python analysis/cross_score_frozen_outputs.py
 python analysis/audit_full_b_no_repair.py
 python reproducibility_core/scripts/compute_composition_sensitivity.py --repo-root . --output-dir reproducibility_core/robustness
 python tests/verify_release.py .
 ```
 
-The first command regenerates the final cross-interface, scaffold, endpoint-sensitivity, simultaneous-interval, and responsibility-adjudicated tables and figures, then synchronizes `results/reported_statistics/`. The second reproduces 10,623 full-procedure parser/binder ownership and no-repair checks from the released positive-control fixtures. The composition-sensitivity command recomputes leave-one-task-out and leave-one-category-out diagnostics without changing any case-level label. The verifier checks the 2,133-case manifest, six symbolic/full-procedure files, six scaffold runs, manifest order, success counts, pointwise and simultaneous claim boundaries, observed/adjudicated counts, no-repair evidence, corrected-gate evidence, the frozen source-registry audit, composition-sensitivity outputs, anonymity constraints, and repository checksums.
+The first command regenerates the original cross-interface, scaffold, endpoint-sensitivity, simultaneous-interval, and adjudicated termination tables and figures. The cross-scoring command reproduces the deterministic full-to-symbolic projection, its five no-repair controls, row-level results, and summary table without inference or rollout. The next command reproduces 10,623 full-procedure parser/binder ownership and no-repair checks from the released positive-control fixtures. The composition-sensitivity command recomputes leave-one-task-out and leave-one-category-out diagnostics without changing any case-level label. The verifier checks these evidence layers, anonymity constraints, and repository checksums.
 
 Scaffold-specific analysis can also be run independently through the legacy analysis entry points:
 
@@ -117,7 +131,7 @@ Model-specific native traces are distributed as separate release archives becaus
 
 The final 2,133-row CSV for each condition is the authoritative scoring source. Public scaffold-condition JSONL files preserve the first occurrence of each exact raw line; the duplicate counts found in the InternVL source logs are recorded in `results/outcome_audits/oracle_release_build.json`. The recovered scaffold-validation report verifies 2,133 cases, 34 tasks, 3,100 target slots, and 6,357 no-repair mutations. The separate full-procedure battery verifies 10,623 parser/binder ownership and no-repair behaviors. Corrected-gate offline revalidation flags all 472 adjudicated C5 rows, 602 rows already classified C3, and no successful row. Raw first-failure codes and responsibility-adjudicated classes remain separate. See `KNOWN_ISSUES.md` for the complete boundary.
 
-The v1.2 source-registry audit traces all 34 retained task types to the pinned VLABench source revision and records effective methods, call order, target-taking phases, inheritance, and branch handling. It is a documented author-led provenance audit, not an independent human or inter-rater validation. No substantive registry mismatch, unresolved case-to-branch assignment, registry modification, or result-label change was found. Leave-one-task-out and leave-one-category-out diagnostics assess sensitivity to the empirical composition of the fixed manifest; they are not inference to unseen tasks.
+The source-registry audit traces all 34 retained task types to the pinned VLABench source revision and records effective methods, call order, target-taking phases, inheritance, and branch handling. It is a documented author-led provenance audit, not an independent human or inter-rater validation. No substantive registry mismatch, unresolved case-to-branch assignment, registry modification, or result-label change was found. Leave-one-task-out and leave-one-category-out diagnostics assess sensitivity to the empirical composition of the fixed manifest; they are not inference to unseen tasks.
 
 ## License
 

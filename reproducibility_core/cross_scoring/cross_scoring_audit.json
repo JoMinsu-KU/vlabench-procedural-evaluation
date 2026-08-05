@@ -1,0 +1,25 @@
+{
+  "protocol_version": "frozen_full_to_symbolic_v1",
+  "model_inference_calls": 0,
+  "native_rollouts": 0,
+  "input_rows": 6399,
+  "symbolic_endpoint_reproduction_mismatches": {
+    "Qwen3-VL-8B": 0,
+    "Gemma-3-12B-it": 0,
+    "InternVL3-8B": 0
+  },
+  "projection_status_counts": {
+    "model_output_unprojectable": 1811,
+    "projected_add_condiment_macro": 3,
+    "projected_drop_intermediate_lift": 797,
+    "projected_identity": 3571,
+    "projected_insert_macro": 217
+  },
+  "no_repair_controls_passed": 5,
+  "no_repair_controls_total": 5,
+  "projection_spec_sha256": "d9d9186a57542e5a8482b7aa09273c4b68ca4870d0817c1b65d6e5c0c208a9e1",
+  "reverse_symbolic_to_native": {
+    "performed": false,
+    "reason": "No verified model-choice-preserving symbolic-to-native executor entry point exists in the released evaluation code; constructing one would add a new adapter and native experiment."
+  }
+}

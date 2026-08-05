@@ -439,6 +439,65 @@ def main() -> None:
     if not composition.get("loco", {}).get("all_single_interface_majority"):
         errors.append("a leave-one-category-out omission removed the single-interface majority")
 
+    cross_scoring_root = root / "reproducibility_core" / "cross_scoring"
+    cross_scoring = json.loads(
+        (cross_scoring_root / "cross_scoring_audit.json").read_text(encoding="utf-8")
+    )
+    cross_scoring_expected = {
+        "protocol_version": "frozen_full_to_symbolic_v1",
+        "model_inference_calls": 0,
+        "native_rollouts": 0,
+        "input_rows": 6_399,
+        "no_repair_controls_passed": 5,
+        "no_repair_controls_total": 5,
+    }
+    for field, expected in cross_scoring_expected.items():
+        if cross_scoring.get(field) != expected:
+            errors.append(
+                f"cross-scoring field {field!r}: expected {expected!r}, "
+                f"found {cross_scoring.get(field)!r}"
+            )
+    if any(
+        value != 0
+        for value in cross_scoring.get("symbolic_endpoint_reproduction_mismatches", {}).values()
+    ):
+        errors.append("cross-scoring did not exactly reproduce archived symbolic endpoint labels")
+    if cross_scoring.get("reverse_symbolic_to_native", {}).get("performed") is not False:
+        errors.append("cross-scoring unexpectedly claims a reverse symbolic-to-native score")
+
+    cross_summary = read_csv(cross_scoring_root / "full_to_symbolic_summary.csv")
+    if len(cross_summary) != 4:
+        errors.append(f"cross-scoring summary contains {len(cross_summary)}, not 4 rows")
+        pooled_cross = {}
+    else:
+        pooled_cross = next((row for row in cross_summary if row["model"] == "Pooled"), {})
+        pooled_cross_expected = {
+            "n": "6399",
+            "full_output_projection_possible_n": "4588",
+            "projected_full_symbolic_success_n": "450",
+            "full_procedure_success_n": "177",
+            "projected_success_full_failure_n": "273",
+            "full_success_projected_failure_n": "0",
+            "original_vs_projected_both_n": "203",
+            "original_only_n": "386",
+            "projected_only_n": "247",
+            "original_vs_projected_jaccard_pct": "24.28",
+        }
+        for field, expected in pooled_cross_expected.items():
+            if pooled_cross.get(field) != expected:
+                errors.append(
+                    f"cross-scoring pooled field {field!r}: expected {expected!r}, "
+                    f"found {pooled_cross.get(field)!r}"
+                )
+    cross_rows = read_csv(cross_scoring_root / "full_to_symbolic_projection_rows.csv")
+    if len(cross_rows) != 6_399:
+        errors.append(f"cross-scoring row table contains {len(cross_rows)}, not 6,399 rows")
+    no_repair_controls = json.loads(
+        (cross_scoring_root / "projection_no_repair_controls.json").read_text(encoding="utf-8")
+    )
+    if len(no_repair_controls) != 5 or not all(row.get("passed") is True for row in no_repair_controls):
+        errors.append("cross-scoring no-repair controls are incomplete or contain a failure")
+
     evidence_layers = read_csv(
         root
         / "reproducibility_core"
@@ -572,6 +631,19 @@ def main() -> None:
         "composition_loto_omissions": composition.get("loto", {}).get("pooled_exclusions"),
         "composition_loco_omissions": composition.get("loco", {}).get("pooled_exclusions"),
         "composition_labels_modified": composition.get("labels_modified"),
+        "cross_scoring_input_rows": cross_scoring.get("input_rows"),
+        "cross_scoring_projectable_rows": pooled_cross.get("full_output_projection_possible_n"),
+        "cross_scoring_projected_symbolic_successes": pooled_cross.get(
+            "projected_full_symbolic_success_n"
+        ),
+        "cross_scoring_projected_success_full_failure": pooled_cross.get(
+            "projected_success_full_failure_n"
+        ),
+        "cross_scoring_no_repair_controls_passed": cross_scoring.get(
+            "no_repair_controls_passed"
+        ),
+        "cross_scoring_model_inference_calls": cross_scoring.get("model_inference_calls"),
+        "cross_scoring_native_rollouts": cross_scoring.get("native_rollouts"),
         "recovered_validation_source_files": len(source_checksum_lines),
         "checksummed_files": len(checksum_rows),
     }
