@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "analysis_version": "macro_family_exclusion_v1",
+  "full_manifest": {
+    "analysis_set": "full_retained_manifest",
+    "model": "Pooled",
+    "n": 6399,
+    "projection_possible_n": 4588,
+    "projection_coverage_pct": "71.70",
+    "projected_symbolic_success_n": 450,
+    "projected_symbolic_success_overall_pct": "7.03",
+    "projected_symbolic_success_among_projectable_pct": "9.81",
+    "projected_success_full_failure_n": 273,
+    "original_symbolic_success_n": 589,
+    "original_projected_both_n": 203,
+    "original_only_n": 386,
+    "projected_only_n": 247,
+    "original_projected_jaccard_pct": "24.28"
+  },
+  "macro_family_excluded": {
+    "analysis_set": "macro_family_excluded",
+    "model": "Pooled",
+    "n": 6060,
+    "projection_possible_n": 4368,
+    "projection_coverage_pct": "72.08",
+    "projected_symbolic_success_n": 388,
+    "projected_symbolic_success_overall_pct": "6.40",
+    "projected_symbolic_success_among_projectable_pct": "8.88",
+    "projected_success_full_failure_n": 223,
+    "original_symbolic_success_n": 521,
+    "original_projected_both_n": 161,
+    "original_only_n": 360,
+    "projected_only_n": 227,
+    "original_projected_jaccard_pct": "21.52"
+  },
+  "jaccard_absolute_change_pp": -2.76,
+  "downstream_cases_retained_pct": 81.68,
+  "qualitative_findings_preserved": true,
+  "provenance": "This deterministic sensitivity analysis does not modify the retained manifest, model outputs, native traces, original success labels, or v1.3 projection rules."
+}

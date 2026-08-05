@@ -498,6 +498,69 @@ def main() -> None:
     if len(no_repair_controls) != 5 or not all(row.get("passed") is True for row in no_repair_controls):
         errors.append("cross-scoring no-repair controls are incomplete or contain a failure")
 
+    macro_spec = json.loads(
+        (cross_scoring_root / "macro_family_exclusion_spec.json").read_text(encoding="utf-8")
+    )
+    macro_spec_expected = {
+        "analysis_version": "macro_family_exclusion_v1",
+        "excluded_rows": 339,
+        "retained_rows": 6060,
+        "model_inference_calls": 0,
+        "native_rollouts": 0,
+        "success_labels_modified": 0,
+        "projection_rules_modified": False,
+    }
+    for field, expected in macro_spec_expected.items():
+        if macro_spec.get(field) != expected:
+            errors.append(
+                f"macro-family exclusion field {field!r}: expected {expected!r}, "
+                f"found {macro_spec.get(field)!r}"
+            )
+    macro_usage = read_csv(cross_scoring_root / "macro_mapping_usage_counts.csv")
+    if sum(int(row["macro_mapped_rows"]) for row in macro_usage) != 220:
+        errors.append("macro-mapping usage table does not contain 220 mapped rows")
+    if sum(int(row["projected_symbolic_successes"]) for row in macro_usage) != 62:
+        errors.append("macro-mapping usage table does not contain 62 projected successes")
+    macro_sensitivity = read_csv(
+        cross_scoring_root / "macro_family_exclusion_sensitivity.csv"
+    )
+    if len(macro_sensitivity) != 8:
+        errors.append(
+            f"macro-family sensitivity table contains {len(macro_sensitivity)}, not 8 rows"
+        )
+        macro_excluded_pooled = {}
+    else:
+        macro_excluded_pooled = next(
+            (
+                row
+                for row in macro_sensitivity
+                if row["analysis_set"] == "macro_family_excluded"
+                and row["model"] == "Pooled"
+            ),
+            {},
+        )
+        macro_excluded_expected = {
+            "n": "6060",
+            "projection_possible_n": "4368",
+            "projection_coverage_pct": "72.08",
+            "projected_symbolic_success_n": "388",
+            "projected_symbolic_success_overall_pct": "6.40",
+            "projected_symbolic_success_among_projectable_pct": "8.88",
+            "projected_success_full_failure_n": "223",
+            "original_projected_jaccard_pct": "21.52",
+        }
+        for field, expected in macro_excluded_expected.items():
+            if macro_excluded_pooled.get(field) != expected:
+                errors.append(
+                    f"macro-family excluded pooled field {field!r}: expected {expected!r}, "
+                    f"found {macro_excluded_pooled.get(field)!r}"
+                )
+    macro_summary = json.loads(
+        (cross_scoring_root / "macro_family_exclusion_summary.json").read_text(encoding="utf-8")
+    )
+    if macro_summary.get("qualitative_findings_preserved") is not True:
+        errors.append("macro-family exclusion did not preserve the qualitative findings")
+
     evidence_layers = read_csv(
         root
         / "reproducibility_core"
@@ -644,6 +707,17 @@ def main() -> None:
         ),
         "cross_scoring_model_inference_calls": cross_scoring.get("model_inference_calls"),
         "cross_scoring_native_rollouts": cross_scoring.get("native_rollouts"),
+        "macro_family_exclusion_rows": macro_spec.get("excluded_rows"),
+        "macro_family_exclusion_retained_rows": macro_spec.get("retained_rows"),
+        "macro_family_exclusion_projected_successes": macro_excluded_pooled.get(
+            "projected_symbolic_success_n"
+        ),
+        "macro_family_exclusion_projected_success_full_failure": macro_excluded_pooled.get(
+            "projected_success_full_failure_n"
+        ),
+        "macro_family_exclusion_jaccard_pct": macro_excluded_pooled.get(
+            "original_projected_jaccard_pct"
+        ),
         "recovered_validation_source_files": len(source_checksum_lines),
         "checksummed_files": len(checksum_rows),
     }

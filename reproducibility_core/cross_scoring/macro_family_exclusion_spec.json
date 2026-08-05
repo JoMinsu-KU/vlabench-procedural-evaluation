@@ -1,0 +1,32 @@
+{
+  "analysis_version": "macro_family_exclusion_v1",
+  "input": "reproducibility_core/cross_scoring/full_to_symbolic_projection_rows.csv",
+  "exclusion_unit": "entire task family for every model-case row",
+  "families": {
+    "insert_flower_family": [
+      "insert_bloom_flower",
+      "insert_flower",
+      "insert_flower_common_sense",
+      "insert_flower_semantic"
+    ],
+    "add_condiment_family": [
+      "add_condiment",
+      "add_condiment_common_sense",
+      "add_condiment_semantic",
+      "add_condiment_spatial"
+    ]
+  },
+  "observed_excluded_tasks": [
+    "add_condiment",
+    "insert_bloom_flower",
+    "insert_flower",
+    "insert_flower_common_sense",
+    "insert_flower_semantic"
+  ],
+  "excluded_rows": 339,
+  "retained_rows": 6060,
+  "model_inference_calls": 0,
+  "native_rollouts": 0,
+  "success_labels_modified": 0,
+  "projection_rules_modified": false
+}

@@ -1,0 +1,6 @@
+family,task_name,rows,projectable_rows,macro_mapped_rows,projected_symbolic_successes,projected_success_full_failures
+insert_flower_family,insert_bloom_flower,84,58,58,28,22
+insert_flower_family,insert_flower,93,66,66,19,13
+insert_flower_family,insert_flower_common_sense,81,48,48,4,4
+insert_flower_family,insert_flower_semantic,78,45,45,11,11
+add_condiment_family,add_condiment,3,3,3,0,0

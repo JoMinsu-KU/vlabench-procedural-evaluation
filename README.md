@@ -7,7 +7,7 @@ This repository provides code, case-level results, audit evidence, and release c
 - **Reference-phase scaffold** (artifact field: `phase_oracle`) fixes the benchmark-derived phase/order contract and asks the model to select numeric targets.
 - **Reference-target scaffold** (artifact field: `target_oracle`) asks the model to generate the phase/order sequence and inserts reference targets only after that sequence passes the frozen phase contract.
 
-The symbolic and reference-procedure interfaces generate different outputs under different prompts, schemas, and endpoints. Their original results are interface-conditioned classifications rather than the causal effect of adding one component. Artifact v1.3 additionally projects the already generated full-procedure outputs onto the symbolic representation without model inference or semantic repair. The reference-phase and reference-target conditions each generate a separate plan; their contrasts with the full condition are secondary scaffold-conditioned diagnostics, not same-plan repairs or causal decomposition.
+The symbolic and reference-procedure interfaces generate different outputs under different prompts, schemas, and endpoints. Their original results are interface-conditioned classifications rather than the causal effect of adding one component. Artifact v1.4 additionally projects the already generated full-procedure outputs onto the symbolic representation without model inference or semantic repair and reports a whole-task-family exclusion sensitivity for source-defined macro mappings. The reference-phase and reference-target conditions each generate a separate plan; their contrasts with the full condition are secondary scaffold-conditioned diagnostics, not same-plan repairs or causal decomposition.
 
 For continuity with released files and scripts, the manuscript display names map to artifact identifiers as follows:
 
@@ -32,16 +32,22 @@ The symbolic-versus-procedure ordering is representation-sensitive: raw released
 
 ## Frozen-output cross-evaluation
 
-The v1.3 audit deterministically projects archived full-procedure outputs onto the symbolic skill--target graph. It does not reparse rejected output, insert actions or targets, reorder actions, replace model-selected targets, or invoke a model or simulator. The archived type-normalized symbolic labels are reproduced with zero mismatch before projection is accepted.
+The v1.3 audit, retained unchanged in v1.4, deterministically projects archived full-procedure outputs onto the symbolic skill--target graph. It does not reparse rejected output, insert actions or targets, reorder actions, replace model-selected targets, or invoke a model or simulator. The archived type-normalized symbolic labels are reproduced with zero mismatch before projection is accepted. Projection is considered possible only when the archived output passed the original parser and its emitted fields are sufficient for deterministic symbolic serialization; projectability does not imply symbolic correctness.
 
 | Model | Projectable full outputs | Projected symbolic success | Projected success / full-procedure failure | Original/projected success-set Jaccard |
 |---|---:|---:|---:|---:|
-| Qwen3-VL-8B | 1,923/2,133 (90.15%) | 254/2,133 (11.91%) | 174 | 29.30% |
-| Gemma-3-12B-it | 1,882/2,133 (88.23%) | 139/2,133 (6.52%) | 82 | 25.44% |
-| InternVL3-8B | 783/2,133 (36.71%) | 57/2,133 (2.67%) | 17 | 6.62% |
-| **Pooled** | **4,588/6,399 (71.70%)** | **450/6,399 (7.03%)** | **273** | **24.28%** |
+| Qwen3-VL-8B | 1,923/2,133 (90.15%) | 254/2,133 (11.91%); 254/1,923 projectable (13.21%) | 174 | 29.30% |
+| Gemma-3-12B-it | 1,882/2,133 (88.23%) | 139/2,133 (6.52%); 139/1,882 projectable (7.39%) | 82 | 25.44% |
+| InternVL3-8B | 783/2,133 (36.71%) | 57/2,133 (2.67%); 57/783 projectable (7.28%) | 17 | 6.62% |
+| **Pooled** | **4,588/6,399 (71.70%)** | **450/6,399 (7.03%); 450/4,588 projectable (9.81%)** | **273** | **24.28%** |
 
 These results show both endpoint-specific termination (273 projected symbolic successes that failed the full-procedure endpoint) and prompt-conditioned high-level elicitation differences (24.28% overlap between original and projected symbolic success sets). A reverse symbolic-to-native score is not reported because the released symbolic branch contains no verified model-choice-preserving native expansion path; adding one would require a new adapter and native experiment.
+
+### Macro-family exclusion sensitivity
+
+The source-defined macro projection is used by the insert-flower and add-condiment task families. To avoid output-conditioned exclusion, v1.4 removes every model--case row belonging to those families and recomputes the frozen cross-score on the remaining rows. The exclusion removes 339 of 6,399 rows, leaving 6,060. Projection coverage is 4,368/6,060 (72.08%), projected symbolic success is 388/6,060 (6.40%; 388/4,368 projectable, 8.88%), projected-success/full-procedure-failure remains present in 223 cases, and the original/projected success-set Jaccard is 21.52% rather than 24.28%. Thus, the magnitude changes modestly, but the non-identical success sets and downstream termination pattern do not depend on the macro-mapped task families.
+
+The v1.4 sensitivity adds no model inference or native rollout and does not modify the retained manifest, model outputs, native traces, original success labels, or v1.3 projection rules.
 
 ## Repository structure
 
@@ -102,12 +108,13 @@ The runner exposes `--ablation-mode full|phase_oracle|target_oracle`. The comple
 ```bash
 python analysis/reproduce_reported_statistics.py
 python analysis/cross_score_frozen_outputs.py
+python analysis/analyze_macro_family_exclusion.py --repo-root .
 python analysis/audit_full_b_no_repair.py
 python reproducibility_core/scripts/compute_composition_sensitivity.py --repo-root . --output-dir reproducibility_core/robustness
 python tests/verify_release.py .
 ```
 
-The first command regenerates the original cross-interface, scaffold, endpoint-sensitivity, simultaneous-interval, and adjudicated termination tables and figures. The cross-scoring command reproduces the deterministic full-to-symbolic projection, its five no-repair controls, row-level results, and summary table without inference or rollout. The next command reproduces 10,623 full-procedure parser/binder ownership and no-repair checks from the released positive-control fixtures. The composition-sensitivity command recomputes leave-one-task-out and leave-one-category-out diagnostics without changing any case-level label. The verifier checks these evidence layers, anonymity constraints, and repository checksums.
+The first command regenerates the original cross-interface, scaffold, endpoint-sensitivity, simultaneous-interval, and adjudicated termination tables and figures. The cross-scoring command reproduces the deterministic full-to-symbolic projection, its five no-repair controls, row-level results, and summary table without inference or rollout. The macro-family command reproduces the mapping-use counts and the whole-family exclusion sensitivity. The next command reproduces 10,623 full-procedure parser/binder ownership and no-repair checks from the released positive-control fixtures. The composition-sensitivity command recomputes leave-one-task-out and leave-one-category-out diagnostics without changing any case-level label. The verifier checks these evidence layers, anonymity constraints, and repository checksums.
 
 Scaffold-specific analysis can also be run independently through the legacy analysis entry points:
 

@@ -25,6 +25,11 @@
   "cross_scoring_no_repair_controls_passed": 5,
   "cross_scoring_model_inference_calls": 0,
   "cross_scoring_native_rollouts": 0,
+  "macro_family_exclusion_rows": 339,
+  "macro_family_exclusion_retained_rows": 6060,
+  "macro_family_exclusion_projected_successes": "388",
+  "macro_family_exclusion_projected_success_full_failure": "223",
+  "macro_family_exclusion_jaccard_pct": "21.52",
   "recovered_validation_source_files": 40,
-  "checksummed_files": 13151
+  "checksummed_files": 13156
 }

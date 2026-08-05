@@ -1,4 +1,18 @@
-# Reproducibility artifact v1.3
+# Reproducibility artifact v1.4
+
+This release supersedes v1.3 as the submission artifact by adding a deterministic whole-task-family exclusion sensitivity for the source-defined macro projections. It introduces no model inference and no native rollout.
+
+New in v1.4:
+
+- explicit projected-success rates under both the full frozen-output denominator and the projectable-output denominator;
+- exact task-level counts for source-defined insert-flower and add-condiment macro mappings;
+- whole-family exclusion of all model--case rows from those task families, avoiding output-conditioned selection;
+- 6,060 retained rows after excluding 339 macro-family rows, with 4,368 projectable outputs, 388 projected symbolic successes, 223 projected-success/full-procedure-failure outcomes, and a 21.52% original/projected success-set Jaccard;
+- a reproduction script, exclusion specification, pooled and model-level outputs, and release-verifier assertions for the sensitivity analysis.
+
+Artifact v1.4 does not modify the retained manifest, model outputs, native traces, original success labels, or projection rules released in v1.3. Earlier immutable tags remain available as release history.
+
+## v1.3 frozen-output cross-evaluation
 
 This release adds a frozen-output cross-evaluation to the v1.2 provenance and robustness evidence. It introduces no model inference and no native rollout.
 
