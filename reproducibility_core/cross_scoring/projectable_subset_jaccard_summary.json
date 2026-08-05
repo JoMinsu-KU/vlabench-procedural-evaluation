@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "analysis_version": "projectable_subset_jaccard_v1",
+  "input": "reproducibility_core/cross_scoring/full_to_symbolic_projection_rows.csv",
+  "conditioning_rule": "projection_supported == True",
+  "full_manifest_pooled": {
+    "analysis_set": "full_retained_manifest",
+    "model": "Pooled",
+    "all_rows_n": 6399,
+    "projectable_rows_n": 4588,
+    "original_success_projectable_n": 474,
+    "projected_success_n": 450,
+    "both_success_n": 203,
+    "original_only_n": 271,
+    "projected_only_n": 247,
+    "success_union_n": 721,
+    "projectable_subset_jaccard_pct": "28.16",
+    "original_success_unprojectable_n": 115
+  },
+  "macro_family_excluded_pooled": {
+    "analysis_set": "macro_family_excluded",
+    "model": "Pooled",
+    "all_rows_n": 6060,
+    "projectable_rows_n": 4368,
+    "original_success_projectable_n": 423,
+    "projected_success_n": 388,
+    "both_success_n": 161,
+    "original_only_n": 262,
+    "projected_only_n": 227,
+    "success_union_n": 650,
+    "projectable_subset_jaccard_pct": "24.77",
+    "original_success_unprojectable_n": 98
+  },
+  "qualitative_findings_preserved": true,
+  "model_inference_calls": 0,
+  "native_rollouts": 0,
+  "success_labels_modified": 0,
+  "interpretation": "This is a projectability-conditioned sensitivity analysis, not a replacement for the full-pipeline Jaccard estimand."
+}

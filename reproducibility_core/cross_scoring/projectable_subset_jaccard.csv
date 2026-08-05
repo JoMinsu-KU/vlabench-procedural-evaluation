@@ -1,0 +1,9 @@
+analysis_set,model,all_rows_n,projectable_rows_n,original_success_projectable_n,projected_success_n,both_success_n,original_only_n,projected_only_n,success_union_n,projectable_subset_jaccard_pct,original_success_unprojectable_n
+full_retained_manifest,Gemma-3-12B-it,2133,1882,193,139,73,120,66,259,28.19,28
+full_retained_manifest,InternVL3-8B,2133,783,17,57,9,8,48,65,13.85,71
+full_retained_manifest,Qwen3-VL-8B,2133,1923,264,254,121,143,133,397,30.48,16
+full_retained_manifest,Pooled,6399,4588,474,450,203,271,247,721,28.16,115
+macro_family_excluded,Gemma-3-12B-it,2020,1795,176,120,61,115,59,235,25.96,28
+macro_family_excluded,InternVL3-8B,2020,761,14,51,8,6,43,57,14.04,54
+macro_family_excluded,Qwen3-VL-8B,2020,1812,233,217,92,141,125,358,25.70,16
+macro_family_excluded,Pooled,6060,4368,423,388,161,262,227,650,24.77,98

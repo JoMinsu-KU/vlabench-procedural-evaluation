@@ -561,6 +561,87 @@ def main() -> None:
     if macro_summary.get("qualitative_findings_preserved") is not True:
         errors.append("macro-family exclusion did not preserve the qualitative findings")
 
+    projectable_jaccard = read_csv(
+        cross_scoring_root / "projectable_subset_jaccard.csv"
+    )
+    if len(projectable_jaccard) != 8:
+        errors.append(
+            f"projectable-subset Jaccard table contains {len(projectable_jaccard)}, not 8 rows"
+        )
+        projectable_pooled = {}
+        projectable_macro_excluded_pooled = {}
+    else:
+        projectable_pooled = next(
+            (
+                row
+                for row in projectable_jaccard
+                if row["analysis_set"] == "full_retained_manifest"
+                and row["model"] == "Pooled"
+            ),
+            {},
+        )
+        projectable_macro_excluded_pooled = next(
+            (
+                row
+                for row in projectable_jaccard
+                if row["analysis_set"] == "macro_family_excluded"
+                and row["model"] == "Pooled"
+            ),
+            {},
+        )
+        projectable_expected = {
+            "all_rows_n": "6399",
+            "projectable_rows_n": "4588",
+            "original_success_projectable_n": "474",
+            "projected_success_n": "450",
+            "both_success_n": "203",
+            "original_only_n": "271",
+            "projected_only_n": "247",
+            "success_union_n": "721",
+            "projectable_subset_jaccard_pct": "28.16",
+            "original_success_unprojectable_n": "115",
+        }
+        for field, expected in projectable_expected.items():
+            if projectable_pooled.get(field) != expected:
+                errors.append(
+                    f"projectable pooled field {field!r}: expected {expected!r}, "
+                    f"found {projectable_pooled.get(field)!r}"
+                )
+        projectable_macro_expected = {
+            "all_rows_n": "6060",
+            "projectable_rows_n": "4368",
+            "original_success_projectable_n": "423",
+            "projected_success_n": "388",
+            "both_success_n": "161",
+            "original_only_n": "262",
+            "projected_only_n": "227",
+            "success_union_n": "650",
+            "projectable_subset_jaccard_pct": "24.77",
+            "original_success_unprojectable_n": "98",
+        }
+        for field, expected in projectable_macro_expected.items():
+            if projectable_macro_excluded_pooled.get(field) != expected:
+                errors.append(
+                    f"projectable macro-excluded field {field!r}: expected {expected!r}, "
+                    f"found {projectable_macro_excluded_pooled.get(field)!r}"
+                )
+    projectable_summary = json.loads(
+        (cross_scoring_root / "projectable_subset_jaccard_summary.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    if projectable_summary.get("qualitative_findings_preserved") is not True:
+        errors.append("projectable-subset Jaccard did not preserve the qualitative findings")
+    if any(
+        projectable_summary.get(field) != expected
+        for field, expected in {
+            "model_inference_calls": 0,
+            "native_rollouts": 0,
+            "success_labels_modified": 0,
+        }.items()
+    ):
+        errors.append("projectable-subset Jaccard reports an unexpected data-changing operation")
+
     evidence_layers = read_csv(
         root
         / "reproducibility_core"
@@ -717,6 +798,14 @@ def main() -> None:
         ),
         "macro_family_exclusion_jaccard_pct": macro_excluded_pooled.get(
             "original_projected_jaccard_pct"
+        ),
+        "projectable_subset_jaccard_pct": projectable_pooled.get(
+            "projectable_subset_jaccard_pct"
+        ),
+        "projectable_subset_original_only": projectable_pooled.get("original_only_n"),
+        "projectable_subset_projected_only": projectable_pooled.get("projected_only_n"),
+        "projectable_macro_excluded_jaccard_pct": projectable_macro_excluded_pooled.get(
+            "projectable_subset_jaccard_pct"
         ),
         "recovered_validation_source_files": len(source_checksum_lines),
         "checksummed_files": len(checksum_rows),

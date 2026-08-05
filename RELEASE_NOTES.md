@@ -1,4 +1,18 @@
-# Reproducibility artifact v1.4
+# Reproducibility artifact v1.5
+
+This release supersedes v1.4 as the submission artifact by adding a projectability-conditioned success-set sensitivity analysis. It introduces no model inference, native rollout, or label modification.
+
+New in v1.5:
+
+- original-symbolic versus projected-full success-set composition restricted to the 4,588 projection-possible frozen outputs;
+- 203 successes under both symbolic views, 271 original-symbolic-only successes, and 247 projected-full-only successes, yielding a 28.16% projectable-subset Jaccard overlap;
+- explicit disclosure that 115 original symbolic successes were paired with unprojectable full-procedure outputs;
+- the corresponding whole-macro-family-excluded projectable-subset result: 24.77% Jaccard, with 262 original-only and 227 projected-only successes;
+- a standalone reproduction script, machine-readable CSV and JSON summaries, and release-verifier assertions.
+
+Artifact v1.5 does not modify the retained manifest, model outputs, native traces, original success labels, macro-family exclusion rule, or projection rules released in v1.3. The projectable-subset result is a selection-conditioned sensitivity analysis rather than a replacement for the full-pipeline Jaccard estimand. Earlier immutable tags remain available as release history.
+
+## v1.4 macro-family exclusion sensitivity
 
 This release supersedes v1.3 as the submission artifact by adding a deterministic whole-task-family exclusion sensitivity for the source-defined macro projections. It introduces no model inference and no native rollout.
 

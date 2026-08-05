@@ -30,6 +30,10 @@
   "macro_family_exclusion_projected_successes": "388",
   "macro_family_exclusion_projected_success_full_failure": "223",
   "macro_family_exclusion_jaccard_pct": "21.52",
+  "projectable_subset_jaccard_pct": "28.16",
+  "projectable_subset_original_only": "271",
+  "projectable_subset_projected_only": "247",
+  "projectable_macro_excluded_jaccard_pct": "24.77",
   "recovered_validation_source_files": 40,
-  "checksummed_files": 13156
+  "checksummed_files": 13159
 }
