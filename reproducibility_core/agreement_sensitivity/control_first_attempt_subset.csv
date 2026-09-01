@@ -1,0 +1,28 @@
+metric,model,full_manifest_n,full_manifest_count,full_manifest_value,control_first_attempt_subset_n,control_first_attempt_subset_count,control_first_attempt_subset_value,unit
+original_symbolic_full_success_set_jaccard,Pooled fixed-backbone aggregate,6399,,0.1069364161849711,6186,,0.10882352941176471,proportion
+original_symbolic_projected_full_jaccard,Pooled fixed-backbone aggregate,6399,,0.24282296650717702,6186,,0.23990208078335373,proportion
+projected_symbolic_success_followed_by_full_failure,Pooled fixed-backbone aggregate,450,273,0.6066666666666667,436,259,0.5940366972477065,share_of_projected_symbolic_success
+termination_output_schema_failure,Qwen3-VL-8B,2133,210,0.09845288326300984,2062,200,0.09699321047526673,proportion_of_model_outputs
+termination_procedural_structure_failure,Qwen3-VL-8B,2133,1444,0.6769807782466011,2062,1388,0.6731328806983511,proportion_of_model_outputs
+termination_target_context_failure,Qwen3-VL-8B,2133,307,0.14392873886544771,2062,303,0.1469447138700291,proportion_of_model_outputs
+termination_native_execution_failure,Qwen3-VL-8B,2133,0,0.0,2062,0,0.0,proportion_of_model_outputs
+termination_condition_failure,Qwen3-VL-8B,2133,92,0.04313173933427098,2062,91,0.04413191076624636,proportion_of_model_outputs
+termination_success,Qwen3-VL-8B,2133,80,0.03750586029067042,2062,80,0.038797284190106696,proportion_of_model_outputs
+phase_oracle_minus_full_procedure,Qwen3-VL-8B,2133,,0.16268166901078296,2062,,0.1614936954413191,proportion_difference
+target_oracle_minus_full_procedure,Qwen3-VL-8B,2133,,0.19127988748241914,2062,,0.19495635305528614,proportion_difference
+termination_output_schema_failure,Gemma-3-12B-it,2133,251,0.11767463666197843,2062,243,0.11784675072744907,proportion_of_model_outputs
+termination_procedural_structure_failure,Gemma-3-12B-it,2133,1158,0.5428973277074542,2062,1109,0.537827352085354,proportion_of_model_outputs
+termination_target_context_failure,Gemma-3-12B-it,2133,586,0.2747304266291608,2062,579,0.2807953443258972,proportion_of_model_outputs
+termination_native_execution_failure,Gemma-3-12B-it,2133,0,0.0,2062,0,0.0,proportion_of_model_outputs
+termination_condition_failure,Gemma-3-12B-it,2133,81,0.0379746835443038,2062,74,0.03588748787584869,proportion_of_model_outputs
+termination_success,Gemma-3-12B-it,2133,57,0.026722925457102673,2062,57,0.027643064985451018,proportion_of_model_outputs
+phase_oracle_minus_full_procedure,Gemma-3-12B-it,2133,,0.13455227379278012,2062,,0.12900096993210475,proportion_difference
+target_oracle_minus_full_procedure,Gemma-3-12B-it,2133,,0.24753867791842474,2062,,0.2546071774975752,proportion_difference
+termination_output_schema_failure,InternVL3-8B,2133,1350,0.6329113924050633,2062,1303,0.6319107662463628,proportion_of_model_outputs
+termination_procedural_structure_failure,InternVL3-8B,2133,355,0.16643225503984999,2062,338,0.16391852570320078,proportion_of_model_outputs
+termination_target_context_failure,InternVL3-8B,2133,307,0.14392873886544771,2062,301,0.14597478176527642,proportion_of_model_outputs
+termination_native_execution_failure,InternVL3-8B,2133,0,0.0,2062,0,0.0,proportion_of_model_outputs
+termination_condition_failure,InternVL3-8B,2133,81,0.0379746835443038,2062,80,0.038797284190106696,proportion_of_model_outputs
+termination_success,InternVL3-8B,2133,40,0.01875293014533521,2062,40,0.019398642095053348,proportion_of_model_outputs
+phase_oracle_minus_full_procedure,InternVL3-8B,2133,,0.12845757149554618,2062,,0.13045586808923376,proportion_difference
+target_oracle_minus_full_procedure,InternVL3-8B,2133,,0.07079231129864041,2062,,0.07080504364694472,proportion_difference

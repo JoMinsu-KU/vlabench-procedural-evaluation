@@ -1,0 +1,4 @@
+model,frozen_full_outputs,projectable,unprojectable,parser_rejected,parser_accepted_unsupported_action,parser_accepted_missing_or_ambiguous_macro_target,other_unprojectable,unprojectable_equals_parser_rejected_set
+Qwen3-VL-8B,2133,1923,210,210,0,0,0,True
+Gemma-3-12B-it,2133,1882,251,251,0,0,0,True
+InternVL3-8B,2133,783,1350,1350,0,0,0,True

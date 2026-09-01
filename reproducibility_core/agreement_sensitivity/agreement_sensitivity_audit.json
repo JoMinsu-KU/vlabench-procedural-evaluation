@@ -1,0 +1,60 @@
+{
+  "analysis_version": "agreement_and_control_subset_v1",
+  "bootstrap": {
+    "interpretation": "retained-task-composition sensitivity, not unseen-task population inference",
+    "interval": "percentile_95",
+    "replicates": 20000,
+    "seed": 20260711,
+    "task_clusters": 34,
+    "unit": "task_cluster"
+  },
+  "fixed_backbone_interpretation": "descriptive aggregate with equal inclusion of the three selected backbones",
+  "input_sha256": {
+    "analysis_data/gemma_A.csv": "3eb322834c632e53a08c4f7d8405fa732da0b8b49da60932d04a3241bc9101b9",
+    "analysis_data/gemma_B.csv": "89a3eebef87cdd537ae1f7f9737d69745264cba0651f4819d8f12d3f54f24532",
+    "analysis_data/internvl_A.csv": "697c34c001bf1e4f3a43391d3a43768c54e3ec5cdbe868c2587f2cb20dcb5ca5",
+    "analysis_data/internvl_B.csv": "6fa3bbf2115245bb743e46adcd392fc3e7f729524802f589273b37a93018fc70",
+    "analysis_data/qwen_A.csv": "480a37a1ce604055958341f98a2ea5752a5568cd3651dbc746407d1c4bfe5bbd",
+    "analysis_data/qwen_B.csv": "be13ecfbab6250e37677486e5f7a85c1bc600dcf641ee3528e9471d3ad393eeb",
+    "reproducibility_core/cross_scoring/full_to_symbolic_projection_rows.csv": "1c4c22b72c9262dfae6dfbdcb875e31e72eb80240e332dd904d7195814136aea",
+    "results/positive_control/gt_procedural_positive_control_report.csv": "ad022830209e046541a6137b559cdcfa7bcf6abdb2b0693438831973bdbab6cc"
+  },
+  "model_inference_calls": 0,
+  "native_rollouts": 0,
+  "output_sha256": {
+    "agreement_metrics.csv": "ef4f16dfa1c618c21c7cf65fbfbafac20bfef5f39d26f7aa425f8ad5868ab23b",
+    "control_first_attempt_subset.csv": "823a1b8db3fe726eac44fb5893b3307e8497321454d5a8519b4181c76149223d",
+    "projectability_failure_reasons.csv": "8e2b59e26896d7c07a45af1c08ad9518635aba75bc691cdf0302f4ead07bd5c1"
+  },
+  "pooled_cross_metrics": {
+    "cohen_kappa": 0.3379761675362479,
+    "mcc_phi": 0.34160508162004133,
+    "negative_agreement": 0.9461688919125776,
+    "odds_ratio": 11.84461202827715,
+    "positive_agreement": 0.39076034648700675,
+    "raw_agreement": 0.9010782934833568,
+    "success_set_jaccard": 0.24282296650717702
+  },
+  "pooled_original_counts": {
+    "both": 74,
+    "neither": 5707,
+    "procedure_only": 103,
+    "symbolic_only": 515
+  },
+  "pooled_original_metrics": {
+    "cohen_kappa": 0.15736753823888902,
+    "mcc_phi": 0.19021738392987753,
+    "negative_agreement": 0.9486369680851063,
+    "odds_ratio": 7.961504383070977,
+    "positive_agreement": 0.19321148825065274,
+    "raw_agreement": 0.9034224097515237,
+    "success_set_jaccard": 0.1069364161849711
+  },
+  "positive_control_first_attempt_case_count": 2062,
+  "success_labels_modified": 0,
+  "unprojectable_equals_parser_rejected_set_by_model": {
+    "Gemma-3-12B-it": true,
+    "InternVL3-8B": true,
+    "Qwen3-VL-8B": true
+  }
+}

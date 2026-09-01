@@ -865,8 +865,8 @@ def plot_dataset_selection_panels(categories: pd.DataFrame) -> None:
     _box(ax, 0.25, 0.82, 0.50, 0.11, "4,000 non-complex cases\n40 task types", "#FAFAFA", "#555555", 7.0)
     _arrow(ax, (0.50, 0.82), (0.27, 0.65))
     _arrow(ax, (0.50, 0.82), (0.73, 0.65))
-    _box(ax, 0.04, 0.50, 0.44, 0.16, "GT native replay 1\n2,341 passed (58.53%)\n37 task types", "#EEEEEE", "#666666", 6.2)
-    _box(ax, 0.52, 0.50, 0.44, 0.16, "GT native replay 2\n2,316 passed (57.90%)\n35 task types", "#EEEEEE", "#666666", 6.2)
+    _box(ax, 0.04, 0.50, 0.44, 0.16, "Expert native replay 1\n2,341 passed (58.53%)\n37 task types", "#EEEEEE", "#666666", 6.2)
+    _box(ax, 0.52, 0.50, 0.44, 0.16, "Expert native replay 2\n2,316 passed (57.90%)\n35 task types", "#EEEEEE", "#666666", 6.2)
     _arrow(ax, (0.27, 0.52), (0.43, 0.35))
     _arrow(ax, (0.73, 0.52), (0.57, 0.35))
     _box(ax, 0.20, 0.18, 0.60, 0.17, "Intersection fixed before\nVLM evaluation\n2,133 cases (53.33%); 34 task types", "#DADADA", "#333333", 6.5)
@@ -887,7 +887,7 @@ def plot_dataset_selection_panels(categories: pd.DataFrame) -> None:
             va="center",
             fontsize=6.5,
         )
-    ax.set_xlabel("Retained after two GT replays (%)")
+    ax.set_xlabel("Retained after two expert replays (%)")
     ax.set_xlim(0, 80)
     ax.tick_params(axis="both", labelsize=7)
     ax.invert_yaxis()

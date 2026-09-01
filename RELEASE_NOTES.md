@@ -1,4 +1,40 @@
-# Reproducibility artifact v1.5
+# Reproducibility artifact v1.6
+
+This release supersedes v1.5 as the submission artifact by adding
+prevalence-aware agreement statistics, task-cluster composition intervals for
+the agreement estimands, a positive-control first-attempt-success subset
+sensitivity, and an exact model-level projectability-failure decomposition. It
+introduces no model inference, native rollout, semantic repair, or label
+modification.
+
+New in v1.6:
+
+- raw, positive, and negative agreement; Cohen's kappa; phi/MCC; odds ratios;
+  directional conditional probabilities; and success-set Jaccard for the
+  original and frozen-projection comparisons;
+- percentile 95% task-cluster bootstrap intervals for those agreement metrics,
+  using 20,000 replicates and seed 20260711;
+- a sensitivity restricted to the 2,062 cases whose source-derived positive
+  control satisfied the final condition on its first attempt, covering overlap,
+  downstream termination, stage-wise outcomes, and reference-scaffold
+  contrasts;
+- model-level confirmation that all 1,811 unprojectable full outputs are
+  exactly the parser-rejected rows (210 Qwen, 251 Gemma, and 1,350 InternVL),
+  with zero parser-accepted failures due to unsupported actions or
+  missing/ambiguous macro targets;
+- a standalone reproduction script, machine-readable CSV/JSON outputs, input
+  and output checksums, and release-verifier assertions.
+
+The pooled agreement results are fixed-backbone descriptive aggregates and do
+not treat the three selected backbones as a random sample from a model
+population. The task-cluster intervals quantify sensitivity to the empirical
+composition of the 34 retained tasks, not inference to unseen tasks.
+
+Artifact v1.6 does not modify the retained manifest, archived outputs, native
+traces, original success labels, projection rules, or earlier sensitivity
+results. Earlier versioned tags remain available as release history.
+
+## v1.5 projectable-subset sensitivity
 
 This release supersedes v1.4 as the submission artifact by adding a projectability-conditioned success-set sensitivity analysis. It introduces no model inference, native rollout, or label modification.
 
@@ -10,7 +46,7 @@ New in v1.5:
 - the corresponding whole-macro-family-excluded projectable-subset result: 24.77% Jaccard, with 262 original-only and 227 projected-only successes;
 - a standalone reproduction script, machine-readable CSV and JSON summaries, and release-verifier assertions.
 
-Artifact v1.5 does not modify the retained manifest, model outputs, native traces, original success labels, macro-family exclusion rule, or projection rules released in v1.3. The projectable-subset result is a selection-conditioned sensitivity analysis rather than a replacement for the full-pipeline Jaccard estimand. Earlier immutable tags remain available as release history.
+Artifact v1.5 does not modify the retained manifest, model outputs, native traces, original success labels, macro-family exclusion rule, or projection rules released in v1.3. The projectable-subset result is a selection-conditioned sensitivity analysis rather than a replacement for the full-pipeline Jaccard estimand. Earlier versioned tags remain available as release history.
 
 ## v1.4 macro-family exclusion sensitivity
 

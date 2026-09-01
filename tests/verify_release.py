@@ -711,6 +711,74 @@ def main() -> None:
     if expected_source_validation not in source_checksum_lines:
         errors.append("recovered-source checksum manifest lacks the original validation JSON digest")
 
+    agreement_root = root / "reproducibility_core" / "agreement_sensitivity"
+    agreement_audit = json.loads(
+        (agreement_root / "agreement_sensitivity_audit.json").read_text(encoding="utf-8")
+    )
+    agreement_expected = {
+        "analysis_version": "agreement_and_control_subset_v1",
+        "model_inference_calls": 0,
+        "native_rollouts": 0,
+        "success_labels_modified": 0,
+        "positive_control_first_attempt_case_count": 2_062,
+    }
+    for field, expected in agreement_expected.items():
+        if agreement_audit.get(field) != expected:
+            errors.append(
+                f"agreement sensitivity field {field!r}: expected {expected!r}, "
+                f"found {agreement_audit.get(field)!r}"
+            )
+    original_counts_expected = {
+        "both": 74,
+        "symbolic_only": 515,
+        "procedure_only": 103,
+        "neither": 5_707,
+    }
+    if agreement_audit.get("pooled_original_counts") != original_counts_expected:
+        errors.append("agreement sensitivity original pooled counts do not match frozen labels")
+    original_metric_expected = {
+        "raw_agreement": 0.9034224097515237,
+        "positive_agreement": 0.19321148825065274,
+        "negative_agreement": 0.9486369680851063,
+        "cohen_kappa": 0.15736753823888902,
+        "mcc_phi": 0.19021738392987753,
+        "odds_ratio": 7.961504383070977,
+        "success_set_jaccard": 0.1069364161849711,
+    }
+    for field, expected in original_metric_expected.items():
+        actual = agreement_audit.get("pooled_original_metrics", {}).get(field)
+        if actual is None or abs(float(actual) - expected) > 1e-12:
+            errors.append(
+                f"agreement sensitivity pooled original metric {field!r}: "
+                f"expected {expected!r}, found {actual!r}"
+            )
+    if not all(
+        agreement_audit.get("unprojectable_equals_parser_rejected_set_by_model", {}).values()
+    ):
+        errors.append("agreement sensitivity does not confirm parser/unprojectable set identity")
+
+    agreement_metrics = read_csv(agreement_root / "agreement_metrics.csv")
+    if len(agreement_metrics) != 12:
+        errors.append(f"agreement sensitivity table contains {len(agreement_metrics)}, not 12 rows")
+    control_subset = read_csv(agreement_root / "control_first_attempt_subset.csv")
+    if len(control_subset) != 27:
+        errors.append(f"control first-attempt subset table contains {len(control_subset)}, not 27 rows")
+    projectability_reasons = read_csv(agreement_root / "projectability_failure_reasons.csv")
+    if len(projectability_reasons) != 3:
+        errors.append(
+            f"projectability reason table contains {len(projectability_reasons)}, not 3 rows"
+        )
+    if sum(int(row["unprojectable"]) for row in projectability_reasons) != 1_811:
+        errors.append("projectability reason table does not total 1,811 unprojectable outputs")
+    if any(
+        int(row["unprojectable"]) != int(row["parser_rejected"])
+        or int(row["parser_accepted_unsupported_action"]) != 0
+        or int(row["parser_accepted_missing_or_ambiguous_macro_target"]) != 0
+        or int(row["other_unprojectable"]) != 0
+        for row in projectability_reasons
+    ):
+        errors.append("projectability reason decomposition differs from parser-rejection audit")
+
     findings: list[dict[str, object]] = []
     for path in root.rglob("*"):
         if ".git" in path.parts or "__pycache__" in path.parts or path.suffix == ".pyc":
@@ -806,6 +874,25 @@ def main() -> None:
         "projectable_subset_projected_only": projectable_pooled.get("projected_only_n"),
         "projectable_macro_excluded_jaccard_pct": projectable_macro_excluded_pooled.get(
             "projectable_subset_jaccard_pct"
+        ),
+        "agreement_sensitivity_rows": len(agreement_metrics),
+        "agreement_original_raw_agreement": agreement_audit.get(
+            "pooled_original_metrics", {}
+        ).get("raw_agreement"),
+        "agreement_original_kappa": agreement_audit.get("pooled_original_metrics", {}).get(
+            "cohen_kappa"
+        ),
+        "agreement_original_mcc_phi": agreement_audit.get(
+            "pooled_original_metrics", {}
+        ).get("mcc_phi"),
+        "agreement_original_odds_ratio": agreement_audit.get(
+            "pooled_original_metrics", {}
+        ).get("odds_ratio"),
+        "positive_control_first_attempt_subset_cases": agreement_audit.get(
+            "positive_control_first_attempt_case_count"
+        ),
+        "projectability_parser_rejected_rows": sum(
+            int(row["parser_rejected"]) for row in projectability_reasons
         ),
         "recovered_validation_source_files": len(source_checksum_lines),
         "checksummed_files": len(checksum_rows),

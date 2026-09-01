@@ -34,6 +34,13 @@
   "projectable_subset_original_only": "271",
   "projectable_subset_projected_only": "247",
   "projectable_macro_excluded_jaccard_pct": "24.77",
+  "agreement_sensitivity_rows": 12,
+  "agreement_original_raw_agreement": 0.9034224097515237,
+  "agreement_original_kappa": 0.15736753823888902,
+  "agreement_original_mcc_phi": 0.19021738392987753,
+  "agreement_original_odds_ratio": 7.961504383070977,
+  "positive_control_first_attempt_subset_cases": 2062,
+  "projectability_parser_rejected_rows": 1811,
   "recovered_validation_source_files": 40,
-  "checksummed_files": 13159
+  "checksummed_files": 13165
 }
