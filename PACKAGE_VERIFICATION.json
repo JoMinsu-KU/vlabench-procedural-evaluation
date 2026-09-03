@@ -34,7 +34,7 @@
   "projectable_subset_original_only": "271",
   "projectable_subset_projected_only": "247",
   "projectable_macro_excluded_jaccard_pct": "24.77",
-  "agreement_sensitivity_rows": 12,
+  "agreement_sensitivity_rows": 36,
   "agreement_original_raw_agreement": 0.9034224097515237,
   "agreement_original_kappa": 0.15736753823888902,
   "agreement_original_mcc_phi": 0.19021738392987753,
@@ -42,5 +42,23 @@
   "positive_control_first_attempt_subset_cases": 2062,
   "projectability_parser_rejected_rows": 1811,
   "recovered_validation_source_files": 40,
-  "checksummed_files": 13165
+  "checksummed_files": 13191,
+  "symbolic_endpoint_tiers_pooled": {
+    "pm100": {
+      "original_symbolic_success_n": 589,
+      "projected_symbolic_success_n": 450,
+      "projected_success_full_failure_n": 273
+    },
+    "strict": {
+      "original_symbolic_success_n": 564,
+      "projected_symbolic_success_n": 260,
+      "projected_success_full_failure_n": 83
+    },
+    "strict_executor_filtered": {
+      "original_symbolic_success_n": 564,
+      "projected_symbolic_success_n": 405,
+      "projected_success_full_failure_n": 228
+    }
+  },
+  "executor_filtered_strict_successes_outside_pm100": 123
 }

@@ -17,7 +17,63 @@
   },
   "no_repair_controls_passed": 5,
   "no_repair_controls_total": 5,
-  "projection_spec_sha256": "d9d9186a57542e5a8482b7aa09273c4b68ca4870d0817c1b65d6e5c0c208a9e1",
+  "symbolic_endpoint_tiers": {
+    "version": "symbolic_endpoint_tiers_v1",
+    "symbolic_evaluator_vocabulary": [
+      "insert",
+      "lift",
+      "open_door",
+      "pick",
+      "place",
+      "pour",
+      "press",
+      "pull",
+      "push"
+    ],
+    "executor_only_phase_vocabulary": [
+      "moveto",
+      "wait",
+      "open_gripper",
+      "move_offset"
+    ],
+    "pooled": {
+      "pm100": {
+        "original_symbolic_success_n": 589,
+        "projected_symbolic_success_n": 450,
+        "projected_success_full_failure_n": 273,
+        "full_success_with_projected_success_n": 177,
+        "original_vs_projected_jaccard_pct": "24.28",
+        "original_vs_full_jaccard_pct": "10.69"
+      },
+      "strict": {
+        "original_symbolic_success_n": 564,
+        "projected_symbolic_success_n": 260,
+        "projected_success_full_failure_n": 83,
+        "full_success_with_projected_success_n": 177,
+        "original_vs_projected_jaccard_pct": "18.56",
+        "original_vs_full_jaccard_pct": "11.09"
+      },
+      "strict_executor_filtered": {
+        "original_symbolic_success_n": 564,
+        "projected_symbolic_success_n": 405,
+        "projected_success_full_failure_n": 228,
+        "full_success_with_projected_success_n": 177,
+        "original_vs_projected_jaccard_pct": "27.33",
+        "original_vs_full_jaccard_pct": "11.09"
+      }
+    },
+    "projected_pm100_pass_strict_fail_reasons": {
+      "executor_only_phase_residue:move_offset+moveto+open_gripper+wait": 1,
+      "executor_only_phase_residue:moveto": 135,
+      "surplus_evaluator_vocabulary_action": 54
+    },
+    "original_pm100_pass_strict_fail_reasons": {
+      "surplus_evaluator_vocabulary_action": 25
+    },
+    "labels_modified": 0,
+    "projection_rules_modified": false
+  },
+  "projection_spec_sha256": "6f7feb7058bebc56402e636f9a2ad07f304cc1035c46c880e4ff2248ef430eed",
   "reverse_symbolic_to_native": {
     "performed": false,
     "reason": "No verified model-choice-preserving symbolic-to-native executor entry point exists in the released evaluation code; constructing one would add a new adapter and native experiment."

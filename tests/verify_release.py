@@ -716,7 +716,7 @@ def main() -> None:
         (agreement_root / "agreement_sensitivity_audit.json").read_text(encoding="utf-8")
     )
     agreement_expected = {
-        "analysis_version": "agreement_and_control_subset_v1",
+        "analysis_version": "agreement_and_control_subset_v2",
         "model_inference_calls": 0,
         "native_rollouts": 0,
         "success_labels_modified": 0,
@@ -758,11 +758,11 @@ def main() -> None:
         errors.append("agreement sensitivity does not confirm parser/unprojectable set identity")
 
     agreement_metrics = read_csv(agreement_root / "agreement_metrics.csv")
-    if len(agreement_metrics) != 12:
-        errors.append(f"agreement sensitivity table contains {len(agreement_metrics)}, not 12 rows")
+    if len(agreement_metrics) != 36:
+        errors.append(f"agreement sensitivity table contains {len(agreement_metrics)}, not 36 rows")
     control_subset = read_csv(agreement_root / "control_first_attempt_subset.csv")
-    if len(control_subset) != 27:
-        errors.append(f"control first-attempt subset table contains {len(control_subset)}, not 27 rows")
+    if len(control_subset) != 33:
+        errors.append(f"control first-attempt subset table contains {len(control_subset)}, not 33 rows")
     projectability_reasons = read_csv(agreement_root / "projectability_failure_reasons.csv")
     if len(projectability_reasons) != 3:
         errors.append(
@@ -778,6 +778,140 @@ def main() -> None:
         for row in projectability_reasons
     ):
         errors.append("projectability reason decomposition differs from parser-rejection audit")
+
+    # ---- artifact v1.7: symbolic endpoint tiers ----------------------------------
+    tiers_audit = cross_scoring.get("symbolic_endpoint_tiers", {})
+    tiers_expected = {
+        "pm100": (589, 450, 273, 177, "24.28", "10.69"),
+        "strict": (564, 260, 83, 177, "18.56", "11.09"),
+        "strict_executor_filtered": (564, 405, 228, 177, "27.33", "11.09"),
+    }
+    tier_fields = (
+        "original_symbolic_success_n",
+        "projected_symbolic_success_n",
+        "projected_success_full_failure_n",
+        "full_success_with_projected_success_n",
+        "original_vs_projected_jaccard_pct",
+        "original_vs_full_jaccard_pct",
+    )
+    for tier, expected_values in tiers_expected.items():
+        actual = tiers_audit.get("pooled", {}).get(tier, {})
+        for field, expected in zip(tier_fields, expected_values):
+            if actual.get(field) != expected:
+                errors.append(
+                    f"endpoint tier {tier}/{field}: expected {expected!r}, found {actual.get(field)!r}"
+                )
+    if tiers_audit.get("executor_only_phase_vocabulary") != ["moveto", "wait", "open_gripper", "move_offset"]:
+        errors.append("endpoint tiers: executor-only phase vocabulary differs from the frozen list")
+    strict_reasons = tiers_audit.get("projected_pm100_pass_strict_fail_reasons", {})
+    if (
+        sum(strict_reasons.values()) != 190
+        or strict_reasons.get("executor_only_phase_residue:moveto") != 135
+        or strict_reasons.get("surplus_evaluator_vocabulary_action") != 54
+    ):
+        errors.append("endpoint tiers: PM=100-pass/strict-fail reason decomposition differs from the frozen audit")
+    if tiers_audit.get("original_pm100_pass_strict_fail_reasons", {}).get("surplus_evaluator_vocabulary_action") != 25:
+        errors.append("endpoint tiers: original PM=100-pass/strict-fail count is not 25")
+    tier_table = read_csv(cross_scoring_root / "symbolic_endpoint_tiers.csv")
+    if len(tier_table) != 12:
+        errors.append(f"symbolic endpoint tier table contains {len(tier_table)}, not 12 rows")
+    required_tier_columns = {
+        "original_pm100_success",
+        "original_strict_sequence_success",
+        "projected_pm100_success",
+        "projected_strict_sequence_success",
+        "projected_strict_executor_filtered_success",
+        "projected_pm100_pass_strict_fail_reason",
+    }
+    if cross_rows and not required_tier_columns <= set(cross_rows[0]):
+        errors.append("cross-scoring row table lacks the v1.7 endpoint tier columns")
+    else:
+        strict_projected = sum(row["projected_strict_sequence_success"].lower() == "true" for row in cross_rows)
+        filtered_projected = sum(
+            row["projected_strict_executor_filtered_success"].lower() == "true" for row in cross_rows
+        )
+        pm100_projected = sum(row["projected_pm100_success"].lower() == "true" for row in cross_rows)
+        strict_not_pm100 = sum(
+            row["projected_strict_sequence_success"].lower() == "true"
+            and row["projected_pm100_success"].lower() != "true"
+            for row in cross_rows
+        )
+        filtered_not_pm100 = sum(
+            row["projected_strict_executor_filtered_success"].lower() == "true"
+            and row["projected_pm100_success"].lower() != "true"
+            for row in cross_rows
+        )
+        if (pm100_projected, strict_projected, filtered_projected) != (450, 260, 405):
+            errors.append("cross-scoring rows do not reproduce the 450/260/405 projected tier counts")
+        if strict_not_pm100 != 0:
+            errors.append("strict projected successes are not nested in the PM=100 successes")
+        if filtered_not_pm100 != 123:
+            errors.append(
+                f"executor-filtered strict successes outside PM=100: expected 123, found {filtered_not_pm100}"
+            )
+    tier_sensitivity = read_csv(cross_scoring_root / "endpoint_tier_sensitivities.csv")
+    if len(tier_sensitivity) != 24:
+        errors.append(f"endpoint tier sensitivity table contains {len(tier_sensitivity)}, not 24 rows")
+    tier_sensitivity_summary = json.loads(
+        (cross_scoring_root / "endpoint_tier_sensitivities_summary.json").read_text(encoding="utf-8")
+    )
+    tier_sensitivity_pooled = tier_sensitivity_summary.get("pooled", {})
+    tier_sensitivity_expected = {
+        ("full_retained_manifest/strict", "projected_symbolic_success_n"): 260,
+        ("full_retained_manifest/strict", "projectable_subset_jaccard_pct"): "22.13",
+        ("full_retained_manifest/strict_executor_filtered", "projectable_subset_jaccard_pct"): "32.05",
+        ("macro_family_excluded/strict", "projected_success_full_failure_n"): 76,
+        ("macro_family_excluded/strict_executor_filtered", "projected_success_full_failure_n"): 221,
+    }
+    for (key, field), expected in tier_sensitivity_expected.items():
+        if tier_sensitivity_pooled.get(key, {}).get(field) != expected:
+            errors.append(f"endpoint tier sensitivity {key}/{field}: expected {expected!r}")
+    if tier_sensitivity_summary.get("qualitative_findings_preserved") is not True:
+        errors.append("endpoint tier sensitivities did not preserve the qualitative findings")
+    agreement_tiers = agreement_audit.get("endpoint_tiers", {})
+    agreement_tier_expected = {
+        ("strict", "independently_elicited_symbolic_vs_full_procedure"): (74, 490, 103, 5_732),
+        ("strict", "original_symbolic_vs_projected_full_all_rows"): (129, 435, 131, 5_704),
+        ("strict_executor_filtered", "original_symbolic_vs_projected_full_all_rows"): (208, 356, 197, 5_638),
+    }
+    for (tier, analysis), expected_counts in agreement_tier_expected.items():
+        counts = agreement_tiers.get(tier, {}).get(analysis, {}).get("counts", {})
+        actual_counts = tuple(counts.get(key) for key in ("both", "left_only", "right_only", "neither"))
+        if actual_counts != expected_counts:
+            errors.append(f"agreement endpoint tier {tier}/{analysis}: counts {actual_counts} differ from frozen values")
+    for tier_dir, expected_counts in (
+        ("robustness_strict", {"both": 74, "a_only": 490, "b_only": 103, "neither": 5_732}),
+        ("robustness_strict_executor_filtered", {"both": 74, "a_only": 490, "b_only": 103, "neither": 5_732}),
+    ):
+        summary_path = root / "reproducibility_core" / tier_dir / "composition_sensitivity_summary.json"
+        if not summary_path.exists():
+            errors.append(f"{tier_dir}: composition-sensitivity summary is missing")
+            continue
+        tier_composition = json.loads(summary_path.read_text(encoding="utf-8"))
+        if tier_composition.get("pooled_ab_counts") != expected_counts:
+            errors.append(f"{tier_dir}: pooled A/B counts differ from the frozen strict labels")
+        for exclusion in ("loto", "loco"):
+            block = tier_composition.get(exclusion, {})
+            if not (block.get("all_success_sets_nonnested") and block.get("all_single_interface_majority")):
+                errors.append(f"{tier_dir}: a {exclusion} omission broke the non-nested/majority invariants")
+    tier_rates = read_csv(root / "results" / "reported_statistics" / "symbolic_endpoint_tier_rates.csv")
+    tier_rate_expected = {"Qwen3-VL-8B": (280, 258, 80), "Gemma-3-12B-it": (221, 219, 57), "InternVL3-8B": (88, 87, 40)}
+    if len(tier_rates) != 3:
+        errors.append("symbolic endpoint tier-rate table does not contain three model rows")
+    for row in tier_rates:
+        actual = (int(row["pm100_count"]), int(row["strict_count"]), int(row["procedure_count"]))
+        if tier_rate_expected.get(row["model"]) != actual:
+            errors.append(f"{row['model']}: endpoint tier-rate counts {actual} differ from frozen values")
+    for relative in (
+        "tests/test_symbolic_endpoints.py",
+        "analysis/analyze_endpoint_tier_sensitivities.py",
+        "analysis/generate_endpoint_tier_assets.py",
+        "figures/fig_frozen_output_tiers.png",
+        "figures/fig_ab_agreement_tiers.png",
+        "figures/fig_interface_success_rates_tiers.png",
+    ):
+        if not (root / relative).exists():
+            errors.append(f"artifact v1.7 file missing: {relative}")
 
     findings: list[dict[str, object]] = []
     for path in root.rglob("*"):
@@ -896,6 +1030,15 @@ def main() -> None:
         ),
         "recovered_validation_source_files": len(source_checksum_lines),
         "checksummed_files": len(checksum_rows),
+        "symbolic_endpoint_tiers_pooled": {
+            tier: {
+                "original_symbolic_success_n": tiers_audit.get("pooled", {}).get(tier, {}).get("original_symbolic_success_n"),
+                "projected_symbolic_success_n": tiers_audit.get("pooled", {}).get(tier, {}).get("projected_symbolic_success_n"),
+                "projected_success_full_failure_n": tiers_audit.get("pooled", {}).get(tier, {}).get("projected_success_full_failure_n"),
+            }
+            for tier in tiers_expected
+        },
+        "executor_filtered_strict_successes_outside_pm100": 123 if not errors else None,
     }
     (root / "PACKAGE_VERIFICATION.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
     print(json.dumps(report, indent=2))

@@ -1,4 +1,70 @@
-# Reproducibility artifact v1.6
+# Reproducibility artifact v1.7
+
+This release supersedes v1.6 as the submission artifact. It corrects the name
+of the symbolic binary endpoint and adds two stricter symbolic endpoint tiers,
+recomputing every frozen-output and agreement analysis under all three. It
+introduces no model inference, native rollout, semantic repair, label
+modification, or projection-rule change.
+
+Why: the endpoint previously called "type-normalized symbolic full-match" (and
+`symbolic_exact_match()` in code) is the released VLABench Precise Matching
+score at 100. That score tests *coverage* of the reference subtask nodes: the
+released matcher skips predicted actions it does not recognise and never
+inspects predicted subtasks beyond the reference count, so a prediction with a
+surplus leading, trailing, or unrecognised action can still score 100. It is
+not strict sequence equality, and the earlier name implied that it was.
+
+New in v1.7:
+
+- `vlabench_pm100_match()` replaces `symbolic_exact_match()` (the old name is
+  kept as an alias); its docstring states the coverage semantics;
+- `strict_sequence_equal()`: normalized whole-sequence identity in length,
+  skill names, order, and target keys/values;
+- `strict_sequence_equal_executor_filtered()`: strict equality after removing
+  executor-only phase names (`moveto`, `wait`, `open_gripper`, `move_offset`)
+  from the projected side; the list is taken from the executor phase templates
+  and the filter never adds, reorders, relabels, or retargets an action;
+- row-level labels for all three tiers in
+  `reproducibility_core/cross_scoring/full_to_symbolic_projection_rows.csv`,
+  plus a per-row reason for every PM=100 pass that fails strict equality;
+- pooled results (original symbolic / projected / projected-pass-then-full-
+  procedure-fail / original--projected Jaccard):
+  PM=100 589 / 450 / 273 / 24.28%;
+  strict 564 / 260 / 83 / 18.56%;
+  strict with executor phases removed 564 / 405 / 228 / 27.33%.
+  All 177 full-procedure successes pass every projected tier;
+- decomposition of the 190 projected outputs that pass PM=100 but fail strict
+  equality: 135 carry a residual `moveto` phase that the frozen projection
+  keeps for non-macro tasks, 1 carries several residual executor phases, and
+  54 contain a surplus action from the evaluator vocabulary (a model-side
+  surplus). Among original symbolic outputs, 25 PM=100 passes fail strict
+  equality, all through a surplus evaluator-vocabulary action;
+- the executor-filtered strict tier is not nested in the PM=100 tier: 123
+  projected outputs pass it while failing PM=100 because an interposed
+  executor phase breaks the released matcher's contiguous subtask pattern.
+  The released rule therefore both over-accepts surplus actions and
+  under-accepts interposed phases;
+- prevalence-aware agreement, task-cluster bootstrap intervals, the
+  positive-control first-attempt subset, macro-family exclusion,
+  projectable-only conditioning, and leave-one-task/category-out diagnostics
+  recomputed for every tier (`agreement_metrics.csv` now carries a
+  `symbolic_endpoint` column; `endpoint_tier_sensitivities.csv`;
+  `robustness_strict/` and `robustness_strict_executor_filtered/`);
+- manuscript assets: `symbolic_endpoint_tier_rates.csv`,
+  `fig_frozen_output_tiers`, `fig_ab_agreement_tiers`,
+  `fig_interface_success_rates_tiers`;
+- `tests/test_symbolic_endpoints.py`: fourteen behavioural cases covering
+  identical sequences, digit-string targets, surplus leading/trailing actions,
+  missing actions, target mismatches, reordering, trailing and interposed
+  executor phases, filter non-repair, and the archived example
+  `M&T/select_drink/example3` (Qwen: `open_door -> pick -> pull` scores
+  PM=100 against `pick -> pull`);
+- release-verifier assertions for all of the above.
+
+The v1.6 PM=100 numbers are unchanged and remain in every table under the
+`pm100` tier. Earlier versioned tags remain available as release history.
+
+## v1.6 prevalence-aware agreement and control-subset sensitivity
 
 This release supersedes v1.5 as the submission artifact by adding
 prevalence-aware agreement statistics, task-cluster composition intervals for

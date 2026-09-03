@@ -1,6 +1,11 @@
 {
   "protocol_version": "frozen_full_to_symbolic_v1",
-  "primary_endpoint": "type_normalized_symbolic_exact_match",
+  "primary_endpoint": "type_normalized_pm100 (released Precise Matching == 100 after digit-string canonicalization; ground-truth subtask coverage, not strict sequence equality)",
+  "symbolic_endpoint_tiers": {
+    "pm100": "vlabench_pm100_match: released graph matcher; predicted actions outside the evaluator vocabulary and predicted subtasks beyond the reference count are not inspected, so surplus actions can still score 100",
+    "strict": "strict_sequence_equal: normalized predicted sequence == normalized reference sequence in length, skill names, order, and target keys/values",
+    "strict_executor_filtered": "strict_sequence_equal after removing executor-only phase names (moveto, wait, open_gripper, move_offset) that have no counterpart in the symbolic evaluator vocabulary; a sensitivity for projection residue, not a repair of the model output"
+  },
   "input_policy": "archived type-normalized Full-Procedure parse only",
   "default": "identity projection; preserve emitted order, skill labels, and targets",
   "drop_lift_tasks": [

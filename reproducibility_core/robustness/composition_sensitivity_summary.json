@@ -1,5 +1,12 @@
 {
   "status": "passed",
+  "symbolic_endpoint": "pm100",
+  "pooled_ab_counts": {
+    "both": 74,
+    "a_only": 515,
+    "b_only": 103,
+    "neither": 5707
+  },
   "interpretation": "fixed-manifest task/category-composition sensitivity; not inference to unseen tasks",
   "model_count": 3,
   "cases_per_model": 2133,

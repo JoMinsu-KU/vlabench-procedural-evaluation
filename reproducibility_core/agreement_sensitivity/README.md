@@ -10,12 +10,16 @@ success-label modification is performed.
   compositions; raw, positive, negative, chance-corrected, correlation,
   odds-ratio, conditional-probability, and Jaccard measures; and percentile
   95% task-cluster bootstrap intervals.  Pooled rows are fixed-backbone
-  descriptive aggregates, not inference to a model population.
+  descriptive aggregates, not inference to a model population.  Since v1.7
+  the `symbolic_endpoint` column repeats every analysis for the released
+  PM=100 rule (`pm100`), strict sequence equality (`strict`), and strict
+  equality after executor-phase filtering (`strict_executor_filtered`);
+  36 rows in total.
 - `control_first_attempt_subset.csv`: existing results restricted to the 2,062
   cases whose source-derived positive control satisfied the final condition on
   its first attempt.  It covers original and projected overlap, downstream
-  projected-success/full-failure, stage-wise termination, and scaffold-minus-
-  full-procedure contrasts.
+  projected-success/full-failure (each for the three symbolic endpoint tiers),
+  stage-wise termination, and scaffold-minus-full-procedure contrasts.
 - `projectability_failure_reasons.csv`: model-specific projectability counts.
   All 1,811 unprojectable rows are exactly the parser-rejected rows; no
   parser-accepted output is unprojectable because of an unsupported action,

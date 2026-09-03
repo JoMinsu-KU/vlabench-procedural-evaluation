@@ -64,7 +64,12 @@ ADD_CONDIMENT_TASKS = {
 
 PROJECTION_SPEC = {
     "protocol_version": "frozen_full_to_symbolic_v1",
-    "primary_endpoint": "type_normalized_symbolic_exact_match",
+    "primary_endpoint": "type_normalized_pm100 (released Precise Matching == 100 after digit-string canonicalization; ground-truth subtask coverage, not strict sequence equality)",
+    "symbolic_endpoint_tiers": {
+        "pm100": "vlabench_pm100_match: released graph matcher; predicted actions outside the evaluator vocabulary and predicted subtasks beyond the reference count are not inspected, so surplus actions can still score 100",
+        "strict": "strict_sequence_equal: normalized predicted sequence == normalized reference sequence in length, skill names, order, and target keys/values",
+        "strict_executor_filtered": "strict_sequence_equal after removing executor-only phase names (moveto, wait, open_gripper, move_offset) that have no counterpart in the symbolic evaluator vocabulary; a sensitivity for projection residue, not a repair of the model output",
+    },
     "input_policy": "archived type-normalized Full-Procedure parse only",
     "default": "identity projection; preserve emitted order, skill labels, and targets",
     "drop_lift_tasks": sorted(DROP_LIFT_TASKS),
@@ -101,6 +106,15 @@ SUBTASK_PATTERNS = [
     ["pick", "open_door"],
     ["press"],
 ]
+
+# Skill names the released symbolic evaluator can recognise at all.
+SYMBOLIC_EVALUATOR_VOCABULARY = tuple(sorted({name for pattern in SUBTASK_PATTERNS for name in pattern}))
+
+# Executor phase names emitted under the reference-procedure interface that have no
+# counterpart in the symbolic evaluator vocabulary.  Source: the executor phase
+# templates (procedural_interface/adapter/task_phase_templates.py) and the archived
+# full-procedure emissions.  Used only by the strict_executor_filtered sensitivity.
+EXECUTOR_ONLY_PHASE_VOCABULARY = ("moveto", "wait", "open_gripper", "move_offset")
 
 
 def read_jsonl(path: Path) -> list[dict[str, Any]]:
@@ -164,8 +178,16 @@ def subtask_signature(subtask: list[dict[str, Any]]) -> tuple[str, Any, Any]:
     return name, entities[-1] if entities else None, containers[-1] if containers else None
 
 
-def symbolic_exact_match(model_sequence: Any, gt_sequence: Any) -> bool:
-    """Reproduce the pinned official graph exact-match endpoint for Sequential tasks."""
+def vlabench_pm100_match(model_sequence: Any, gt_sequence: Any) -> bool:
+    """Reproduce the pinned official VLABench Precise Matching endpoint at 100.
+
+    The released evaluator stores this score as ``exact_match_score``, but it is a
+    ground-truth *coverage* test, not strict sequence equality: ``find_subtasks``
+    skips predicted actions that match no pattern, and the loop below inspects
+    only as many predicted subtasks as the reference has.  A prediction with a
+    surplus leading, trailing, or unrecognised action can therefore still score
+    100.  Use :func:`strict_sequence_equal` for whole-sequence identity.
+    """
 
     model = normalize_symbolic_sequence(model_sequence)
     gt = normalize_symbolic_sequence(gt_sequence)
@@ -182,6 +204,67 @@ def symbolic_exact_match(model_sequence: Any, gt_sequence: Any) -> bool:
         if index == 0 or model_subtasks[index - 1] == standard_subtasks[index - 1]:
             exact_count += 1
     return exact_count == len(standard_subtasks)
+
+
+# Name used by artifact v1.3-v1.6; retained so earlier callers keep working.
+symbolic_exact_match = vlabench_pm100_match
+
+
+def strict_sequence_equal(prediction: Any, ground_truth: Any) -> bool:
+    """Whole-sequence identity after digit-string canonicalization.
+
+    Passes only when both sequences normalise, have the same length, and agree
+    at every position in skill name and in every target parameter key and value.
+    Surplus, missing, unrecognised, or reordered actions all fail.
+    """
+
+    pred = normalize_symbolic_sequence(prediction)
+    gold = normalize_symbolic_sequence(ground_truth)
+    return pred is not None and gold is not None and len(gold) > 0 and pred == gold
+
+
+def remove_executor_only_phases(sequence: Any) -> list[dict[str, Any]] | None:
+    normalized = normalize_symbolic_sequence(sequence)
+    if normalized is None:
+        return None
+    return [step for step in normalized if step["name"] not in EXECUTOR_ONLY_PHASE_VOCABULARY]
+
+
+def strict_sequence_equal_executor_filtered(prediction: Any, ground_truth: Any) -> bool:
+    """Strict equality after dropping executor-only phase names from the prediction.
+
+    This removes projection residue (for example a ``moveto`` phase that the frozen
+    projection keeps for non-macro tasks) but never adds, reorders, relabels, or
+    retargets an action, so it cannot turn a wrong plan into a right one.
+    """
+
+    return strict_sequence_equal(remove_executor_only_phases(prediction), ground_truth)
+
+
+def strict_failure_reason(prediction: Any, ground_truth: Any) -> str:
+    """Classify why a prediction fails strict equality; empty string when it passes."""
+
+    pred = normalize_symbolic_sequence(prediction)
+    gold = normalize_symbolic_sequence(ground_truth)
+    if pred is None or gold is None:
+        return "unnormalizable"
+    if pred == gold:
+        return ""
+    residue = sorted({step["name"] for step in pred if step["name"] in EXECUTOR_ONLY_PHASE_VOCABULARY})
+    if residue:
+        return "executor_only_phase_residue:" + "+".join(residue)
+    unknown = sorted({step["name"] for step in pred if step["name"] not in SYMBOLIC_EVALUATOR_VOCABULARY})
+    if unknown:
+        return "unrecognized_action:" + "+".join(unknown)
+    pred_names = [step["name"] for step in pred]
+    gold_names = [step["name"] for step in gold]
+    if len(pred_names) > len(gold_names):
+        return "surplus_evaluator_vocabulary_action"
+    if len(pred_names) < len(gold_names):
+        return "missing_action"
+    if pred_names == gold_names:
+        return "parameter_mismatch"
+    return "order_or_skill_mismatch"
 
 
 def target_param_key(skill: str) -> str:
@@ -255,7 +338,7 @@ def project_full_steps(task_name: str, steps: Any) -> tuple[bool, str, list[dict
 def validate_archived_symbolic_endpoint(symbolic_rows: list[dict[str, Any]]) -> int:
     mismatches = 0
     for row in symbolic_rows:
-        reproduced = symbolic_exact_match(row.get("skill_sequence"), row.get("gt_skill_sequence"))
+        reproduced = vlabench_pm100_match(row.get("skill_sequence"), row.get("gt_skill_sequence"))
         if reproduced != bool(row.get("type_normalized_symbolic_success")):
             mismatches += 1
     return mismatches
@@ -333,6 +416,54 @@ def first_attempt_condition_success(row: dict[str, Any]) -> bool:
     return False
 
 
+ENDPOINT_TIERS = (
+    ("pm100", "original_pm100_success", "projected_pm100_success"),
+    ("strict", "original_strict_sequence_success", "projected_strict_sequence_success"),
+    # Original symbolic outputs never contain executor phase names, so the filtered
+    # tier reuses the strict original label and changes only the projected side.
+    ("strict_executor_filtered", "original_strict_sequence_success", "projected_strict_executor_filtered_success"),
+)
+
+
+def endpoint_tier_rows(rows: list[dict[str, Any]], model: str) -> list[dict[str, Any]]:
+    """One row per symbolic endpoint tier for the given model-case rows."""
+
+    output: list[dict[str, Any]] = []
+    for tier, original_key, projected_key in ENDPOINT_TIERS:
+        n = len(rows)
+        original = sum(row[original_key] for row in rows)
+        projected = sum(row[projected_key] for row in rows)
+        full = sum(row["full_procedure_success"] for row in rows)
+        projected_full_failure = sum(row[projected_key] and not row["full_procedure_success"] for row in rows)
+        full_with_projected = sum(row["full_procedure_success"] and row[projected_key] for row in rows)
+        both = sum(row[original_key] and row[projected_key] for row in rows)
+        original_only = original - both
+        projected_only = projected - both
+        original_and_full = sum(row[original_key] and row["full_procedure_success"] for row in rows)
+        output.append(
+            {
+                "model": model,
+                "symbolic_endpoint": tier,
+                "n": n,
+                "original_symbolic_success_n": original,
+                "original_symbolic_success_pct": f"{percentage(original, n):.2f}",
+                "projected_symbolic_success_n": projected,
+                "projected_symbolic_success_pct": f"{percentage(projected, n):.2f}",
+                "projected_success_full_failure_n": projected_full_failure,
+                "projected_success_full_failure_share_pct": f"{percentage(projected_full_failure, projected):.2f}",
+                "full_procedure_success_n": full,
+                "full_success_with_projected_success_n": full_with_projected,
+                "original_vs_projected_both_n": both,
+                "original_only_n": original_only,
+                "projected_only_n": projected_only,
+                "original_vs_projected_jaccard_pct": f"{jaccard(both, original_only, projected_only):.2f}",
+                "original_vs_full_both_n": original_and_full,
+                "original_vs_full_jaccard_pct": f"{jaccard(original_and_full, original - original_and_full, full - original_and_full):.2f}",
+            }
+        )
+    return output
+
+
 def write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
     if not rows:
         raise ValueError(f"No rows for {path}")
@@ -365,6 +496,7 @@ def main() -> None:
     detail_rows: list[dict[str, Any]] = []
     summary_rows: list[dict[str, Any]] = []
     validation_mismatches: dict[str, int] = {}
+    symbolic_by_case_all: dict[tuple[str, str], dict[str, Any]] = {}
 
     for model, paths in MODELS.items():
         symbolic_rows = read_jsonl(paths["symbolic"])
@@ -372,6 +504,7 @@ def main() -> None:
         if len(symbolic_rows) != 2133 or len(full_rows) != 2133:
             raise AssertionError(f"Unexpected row count for {model}")
         symbolic_by_case = {row["case_id"]: row for row in symbolic_rows}
+        symbolic_by_case_all.update({(model, case_id): row for case_id, row in symbolic_by_case.items()})
         full_by_case = {row["case_id"]: row for row in full_rows}
         if set(symbolic_by_case) != set(full_by_case):
             raise AssertionError(f"Case mismatch for {model}")
@@ -387,8 +520,19 @@ def main() -> None:
             parser_accepted = bool(full.get("type_normalized_parse_ok"))
             steps = full.get("normalized_steps") if parser_accepted else None
             projectable, projection_status, projected_sequence = project_full_steps(full["task_name"], steps)
-            projected_success = projectable and symbolic_exact_match(projected_sequence, sym.get("gt_skill_sequence"))
+            gt_sequence = sym.get("gt_skill_sequence")
+            projected_success = projectable and vlabench_pm100_match(projected_sequence, gt_sequence)
             original_symbolic_success = bool(sym.get("type_normalized_symbolic_success"))
+            original_strict = strict_sequence_equal(sym.get("skill_sequence"), gt_sequence)
+            projected_strict = projectable and strict_sequence_equal(projected_sequence, gt_sequence)
+            projected_strict_filtered = projectable and strict_sequence_equal_executor_filtered(
+                projected_sequence, gt_sequence
+            )
+            strict_reason = (
+                strict_failure_reason(projected_sequence, gt_sequence)
+                if projected_success and not projected_strict
+                else ""
+            )
             # The row-level final fields select the first successful retry when
             # one exists.  Recover the manuscript's primary first-attempt label
             # from the archived attempt summaries instead.
@@ -408,6 +552,16 @@ def main() -> None:
                     "full_procedure_success": full_success,
                     "projected_success_full_failure": projected_success and not full_success,
                     "original_symbolic_projected_agreement": original_symbolic_success == projected_success,
+                    # v1.7 endpoint tiers.  The two *_pm100_* columns duplicate the
+                    # v1.3 columns above under the corrected name.
+                    "original_pm100_success": original_symbolic_success,
+                    "original_strict_sequence_success": original_strict,
+                    "projected_pm100_success": projected_success,
+                    "projected_strict_sequence_success": projected_strict,
+                    "projected_strict_executor_filtered_success": projected_strict_filtered,
+                    "projected_strict_success_full_failure": projected_strict and not full_success,
+                    "projected_strict_filtered_success_full_failure": projected_strict_filtered and not full_success,
+                    "projected_pm100_pass_strict_fail_reason": strict_reason,
                 }
             )
 
@@ -494,6 +648,24 @@ def main() -> None:
     write_csv(summary_path, summary_rows)
     write_csv(ROOT / "results" / "reported_statistics" / "frozen_output_cross_scoring.csv", summary_rows)
 
+    tier_rows: list[dict[str, Any]] = []
+    for model in MODELS:
+        tier_rows.extend(endpoint_tier_rows([row for row in detail_rows if row["model"] == model], model))
+    tier_rows.extend(endpoint_tier_rows(detail_rows, "Pooled"))
+    write_csv(OUTPUT_DIR / "symbolic_endpoint_tiers.csv", tier_rows)
+    write_csv(ROOT / "results" / "reported_statistics" / "symbolic_endpoint_tiers.csv", tier_rows)
+    strict_reason_counts = Counter(
+        row["projected_pm100_pass_strict_fail_reason"]
+        for row in detail_rows
+        if row["projected_pm100_pass_strict_fail_reason"]
+    )
+    original_strict_reason_counts = Counter(
+        strict_failure_reason(symbolic_by_case_all[(row["model"], row["case_id"])]["skill_sequence"],
+                              symbolic_by_case_all[(row["model"], row["case_id"])]["gt_skill_sequence"])
+        for row in detail_rows
+        if row["original_pm100_success"] and not row["original_strict_sequence_success"]
+    )
+
     status_counts = Counter(row["projection_status"] for row in detail_rows)
     audit = {
         "protocol_version": PROJECTION_SPEC["protocol_version"],
@@ -504,6 +676,27 @@ def main() -> None:
         "projection_status_counts": dict(sorted(status_counts.items())),
         "no_repair_controls_passed": sum(row["passed"] for row in controls),
         "no_repair_controls_total": len(controls),
+        "symbolic_endpoint_tiers": {
+            "version": "symbolic_endpoint_tiers_v1",
+            "symbolic_evaluator_vocabulary": list(SYMBOLIC_EVALUATOR_VOCABULARY),
+            "executor_only_phase_vocabulary": list(EXECUTOR_ONLY_PHASE_VOCABULARY),
+            "pooled": {
+                row["symbolic_endpoint"]: {
+                    "original_symbolic_success_n": row["original_symbolic_success_n"],
+                    "projected_symbolic_success_n": row["projected_symbolic_success_n"],
+                    "projected_success_full_failure_n": row["projected_success_full_failure_n"],
+                    "full_success_with_projected_success_n": row["full_success_with_projected_success_n"],
+                    "original_vs_projected_jaccard_pct": row["original_vs_projected_jaccard_pct"],
+                    "original_vs_full_jaccard_pct": row["original_vs_full_jaccard_pct"],
+                }
+                for row in tier_rows
+                if row["model"] == "Pooled"
+            },
+            "projected_pm100_pass_strict_fail_reasons": dict(sorted(strict_reason_counts.items())),
+            "original_pm100_pass_strict_fail_reasons": dict(sorted(original_strict_reason_counts.items())),
+            "labels_modified": 0,
+            "projection_rules_modified": False,
+        },
         "projection_spec_sha256": sha256(spec_path),
         "reverse_symbolic_to_native": {
             "performed": False,

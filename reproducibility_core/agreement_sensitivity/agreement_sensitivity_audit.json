@@ -1,5 +1,5 @@
 {
-  "analysis_version": "agreement_and_control_subset_v1",
+  "analysis_version": "agreement_and_control_subset_v2",
   "bootstrap": {
     "interpretation": "retained-task-composition sensitivity, not unseen-task population inference",
     "interval": "percentile_95",
@@ -7,6 +7,239 @@
     "seed": 20260711,
     "task_clusters": 34,
     "unit": "task_cluster"
+  },
+  "endpoint_tiers": {
+    "pm100": {
+      "independently_elicited_symbolic_vs_full_procedure": {
+        "cohen_kappa_cluster_interval": [
+          0.06744056514168743,
+          0.2364893306983811
+        ],
+        "counts": {
+          "both": 74,
+          "left_only": 515,
+          "neither": 5707,
+          "right_only": 103
+        },
+        "metrics": {
+          "cohen_kappa": 0.15736753823888902,
+          "mcc_phi": 0.19021738392987753,
+          "negative_agreement": 0.9486369680851063,
+          "odds_ratio": 7.961504383070977,
+          "positive_agreement": 0.19321148825065274,
+          "raw_agreement": 0.9034224097515237,
+          "success_set_jaccard": 0.1069364161849711
+        },
+        "success_set_jaccard_cluster_interval": [
+          0.047816976812878456,
+          0.16225594486624345
+        ]
+      },
+      "original_symbolic_vs_projected_full_all_rows": {
+        "cohen_kappa_cluster_interval": [
+          0.21782856981275805,
+          0.44681099839499566
+        ],
+        "counts": {
+          "both": 203,
+          "left_only": 386,
+          "neither": 5563,
+          "right_only": 247
+        },
+        "metrics": {
+          "cohen_kappa": 0.3379761675362479,
+          "mcc_phi": 0.34160508162004133,
+          "negative_agreement": 0.9461688919125776,
+          "odds_ratio": 11.84461202827715,
+          "positive_agreement": 0.39076034648700675,
+          "raw_agreement": 0.9010782934833568,
+          "success_set_jaccard": 0.24282296650717702
+        },
+        "success_set_jaccard_cluster_interval": [
+          0.15441069388920617,
+          0.3284096479500891
+        ]
+      },
+      "original_symbolic_vs_projected_full_projectable_only": {
+        "cohen_kappa_cluster_interval": [
+          0.25344825802713766,
+          0.487274933511155
+        ],
+        "counts": {
+          "both": 203,
+          "left_only": 271,
+          "neither": 3867,
+          "right_only": 247
+        },
+        "metrics": {
+          "cohen_kappa": 0.3766683662442899,
+          "mcc_phi": 0.37682554803388485,
+          "negative_agreement": 0.9372273388269511,
+          "odds_ratio": 11.727460149095418,
+          "positive_agreement": 0.4393939393939394,
+          "raw_agreement": 0.8870967741935484,
+          "success_set_jaccard": 0.2815533980582524
+        },
+        "success_set_jaccard_cluster_interval": [
+          0.1855056137442544,
+          0.374260571300045
+        ]
+      }
+    },
+    "strict": {
+      "independently_elicited_symbolic_vs_full_procedure": {
+        "cohen_kappa_cluster_interval": [
+          0.07155706731267124,
+          0.2466671859168488
+        ],
+        "counts": {
+          "both": 74,
+          "left_only": 490,
+          "neither": 5732,
+          "right_only": 103
+        },
+        "metrics": {
+          "cohen_kappa": 0.16455207096957064,
+          "mcc_phi": 0.1962949626429634,
+          "negative_agreement": 0.9508169528074977,
+          "odds_ratio": 8.404359025163464,
+          "positive_agreement": 0.19973009446693657,
+          "raw_agreement": 0.9073292701984685,
+          "success_set_jaccard": 0.11094452773613193
+        },
+        "success_set_jaccard_cluster_interval": [
+          0.050064229249011855,
+          0.1676947216858344
+        ]
+      },
+      "original_symbolic_vs_projected_full_all_rows": {
+        "cohen_kappa_cluster_interval": [
+          0.15570072551016445,
+          0.38068396714243363
+        ],
+        "counts": {
+          "both": 129,
+          "left_only": 435,
+          "neither": 5704,
+          "right_only": 131
+        },
+        "metrics": {
+          "cohen_kappa": 0.2726504851093364,
+          "mcc_phi": 0.2961871371854098,
+          "negative_agreement": 0.9527309169868048,
+          "odds_ratio": 12.912450644906555,
+          "positive_agreement": 0.3131067961165049,
+          "raw_agreement": 0.9115486794811689,
+          "success_set_jaccard": 0.1856115107913669
+        },
+        "success_set_jaccard_cluster_interval": [
+          0.10445461934221324,
+          0.26548775627988785
+        ]
+      },
+      "original_symbolic_vs_projected_full_projectable_only": {
+        "cohen_kappa_cluster_interval": [
+          0.18755088045104168,
+          0.4175061542901713
+        ],
+        "counts": {
+          "both": 129,
+          "left_only": 323,
+          "neither": 4005,
+          "right_only": 131
+        },
+        "metrics": {
+          "cohen_kappa": 0.31292353649010923,
+          "mcc_phi": 0.32703380103610696,
+          "negative_agreement": 0.9463610586011342,
+          "odds_ratio": 12.210077281213811,
+          "positive_agreement": 0.36235955056179775,
+          "raw_agreement": 0.9010462074978204,
+          "success_set_jaccard": 0.22126929674099485
+        },
+        "success_set_jaccard_cluster_interval": [
+          0.12980601297405192,
+          0.3039400713032652
+        ]
+      }
+    },
+    "strict_executor_filtered": {
+      "independently_elicited_symbolic_vs_full_procedure": {
+        "cohen_kappa_cluster_interval": [
+          0.07155706731267124,
+          0.2466671859168488
+        ],
+        "counts": {
+          "both": 74,
+          "left_only": 490,
+          "neither": 5732,
+          "right_only": 103
+        },
+        "metrics": {
+          "cohen_kappa": 0.16455207096957064,
+          "mcc_phi": 0.1962949626429634,
+          "negative_agreement": 0.9508169528074977,
+          "odds_ratio": 8.404359025163464,
+          "positive_agreement": 0.19973009446693657,
+          "raw_agreement": 0.9073292701984685,
+          "success_set_jaccard": 0.11094452773613193
+        },
+        "success_set_jaccard_cluster_interval": [
+          0.050064229249011855,
+          0.1676947216858344
+        ]
+      },
+      "original_symbolic_vs_projected_full_all_rows": {
+        "cohen_kappa_cluster_interval": [
+          0.278199853555704,
+          0.4736022551897877
+        ],
+        "counts": {
+          "both": 208,
+          "left_only": 356,
+          "neither": 5638,
+          "right_only": 197
+        },
+        "metrics": {
+          "cohen_kappa": 0.3839178688778889,
+          "mcc_phi": 0.3900866577010034,
+          "negative_agreement": 0.953250486093499,
+          "odds_ratio": 16.721382535789655,
+          "positive_agreement": 0.4293085655314757,
+          "raw_agreement": 0.9135802469135802,
+          "success_set_jaccard": 0.2733245729303548
+        },
+        "success_set_jaccard_cluster_interval": [
+          0.19145690679495522,
+          0.3474496745566957
+        ]
+      },
+      "original_symbolic_vs_projected_full_projectable_only": {
+        "cohen_kappa_cluster_interval": [
+          0.31299448233302574,
+          0.5268356004396613
+        ],
+        "counts": {
+          "both": 208,
+          "left_only": 244,
+          "neither": 3939,
+          "right_only": 197
+        },
+        "metrics": {
+          "cohen_kappa": 0.4325788687855387,
+          "mcc_phi": 0.4333720237143187,
+          "negative_agreement": 0.9469888207717274,
+          "odds_ratio": 17.04485312473995,
+          "positive_agreement": 0.485414235705951,
+          "raw_agreement": 0.9038796861377506,
+          "success_set_jaccard": 0.3204930662557781
+        },
+        "success_set_jaccard_cluster_interval": [
+          0.2222222222222222,
+          0.40522260161902274
+        ]
+      }
+    }
   },
   "fixed_backbone_interpretation": "descriptive aggregate with equal inclusion of the three selected backbones",
   "input_sha256": {
@@ -16,14 +249,14 @@
     "analysis_data/internvl_B.csv": "6fa3bbf2115245bb743e46adcd392fc3e7f729524802f589273b37a93018fc70",
     "analysis_data/qwen_A.csv": "480a37a1ce604055958341f98a2ea5752a5568cd3651dbc746407d1c4bfe5bbd",
     "analysis_data/qwen_B.csv": "be13ecfbab6250e37677486e5f7a85c1bc600dcf641ee3528e9471d3ad393eeb",
-    "reproducibility_core/cross_scoring/full_to_symbolic_projection_rows.csv": "1c4c22b72c9262dfae6dfbdcb875e31e72eb80240e332dd904d7195814136aea",
+    "reproducibility_core/cross_scoring/full_to_symbolic_projection_rows.csv": "7d61a42e4bac790d42c379169b239e4c5068c8f40b98e34a42ea887c685d208c",
     "results/positive_control/gt_procedural_positive_control_report.csv": "ad022830209e046541a6137b559cdcfa7bcf6abdb2b0693438831973bdbab6cc"
   },
   "model_inference_calls": 0,
   "native_rollouts": 0,
   "output_sha256": {
-    "agreement_metrics.csv": "ef4f16dfa1c618c21c7cf65fbfbafac20bfef5f39d26f7aa425f8ad5868ab23b",
-    "control_first_attempt_subset.csv": "823a1b8db3fe726eac44fb5893b3307e8497321454d5a8519b4181c76149223d",
+    "agreement_metrics.csv": "b59ae48b4117a2744319b42e237eb62100f7fadff3b743663989c9f61d5857d7",
+    "control_first_attempt_subset.csv": "c6a5100cd1f82874bceceb761260b9c44916475d577583fa719d914893a3ebe2",
     "projectability_failure_reasons.csv": "8e2b59e26896d7c07a45af1c08ad9518635aba75bc691cdf0302f4ead07bd5c1"
   },
   "pooled_cross_metrics": {
@@ -52,6 +285,12 @@
   },
   "positive_control_first_attempt_case_count": 2062,
   "success_labels_modified": 0,
+  "symbolic_endpoint_note": "pm100 = released type-normalized Precise Matching == 100 (v1.6 primary); strict = normalized whole-sequence equality; strict_executor_filtered = strict after removing executor-only phase names from the projected side only. The pooled_original_* and pooled_cross_* fields below remain the pm100 values.",
+  "symbolic_endpoints": [
+    "pm100",
+    "strict",
+    "strict_executor_filtered"
+  ],
   "unprojectable_equals_parser_rejected_set_by_model": {
     "Gemma-3-12B-it": true,
     "InternVL3-8B": true,

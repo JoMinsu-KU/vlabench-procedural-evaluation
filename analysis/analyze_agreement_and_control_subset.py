@@ -214,7 +214,40 @@ def cluster_bootstrap(rows: list[dict[str, Any]]) -> dict[str, tuple[float, floa
     return intervals
 
 
-def load_original_rows(repo_root: Path) -> tuple[list[dict[str, Any]], list[Path]]:
+# Symbolic endpoint tiers (artifact v1.7).  Column names refer to
+# reproducibility_core/cross_scoring/full_to_symbolic_projection_rows.csv.
+SYMBOLIC_ENDPOINTS = ("pm100", "strict", "strict_executor_filtered")
+CROSS_ENDPOINT_COLUMNS = {
+    "pm100": (
+        "original_symbolic_success",
+        "projected_full_symbolic_success",
+        "projected_success_full_failure",
+    ),
+    "strict": (
+        "original_strict_sequence_success",
+        "projected_strict_sequence_success",
+        "projected_strict_success_full_failure",
+    ),
+    "strict_executor_filtered": (
+        "original_strict_sequence_success",
+        "projected_strict_executor_filtered_success",
+        "projected_strict_filtered_success_full_failure",
+    ),
+}
+
+
+def load_original_rows(
+    repo_root: Path,
+    strict_lookup: dict[tuple[str, str], bool] | None = None,
+) -> tuple[list[dict[str, Any]], list[Path]]:
+    """Independently elicited symbolic versus full-procedure rows.
+
+    With ``strict_lookup`` the symbolic label is the strict sequence-equality
+    label carried in the cross-scoring row table instead of the archived
+    PM=100 indicator.  Original symbolic outputs contain no executor phase
+    names, so the executor-filtered tier shares the strict original label.
+    """
+
     rows: list[dict[str, Any]] = []
     inputs: list[Path] = []
     for model_key, display_name in MODEL_KEYS.items():
@@ -239,7 +272,11 @@ def load_original_rows(repo_root: Path) -> tuple[list[dict[str, Any]], list[Path
                     "category": a_row["category"],
                     "task_name": a_row["task_name"],
                     "task_cluster": f"{a_row['category']}/{a_row['task_name']}",
-                    "left_success": as_bool(a_row["type_normalized_symbolic_success"]),
+                    "left_success": (
+                        as_bool(a_row["type_normalized_symbolic_success"])
+                        if strict_lookup is None
+                        else strict_lookup[(display_name, case_id)]
+                    ),
                     "right_success": first_attempt_success(b_row),
                     "full_row": b_row,
                 }
@@ -247,27 +284,29 @@ def load_original_rows(repo_root: Path) -> tuple[list[dict[str, Any]], list[Path
     return rows, inputs
 
 
-def load_cross_rows(repo_root: Path) -> tuple[list[dict[str, Any]], Path]:
+def load_cross_rows(
+    repo_root: Path, endpoint: str = "pm100"
+) -> tuple[list[dict[str, Any]], Path]:
     path = (
         repo_root
         / "reproducibility_core"
         / "cross_scoring"
         / "full_to_symbolic_projection_rows.csv"
     )
+    left_key, right_key, downstream_key = CROSS_ENDPOINT_COLUMNS[endpoint]
     rows: list[dict[str, Any]] = []
     for row in read_csv(path):
         rows.append(
             {
                 **row,
                 "task_cluster": f"{row['category']}/{row['task_name']}",
-                "left_success": as_bool(row["original_symbolic_success"]),
-                "right_success": as_bool(row["projected_full_symbolic_success"]),
+                "left_success": as_bool(row[left_key]),
+                "right_success": as_bool(row[right_key]),
                 "projection_supported_bool": as_bool(row["projection_supported"]),
                 "full_parser_accepted_bool": as_bool(row["full_parser_accepted"]),
                 "full_procedure_success_bool": as_bool(row["full_procedure_success"]),
-                "projected_success_full_failure_bool": as_bool(
-                    row["projected_success_full_failure"]
-                ),
+                "projected_success_full_failure_bool": as_bool(row[downstream_key]),
+                "original_strict_bool": as_bool(row["original_strict_sequence_success"]),
             }
         )
     if len(rows) != 6_399:
@@ -279,6 +318,7 @@ def agreement_output_rows(
     analysis_name: str,
     rows: list[dict[str, Any]],
     population_note: str,
+    symbolic_endpoint: str = "pm100",
 ) -> list[dict[str, Any]]:
     output: list[dict[str, Any]] = []
     scopes = [("Pooled fixed-backbone aggregate", rows)] + [
@@ -291,6 +331,7 @@ def agreement_output_rows(
         intervals = cluster_bootstrap(scoped_rows)
         row: dict[str, Any] = {
             "analysis": analysis_name,
+            "symbolic_endpoint": symbolic_endpoint,
             "scope": scope,
             "population_note": population_note,
             "rows": len(scoped_rows),
@@ -349,8 +390,8 @@ def adjudicated_failure_class(row: dict[str, str]) -> str:
 
 def control_subset_rows(
     repo_root: Path,
-    original_rows: list[dict[str, Any]],
-    cross_rows: list[dict[str, Any]],
+    original_by_endpoint: dict[str, list[dict[str, Any]]],
+    cross_by_endpoint: dict[str, list[dict[str, Any]]],
 ) -> tuple[list[dict[str, Any]], set[str], list[Path]]:
     control_path = repo_root / "results" / "positive_control" / "gt_procedural_positive_control_report.csv"
     control_rows = read_csv(control_path)
@@ -376,10 +417,12 @@ def control_subset_rows(
         unit: str,
         full_count: int | None = None,
         subset_count: int | None = None,
+        symbolic_endpoint: str = "not_applicable",
     ) -> None:
         output.append(
             {
                 "metric": metric,
+                "symbolic_endpoint": symbolic_endpoint,
                 "model": model,
                 "full_manifest_n": full_n,
                 "full_manifest_count": "" if full_count is None else full_count,
@@ -391,46 +434,52 @@ def control_subset_rows(
             }
         )
 
-    original_subset = [row for row in original_rows if row["case_id"] in first_attempt_case_ids]
-    full_original_metrics = agreement_metrics(contingency(original_rows))
-    subset_original_metrics = agreement_metrics(contingency(original_subset))
-    append_metric(
-        "original_symbolic_full_success_set_jaccard",
-        "Pooled fixed-backbone aggregate",
-        len(original_rows),
-        full_original_metrics["success_set_jaccard"],
-        len(original_subset),
-        subset_original_metrics["success_set_jaccard"],
-        "proportion",
-    )
+    for endpoint in SYMBOLIC_ENDPOINTS:
+        original_rows = original_by_endpoint[endpoint]
+        cross_rows = cross_by_endpoint[endpoint]
+        original_subset = [row for row in original_rows if row["case_id"] in first_attempt_case_ids]
+        full_original_metrics = agreement_metrics(contingency(original_rows))
+        subset_original_metrics = agreement_metrics(contingency(original_subset))
+        append_metric(
+            "original_symbolic_full_success_set_jaccard",
+            "Pooled fixed-backbone aggregate",
+            len(original_rows),
+            full_original_metrics["success_set_jaccard"],
+            len(original_subset),
+            subset_original_metrics["success_set_jaccard"],
+            "proportion",
+            symbolic_endpoint=endpoint,
+        )
 
-    cross_subset = [row for row in cross_rows if row["case_id"] in first_attempt_case_ids]
-    full_cross_metrics = agreement_metrics(contingency(cross_rows))
-    subset_cross_metrics = agreement_metrics(contingency(cross_subset))
-    append_metric(
-        "original_symbolic_projected_full_jaccard",
-        "Pooled fixed-backbone aggregate",
-        len(cross_rows),
-        full_cross_metrics["success_set_jaccard"],
-        len(cross_subset),
-        subset_cross_metrics["success_set_jaccard"],
-        "proportion",
-    )
-    full_projected_success = sum(row["right_success"] for row in cross_rows)
-    subset_projected_success = sum(row["right_success"] for row in cross_subset)
-    full_downstream = sum(row["projected_success_full_failure_bool"] for row in cross_rows)
-    subset_downstream = sum(row["projected_success_full_failure_bool"] for row in cross_subset)
-    append_metric(
-        "projected_symbolic_success_followed_by_full_failure",
-        "Pooled fixed-backbone aggregate",
-        full_projected_success,
-        full_downstream / full_projected_success,
-        subset_projected_success,
-        subset_downstream / subset_projected_success,
-        "share_of_projected_symbolic_success",
-        full_downstream,
-        subset_downstream,
-    )
+        cross_subset = [row for row in cross_rows if row["case_id"] in first_attempt_case_ids]
+        full_cross_metrics = agreement_metrics(contingency(cross_rows))
+        subset_cross_metrics = agreement_metrics(contingency(cross_subset))
+        append_metric(
+            "original_symbolic_projected_full_jaccard",
+            "Pooled fixed-backbone aggregate",
+            len(cross_rows),
+            full_cross_metrics["success_set_jaccard"],
+            len(cross_subset),
+            subset_cross_metrics["success_set_jaccard"],
+            "proportion",
+            symbolic_endpoint=endpoint,
+        )
+        full_projected_success = sum(row["right_success"] for row in cross_rows)
+        subset_projected_success = sum(row["right_success"] for row in cross_subset)
+        full_downstream = sum(row["projected_success_full_failure_bool"] for row in cross_rows)
+        subset_downstream = sum(row["projected_success_full_failure_bool"] for row in cross_subset)
+        append_metric(
+            "projected_symbolic_success_followed_by_full_failure",
+            "Pooled fixed-backbone aggregate",
+            full_projected_success,
+            full_downstream / full_projected_success,
+            subset_projected_success,
+            subset_downstream / subset_projected_success,
+            "share_of_projected_symbolic_success",
+            full_downstream,
+            subset_downstream,
+            symbolic_endpoint=endpoint,
+        )
 
     stage_order = [
         "output_schema_failure",
@@ -565,35 +614,54 @@ def main() -> int:
     )
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    original_rows, original_inputs = load_original_rows(repo_root)
-    cross_rows, cross_path = load_cross_rows(repo_root)
+    cross_by_endpoint = {
+        endpoint: load_cross_rows(repo_root, endpoint)[0] for endpoint in SYMBOLIC_ENDPOINTS
+    }
+    cross_path = load_cross_rows(repo_root, "pm100")[1]
+    strict_lookup = {
+        (row["model"], row["case_id"]): row["original_strict_bool"]
+        for row in cross_by_endpoint["strict"]
+    }
+    original_pm100, original_inputs = load_original_rows(repo_root)
+    original_strict, _ = load_original_rows(repo_root, strict_lookup)
+    original_by_endpoint = {
+        "pm100": original_pm100,
+        "strict": original_strict,
+        "strict_executor_filtered": original_strict,
+    }
+    original_rows = original_pm100
+    cross_rows = cross_by_endpoint["pm100"]
 
     agreement_rows: list[dict[str, Any]] = []
-    agreement_rows.extend(
-        agreement_output_rows(
-            "independently_elicited_symbolic_vs_full_procedure",
-            original_rows,
-            "All 6,399 fixed-backbone model-case observations",
+    for endpoint in SYMBOLIC_ENDPOINTS:
+        agreement_rows.extend(
+            agreement_output_rows(
+                "independently_elicited_symbolic_vs_full_procedure",
+                original_by_endpoint[endpoint],
+                "All 6,399 fixed-backbone model-case observations",
+                endpoint,
+            )
         )
-    )
-    agreement_rows.extend(
-        agreement_output_rows(
-            "original_symbolic_vs_projected_full_all_rows",
-            cross_rows,
-            "All 6,399 frozen full-procedure outputs; unprojectable outputs remain projected failures",
+        agreement_rows.extend(
+            agreement_output_rows(
+                "original_symbolic_vs_projected_full_all_rows",
+                cross_by_endpoint[endpoint],
+                "All 6,399 frozen full-procedure outputs; unprojectable outputs remain projected failures",
+                endpoint,
+            )
         )
-    )
-    agreement_rows.extend(
-        agreement_output_rows(
-            "original_symbolic_vs_projected_full_projectable_only",
-            [row for row in cross_rows if row["projection_supported_bool"]],
-            "Selection-conditioned projection-possible subset",
+        agreement_rows.extend(
+            agreement_output_rows(
+                "original_symbolic_vs_projected_full_projectable_only",
+                [row for row in cross_by_endpoint[endpoint] if row["projection_supported_bool"]],
+                "Selection-conditioned projection-possible subset",
+                endpoint,
+            )
         )
-    )
     write_csv(output_dir / "agreement_metrics.csv", agreement_rows)
 
     control_rows, first_attempt_case_ids, control_inputs = control_subset_rows(
-        repo_root, original_rows, cross_rows
+        repo_root, original_by_endpoint, cross_by_endpoint
     )
     write_csv(output_dir / "control_first_attempt_subset.csv", control_rows)
 
@@ -602,20 +670,63 @@ def main() -> int:
     )
     write_csv(output_dir / "projectability_failure_reasons.csv", projectability_rows)
 
-    pooled_original = next(
-        row
-        for row in agreement_rows
-        if row["analysis"] == "independently_elicited_symbolic_vs_full_procedure"
-        and row["scope"] == "Pooled fixed-backbone aggregate"
+    def pooled_row(analysis: str, endpoint: str) -> dict[str, Any]:
+        return next(
+            row
+            for row in agreement_rows
+            if row["analysis"] == analysis
+            and row["symbolic_endpoint"] == endpoint
+            and row["scope"] == "Pooled fixed-backbone aggregate"
+        )
+
+    pooled_original = pooled_row("independently_elicited_symbolic_vs_full_procedure", "pm100")
+    pooled_cross = pooled_row("original_symbolic_vs_projected_full_all_rows", "pm100")
+    metric_names = (
+        "raw_agreement",
+        "positive_agreement",
+        "negative_agreement",
+        "cohen_kappa",
+        "mcc_phi",
+        "odds_ratio",
+        "success_set_jaccard",
     )
-    pooled_cross = next(
-        row
-        for row in agreement_rows
-        if row["analysis"] == "original_symbolic_vs_projected_full_all_rows"
-        and row["scope"] == "Pooled fixed-backbone aggregate"
-    )
+    endpoint_tier_audit = {
+        endpoint: {
+            analysis: {
+                "counts": {
+                    "both": pooled_row(analysis, endpoint)["both_success"],
+                    "left_only": pooled_row(analysis, endpoint)["left_only_success"],
+                    "right_only": pooled_row(analysis, endpoint)["right_only_success"],
+                    "neither": pooled_row(analysis, endpoint)["neither_success"],
+                },
+                "metrics": {name: pooled_row(analysis, endpoint)[name] for name in metric_names},
+                "success_set_jaccard_cluster_interval": [
+                    pooled_row(analysis, endpoint)["success_set_jaccard_cluster_low"],
+                    pooled_row(analysis, endpoint)["success_set_jaccard_cluster_high"],
+                ],
+                "cohen_kappa_cluster_interval": [
+                    pooled_row(analysis, endpoint)["cohen_kappa_cluster_low"],
+                    pooled_row(analysis, endpoint)["cohen_kappa_cluster_high"],
+                ],
+            }
+            for analysis in (
+                "independently_elicited_symbolic_vs_full_procedure",
+                "original_symbolic_vs_projected_full_all_rows",
+                "original_symbolic_vs_projected_full_projectable_only",
+            )
+        }
+        for endpoint in SYMBOLIC_ENDPOINTS
+    }
     audit = {
-        "analysis_version": "agreement_and_control_subset_v1",
+        "analysis_version": "agreement_and_control_subset_v2",
+        "symbolic_endpoints": list(SYMBOLIC_ENDPOINTS),
+        "symbolic_endpoint_note": (
+            "pm100 = released type-normalized Precise Matching == 100 (v1.6 primary); "
+            "strict = normalized whole-sequence equality; strict_executor_filtered = strict "
+            "after removing executor-only phase names from the projected side only. "
+            "The pooled_original_* and pooled_cross_* fields below remain the pm100 values."
+        ),
+        "endpoint_tiers": endpoint_tier_audit,
         "model_inference_calls": 0,
         "native_rollouts": 0,
         "success_labels_modified": 0,

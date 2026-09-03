@@ -7,7 +7,7 @@ This repository provides code, case-level results, audit evidence, and release c
 - **Reference-phase scaffold** (artifact field: `phase_oracle`) fixes the benchmark-derived phase/order contract and asks the model to select numeric targets.
 - **Reference-target scaffold** (artifact field: `target_oracle`) asks the model to generate the phase/order sequence and inserts reference targets only after that sequence passes the frozen phase contract.
 
-The symbolic and reference-procedure interfaces generate different outputs under different prompts, schemas, and endpoints. Their original results are interface-conditioned classifications rather than the causal effect of adding one component. Artifact v1.6 additionally projects the already generated full-procedure outputs onto the symbolic representation without model inference or semantic repair, reports macro-family and projectability sensitivities, quantifies prevalence-aware agreement with task-cluster composition intervals, and repeats the primary diagnostics on the positive-control first-attempt-success subset. The reference-phase and reference-target conditions each generate a separate plan; their contrasts with the full condition are secondary scaffold-conditioned diagnostics, not same-plan repairs or causal decomposition.
+The symbolic and reference-procedure interfaces generate different outputs under different prompts, schemas, and endpoints. Their original results are descriptive cross-interface comparisons rather than the causal effect of adding one component. Artifact v1.6 additionally projects the already generated full-procedure outputs onto the symbolic representation without model inference or semantic repair, reports macro-family and projectability sensitivities, quantifies prevalence-aware agreement with task-cluster composition intervals, and repeats the primary diagnostics on the positive-control first-attempt-success subset. Artifact v1.7 corrects the name of the symbolic binary endpoint (the released Precise Matching score at 100 is a reference-coverage test, not strict sequence equality) and recomputes every frozen-output and agreement analysis under three symbolic endpoint tiers; see [Symbolic endpoint tiers](#symbolic-endpoint-tiers). The reference-phase and reference-target conditions each generate a separate plan; their contrasts with the full condition are secondary scaffold-conditioned diagnostics, not same-plan repairs or causal decomposition.
 
 For continuity with released files and scripts, the manuscript display names map to artifact identifiers as follows:
 
@@ -20,21 +20,36 @@ For continuity with released files and scripts, the manuscript display names map
 
 ## Primary results
 
-| Model | Type-normalized symbolic full match | Full-procedure first-attempt success | Reference-phase scaffold | Reference-target scaffold |
-|---|---:|---:|---:|---:|
-| Qwen3-VL-8B | 280/2,133 (13.13%) | 80/2,133 (3.75%) | 427/2,133 (20.02%) | 488/2,133 (22.88%) |
-| Gemma-3-12B-it | 221/2,133 (10.36%) | 57/2,133 (2.67%) | 344/2,133 (16.13%) | 585/2,133 (27.43%) |
-| InternVL3-8B | 88/2,133 (4.13%) | 40/2,133 (1.88%) | 314/2,133 (14.72%) | 191/2,133 (8.95%) |
+| Model | Symbolic PM=100 (type-normalized) | Symbolic strict sequence equality | Full-procedure first-attempt success | Reference-phase scaffold | Reference-target scaffold |
+|---|---:|---:|---:|---:|---:|
+| Qwen3-VL-8B | 280/2,133 (13.13%) | 258/2,133 (12.10%) | 80/2,133 (3.75%) | 427/2,133 (20.02%) | 488/2,133 (22.88%) |
+| Gemma-3-12B-it | 221/2,133 (10.36%) | 219/2,133 (10.27%) | 57/2,133 (2.67%) | 344/2,133 (16.13%) | 585/2,133 (27.43%) |
+| InternVL3-8B | 88/2,133 (4.13%) | 87/2,133 (4.08%) | 40/2,133 (1.88%) | 314/2,133 (14.72%) | 191/2,133 (8.95%) |
 
 All six pointwise scaffold-minus-full-procedure task-cluster bootstrap intervals exclude zero. A six-contrast max-|T| family-wise task-composition sensitivity analysis retains zero-excluding simultaneous intervals for five contrasts; the InternVL reference-target-scaffold-minus-full-procedure interval includes zero. All three direct reference-target-minus-reference-phase intervals include zero. These intervals assess sensitivity to reweighting the 34 retained tasks and are not interpreted as inference to unseen VLABench tasks.
 
-The symbolic-versus-procedure ordering is representation-sensitive: raw released PM places full-procedure success above symbolic full match for all three backbones, whereas deterministic digit-string normalization reverses the ordering. The release therefore treats low cross-interface agreement and stage-wise termination, rather than metric superiority, as the stable findings.
+The symbolic-versus-procedure ordering is representation-sensitive: raw released PM places full-procedure success above symbolic PM=100 for all three backbones, whereas deterministic digit-string normalization reverses the ordering. The release therefore treats low cross-interface agreement and stage-wise termination, rather than metric superiority, as the stable findings.
+
+## Symbolic endpoint tiers
+
+The released VLABench Precise Matching score (stored as `exact_match_score`) counts how many reference subtask nodes are matched in order; the matcher skips predicted actions it does not recognise and never inspects predicted subtasks beyond the reference count. `PM = 100` is therefore a reference-coverage test, not strict sequence equality: Qwen's archived output `open_door -> pick(2) -> pull` for `M&T/select_drink/example3` scores 100 against the reference `pick(2) -> pull`. Artifact versions up to v1.6 called this endpoint "full match"; v1.7 names it the **PM=100 endpoint** (`vlabench_pm100_match()`, formerly `symbolic_exact_match()`) and adds two stricter tiers that are computed from the same archived outputs:
+
+- **strict**: `strict_sequence_equal()` — normalized whole-sequence identity in length, skill names, order, and target keys/values;
+- **strict, executor phases removed**: the same test after deleting executor-only phase names (`moveto`, `wait`, `open_gripper`, `move_offset`, taken from the executor phase templates) from the projected side. The filter never adds, reorders, relabels, or retargets an action; it removes projection residue that the frozen v1.3 projection keeps for non-macro tasks.
+
+| Tier | Original symbolic success | Projected success | Projected pass / full-procedure fail | Original--projected Jaccard | Original--procedure Jaccard |
+|---|---:|---:|---:|---:|---:|
+| PM=100 | 589 | 450 | 273 | 24.28% | 10.69% |
+| strict, executor phases removed | 564 | 405 | 228 | 27.33% | 11.09% |
+| strict | 564 | 260 | 83 | 18.56% | 11.09% |
+
+All 177 full-procedure successes pass every projected tier. Of the 190 projected outputs that pass PM=100 but fail strict equality, 135 carry a residual `moveto` phase, 1 carries several residual executor phases, and 54 contain a surplus action from the evaluator vocabulary; of the 25 original symbolic outputs that pass PM=100 but fail strict equality, all 25 contain a surplus evaluator-vocabulary action. The executor-filtered tier is not nested in PM=100: 123 projected outputs pass it while failing PM=100 because an interposed executor phase (for example `pick -> moveto -> place`) breaks the contiguous subtask pattern that the released matcher requires. Low cross-interface overlap (10.69% / 11.09%) and the presence of downstream procedural failure after projected symbolic success hold under all three tiers; the magnitude of the latter depends on the tier (273 / 228 / 83). Per-tier agreement statistics with task-cluster intervals, macro-family exclusion, projectable-only conditioning, and leave-one-task/category-out diagnostics are in `reproducibility_core/`.
 
 ## Frozen-output cross-evaluation
 
 The v1.3 audit, retained unchanged in v1.6, deterministically projects archived full-procedure outputs onto the symbolic skill--target graph. It does not reparse rejected output, insert actions or targets, reorder actions, replace model-selected targets, or invoke a model or simulator. The archived type-normalized symbolic labels are reproduced with zero mismatch before projection is accepted. Projection is considered possible only when the archived output passed the original parser and its emitted fields are sufficient for deterministic symbolic serialization; projectability does not imply symbolic correctness.
 
-| Model | Projectable full outputs | Projected symbolic success | Projected success / full-procedure failure | Original/projected success-set Jaccard |
+| Model | Projectable full outputs | Projected symbolic success (PM=100) | Projected success / full-procedure failure (PM=100) | Original/projected success-set Jaccard (PM=100) |
 |---|---:|---:|---:|---:|
 | Qwen3-VL-8B | 1,923/2,133 (90.15%) | 254/2,133 (11.91%); 254/1,923 projectable (13.21%) | 174 | 29.30% |
 | Gemma-3-12B-it | 1,882/2,133 (88.23%) | 139/2,133 (6.52%); 139/1,882 projectable (7.39%) | 82 | 25.44% |
@@ -116,7 +131,7 @@ The model-visible view contains `input.png`, `input_mask.png`, `instruction.txt`
 
 The complete prompts are stored in `prompts/`. The symbolic runner is available at `vlabench_official_eval/scripts/run_official_vlm_eval_api.py`; the procedural runner is `procedural_interface/scripts/run_procedural_vlm_eval_api.py`. Both accept an OpenAI-compatible endpoint, a model identifier, the fixed case manifest, and an output directory. Run either module with `--help` for the full command line.
 
-For symbolic evaluation, the repository reports raw and type-normalized SR, PR, SPR, and PM. The released-code total and a recomputed four-metric weighted score are retained as separate audit values. The binary endpoint used in paired analysis is the derived indicator `PM_norm == 100`.
+For symbolic evaluation, the repository reports raw and type-normalized SR, PR, SPR, and PM. The released-code total and a recomputed four-metric weighted score are retained as separate audit values. The binary endpoint used in the v1.6 paired analysis is the derived indicator `PM_norm == 100`; v1.7 adds strict sequence equality and executor-filtered strict equality as further tiers (see above). Row-level labels for all three tiers are in `reproducibility_core/cross_scoring/full_to_symbolic_projection_rows.csv`.
 
 For the full reference-procedure condition and both reference-scaffold conditions, the primary endpoint is first-attempt reference-procedure task success. Result files also report success within up to ten native attempts of the same generated full-condition plan. Native retries do not alter the selected skill, target, or order. Scaffold-condition runs used one native attempt.
 
@@ -129,13 +144,18 @@ python analysis/reproduce_reported_statistics.py
 python analysis/cross_score_frozen_outputs.py
 python analysis/analyze_macro_family_exclusion.py --repo-root .
 python analysis/analyze_projectable_subset_jaccard.py --repo-root .
+python analysis/analyze_endpoint_tier_sensitivities.py --repo-root .
 python analysis/analyze_agreement_and_control_subset.py --repo-root .
+python analysis/generate_endpoint_tier_assets.py
 python analysis/audit_full_b_no_repair.py
 python reproducibility_core/scripts/compute_composition_sensitivity.py --repo-root . --output-dir reproducibility_core/robustness
+python reproducibility_core/scripts/compute_composition_sensitivity.py --repo-root . --output-dir reproducibility_core/robustness_strict --symbolic-endpoint strict
+python reproducibility_core/scripts/compute_composition_sensitivity.py --repo-root . --output-dir reproducibility_core/robustness_strict_executor_filtered --symbolic-endpoint strict_executor_filtered
+python tests/test_symbolic_endpoints.py
 python tests/verify_release.py .
 ```
 
-The first command regenerates the original cross-interface, scaffold, endpoint-sensitivity, simultaneous-interval, and adjudicated termination tables and figures. The cross-scoring command reproduces the deterministic full-to-symbolic projection, its five no-repair controls, row-level results, and summary table without inference or rollout. The macro-family command reproduces the mapping-use counts and the whole-family exclusion sensitivity. The projectable-subset command recomputes original/projected success-set overlap after conditioning on projection-possible frozen outputs. The agreement command reproduces prevalence-aware agreement, task-cluster intervals, the positive-control first-attempt subset, and projectability-failure counts. The next command reproduces 10,623 full-procedure parser/binder ownership and no-repair checks from the released positive-control fixtures. The composition-sensitivity command recomputes leave-one-task-out and leave-one-category-out diagnostics without changing any case-level label. The verifier checks these evidence layers, anonymity constraints, and repository checksums.
+The first command regenerates the original cross-interface, scaffold, endpoint-sensitivity, simultaneous-interval, and adjudicated termination tables and figures. The cross-scoring command reproduces the deterministic full-to-symbolic projection, its five no-repair controls, row-level results with all three symbolic endpoint tiers, and the summary and tier tables without inference or rollout. The endpoint-tier command repeats the macro-family exclusion and projectable-only conditioning for every tier, and the asset command regenerates the tier tables and figures used in the manuscript. The macro-family command reproduces the mapping-use counts and the whole-family exclusion sensitivity. The projectable-subset command recomputes original/projected success-set overlap after conditioning on projection-possible frozen outputs. The agreement command reproduces prevalence-aware agreement, task-cluster intervals, the positive-control first-attempt subset, and projectability-failure counts. The next command reproduces 10,623 full-procedure parser/binder ownership and no-repair checks from the released positive-control fixtures. The composition-sensitivity command recomputes leave-one-task-out and leave-one-category-out diagnostics without changing any case-level label. The verifier checks these evidence layers, anonymity constraints, and repository checksums.
 
 Scaffold-specific analysis can also be run independently through the legacy analysis entry points:
 

@@ -1,0 +1,66 @@
+{
+  "status": "passed",
+  "analysis_version": "endpoint_tier_sensitivities_v1",
+  "input": "reproducibility_core/cross_scoring/full_to_symbolic_projection_rows.csv",
+  "pooled": {
+    "full_retained_manifest/pm100": {
+      "n": 6399,
+      "projectable_n": 4588,
+      "original_symbolic_success_n": 589,
+      "projected_symbolic_success_n": 450,
+      "projected_success_full_failure_n": 273,
+      "original_projected_jaccard_pct": "24.28",
+      "projectable_subset_jaccard_pct": "28.16"
+    },
+    "full_retained_manifest/strict": {
+      "n": 6399,
+      "projectable_n": 4588,
+      "original_symbolic_success_n": 564,
+      "projected_symbolic_success_n": 260,
+      "projected_success_full_failure_n": 83,
+      "original_projected_jaccard_pct": "18.56",
+      "projectable_subset_jaccard_pct": "22.13"
+    },
+    "full_retained_manifest/strict_executor_filtered": {
+      "n": 6399,
+      "projectable_n": 4588,
+      "original_symbolic_success_n": 564,
+      "projected_symbolic_success_n": 405,
+      "projected_success_full_failure_n": 228,
+      "original_projected_jaccard_pct": "27.33",
+      "projectable_subset_jaccard_pct": "32.05"
+    },
+    "macro_family_excluded/pm100": {
+      "n": 6060,
+      "projectable_n": 4368,
+      "original_symbolic_success_n": 521,
+      "projected_symbolic_success_n": 388,
+      "projected_success_full_failure_n": 223,
+      "original_projected_jaccard_pct": "21.52",
+      "projectable_subset_jaccard_pct": "24.77"
+    },
+    "macro_family_excluded/strict": {
+      "n": 6060,
+      "projectable_n": 4368,
+      "original_symbolic_success_n": 497,
+      "projected_symbolic_success_n": 241,
+      "projected_success_full_failure_n": 76,
+      "original_projected_jaccard_pct": "18.27",
+      "projectable_subset_jaccard_pct": "21.59"
+    },
+    "macro_family_excluded/strict_executor_filtered": {
+      "n": 6060,
+      "projectable_n": 4368,
+      "original_symbolic_success_n": 497,
+      "projected_symbolic_success_n": 386,
+      "projected_success_full_failure_n": 221,
+      "original_projected_jaccard_pct": "27.97",
+      "projectable_subset_jaccard_pct": "32.49"
+    }
+  },
+  "qualitative_findings_preserved": true,
+  "model_inference_calls": 0,
+  "native_rollouts": 0,
+  "success_labels_modified": 0,
+  "projection_rules_modified": false
+}

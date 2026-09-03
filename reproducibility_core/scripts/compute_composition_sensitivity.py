@@ -107,7 +107,30 @@ def indexed(rows: list[dict[str, str]], label: str) -> dict[str, dict[str, str]]
     return output
 
 
-def load_model_frame(repo_root: Path, model_key: str) -> tuple[list[dict[str, Any]], list[Path]]:
+SYMBOLIC_ENDPOINTS = ("pm100", "strict", "strict_executor_filtered")
+# Pooled A/B counts of the authoritative tables under the released PM=100 label.
+# Strict-tier runs (artifact v1.7) record their counts in the summary instead.
+EXPECTED_POOLED_COUNTS = {
+    "pm100": {"both": 74, "a_only": 515, "b_only": 103, "neither": 5_707},
+}
+
+
+def load_strict_lookup(repo_root: Path) -> tuple[dict[tuple[str, str], bool], Path]:
+    path = repo_root / "reproducibility_core" / "cross_scoring" / "full_to_symbolic_projection_rows.csv"
+    lookup = {
+        (row["model"], row["case_id"]): as_bool(row["original_strict_sequence_success"])
+        for row in read_csv(path)
+    }
+    if len(lookup) != 6_399:
+        raise ValueError(f"cross-scoring row table has {len(lookup)}, not 6,399 rows")
+    return lookup, path
+
+
+def load_model_frame(
+    repo_root: Path,
+    model_key: str,
+    strict_lookup: dict[tuple[str, str], bool] | None = None,
+) -> tuple[list[dict[str, Any]], list[Path]]:
     data_dir = repo_root / "analysis_data"
     paths = [
         data_dir / f"{model_key}_A.csv",
@@ -136,7 +159,11 @@ def load_model_frame(repo_root: Path, model_key: str) -> tuple[list[dict[str, An
                 "task_name": a_row["task_name"],
                 "task_cluster": f"{a_row['category']}/{a_row['task_name']}",
                 "model": MODEL_KEYS[model_key],
-                "a_success": as_bool(a_row["type_normalized_symbolic_success"]),
+                "a_success": (
+                    as_bool(a_row["type_normalized_symbolic_success"])
+                    if strict_lookup is None
+                    else strict_lookup[(MODEL_KEYS[model_key], case_id)]
+                ),
                 "b_success": first_attempt_success(b_row),
                 "phase_success": first_attempt_success(phase_row),
                 "target_success": first_attempt_success(target_row),
@@ -242,17 +269,28 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--repo-root", type=Path, default=Path.cwd())
     parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument(
+        "--symbolic-endpoint",
+        choices=SYMBOLIC_ENDPOINTS,
+        default="pm100",
+        help="Symbolic success label for interface A: released PM=100 (default) or strict sequence equality.",
+    )
     args = parser.parse_args()
     repo_root = args.repo_root.resolve()
     output_dir = args.output_dir.resolve()
     output_dir.mkdir(parents=True, exist_ok=True)
 
+    strict_lookup = None
+    if args.symbolic_endpoint != "pm100":
+        strict_lookup, strict_path = load_strict_lookup(repo_root)
     model_frames: dict[str, list[dict[str, Any]]] = {}
     source_paths: list[Path] = []
     for model_key, model_name in MODEL_KEYS.items():
-        frame, paths = load_model_frame(repo_root, model_key)
+        frame, paths = load_model_frame(repo_root, model_key, strict_lookup)
         model_frames[model_name] = frame
         source_paths.extend(paths)
+    if strict_lookup is not None:
+        source_paths.append(strict_path)
     pooled = [row for frame in model_frames.values() for row in frame]
 
     if len({row["task_cluster"] for row in pooled}) != 34 or len({row["category"] for row in pooled}) != 5:
@@ -268,9 +306,9 @@ def main() -> int:
 
     baseline = [row for row in rows if row["exclusion_type"] == "none"]
     pooled_baseline = next(row for row in baseline if row["scope"] == "pooled")
-    expected_counts = {"both": 74, "a_only": 515, "b_only": 103, "neither": 5_707}
-    actual_counts = {key: pooled_baseline[key] for key in expected_counts}
-    if actual_counts != expected_counts:
+    actual_counts = {key: pooled_baseline[key] for key in ("both", "a_only", "b_only", "neither")}
+    expected_counts = EXPECTED_POOLED_COUNTS.get(args.symbolic_endpoint)
+    if expected_counts is not None and actual_counts != expected_counts:
         raise ValueError(f"pooled A/B counts conflict with authoritative table: {actual_counts}")
     if pooled_baseline["pre_native_responsibility_count"] != 5_968:
         raise ValueError("pre-native responsibility count conflicts with authoritative taxonomy")
@@ -298,6 +336,8 @@ def main() -> int:
     pooled_loco = [row for row in loco if row["scope"] == "pooled"]
     summary = {
         "status": "passed",
+        "symbolic_endpoint": args.symbolic_endpoint,
+        "pooled_ab_counts": actual_counts,
         "interpretation": "fixed-manifest task/category-composition sensitivity; not inference to unseen tasks",
         "model_count": 3,
         "cases_per_model": 2_133,
