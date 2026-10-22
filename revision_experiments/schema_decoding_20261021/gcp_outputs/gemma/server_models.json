@@ -1,0 +1,30 @@
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "google/gemma-3-12b-it",
+      "object": "model",
+      "created": 1792592636,
+      "owned_by": "vllm",
+      "root": "google/gemma-3-12b-it",
+      "parent": null,
+      "max_model_len": 16384,
+      "permission": [
+        {
+          "id": "modelperm-83b067eaaba5478c",
+          "object": "model_permission",
+          "created": 1792592636,
+          "allow_create_engine": false,
+          "allow_sampling": true,
+          "allow_logprobs": true,
+          "allow_search_indices": false,
+          "allow_view": true,
+          "allow_fine_tuning": false,
+          "organization": "*",
+          "group": null,
+          "is_blocking": false
+        }
+      ]
+    }
+  ]
+}

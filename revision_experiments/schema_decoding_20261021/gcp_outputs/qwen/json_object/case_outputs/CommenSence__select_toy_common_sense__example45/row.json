@@ -1,0 +1,66 @@
+{
+  "transport_ok": true,
+  "http_status": 200,
+  "error": null,
+  "origin_output": "{\"/steps\": [{\"skill\": \"pick\", \"target\": 2}, {\"skill\": \"moveto\", \"target\": 1}, {\"skill\": \"place\", \"target\": 1}]}",
+  "finish_reason": "stop",
+  "refusal": null,
+  "raw_response": {
+    "id": "chatcmpl-baa362db6f53c6d1",
+    "object": "chat.completion",
+    "created": 1792592162,
+    "prompt_routed_experts": null,
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"/steps\": [{\"skill\": \"pick\", \"target\": 2}, {\"skill\": \"moveto\", \"target\": 1}, {\"skill\": \"place\", \"target\": 1}]}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.21.0-3536331e",
+    "usage": {
+      "prompt_tokens": 3004,
+      "total_tokens": 3047,
+      "completion_tokens": 43,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null
+  },
+  "usage": {
+    "prompt_tokens": 3004,
+    "total_tokens": 3047,
+    "completion_tokens": 43,
+    "prompt_tokens_details": null
+  },
+  "served_model": "Qwen/Qwen3-VL-8B-Instruct",
+  "elapsed_sec": 0.9859744800000954,
+  "case_id": "CommenSence/select_toy_common_sense/example45",
+  "condition": "json_object",
+  "requested_model": "Qwen/Qwen3-VL-8B-Instruct",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+  "attempt_history": [
+    "json_object/case_outputs/CommenSence__select_toy_common_sense__example45/api_attempt_01"
+  ],
+  "request_sha256": "0897ed7f3c28ec9da7d85d316e7884f2489cbdc434559a056b3916864e26578f",
+  "response_body_sha256": "eba5e0b413942885942597ef8999cd4f9db3cd2ff579b6067284696ec66a3d5e",
+  "semantic_repair_applied": false
+}

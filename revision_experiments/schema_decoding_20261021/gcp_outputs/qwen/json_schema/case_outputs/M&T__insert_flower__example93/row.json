@@ -1,0 +1,66 @@
+{
+  "transport_ok": true,
+  "http_status": 200,
+  "error": null,
+  "origin_output": "{\"steps\": [{\"skill\": \"pick\", \"target\": 3}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 1}, {\"skill\": \"place\", \"target\": 1}]}",
+  "finish_reason": "stop",
+  "refusal": null,
+  "raw_response": {
+    "id": "chatcmpl-893ae05a0f3a5e7e",
+    "object": "chat.completion",
+    "created": 1792592186,
+    "prompt_routed_experts": null,
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"steps\": [{\"skill\": \"pick\", \"target\": 3}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 1}, {\"skill\": \"place\", \"target\": 1}]}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.21.0-3536331e",
+    "usage": {
+      "prompt_tokens": 2999,
+      "total_tokens": 3048,
+      "completion_tokens": 49,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null
+  },
+  "usage": {
+    "prompt_tokens": 2999,
+    "total_tokens": 3048,
+    "completion_tokens": 49,
+    "prompt_tokens_details": null
+  },
+  "served_model": "Qwen/Qwen3-VL-8B-Instruct",
+  "elapsed_sec": 0.9069196269997519,
+  "case_id": "M&T/insert_flower/example93",
+  "condition": "json_schema",
+  "requested_model": "Qwen/Qwen3-VL-8B-Instruct",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+  "attempt_history": [
+    "json_schema/case_outputs/M&T__insert_flower__example93/api_attempt_01"
+  ],
+  "request_sha256": "8fc8f8a2a4fab4fa4168e131d98a4831f224cbc514838e2d5cc44d8963804bc6",
+  "response_body_sha256": "e8056c4f498634cebc8fd249d70fb0bf49e3efc85360e82a5824d62b4d905287",
+  "semantic_repair_applied": false
+}

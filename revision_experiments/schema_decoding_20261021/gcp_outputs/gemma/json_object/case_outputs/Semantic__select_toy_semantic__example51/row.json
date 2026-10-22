@@ -1,0 +1,66 @@
+{
+  "transport_ok": true,
+  "http_status": 200,
+  "error": null,
+  "origin_output": "{\"steps\": [{\"skill\": \"pick\", \"target\": 4}, {\"skill\": \"lift\"}]}",
+  "finish_reason": "stop",
+  "refusal": null,
+  "raw_response": {
+    "id": "chatcmpl-b14ee6966be90374",
+    "object": "chat.completion",
+    "created": 1792593507,
+    "prompt_routed_experts": null,
+    "model": "google/gemma-3-12b-it",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"steps\": [{\"skill\": \"pick\", \"target\": 4}, {\"skill\": \"lift\"}]}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.21.0-f0ccb996",
+    "usage": {
+      "prompt_tokens": 1827,
+      "total_tokens": 1850,
+      "completion_tokens": 23,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null
+  },
+  "usage": {
+    "prompt_tokens": 1827,
+    "total_tokens": 1850,
+    "completion_tokens": 23,
+    "prompt_tokens_details": null
+  },
+  "served_model": "google/gemma-3-12b-it",
+  "elapsed_sec": 1.207844077000118,
+  "case_id": "Semantic/select_toy_semantic/example51",
+  "condition": "json_object",
+  "requested_model": "google/gemma-3-12b-it",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "model_revision": "96b6f1eccf38110c56df3a15bffe176da04bfd80",
+  "attempt_history": [
+    "json_object/case_outputs/Semantic__select_toy_semantic__example51/api_attempt_01"
+  ],
+  "request_sha256": "bdd112733428da9917acf8672658bdcdba0ca95d5d0ccf61793a6f03801634e7",
+  "response_body_sha256": "76484dd04c8a8583a4927f9ca40e05bce15a52a355bffad4acb8fce71bae74e1",
+  "semantic_repair_applied": false
+}

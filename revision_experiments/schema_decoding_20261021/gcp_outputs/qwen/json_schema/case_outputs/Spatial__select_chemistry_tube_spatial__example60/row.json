@@ -1,0 +1,66 @@
+{
+  "transport_ok": true,
+  "http_status": 200,
+  "error": null,
+  "origin_output": "{\"steps\": [{\"skill\": \"moveto\", \"target\": 5}, {\"skill\": \"pick\", \"target\": 5}, {\"skill\": \"lift\"}]}",
+  "finish_reason": "stop",
+  "refusal": null,
+  "raw_response": {
+    "id": "chatcmpl-87049722dc6a6a11",
+    "object": "chat.completion",
+    "created": 1792592524,
+    "prompt_routed_experts": null,
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"steps\": [{\"skill\": \"moveto\", \"target\": 5}, {\"skill\": \"pick\", \"target\": 5}, {\"skill\": \"lift\"}]}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.21.0-3536331e",
+    "usage": {
+      "prompt_tokens": 3003,
+      "total_tokens": 3039,
+      "completion_tokens": 36,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null
+  },
+  "usage": {
+    "prompt_tokens": 3003,
+    "total_tokens": 3039,
+    "completion_tokens": 36,
+    "prompt_tokens_details": null
+  },
+  "served_model": "Qwen/Qwen3-VL-8B-Instruct",
+  "elapsed_sec": 0.7245510599996123,
+  "case_id": "Spatial/select_chemistry_tube_spatial/example60",
+  "condition": "json_schema",
+  "requested_model": "Qwen/Qwen3-VL-8B-Instruct",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+  "attempt_history": [
+    "json_schema/case_outputs/Spatial__select_chemistry_tube_spatial__example60/api_attempt_01"
+  ],
+  "request_sha256": "e68583ae6a7fbd199ed0931fcd0780e1b407dcbb6f30d80db167d94b891619aa",
+  "response_body_sha256": "025d7f053e5ef74bcc9bd9b37aa4c0dc345ee3a63ed3250e41b194a74d3e673f",
+  "semantic_repair_applied": false
+}

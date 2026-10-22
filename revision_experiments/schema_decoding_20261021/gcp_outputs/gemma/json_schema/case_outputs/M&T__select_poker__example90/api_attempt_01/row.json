@@ -1,0 +1,66 @@
+{
+  "transport_ok": true,
+  "http_status": 200,
+  "error": null,
+  "origin_output": "{\"steps\": [{\"skill\": \"pick\", \"target\": 4}]}",
+  "finish_reason": "stop",
+  "refusal": null,
+  "raw_response": {
+    "id": "chatcmpl-b4bd2115521d0d16",
+    "object": "chat.completion",
+    "created": 1792593098,
+    "prompt_routed_experts": null,
+    "model": "google/gemma-3-12b-it",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"steps\": [{\"skill\": \"pick\", \"target\": 4}]}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.21.0-f0ccb996",
+    "usage": {
+      "prompt_tokens": 1810,
+      "total_tokens": 1826,
+      "completion_tokens": 16,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null
+  },
+  "usage": {
+    "prompt_tokens": 1810,
+    "total_tokens": 1826,
+    "completion_tokens": 16,
+    "prompt_tokens_details": null
+  },
+  "served_model": "google/gemma-3-12b-it",
+  "elapsed_sec": 0.8315656819995638,
+  "case_id": "M&T/select_poker/example90",
+  "condition": "json_schema",
+  "requested_model": "google/gemma-3-12b-it",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "model_revision": "96b6f1eccf38110c56df3a15bffe176da04bfd80",
+  "attempt_history": [
+    "json_schema/case_outputs/M&T__select_poker__example90/api_attempt_01"
+  ],
+  "request_sha256": "79449b38f76d6bef6b331712106f669a9cd797bf610bbb4c97fa51038186af25",
+  "response_body_sha256": "fea622beb2cae4d80af27d3b799cefb62d9f37f20735e6a46dcd6e1258b43e2a",
+  "semantic_repair_applied": false
+}

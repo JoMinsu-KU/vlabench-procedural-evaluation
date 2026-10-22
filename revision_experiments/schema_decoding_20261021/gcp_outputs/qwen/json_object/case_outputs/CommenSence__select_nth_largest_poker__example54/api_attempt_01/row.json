@@ -1,0 +1,66 @@
+{
+  "transport_ok": true,
+  "http_status": 200,
+  "error": null,
+  "origin_output": "{\"steps\": [{\"skill\": \"pick\", \"target\": 8}]}",
+  "finish_reason": "stop",
+  "refusal": null,
+  "raw_response": {
+    "id": "chatcmpl-84dbab35132de442",
+    "object": "chat.completion",
+    "created": 1792592152,
+    "prompt_routed_experts": null,
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"steps\": [{\"skill\": \"pick\", \"target\": 8}]}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.21.0-3536331e",
+    "usage": {
+      "prompt_tokens": 2994,
+      "total_tokens": 3011,
+      "completion_tokens": 17,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null
+  },
+  "usage": {
+    "prompt_tokens": 2994,
+    "total_tokens": 3011,
+    "completion_tokens": 17,
+    "prompt_tokens_details": null
+  },
+  "served_model": "Qwen/Qwen3-VL-8B-Instruct",
+  "elapsed_sec": 0.5384308600000622,
+  "case_id": "CommenSence/select_nth_largest_poker/example54",
+  "condition": "json_object",
+  "requested_model": "Qwen/Qwen3-VL-8B-Instruct",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+  "attempt_history": [
+    "json_object/case_outputs/CommenSence__select_nth_largest_poker__example54/api_attempt_01"
+  ],
+  "request_sha256": "230677628a55530c824fdb63e2cc590491d38c6ffb21d68f4de7f2a2c57893b1",
+  "response_body_sha256": "52116adf93e1846df84fe6fec6aed55a9ec2136d0f807c63ed72a7c739813f59",
+  "semantic_repair_applied": false
+}

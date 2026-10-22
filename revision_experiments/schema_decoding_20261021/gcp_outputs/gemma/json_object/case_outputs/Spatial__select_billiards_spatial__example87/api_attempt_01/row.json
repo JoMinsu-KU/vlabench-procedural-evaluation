@@ -1,0 +1,66 @@
+{
+  "transport_ok": true,
+  "http_status": 200,
+  "error": null,
+  "origin_output": "{\"steps\": [{\"skill\": \"pick\", \"target\": 1}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 2}, {\"skill\": \"lift\"}, {\"skill\": \"place\", \"target\": 2}]}",
+  "finish_reason": "stop",
+  "refusal": null,
+  "raw_response": {
+    "id": "chatcmpl-ab4600f344342d4a",
+    "object": "chat.completion",
+    "created": 1792593593,
+    "prompt_routed_experts": null,
+    "model": "google/gemma-3-12b-it",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"steps\": [{\"skill\": \"pick\", \"target\": 1}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 2}, {\"skill\": \"lift\"}, {\"skill\": \"place\", \"target\": 2}]}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.21.0-f0ccb996",
+    "usage": {
+      "prompt_tokens": 1816,
+      "total_tokens": 1869,
+      "completion_tokens": 53,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null
+  },
+  "usage": {
+    "prompt_tokens": 1816,
+    "total_tokens": 1869,
+    "completion_tokens": 53,
+    "prompt_tokens_details": null
+  },
+  "served_model": "google/gemma-3-12b-it",
+  "elapsed_sec": 2.4404674799998247,
+  "case_id": "Spatial/select_billiards_spatial/example87",
+  "condition": "json_object",
+  "requested_model": "google/gemma-3-12b-it",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "model_revision": "96b6f1eccf38110c56df3a15bffe176da04bfd80",
+  "attempt_history": [
+    "json_object/case_outputs/Spatial__select_billiards_spatial__example87/api_attempt_01"
+  ],
+  "request_sha256": "118dd1fb2cc463669b75abb2b1f5ab0066fd7d7238f168675601940a04ff4805",
+  "response_body_sha256": "ba781570dbc9c46bc1572f306e854583e76c0f797367366f0db2d926815f3fa2",
+  "semantic_repair_applied": false
+}

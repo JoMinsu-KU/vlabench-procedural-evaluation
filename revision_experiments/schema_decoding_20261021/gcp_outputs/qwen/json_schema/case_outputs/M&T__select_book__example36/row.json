@@ -1,0 +1,66 @@
+{
+  "transport_ok": true,
+  "http_status": 200,
+  "error": null,
+  "origin_output": "{\"steps\": [{\"skill\": \"pick\", \"target\": 3}, {\"skill\": \"lift\"}]}",
+  "finish_reason": "stop",
+  "refusal": null,
+  "raw_response": {
+    "id": "chatcmpl-b0275f2b2f19f4da",
+    "object": "chat.completion",
+    "created": 1792592210,
+    "prompt_routed_experts": null,
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"steps\": [{\"skill\": \"pick\", \"target\": 3}, {\"skill\": \"lift\"}]}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.21.0-3536331e",
+    "usage": {
+      "prompt_tokens": 3001,
+      "total_tokens": 3025,
+      "completion_tokens": 24,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null
+  },
+  "usage": {
+    "prompt_tokens": 3001,
+    "total_tokens": 3025,
+    "completion_tokens": 24,
+    "prompt_tokens_details": null
+  },
+  "served_model": "Qwen/Qwen3-VL-8B-Instruct",
+  "elapsed_sec": 0.49218601699976716,
+  "case_id": "M&T/select_book/example36",
+  "condition": "json_schema",
+  "requested_model": "Qwen/Qwen3-VL-8B-Instruct",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+  "attempt_history": [
+    "json_schema/case_outputs/M&T__select_book__example36/api_attempt_01"
+  ],
+  "request_sha256": "f5aed07e9e39a7615a569c85e5c58fac9948c9d2e301a0a18f013691893d56b3",
+  "response_body_sha256": "42009178cd0dc7a72e29232bf2aa37d9fc01dc0773b7d90b159d6af20b7304ac",
+  "semantic_repair_applied": false
+}

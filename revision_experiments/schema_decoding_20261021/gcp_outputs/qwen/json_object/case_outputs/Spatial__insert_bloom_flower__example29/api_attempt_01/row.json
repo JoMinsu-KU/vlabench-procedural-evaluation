@@ -1,0 +1,66 @@
+{
+  "transport_ok": true,
+  "http_status": 200,
+  "error": null,
+  "origin_output": "{\"\": \"\"}",
+  "finish_reason": "stop",
+  "refusal": null,
+  "raw_response": {
+    "id": "chatcmpl-bc441cf4cfde0c43",
+    "object": "chat.completion",
+    "created": 1792592474,
+    "prompt_routed_experts": null,
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"\": \"\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.21.0-3536331e",
+    "usage": {
+      "prompt_tokens": 2999,
+      "total_tokens": 3005,
+      "completion_tokens": 6,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null
+  },
+  "usage": {
+    "prompt_tokens": 2999,
+    "total_tokens": 3005,
+    "completion_tokens": 6,
+    "prompt_tokens_details": null
+  },
+  "served_model": "Qwen/Qwen3-VL-8B-Instruct",
+  "elapsed_sec": 0.33087807099946076,
+  "case_id": "Spatial/insert_bloom_flower/example29",
+  "condition": "json_object",
+  "requested_model": "Qwen/Qwen3-VL-8B-Instruct",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+  "attempt_history": [
+    "json_object/case_outputs/Spatial__insert_bloom_flower__example29/api_attempt_01"
+  ],
+  "request_sha256": "da5dc92d3b138fc3895980cee1c9973d8353abffaae5e9630835b7509f099c4f",
+  "response_body_sha256": "f2ceff7b1b48494f275be10eb9dba569b84bedfa22b60c02c0a24640a0a005bc",
+  "semantic_repair_applied": false
+}

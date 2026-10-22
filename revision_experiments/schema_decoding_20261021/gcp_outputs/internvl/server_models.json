@@ -1,0 +1,30 @@
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "OpenGVLab/InternVL3-8B",
+      "object": "model",
+      "created": 1792593760,
+      "owned_by": "vllm",
+      "root": "OpenGVLab/InternVL3-8B",
+      "parent": null,
+      "max_model_len": 16384,
+      "permission": [
+        {
+          "id": "modelperm-830f08b8ff4926af",
+          "object": "model_permission",
+          "created": 1792593760,
+          "allow_create_engine": false,
+          "allow_sampling": true,
+          "allow_logprobs": true,
+          "allow_search_indices": false,
+          "allow_view": true,
+          "allow_fine_tuning": false,
+          "organization": "*",
+          "group": null,
+          "is_blocking": false
+        }
+      ]
+    }
+  ]
+}

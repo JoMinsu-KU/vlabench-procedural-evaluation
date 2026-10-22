@@ -1,0 +1,66 @@
+{
+  "transport_ok": true,
+  "http_status": 200,
+  "error": null,
+  "origin_output": "{\"steps\": [{\"skill\": \"pick\", \"target\": 4}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 2}, {\"skill\": \"place\", \"target\": 2}]}",
+  "finish_reason": "stop",
+  "refusal": null,
+  "raw_response": {
+    "id": "chatcmpl-b4269f646642acf7",
+    "object": "chat.completion",
+    "created": 1792592343,
+    "prompt_routed_experts": null,
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"steps\": [{\"skill\": \"pick\", \"target\": 4}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 2}, {\"skill\": \"place\", \"target\": 2}]}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.21.0-3536331e",
+    "usage": {
+      "prompt_tokens": 3020,
+      "total_tokens": 3068,
+      "completion_tokens": 48,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null
+  },
+  "usage": {
+    "prompt_tokens": 3020,
+    "total_tokens": 3068,
+    "completion_tokens": 48,
+    "prompt_tokens_details": null
+  },
+  "served_model": "Qwen/Qwen3-VL-8B-Instruct",
+  "elapsed_sec": 0.9094137479996789,
+  "case_id": "PhysicsLaw/speed_of_sound_qa/example39",
+  "condition": "json_schema",
+  "requested_model": "Qwen/Qwen3-VL-8B-Instruct",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+  "attempt_history": [
+    "json_schema/case_outputs/PhysicsLaw__speed_of_sound_qa__example39/api_attempt_01"
+  ],
+  "request_sha256": "90bbfb82804afe6e40fe055ab1d210216cb7fac9c8efc49b34f4b7a2125962cc",
+  "response_body_sha256": "2f97f7f15b99c8a15281d332a7f5a0939ee276f3a6b551b73c754b7801ee0ea8",
+  "semantic_repair_applied": false
+}

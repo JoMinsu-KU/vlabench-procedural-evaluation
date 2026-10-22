@@ -1,0 +1,66 @@
+{
+  "transport_ok": true,
+  "http_status": 200,
+  "error": null,
+  "origin_output": "{\"steps\": [{\"skill\": \"pick\", \"target\": 3}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 0}, {\"skill\": \"place\", \"target\": 0}]}",
+  "finish_reason": "stop",
+  "refusal": null,
+  "raw_response": {
+    "id": "chatcmpl-b9cf6e6718f22a12",
+    "object": "chat.completion",
+    "created": 1792592117,
+    "prompt_routed_experts": null,
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"steps\": [{\"skill\": \"pick\", \"target\": 3}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 0}, {\"skill\": \"place\", \"target\": 0}]}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.21.0-3536331e",
+    "usage": {
+      "prompt_tokens": 3003,
+      "total_tokens": 3051,
+      "completion_tokens": 48,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null
+  },
+  "usage": {
+    "prompt_tokens": 3003,
+    "total_tokens": 3051,
+    "completion_tokens": 48,
+    "prompt_tokens_details": null
+  },
+  "served_model": "Qwen/Qwen3-VL-8B-Instruct",
+  "elapsed_sec": 0.9100830890001816,
+  "case_id": "CommenSence/select_drink_common_sense/example34",
+  "condition": "json_schema",
+  "requested_model": "Qwen/Qwen3-VL-8B-Instruct",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+  "attempt_history": [
+    "json_schema/case_outputs/CommenSence__select_drink_common_sense__example34/api_attempt_01"
+  ],
+  "request_sha256": "d383ecdce0c0a4d5e344ca683706f7e686bdb8f9a970c0329652f82066de0517",
+  "response_body_sha256": "424efa5375b66138fc5d9c93ac2df7bbea1c31fa1975b8394ceb6f51c24ea4c8",
+  "semantic_repair_applied": false
+}

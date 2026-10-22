@@ -1,0 +1,66 @@
+{
+  "transport_ok": true,
+  "http_status": 200,
+  "error": null,
+  "origin_output": "{\"steps\": [{\"skill\": \"pick\", \"target\": 2}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 1}, {\"skill\": \"pour\"}]}",
+  "finish_reason": "stop",
+  "refusal": null,
+  "raw_response": {
+    "id": "chatcmpl-af516972e7080bac",
+    "object": "chat.completion",
+    "created": 1792593811,
+    "prompt_routed_experts": null,
+    "model": "OpenGVLab/InternVL3-8B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"steps\": [{\"skill\": \"pick\", \"target\": 2}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 1}, {\"skill\": \"pour\"}]}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.21.0-e0ba55e4",
+    "usage": {
+      "prompt_tokens": 6356,
+      "total_tokens": 6398,
+      "completion_tokens": 42,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null
+  },
+  "usage": {
+    "prompt_tokens": 6356,
+    "total_tokens": 6398,
+    "completion_tokens": 42,
+    "prompt_tokens_details": null
+  },
+  "served_model": "OpenGVLab/InternVL3-8B",
+  "elapsed_sec": 0.48082673999942926,
+  "case_id": "CommenSence/select_fruit_common_sense/example28",
+  "condition": "json_schema",
+  "requested_model": "OpenGVLab/InternVL3-8B",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "model_revision": "853e3a797a661694b1b8ece0cb72dc2b23e3dac9",
+  "attempt_history": [
+    "json_schema/case_outputs/CommenSence__select_fruit_common_sense__example28/api_attempt_01"
+  ],
+  "request_sha256": "c6e760e7e2a823408445f4530b7d648b4b761cbcefcbc75ebd68e477c7a94b69",
+  "response_body_sha256": "9c64d2b7070528de70db54a552f4a10749e31b0d9fe02b9f42200d214739a2f4",
+  "semantic_repair_applied": false
+}

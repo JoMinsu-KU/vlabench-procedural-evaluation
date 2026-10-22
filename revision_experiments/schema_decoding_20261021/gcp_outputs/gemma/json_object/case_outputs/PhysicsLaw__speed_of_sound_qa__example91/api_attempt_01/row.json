@@ -1,0 +1,66 @@
+{
+  "transport_ok": true,
+  "http_status": 200,
+  "error": null,
+  "origin_output": "{\"steps\": [{\"skill\": \"pick\", \"target\": 4}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 6}, {\"skill\": \"lift\"}]}",
+  "finish_reason": "stop",
+  "refusal": null,
+  "raw_response": {
+    "id": "chatcmpl-9aec7bbe967f549d",
+    "object": "chat.completion",
+    "created": 1792593253,
+    "prompt_routed_experts": null,
+    "model": "google/gemma-3-12b-it",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"steps\": [{\"skill\": \"pick\", \"target\": 4}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 6}, {\"skill\": \"lift\"}]}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.21.0-f0ccb996",
+    "usage": {
+      "prompt_tokens": 1833,
+      "total_tokens": 1875,
+      "completion_tokens": 42,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null
+  },
+  "usage": {
+    "prompt_tokens": 1833,
+    "total_tokens": 1875,
+    "completion_tokens": 42,
+    "prompt_tokens_details": null
+  },
+  "served_model": "google/gemma-3-12b-it",
+  "elapsed_sec": 2.070061327000076,
+  "case_id": "PhysicsLaw/speed_of_sound_qa/example91",
+  "condition": "json_object",
+  "requested_model": "google/gemma-3-12b-it",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "model_revision": "96b6f1eccf38110c56df3a15bffe176da04bfd80",
+  "attempt_history": [
+    "json_object/case_outputs/PhysicsLaw__speed_of_sound_qa__example91/api_attempt_01"
+  ],
+  "request_sha256": "247e7407b95b0f266087671ca36b033218e018b5e60ca6fc1e2272ee7fcbed04",
+  "response_body_sha256": "4c7c49e7c243f906ae3031729097a67eeb9ae3cb4428da9839efb04f675057aa",
+  "semantic_repair_applied": false
+}

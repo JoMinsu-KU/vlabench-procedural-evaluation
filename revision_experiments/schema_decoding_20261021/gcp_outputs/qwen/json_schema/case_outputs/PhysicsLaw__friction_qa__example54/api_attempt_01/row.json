@@ -1,0 +1,66 @@
+{
+  "transport_ok": true,
+  "http_status": 200,
+  "error": null,
+  "origin_output": "{\"steps\": [{\"skill\": \"pick\", \"target\": 4}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 0}, {\"skill\": \"press\", \"target\": 0}]}",
+  "finish_reason": "stop",
+  "refusal": null,
+  "raw_response": {
+    "id": "chatcmpl-a86aefa93882de04",
+    "object": "chat.completion",
+    "created": 1792592314,
+    "prompt_routed_experts": null,
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"steps\": [{\"skill\": \"pick\", \"target\": 4}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 0}, {\"skill\": \"press\", \"target\": 0}]}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.21.0-3536331e",
+    "usage": {
+      "prompt_tokens": 3012,
+      "total_tokens": 3061,
+      "completion_tokens": 49,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null
+  },
+  "usage": {
+    "prompt_tokens": 3012,
+    "total_tokens": 3061,
+    "completion_tokens": 49,
+    "prompt_tokens_details": null
+  },
+  "served_model": "Qwen/Qwen3-VL-8B-Instruct",
+  "elapsed_sec": 0.9236854619994119,
+  "case_id": "PhysicsLaw/friction_qa/example54",
+  "condition": "json_schema",
+  "requested_model": "Qwen/Qwen3-VL-8B-Instruct",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+  "attempt_history": [
+    "json_schema/case_outputs/PhysicsLaw__friction_qa__example54/api_attempt_01"
+  ],
+  "request_sha256": "ba7453e4df9135d22bc007f78dbff3294be640be2a8eadaa2283e0b08ce7163a",
+  "response_body_sha256": "1481d6ce5cdc48270679f0ad9f6e6e15e6200d2d96a9072acd60a0f7802a7daf",
+  "semantic_repair_applied": false
+}

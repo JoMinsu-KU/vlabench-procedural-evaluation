@@ -1,0 +1,66 @@
+{
+  "transport_ok": true,
+  "http_status": 200,
+  "error": null,
+  "origin_output": "{\"steps\": [{\"skill\": \"pick\", \"target\": 2}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 1}, {\"skill\": \"place\", \"target\": 1}]}",
+  "finish_reason": "stop",
+  "refusal": null,
+  "raw_response": {
+    "id": "chatcmpl-a3782c018861fd8a",
+    "object": "chat.completion",
+    "created": 1792592430,
+    "prompt_routed_experts": null,
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"steps\": [{\"skill\": \"pick\", \"target\": 2}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 1}, {\"skill\": \"place\", \"target\": 1}]}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.21.0-3536331e",
+    "usage": {
+      "prompt_tokens": 3005,
+      "total_tokens": 3054,
+      "completion_tokens": 49,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null
+  },
+  "usage": {
+    "prompt_tokens": 3005,
+    "total_tokens": 3054,
+    "completion_tokens": 49,
+    "prompt_tokens_details": null
+  },
+  "served_model": "Qwen/Qwen3-VL-8B-Instruct",
+  "elapsed_sec": 0.9461831409998922,
+  "case_id": "Semantic/select_fruit_semantic/example38",
+  "condition": "json_schema",
+  "requested_model": "Qwen/Qwen3-VL-8B-Instruct",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+  "attempt_history": [
+    "json_schema/case_outputs/Semantic__select_fruit_semantic__example38/api_attempt_01"
+  ],
+  "request_sha256": "6f5295cb4b39cb587a3f1c6fa3a866885310f6216cd8e33a3666e61cf419ba7a",
+  "response_body_sha256": "8e129fdf9e292c7ce24e8b48d8a968650968ebba0014ee272603f493a60acfe5",
+  "semantic_repair_applied": false
+}

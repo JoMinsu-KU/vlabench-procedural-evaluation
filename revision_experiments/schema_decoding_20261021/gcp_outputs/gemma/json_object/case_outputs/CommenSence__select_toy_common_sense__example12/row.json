@@ -1,0 +1,66 @@
+{
+  "transport_ok": true,
+  "http_status": 200,
+  "error": null,
+  "origin_output": "{\"steps\": [{\"skill\": \"pick\", \"target\": 3}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 1}, {\"skill\": \"place\"}]}",
+  "finish_reason": "stop",
+  "refusal": null,
+  "raw_response": {
+    "id": "chatcmpl-afa188b97214914b",
+    "object": "chat.completion",
+    "created": 1792592829,
+    "prompt_routed_experts": null,
+    "model": "google/gemma-3-12b-it",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"steps\": [{\"skill\": \"pick\", \"target\": 3}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 1}, {\"skill\": \"place\"}]}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.21.0-f0ccb996",
+    "usage": {
+      "prompt_tokens": 1819,
+      "total_tokens": 1861,
+      "completion_tokens": 42,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null
+  },
+  "usage": {
+    "prompt_tokens": 1819,
+    "total_tokens": 1861,
+    "completion_tokens": 42,
+    "prompt_tokens_details": null
+  },
+  "served_model": "google/gemma-3-12b-it",
+  "elapsed_sec": 2.0175680120000834,
+  "case_id": "CommenSence/select_toy_common_sense/example12",
+  "condition": "json_object",
+  "requested_model": "google/gemma-3-12b-it",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "model_revision": "96b6f1eccf38110c56df3a15bffe176da04bfd80",
+  "attempt_history": [
+    "json_object/case_outputs/CommenSence__select_toy_common_sense__example12/api_attempt_01"
+  ],
+  "request_sha256": "184f0e9b32b5874f78cf48e103e04644a24b58b787a7fb0bb6b32345b477a72b",
+  "response_body_sha256": "fe52828358d07a54c3732fb3fe840e2884ba0756c6126c48291afbd9c2c55203",
+  "semantic_repair_applied": false
+}

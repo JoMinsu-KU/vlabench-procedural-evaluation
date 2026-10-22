@@ -1,0 +1,66 @@
+{
+  "transport_ok": true,
+  "http_status": 200,
+  "error": null,
+  "origin_output": "{\"steps\": [{\"skill\": \"pick\", \"target\": 2}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 1}, {\"skill\": \"place\", \"target\": 1}]}",
+  "finish_reason": "stop",
+  "refusal": null,
+  "raw_response": {
+    "id": "chatcmpl-a053c0e419e3760d",
+    "object": "chat.completion",
+    "created": 1792592410,
+    "prompt_routed_experts": null,
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"steps\": [{\"skill\": \"pick\", \"target\": 2}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 1}, {\"skill\": \"place\", \"target\": 1}]}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.21.0-3536331e",
+    "usage": {
+      "prompt_tokens": 2998,
+      "total_tokens": 3046,
+      "completion_tokens": 48,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null
+  },
+  "usage": {
+    "prompt_tokens": 2998,
+    "total_tokens": 3046,
+    "completion_tokens": 48,
+    "prompt_tokens_details": null
+  },
+  "served_model": "Qwen/Qwen3-VL-8B-Instruct",
+  "elapsed_sec": 0.9093553319999046,
+  "case_id": "Semantic/select_drink_semantic/example17",
+  "condition": "json_schema",
+  "requested_model": "Qwen/Qwen3-VL-8B-Instruct",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+  "attempt_history": [
+    "json_schema/case_outputs/Semantic__select_drink_semantic__example17/api_attempt_01"
+  ],
+  "request_sha256": "ce6746225580235b991b2c91f458145ac0e4ecb3899b3a32f9b0ad2b870350ab",
+  "response_body_sha256": "c7dd18d10e30315e367eea092f9bd19a4a57d749a82a23305ee423c3c4c7a3e4",
+  "semantic_repair_applied": false
+}

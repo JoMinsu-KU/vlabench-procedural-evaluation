@@ -1,0 +1,66 @@
+{
+  "transport_ok": true,
+  "http_status": 200,
+  "error": null,
+  "origin_output": "{\"steps\": [{\"skill\": \"pick\", \"target\": 4}]}",
+  "finish_reason": "stop",
+  "refusal": null,
+  "raw_response": {
+    "id": "chatcmpl-ad68e68ba79ce3c9",
+    "object": "chat.completion",
+    "created": 1792594089,
+    "prompt_routed_experts": null,
+    "model": "OpenGVLab/InternVL3-8B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"steps\": [{\"skill\": \"pick\", \"target\": 4}]}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.21.0-e0ba55e4",
+    "usage": {
+      "prompt_tokens": 6363,
+      "total_tokens": 6380,
+      "completion_tokens": 17,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null
+  },
+  "usage": {
+    "prompt_tokens": 6363,
+    "total_tokens": 6380,
+    "completion_tokens": 17,
+    "prompt_tokens_details": null
+  },
+  "served_model": "OpenGVLab/InternVL3-8B",
+  "elapsed_sec": 0.4973342960001901,
+  "case_id": "Spatial/select_book_spatial/example95",
+  "condition": "json_object",
+  "requested_model": "OpenGVLab/InternVL3-8B",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "model_revision": "853e3a797a661694b1b8ece0cb72dc2b23e3dac9",
+  "attempt_history": [
+    "json_object/case_outputs/Spatial__select_book_spatial__example95/api_attempt_01"
+  ],
+  "request_sha256": "96bbeb497975bff39a1aee671a0ddce4c3a89535407c0f4af4e45718c19d889f",
+  "response_body_sha256": "815f5f91c3fec3fd77bfa9369a9e3eb531fb9b2eced228a2f7b24e7553e64b9e",
+  "semantic_repair_applied": false
+}

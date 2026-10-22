@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+reproduced/
+.run.lock
+*.tar.gz
+!*.log
+cloud_bundle/inputs/**/input.png
+cloud_bundle/inputs/**/input_mask.png

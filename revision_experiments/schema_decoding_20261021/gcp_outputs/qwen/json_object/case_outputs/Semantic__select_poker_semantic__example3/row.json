@@ -1,0 +1,66 @@
+{
+  "transport_ok": true,
+  "http_status": 200,
+  "error": null,
+  "origin_output": "{\"/steps\": [{\"skill\": \"moveto\", \"target\": 6}, {\"skill\": \"pick\"}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 0}, {\"skill\": \"place\"}]}",
+  "finish_reason": "stop",
+  "refusal": null,
+  "raw_response": {
+    "id": "chatcmpl-9c0ea7a5d4e123c9",
+    "object": "chat.completion",
+    "created": 1792592439,
+    "prompt_routed_experts": null,
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"/steps\": [{\"skill\": \"moveto\", \"target\": 6}, {\"skill\": \"pick\"}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 0}, {\"skill\": \"place\"}]}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.21.0-3536331e",
+    "usage": {
+      "prompt_tokens": 3020,
+      "total_tokens": 3070,
+      "completion_tokens": 50,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null
+  },
+  "usage": {
+    "prompt_tokens": 3020,
+    "total_tokens": 3070,
+    "completion_tokens": 50,
+    "prompt_tokens_details": null
+  },
+  "served_model": "Qwen/Qwen3-VL-8B-Instruct",
+  "elapsed_sec": 1.1046468579997963,
+  "case_id": "Semantic/select_poker_semantic/example3",
+  "condition": "json_object",
+  "requested_model": "Qwen/Qwen3-VL-8B-Instruct",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+  "attempt_history": [
+    "json_object/case_outputs/Semantic__select_poker_semantic__example3/api_attempt_01"
+  ],
+  "request_sha256": "52e77e4e658af079eab6d92861c58ba649e713e6e5edba8357e1e5b91b9745fa",
+  "response_body_sha256": "d4f848a7c00d56b1f9402876d32fbc898bee9a6722cee74756498b014fd71c4f",
+  "semantic_repair_applied": false
+}

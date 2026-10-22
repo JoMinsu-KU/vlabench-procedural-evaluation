@@ -1,0 +1,66 @@
+{
+  "transport_ok": true,
+  "http_status": 200,
+  "error": null,
+  "origin_output": "{\"steps\": [{\"skill\": \"pick\", \"target\": 3}, {\"skill\": \"moveto\", \"target\": 0}, {\"skill\": \"place\"}]}",
+  "finish_reason": "stop",
+  "refusal": null,
+  "raw_response": {
+    "id": "chatcmpl-bf0be8fa56d7480f",
+    "object": "chat.completion",
+    "created": 1792593856,
+    "prompt_routed_experts": null,
+    "model": "OpenGVLab/InternVL3-8B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"steps\": [{\"skill\": \"pick\", \"target\": 3}, {\"skill\": \"moveto\", \"target\": 0}, {\"skill\": \"place\"}]}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.21.0-e0ba55e4",
+    "usage": {
+      "prompt_tokens": 6356,
+      "total_tokens": 6392,
+      "completion_tokens": 36,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null
+  },
+  "usage": {
+    "prompt_tokens": 6356,
+    "total_tokens": 6392,
+    "completion_tokens": 36,
+    "prompt_tokens_details": null
+  },
+  "served_model": "OpenGVLab/InternVL3-8B",
+  "elapsed_sec": 0.6673574019996522,
+  "case_id": "M&T/select_billiards/example27",
+  "condition": "json_object",
+  "requested_model": "OpenGVLab/InternVL3-8B",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "model_revision": "853e3a797a661694b1b8ece0cb72dc2b23e3dac9",
+  "attempt_history": [
+    "json_object/case_outputs/M&T__select_billiards__example27/api_attempt_01"
+  ],
+  "request_sha256": "39b76f0ea8f3bb06717c1051b284022eb2ca0bbe7be107fed521d33e697d15b6",
+  "response_body_sha256": "23c2d096f8760ecf0d544a8b831fe5c1099ed3e17b8629a886b030469d2ca73a",
+  "semantic_repair_applied": false
+}

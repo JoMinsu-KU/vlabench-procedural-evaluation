@@ -1,0 +1,66 @@
+{
+  "transport_ok": true,
+  "http_status": 200,
+  "error": null,
+  "origin_output": "{\"steps\": [{\"skill\": \"pick\", \"target\": 2}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 4}, {\"skill\": \"place\", \"target\": 4}]}",
+  "finish_reason": "stop",
+  "refusal": null,
+  "raw_response": {
+    "id": "chatcmpl-bceadecc9627a792",
+    "object": "chat.completion",
+    "created": 1792592298,
+    "prompt_routed_experts": null,
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"steps\": [{\"skill\": \"pick\", \"target\": 2}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 4}, {\"skill\": \"place\", \"target\": 4}]}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.21.0-3536331e",
+    "usage": {
+      "prompt_tokens": 3010,
+      "total_tokens": 3058,
+      "completion_tokens": 48,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null
+  },
+  "usage": {
+    "prompt_tokens": 3010,
+    "total_tokens": 3058,
+    "completion_tokens": 48,
+    "prompt_tokens_details": null
+  },
+  "served_model": "Qwen/Qwen3-VL-8B-Instruct",
+  "elapsed_sec": 0.8963761509994583,
+  "case_id": "PhysicsLaw/density_qa/example8",
+  "condition": "json_schema",
+  "requested_model": "Qwen/Qwen3-VL-8B-Instruct",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+  "attempt_history": [
+    "json_schema/case_outputs/PhysicsLaw__density_qa__example8/api_attempt_01"
+  ],
+  "request_sha256": "8105eff1e35e22d0bdd980032457d7ae971a10f4bba30d730c475a0485753169",
+  "response_body_sha256": "a7dbe2ecac1e0b7933268a195fb63b73576758f3c9543a9f3a634ccb06ee430f",
+  "semantic_repair_applied": false
+}

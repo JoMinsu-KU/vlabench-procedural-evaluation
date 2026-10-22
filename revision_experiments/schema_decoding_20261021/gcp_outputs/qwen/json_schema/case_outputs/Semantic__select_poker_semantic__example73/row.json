@@ -1,0 +1,66 @@
+{
+  "transport_ok": true,
+  "http_status": 200,
+  "error": null,
+  "origin_output": "{\"steps\": [{\"skill\": \"pick\", \"target\": 5}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 0}, {\"skill\": \"place\", \"target\": 0}]}",
+  "finish_reason": "stop",
+  "refusal": null,
+  "raw_response": {
+    "id": "chatcmpl-a0848566ceb321ce",
+    "object": "chat.completion",
+    "created": 1792592450,
+    "prompt_routed_experts": null,
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"steps\": [{\"skill\": \"pick\", \"target\": 5}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 0}, {\"skill\": \"place\", \"target\": 0}]}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.21.0-3536331e",
+    "usage": {
+      "prompt_tokens": 3019,
+      "total_tokens": 3068,
+      "completion_tokens": 49,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null
+  },
+  "usage": {
+    "prompt_tokens": 3019,
+    "total_tokens": 3068,
+    "completion_tokens": 49,
+    "prompt_tokens_details": null
+  },
+  "served_model": "Qwen/Qwen3-VL-8B-Instruct",
+  "elapsed_sec": 0.9520637129999159,
+  "case_id": "Semantic/select_poker_semantic/example73",
+  "condition": "json_schema",
+  "requested_model": "Qwen/Qwen3-VL-8B-Instruct",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+  "attempt_history": [
+    "json_schema/case_outputs/Semantic__select_poker_semantic__example73/api_attempt_01"
+  ],
+  "request_sha256": "6ed3a1723c5b902935198130a0466c4c8994f51b926c56ba91eb3540831c57c8",
+  "response_body_sha256": "7a113da6d189e901980fb221294d8116e97200ab2e314d6f3f9359054ac228b4",
+  "semantic_repair_applied": false
+}

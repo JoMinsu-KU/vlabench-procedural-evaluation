@@ -1,0 +1,38 @@
+{
+  "stage": "inference",
+  "total_rows": 644,
+  "by_condition": {
+    "json_object": {
+      "rows": 322,
+      "transport_errors": 0,
+      "truncated": 0,
+      "parse_valid": 0,
+      "strict_parse_valid": 0,
+      "raw_json_schema_valid": 0,
+      "type_normalized_json_schema_valid": 0,
+      "numeric_cast_cases": 0,
+      "gate_valid": 0,
+      "native_attempted": 0,
+      "success": 0,
+      "failures": {
+        "none": 322
+      }
+    },
+    "json_schema": {
+      "rows": 322,
+      "transport_errors": 0,
+      "truncated": 0,
+      "parse_valid": 0,
+      "strict_parse_valid": 0,
+      "raw_json_schema_valid": 0,
+      "type_normalized_json_schema_valid": 0,
+      "numeric_cast_cases": 0,
+      "gate_valid": 0,
+      "native_attempted": 0,
+      "success": 0,
+      "failures": {
+        "none": 322
+      }
+    }
+  }
+}

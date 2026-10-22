@@ -1,0 +1,66 @@
+{
+  "transport_ok": true,
+  "http_status": 200,
+  "error": null,
+  "origin_output": "{\"steps\": [{\"skill\": \"pick\", \"target\": 2}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 4}, {\"skill\": \"place\", \"target\": 4}, {\"skill\": \"pick\", \"target\": 6}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 4}, {\"skill\": \"place\", \"target\": 4}, {\"skill\": \"pick\", \"target\": 0}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 4}, {\"skill\": \"place\", \"target\": 4}]}",
+  "finish_reason": "stop",
+  "refusal": null,
+  "raw_response": {
+    "id": "chatcmpl-89a02c74477635e3",
+    "object": "chat.completion",
+    "created": 1792592354,
+    "prompt_routed_experts": null,
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"steps\": [{\"skill\": \"pick\", \"target\": 2}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 4}, {\"skill\": \"place\", \"target\": 4}, {\"skill\": \"pick\", \"target\": 6}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 4}, {\"skill\": \"place\", \"target\": 4}, {\"skill\": \"pick\", \"target\": 0}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 4}, {\"skill\": \"place\", \"target\": 4}]}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.21.0-3536331e",
+    "usage": {
+      "prompt_tokens": 3020,
+      "total_tokens": 3154,
+      "completion_tokens": 134,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null
+  },
+  "usage": {
+    "prompt_tokens": 3020,
+    "total_tokens": 3154,
+    "completion_tokens": 134,
+    "prompt_tokens_details": null
+  },
+  "served_model": "Qwen/Qwen3-VL-8B-Instruct",
+  "elapsed_sec": 2.3705682279996836,
+  "case_id": "PhysicsLaw/speed_of_sound_qa/example91",
+  "condition": "json_schema",
+  "requested_model": "Qwen/Qwen3-VL-8B-Instruct",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+  "attempt_history": [
+    "json_schema/case_outputs/PhysicsLaw__speed_of_sound_qa__example91/api_attempt_01"
+  ],
+  "request_sha256": "8f50e25fbc9605bcf5f3f47f7f4409918f39dc8ef18e5e788d1e75671a25c5a3",
+  "response_body_sha256": "ed3cdfed25d6c55a932a72e8c3e0690baaf8fd7ba098b37cdd8166d7e5844a85",
+  "semantic_repair_applied": false
+}

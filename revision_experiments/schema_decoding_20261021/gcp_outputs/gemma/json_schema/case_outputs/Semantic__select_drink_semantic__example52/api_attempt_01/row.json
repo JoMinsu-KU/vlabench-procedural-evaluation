@@ -1,0 +1,66 @@
+{
+  "transport_ok": true,
+  "http_status": 200,
+  "error": null,
+  "origin_output": "{\"steps\": [{\"skill\": \"pick\", \"target\": 2}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 3}, {\"skill\": \"lift\"}, {\"skill\": \"pour\"}, {\"skill\": \"open_gripper\"}]}",
+  "finish_reason": "stop",
+  "refusal": null,
+  "raw_response": {
+    "id": "chatcmpl-b338ddad32e3cd55",
+    "object": "chat.completion",
+    "created": 1792593417,
+    "prompt_routed_experts": null,
+    "model": "google/gemma-3-12b-it",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"steps\": [{\"skill\": \"pick\", \"target\": 2}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 3}, {\"skill\": \"lift\"}, {\"skill\": \"pour\"}, {\"skill\": \"open_gripper\"}]}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.21.0-f0ccb996",
+    "usage": {
+      "prompt_tokens": 1811,
+      "total_tokens": 1867,
+      "completion_tokens": 56,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null
+  },
+  "usage": {
+    "prompt_tokens": 1811,
+    "total_tokens": 1867,
+    "completion_tokens": 56,
+    "prompt_tokens_details": null
+  },
+  "served_model": "google/gemma-3-12b-it",
+  "elapsed_sec": 2.5428124290001506,
+  "case_id": "Semantic/select_drink_semantic/example52",
+  "condition": "json_schema",
+  "requested_model": "google/gemma-3-12b-it",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "model_revision": "96b6f1eccf38110c56df3a15bffe176da04bfd80",
+  "attempt_history": [
+    "json_schema/case_outputs/Semantic__select_drink_semantic__example52/api_attempt_01"
+  ],
+  "request_sha256": "2976b79b5d0ff75d8c9317ba6857119631fb69530e630ee4d0134be557683773",
+  "response_body_sha256": "b8eca723731795f7fe448c886eff9a1956804942a0c0cdaa827610c4db5231a6",
+  "semantic_repair_applied": false
+}

@@ -1,0 +1,66 @@
+{
+  "transport_ok": true,
+  "http_status": 200,
+  "error": null,
+  "origin_output": "{\"steps\": [{\"skill\": \"pick\", \"target\": 2}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 3}, {\"skill\": \"pour\"}, {\"skill\": \"wait\"}, {\"skill\": \"pull\"}, {\"skill\": \"pour\"}, {\"skill\": \"moveto\", \"target\": 0}, {\"skill\": \"move_offset\"}, {\"skill\": \"open_gripper\"}]}",
+  "finish_reason": "stop",
+  "refusal": null,
+  "raw_response": {
+    "id": "chatcmpl-88eb77eb74828e1b",
+    "object": "chat.completion",
+    "created": 1792592417,
+    "prompt_routed_experts": null,
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"steps\": [{\"skill\": \"pick\", \"target\": 2}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 3}, {\"skill\": \"pour\"}, {\"skill\": \"wait\"}, {\"skill\": \"pull\"}, {\"skill\": \"pour\"}, {\"skill\": \"moveto\", \"target\": 0}, {\"skill\": \"move_offset\"}, {\"skill\": \"open_gripper\"}]}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.21.0-3536331e",
+    "usage": {
+      "prompt_tokens": 2996,
+      "total_tokens": 3085,
+      "completion_tokens": 89,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null
+  },
+  "usage": {
+    "prompt_tokens": 2996,
+    "total_tokens": 3085,
+    "completion_tokens": 89,
+    "prompt_tokens_details": null
+  },
+  "served_model": "Qwen/Qwen3-VL-8B-Instruct",
+  "elapsed_sec": 1.5943901720002032,
+  "case_id": "Semantic/select_drink_semantic/example52",
+  "condition": "json_schema",
+  "requested_model": "Qwen/Qwen3-VL-8B-Instruct",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+  "attempt_history": [
+    "json_schema/case_outputs/Semantic__select_drink_semantic__example52/api_attempt_01"
+  ],
+  "request_sha256": "a1100b2dd81de662ea54868e12c10b233c9307a78b70f9dbaca6c98c2e2da024",
+  "response_body_sha256": "0027acd6489b2416a986fad4a29d389a770bc0b249c51cdeaca778462465842c",
+  "semantic_repair_applied": false
+}

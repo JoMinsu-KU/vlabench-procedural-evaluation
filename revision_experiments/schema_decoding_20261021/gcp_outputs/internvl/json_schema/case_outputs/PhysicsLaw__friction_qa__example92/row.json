@@ -1,0 +1,66 @@
+{
+  "transport_ok": true,
+  "http_status": 200,
+  "error": null,
+  "origin_output": "{\"steps\": [{\"skill\": \"pick\", \"target\": 6}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 6}, {\"skill\": \"place\", \"target\": 6}]}",
+  "finish_reason": "stop",
+  "refusal": null,
+  "raw_response": {
+    "id": "chatcmpl-8e14c35ca8c78e22",
+    "object": "chat.completion",
+    "created": 1792593949,
+    "prompt_routed_experts": null,
+    "model": "OpenGVLab/InternVL3-8B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"steps\": [{\"skill\": \"pick\", \"target\": 6}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 6}, {\"skill\": \"place\", \"target\": 6}]}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.21.0-e0ba55e4",
+    "usage": {
+      "prompt_tokens": 6370,
+      "total_tokens": 6418,
+      "completion_tokens": 48,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null
+  },
+  "usage": {
+    "prompt_tokens": 6370,
+    "total_tokens": 6418,
+    "completion_tokens": 48,
+    "prompt_tokens_details": null
+  },
+  "served_model": "OpenGVLab/InternVL3-8B",
+  "elapsed_sec": 0.5273984040004507,
+  "case_id": "PhysicsLaw/friction_qa/example92",
+  "condition": "json_schema",
+  "requested_model": "OpenGVLab/InternVL3-8B",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "model_revision": "853e3a797a661694b1b8ece0cb72dc2b23e3dac9",
+  "attempt_history": [
+    "json_schema/case_outputs/PhysicsLaw__friction_qa__example92/api_attempt_01"
+  ],
+  "request_sha256": "1244dbfc5d0aa5256ac25960ff29cf8797305f75cda1fa02d2636ffb74144a6c",
+  "response_body_sha256": "6ab18fe7afe5a2d5ba08cd14951d1dd6ed79df751cb3b5e497be9268bb6855db",
+  "semantic_repair_applied": false
+}

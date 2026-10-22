@@ -1,0 +1,34 @@
+﻿case_id,failure_code,failure_subtype,detail
+CommenSence/select_chemistry_tube_common_sense/example19,C2,target_slot_count_mismatch,"expected 1 targets, got 2"
+CommenSence/select_chemistry_tube_common_sense/example4,C2,target_slot_count_mismatch,"expected 1 targets, got 2"
+CommenSence/select_chemistry_tube_common_sense/example47,C2,target_slot_count_mismatch,"expected 1 targets, got 2"
+CommenSence/select_chemistry_tube_common_sense/example56,C2,target_slot_count_mismatch,"expected 1 targets, got 2"
+CommenSence/select_chemistry_tube_common_sense/example73,C2,target_slot_count_mismatch,"expected 1 targets, got 2"
+CommenSence/select_chemistry_tube_common_sense/example8,C2,target_slot_count_mismatch,"expected 1 targets, got 2"
+CommenSence/select_chemistry_tube_common_sense/example90,C2,target_slot_count_mismatch,"expected 1 targets, got 2"
+CommenSence/select_chemistry_tube_common_sense/example95,C3,incompatible_target_affordance,"step=1, skill=pick, class=TubeStand"
+CommenSence/select_nth_largest_poker/example13,C3,incompatible_target_affordance,"step=1, skill=pick, class=CardHolder"
+CommenSence/select_nth_largest_poker/example37,C2,target_slot_count_mismatch,"expected 1 targets, got 2"
+CommenSence/select_nth_largest_poker/example44,C1,,condition_success=false
+CommenSence/select_nth_largest_poker/example67,C3,incompatible_target_affordance,"step=1, skill=pick, class=CardHolder"
+M&T/select_chemistry_tube/example19,C2,target_slot_count_mismatch,"expected 1 targets, got 2"
+M&T/select_fruit/example35,C1,,condition_success=false
+M&T/select_fruit/example43,C1,,condition_success=false
+M&T/select_fruit/example44,C1,,condition_success=false
+M&T/select_fruit/example93,C5,AttributeError,'Fruit' object has no attribute 'get_place_point'
+Semantic/select_chemistry_tube_semantic/example74,C2,target_slot_count_mismatch,"expected 1 targets, got 2"
+Spatial/select_chemistry_tube_spatial/example11,C2,target_slot_count_mismatch,"expected 1 targets, got 2"
+Spatial/select_chemistry_tube_spatial/example26,C2,target_slot_count_mismatch,"expected 1 targets, got 2"
+Spatial/select_chemistry_tube_spatial/example35,C2,target_slot_count_mismatch,"expected 1 targets, got 2"
+Spatial/select_chemistry_tube_spatial/example4,C2,target_slot_count_mismatch,"expected 1 targets, got 2"
+Spatial/select_chemistry_tube_spatial/example46,C2,target_slot_count_mismatch,"expected 1 targets, got 2"
+Spatial/select_chemistry_tube_spatial/example47,C2,target_slot_count_mismatch,"expected 1 targets, got 2"
+Spatial/select_chemistry_tube_spatial/example61,C2,target_slot_count_mismatch,"expected 1 targets, got 2"
+Spatial/select_chemistry_tube_spatial/example62,C1,,condition_success=false
+Spatial/select_chemistry_tube_spatial/example63,C2,target_slot_count_mismatch,"expected 1 targets, got 2"
+Spatial/select_chemistry_tube_spatial/example71,C2,target_slot_count_mismatch,"expected 1 targets, got 2"
+Spatial/select_chemistry_tube_spatial/example78,C2,target_slot_count_mismatch,"expected 1 targets, got 2"
+Spatial/select_chemistry_tube_spatial/example82,C2,target_slot_count_mismatch,"expected 1 targets, got 2"
+Spatial/select_chemistry_tube_spatial/example83,C2,target_slot_count_mismatch,"expected 1 targets, got 2"
+Spatial/select_chemistry_tube_spatial/example89,C2,target_slot_count_mismatch,"expected 1 targets, got 2"
+Spatial/select_chemistry_tube_spatial/example94,C2,target_slot_count_mismatch,"expected 1 targets, got 2"

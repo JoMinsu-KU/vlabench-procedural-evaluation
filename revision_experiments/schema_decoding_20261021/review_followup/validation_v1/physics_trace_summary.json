@@ -1,0 +1,13 @@
+{
+  "expected_results": 1200,
+  "results_read": 1200,
+  "missing": [],
+  "exception_error_counts": {
+    "TypeError(\"Mirrors._build() missing 1 required positional argument: 'reflectance'\")": 200
+  },
+  "status_counts": {
+    "completed": 1000,
+    "exception": 200
+  },
+  "interpretation": "Execution-level observations only; contact/dynamics root cause is not inferred from goal=false."
+}

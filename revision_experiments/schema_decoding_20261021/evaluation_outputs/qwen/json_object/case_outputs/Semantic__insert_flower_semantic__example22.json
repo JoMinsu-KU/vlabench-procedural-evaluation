@@ -1,0 +1,63 @@
+{
+  "case_id": "Semantic/insert_flower_semantic/example22",
+  "condition": "json_object",
+  "served_model": "Qwen/Qwen3-VL-8B-Instruct",
+  "finish_reason": "stop",
+  "transport_ok": true,
+  "api_called": false,
+  "native_execution_attempted": false,
+  "actual_gate1_ok": false,
+  "actual_native_ok": false,
+  "actual_condition_success": false,
+  "procedural_success": false,
+  "native_attempt_count": 0,
+  "strict_parse_ok": false,
+  "type_normalized_parse_ok": false,
+  "model_parse_ok": false,
+  "parsed_plan": {
+    "ok": false,
+    "status": {
+      "code": "C2",
+      "label": "Parser or Schema Conversion Failure",
+      "subtype": "invalid_top_level_keys",
+      "detail": "keys=['']"
+    }
+  },
+  "strict_parsed_plan": {
+    "ok": false,
+    "status": {
+      "code": "C2",
+      "label": "Parser or Schema Conversion Failure",
+      "subtype": "invalid_top_level_keys",
+      "detail": "keys=['']"
+    }
+  },
+  "type_normalized_parsed_plan": {
+    "ok": false,
+    "status": {
+      "code": "C2",
+      "label": "Parser or Schema Conversion Failure",
+      "subtype": "invalid_top_level_keys",
+      "detail": "keys=['']"
+    }
+  },
+  "normalization_policy": "integer-string-target-only",
+  "target_numeric_cast_applied": false,
+  "raw_steps": null,
+  "normalized_steps": null,
+  "execution_used_type_normalized_plan": false,
+  "json_extraction_status": "direct_json_object",
+  "semantic_repair_applied": false,
+  "ok": true,
+  "actual_failure_code": "C2",
+  "actual_failure_subtype": "invalid_top_level_keys",
+  "actual_failure_detail": "keys=['']",
+  "raw_json_schema_valid": false,
+  "raw_json_schema_error": "Additional properties are not allowed ('' was unexpected)",
+  "type_normalized_json_schema_valid": false,
+  "type_normalized_json_schema_error": "Additional properties are not allowed ('' was unexpected)",
+  "source_sha256": "a67d5f6dbbfa51bb38e46296692b45b836853baeb1c512e46eedfaa46dc29ed7",
+  "source_path": "/mnt/c/VLABenchProcEval/revision_experiments/schema_decoding_20261021/gcp_outputs/qwen/json_object/case_outputs/Semantic__insert_flower_semantic__example22/row.json",
+  "category": "Semantic",
+  "task_name": "insert_flower_semantic"
+}

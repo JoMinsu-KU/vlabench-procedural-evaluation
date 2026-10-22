@@ -1,0 +1,66 @@
+{
+  "transport_ok": true,
+  "http_status": 200,
+  "error": null,
+  "origin_output": "{\"steps\": [{\"skill\": \"pick\", \"target\": 0}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 4}, {\"skill\": \"place\", \"target\": 4}]}",
+  "finish_reason": "stop",
+  "refusal": null,
+  "raw_response": {
+    "id": "chatcmpl-b157f8b50d4fc1b3",
+    "object": "chat.completion",
+    "created": 1792593677,
+    "prompt_routed_experts": null,
+    "model": "google/gemma-3-12b-it",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"steps\": [{\"skill\": \"pick\", \"target\": 0}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 4}, {\"skill\": \"place\", \"target\": 4}]}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.21.0-f0ccb996",
+    "usage": {
+      "prompt_tokens": 1814,
+      "total_tokens": 1861,
+      "completion_tokens": 47,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null
+  },
+  "usage": {
+    "prompt_tokens": 1814,
+    "total_tokens": 1861,
+    "completion_tokens": 47,
+    "prompt_tokens_details": null
+  },
+  "served_model": "google/gemma-3-12b-it",
+  "elapsed_sec": 2.22571247399992,
+  "case_id": "Spatial/select_toy_spatial/example0",
+  "condition": "json_object",
+  "requested_model": "google/gemma-3-12b-it",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "model_revision": "96b6f1eccf38110c56df3a15bffe176da04bfd80",
+  "attempt_history": [
+    "json_object/case_outputs/Spatial__select_toy_spatial__example0/api_attempt_01"
+  ],
+  "request_sha256": "bb28f0a8f8801eae7e2b2dbe22a50d8ecb5c4c55b08f50a60ab3fee914b0c08f",
+  "response_body_sha256": "e38694217f94911764a8a976e13e163185e813dd98d6804641103149a2b11e82",
+  "semantic_repair_applied": false
+}

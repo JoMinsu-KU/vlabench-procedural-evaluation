@@ -1,0 +1,3236 @@
+{
+  "version": "schema-decoding-v1-20261021",
+  "case_count": 322,
+  "task_count": 34,
+  "selection": {
+    "per_task": 10,
+    "seed": 20261021,
+    "source_manifest_sha256": "6fcea86e2055143f4882eecf79d3723933c19914d0bdda87b97084644bdf161a"
+  },
+  "prompt_source_sha256": "2c9c43bed63b3ba08fa66a49906b1d2a1de1e71c8fe503d0ae35bbb5d20d447f",
+  "schema_sha256": "0605fb702581c45c0481f3cd2dce582bff53223331e2ae4f3eb9c9ffb101ba50",
+  "runner_sha256": "56b09c3c4550d741e8439382435aac84db9b87ff9618e0e3d62e1197ace00426",
+  "cases": [
+    {
+      "case_id": "CommenSence/insert_flower_common_sense/example1",
+      "input_dir": "inputs/CommenSence__insert_flower_common_sense__example1",
+      "sha256": {
+        "input.png": "e7cefd47fd2b44d93382b8b07c45644aa20b3ef094fa414a8c136fb22b37d466",
+        "input_mask.png": "b8be7865b7382093c07080bb792570e9c9b479774babe772551d003c8c33dd51",
+        "instruction.txt": "ee529eee8857f4ddc5373f97934843b82439d62da3a1a96cef68a578ee9c57d0",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/insert_flower_common_sense/example30",
+      "input_dir": "inputs/CommenSence__insert_flower_common_sense__example30",
+      "sha256": {
+        "input.png": "8480f014fefd48e128461b8d6bc000d6ffaeda2569dfb29f6c0b0b14b145078f",
+        "input_mask.png": "27f6c4a186a04123bed35395900e7bc96fc25bfe51319fd934967db2b06dcd6b",
+        "instruction.txt": "77a45f167bc7a212376c13448c2de42b8f365ba22ceeb7839f1120a89db113c4",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/insert_flower_common_sense/example35",
+      "input_dir": "inputs/CommenSence__insert_flower_common_sense__example35",
+      "sha256": {
+        "input.png": "a67c2cdf65248d267ef2ca78c50c2018180ef8c84a2f2b8308d25a35fe8e54da",
+        "input_mask.png": "d77f143764ce5f484a8e954aba2d26532059747873ad74958226e235df50f4fe",
+        "instruction.txt": "d1e59496e4ae71b1a0e50b3ac10c3c45deb052235e6121c7f36a2c9a4f3143c8",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/insert_flower_common_sense/example47",
+      "input_dir": "inputs/CommenSence__insert_flower_common_sense__example47",
+      "sha256": {
+        "input.png": "a603645cf2c6c8b12f86acef92c0645b2f6940238bb85171164d0da5ec829468",
+        "input_mask.png": "319c6e88aafa1719e6635859565d68d925f3779bd8422379965261209d4812ae",
+        "instruction.txt": "115ec162c2f0c60e549d70e35fe0c3f3630c60a6c5c03f54d6789113410ec5a0",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/insert_flower_common_sense/example63",
+      "input_dir": "inputs/CommenSence__insert_flower_common_sense__example63",
+      "sha256": {
+        "input.png": "495711a8f03bafe0fde0a73cf9b7f6bdd063f5de2de72fb5507cf4414582625a",
+        "input_mask.png": "21ba48fffb4e3d37aa24961772d78c7847f034442fc66e8439e1ee814705e5f2",
+        "instruction.txt": "215a759d0e849fc484a5085a7b3b5a02eca163874c1f275994a2d4dfdcd9941f",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/insert_flower_common_sense/example67",
+      "input_dir": "inputs/CommenSence__insert_flower_common_sense__example67",
+      "sha256": {
+        "input.png": "70f4c23d4cabb6480185effe81de0889c2142cc6601461ef30b8230597bdb4c5",
+        "input_mask.png": "27dd95873547da82e12868e1abe24ed58542d0ed618bbbb50473c9eb9f72be81",
+        "instruction.txt": "4a1fcbfd5c7aac824ed49bf0aa2c415013fef631e5ae6982059ac8d0cff38c5c",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/insert_flower_common_sense/example69",
+      "input_dir": "inputs/CommenSence__insert_flower_common_sense__example69",
+      "sha256": {
+        "input.png": "a4be4734b9c5857974b30bbff5e0472d1c69a2673a2334344b678f1601711fe9",
+        "input_mask.png": "b4828972480298334390ff86b3452f20788f1edf6bf84609bbbf4098e4498832",
+        "instruction.txt": "4a274f151645463c092436b6fcbaa8c4a2bfff19b9c364afeabeac14b7a88552",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/insert_flower_common_sense/example78",
+      "input_dir": "inputs/CommenSence__insert_flower_common_sense__example78",
+      "sha256": {
+        "input.png": "0e29c114638a4a5252536f997e92282f4cf7c4bb6ac70a3e0a70624987922364",
+        "input_mask.png": "bb244f746fc41198e1cd0af73902f4c45f2fe6b884825d89632b082865158aa5",
+        "instruction.txt": "799dd98a44c51336b348f7dcda1d261cda3958fdad9b03c74195e481d43ff334",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/insert_flower_common_sense/example79",
+      "input_dir": "inputs/CommenSence__insert_flower_common_sense__example79",
+      "sha256": {
+        "input.png": "bd5acfab3494a52fad7ac2d1a8db4438dcc49c78478bd7a1cd1f640eadd34341",
+        "input_mask.png": "78c8eeb06279dcd91ccdfce6af0033447b8dabc9457a3beb91ef5e9f0c60b41d",
+        "instruction.txt": "b823b6fc7273851a3ced6b6bf89fd5fd54527824452d1fdc7658a68abc8cf9dd",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/insert_flower_common_sense/example90",
+      "input_dir": "inputs/CommenSence__insert_flower_common_sense__example90",
+      "sha256": {
+        "input.png": "0138f66a99d837bb6b3e114c15ada8e552cf4ec62c859553bf8e4071c233f027",
+        "input_mask.png": "1e4ae2041b75710abb92009c358775362ff4cdc0a736f57bd3fcec7e51949216",
+        "instruction.txt": "681fa855c763ff304fcc09e997687b40f83577d82bbbd5c93cb5ce01ec5589ec",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_billiards_common_sense/example0",
+      "input_dir": "inputs/CommenSence__select_billiards_common_sense__example0",
+      "sha256": {
+        "input.png": "64c319cbd6e7d4db0758f4d23c7ccd625b2adab3cf6c7dd43b4011c671731262",
+        "input_mask.png": "74ac346fd4af8c940795455863c5dac8375f57f7aa673b5ab18cd83af24687bc",
+        "instruction.txt": "670782d2de0b58a8df284d5d179c680439bd4553d44525f24b8b3838e5caa0f1",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_billiards_common_sense/example2",
+      "input_dir": "inputs/CommenSence__select_billiards_common_sense__example2",
+      "sha256": {
+        "input.png": "c67d2c56fe743be74ecc1366905ff3c447706cef415ee3c4c634f366cce6a84b",
+        "input_mask.png": "4ca2aa8e7cc8b97d7be5b1bfe20821f79af7baf1dbb12bafb0c3d5a8c339df1c",
+        "instruction.txt": "670782d2de0b58a8df284d5d179c680439bd4553d44525f24b8b3838e5caa0f1",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_billiards_common_sense/example6",
+      "input_dir": "inputs/CommenSence__select_billiards_common_sense__example6",
+      "sha256": {
+        "input.png": "dafd0976504d4d23e0ad7c7ef5e179e9376b73b38c1e0d57471eed3c07e0ab79",
+        "input_mask.png": "0e7376412eeee024bb7af92ab1bf112076055d6eda6d15b57a287033c337dda4",
+        "instruction.txt": "2e40b92df4ce3d0271b06e8b0790c1d257f21cd9dda7402069fefc86e948e8da",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_billiards_common_sense/example7",
+      "input_dir": "inputs/CommenSence__select_billiards_common_sense__example7",
+      "sha256": {
+        "input.png": "55882201c507cbc1b0efb6235f8b1b5fc902a6eee72f678056705b4c7ce49776",
+        "input_mask.png": "5197b7b78d6512bbb0c58fb715cdb561e5c6b69b98e86477564dc73dcfcd08d2",
+        "instruction.txt": "037408a3e9ce02a96622ee9e30bb7a7468a5ed794ae89d5c1cfbcd277f439895",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_billiards_common_sense/example28",
+      "input_dir": "inputs/CommenSence__select_billiards_common_sense__example28",
+      "sha256": {
+        "input.png": "4250922198b06e5fb6db3b6561d0765ff615caffcbc833f965149a5da79c3a35",
+        "input_mask.png": "563e79d30e1856584348049bb2244fb58d4bac75821aa8472ee435484d61483e",
+        "instruction.txt": "037408a3e9ce02a96622ee9e30bb7a7468a5ed794ae89d5c1cfbcd277f439895",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_billiards_common_sense/example52",
+      "input_dir": "inputs/CommenSence__select_billiards_common_sense__example52",
+      "sha256": {
+        "input.png": "e2edc9a82f59332356f60a8af483001e323575680ba65e5bf31ae0c6b212866b",
+        "input_mask.png": "a85b6aef46481b0d20548379591aca6cb1360906d1bbe92c11804e79d2d6d7c2",
+        "instruction.txt": "670782d2de0b58a8df284d5d179c680439bd4553d44525f24b8b3838e5caa0f1",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_billiards_common_sense/example77",
+      "input_dir": "inputs/CommenSence__select_billiards_common_sense__example77",
+      "sha256": {
+        "input.png": "7975aef23695b83a388664edb977bd096ad4a0c4bd13f8b47c5ce613e29077d5",
+        "input_mask.png": "be964912dfa0cfe2c55449d652be56f4405738964bc482773e7b922e7d7d2688",
+        "instruction.txt": "2e40b92df4ce3d0271b06e8b0790c1d257f21cd9dda7402069fefc86e948e8da",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_billiards_common_sense/example81",
+      "input_dir": "inputs/CommenSence__select_billiards_common_sense__example81",
+      "sha256": {
+        "input.png": "ad97d126b50f549b8961b970fea1669f40a5fe12d7ae5f32373f31a4f1e9c1e9",
+        "input_mask.png": "8e1835de0391f3e23e1892c4864f374c76d879f7fec293ff1705c5459f9f5b41",
+        "instruction.txt": "037408a3e9ce02a96622ee9e30bb7a7468a5ed794ae89d5c1cfbcd277f439895",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_billiards_common_sense/example83",
+      "input_dir": "inputs/CommenSence__select_billiards_common_sense__example83",
+      "sha256": {
+        "input.png": "475b90c7431ca34a4bd77adebedab7084091369741a8ba27c98bde4c27f57a6e",
+        "input_mask.png": "93db37c99ebb0ec6460a40c1c29e96c1573afcfb4623014dde0a00c564e4476b",
+        "instruction.txt": "2e40b92df4ce3d0271b06e8b0790c1d257f21cd9dda7402069fefc86e948e8da",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_billiards_common_sense/example90",
+      "input_dir": "inputs/CommenSence__select_billiards_common_sense__example90",
+      "sha256": {
+        "input.png": "0355a9a030c1c4ee8b2ca9015c9b3d0918ff1ce7ffd0fdd24418d3be43279c27",
+        "input_mask.png": "ce3ac1e5c74c7c92c07205b0fc002bf164fd39c4d331a2bd653d66b86ab24cc4",
+        "instruction.txt": "2e40b92df4ce3d0271b06e8b0790c1d257f21cd9dda7402069fefc86e948e8da",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_chemistry_tube_common_sense/example14",
+      "input_dir": "inputs/CommenSence__select_chemistry_tube_common_sense__example14",
+      "sha256": {
+        "input.png": "c9d3a20b42cc8cb5a6067c84f78bb15cd919e66c519dc4f4d703dddd28a5737a",
+        "input_mask.png": "7aa8198327ac64d00fd0d92740dbcae7590b723cbdfbea49a16de157b62fba6f",
+        "instruction.txt": "a139541116f7209fe1a0f2a1f766722777f61066f6cd619487a6eb8e15f7d1fd",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_chemistry_tube_common_sense/example16",
+      "input_dir": "inputs/CommenSence__select_chemistry_tube_common_sense__example16",
+      "sha256": {
+        "input.png": "c42d3fb4589c58a8723471ee37eb74a5e15b76f0e6eaed6e097355d0ec9cc353",
+        "input_mask.png": "7eba8dd715c9525dceca41c7fff18b9dc31df426695be4ff19a7518e80bcda3d",
+        "instruction.txt": "26e718742de42d6dcc4a53feae06670c997ea4069437d04d07ef1e6f093a1fb9",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_chemistry_tube_common_sense/example19",
+      "input_dir": "inputs/CommenSence__select_chemistry_tube_common_sense__example19",
+      "sha256": {
+        "input.png": "cf5070161a51032653a36e3ccace692ce11ec0e3f5bd8cee2e2811fee97ad6a0",
+        "input_mask.png": "92bde601f06a0a4a917560b679b0ce6c32286c65f81918c23307369311dbf2a8",
+        "instruction.txt": "1f98d361ee022d10f2f6a784d21c876a4f3d34f7a0906a04c5d5cb660c4400ca",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_chemistry_tube_common_sense/example26",
+      "input_dir": "inputs/CommenSence__select_chemistry_tube_common_sense__example26",
+      "sha256": {
+        "input.png": "3e798582f8160e9d5cbc65a91282ce111ca4480ace11b109d5eb2561e2eeb9cf",
+        "input_mask.png": "303b3d79f47c9068bdd4c6ce1b25b41a70f986dce8b52a523c707fdb3a0681f2",
+        "instruction.txt": "c7cadff50ea6bca98a3aff212ee1fdba808d76988bf0336bc02823cbd22b85ef",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_chemistry_tube_common_sense/example27",
+      "input_dir": "inputs/CommenSence__select_chemistry_tube_common_sense__example27",
+      "sha256": {
+        "input.png": "e2fde173c9755e04a37e49ee95209d5aeceb159c31e83d92de281a0d49aab9cb",
+        "input_mask.png": "3f719631c6a8a88d72a09c34dc1078abcdd36f0db6f8aa735ecbf7870d7a6c36",
+        "instruction.txt": "b197c29f0cd6b62ec5647c7d95051e82f95cb223bd61af385a53b40404b1ad4c",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_chemistry_tube_common_sense/example30",
+      "input_dir": "inputs/CommenSence__select_chemistry_tube_common_sense__example30",
+      "sha256": {
+        "input.png": "ae72573063f8db42c845233361acceba6f095c907a34a5783dc3fddcb4842779",
+        "input_mask.png": "2288d489a24ab24e4b9428a99ceae248709d268656f26045cf05dd58d36e1df0",
+        "instruction.txt": "ae01a2d962f06a5fbc332730e9064dc30dfa11639054e16d92b8f92ee5be59cf",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_chemistry_tube_common_sense/example43",
+      "input_dir": "inputs/CommenSence__select_chemistry_tube_common_sense__example43",
+      "sha256": {
+        "input.png": "65199c405b8e2ca7cd339fc5d145b852b9a8eb2d5ace9d3d34a975ecd1a8a235",
+        "input_mask.png": "f1843c083a8f8af520df54aa55c2b7819a70c9c77940d486b12da92f4943fce0",
+        "instruction.txt": "dc588ea5e526cb13eaa7424f9271726055275a9dd76029be3022b6cf98e82291",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_chemistry_tube_common_sense/example49",
+      "input_dir": "inputs/CommenSence__select_chemistry_tube_common_sense__example49",
+      "sha256": {
+        "input.png": "de47099c5953053ab209e92d5f35081b13703034e1e7e587aaca40ad3b95155b",
+        "input_mask.png": "ffc09412ce5d7ace13e981d2f1ab09b50c7896b6c381c368faf05472ac0768fb",
+        "instruction.txt": "3a27cf78d6ba2c7336d361f2c7f2e4fa129eb36d7b996057f4dae84c514817e6",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_chemistry_tube_common_sense/example64",
+      "input_dir": "inputs/CommenSence__select_chemistry_tube_common_sense__example64",
+      "sha256": {
+        "input.png": "ae65530a7c549102b459fe099af602104e61c9db3cd433ef64b7142a9d83692f",
+        "input_mask.png": "b06f1350b542c3fd3660ace4ad561835335b3d929b9d1fb9eb6508b5c3a0e678",
+        "instruction.txt": "6fb19737e50fad7160994c7591a95fc0e6b84ddc60a6c6721aa555e35e4cb385",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_chemistry_tube_common_sense/example73",
+      "input_dir": "inputs/CommenSence__select_chemistry_tube_common_sense__example73",
+      "sha256": {
+        "input.png": "5be9370a3f9912ce5fb4d90a07ecdd05a248f1ae2cb5b0d54d25b3668b341010",
+        "input_mask.png": "b4c42b8a75cb657378071ad67f25d383cefdd9d2f7166d977ac869b640110afb",
+        "instruction.txt": "1d077ee365add666330a239ab34569f3794ccec426dfec647d7ec2ed97470a1f",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_drink_common_sense/example0",
+      "input_dir": "inputs/CommenSence__select_drink_common_sense__example0",
+      "sha256": {
+        "input.png": "155b64e28ea8366c211faf63c1caf1449d42dde6ea1a7b3f950d0a3fdd212aaf",
+        "input_mask.png": "0ef3c681fbdb15b38a1de6dc7fb36fb2b83782ee1a0e0425106808db45da0a96",
+        "instruction.txt": "4d049527f2548300ac78d4b2277ca1ad28f13818abaf14e1acaaf7c1eeb07438",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_drink_common_sense/example8",
+      "input_dir": "inputs/CommenSence__select_drink_common_sense__example8",
+      "sha256": {
+        "input.png": "596f6653c826ce7a0af4cc8564201d7f40133d74d257cd8dc5c79c61a8f21e44",
+        "input_mask.png": "4e4dbf6c4bd544ef7c56f91e5ee94783a2e1ffb0e696cafcb893cc5fac8f811d",
+        "instruction.txt": "4e0eb1cab278d5b5b6dd7ca5a6e30eb53170dd7214eba3fd33a57d195569eefc",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_drink_common_sense/example21",
+      "input_dir": "inputs/CommenSence__select_drink_common_sense__example21",
+      "sha256": {
+        "input.png": "cfaf430932ee4a0e7e0f6e0e3d1b8bc84847733db1d3ece96eac32d5b7a9bd60",
+        "input_mask.png": "a16d30fd43e87a5e450f22a40ee652969bd89910ae6024e28e32d9ca1952d839",
+        "instruction.txt": "8b2b3ec51836331ba0f1063e30e9ae855aa10bcff1081f08a5ef37ae9bfde48f",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_drink_common_sense/example34",
+      "input_dir": "inputs/CommenSence__select_drink_common_sense__example34",
+      "sha256": {
+        "input.png": "1734f0cab127b3227c0a37da76c64d3e9b8d056c4607ec60ffafb532e733972c",
+        "input_mask.png": "2e7371d5e73f86fcfa4054609bb9c1afecc3dbe7cd6b14fb2c4b3596128c5ecc",
+        "instruction.txt": "d821f7198e895504df1f25149929668e29861c4f90b5186eb122a71422131558",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_drink_common_sense/example47",
+      "input_dir": "inputs/CommenSence__select_drink_common_sense__example47",
+      "sha256": {
+        "input.png": "ef1e94d8378b55cf5e7555568f4a38995c4bcaca993ccbdcb4a4a585250a269c",
+        "input_mask.png": "f07362d65c506846264f54074a9b4448a892158e18e2888c41a41bd705b1bc88",
+        "instruction.txt": "067c474394aa58c14b8fd02e15958fafa233ecabc7bc5af558da765c971740c7",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_drink_common_sense/example48",
+      "input_dir": "inputs/CommenSence__select_drink_common_sense__example48",
+      "sha256": {
+        "input.png": "d4fed652ba0960db577624852a5ab602ceef621d7297c962bbc11e8e8d1c43bb",
+        "input_mask.png": "e33a7292b58fdc631dda9de73d79a052d6152627e192280c4432dd645d1c9dae",
+        "instruction.txt": "f9b04037af4fbf38687ca2656928097c32f8f7c1f67bed7de5293c06d935c50d",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_drink_common_sense/example55",
+      "input_dir": "inputs/CommenSence__select_drink_common_sense__example55",
+      "sha256": {
+        "input.png": "6d43bd0c8b7ebad93b6c5886bd622670e27688a5ae020fbafa3716ed27a1740e",
+        "input_mask.png": "dcb23fc2cf379a3cb2a8a249e4609d6f0cd37dde5ac1f5ee26ec9f3c93c9e0d7",
+        "instruction.txt": "2dc3dae0472eac2afb6ed941cbfc62c536bd20b051f63e0f5e46b0e5126d86d5",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_drink_common_sense/example57",
+      "input_dir": "inputs/CommenSence__select_drink_common_sense__example57",
+      "sha256": {
+        "input.png": "e93a903efc2a891e7b1319ac6332d74121b9bbcd4903529ad8c3cddd126d99ae",
+        "input_mask.png": "2143eeab0c601e5760d1043d8cc73d554ddc2f2820d6b7d4bf1af9ba2eafd4ca",
+        "instruction.txt": "62e0e320dc3692f410477efdae810dc994e2838ee977eb1616c471955a6e83f0",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_drink_common_sense/example95",
+      "input_dir": "inputs/CommenSence__select_drink_common_sense__example95",
+      "sha256": {
+        "input.png": "ec533168e7f7c8b06e22ee1d2e83b4dcc2a5a77f66b818897fb07280d762a698",
+        "input_mask.png": "1d438feffe5749dadd6c61726653aabcd194015490dd7bd0e0f3d367c1392504",
+        "instruction.txt": "3855e0045bf0e15ce6424886c85cd8c75d2e0fc00931ef3eb6294d6e8196d637",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_drink_common_sense/example96",
+      "input_dir": "inputs/CommenSence__select_drink_common_sense__example96",
+      "sha256": {
+        "input.png": "716e180fd87d4d777501271bfc98ddde5297cbaf0516389f85e8218778abbbba",
+        "input_mask.png": "c64eccd8a1598ff26af2941b10d031957863bdccd0ed27a9f894eb08e48f54e3",
+        "instruction.txt": "f4b2b08ec9149bf6d2b376460160c4f6738ceaf296a54741c89caf5ff4de9715",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_fruit_common_sense/example10",
+      "input_dir": "inputs/CommenSence__select_fruit_common_sense__example10",
+      "sha256": {
+        "input.png": "14c92b7bb0cb7798b08bccda0dae415c21ccf86da472fc86a9bbd7d6a93cef70",
+        "input_mask.png": "d5631df12f50999a38313e109bfd367ec1b6de5bf59a3f2e19d303898c8db58e",
+        "instruction.txt": "883737f1a8872f80edbb96aaa1081d62f28e75d46e58fb855c89dab7b1f98c78",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_fruit_common_sense/example12",
+      "input_dir": "inputs/CommenSence__select_fruit_common_sense__example12",
+      "sha256": {
+        "input.png": "f6ce16365d4af0e49f31fb8adf3b96e4c956a1a35b42fc3a9959a87549164429",
+        "input_mask.png": "3609926d7644ec87ed856cb7482bb82a96c8e559321151d1df77c856ede69085",
+        "instruction.txt": "966ea4617f0e3a9076aff3683d488e1ce5cbfc37baa0979677ed35bf252b5364",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_fruit_common_sense/example13",
+      "input_dir": "inputs/CommenSence__select_fruit_common_sense__example13",
+      "sha256": {
+        "input.png": "f6673e477eee0f33fd6fca6ab9e47d0450ce2a2ab7616cc0215b2b031f9b60ae",
+        "input_mask.png": "3e921793b693a9ce0799031b9f451a49138e5eea4073dc9090401027dfbb642b",
+        "instruction.txt": "d5d467cdc80305ea80d27908171f060e1f7eed02799153bcdfe95b5036ccef76",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_fruit_common_sense/example19",
+      "input_dir": "inputs/CommenSence__select_fruit_common_sense__example19",
+      "sha256": {
+        "input.png": "3301317a887410ff1e9cec74a8afa2cf0dd21a606b05b7b81551337e25c9fbe1",
+        "input_mask.png": "b72412e08c7d790a43384da5e937c36f5ce8316f0703afcb1c9983131ef29845",
+        "instruction.txt": "c7ded80051f319e7b5b51e91e551e245b6921cdafba62159cc324f870a79a528",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_fruit_common_sense/example28",
+      "input_dir": "inputs/CommenSence__select_fruit_common_sense__example28",
+      "sha256": {
+        "input.png": "c143ada9dd4284b4b94b3749ac28be6254ae3c821562b9591181657c5e31fb0f",
+        "input_mask.png": "11599c3b475ef423b45a47da4bc5a41be2fcdc8fa99b413fcd391be45a23004a",
+        "instruction.txt": "e2fe579cbf6a23fd65ef117a5f901ab82025efbb5c01ac54fa3dae3fbaeb7bb7",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_fruit_common_sense/example40",
+      "input_dir": "inputs/CommenSence__select_fruit_common_sense__example40",
+      "sha256": {
+        "input.png": "7688dfd5667139b930749c8079ceeeaca4c7cd295ecc42f7fd2a94080700f900",
+        "input_mask.png": "3eefed941a1e13ea01ace50aa44b6d515e249cf619398fd59ee1ddf689f9f8a8",
+        "instruction.txt": "49a0992d0159f1d8765329dc99dfa78ec0cf31c6bec0d020c8c38a820587656b",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_fruit_common_sense/example53",
+      "input_dir": "inputs/CommenSence__select_fruit_common_sense__example53",
+      "sha256": {
+        "input.png": "347c07f77773bd60e650b589943089b839cd86a7eb98593377add7e86e965cd9",
+        "input_mask.png": "fdb8a9ec7199316df7f898205c47a00efe3d6ce11f5dc9d1bcd8c5fdd97a9db1",
+        "instruction.txt": "47b8d7d0357dfaf5d48cae347e2fd9bda22a54c68318c2abec117b513cf00ecd",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_fruit_common_sense/example62",
+      "input_dir": "inputs/CommenSence__select_fruit_common_sense__example62",
+      "sha256": {
+        "input.png": "59a37d532128fb43cf911646e8c6becd5e4086a597e535dd17c60aa019fa3b66",
+        "input_mask.png": "a2c9ba1b38c0bdee3c3e6d13a5f8e0d7b507f2d0cdecbc2dbafb8869e213f82a",
+        "instruction.txt": "1265ea1705d3df185a73db73be717b493e7823b156adc58d50e7f3b798c62a71",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_fruit_common_sense/example70",
+      "input_dir": "inputs/CommenSence__select_fruit_common_sense__example70",
+      "sha256": {
+        "input.png": "0b3d3c138003f80824223c0bfba914a8951794d276fe980338d96a4a8f2e180f",
+        "input_mask.png": "dcf96bdcec09d5ddaa56ccb167d25f952e044589104fb380fe56c72fe6e58958",
+        "instruction.txt": "a77c56bc827bad6756facf7d2c3ba75d5c24aa9ac42ee74f43955f47cc1e6521",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_fruit_common_sense/example75",
+      "input_dir": "inputs/CommenSence__select_fruit_common_sense__example75",
+      "sha256": {
+        "input.png": "90bc8eea44e1655edf74ab53c412512f3f4522f5f98635dcebc71ca7375b2214",
+        "input_mask.png": "0ac36ff009cf9a287eb1e9936242f320078b23df60d7196075281444ab1e82ce",
+        "instruction.txt": "616b136b6a0c879a3cdeefa816908bb13a6834ee1b7b5485022271a70dc5a604",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_nth_largest_poker/example1",
+      "input_dir": "inputs/CommenSence__select_nth_largest_poker__example1",
+      "sha256": {
+        "input.png": "cff9e3d4c8037cc91c8dd14aa7bd11056325c7011ebd5987bf52acb855a5cd8b",
+        "input_mask.png": "11ccdbc656751a37164314c79fb63f00067d878590f1e4bf7e36f22e93b78b4e",
+        "instruction.txt": "c9d03eb13e81ac11f06a29facd2d7c865b629415fb0bf40be3ebb1f97d11bfb4",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_nth_largest_poker/example12",
+      "input_dir": "inputs/CommenSence__select_nth_largest_poker__example12",
+      "sha256": {
+        "input.png": "dcf6312cfaff2b5eede919f049ecbe33274883bc400c148a842f9167d1ecce38",
+        "input_mask.png": "78c20a315463ad2f6381120c581f8ae992ab79638d003491553d69f80ede5608",
+        "instruction.txt": "c9d03eb13e81ac11f06a29facd2d7c865b629415fb0bf40be3ebb1f97d11bfb4",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_nth_largest_poker/example20",
+      "input_dir": "inputs/CommenSence__select_nth_largest_poker__example20",
+      "sha256": {
+        "input.png": "3820426aff3d388d7ceef8461a41f366b7bd3ab5bc6376222bde1b7dfab19f01",
+        "input_mask.png": "b1a1d2ab859a89e7b1cf45c53363508d50bbccfa784f75f2e786e81ae2bd509d",
+        "instruction.txt": "c9d03eb13e81ac11f06a29facd2d7c865b629415fb0bf40be3ebb1f97d11bfb4",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_nth_largest_poker/example26",
+      "input_dir": "inputs/CommenSence__select_nth_largest_poker__example26",
+      "sha256": {
+        "input.png": "88095aef60bf3f42ee00dd3ad2a74cf48475bc3a28e7114ac993860f93d0a048",
+        "input_mask.png": "cf63ebbbc1a6f7c2d158ec4e30db6db6bc416aa1d328d90be00e21a569e80c43",
+        "instruction.txt": "c9d03eb13e81ac11f06a29facd2d7c865b629415fb0bf40be3ebb1f97d11bfb4",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_nth_largest_poker/example42",
+      "input_dir": "inputs/CommenSence__select_nth_largest_poker__example42",
+      "sha256": {
+        "input.png": "2c647c8885fd2ec6311e9c5bbe6ae8cedd5fe90772728ac865a11a4f84b8a716",
+        "input_mask.png": "0836d6755591d10a28f22a8e594d33af375783a281cc664ad723965447bf6d2a",
+        "instruction.txt": "b61cf852d3f926c3a03d1f699853f693325f050e0c6c0845f66d4262ae393026",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_nth_largest_poker/example49",
+      "input_dir": "inputs/CommenSence__select_nth_largest_poker__example49",
+      "sha256": {
+        "input.png": "6a5994fa80d96a32b4bcbf4088ca368b05d855cd5eef8fa4e47e78c565d44323",
+        "input_mask.png": "8d0ab8c35bf8417b3948e55eaa8253400712f410ed67cbc9afc1c6567ff4dd8f",
+        "instruction.txt": "b61cf852d3f926c3a03d1f699853f693325f050e0c6c0845f66d4262ae393026",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_nth_largest_poker/example54",
+      "input_dir": "inputs/CommenSence__select_nth_largest_poker__example54",
+      "sha256": {
+        "input.png": "b44edecc61f3e0f1730546b340472a97318c1b401c9ded6457e55a314c512303",
+        "input_mask.png": "cacd6e1d9f469007f60c29d7ec83da98073e2febc81dc3fa7b9431390b738b43",
+        "instruction.txt": "6bd9320fb435978ec2c5c6990f5c05dfcc1249d7c2b6a9955340177643f06ecf",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_nth_largest_poker/example72",
+      "input_dir": "inputs/CommenSence__select_nth_largest_poker__example72",
+      "sha256": {
+        "input.png": "a6a0ad1c76180f8b5c80865f917014ac14cb007a208d2415c9ae2924b50376ec",
+        "input_mask.png": "77ee283d46520a2ca8b46d35966925f211686386a5a82b4b16291d7d2b301137",
+        "instruction.txt": "b61cf852d3f926c3a03d1f699853f693325f050e0c6c0845f66d4262ae393026",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_nth_largest_poker/example83",
+      "input_dir": "inputs/CommenSence__select_nth_largest_poker__example83",
+      "sha256": {
+        "input.png": "62c742d57170e24cf27c9d8be12cc202a8b445d503788ba24dbd89f64508620e",
+        "input_mask.png": "56b6bfe0d32418edb8bd99f9b67174372fa938df6fb315e2a41933aa6624cf33",
+        "instruction.txt": "b61cf852d3f926c3a03d1f699853f693325f050e0c6c0845f66d4262ae393026",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_nth_largest_poker/example84",
+      "input_dir": "inputs/CommenSence__select_nth_largest_poker__example84",
+      "sha256": {
+        "input.png": "a4026b26feba50a12a2700a00097f16c3532ae15c032646693d662a339aa2200",
+        "input_mask.png": "a90fa3bd9fa1c6254cbf262a36e5e04c8ec97707e64c9632807730e3d2028333",
+        "instruction.txt": "6bd9320fb435978ec2c5c6990f5c05dfcc1249d7c2b6a9955340177643f06ecf",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_toy_common_sense/example5",
+      "input_dir": "inputs/CommenSence__select_toy_common_sense__example5",
+      "sha256": {
+        "input.png": "9cd47805215d5ddd279c150b007593ea90ae24073c6d53b3efce3d2b45711fea",
+        "input_mask.png": "3cd75c07a8a81ac75a70297f67f5ce9e8fd77849f43c60abfa7314a06d30995d",
+        "instruction.txt": "f26b16cddef17cac6500c9e1fecbfad9f16b73c0866496ad38a64a7857d277bd",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_toy_common_sense/example12",
+      "input_dir": "inputs/CommenSence__select_toy_common_sense__example12",
+      "sha256": {
+        "input.png": "6045183154b340d80dd6ec3186da5fb2f77ef6be4ff03966ea2388dcb8404bf9",
+        "input_mask.png": "b469431e4e070056f4a75448da02934786918c9fab6c2f217b557320903882da",
+        "instruction.txt": "13933377ae3c8de73b90fcd08bc4584ad75813a742dce73d79b28b0ef6cdfc4e",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_toy_common_sense/example31",
+      "input_dir": "inputs/CommenSence__select_toy_common_sense__example31",
+      "sha256": {
+        "input.png": "0b616afe505a9f05bc8c01cc0803f9ed72f20d64525df242075dd27ef3be2926",
+        "input_mask.png": "368302fb0613fbf26fc3b6d6a720da4c1eee90658e14c32b3bdb3413615d809f",
+        "instruction.txt": "d82da652285a688853e752c0b2807ff99af01ae902ccac8b76ffc19f4b50b969",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_toy_common_sense/example42",
+      "input_dir": "inputs/CommenSence__select_toy_common_sense__example42",
+      "sha256": {
+        "input.png": "ba1f93a4cfaa23113bcdcfa6e0b24b95f12fc28f86b7ed6122f0db384ecbab0e",
+        "input_mask.png": "fbc20e6c0c6438c54a0b4a8e0ceb7d6b4a9aeffc708385f98e407848207c27e3",
+        "instruction.txt": "4d201e2c0136692ea1120897bea6e122133e468e7f69b80e825ba48bd4bfead5",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_toy_common_sense/example45",
+      "input_dir": "inputs/CommenSence__select_toy_common_sense__example45",
+      "sha256": {
+        "input.png": "22c654d97cb2a7798e61548562e78dc6e1708862c5bb54b621009b33129f24bc",
+        "input_mask.png": "687e00f08c9a0e6448a9be60d1900fdcf05d92e54dc3dbe3713ec13474d18a0a",
+        "instruction.txt": "71eae8d9e8bc070f0ef0c7371745159a5565eb921d9dd7066c0412cb1e39ca7b",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_toy_common_sense/example47",
+      "input_dir": "inputs/CommenSence__select_toy_common_sense__example47",
+      "sha256": {
+        "input.png": "f2bc2402b120897e0e3a8cbc6d9487ebe17b2115d5a12ecc34f88709d14b2ecc",
+        "input_mask.png": "c599668905c58fc2d81c775963c71067a77b90ae278d55c7033bd50577ff71f0",
+        "instruction.txt": "3b83775341fa12af6a72d79553fee484803ff8fea987048d95c731af04759d04",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_toy_common_sense/example48",
+      "input_dir": "inputs/CommenSence__select_toy_common_sense__example48",
+      "sha256": {
+        "input.png": "477633b6d07cd26896df040eacbc519a5db2cafcb4b6eb704928cedec28971d2",
+        "input_mask.png": "0d8fc3f46d9e45b84f7083476a914550e68a1cc19cfe51099fa84f20903b8033",
+        "instruction.txt": "c4b68559863b8699e867a33ad6c05c1b17c519f6b984a227d05a0cc7699c98a6",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_toy_common_sense/example55",
+      "input_dir": "inputs/CommenSence__select_toy_common_sense__example55",
+      "sha256": {
+        "input.png": "46a76c473c8a9f3e9c85ac5d2241ac9422f9a827aa59e6742330069e6bc77358",
+        "input_mask.png": "2c753880685f280978172b501d2e15b2fa1ab3d9dabbf7e9d8897b90793eb5e2",
+        "instruction.txt": "2b25aa38b82e3c607809ebcfaa97bffb8dbd07c6912b4e5d1f856fe70e4f8cde",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_toy_common_sense/example56",
+      "input_dir": "inputs/CommenSence__select_toy_common_sense__example56",
+      "sha256": {
+        "input.png": "10b5dbc1025d903eeebdb17e046a6da6eedd5348a4dfec776db2721434b51a74",
+        "input_mask.png": "3d485e94b0f8b8fd69c7877c34e61383b4c7a5ba8916d5d620564949cbc29482",
+        "instruction.txt": "8dda56b1c79241b3fc81b622bd59e3e965a6cb0577726c5e4fbc21d0f32105fa",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "CommenSence/select_toy_common_sense/example91",
+      "input_dir": "inputs/CommenSence__select_toy_common_sense__example91",
+      "sha256": {
+        "input.png": "253e899f7adeedd3c5bc75ed1b60eb0be228ef77a842784855e07053adbcd60b",
+        "input_mask.png": "2c08e1eb5d8112a21ab7badd51e47560245a058cf45ac2cc85401671517a7384",
+        "instruction.txt": "7a01eaf3fd46a659d186a6f36b6f67690a3a426266c08a3ffb35e6229f54cfd1",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/add_condiment/example54",
+      "input_dir": "inputs/M&T__add_condiment__example54",
+      "sha256": {
+        "input.png": "a29f80c3c8ecc815af3d74dd91486fe045939383b9e4e9422530d1eed05157cc",
+        "input_mask.png": "0297f3db7faab54ca76a5e7efefbb0682a00c28df3c28518245608f2bb5c1a13",
+        "instruction.txt": "c0e50023c1e1a699ce5b09af84d163ae2dfd4a310b9491cd368f4630029aa246",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/insert_flower/example14",
+      "input_dir": "inputs/M&T__insert_flower__example14",
+      "sha256": {
+        "input.png": "70c9b260a6fd337fb488c559919456a069f7879846a88b9962ec10a4a826161e",
+        "input_mask.png": "af93a95c853430c08d4c7063dd9bff7b8ca9c24f68871f391ba0b264b31dfd2c",
+        "instruction.txt": "d637c09166578b8f8ab7e3ebf2d5e40e443e0647e91a1ef587324c789fd3fb7d",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/insert_flower/example45",
+      "input_dir": "inputs/M&T__insert_flower__example45",
+      "sha256": {
+        "input.png": "a3ba456c39595c3e43d627ba6fc23f7e228aecab7728ad7e8d8302033222476b",
+        "input_mask.png": "a4923662a8d4f91532fee024b917167194a26fb84ef34235d058ccaf9731b055",
+        "instruction.txt": "c7e4c1cd4b2464775b71d474e98cf1b757869aa75e7b3d1fb77cf47302f505ff",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/insert_flower/example50",
+      "input_dir": "inputs/M&T__insert_flower__example50",
+      "sha256": {
+        "input.png": "45f37b5202296a6631d81fab4997232fd1c5815d7b03113a46811fa10bfba5e9",
+        "input_mask.png": "43f72805e48603466ecd96e241c8d07d648a8516616b3d1fa34fd7d6a1c726a7",
+        "instruction.txt": "c7e4c1cd4b2464775b71d474e98cf1b757869aa75e7b3d1fb77cf47302f505ff",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/insert_flower/example66",
+      "input_dir": "inputs/M&T__insert_flower__example66",
+      "sha256": {
+        "input.png": "ecc02dbbfb6aa6a02409fc05a88d59c3aa40c364bc09c19e7696bca0abd02630",
+        "input_mask.png": "0f01c3a317a4192ad2c50ce65f88e320e490b18e7400bd90455b4630826665c0",
+        "instruction.txt": "c7e4c1cd4b2464775b71d474e98cf1b757869aa75e7b3d1fb77cf47302f505ff",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/insert_flower/example67",
+      "input_dir": "inputs/M&T__insert_flower__example67",
+      "sha256": {
+        "input.png": "c1f295b8dd948cc13f428ff4e1c3772bfdf39c2c78068da79e4e1ee9aa0b81ac",
+        "input_mask.png": "dbe8f98f7c7250970d25fed8883c0414b534511a9fa48bb307a36b496034f5ba",
+        "instruction.txt": "46f23f78e42859121ac497831a04f529378dbb451f9baf94697b6bae45805cd7",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/insert_flower/example70",
+      "input_dir": "inputs/M&T__insert_flower__example70",
+      "sha256": {
+        "input.png": "626d450ce27d2c683810e745f56078c9db8b562a2aff4ae86460f0f20131a6e9",
+        "input_mask.png": "3cbccee61020962c59146f79fcae67bdbba03a215faced851f66eb472e0ccd0f",
+        "instruction.txt": "c7e4c1cd4b2464775b71d474e98cf1b757869aa75e7b3d1fb77cf47302f505ff",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/insert_flower/example82",
+      "input_dir": "inputs/M&T__insert_flower__example82",
+      "sha256": {
+        "input.png": "b9afdc0c6633aee9b40848658b38f9e8a1f7e6253d99b9facc43dc5c5e88f76e",
+        "input_mask.png": "bb1f6f984a66b17a48a1b0f5af60105a485bceecba042f50ef8045fc0c8926ca",
+        "instruction.txt": "c7e4c1cd4b2464775b71d474e98cf1b757869aa75e7b3d1fb77cf47302f505ff",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/insert_flower/example88",
+      "input_dir": "inputs/M&T__insert_flower__example88",
+      "sha256": {
+        "input.png": "e1535aab69dfc93e69e329aba22ac52183d3acf5df6577b1a85d7b824984cfd0",
+        "input_mask.png": "d8ac2f541833565dd348e5bd6a0970028f4e78674f99ed75dc3ff94c95e8b09d",
+        "instruction.txt": "d637c09166578b8f8ab7e3ebf2d5e40e443e0647e91a1ef587324c789fd3fb7d",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/insert_flower/example93",
+      "input_dir": "inputs/M&T__insert_flower__example93",
+      "sha256": {
+        "input.png": "b45a9d8c9dc615744ad567a1463f915317d4e683500596209ccceec5cbffb1df",
+        "input_mask.png": "8bf9805d54013250cff9d9aae438cdb5174a56d40fb5a7ff0c07fedfb9615b7c",
+        "instruction.txt": "c7e4c1cd4b2464775b71d474e98cf1b757869aa75e7b3d1fb77cf47302f505ff",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/insert_flower/example99",
+      "input_dir": "inputs/M&T__insert_flower__example99",
+      "sha256": {
+        "input.png": "c99c1d00f464fc5a4ae91e901d98db0b88e38b700e0ee2390794b700296bd833",
+        "input_mask.png": "9c8371571b48e8ac8e832fa5a3358038d8153483826d5686b08dbc2e35ae7772",
+        "instruction.txt": "c7e4c1cd4b2464775b71d474e98cf1b757869aa75e7b3d1fb77cf47302f505ff",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_billiards/example0",
+      "input_dir": "inputs/M&T__select_billiards__example0",
+      "sha256": {
+        "input.png": "644dd8819abf5ec0444247fa6e4270be6188b360aa09060bc1f533b09cc13eec",
+        "input_mask.png": "0706a7704e868a7d162f4d530d5c18bd48b8a3083346eb2d13b343034c52a12e",
+        "instruction.txt": "3210038ea8eb19288673cedcb1fa35483b8e1af88ff47cc79af41ba6110c5590",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_billiards/example7",
+      "input_dir": "inputs/M&T__select_billiards__example7",
+      "sha256": {
+        "input.png": "7d83664a778f7cbf68844af43445ec652ce3ea23266eb8f1abde9b132216fdb6",
+        "input_mask.png": "67d44f16e39befbc3604ff49afeeefb599d93519589456b298e6e648bdd38ed9",
+        "instruction.txt": "7f3bb9dacb942169519be2f3c9bc4a47943d05a44b36ac00bd505dab129d5ae9",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_billiards/example23",
+      "input_dir": "inputs/M&T__select_billiards__example23",
+      "sha256": {
+        "input.png": "e120762f694541f228e949009e0a03a86295b003f20d684ff5bcd0a2bebda6d5",
+        "input_mask.png": "91bb62193521ac4518d649b79d3a53557f3ebce3a1b47efce44206b59cb6f24a",
+        "instruction.txt": "e50b4b754e70c9fe03458de7b674422b0de984efbc9550276e59aa3a010131ff",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_billiards/example26",
+      "input_dir": "inputs/M&T__select_billiards__example26",
+      "sha256": {
+        "input.png": "505d263f748f5ec702c1f4cf11850564d3e2ed376d2d5f18a274e57c2bacf875",
+        "input_mask.png": "8413ef04e88be081cf022f5994eee2217337bed1401662e3aef1464cc1c5a821",
+        "instruction.txt": "22f64ef662503f6aa1b058f47db3907f8c25cc6d5d9024e6bce8b6d8b093794f",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_billiards/example27",
+      "input_dir": "inputs/M&T__select_billiards__example27",
+      "sha256": {
+        "input.png": "a1f980ef510528015c22c26e0b3a61239ac92f50fea01d0fc5974a29da9c7490",
+        "input_mask.png": "d65df76065a257ae98511d769187051b5ea0c2bd4423f3240465188b964a611f",
+        "instruction.txt": "22f64ef662503f6aa1b058f47db3907f8c25cc6d5d9024e6bce8b6d8b093794f",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_billiards/example29",
+      "input_dir": "inputs/M&T__select_billiards__example29",
+      "sha256": {
+        "input.png": "18749cd3ed222975dea5227ec58526756c6cc3e8f3ac9a3e342e04717a98501f",
+        "input_mask.png": "418fa8234bf4ddb1f41b86f6f3224fde5577c9ef559dd0de192d4dde4bab332a",
+        "instruction.txt": "3210038ea8eb19288673cedcb1fa35483b8e1af88ff47cc79af41ba6110c5590",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_billiards/example36",
+      "input_dir": "inputs/M&T__select_billiards__example36",
+      "sha256": {
+        "input.png": "4890623701bbb597109b18d82dee9fc9a442660679a19614aba40ab9f45ff09c",
+        "input_mask.png": "f6f343c7a229d50fe1c86368a3972b40e2309079228dd11df55b0a891dc34e14",
+        "instruction.txt": "22f64ef662503f6aa1b058f47db3907f8c25cc6d5d9024e6bce8b6d8b093794f",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_billiards/example59",
+      "input_dir": "inputs/M&T__select_billiards__example59",
+      "sha256": {
+        "input.png": "5088617df58dd434bd12243a55abd841924a14ca15766b60a14cf54beb2e27ba",
+        "input_mask.png": "a79ada572f4ff699da81064d36e2987482479aabcb60ddc4c54846cba036e60a",
+        "instruction.txt": "7f3bb9dacb942169519be2f3c9bc4a47943d05a44b36ac00bd505dab129d5ae9",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_billiards/example70",
+      "input_dir": "inputs/M&T__select_billiards__example70",
+      "sha256": {
+        "input.png": "0089ea962c06d5df5b99ef436216e94d4c49eb75c623faf9e225bafd59bd736c",
+        "input_mask.png": "04c98d7c1d0aff2910ac12b053977b1f65536e6d9ccf1173c6e31fffcb8630e6",
+        "instruction.txt": "e50b4b754e70c9fe03458de7b674422b0de984efbc9550276e59aa3a010131ff",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_billiards/example85",
+      "input_dir": "inputs/M&T__select_billiards__example85",
+      "sha256": {
+        "input.png": "d5d212439515a780f44aee93cc3749db10a6ec70a3c6779d7f1685c13916c7ad",
+        "input_mask.png": "727719701721b1d938da68b0fe3ea26f7dce559e2d97af61d07f040c5d9b7c7b",
+        "instruction.txt": "22f64ef662503f6aa1b058f47db3907f8c25cc6d5d9024e6bce8b6d8b093794f",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_book/example18",
+      "input_dir": "inputs/M&T__select_book__example18",
+      "sha256": {
+        "input.png": "71aba6e0b243ed81df8779955bbe2d08eda2b8b871e5e3b86b6854cfd3476de3",
+        "input_mask.png": "b65ef4b81b0bdf915066a7fa839a5f04685d7c1ec9716b0bb6ed033096567d15",
+        "instruction.txt": "2df5f99466aa04b5d71f95481f2992d814c48c81b173d1b0fc16f1a82d5f1c48",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_book/example27",
+      "input_dir": "inputs/M&T__select_book__example27",
+      "sha256": {
+        "input.png": "7a8cd7bf1254b413521f19e1cf8e0657f60026fafcd60522d2d985501f0a9922",
+        "input_mask.png": "63072697337642ef941638266aaf5343ffa43f09787c8b5bdd5e2d727011b560",
+        "instruction.txt": "37b3b39b2ab47b5851fc8e114560c213840d52e2a6f460a92be6f8c9036a499a",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_book/example30",
+      "input_dir": "inputs/M&T__select_book__example30",
+      "sha256": {
+        "input.png": "07f89f1ef9f82057d5fab3adb17b631cc32fec508760b364ba020c7980c959e8",
+        "input_mask.png": "3bcc5562d481f22eb37bb5ece2976843d7a04320084f5eb937864a52b7dc150a",
+        "instruction.txt": "473c33bf3b182cf5dd7c356b96592fcc0965e3fd638e6fbcdb73866cb116b415",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_book/example36",
+      "input_dir": "inputs/M&T__select_book__example36",
+      "sha256": {
+        "input.png": "589f24db87d2b027ecb8fbc9ac48eb931ee04b70105e16336206192e9cfa6353",
+        "input_mask.png": "bd73aa910cf87086d4b144115e0e2c299aefc9f5739bfd25e8177763d08703c3",
+        "instruction.txt": "0637f15a6f54feb467b01c4b8847e601cf0e61f0286f35320f4123db3ea53e24",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_book/example57",
+      "input_dir": "inputs/M&T__select_book__example57",
+      "sha256": {
+        "input.png": "f724fa60d683da9cc777bd1c5e9c2d12bb535addef28d52f7fe97c7b502c8ba1",
+        "input_mask.png": "b9610b42270162e5da3f19a264e197171750efcdd05108eb78000ff54af755f1",
+        "instruction.txt": "011a0d9c177290f9bf91e18cfd5866cb983e42faacc8879136ecbd85c4bfbade",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_book/example63",
+      "input_dir": "inputs/M&T__select_book__example63",
+      "sha256": {
+        "input.png": "c1c8047ebdcaa279e322fa177279681aba7dc822e8200ce303f6a4d4dfee33ca",
+        "input_mask.png": "226e6912b0922d9d1b32c2a8f465ff318350d640b1e5ab4496c102a05ac477c9",
+        "instruction.txt": "4bbb3a3c67673c163641419c1567d9c8b75dcecb5f688d7743ca65f3292ab4c6",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_book/example79",
+      "input_dir": "inputs/M&T__select_book__example79",
+      "sha256": {
+        "input.png": "dd2af0ce44b1340cebe342274706569d81ee26fac0907ed41cf769cdecc6ac6b",
+        "input_mask.png": "bf36885468a9c9d5216ccb31283577a8f5cdb222957af5e2f5cdce67ff6bd686",
+        "instruction.txt": "685f92e70f4c3dcbd0dadd565f3cf08bb02597ec55c366762e22b752d6ca8775",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_book/example85",
+      "input_dir": "inputs/M&T__select_book__example85",
+      "sha256": {
+        "input.png": "4bb4814c8dae4af3456d4de8f7a4948f231119c5ec2b3d4919cbc97f2f058012",
+        "input_mask.png": "8b8a361ab81da34777a3a2d9c5b72b1afedb0a2d93a9b0f7b933298af5c7872c",
+        "instruction.txt": "b7f7b9dc18a38e432192fbcd55306d3d099667e26f0565c1b3ea833094cd5c20",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_book/example92",
+      "input_dir": "inputs/M&T__select_book__example92",
+      "sha256": {
+        "input.png": "45e59ff1c5ce9d74eb3e55c3690042a76fed5a689e463ad3c7f37a035b427d47",
+        "input_mask.png": "70baaa04f8b9169264a3c1e0f5a889fc553ab7c7de5d004230514b2ae7337d09",
+        "instruction.txt": "4bbb3a3c67673c163641419c1567d9c8b75dcecb5f688d7743ca65f3292ab4c6",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_book/example97",
+      "input_dir": "inputs/M&T__select_book__example97",
+      "sha256": {
+        "input.png": "770172bf89855a79f8cf5a45fbccfa84018528f18c7247176ff42de5e50ab660",
+        "input_mask.png": "43cd30e0fad2f8d6c522f47463cf00fdbdb2b32a0689e45c952fe678d65abaad",
+        "instruction.txt": "9ed697b7e5af618a1f7d03d155dadfea430aacd0966d8cbeec79f75badd1bd31",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_chemistry_tube/example8",
+      "input_dir": "inputs/M&T__select_chemistry_tube__example8",
+      "sha256": {
+        "input.png": "46fbab7295b540287c5432c145abca939bcaaea219a2779298d841124d40d904",
+        "input_mask.png": "f224070133caa0308e6682f763938cd5b019524d9e7f86c1a1f68940e2878d43",
+        "instruction.txt": "9f41a95cb6adddea7a38ea0de46e303da5a8ad46aef652b6e572402f1b67496b",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_chemistry_tube/example20",
+      "input_dir": "inputs/M&T__select_chemistry_tube__example20",
+      "sha256": {
+        "input.png": "bb5290a56bb4a6a1f5ea67e8187543a53d634e87036ff592595d433c063a67dd",
+        "input_mask.png": "a9331f7635c20718a41d294bf73393ae254024d099221b3ae2f5a3a526bbebe3",
+        "instruction.txt": "fa75bf65466dd26e0a333b8ef8c1328398e49f84608ba4023991a98cc42d952b",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_chemistry_tube/example32",
+      "input_dir": "inputs/M&T__select_chemistry_tube__example32",
+      "sha256": {
+        "input.png": "a370e8860f72e5e06aa9639311bf10855ed053548cb10710c72c727102c4a87b",
+        "input_mask.png": "15f322ecda3a94eaf08dac2b656d79d537f7d0f9fb39abbe17eea409f6de8ad0",
+        "instruction.txt": "9f41a95cb6adddea7a38ea0de46e303da5a8ad46aef652b6e572402f1b67496b",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_chemistry_tube/example48",
+      "input_dir": "inputs/M&T__select_chemistry_tube__example48",
+      "sha256": {
+        "input.png": "c5171231d24c428748f22cb42526a75d4ab18817a30cd8c170a68918fe5b4d89",
+        "input_mask.png": "456c96c47fbd296a960bcac771cec272fa44d6cba539ecc610078b1c4a1ddf91",
+        "instruction.txt": "fa75bf65466dd26e0a333b8ef8c1328398e49f84608ba4023991a98cc42d952b",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_chemistry_tube/example50",
+      "input_dir": "inputs/M&T__select_chemistry_tube__example50",
+      "sha256": {
+        "input.png": "7c887ee88b00c2be44809cce39556c3444711579eafcb6186b4cf8fb40b77ee1",
+        "input_mask.png": "fec048c7e5f86ce552bcff3e40410a603a2d261d3762633b801d986cc77bb2db",
+        "instruction.txt": "9f41a95cb6adddea7a38ea0de46e303da5a8ad46aef652b6e572402f1b67496b",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_chemistry_tube/example59",
+      "input_dir": "inputs/M&T__select_chemistry_tube__example59",
+      "sha256": {
+        "input.png": "52740e28a2816efe51885f74f752289175ab86cf8f9b9278217b07fba342c485",
+        "input_mask.png": "bb1cfee633da501070aef1f9a410b5826799f5ff1b50a6625df9c1c7c5683701",
+        "instruction.txt": "9f41a95cb6adddea7a38ea0de46e303da5a8ad46aef652b6e572402f1b67496b",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_chemistry_tube/example63",
+      "input_dir": "inputs/M&T__select_chemistry_tube__example63",
+      "sha256": {
+        "input.png": "a6ebe7a7343b623e1ed0d9a3ba1146187626b26890dd4f65f48b3849adf0e046",
+        "input_mask.png": "4707a98179477dafa0c4382db08d5e4274bd52bac3f1da7f3aafe311a42eefaf",
+        "instruction.txt": "fa75bf65466dd26e0a333b8ef8c1328398e49f84608ba4023991a98cc42d952b",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_chemistry_tube/example67",
+      "input_dir": "inputs/M&T__select_chemistry_tube__example67",
+      "sha256": {
+        "input.png": "ed3ba4a2bc1ff0b0f47f413901d10ada6af37f922df10f3398315ae13bd34a72",
+        "input_mask.png": "b054ad17a1b22a648f6832cb83edb7f6cc73d2cba77f839b3da0919f37dd3aed",
+        "instruction.txt": "536a26236fbdfe22a03073599559e77e2fa3ea882ed56c9d93d7046aabd80ddf",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_chemistry_tube/example80",
+      "input_dir": "inputs/M&T__select_chemistry_tube__example80",
+      "sha256": {
+        "input.png": "a1a32abed37d1dc723c40fe00a81d99e00f66a9274437a80b8da5f52b68ab062",
+        "input_mask.png": "d078f5f4330cc57747836f6f20c88cc7528330594103660b05198f9e521baf30",
+        "instruction.txt": "9f41a95cb6adddea7a38ea0de46e303da5a8ad46aef652b6e572402f1b67496b",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_chemistry_tube/example94",
+      "input_dir": "inputs/M&T__select_chemistry_tube__example94",
+      "sha256": {
+        "input.png": "31a1c59973936b0e603b2898d0c670c7d4d8047ab1d2706c60462583eb905c6c",
+        "input_mask.png": "c3e3586a18bc995ca5b9fef0d6c33f8f825224bb72fec656f3743a11db530f1a",
+        "instruction.txt": "fa75bf65466dd26e0a333b8ef8c1328398e49f84608ba4023991a98cc42d952b",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_drink/example9",
+      "input_dir": "inputs/M&T__select_drink__example9",
+      "sha256": {
+        "input.png": "aca7a8f471596133209302bfea231b33e13194978a425dc911a11ad5a4caf4d1",
+        "input_mask.png": "80ae81bb0172de7bf918cb82adab7ffd80054ac95b117719395a5e6f30aed64f",
+        "instruction.txt": "29ba2ffcfd4e8d3224f73a8b8dd3d3095b2c80cef730c868fe43f8533a2ba7bc",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_drink/example21",
+      "input_dir": "inputs/M&T__select_drink__example21",
+      "sha256": {
+        "input.png": "65987fa8dcfff5e3270c06724f5572b481d123f88ee03b9475fe60b458765c80",
+        "input_mask.png": "bf2a57611536e538c98166d9e09707d823bb267c7219fb143faab47e5f48780d",
+        "instruction.txt": "6fcd16101d147980881d7adbc57483e919e0c7d81cc5e902f53d98393810f3e9",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_drink/example25",
+      "input_dir": "inputs/M&T__select_drink__example25",
+      "sha256": {
+        "input.png": "926f33fce2437a772372559782da2456562a31772426abfbcea3e57602a81e55",
+        "input_mask.png": "eaeab04bea0c00dc2aa7ef447403869aefb9e4825a3076d7a2a11c35ab89bc76",
+        "instruction.txt": "e826bfd8451079941b246604e8e0a6f8237ebef30f78004fe40c0f3cfe9c1998",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_drink/example39",
+      "input_dir": "inputs/M&T__select_drink__example39",
+      "sha256": {
+        "input.png": "da94afe89cfc65ace58e13822b78be02456d0492fe04d7b06ad58ec46a6e189f",
+        "input_mask.png": "528310ce9e800bd44af48d2f828e895baa090f96c629d9ee04c0fdf2022fa3c1",
+        "instruction.txt": "6fcd16101d147980881d7adbc57483e919e0c7d81cc5e902f53d98393810f3e9",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_drink/example40",
+      "input_dir": "inputs/M&T__select_drink__example40",
+      "sha256": {
+        "input.png": "1a2f754e198ab90b920ea24b4cd7b425e641a7c4edc3714dcf1d192ae77f64b9",
+        "input_mask.png": "2588e06575651a4061194ed86d7d5114720637ad896c4fa41aeec03f446e0464",
+        "instruction.txt": "6fcd16101d147980881d7adbc57483e919e0c7d81cc5e902f53d98393810f3e9",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_drink/example44",
+      "input_dir": "inputs/M&T__select_drink__example44",
+      "sha256": {
+        "input.png": "b95d3db9fa838314e349f9ffad8b9922521383ad20f202484e27388b3ff8d638",
+        "input_mask.png": "4cfc133ff32fced79343054c54c44e36828f25ddd7b152e174398007d8c142e9",
+        "instruction.txt": "c909260bd2fe187282625fe2b39f6b7fa9ef9504e5a6f81a4b6b9f6b2ca060d3",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_drink/example49",
+      "input_dir": "inputs/M&T__select_drink__example49",
+      "sha256": {
+        "input.png": "6b0e6ea326b15cf6ae4fbca2b825d807d9b3aedc07b07e66647468df0e780f08",
+        "input_mask.png": "3e5d9ff0b5a1256090f780003f49a1bc3381a8d6814a57449042b643aa2b62c9",
+        "instruction.txt": "29ba2ffcfd4e8d3224f73a8b8dd3d3095b2c80cef730c868fe43f8533a2ba7bc",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_drink/example58",
+      "input_dir": "inputs/M&T__select_drink__example58",
+      "sha256": {
+        "input.png": "a481f3915e7339fe32bd9d594914c2b654a4fb245d7c849f40e87f452399e976",
+        "input_mask.png": "69a91047073d9ca84e09a6d1abf7fda74fbc4a16bec7aa54dd9e3558db271ed4",
+        "instruction.txt": "6fcd16101d147980881d7adbc57483e919e0c7d81cc5e902f53d98393810f3e9",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_drink/example59",
+      "input_dir": "inputs/M&T__select_drink__example59",
+      "sha256": {
+        "input.png": "e5ae9763ab9ec09c23564254cc6568dbc7f0ccfd0f1ac44e1ee3c7d689292692",
+        "input_mask.png": "a778b990c61fdca489765a3c77f9c1b007a00ea908586beff6911b8e5d74cd3e",
+        "instruction.txt": "c909260bd2fe187282625fe2b39f6b7fa9ef9504e5a6f81a4b6b9f6b2ca060d3",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_drink/example97",
+      "input_dir": "inputs/M&T__select_drink__example97",
+      "sha256": {
+        "input.png": "c4ad6ce0feaa71180ce3bdd0bba7c50171f525d65dc243be554c349297ff6224",
+        "input_mask.png": "bd16a769fad7ccac0036f9f21a65a8b70088af1d434cc3dfe487bb83996ad7de",
+        "instruction.txt": "c909260bd2fe187282625fe2b39f6b7fa9ef9504e5a6f81a4b6b9f6b2ca060d3",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_fruit/example6",
+      "input_dir": "inputs/M&T__select_fruit__example6",
+      "sha256": {
+        "input.png": "f8ab27bb19ac56f0bd7f356fcebcb6fc4622f9b047f19ffd953bf8147605c97f",
+        "input_mask.png": "a0812528497bd76d4f39f7ecc3ba22562c3dbb28f90faced98b3a7d9c0d8f0b3",
+        "instruction.txt": "2eb57a674afafcd8f51df8df59be89fcecd4ff32d931e3d06d34786bd74bd75e",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_fruit/example27",
+      "input_dir": "inputs/M&T__select_fruit__example27",
+      "sha256": {
+        "input.png": "dfc664f1b604b46a54c51b2fb3a8f5791d57d60c2e59dd0988a79f2c998a3f70",
+        "input_mask.png": "6ba2890b2eb3cfabe6354c96346baabe2c519ef0ff6b0f6bb200ed7654702f9e",
+        "instruction.txt": "433a2140a7bc5ea032f5bf605cb81a59fd74de784d3792ade8c2b6f22c9a83d0",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_fruit/example28",
+      "input_dir": "inputs/M&T__select_fruit__example28",
+      "sha256": {
+        "input.png": "008ce1f7c973ad76fc82174863732f93dd753259fff5b1ffbefdfde66dedb546",
+        "input_mask.png": "0a3fc8b10bd6a3249c8eda30dc400e4ea1f066403aa7bfb6e2430750eace0719",
+        "instruction.txt": "074de840e5ce72a4fbe469b69a621098acf6e6aafebad73a07b0f6eca6cbafa9",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_fruit/example32",
+      "input_dir": "inputs/M&T__select_fruit__example32",
+      "sha256": {
+        "input.png": "a3853a687c73228f9a374d8ee4f3a274575c8d8729a582dea34ed1fd7fe12e0b",
+        "input_mask.png": "a99895237f06e8685c947753179ba79b704564e535495ca6d9660d3f0411c8a1",
+        "instruction.txt": "074de840e5ce72a4fbe469b69a621098acf6e6aafebad73a07b0f6eca6cbafa9",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_fruit/example43",
+      "input_dir": "inputs/M&T__select_fruit__example43",
+      "sha256": {
+        "input.png": "bb8979bd6bb613218df07d47782d2301b40ccd2801e2096100793d839f3eea77",
+        "input_mask.png": "d08ae0f6b996b3d368dedc8ab3f5a81445ad3a248f4bf5990f8a3b9e507e28de",
+        "instruction.txt": "433a2140a7bc5ea032f5bf605cb81a59fd74de784d3792ade8c2b6f22c9a83d0",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_fruit/example49",
+      "input_dir": "inputs/M&T__select_fruit__example49",
+      "sha256": {
+        "input.png": "a1ed700147062f4d44c643eb0fe74b9e725ca5535c6ad2f4043d1ce8a6cda16d",
+        "input_mask.png": "d39935ae830243b8b436ef3f0ea3cf81ebe94985c4884bde55e2ab7403bca45b",
+        "instruction.txt": "2eb57a674afafcd8f51df8df59be89fcecd4ff32d931e3d06d34786bd74bd75e",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_fruit/example85",
+      "input_dir": "inputs/M&T__select_fruit__example85",
+      "sha256": {
+        "input.png": "762031d2d2eaa290f8a1ba0b027bb72b63691e87dc46ce44c8ff987e9cbeb306",
+        "input_mask.png": "b512fa2474913d0e9f27f7fdf28ebeb0b83e1c6163608fc53aa7a446efc096ad",
+        "instruction.txt": "433a2140a7bc5ea032f5bf605cb81a59fd74de784d3792ade8c2b6f22c9a83d0",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_fruit/example87",
+      "input_dir": "inputs/M&T__select_fruit__example87",
+      "sha256": {
+        "input.png": "4f736ff6abb45789b73c00512e0143c9340900c233ae2baff071f56092ba1c8d",
+        "input_mask.png": "388c207f23c4da58459a0d10d857e5dd38baa911a06fb5f01643ed53b95cd6f7",
+        "instruction.txt": "433a2140a7bc5ea032f5bf605cb81a59fd74de784d3792ade8c2b6f22c9a83d0",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_fruit/example93",
+      "input_dir": "inputs/M&T__select_fruit__example93",
+      "sha256": {
+        "input.png": "fbd398b9286007446fd13a63126a07583e78346c6b8fe98bf0ccad7951822585",
+        "input_mask.png": "1871935eab5e6582ca6678acf5c4ef17044c5646c39edaafd45282844a356487",
+        "instruction.txt": "074de840e5ce72a4fbe469b69a621098acf6e6aafebad73a07b0f6eca6cbafa9",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_fruit/example96",
+      "input_dir": "inputs/M&T__select_fruit__example96",
+      "sha256": {
+        "input.png": "a7efab3fb9dc7534ddb92d9e525eee8734d2f5b3f354133f4230345b819e30f7",
+        "input_mask.png": "8486475bfa4e9b077546856f3c78aa1d23c2889f44e0a8830b7012b75ba785a1",
+        "instruction.txt": "9f03446312cb394b5aa6da7cded2fc75de27bb6bc090f4910e11b9d43d6b5bb8",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_poker/example0",
+      "input_dir": "inputs/M&T__select_poker__example0",
+      "sha256": {
+        "input.png": "6f5b929c632fd2a8c7d5418fd7c4980b214c5a0921418cbd91e9d30afd52dcbf",
+        "input_mask.png": "a67bd97463372ae46e1660bf66afc068d632a1732e285b29075ba01a28a49842",
+        "instruction.txt": "e2a08ac3fa9102bb2f3f2daf7595f0ebf80287dbea4d7777dc021bad31bd087d",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_poker/example18",
+      "input_dir": "inputs/M&T__select_poker__example18",
+      "sha256": {
+        "input.png": "8a219c6f9ada3538025fc91dccb5ec0d25f21a012e18204fd6604ad71dcf06f4",
+        "input_mask.png": "e23257cfd3c3d47d55368970d15ff208bc28c976f436edc152dba6481e922a19",
+        "instruction.txt": "2e5a1b80ed121299632982c2ed5d1b4fd07516e8b1ed264faa65dcb0e47f9a29",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_poker/example66",
+      "input_dir": "inputs/M&T__select_poker__example66",
+      "sha256": {
+        "input.png": "522e2804bfa8ad68308d6c3722e58382183a35cc2ec440ab1d694fa9c9b765e3",
+        "input_mask.png": "720af7d44460385baf91c4c7485e605efd44acaa4fc6857300408037799827a1",
+        "instruction.txt": "6e2a206146cbe192d2d1ace7a5a8d43eb300d8870df0c83ed54059c6fbb45093",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_poker/example70",
+      "input_dir": "inputs/M&T__select_poker__example70",
+      "sha256": {
+        "input.png": "486f4f6509a650aeee3b4cd37d2bf72a9c7ec9f568aec715867d72a5e8cc7ffa",
+        "input_mask.png": "95653a73e2a0adff2369a693e74785e8f627b82084e5fe2b1ae6a6e3a3a39526",
+        "instruction.txt": "0239f2dcc5551366b2af46f37662adaae7d4708578d958d647719a988c1ddee3",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_poker/example81",
+      "input_dir": "inputs/M&T__select_poker__example81",
+      "sha256": {
+        "input.png": "93d796be86b8e6c2605240302b4199e4cddcc6b3788bd99f80aa77064d963bc3",
+        "input_mask.png": "6e2571012606bd8bfee00f96efbd36ee1faf0854aabb8473fcb1561c89b09a69",
+        "instruction.txt": "6e2a206146cbe192d2d1ace7a5a8d43eb300d8870df0c83ed54059c6fbb45093",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_poker/example86",
+      "input_dir": "inputs/M&T__select_poker__example86",
+      "sha256": {
+        "input.png": "82b86994568513ff4af2823e21c4a32511716128c57561209910c2a60940d375",
+        "input_mask.png": "888e3a63237503af06b323d96e653aa109d2249301f1a3c5ba7af28466853b36",
+        "instruction.txt": "47745a6a185adcc42481fae936b2ad885aaa643b1d1013f856a4a361f9fa0762",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_poker/example90",
+      "input_dir": "inputs/M&T__select_poker__example90",
+      "sha256": {
+        "input.png": "8df9645a168e61de5e53f8dbcc1c3753019ea9a8a3c7af34f3e356d0a3df8c55",
+        "input_mask.png": "414e908f2337c384d9c6968a83e873d2f8f35d621e0388a4abb23e8195e7e234",
+        "instruction.txt": "bd69cbd5a4d0b22bdd0d2f14b58ed2d8ba47135f6941110d07754f23423ca075",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_poker/example96",
+      "input_dir": "inputs/M&T__select_poker__example96",
+      "sha256": {
+        "input.png": "5b3c9c923e9964a233b227c7a1ec492757b3f97686f30d6f7d50a5d134f17352",
+        "input_mask.png": "71d398b4104ec9a23b840759790fa4820e489ba7dfbdaef23b4749df6186c4c1",
+        "instruction.txt": "e76397a63d921d746b6fec3c987fa9967ac267a899e9183fa9d78cb02dc2a1a4",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_poker/example97",
+      "input_dir": "inputs/M&T__select_poker__example97",
+      "sha256": {
+        "input.png": "36cb10d341576a8801704c1e59bef6ac8405e28ae05a291541e534a4756e1daf",
+        "input_mask.png": "f6750b68496f859675f5ed887864425dbb357d35a76081491d947a7d03da3de4",
+        "instruction.txt": "83e8f6f31a2cf8d75fa507418877e677cb8194b552a6b13fb36d53f401975964",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_poker/example99",
+      "input_dir": "inputs/M&T__select_poker__example99",
+      "sha256": {
+        "input.png": "ce22bc85775a094d97a0d3a04e93e7df1f374f516fc44cece7f56e7f4e989a1a",
+        "input_mask.png": "7b26b509136f2b235a3ec037033c965bc6848ef51bab79c7a33a476b16fd580f",
+        "instruction.txt": "3d77de09d3fc098087787278ed0cb1b765cabdf76a85a2e992222c86f1f2ec59",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_toy/example8",
+      "input_dir": "inputs/M&T__select_toy__example8",
+      "sha256": {
+        "input.png": "44a866240d69f0e71dfe25dc7606e0f4e40ac405be2e2d9a487ac407622645f9",
+        "input_mask.png": "cf5e1413729edabe0f9a50fc76f64bb8c0269f65c838662def874de1afdca422",
+        "instruction.txt": "d813a9ed686394599cbb05ef54d5e504b24e87c18f8e070595913b2ba486b5af",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_toy/example11",
+      "input_dir": "inputs/M&T__select_toy__example11",
+      "sha256": {
+        "input.png": "b4874e0ae4ba6d3baf76c18fd0e6ff4bec86a06061a62bcc2b8bb24003e4e64e",
+        "input_mask.png": "7c96438b3bcdfd0b838594093211b64482ecb099cfe5b847d9d30923a32befc3",
+        "instruction.txt": "cce4e5ae5c4fdebd944023dcc7a1b6b6878eded8214f2c3b6eb7bdde4b4af756",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_toy/example17",
+      "input_dir": "inputs/M&T__select_toy__example17",
+      "sha256": {
+        "input.png": "a07fb81caf92dc2717c2122611a3c76909abda1d5243bbb13bb5dfea4c4d7ed1",
+        "input_mask.png": "4701e8ac3e65185c2d61d1aeae5b5c453e2fe5eba052f561542f62c91fca34d1",
+        "instruction.txt": "255545d6f0d1cd8f2cb744068d832b6921ca3926f7831689e4f9f3881b2ed57b",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_toy/example18",
+      "input_dir": "inputs/M&T__select_toy__example18",
+      "sha256": {
+        "input.png": "bfdfda0fb92d5405e82a0ccc7b2736ececc854b8e483344b5ac0f5be6e55175f",
+        "input_mask.png": "5cf9d9d33b8e62f2f8c29502e00bc9f6f1be8f19a90c0516ad7c518bd7430d28",
+        "instruction.txt": "ba57a364f4a13e047e64264b8c928133642515805be006799ffcec9a5e20d0da",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_toy/example19",
+      "input_dir": "inputs/M&T__select_toy__example19",
+      "sha256": {
+        "input.png": "06a85f3cb68d902528cdd75ec6da1e0240439dcd42c69809d86a943b2dcecfca",
+        "input_mask.png": "93103cb0d2e26ac3ebd38301fb44dd5fd088c0daf99f90a3b2acd1b406da1a90",
+        "instruction.txt": "83838f5724dfaed987c172d77a7ef1db2236370004908b52d0ce1291dff0e177",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_toy/example34",
+      "input_dir": "inputs/M&T__select_toy__example34",
+      "sha256": {
+        "input.png": "0a75ba0b84a8dff94bacef1cccc3016df53e63276c5ae0363b74437e5ad2e46c",
+        "input_mask.png": "ec3cc5179b2602f583d606bd08489856e7ef60664e629a89f40cdfd94a25a2aa",
+        "instruction.txt": "ced6941602b916d951eb66f1ffd9e645edb8fca99b33e8454684b9cb460221bb",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_toy/example40",
+      "input_dir": "inputs/M&T__select_toy__example40",
+      "sha256": {
+        "input.png": "af878ecc79be691bdfa3b5807c39e4a29756b49cd9abb7849800b515b1cff872",
+        "input_mask.png": "378e4c4730c2a5f5eb0e6aec75457bf7fc88b7f702381f96e92f824e715576ac",
+        "instruction.txt": "6ca79054e51a4e96d6898f5479785207af0495ac4e52cdfaa6c57f16d52adc24",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_toy/example47",
+      "input_dir": "inputs/M&T__select_toy__example47",
+      "sha256": {
+        "input.png": "6a790af8bf380d68a94816d87781c9d885f8ba56a9cfe35b8b33b745b94656b8",
+        "input_mask.png": "f7032ae0d33bbfe1c0a69f7d650b6e676852f6f41396a937c28e6f57e3681ca7",
+        "instruction.txt": "e03f7e030997755ff38348fdca7f18b68f1197fe597998f31abcd3bd919ef9ab",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_toy/example69",
+      "input_dir": "inputs/M&T__select_toy__example69",
+      "sha256": {
+        "input.png": "903769fbd5628f996addb5c7212535bddfd9b086ae075fbb7644d9c24abb4544",
+        "input_mask.png": "712d63d06a0b37adad6c49ff832669559231692201973a6a4b81be967e660621",
+        "instruction.txt": "ad9c8f2d1fc8f197d8399653600864d8c2434a601781fd8c5e99b2d28dda8a71",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "M&T/select_toy/example84",
+      "input_dir": "inputs/M&T__select_toy__example84",
+      "sha256": {
+        "input.png": "d1b3daff15a5ac58595fae2bdd156ac300e6c2a6acb4be7dadf7bb0590a93517",
+        "input_mask.png": "f68544a50e91ae22fb2103146b8115b45db4639f12963a6a56b94ebf63a52f71",
+        "instruction.txt": "e81c8851e0a6266d2af0d03ad818eb33575c4f322ef982c2a64f64c52fe5ee48",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/density_qa/example4",
+      "input_dir": "inputs/PhysicsLaw__density_qa__example4",
+      "sha256": {
+        "input.png": "29746fa988eef0e9fbe99691f4088c31bfab843dd49ae30f6f9ad036e489ac49",
+        "input_mask.png": "14ea086ccb5dc1444ba03e21428fb635478844cabd25e57b4d1904d3d4f6796d",
+        "instruction.txt": "f19d85c18c892cfc7bb9cf2caa40bef3d5f61f61ece00e183836f2d413a5fefb",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/density_qa/example8",
+      "input_dir": "inputs/PhysicsLaw__density_qa__example8",
+      "sha256": {
+        "input.png": "3209dc9ded1b0102a852a5c13a724b8241cc8a79f0943ae1d31d927d4379f12e",
+        "input_mask.png": "4e1ed218488659c56ee26223b176ef74af583567f32fc0f90ca350cb1cd776ff",
+        "instruction.txt": "f19d85c18c892cfc7bb9cf2caa40bef3d5f61f61ece00e183836f2d413a5fefb",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/density_qa/example10",
+      "input_dir": "inputs/PhysicsLaw__density_qa__example10",
+      "sha256": {
+        "input.png": "891949707e9c6d228505f081240133efe4a6ed962206c88da2e4d1d1ee6c32f9",
+        "input_mask.png": "78f687016c99987463aefe91b8f0858ffb8b5839dbec07bdffba9cf85ac18af2",
+        "instruction.txt": "cd13d67dd60a7a0aaaefb8ba8bfae87828080aab45c993d5ccafd5f679232053",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/density_qa/example50",
+      "input_dir": "inputs/PhysicsLaw__density_qa__example50",
+      "sha256": {
+        "input.png": "bd1b88f553a6d1c238b956bc8df7fd2a1d0507e0b65c23e5647b540accd9ee21",
+        "input_mask.png": "bbf1a0a44e7fbe772b33909ab50848b4a63477feaf37c7450967283dd9cbbcc7",
+        "instruction.txt": "f19d85c18c892cfc7bb9cf2caa40bef3d5f61f61ece00e183836f2d413a5fefb",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/density_qa/example62",
+      "input_dir": "inputs/PhysicsLaw__density_qa__example62",
+      "sha256": {
+        "input.png": "6e602ba99b1c473737188004591e93b034d25b218459edfdac6f273db7b3fee1",
+        "input_mask.png": "fb060b61bf20324804b264bae6c545c1dced0bba33fde82397cf4e13ccfade63",
+        "instruction.txt": "cd13d67dd60a7a0aaaefb8ba8bfae87828080aab45c993d5ccafd5f679232053",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/density_qa/example71",
+      "input_dir": "inputs/PhysicsLaw__density_qa__example71",
+      "sha256": {
+        "input.png": "c64df918e7385af0465c64d74941b84a1922caab16833c6fe2178aa57c3146fc",
+        "input_mask.png": "5d20ce76a09044693b60f6e6133b3736739170fea3e68be7895783c8cdb041c2",
+        "instruction.txt": "cd13d67dd60a7a0aaaefb8ba8bfae87828080aab45c993d5ccafd5f679232053",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/density_qa/example72",
+      "input_dir": "inputs/PhysicsLaw__density_qa__example72",
+      "sha256": {
+        "input.png": "fd17f85931d472baf0afe9b82b6034ecbac391bd22713b68765775a3812ea64a",
+        "input_mask.png": "58671750d36771c3c18447a0ca32fbaa5197c8ec644200bed9c1c331c957554e",
+        "instruction.txt": "360cc34537cc7a1913d37311dc1a1f669b52810da9291de8117a9a55c7350e3b",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/density_qa/example78",
+      "input_dir": "inputs/PhysicsLaw__density_qa__example78",
+      "sha256": {
+        "input.png": "04a4f486e3a015ed0dbd9a458979e9600318e5fd164ad2abf6355a04605e45e4",
+        "input_mask.png": "ae2a333709afc419ec02846a913d5f22f3835ec052da193c658ddee51ea509b3",
+        "instruction.txt": "cd13d67dd60a7a0aaaefb8ba8bfae87828080aab45c993d5ccafd5f679232053",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/density_qa/example82",
+      "input_dir": "inputs/PhysicsLaw__density_qa__example82",
+      "sha256": {
+        "input.png": "ec4e5141f567bef8538db3c34a62cd9294b83bb04a9a61055ae574e021bd70ee",
+        "input_mask.png": "b581ef31ed8f4d905d09cc30add68ce051e42d6aa03037a6d7cf1df094b074cc",
+        "instruction.txt": "66c1aebc76f275efe1e1ba597cc4ecafbe5f42fdedfa435c56d88fdb09713c9f",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/friction_qa/example48",
+      "input_dir": "inputs/PhysicsLaw__friction_qa__example48",
+      "sha256": {
+        "input.png": "d906a0f6713f8b34f3a0041b2564ea195a0d1a511514543ec05521b13244cf5d",
+        "input_mask.png": "8bb3cb3b68a3c5f186de3833c81f079804ca40e957909662d1edbc411e9a1174",
+        "instruction.txt": "afc4f851788132811fbe5dfed86e398dbc8a7d19f3ad843e8c2e692f767590cc",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/friction_qa/example54",
+      "input_dir": "inputs/PhysicsLaw__friction_qa__example54",
+      "sha256": {
+        "input.png": "e7e8a6749d38a17827c6d9d410fd91ec77adac5dc1efa7633cf123f9c583f7fa",
+        "input_mask.png": "4f113cdbe15f9eac49199a1c80f55fe6e439e0b2712d5123b65e298528599ea1",
+        "instruction.txt": "afc4f851788132811fbe5dfed86e398dbc8a7d19f3ad843e8c2e692f767590cc",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/friction_qa/example55",
+      "input_dir": "inputs/PhysicsLaw__friction_qa__example55",
+      "sha256": {
+        "input.png": "8d7ee70d367625a61120da199cb48b7c7752fc70ec9756cf911b607db1039181",
+        "input_mask.png": "47eb07a1fc7b47e3165b888b05e8a0642389258a68882109a4afc50d83acfe8a",
+        "instruction.txt": "afc4f851788132811fbe5dfed86e398dbc8a7d19f3ad843e8c2e692f767590cc",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/friction_qa/example56",
+      "input_dir": "inputs/PhysicsLaw__friction_qa__example56",
+      "sha256": {
+        "input.png": "3806b786e89f847bb4f1122fe6a75264a95cad8d4f8e367aec97a4cedb529546",
+        "input_mask.png": "bc5e3b9b542e5e17cb31ecb8c0b3e85ae50a03c34a780646bb2830297e218119",
+        "instruction.txt": "afc4f851788132811fbe5dfed86e398dbc8a7d19f3ad843e8c2e692f767590cc",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/friction_qa/example63",
+      "input_dir": "inputs/PhysicsLaw__friction_qa__example63",
+      "sha256": {
+        "input.png": "70b438fbc5c4361b00ca0203f6d2177d5dd59d8886794e3b18e6c61657f0a15b",
+        "input_mask.png": "1301c6364e028bbc1824a250ecb041081876ae6d410a466b87a6dc1d6103275f",
+        "instruction.txt": "6ef1c4dc49a22093b4520de135f84fa3605976bc2d32b53402d65a8ea2720903",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/friction_qa/example66",
+      "input_dir": "inputs/PhysicsLaw__friction_qa__example66",
+      "sha256": {
+        "input.png": "4d90098fd7a4a3cf4232c2f5f93c2dfa15b6399def998b7a7997a7ea48e8263e",
+        "input_mask.png": "b97569474272a0727c526d8cadf7ac127843bbeee8cc24709fb6dcf4e34b51ff",
+        "instruction.txt": "6ef1c4dc49a22093b4520de135f84fa3605976bc2d32b53402d65a8ea2720903",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/friction_qa/example72",
+      "input_dir": "inputs/PhysicsLaw__friction_qa__example72",
+      "sha256": {
+        "input.png": "35b968b2f65120a84e1d1497d936fe9d057ff31fff0a33d03a04e76e27ce4e11",
+        "input_mask.png": "d5b99cff5c580b0d805d41998063897e2643233e603f0f09a7de52a6e63a3773",
+        "instruction.txt": "afc4f851788132811fbe5dfed86e398dbc8a7d19f3ad843e8c2e692f767590cc",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/friction_qa/example77",
+      "input_dir": "inputs/PhysicsLaw__friction_qa__example77",
+      "sha256": {
+        "input.png": "55f5b6a6f93f5d2566a995c6fcf6055af2e97e03dcbfc4e141ee5d24c4288b70",
+        "input_mask.png": "0fb5b07db6b8d73e56c26639106fd9e001a103f44495565fbf0a5e5aedded42b",
+        "instruction.txt": "6ef1c4dc49a22093b4520de135f84fa3605976bc2d32b53402d65a8ea2720903",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/friction_qa/example92",
+      "input_dir": "inputs/PhysicsLaw__friction_qa__example92",
+      "sha256": {
+        "input.png": "f1db3e5d262084450687a65751312e53593f973af0c0b83e226d6e436d3f0884",
+        "input_mask.png": "d112dd3e28af21bc10c7c376fde731d5055d5b13e4dcbede1253d52e47bb9ad7",
+        "instruction.txt": "6ef1c4dc49a22093b4520de135f84fa3605976bc2d32b53402d65a8ea2720903",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/magnetism_qa/example11",
+      "input_dir": "inputs/PhysicsLaw__magnetism_qa__example11",
+      "sha256": {
+        "input.png": "c5986782a7651cf18edf0278e64f5d8d8ee80568881f8399eea48b5927835c4b",
+        "input_mask.png": "2f434443ee5c8f6a1442aea38100e6500abb43c48a39bb6881f4742e0e0b35f7",
+        "instruction.txt": "e64ddf2d2d418dd86cbf6b203f12733ee87955baffa49e89bcd7fa25d20f0ccc",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/magnetism_qa/example20",
+      "input_dir": "inputs/PhysicsLaw__magnetism_qa__example20",
+      "sha256": {
+        "input.png": "fc73daa78e8946e7e51a5abcd606e55673aa32926c30a509bf4947cab03bfd5a",
+        "input_mask.png": "575be154dc996b4fa3bca5c5d85993f51cfcc40490abcd08a68d297d506060db",
+        "instruction.txt": "e64ddf2d2d418dd86cbf6b203f12733ee87955baffa49e89bcd7fa25d20f0ccc",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/magnetism_qa/example27",
+      "input_dir": "inputs/PhysicsLaw__magnetism_qa__example27",
+      "sha256": {
+        "input.png": "3b0cd45284e1eb2fea70c069235b00710037cc10de1f3058030f96398a03a91b",
+        "input_mask.png": "f8897bab780e83e4c15ac74e9d02b5a1dc67cb6deb715209a9012604c66cc0b5",
+        "instruction.txt": "e64ddf2d2d418dd86cbf6b203f12733ee87955baffa49e89bcd7fa25d20f0ccc",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/magnetism_qa/example48",
+      "input_dir": "inputs/PhysicsLaw__magnetism_qa__example48",
+      "sha256": {
+        "input.png": "1b1403c5d3e89478d840ad0d467453ad56e1f2afad3804dcaf9fd0a76a605e93",
+        "input_mask.png": "cc4eb2df6ef9a29bb940814d26692c700702a13b8ca765a2eec5d8f915dda263",
+        "instruction.txt": "e64ddf2d2d418dd86cbf6b203f12733ee87955baffa49e89bcd7fa25d20f0ccc",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/magnetism_qa/example54",
+      "input_dir": "inputs/PhysicsLaw__magnetism_qa__example54",
+      "sha256": {
+        "input.png": "cebc227bbfa48ece4c4b89e4a1aa882a9da6e5ec9330df56747aaba4c8eccc3d",
+        "input_mask.png": "acc91cbc14bc5fbcb0fa82027057d665b71f7bb14209249dbb953e4edaf813b7",
+        "instruction.txt": "44cbd4eafd0329ec8e1db8d818f55721c65108a8dd3de281a4d086f74fb419c9",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/magnetism_qa/example96",
+      "input_dir": "inputs/PhysicsLaw__magnetism_qa__example96",
+      "sha256": {
+        "input.png": "71e2466cd31c36cb69fcc6437c3242aaad21512b1f5af1117e14d39d32e8c0cc",
+        "input_mask.png": "3bb2d4cc7db4c5dfc9b3bd34b64ae8c964a36cf1eda1acfd54d8166846577ff6",
+        "instruction.txt": "e64ddf2d2d418dd86cbf6b203f12733ee87955baffa49e89bcd7fa25d20f0ccc",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/speed_of_sound_qa/example17",
+      "input_dir": "inputs/PhysicsLaw__speed_of_sound_qa__example17",
+      "sha256": {
+        "input.png": "337d7f845422edce8c6f29c0bdae3ac8544a727901b3346b2b15962f9bc8ae77",
+        "input_mask.png": "4d6c2e988ecf8b271b97629ba9d17cf914459aa7d90189b918ea931b03d68642",
+        "instruction.txt": "f4482fcefe111ebf91994ccfdff405c098b18c064ceda2b74f50598d56f67abc",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/speed_of_sound_qa/example28",
+      "input_dir": "inputs/PhysicsLaw__speed_of_sound_qa__example28",
+      "sha256": {
+        "input.png": "e21a54dca38550f2c454f07ebf9de1eeaebb697abca119e49f75062a93603852",
+        "input_mask.png": "68ca7c9928a6570bdc9f62ab1bd8bf0f35f19215dbc8d2f216b24473b5a52beb",
+        "instruction.txt": "f4482fcefe111ebf91994ccfdff405c098b18c064ceda2b74f50598d56f67abc",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/speed_of_sound_qa/example39",
+      "input_dir": "inputs/PhysicsLaw__speed_of_sound_qa__example39",
+      "sha256": {
+        "input.png": "84a8e2de47947294bea99e821dc04a72a760f5b0d44175c28d3285d1ce598aa2",
+        "input_mask.png": "8c93456154a48d6a2599031a83466fb69126ab83f58858d42f6fa1364a3ddf65",
+        "instruction.txt": "f4482fcefe111ebf91994ccfdff405c098b18c064ceda2b74f50598d56f67abc",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/speed_of_sound_qa/example45",
+      "input_dir": "inputs/PhysicsLaw__speed_of_sound_qa__example45",
+      "sha256": {
+        "input.png": "7ff722a5b9199a14da55e47a9d224036eae569815991f18c33016923333fbdd7",
+        "input_mask.png": "6961ae16281d514d98e5b78be7b67f4fc1efd47525832fa0cba2c24ba746fe7d",
+        "instruction.txt": "f748a6bdecd2f49ec1430a38d5e606ba8838b0ac6ffac4ff6e276057559d86cc",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/speed_of_sound_qa/example51",
+      "input_dir": "inputs/PhysicsLaw__speed_of_sound_qa__example51",
+      "sha256": {
+        "input.png": "227ab6ddbd7359e8d564617b9abd529019b670c0a932c1ed22d11c53bf66ecca",
+        "input_mask.png": "b8f8acf2127e76493bb7a262f9cf6ce42f9015caf44049c8f248ddae0e8e023f",
+        "instruction.txt": "f4482fcefe111ebf91994ccfdff405c098b18c064ceda2b74f50598d56f67abc",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/speed_of_sound_qa/example70",
+      "input_dir": "inputs/PhysicsLaw__speed_of_sound_qa__example70",
+      "sha256": {
+        "input.png": "93610f5dcc994ca30600da03e5575f6601a605d9bf4257cdc11d3ef64422ab9e",
+        "input_mask.png": "b8a750fa71585f99757c00d77afdd9097e25466af183fad32650f0245b8e7bba",
+        "instruction.txt": "053f9bb53f052d3247b9d6e746c893b1a926eb450b1eb02f7daa6a13668bffdb",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/speed_of_sound_qa/example80",
+      "input_dir": "inputs/PhysicsLaw__speed_of_sound_qa__example80",
+      "sha256": {
+        "input.png": "e72834fec786112fa57b7cb416f9d4531b5b503749ae81c6fe638bcab6ab2f35",
+        "input_mask.png": "7d6b247f38de1d01289b0355140937829791f1b0689ed9ebd8e8cd4fa4a21a8a",
+        "instruction.txt": "f4482fcefe111ebf91994ccfdff405c098b18c064ceda2b74f50598d56f67abc",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/speed_of_sound_qa/example82",
+      "input_dir": "inputs/PhysicsLaw__speed_of_sound_qa__example82",
+      "sha256": {
+        "input.png": "0102ace7d57f0e2c38a12e2dc704fb223d86dfa21f5d47ad70c7742ba18698db",
+        "input_mask.png": "dd2ae24476adc39cff7e719839c5e268e1d55a39117b840088ca671bca13b593",
+        "instruction.txt": "f748a6bdecd2f49ec1430a38d5e606ba8838b0ac6ffac4ff6e276057559d86cc",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/speed_of_sound_qa/example91",
+      "input_dir": "inputs/PhysicsLaw__speed_of_sound_qa__example91",
+      "sha256": {
+        "input.png": "32da29f90fd60cba11746b07032f3b240e491acaa891a0897f08c5b451b90dcd",
+        "input_mask.png": "1eefebb5dafbf7f89133a53a71dabcb2832ae9bded13627eb2d7a16895a5158a",
+        "instruction.txt": "f4482fcefe111ebf91994ccfdff405c098b18c064ceda2b74f50598d56f67abc",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/speed_of_sound_qa/example99",
+      "input_dir": "inputs/PhysicsLaw__speed_of_sound_qa__example99",
+      "sha256": {
+        "input.png": "02a8268a0c2d23aa185081dba7fb23de144d128a8861b38d75c4865ea433f469",
+        "input_mask.png": "b5a5ce825f2ef6cd65f185e3470b31f24a6fff4b6327a0eb20f14306a40da047",
+        "instruction.txt": "f4482fcefe111ebf91994ccfdff405c098b18c064ceda2b74f50598d56f67abc",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/thermal_expansion_qa/example14",
+      "input_dir": "inputs/PhysicsLaw__thermal_expansion_qa__example14",
+      "sha256": {
+        "input.png": "f0dcde4c11d45d846839b993e994083f1db96375b98cd08d0eb280d220881eeb",
+        "input_mask.png": "e80c1eb659db7db292e47635f3a8a047dba1e8cbe9e5d8932cdc9798cd8dbf6c",
+        "instruction.txt": "4e10835cbafda0ec83e3054eda368ea914c2c2fb0c583fdf75b5ea1739b3d506",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/thermal_expansion_qa/example27",
+      "input_dir": "inputs/PhysicsLaw__thermal_expansion_qa__example27",
+      "sha256": {
+        "input.png": "4c2054ab1a6c24b496d7b458475e4c3d7619d7f24d1590bbb6a41c8a19886218",
+        "input_mask.png": "36a6658a5baa75da56dfb58ca1824de3019fc7ca49f85f3c6835f9168dcf7d5e",
+        "instruction.txt": "c459f9accf6562de89119b805331ab7f1de579cc39d199ac49828a001049bc49",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/thermal_expansion_qa/example39",
+      "input_dir": "inputs/PhysicsLaw__thermal_expansion_qa__example39",
+      "sha256": {
+        "input.png": "1442d6b8da65a615941fba347d404a28735b31da3ed0fc7e4a3e64f22d9f858a",
+        "input_mask.png": "cae700966201377aef12b5824f4000ad613e75c133751a1fb03feea6be5f44bb",
+        "instruction.txt": "4e10835cbafda0ec83e3054eda368ea914c2c2fb0c583fdf75b5ea1739b3d506",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/thermal_expansion_qa/example47",
+      "input_dir": "inputs/PhysicsLaw__thermal_expansion_qa__example47",
+      "sha256": {
+        "input.png": "3a021ad968fa27fead0f6dfeb3525b37b0eb15d22b18e40fe8c9a8de9f59a320",
+        "input_mask.png": "aa32f80323ef493e69c6a8caac79f774374a753dafd674881d4b3d4dc5fe8d39",
+        "instruction.txt": "3510ad2f087b87789c82ca961e14509706fa6e8aa1453aa54845b04ae08c9c03",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/thermal_expansion_qa/example48",
+      "input_dir": "inputs/PhysicsLaw__thermal_expansion_qa__example48",
+      "sha256": {
+        "input.png": "9c3f64562345b26b89334900a456e2598db813e68c4bea72799b82e8249dc4bb",
+        "input_mask.png": "76e6533bc8fa71bfe39bd1a566fc84ad861c8c8166d2c523f4826027c1d67acb",
+        "instruction.txt": "98319558e5360552e53b9c5180af72a6aca0e91ca4d17c433ab5dfc3e522a8b7",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/thermal_expansion_qa/example73",
+      "input_dir": "inputs/PhysicsLaw__thermal_expansion_qa__example73",
+      "sha256": {
+        "input.png": "3b5447a738a847cf08ec1e768cfa4cd9fc3d100cca0d9885d411636e32b350f8",
+        "input_mask.png": "72d5c82969cce2d778f372271cae857c75bbffbb375c3242bede80464facdbf6",
+        "instruction.txt": "98319558e5360552e53b9c5180af72a6aca0e91ca4d17c433ab5dfc3e522a8b7",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "PhysicsLaw/thermal_expansion_qa/example93",
+      "input_dir": "inputs/PhysicsLaw__thermal_expansion_qa__example93",
+      "sha256": {
+        "input.png": "79edee4a0182eb6fcf268e81d1f62cc8961204e59ac5292d464f08f7cbf07fc3",
+        "input_mask.png": "0f2856cff2090ad728a02fb2375c1d22c0b6ea6fd2fa2b45d9ef4bb2fea31852",
+        "instruction.txt": "40aa99fd05aeefed19ecff63cd8611c7887d7fd0436d5e6496affa6332437676",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/insert_flower_semantic/example1",
+      "input_dir": "inputs/Semantic__insert_flower_semantic__example1",
+      "sha256": {
+        "input.png": "6293c7d806bee289461bc5feb6621a1ea5ef38d5681e642a99e4852e975434ea",
+        "input_mask.png": "451b1507ad2ae83305d2ea140923f43e26a19e7011e003224ff72e4cec5d221e",
+        "instruction.txt": "b4b44b8fdfba6d3f23ebf695d392c1a46d37c945653278957a1c64c7f9e2bb58",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/insert_flower_semantic/example22",
+      "input_dir": "inputs/Semantic__insert_flower_semantic__example22",
+      "sha256": {
+        "input.png": "db90a0d7259e6bb9710c25d89ba28850fa65054e562523ce96eacc669739c3fc",
+        "input_mask.png": "10978875824b48c221b02cd373c7b699a07a49a0fa72343e1513708683ab49f3",
+        "instruction.txt": "46fe53d8e18261767aa098e21cdfda144d282bfae2afb8decf8d4557544baaa4",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/insert_flower_semantic/example29",
+      "input_dir": "inputs/Semantic__insert_flower_semantic__example29",
+      "sha256": {
+        "input.png": "094355f75a4e569a240dbe41ba2cc91533caab372a96d35d3bd595020a49cbfe",
+        "input_mask.png": "5e6c70f826d05f2580f86cac34aaa8690ee7ce799401579dc25ad757d132c42d",
+        "instruction.txt": "ffb35e6febb22b9887e0b5c241496cd12e1355b6e489d7e2b920efdbf0c69ed5",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/insert_flower_semantic/example33",
+      "input_dir": "inputs/Semantic__insert_flower_semantic__example33",
+      "sha256": {
+        "input.png": "cb926b1cdf9f1c878c73d8ba74e06c82cd4bee056fca83dca201b2478c2d0443",
+        "input_mask.png": "472140a5f7184db259a088761f46c71f394ec3fa4d04b491150a7e990f2462cc",
+        "instruction.txt": "b57057f8eb1cee3b4c97fcb6717d1a59935d7a4f08a97b374083315e005b1d1e",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/insert_flower_semantic/example51",
+      "input_dir": "inputs/Semantic__insert_flower_semantic__example51",
+      "sha256": {
+        "input.png": "8b38e065a0cb344cfcf53fc6c729e60295ac1eda95cb392ed473a257f96a973e",
+        "input_mask.png": "09ce7f7ac40445652fa65cbdfb95a72e2672300bf896db5377993c60b4962676",
+        "instruction.txt": "307f97078cf9c1f3057be31cf57d6b79d128af12daf5fd821eecb8299e37cd95",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/insert_flower_semantic/example55",
+      "input_dir": "inputs/Semantic__insert_flower_semantic__example55",
+      "sha256": {
+        "input.png": "38681967eb8aeae9ea60177788768ca4bfa7b2689f5d596b5c2805e90f629c46",
+        "input_mask.png": "5c2f8c72438a45019dc1e4f4894b0e99990798b288f5477a4f9e2d6db5f4d826",
+        "instruction.txt": "e3045683453ed40a66407c91b75ff3f9a2c563ae754b1f662ed94e7125870aa2",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/insert_flower_semantic/example57",
+      "input_dir": "inputs/Semantic__insert_flower_semantic__example57",
+      "sha256": {
+        "input.png": "0d7c377f9cc9054a32d97f31d2b3359da2b93fa0364bb55eae9417eeba198e14",
+        "input_mask.png": "1a75a8e0a590e53f622ff748cd64ca029d024ea59c866f0103464b435c25c820",
+        "instruction.txt": "f5599b172070de6a3a474975b55ca505c37248c4b139d040fefa022dc2f66f8c",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/insert_flower_semantic/example70",
+      "input_dir": "inputs/Semantic__insert_flower_semantic__example70",
+      "sha256": {
+        "input.png": "5d1e0f011b8802beecda7057bc7493bfbe86aa3148b64787ad8eb754008047dd",
+        "input_mask.png": "ae183208f53146c4cd9e499c8b14f8057c4d4683432af96520ef2bb9ffaa1294",
+        "instruction.txt": "da26c018576095299619375cad29ce51b578ad62a408998d0cc08ce871124941",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/insert_flower_semantic/example71",
+      "input_dir": "inputs/Semantic__insert_flower_semantic__example71",
+      "sha256": {
+        "input.png": "7ac8e11c726ed8bfc8a65bb8e93a21d09f6ca38de23bc3b2d319e9ac4fbe6477",
+        "input_mask.png": "1909bbfa15219939ca35b7c1fcfed57ba54acbe315e58756ad4328625c6ceb71",
+        "instruction.txt": "49611adf72bff62641291d763a802e64919d842eabd2f49d84f7c2483a75c194",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/insert_flower_semantic/example88",
+      "input_dir": "inputs/Semantic__insert_flower_semantic__example88",
+      "sha256": {
+        "input.png": "e9299b85bb11a6aad6ef3d8c8c8ab72e8a475118fd44a3e5b7f4e2890c31a931",
+        "input_mask.png": "63b4990ecc89716a9f0a438f1a87bcace6114f05420dcc4cdd9959eac5ca367e",
+        "instruction.txt": "3dd079ab98d3ccd2eac3bfa8dc1b2739a3607888328a3e30ffcddbe9028197e1",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_book_semantic/example13",
+      "input_dir": "inputs/Semantic__select_book_semantic__example13",
+      "sha256": {
+        "input.png": "02ba833b5822481e92aeeaef6de6e66bb35a09a2189def30fb3922ad07a50b0e",
+        "input_mask.png": "b70392b63b8eaefcbf97488acc93f52c929db154fa7c1e94c83d1edfb39a8138",
+        "instruction.txt": "f0b350fffad8a11e6da46bb700eda3fed78db78b85551be76a854259315e541d",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_book_semantic/example19",
+      "input_dir": "inputs/Semantic__select_book_semantic__example19",
+      "sha256": {
+        "input.png": "16e9bd4d7d12c673ffbf63abb5ed893550558d69d26a1a81350db9481763f192",
+        "input_mask.png": "43c76953cfd3d1b790b17dda170a502d1409ca81c30a880bdaa2dd6d78dfba69",
+        "instruction.txt": "67465e5ac083b744f945bad2c8ea3a5e4d9bb453dc0aecbf06b9e7ba1ef45c6c",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_book_semantic/example29",
+      "input_dir": "inputs/Semantic__select_book_semantic__example29",
+      "sha256": {
+        "input.png": "83e97ba41dee1b6b46d6341318c9e8ac4c03eb2fc835cbab8f32f3ef1e0fd554",
+        "input_mask.png": "659032d824eabb10cf18df4fb21b3245317611a0342ac1c7ee89f252f4f9c5c0",
+        "instruction.txt": "c1af0363f746a70de4cb4fee62e68ceea2d122198a17a35fe4018904f266e52b",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_book_semantic/example42",
+      "input_dir": "inputs/Semantic__select_book_semantic__example42",
+      "sha256": {
+        "input.png": "9939b4355b2e8f3a5d0e6d6d76c17c966c72f484cd5b1f92511fce7a9e7b9e6e",
+        "input_mask.png": "fe28b8ec0f1487c95a1651cdd7e4a1bc5c1c70c6006a84a36a6d73392a24dded",
+        "instruction.txt": "1ee8621f656cbb8e00ad01e2e0c822c559a3807809e864b3b04d1dfca49c7f1c",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_book_semantic/example57",
+      "input_dir": "inputs/Semantic__select_book_semantic__example57",
+      "sha256": {
+        "input.png": "995d88becd39730f57fd8468a654b9f90c4d7fd862a700ded879ecca98e6c794",
+        "input_mask.png": "e2ce924d28a1f80e1a83d7f6bda82400a7c5d26d6b9a64d537b7e6459d961ba6",
+        "instruction.txt": "1d50b1aa20789a027770462f1fdefa11597bb11728a646c1eab78fb77016fd47",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_book_semantic/example59",
+      "input_dir": "inputs/Semantic__select_book_semantic__example59",
+      "sha256": {
+        "input.png": "39b06ad524dcfea9e9000b186c5bd87ba8e20fe5f14982f6781176a5c28267ac",
+        "input_mask.png": "8e58322c93f2e7c8e06234b4e1eb9afb504a22c6ff34639d8ceb081a8a32dd65",
+        "instruction.txt": "bb943b692e2cd12f2831b43a823cf8ac3863f06e2b551f69302d235846fe2b6b",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_book_semantic/example75",
+      "input_dir": "inputs/Semantic__select_book_semantic__example75",
+      "sha256": {
+        "input.png": "80664078b18b5d130c4b7bffea3739efe94977b54d9c74b7697d27f904ec0a57",
+        "input_mask.png": "3f88a2d44a00ef98ec343c9b09f8475af6e4f4fc17a16d94b3c09c3f70f8059f",
+        "instruction.txt": "ac6f58268b403fee18b2ef31bdff0be7a28d1d7b232a9a6b51e3756a6b155d0b",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_book_semantic/example78",
+      "input_dir": "inputs/Semantic__select_book_semantic__example78",
+      "sha256": {
+        "input.png": "23cf8ae52b4d313ad6eb6774d0a1feaf8a78f9c7ec6ed16cafee4e13000587d3",
+        "input_mask.png": "de98405daa16716d6eafb129cd829c8d50b75211fa0864adf6c3ddca3c2a349d",
+        "instruction.txt": "c634005cd4a867b32694f6c3f80748423fc6bbb620248966966f52ecfe882de6",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_book_semantic/example93",
+      "input_dir": "inputs/Semantic__select_book_semantic__example93",
+      "sha256": {
+        "input.png": "2deb10a7bdfd1be96f14c80f33ec8d48d466e9ef9e5d0b2d731feb01ccb2fd7c",
+        "input_mask.png": "d4096897f5d76a12e29eb237dcefcabe0d48aeb0d16aa9c3b821321fcd639960",
+        "instruction.txt": "cb339ce464ee4f419f50823bb01d6fd6ad26ba4ee04902c327aac9eaafee808a",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_book_semantic/example94",
+      "input_dir": "inputs/Semantic__select_book_semantic__example94",
+      "sha256": {
+        "input.png": "a8df9751e446da753c0e4e49141f84e8786f78be502a45590b7c1bdbec8628f9",
+        "input_mask.png": "76cd3220f8925029fbed7056e913a78b65d448f3825d604829b5c341841ab038",
+        "instruction.txt": "18bf50a84282f2c8f37929a4b5755ff407d25c3642002243ed74507b8278803f",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_chemistry_tube_semantic/example9",
+      "input_dir": "inputs/Semantic__select_chemistry_tube_semantic__example9",
+      "sha256": {
+        "input.png": "6359b523f22b44d5a11b880e1395d1c3c46965e32aae2e1434be79568c5801b1",
+        "input_mask.png": "55edd16f52162ec96d15f58ceb6237ab8b44ae32a15eb39cb62e1cf3baaa079f",
+        "instruction.txt": "975a0d7a58ca853d6de6adb6816ae7d1abab4891392b7159e1d301ca98b8181f",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_chemistry_tube_semantic/example19",
+      "input_dir": "inputs/Semantic__select_chemistry_tube_semantic__example19",
+      "sha256": {
+        "input.png": "a296f692d3771890f96a3051ea77b9cf3e41c6e87123166dad08a88e44e23357",
+        "input_mask.png": "20671fd74f6f0264a2439b34b4f47fd3b05628011ec6697ab76d40831036e7a3",
+        "instruction.txt": "d8c67b88eb1d2503b6c88a1fb2cac7f2500a40fc404a6dbad44c083c38df20ed",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_chemistry_tube_semantic/example30",
+      "input_dir": "inputs/Semantic__select_chemistry_tube_semantic__example30",
+      "sha256": {
+        "input.png": "d30cfd4db13bc081482a47bf2a14b853f64f788d9c554f2e659e0e0d2e5cc0d6",
+        "input_mask.png": "c07f687fa8209508b57c0633e8d780987cc7378a45da04152850353f9818cf1f",
+        "instruction.txt": "c633ab399ec953a33ed830e949e2414eab45262b35909ae6c67005012aa3eb47",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_chemistry_tube_semantic/example36",
+      "input_dir": "inputs/Semantic__select_chemistry_tube_semantic__example36",
+      "sha256": {
+        "input.png": "e30324acc83e14ac397bd5c938521b6773ee5a5eb2f11816bf872a38d987ca52",
+        "input_mask.png": "cc90cd66235c940b07484699d9d300f5c8cfe6a4c4801d4711ecdb4b06bb7eb9",
+        "instruction.txt": "88344271717067f721a66c749ef28ffee65a10339c26d7c2b4a5d77980043b89",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_chemistry_tube_semantic/example47",
+      "input_dir": "inputs/Semantic__select_chemistry_tube_semantic__example47",
+      "sha256": {
+        "input.png": "db80411ed6745db9515534e81c408415d092a8d2cdd3aa3db2a193b9dab0d139",
+        "input_mask.png": "3280d3051b9d4030fd61203043c52285fd58ccadeceb4f7b6e6d3903ccff6b06",
+        "instruction.txt": "5b47e86ae9df6cb9b186cfdef1abbb6744c0bbdc0702e6736da42ead8df463d9",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_chemistry_tube_semantic/example51",
+      "input_dir": "inputs/Semantic__select_chemistry_tube_semantic__example51",
+      "sha256": {
+        "input.png": "e5cfe76908e8c2deefa2bbdbf21ba43d7487a03aec856804e44e95fdb59ab211",
+        "input_mask.png": "252cfebcc659621db0a2fe53685b5fcd5ee05cae5d555a1d133a2ef578276c42",
+        "instruction.txt": "7576c08cd975b781563b2ca29b1c435522eeacca5320da91e52e7a6e49c20f52",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_chemistry_tube_semantic/example57",
+      "input_dir": "inputs/Semantic__select_chemistry_tube_semantic__example57",
+      "sha256": {
+        "input.png": "4b987b0df958a721dc54778a450950fda5ebbfccd95be67143efbb3342e8c8d6",
+        "input_mask.png": "b0d75626674d5e7a72c87249265cc982ec595b7d438e19f5a6f236c73e6200ab",
+        "instruction.txt": "326a7b7977a75cc83208a60d7292176a0c0512a7eb89a4d2363d907d3b5ef33b",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_chemistry_tube_semantic/example79",
+      "input_dir": "inputs/Semantic__select_chemistry_tube_semantic__example79",
+      "sha256": {
+        "input.png": "031f21add2bd03d15329a42b08d9c4d044c4e3659275a1601490308da8003055",
+        "input_mask.png": "db24df807f66c171bb3b3b7aa27d6741318b3a66f234f34a7cd5d8a939d97cfe",
+        "instruction.txt": "c415fdd03048488dcfbeb02e0d0697f22bbe62cc0aac7c6017687c12978e4065",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_chemistry_tube_semantic/example85",
+      "input_dir": "inputs/Semantic__select_chemistry_tube_semantic__example85",
+      "sha256": {
+        "input.png": "bcdf859945ffd5006bdb527f5370543a4e6e961e289e10014cc3f47cdf08e75d",
+        "input_mask.png": "188e7d2495871c8123b214813d5e08b1775c6849c9169874a40fc935eb574ca6",
+        "instruction.txt": "9c8d61ae6a15b7ac374b219cb34369a290afcafdcd8b87fb8dcd15bc9187fbe3",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_chemistry_tube_semantic/example95",
+      "input_dir": "inputs/Semantic__select_chemistry_tube_semantic__example95",
+      "sha256": {
+        "input.png": "c2f2c66ba04e845e9484cb3fcd1d849d291140a26171c5d18d168909d19f02b4",
+        "input_mask.png": "254dbff94cfde544bf2ac793a1d648b9f98f3f5477f074c9093c24b64db8d159",
+        "instruction.txt": "03a6118183c2f8191835b9e7415a0426438803be064974d9df73f808d5569633",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_drink_semantic/example3",
+      "input_dir": "inputs/Semantic__select_drink_semantic__example3",
+      "sha256": {
+        "input.png": "71f8d328022ea80bc9ae5e9435637250ef9d2176d230e4dce5d2a7eb501da8fb",
+        "input_mask.png": "9e891a5dfbacedf28649c19d08c08f682b3d36caf50dc639796e0a1dc83070a2",
+        "instruction.txt": "04d46e29a8058ba7b79ce785a384f0a0a78c3dd239bcfe25174a8e8d9c26e027",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_drink_semantic/example17",
+      "input_dir": "inputs/Semantic__select_drink_semantic__example17",
+      "sha256": {
+        "input.png": "a7f70fd02d134ca97b80c0f2c1ba8aae14c6eeae879db5d9c4e1465fa1b6ac8c",
+        "input_mask.png": "083e0c45a2249f434f9d3e1b83633b10963c424adece55188869f02b295535ea",
+        "instruction.txt": "0186d96f499b66121e66ffcd9ccf90bb3a0fb6ae2bd64bb979e5ddd17dad50ce",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_drink_semantic/example21",
+      "input_dir": "inputs/Semantic__select_drink_semantic__example21",
+      "sha256": {
+        "input.png": "450bfacaaa3e697c6091d1182479580a4d45d25823350cd327179e2c47deb09b",
+        "input_mask.png": "78bd651001b38ee18bcb962698da5c71e448b8aa9986221d3f8bdf63c687bf8f",
+        "instruction.txt": "235064f81a91c2b8dffc95a9528827e9da8b065d7eb616ef3326220b41afbb5d",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_drink_semantic/example35",
+      "input_dir": "inputs/Semantic__select_drink_semantic__example35",
+      "sha256": {
+        "input.png": "30280bb77a6a49cc4640811c8a5f77be43ac0070dee18612edda3bf42e9fb75d",
+        "input_mask.png": "5357f1268b5608435b107aaef6c3cc23e92cd548dc22b0461cd32cd576e7aa86",
+        "instruction.txt": "5fc43b62a26e0cafc43f723b8d46e52fa5cd5fc4aeabb7830baacbc11aec98cb",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_drink_semantic/example38",
+      "input_dir": "inputs/Semantic__select_drink_semantic__example38",
+      "sha256": {
+        "input.png": "e37eca97568e2bb61a319dae9c6a0a66e082ce3cf141c643450ddbe33ba2ea62",
+        "input_mask.png": "7c4174f4fc852aa05d07e2f143e8c1427e404f8667b170cb65c8dfee56cf26cb",
+        "instruction.txt": "4080686f068befc3d77cf292b8ebf97c92ad08af93123607357b13d0898baa2a",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_drink_semantic/example47",
+      "input_dir": "inputs/Semantic__select_drink_semantic__example47",
+      "sha256": {
+        "input.png": "5f63d2b6eb37e5bad9371d350e48565953adaf75ed72a7b626ae2918eaf82c3f",
+        "input_mask.png": "fd24f2f7fe4ecaa93c8902da3595b5c97ee006b048803687c49470d05a085841",
+        "instruction.txt": "aeb842a82fedf4b6882ba90aec365743e4fda3dc526d156b79b4d4932d3f1da7",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_drink_semantic/example52",
+      "input_dir": "inputs/Semantic__select_drink_semantic__example52",
+      "sha256": {
+        "input.png": "d6f926e441d96f3acaa60290edc0e2101de599216e6aaad5a0f6de4534b83085",
+        "input_mask.png": "223f886c24895da92c3bff3935ae21781e4f0450f8f3d60cbdbf38011c07c7e8",
+        "instruction.txt": "593cb708289c408606a03b919945fc6f626b23468fcf313981013c6ac8034200",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_drink_semantic/example67",
+      "input_dir": "inputs/Semantic__select_drink_semantic__example67",
+      "sha256": {
+        "input.png": "50b3b539e2f7b28ff24c7d247dbd03fde4a2f5334ff08ae5ffc25c7ca8654f36",
+        "input_mask.png": "e48bacbfec79a36f463b33db2cdf32cfc54ea182f837c84b29ff2b80f99a37e6",
+        "instruction.txt": "c25584d91eba83eb9ad46b54a3cf83cb045dcf59330c9251ae6f93f2e064fe0f",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_drink_semantic/example92",
+      "input_dir": "inputs/Semantic__select_drink_semantic__example92",
+      "sha256": {
+        "input.png": "17a35b2919d9d6042dd29d48aa158a45cf28dcaa23b1acd86e958be6c372c3dd",
+        "input_mask.png": "7b4cf14f7111ecd12ed1650f75178e6f12b7177391a9ff6c8bd405438e80347c",
+        "instruction.txt": "8a038cd4d3c39f649ea28d57cbc42ef0dc3cbfe0768e90dea01f89325b851a48",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_drink_semantic/example93",
+      "input_dir": "inputs/Semantic__select_drink_semantic__example93",
+      "sha256": {
+        "input.png": "791c8dc93ffd2934961fb2b97f626892419e51c8722d9354eb553f49063d8abb",
+        "input_mask.png": "d1521d9ba7ce14acf20161a2f67fec5a2da3af16664eaa968902edcb22bcbfe3",
+        "instruction.txt": "3522793fafcd5b24285252536cca86b664ba97a40169deea08105e5e13bf3ecc",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_fruit_semantic/example11",
+      "input_dir": "inputs/Semantic__select_fruit_semantic__example11",
+      "sha256": {
+        "input.png": "361636801e8a3164767aece9aff1eca47edca2484587d8de135b3dfcfb1bf0e8",
+        "input_mask.png": "08d4fc124b2375687b05098017217768b9ede16253b8af7ddaaca9fd03be4632",
+        "instruction.txt": "f2522e6c62919b3348e403142b64daea3439f69e06c7de56f835e5d7eaaecb25",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_fruit_semantic/example28",
+      "input_dir": "inputs/Semantic__select_fruit_semantic__example28",
+      "sha256": {
+        "input.png": "7de34f55e5a730d56315f05a2552de0ff6e48c0942765e61c046d0957fcdc5dc",
+        "input_mask.png": "fc5ff39cf9d04eab26a4f4f6ddb2c53ca1b23c754e2a34a009e9a46d1f48dbe9",
+        "instruction.txt": "46e7b0e86421ce99bf700a0c785140e6479fb78331f7a9617dd8a15d37501924",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_fruit_semantic/example29",
+      "input_dir": "inputs/Semantic__select_fruit_semantic__example29",
+      "sha256": {
+        "input.png": "c3f567c752d9b7fa243d0cec2a4e834128251a4778c0983d26e278e76bf23a7a",
+        "input_mask.png": "29bbf4d077249978398a4bc270610e9a13759f89788b73caee6b7bfc682bd20a",
+        "instruction.txt": "e1498fc76e60712b3e9042531a764087c0b6897207dd18193cb928398d85ab32",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_fruit_semantic/example35",
+      "input_dir": "inputs/Semantic__select_fruit_semantic__example35",
+      "sha256": {
+        "input.png": "3488a01e75b65b53d4f51483a2853b297e252aa443441ab3ccb3077cdef44b7e",
+        "input_mask.png": "fe907e49ef5a4ebfb0e66347ac4750e618547aa96f788f946fcbf77315dae438",
+        "instruction.txt": "164acd8cb2b23c076e8e04039e12add6b9cda5ac6df3ac4f8cbd1a8d4b5a9b16",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_fruit_semantic/example38",
+      "input_dir": "inputs/Semantic__select_fruit_semantic__example38",
+      "sha256": {
+        "input.png": "fb891d4324c1ff2938c7ce575b17cbd8b5d8047ff20d34ba157659e606917fc7",
+        "input_mask.png": "05f2a55f5e8cbcc33161aa48169ca121fabd57f58604ee4d425e9f587999781e",
+        "instruction.txt": "51ec2a647813e0e74443b52791518fc904afa42945367a0b5f808b809d4297c1",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_fruit_semantic/example70",
+      "input_dir": "inputs/Semantic__select_fruit_semantic__example70",
+      "sha256": {
+        "input.png": "0d2a0cb4278594a962dba7a3c6961c6a55fe7ee90612f7425144bcaa73741955",
+        "input_mask.png": "782e10852cafa2bd803912d0d00303be4cf662c2a176bcbb404a3efdaf033082",
+        "instruction.txt": "0adff7dc92b806cc5fbb8a6df2a040a857036c68cbc96d875afebab0fc334606",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_fruit_semantic/example73",
+      "input_dir": "inputs/Semantic__select_fruit_semantic__example73",
+      "sha256": {
+        "input.png": "44802b07a6e8dfd3beb2c6c6e24e582c94f109cddcfb371a883fa5d3a692435e",
+        "input_mask.png": "8d329e6b4f6f7daf5f396bc4d1f757d38dae2ad4b438431a83195d1d59a6db70",
+        "instruction.txt": "b0749ce2d85569d117ee80677e22a5ac5b3043fe05fb4ae5818c497b91060f3f",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_fruit_semantic/example74",
+      "input_dir": "inputs/Semantic__select_fruit_semantic__example74",
+      "sha256": {
+        "input.png": "e4323902cc841ce063c1e9a704d5e884fda3e4607dabc911ee0752772ae15e25",
+        "input_mask.png": "c6ea811f04b58adac88ebb07fa8409cae805cc81a7fd90a32c0b60d6a6b7881e",
+        "instruction.txt": "2ec40e3bc330f167a9391f1eb2a51e147ad634d3910dc681b6f3c92ea6b18e6a",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_fruit_semantic/example76",
+      "input_dir": "inputs/Semantic__select_fruit_semantic__example76",
+      "sha256": {
+        "input.png": "eeb65b31e277f947763d1673a73fcae8f18b950afbf2a89a1c245915dd2c4f33",
+        "input_mask.png": "6a25a1d34d44975787733e9d82bfe13a0113a0c5b142cf57048b8fb8f4181ee3",
+        "instruction.txt": "5000a88556271bc79381fe88b414c0a3e81cb7328bddc1cc008f7bbe2de0fe59",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_fruit_semantic/example89",
+      "input_dir": "inputs/Semantic__select_fruit_semantic__example89",
+      "sha256": {
+        "input.png": "cf0799ee5d584787c6dfe21c286644a6749597540174f86c42aea93b59baab62",
+        "input_mask.png": "83cdd79242ed5adef69a77eaf4358c1fbcf7272be3112b3313a2ddf7aa532f38",
+        "instruction.txt": "c7662835ad89dd19cbc3415dcfe9ef8e4098b45c438ecfb6df890a63bf71759b",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_poker_semantic/example3",
+      "input_dir": "inputs/Semantic__select_poker_semantic__example3",
+      "sha256": {
+        "input.png": "8598f6146481c938c32cc6fcbd193bda0c9a7c33847ba2e189ebb9e1c84f00e3",
+        "input_mask.png": "843d029156ad5c34a8593b730b7c80a5a25f157eb2940a70662a24b1f343261e",
+        "instruction.txt": "09996bd4f17926dc971595e13ba386dc592e9b71084d9e4b0ad54de430cda22c",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_poker_semantic/example14",
+      "input_dir": "inputs/Semantic__select_poker_semantic__example14",
+      "sha256": {
+        "input.png": "f732011e6a3c0e94b71134732fe52414b76840a39d6a21495eaaddad00c4a69b",
+        "input_mask.png": "92c441549dca5a5c4ff8390c0dd38123260b4d49bef5582b8b77c3e92c31692e",
+        "instruction.txt": "9f21e8f14ae387f1e39da261d967b7de2962dc02b57d85a4247a3d50f55cf537",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_poker_semantic/example17",
+      "input_dir": "inputs/Semantic__select_poker_semantic__example17",
+      "sha256": {
+        "input.png": "da41ae384539b25552c6c96f49f6ab16da10b0b6c769ecb7583f53842aeeab74",
+        "input_mask.png": "a22e162e507f31a269ffd7881abca6b6aa9b7a36197d0f104a978a2246827fbe",
+        "instruction.txt": "8c7c6b6798bfde86f0973751edc3841350eda49031b35753550c5e64fec7faab",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_poker_semantic/example34",
+      "input_dir": "inputs/Semantic__select_poker_semantic__example34",
+      "sha256": {
+        "input.png": "e29a4e56f7b79e464caf89a9a13690d12251fa4bde60b9b97fa818d2942ab8d0",
+        "input_mask.png": "e3631a1d12780f885ec438640dbb3f68b3c4c156bc3a3c0a6d93785f81a93435",
+        "instruction.txt": "bc0904e812e25046a639948235469c7e82bd2776a9a9d67dada752b03cbed65f",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_poker_semantic/example54",
+      "input_dir": "inputs/Semantic__select_poker_semantic__example54",
+      "sha256": {
+        "input.png": "c26bbd2a15d168fb67de825458f58637051fc3da6c5c32d86c42fdfdaecec603",
+        "input_mask.png": "25e3bd94a40db7b3575839acaf62bc430d2f59efeda91f95a9b5910cfa1f520b",
+        "instruction.txt": "e73f9e6812822b88e06cb111a28f514fd73a366ba926431af7bffac5591a84f7",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_poker_semantic/example64",
+      "input_dir": "inputs/Semantic__select_poker_semantic__example64",
+      "sha256": {
+        "input.png": "6f796f33f492a64ae93efdc83de904a1282f02904c2ac456cf0f66840f0afec5",
+        "input_mask.png": "c3cace3cee2e754e30c3e5b2ce521335bcf5e7c1ace1daa54f1634dc10a60b28",
+        "instruction.txt": "d19d318332c1a3de560a49d5b79f4431e3aeb01ff3f576f795f8d6bfeb609ef5",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_poker_semantic/example67",
+      "input_dir": "inputs/Semantic__select_poker_semantic__example67",
+      "sha256": {
+        "input.png": "a84d2bae32ee4a15cdfdda5317f6aee6e6c0b93a74614393c15d258a30d19774",
+        "input_mask.png": "d56c72b403f69cca9d9ff98e09e8be3be9f6c25897e31a1dd07a5e4df9d296ad",
+        "instruction.txt": "57a7a0ef5369795bf5802867274081072e9efd346c3c2a261b6728478d667905",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_poker_semantic/example70",
+      "input_dir": "inputs/Semantic__select_poker_semantic__example70",
+      "sha256": {
+        "input.png": "d10a72a892cd07993575b9ed3ec7bab4f9e7093e5ad0067974c575b2ec5727ea",
+        "input_mask.png": "3afc1f14dd62aba4a57703cb6189114b7f29c864f0d241445f7ca7432b2edf39",
+        "instruction.txt": "711b8f690fbd96ef72364cfdaed3a08211cb6bdec33ec7f3b98097aee07b9759",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_poker_semantic/example73",
+      "input_dir": "inputs/Semantic__select_poker_semantic__example73",
+      "sha256": {
+        "input.png": "fddcbd662687dccd6f6466cee772f773d52868c52a09533c063e35d6f8d93ac8",
+        "input_mask.png": "06fb6b19385503637dddf5eca53acf01270522c23e613cf1c9707d8e267d1922",
+        "instruction.txt": "fac9295edb6f969f2a1b5d1646adccd9560d2ee95acd7e1a0067226e0e048327",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_poker_semantic/example81",
+      "input_dir": "inputs/Semantic__select_poker_semantic__example81",
+      "sha256": {
+        "input.png": "2c4edb69794b2b93835dd7ffddb77a0289f6896ded932d260b9f112dabc5a326",
+        "input_mask.png": "e3599201ffe2ad47dd05bf506d155c24c099a051d0f2c95985fe0782329de37f",
+        "instruction.txt": "4021109ad783cbdb48485f7a505bf598bbc950b1418569cf392397103016d01a",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_toy_semantic/example6",
+      "input_dir": "inputs/Semantic__select_toy_semantic__example6",
+      "sha256": {
+        "input.png": "321f67926fd83ea09a05f381ce395adacde3eb0b4bd0fb7d4c028dfa6a863bf1",
+        "input_mask.png": "0b34804c97753cc5a7a5e47a4f77a23ed2b4d70adde8a5b73b7392bbda6908d6",
+        "instruction.txt": "0c7614bd543c46cf18e25c1b3147b7e78d4ceba52796bf94c5adbb840605b624",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_toy_semantic/example20",
+      "input_dir": "inputs/Semantic__select_toy_semantic__example20",
+      "sha256": {
+        "input.png": "8733a7cf485956aa0c9942e6c82f26716bf4a3000e674c4f7c2232e4d865ef33",
+        "input_mask.png": "a57bc75b8b7298ff4445aa331ed17bb675253046fb1806eb715586a8b87974db",
+        "instruction.txt": "d785acfcd2a55250dfef9b98a02dba6b79b5e8d610f120c321d6d1e6ae0afbc7",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_toy_semantic/example22",
+      "input_dir": "inputs/Semantic__select_toy_semantic__example22",
+      "sha256": {
+        "input.png": "2bfbbbdf5ce39ca2246d290976c48701e41c1dc46bca5962974b937b15b02eca",
+        "input_mask.png": "5eee93b15ad9f1494fb760a9bad6d34053e38ea8d9c52db424af917813c06715",
+        "instruction.txt": "fd8c685c23eb07c382affeb3776b0809fae0d178e4049c6fc1369e6a26d4b9db",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_toy_semantic/example41",
+      "input_dir": "inputs/Semantic__select_toy_semantic__example41",
+      "sha256": {
+        "input.png": "3fcddae45845a93d9f7d76641aed032e4a0ee27e2e5c98113363725555579a07",
+        "input_mask.png": "8ffba85afdcc07b42fcbece20d49f46fdc038d8ef290e839e27c5cb83318c9b5",
+        "instruction.txt": "aaba4ce129f4c0dd9de03f4ad84c78b98aac3bd04777222ab3b386b936855483",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_toy_semantic/example42",
+      "input_dir": "inputs/Semantic__select_toy_semantic__example42",
+      "sha256": {
+        "input.png": "a75ff876840e89af8d0cb68b65b7ac8d07249b4dd4b0d8f9c6b7cbaf891535bb",
+        "input_mask.png": "ad185b5155a3c60894471bb298f1fd6a09ba011275def627f912f7fb41fbd9ed",
+        "instruction.txt": "f65993bbf528b976f6601015eacb8c5584748c56cb8ea0f2eba3cc99aece3950",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_toy_semantic/example51",
+      "input_dir": "inputs/Semantic__select_toy_semantic__example51",
+      "sha256": {
+        "input.png": "cfd264a9b24ea4e076d593cc6e8a10a58041db313c1268a35a8c684a09552c91",
+        "input_mask.png": "eef292db9b7043d06bf6552003be21740bdc9fc96a3884f22e48c4a6d90cdbcd",
+        "instruction.txt": "810e07f7316f7ded03cc1b3bd282c78e5b393ee4f8750c48f0b92c3740326d3e",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_toy_semantic/example61",
+      "input_dir": "inputs/Semantic__select_toy_semantic__example61",
+      "sha256": {
+        "input.png": "e08d2c14501106fca899410f69f6d27d9a198f8df63d87e20574bae2574ef0a0",
+        "input_mask.png": "35837fc2e5f6947a8a8335f56c201b6ba0038f64653d96135910324769168a5a",
+        "instruction.txt": "c829fe8292de1f66e74ffbfcf8987c0aee25ba5fa16648590842f8fc12a51f69",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_toy_semantic/example69",
+      "input_dir": "inputs/Semantic__select_toy_semantic__example69",
+      "sha256": {
+        "input.png": "79cf27168ca67dd7e8e2897991e3e917cb284ed21a9e48503bd07900935e9f28",
+        "input_mask.png": "cdaeceb7a230e407d797bc9fb553276d5be98f3ae80e6b8b4aa11ea776d22481",
+        "instruction.txt": "e6d5c1198b775671e8879761388dd8e99c94147fd0653d2179f1eefee43e6eee",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_toy_semantic/example73",
+      "input_dir": "inputs/Semantic__select_toy_semantic__example73",
+      "sha256": {
+        "input.png": "c5ac340b41093d813a3c4695721291594866d1f81a4f7c651150be9c8a4fb31a",
+        "input_mask.png": "bfd71f063c427c3287c6251e1e88243f380989e74981e3f63fc230da5e452cb9",
+        "instruction.txt": "577503e4cf41766fa40e521f62d41bb78ff2053bf60581cd6e17756f254b1884",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Semantic/select_toy_semantic/example80",
+      "input_dir": "inputs/Semantic__select_toy_semantic__example80",
+      "sha256": {
+        "input.png": "5c683462317046fcc89e252505b4bd65796597a2e1738ecc95112ec66c960074",
+        "input_mask.png": "a62d95564035fc5a58cd35d5030439f114fda6b56c199424fcb82d46a778e517",
+        "instruction.txt": "1e47e8afefd6ed1a72f73b8b4fcdcb413fa9a7a92c5025f12d9afe2326a6072d",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/insert_bloom_flower/example17",
+      "input_dir": "inputs/Spatial__insert_bloom_flower__example17",
+      "sha256": {
+        "input.png": "2db2be60de09bf867d26a4c49bd318bc793f8527eb04d9c6def5834fc2eb6fa9",
+        "input_mask.png": "d84f376a4a11bc551deec620bd6a19610717417ed4aad2f51081a77143729465",
+        "instruction.txt": "ae09a7b9cf54b33b59ba032cd0b71958a11c291e6cfcec6eb60d60775264bb5c",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/insert_bloom_flower/example27",
+      "input_dir": "inputs/Spatial__insert_bloom_flower__example27",
+      "sha256": {
+        "input.png": "0bad788aaae18216d735a66f507a8a3d60bf412b7d7b1765196a1399ca31b50c",
+        "input_mask.png": "7850597d03440a9f8ef76b8cfda0cd8fe2dc99ec7541b5e95c507714ef18bf72",
+        "instruction.txt": "46f23f78e42859121ac497831a04f529378dbb451f9baf94697b6bae45805cd7",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/insert_bloom_flower/example28",
+      "input_dir": "inputs/Spatial__insert_bloom_flower__example28",
+      "sha256": {
+        "input.png": "15d752c3d04761107fca78106d611b13cbfeb85098c197fb56add38a36208a5d",
+        "input_mask.png": "61e8c04ec97ba887c7a32c1567d9799c13075571fb0db2b5b523352968445576",
+        "instruction.txt": "d637c09166578b8f8ab7e3ebf2d5e40e443e0647e91a1ef587324c789fd3fb7d",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/insert_bloom_flower/example29",
+      "input_dir": "inputs/Spatial__insert_bloom_flower__example29",
+      "sha256": {
+        "input.png": "b1a9cfe219874a279499c33d67df3089a71a1f3138f7045d8e2a8a3a8d97a4e0",
+        "input_mask.png": "f296fa7c1800f13705e52b050e0912c8fe806fdcf221984da3ad9c61b40c4682",
+        "instruction.txt": "c7e4c1cd4b2464775b71d474e98cf1b757869aa75e7b3d1fb77cf47302f505ff",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/insert_bloom_flower/example39",
+      "input_dir": "inputs/Spatial__insert_bloom_flower__example39",
+      "sha256": {
+        "input.png": "eed6a7d043ac72f10049e54969b5c9358d8b32ae0495a0b689d53c43435d866d",
+        "input_mask.png": "7a81fd1f5ab72cfecb07d393134dadc268e0dfc8fca96c5f3c32705845b3b2d5",
+        "instruction.txt": "d637c09166578b8f8ab7e3ebf2d5e40e443e0647e91a1ef587324c789fd3fb7d",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/insert_bloom_flower/example40",
+      "input_dir": "inputs/Spatial__insert_bloom_flower__example40",
+      "sha256": {
+        "input.png": "674a2d2d96badd64e477d4b68a7330cfa6e8641338b673552a5d11b99688e17a",
+        "input_mask.png": "cb5c5cf8588fd7d255131760515bc5c1054e6acd1d4c2e8bbbccbdee46a29350",
+        "instruction.txt": "d637c09166578b8f8ab7e3ebf2d5e40e443e0647e91a1ef587324c789fd3fb7d",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/insert_bloom_flower/example50",
+      "input_dir": "inputs/Spatial__insert_bloom_flower__example50",
+      "sha256": {
+        "input.png": "586e700cb7e73e1c3194d85b56bbf2153ce2fc7b6fb64f001b8c2eccaa85df70",
+        "input_mask.png": "1c7ac999b331d6be3973170fe7ba4f29ea39bedfabde13c729dc038d732ecec4",
+        "instruction.txt": "c7e4c1cd4b2464775b71d474e98cf1b757869aa75e7b3d1fb77cf47302f505ff",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/insert_bloom_flower/example52",
+      "input_dir": "inputs/Spatial__insert_bloom_flower__example52",
+      "sha256": {
+        "input.png": "a81ea728a8b8e7e41905836ee00b1b18a485b1766e9a0de5dd10df0eff0997e9",
+        "input_mask.png": "31a4ea2fd085d32e988a976ddd3907f2a07c56061ac81d4e492e55a06e95249a",
+        "instruction.txt": "46f23f78e42859121ac497831a04f529378dbb451f9baf94697b6bae45805cd7",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/insert_bloom_flower/example62",
+      "input_dir": "inputs/Spatial__insert_bloom_flower__example62",
+      "sha256": {
+        "input.png": "75d1af37b309c10ee74acc75fe52441233a26f0c26fea61adaee48afe7f5877d",
+        "input_mask.png": "1f6749f3e34a91428612567bebf2f5cdf7e81a2aa9230afa9d6e8d97c33189f7",
+        "instruction.txt": "46f23f78e42859121ac497831a04f529378dbb451f9baf94697b6bae45805cd7",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/insert_bloom_flower/example90",
+      "input_dir": "inputs/Spatial__insert_bloom_flower__example90",
+      "sha256": {
+        "input.png": "308dc81aa2bfd95732f33929cd60e1b4d8f247eed4504cd24fb06b050b39ff26",
+        "input_mask.png": "8fa224edd684d883cea02e0c775a69f6a6df92787804f46e67f4b14ede975ab3",
+        "instruction.txt": "46f23f78e42859121ac497831a04f529378dbb451f9baf94697b6bae45805cd7",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example22",
+      "input_dir": "inputs/Spatial__select_billiards_spatial__example22",
+      "sha256": {
+        "input.png": "126a7785eb4601af77c50738476b6570d137faf1ee07e3c3c98c5adf4efed360",
+        "input_mask.png": "e3690462d619085505c807f6777f95943139f616f3479d692ea7a45ae73c4206",
+        "instruction.txt": "3f3f486430dd3c1641b3184efa5d4891e3f9ab0d0b91ea8849a76ddbb7a57108",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example50",
+      "input_dir": "inputs/Spatial__select_billiards_spatial__example50",
+      "sha256": {
+        "input.png": "067e01d45c3d90236af33392300c80c110d8157b32885a1c73674f91abaa9463",
+        "input_mask.png": "ad0a36b9db8bf01019372f467c879190e14bf9cee12cbbd80db7bd8166bc575d",
+        "instruction.txt": "2a26104e95a5e5b207b35154c7d79592305a5191c8f0e82ebcb080113a0ac635",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example61",
+      "input_dir": "inputs/Spatial__select_billiards_spatial__example61",
+      "sha256": {
+        "input.png": "4c83d474d36c1a90ea23df4c8850257876b07347ed1a540f938ebcc6f9c02daa",
+        "input_mask.png": "159cc6a4e268f92efa4c61ae52fda9f9c878ddcecd97fa03bf4a011920d61a81",
+        "instruction.txt": "7de03be97f27495f620281c87f06e21e75830f8c09db3ac1c1b68a1428f00fa1",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example63",
+      "input_dir": "inputs/Spatial__select_billiards_spatial__example63",
+      "sha256": {
+        "input.png": "802f419092288e2ab029609d4e10734052ef2282c394a9d7aa555aa0341644c9",
+        "input_mask.png": "52123ac21f20171c12cee2fd865ece1f4c53e985693232ce7f98e39682733c5e",
+        "instruction.txt": "e7d38d1c7c455e70a18c836248c900f03bf6af2bb9ed91941adefc4f5fae2d4e",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example66",
+      "input_dir": "inputs/Spatial__select_billiards_spatial__example66",
+      "sha256": {
+        "input.png": "5ac7bd138551f57a1b732f0060d55892d35077c1e64431079ecba5651301a4dc",
+        "input_mask.png": "74c89a3d5b4a2b06c08b53ab891d2bc5d218dee59783dea941e26cb33e974957",
+        "instruction.txt": "3f3f486430dd3c1641b3184efa5d4891e3f9ab0d0b91ea8849a76ddbb7a57108",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example70",
+      "input_dir": "inputs/Spatial__select_billiards_spatial__example70",
+      "sha256": {
+        "input.png": "82b9ec04696bf68059b2eabbe52b5b4da5d1436c9c322ca3f12ed8c6f93f047b",
+        "input_mask.png": "30f4cc55616fe041feccfeb316084049f7034807a3a788fbe67f604aa5d85c68",
+        "instruction.txt": "dc36c3ba9026d905dfad4f86346bcee8f6429ba1641f19643a15609429aebe5f",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example77",
+      "input_dir": "inputs/Spatial__select_billiards_spatial__example77",
+      "sha256": {
+        "input.png": "153ef2d71df92bad0b9063f85f7f9f84c45ff59f8db8ff803b2ba38ba26733d4",
+        "input_mask.png": "c9d6cbce989236b66ef359f41c2798b9bb2ef40de6aec1218b60da57404db01d",
+        "instruction.txt": "843ae60690156ad16a9608b9f43befecb971b103c0500f5fc3df611e95aab854",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example82",
+      "input_dir": "inputs/Spatial__select_billiards_spatial__example82",
+      "sha256": {
+        "input.png": "b62afdc8f4b925c07446a98ac898489405c746523be033f857c95def2ac2e08a",
+        "input_mask.png": "634ea2c360aefee82f53e86c8f19b26f1b0d13f4d99b0e47639ceab821e9267d",
+        "instruction.txt": "f6e7e2e6edd73d2b8bfc8f663ecc4819ce31a833b5f28ef0afcd2996abb71b4f",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example87",
+      "input_dir": "inputs/Spatial__select_billiards_spatial__example87",
+      "sha256": {
+        "input.png": "94c353d2e968d30e4a1c8f609f9ee01c76dc9416749249c884fe31e5997fc728",
+        "input_mask.png": "a7a80b3fd5c21aabacd6d818d332d7e3503ba097587110c79a1819c04a3e9428",
+        "instruction.txt": "f6e7e2e6edd73d2b8bfc8f663ecc4819ce31a833b5f28ef0afcd2996abb71b4f",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example88",
+      "input_dir": "inputs/Spatial__select_billiards_spatial__example88",
+      "sha256": {
+        "input.png": "54c21d49c873e0359862aa53634f5dd471f4ef1f7801cfdc27a9a8ed03734263",
+        "input_mask.png": "e58148ab891313134605ed0775328904168c930673dfac0db6e5a8e6480a1d9e",
+        "instruction.txt": "dc36c3ba9026d905dfad4f86346bcee8f6429ba1641f19643a15609429aebe5f",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_book_spatial/example13",
+      "input_dir": "inputs/Spatial__select_book_spatial__example13",
+      "sha256": {
+        "input.png": "df5b1bfc4c2d58de5db82556047a36823c57527c4cc1c0c5ff53a365d3cf15ad",
+        "input_mask.png": "00db7f5408dcf35ecb2fc8f438a1b5935dbf497233ebd7f0c6e1245ba3afc8a7",
+        "instruction.txt": "e36d7e48200fb572b68a1a8a6f8afaea78c26c67fa0bd17ef5b7b25b42f09d05",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_book_spatial/example14",
+      "input_dir": "inputs/Spatial__select_book_spatial__example14",
+      "sha256": {
+        "input.png": "8109565aa3d71a5278cd65aa5be5020e1cf8518036b3a7cbb56eb5ab664701ed",
+        "input_mask.png": "d6ffb5166a49378ae7fafb188f58ba824d4bcf52a7fbf3a48629a942c4a47e30",
+        "instruction.txt": "35cca158df3306a03acb714778b02b7f3f5bcc5326a8734ec17c4058c3663220",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_book_spatial/example16",
+      "input_dir": "inputs/Spatial__select_book_spatial__example16",
+      "sha256": {
+        "input.png": "566160bf415f26fdeba1de40d0bcb45a4bd458bd271f4986e229a1526bb441ce",
+        "input_mask.png": "7570ff8293377a47797f890fed704713354e5d214a539f581c914d83177169d3",
+        "instruction.txt": "fa4c77502f7ca933d3bd62e1fe124728d3b05ef9d57a9a8542e82b46227c6503",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_book_spatial/example25",
+      "input_dir": "inputs/Spatial__select_book_spatial__example25",
+      "sha256": {
+        "input.png": "b24ccbec7617b665efebe8a2e2bc11469893603177d06308800234349b10f2d5",
+        "input_mask.png": "28dc214165cd92de1d992fa9442134d9d12a2861c13007a3a2fa3396631b658c",
+        "instruction.txt": "a9017063ad55a0d5905131f53c695e2ba6902944621ad6b1b88b6edbd30be85b",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_book_spatial/example28",
+      "input_dir": "inputs/Spatial__select_book_spatial__example28",
+      "sha256": {
+        "input.png": "9004d37fddb5ea3a2cccef10301ef426dc74eaf734a8d711e01894364ae8ba41",
+        "input_mask.png": "09c4418e388df04943d396d269421187920435636c5ebbd7b3b49498f142a7d8",
+        "instruction.txt": "b1c0c806e78459d096d5c2291b18ed2fc658c36986dec798c0a1c79428f94384",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_book_spatial/example45",
+      "input_dir": "inputs/Spatial__select_book_spatial__example45",
+      "sha256": {
+        "input.png": "6aac03d9c889b6f085f56d4be611829e4b01197aee198a99e84af69f858767ec",
+        "input_mask.png": "e6f5c5637c713384493efc4aa927abf66f6038c776c29eb0d092d29e7ef59f02",
+        "instruction.txt": "b5bc14eff447a5253b31bc7e600727fb1bf4631d9cbe14aca66693d123e1b4d6",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_book_spatial/example61",
+      "input_dir": "inputs/Spatial__select_book_spatial__example61",
+      "sha256": {
+        "input.png": "f24b2283e5f39e9d00abfa6c24804b157e5787856b7c9036eb73544117856f0e",
+        "input_mask.png": "6ed0ed9f6b5c1d5f0b40e1598d7985f1273122f710b318b6721bff78f19bdf21",
+        "instruction.txt": "46b0899c35b1cc347d3d04cd76bd9c76ba238dd885ac5783b504502611bde708",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_book_spatial/example64",
+      "input_dir": "inputs/Spatial__select_book_spatial__example64",
+      "sha256": {
+        "input.png": "d6b5ba2d3cc053f5bb8dc3fa3bc6278fe5bc1071efd0441369295d1f40e5f6ba",
+        "input_mask.png": "639b02eef12833492bcdb94d7a2878f87919a019b2e1fc1d78b5da0879cdee49",
+        "instruction.txt": "fa4c77502f7ca933d3bd62e1fe124728d3b05ef9d57a9a8542e82b46227c6503",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_book_spatial/example87",
+      "input_dir": "inputs/Spatial__select_book_spatial__example87",
+      "sha256": {
+        "input.png": "b2ea6b82893231171b1116cf9c584829fcf97bddbf05aa4d686189b9406b5e24",
+        "input_mask.png": "9c5e3e444312d2f26b18ba446ada7afd800838c100e673b3ba690abaa184458e",
+        "instruction.txt": "35cca158df3306a03acb714778b02b7f3f5bcc5326a8734ec17c4058c3663220",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_book_spatial/example95",
+      "input_dir": "inputs/Spatial__select_book_spatial__example95",
+      "sha256": {
+        "input.png": "93f0e1a6b0f36abcf698ca3fcb1812a9335fe9710e34a9371995fa548e805cc3",
+        "input_mask.png": "04103f4cb7b8ad90ceb3dde55e2058725af76925baf46fa75c03c7aaa1cb0a12",
+        "instruction.txt": "1c639fe2bf1d88350f3ddfb0c7c7090836a1c005d86a24d4e8e3189241eee5b5",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_chemistry_tube_spatial/example2",
+      "input_dir": "inputs/Spatial__select_chemistry_tube_spatial__example2",
+      "sha256": {
+        "input.png": "4a7e532a4e5972fb3d6b22c34284040489ef6b645bf3595fb671e7bc61b8d0dd",
+        "input_mask.png": "57632929df85590dadaae5140bcac5b285416e866f1be28e8eb66af73b847873",
+        "instruction.txt": "d97b9461fa0cd8cce21a7f67ea1c0975231f19fc5340a7513dfac6cdbf7c02cd",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_chemistry_tube_spatial/example8",
+      "input_dir": "inputs/Spatial__select_chemistry_tube_spatial__example8",
+      "sha256": {
+        "input.png": "23b9f1ce91825115e975201c1b196d5aa9e5bb35b53586f204b316d79fdad6cd",
+        "input_mask.png": "74007dfc5761a9ae2dc0d8a591e5909b419c93ff43f828da1880beea01abcc03",
+        "instruction.txt": "f1baa7a9a77b5513b9b509f3c8beb370f180a9515fe6bdd716c8b9b317e3b35d",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_chemistry_tube_spatial/example23",
+      "input_dir": "inputs/Spatial__select_chemistry_tube_spatial__example23",
+      "sha256": {
+        "input.png": "b7bae1ed06c5d791e69b752a0cd8c0d27c9e7362aff2d300349efa39152b309e",
+        "input_mask.png": "233e5fd4ca5853c6c67d7f9102703bc66d270032bff211ce0484e6418bbae260",
+        "instruction.txt": "f1baa7a9a77b5513b9b509f3c8beb370f180a9515fe6bdd716c8b9b317e3b35d",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_chemistry_tube_spatial/example43",
+      "input_dir": "inputs/Spatial__select_chemistry_tube_spatial__example43",
+      "sha256": {
+        "input.png": "6fd8055a74b04809128fe2a552d28a20a6216c782f247304998b4426ef3f9280",
+        "input_mask.png": "6469a719b159db7a99565afb67a5a54d0c8b880ab7a1dfbe4b2cd382529b7d7e",
+        "instruction.txt": "50ad83d9ad2abef211d1c2656aa7037906444a8a9ba51a8b2ba02a29452724b3",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_chemistry_tube_spatial/example48",
+      "input_dir": "inputs/Spatial__select_chemistry_tube_spatial__example48",
+      "sha256": {
+        "input.png": "8feab4db7ac1f738d3fee47efe84c1c71afd422f4d690cd0730494cea3ff0913",
+        "input_mask.png": "a15c3cc0c2df38badf00836f3bff6f4668595db57536c03a3fc69e85707b8b7a",
+        "instruction.txt": "4012c1f946d7680a022cf274d926adc3dc1541c053dcc2b3226ec7aa3c8efa70",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_chemistry_tube_spatial/example53",
+      "input_dir": "inputs/Spatial__select_chemistry_tube_spatial__example53",
+      "sha256": {
+        "input.png": "7cefda3a5b70b2733e2a16143438b5f238bd9d386d54403b5c330f4ae228a7c8",
+        "input_mask.png": "ad0c3dc1f14f2ef9dc13408f81dd511b38ff4daabf17d9c09ad5e2623c1f20c4",
+        "instruction.txt": "07d9e5ae6b822bdd0dcecb951aaaa00949f810b09da0366a02cd71b2309af3a1",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_chemistry_tube_spatial/example60",
+      "input_dir": "inputs/Spatial__select_chemistry_tube_spatial__example60",
+      "sha256": {
+        "input.png": "a623133d33def7bb5e81f30cf67ff940c180649b22ffb4702702fae019324e1e",
+        "input_mask.png": "16b3cd8afc7794c5048ce586abadedd63d393253f5d76a40b5b4b42ae5aa10da",
+        "instruction.txt": "d97b9461fa0cd8cce21a7f67ea1c0975231f19fc5340a7513dfac6cdbf7c02cd",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_chemistry_tube_spatial/example73",
+      "input_dir": "inputs/Spatial__select_chemistry_tube_spatial__example73",
+      "sha256": {
+        "input.png": "21b37860ca86c05d49183ed5180cd3c5976c83f7b3c9d5ca9c5309f73019f582",
+        "input_mask.png": "c58f1c805055b38a2bf946310d5973cabcd5ef67a667bfb1ec952770a834d891",
+        "instruction.txt": "d5e4d47158855bffe7c52849190bc9c3429d2a59dfd847980bb8f316681067d4",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_chemistry_tube_spatial/example80",
+      "input_dir": "inputs/Spatial__select_chemistry_tube_spatial__example80",
+      "sha256": {
+        "input.png": "6e4751aa8c292953791a3e9092c51d0117005e4ffe6de89b9c37713b5228d9a7",
+        "input_mask.png": "03e71254e3d68fb906e5572f09b9f741cceda24e10eed2396b01182091968a9c",
+        "instruction.txt": "d864fd4201929d403116a6d842c0ca2855aa9034dd12b7d343d9806f0c47b297",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_chemistry_tube_spatial/example92",
+      "input_dir": "inputs/Spatial__select_chemistry_tube_spatial__example92",
+      "sha256": {
+        "input.png": "8b429a9e5ad2cedb27ee1ea557584d0f4ff2beef7a14a5b6070351a95517f62f",
+        "input_mask.png": "1f0642b06159881d41996f476eab1df04b9f8740488039cadc5652347bf76025",
+        "instruction.txt": "07d9e5ae6b822bdd0dcecb951aaaa00949f810b09da0366a02cd71b2309af3a1",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_poker_spatial/example2",
+      "input_dir": "inputs/Spatial__select_poker_spatial__example2",
+      "sha256": {
+        "input.png": "2837a3d59be2801836e8013c323d1c6285db5d6d7331d540be274f338db5dabf",
+        "input_mask.png": "741a03e56aba32426ab275afff141eeaa1efdd07b92e9bbd49636a181d3d567d",
+        "instruction.txt": "ead930f59c9376d228c2e520683a6677d92de9c006186e7625591ca4e2566abb",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_poker_spatial/example18",
+      "input_dir": "inputs/Spatial__select_poker_spatial__example18",
+      "sha256": {
+        "input.png": "945e5e9f6a7c9cea805a7416016981fc85140374fadb4a15faa800a5492a359f",
+        "input_mask.png": "ceabf141ee24bf79d36503509e26b9f75b813b15aec3a0bc579a26ffd045f442",
+        "instruction.txt": "ead930f59c9376d228c2e520683a6677d92de9c006186e7625591ca4e2566abb",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_poker_spatial/example31",
+      "input_dir": "inputs/Spatial__select_poker_spatial__example31",
+      "sha256": {
+        "input.png": "61341e1465eb84748d8fa97185d6dc993bb834a664b2524d32d1bc092ea14596",
+        "input_mask.png": "f42d78bd73be7f2afcca73189850c3a049c65c589dd233c8d95eb61cee88cfcf",
+        "instruction.txt": "ead930f59c9376d228c2e520683a6677d92de9c006186e7625591ca4e2566abb",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_poker_spatial/example33",
+      "input_dir": "inputs/Spatial__select_poker_spatial__example33",
+      "sha256": {
+        "input.png": "3b75241b49ebaca23255906d9dda7d7d910f7048d407c52b024d1fdd33c97895",
+        "input_mask.png": "95ef73307edee3cbfd9180c7d64411315e80bdbdf8a3b2d539a6030891a78ee2",
+        "instruction.txt": "8d0b7bb2f93fab64c3c6ba28c0ab8a8b4ef01bb6d658002e1e7d28377e49b0aa",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_poker_spatial/example42",
+      "input_dir": "inputs/Spatial__select_poker_spatial__example42",
+      "sha256": {
+        "input.png": "23e43f5d821770d36f685a75f795ef56c5a8624270d3695efcdbd9c548a9b5ab",
+        "input_mask.png": "b113c7fd903049c7db6e881a31bf5ab80df0d258e5343162c637e8e2a19ed80d",
+        "instruction.txt": "44797f038acbb50c488936a586a55abd322c3c403516ae0445f33f96cf3440b0",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_poker_spatial/example49",
+      "input_dir": "inputs/Spatial__select_poker_spatial__example49",
+      "sha256": {
+        "input.png": "fbd727a1c19f5d5f6f3daeed0fec59e87397a0b74e767f666e17c185f74ada9d",
+        "input_mask.png": "f9e34cf75c413361f4559eda315d72f330fda57cc787f028d274f1aac1866374",
+        "instruction.txt": "44797f038acbb50c488936a586a55abd322c3c403516ae0445f33f96cf3440b0",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_poker_spatial/example62",
+      "input_dir": "inputs/Spatial__select_poker_spatial__example62",
+      "sha256": {
+        "input.png": "8c18054df5b5b3e0b378bf103954c878813f8490cb61a779cea456685a93168d",
+        "input_mask.png": "f1fe81ed323098a4b33b4974aff32693fdbc56551b0f98970cb30180b749b8e7",
+        "instruction.txt": "4e6d56eb378ef084e3dffeda35854e44a3b9a156bcf351a3a603d45cdb63c2f6",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_poker_spatial/example72",
+      "input_dir": "inputs/Spatial__select_poker_spatial__example72",
+      "sha256": {
+        "input.png": "fd1088ede4ce9877302d15df1c7db4c6c4a2c3fe9bd2268710318c5f0eb8a192",
+        "input_mask.png": "f8ac6a2ec7748312281dc4b09b6635fe3f4869a0d6493b129d457eb838f6c837",
+        "instruction.txt": "44797f038acbb50c488936a586a55abd322c3c403516ae0445f33f96cf3440b0",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_poker_spatial/example82",
+      "input_dir": "inputs/Spatial__select_poker_spatial__example82",
+      "sha256": {
+        "input.png": "a951d67fc10fe0d81cd1bb77882bc3a552d2d78d3e7a6a163e9a0eb5b159c872",
+        "input_mask.png": "b83ac7523d180248f20041abade0cab9bac7affcc2d69465089a9f3bad4fb314",
+        "instruction.txt": "8d0b7bb2f93fab64c3c6ba28c0ab8a8b4ef01bb6d658002e1e7d28377e49b0aa",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_poker_spatial/example93",
+      "input_dir": "inputs/Spatial__select_poker_spatial__example93",
+      "sha256": {
+        "input.png": "c81e9802e2a4cb88e18427407144d0097970df649df338b642f7e5ad40631cf5",
+        "input_mask.png": "2016f493e96e94619097a73beba073cd9bea32c3d34b092f857c0b1d4f20200a",
+        "instruction.txt": "8d0b7bb2f93fab64c3c6ba28c0ab8a8b4ef01bb6d658002e1e7d28377e49b0aa",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_toy_spatial/example0",
+      "input_dir": "inputs/Spatial__select_toy_spatial__example0",
+      "sha256": {
+        "input.png": "42b55f75e3edbb2ab187506d807382f4dbe792942d7517b82cf2073f3fbbd8fc",
+        "input_mask.png": "83a00a389fe666c64a433eb9f35624d313e0c7c9e52e32368af5b8e0c520b47b",
+        "instruction.txt": "2ee32ceae7961cac3e8465253bcc8d33cfc0184fadc97ab69461dc7f4c9f59de",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_toy_spatial/example6",
+      "input_dir": "inputs/Spatial__select_toy_spatial__example6",
+      "sha256": {
+        "input.png": "15ce6190d93bb3081432ec3f235ae36d1608ffa1ba2943b18d8ee71409485c58",
+        "input_mask.png": "c573f0aa75b5b583ff28e2e420f00ca45ca8dfcf45e9430ec4c1d0e6b89b67ef",
+        "instruction.txt": "020f0f9cd416a2764f307d3278c55b8343866687da1868e27f0dfd2f24e9f39c",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_toy_spatial/example12",
+      "input_dir": "inputs/Spatial__select_toy_spatial__example12",
+      "sha256": {
+        "input.png": "b0435439226365b43e2a318ed4c44558eb3768979387cd9e5a9a1b345ea534d7",
+        "input_mask.png": "312507f5d52a3ce740f9468e8e78b30a94e2641d47fa7d58d74e2e0a80cbdffc",
+        "instruction.txt": "a031727a10c66cf6b121848e3912f4cabb98bac18336a506b5fae8a7892fef04",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_toy_spatial/example16",
+      "input_dir": "inputs/Spatial__select_toy_spatial__example16",
+      "sha256": {
+        "input.png": "6c24da3bd4aa54d274d6e10e495bc82ebd88664990b78e3c3b71fd3b0f89db41",
+        "input_mask.png": "47a9e507f4b3052080ce2225a62ac7c74751c53e794bbca3b9733b6c935d506a",
+        "instruction.txt": "97f28f678da0e50633eb8fdcb256d495ba9de7ecd8c8dc12addcc89dd8a44dcc",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_toy_spatial/example22",
+      "input_dir": "inputs/Spatial__select_toy_spatial__example22",
+      "sha256": {
+        "input.png": "b6572e4ffef08fb6d2a475bad77500f5e78b6dd2547bcc3d19e95bd11703ea6e",
+        "input_mask.png": "484f9fe20d236f8f1f032bf287f18666b57dbdc1351686c06a725d9f319b50eb",
+        "instruction.txt": "4901d51e92e9d0f76efd749979cc992362eb368a6b42827f903bf65916b4ddd1",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_toy_spatial/example27",
+      "input_dir": "inputs/Spatial__select_toy_spatial__example27",
+      "sha256": {
+        "input.png": "bf043385954231bc805ad76934794dae3ad49c39fab2ae1f459c9e4e5aa5b3d7",
+        "input_mask.png": "0badd3bb2b96a0aff44f5c6323d870190c4ffe6445183ef7ccd345ac6a2d32fb",
+        "instruction.txt": "f7e8c4df677f4475d88fd67d48f8b01c445d3ca76bbcd121539267719a802ab2",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_toy_spatial/example81",
+      "input_dir": "inputs/Spatial__select_toy_spatial__example81",
+      "sha256": {
+        "input.png": "df2ee0802419e31ef01b11fab231076d4d647638bba2095da9348220761d5677",
+        "input_mask.png": "ce9810d613bf52863b8c3f909f41ac4fdcb0840f54d8e5c6853ab7376a31ad33",
+        "instruction.txt": "5ae1d898dcb14b985c3f004864a407e30817850d021d97a44b0bd388f9f32b47",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_toy_spatial/example82",
+      "input_dir": "inputs/Spatial__select_toy_spatial__example82",
+      "sha256": {
+        "input.png": "3fa4984d571f319f157b3d935d63eb239ac80bfdc426823347d9906fd5165ee4",
+        "input_mask.png": "90bbdc1addb433a8f382a19bd05266d178b9f0540632d34a8aea91ca2b9af7a7",
+        "instruction.txt": "c51ca41011959e2daa7292388f3521aed9a1da919a937679a1a587f3673fc206",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_toy_spatial/example85",
+      "input_dir": "inputs/Spatial__select_toy_spatial__example85",
+      "sha256": {
+        "input.png": "0811a17f865fc381770dfa62f26d2426cd2aff9f7c8575f2a0788112919de875",
+        "input_mask.png": "3577e05eca69c35941bffbdd577009ab32000177d5833d57b5dc0d84ae1db1b5",
+        "instruction.txt": "2041959aba1e5fa494670842a8dbda3385c8917b06ab89a1a37cc7d81eef2b8a",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    },
+    {
+      "case_id": "Spatial/select_toy_spatial/example91",
+      "input_dir": "inputs/Spatial__select_toy_spatial__example91",
+      "sha256": {
+        "input.png": "344e41e792b366680b35d1bef5b6d7c75697928a948f6a37a0014199e4ccb6d3",
+        "input_mask.png": "76f5759ce96455f9dcf29c55f3f519a60d33e4d12cb9a3574bac970693d725c7",
+        "instruction.txt": "0bae75a25b772c62ac675a8f68bcd5e553b05b226b342d88151cb08f55729903",
+        "prompt.txt": "8f11904e724b4a5d07eee711701861bed2d2c266f27ebd8d56a2e598bde530ff"
+      }
+    }
+  ],
+  "gt_inputs_exported": false
+}

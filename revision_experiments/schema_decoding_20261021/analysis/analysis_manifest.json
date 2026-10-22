@@ -1,0 +1,34 @@
+{
+  "cases": 322,
+  "tasks": 34,
+  "models": [
+    "qwen",
+    "gemma",
+    "internvl"
+  ],
+  "rows": 1932,
+  "conditions": [
+    "json_object",
+    "json_schema"
+  ],
+  "native_attempts": 1,
+  "bootstrap_repetitions": 20000,
+  "bootstrap_seed": 20261021,
+  "primary_uncertainty": "paired task-cluster percentile bootstrap",
+  "auxiliary_test": "case-level exact McNemar; Holm family = three models for final success",
+  "input_hashes": {
+    "qwen": {
+      "evaluation_complete_sha256": "b9ba107d58328d5bb01f30f588b2822573deb6a6c20c58b015b6cddb1be8f884",
+      "generation_complete_sha256": "fb4b3a305db7012b41829fa4aa5533914896aa2a076261d79d86e4256c268488"
+    },
+    "gemma": {
+      "evaluation_complete_sha256": "b9ba107d58328d5bb01f30f588b2822573deb6a6c20c58b015b6cddb1be8f884",
+      "generation_complete_sha256": "c7a8e32788e6961754068abf5db2819249a0fcd84979dbe059e01dc4201a6935"
+    },
+    "internvl": {
+      "evaluation_complete_sha256": "b9ba107d58328d5bb01f30f588b2822573deb6a6c20c58b015b6cddb1be8f884",
+      "generation_complete_sha256": "4c015fed2e6c790fc533594751b16fd509c3c9f062645854f1d53d9fa92f4774"
+    }
+  },
+  "analysis_source_sha256": "9308cfc3974dbd73f676a588c1780346a10670e6035089c919c0ef139a66d2d7"
+}

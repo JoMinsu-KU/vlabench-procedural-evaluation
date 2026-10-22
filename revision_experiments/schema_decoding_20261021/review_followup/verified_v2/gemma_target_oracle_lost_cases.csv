@@ -1,0 +1,13 @@
+﻿case_id,failure_code,failure_subtype,detail
+CommenSence/select_chemistry_tube_common_sense/example53,C1,,condition_success=false
+CommenSence/select_chemistry_tube_common_sense/example59,C3,extra_phase,"expected 2 skills, got 4"
+M&T/insert_flower/example46,C1,,condition_success=false
+M&T/insert_flower/example70,C3,extra_phase,"expected 4 skills, got 5"
+M&T/select_chemistry_tube/example34,C3,extra_phase,"expected 2 skills, got 4"
+Semantic/select_chemistry_tube_semantic/example50,C3,extra_phase,"expected 2 skills, got 4"
+Semantic/select_chemistry_tube_semantic/example72,C3,extra_phase,"expected 2 skills, got 4"
+Semantic/select_poker_semantic/example61,C3,extra_phase,"expected 2 skills, got 4"
+Semantic/select_poker_semantic/example64,C3,extra_phase,"expected 2 skills, got 4"
+Spatial/insert_bloom_flower/example63,C1,,condition_success=false
+Spatial/insert_bloom_flower/example92,C3,extra_phase,"expected 4 skills, got 5"
+Spatial/select_chemistry_tube_spatial/example35,C3,extra_phase,"expected 2 skills, got 4"

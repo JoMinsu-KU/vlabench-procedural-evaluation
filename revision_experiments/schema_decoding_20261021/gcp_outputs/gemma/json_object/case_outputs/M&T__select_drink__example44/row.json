@@ -1,0 +1,66 @@
+{
+  "transport_ok": true,
+  "http_status": 200,
+  "error": null,
+  "origin_output": "{\"steps\": [{\"skill\": \"pick\", \"target\": 0}, {\"skill\": \"lift\"}, {\"skill\": \"open_gripper\"}]}",
+  "finish_reason": "stop",
+  "refusal": null,
+  "raw_response": {
+    "id": "chatcmpl-90eb2f49a3acc8f7",
+    "object": "chat.completion",
+    "created": 1792593024,
+    "prompt_routed_experts": null,
+    "model": "google/gemma-3-12b-it",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"steps\": [{\"skill\": \"pick\", \"target\": 0}, {\"skill\": \"lift\"}, {\"skill\": \"open_gripper\"}]}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.21.0-f0ccb996",
+    "usage": {
+      "prompt_tokens": 1812,
+      "total_tokens": 1843,
+      "completion_tokens": 31,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null
+  },
+  "usage": {
+    "prompt_tokens": 1812,
+    "total_tokens": 1843,
+    "completion_tokens": 31,
+    "prompt_tokens_details": null
+  },
+  "served_model": "google/gemma-3-12b-it",
+  "elapsed_sec": 1.5562531829991713,
+  "case_id": "M&T/select_drink/example44",
+  "condition": "json_object",
+  "requested_model": "google/gemma-3-12b-it",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "model_revision": "96b6f1eccf38110c56df3a15bffe176da04bfd80",
+  "attempt_history": [
+    "json_object/case_outputs/M&T__select_drink__example44/api_attempt_01"
+  ],
+  "request_sha256": "336cc70ef59963999357c3576953a09b4460ddfccd8ab82b0891f54edff054c3",
+  "response_body_sha256": "0f10262ec60abe3e77f9914927fb815926984c02ab1fca41036bd0d305568934",
+  "semantic_repair_applied": false
+}

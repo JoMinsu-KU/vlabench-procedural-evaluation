@@ -1,0 +1,9 @@
+{
+  "model_revision": "REPLACE_WITH_ACTUAL_HF_COMMIT",
+  "vllm_version": "REPLACE_WITH_INSTALLED_VERSION",
+  "dtype": "bfloat16",
+  "server_command": "REPLACE_WITH_FULL_SERVE_COMMAND",
+  "processor_revision": "REPLACE_WITH_ACTUAL_REVISION",
+  "chat_template": "REPLACE_WITH_ACTUAL_TEMPLATE_SETTING",
+  "image_preprocessing": "REPLACE_WITH_PROCESSOR_CONFIG_OR_CONFIG_PATH"
+}

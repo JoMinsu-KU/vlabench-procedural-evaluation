@@ -1,0 +1,66 @@
+{
+  "transport_ok": true,
+  "http_status": 200,
+  "error": null,
+  "origin_output": "{\"steps\": [{\"skill\": \"pick\", \"target\": 0}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 3}, {\"skill\": \"pour\"}]}",
+  "finish_reason": "stop",
+  "refusal": null,
+  "raw_response": {
+    "id": "chatcmpl-95cf87b6c461c191",
+    "object": "chat.completion",
+    "created": 1792592778,
+    "prompt_routed_experts": null,
+    "model": "google/gemma-3-12b-it",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"steps\": [{\"skill\": \"pick\", \"target\": 0}, {\"skill\": \"lift\"}, {\"skill\": \"moveto\", \"target\": 3}, {\"skill\": \"pour\"}]}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.21.0-f0ccb996",
+    "usage": {
+      "prompt_tokens": 1814,
+      "total_tokens": 1856,
+      "completion_tokens": 42,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null
+  },
+  "usage": {
+    "prompt_tokens": 1814,
+    "total_tokens": 1856,
+    "completion_tokens": 42,
+    "prompt_tokens_details": null
+  },
+  "served_model": "google/gemma-3-12b-it",
+  "elapsed_sec": 1.9792973210005584,
+  "case_id": "CommenSence/select_drink_common_sense/example96",
+  "condition": "json_object",
+  "requested_model": "google/gemma-3-12b-it",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "model_revision": "96b6f1eccf38110c56df3a15bffe176da04bfd80",
+  "attempt_history": [
+    "json_object/case_outputs/CommenSence__select_drink_common_sense__example96/api_attempt_01"
+  ],
+  "request_sha256": "f9c0d36d1c8ea541c6e084171e13de02750e5374e94297f2d54c232fca5ed81e",
+  "response_body_sha256": "66809fd236c41e73e2d00f5250ef259b5a9aca9924772db0a828d317fa26941f",
+  "semantic_repair_applied": false
+}

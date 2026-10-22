@@ -1,0 +1,87 @@
+{
+  "case_id": "CommenSence/insert_flower_common_sense/example69",
+  "condition": "json_object",
+  "served_model": "OpenGVLab/InternVL3-8B",
+  "finish_reason": "stop",
+  "transport_ok": true,
+  "api_called": false,
+  "native_execution_attempted": false,
+  "actual_gate1_ok": false,
+  "actual_native_ok": false,
+  "actual_condition_success": false,
+  "procedural_success": false,
+  "native_attempt_count": 0,
+  "strict_parse_ok": false,
+  "type_normalized_parse_ok": false,
+  "model_parse_ok": false,
+  "parsed_plan": {
+    "ok": false,
+    "status": {
+      "code": "C2",
+      "label": "Parser or Schema Conversion Failure",
+      "subtype": "missing_target",
+      "detail": "step=3, skill=place"
+    }
+  },
+  "strict_parsed_plan": {
+    "ok": false,
+    "status": {
+      "code": "C2",
+      "label": "Parser or Schema Conversion Failure",
+      "subtype": "missing_target",
+      "detail": "step=3, skill=place"
+    }
+  },
+  "type_normalized_parsed_plan": {
+    "ok": false,
+    "status": {
+      "code": "C2",
+      "label": "Parser or Schema Conversion Failure",
+      "subtype": "missing_target",
+      "detail": "step=3, skill=place"
+    }
+  },
+  "normalization_policy": "integer-string-target-only",
+  "target_numeric_cast_applied": false,
+  "raw_steps": [
+    {
+      "skill": "pick",
+      "target": 4
+    },
+    {
+      "skill": "moveto",
+      "target": 1
+    },
+    {
+      "skill": "place"
+    }
+  ],
+  "normalized_steps": [
+    {
+      "skill": "pick",
+      "target": 4
+    },
+    {
+      "skill": "moveto",
+      "target": 1
+    },
+    {
+      "skill": "place"
+    }
+  ],
+  "execution_used_type_normalized_plan": false,
+  "json_extraction_status": "direct_json_object",
+  "semantic_repair_applied": false,
+  "ok": true,
+  "actual_failure_code": "C2",
+  "actual_failure_subtype": "missing_target",
+  "actual_failure_detail": "step=3, skill=place",
+  "raw_json_schema_valid": false,
+  "raw_json_schema_error": "'place' is not one of ['lift', 'pull', 'pour', 'wait', 'move_offset', 'open_gripper']",
+  "type_normalized_json_schema_valid": false,
+  "type_normalized_json_schema_error": "'place' is not one of ['lift', 'pull', 'pour', 'wait', 'move_offset', 'open_gripper']",
+  "source_sha256": "2211b2d04de26886b419513e534db44866ac0ef9060fd1460cdeed854f93b80b",
+  "source_path": "/mnt/c/VLABenchProcEval/revision_experiments/schema_decoding_20261021/gcp_outputs/internvl/json_object/case_outputs/CommenSence__insert_flower_common_sense__example69/row.json",
+  "category": "CommenSence",
+  "task_name": "insert_flower_common_sense"
+}

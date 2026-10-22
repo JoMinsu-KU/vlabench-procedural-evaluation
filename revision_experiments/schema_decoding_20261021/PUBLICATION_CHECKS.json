@@ -1,0 +1,16 @@
+{
+  "source_files_checked": 10371,
+  "frozen_outcomes_checked": 1932,
+  "source_files_unchanged": true,
+  "credential_scan": "passed",
+  "git_files": 10383,
+  "git_bytes": 45281884,
+  "local_unit_tests_passed": 10,
+  "original_posix_runner_integration_tests": "require Linux/WSL and full base dependencies",
+  "analysis_reproduction": "18 rows, exact counts, bootstrap intervals and Holm tests reproduced",
+  "followup_facts": "PhysicsLaw and scaffold-loss counts verified",
+  "manuscript_in_overlay": false,
+  "push_executed": false,
+  "evidence_archive_bytes": 673271869,
+  "evidence_archive_sha256": "474d3243120724c78d17c768bb617827585c29f0eb51d1d01ea2322c574668c7"
+}

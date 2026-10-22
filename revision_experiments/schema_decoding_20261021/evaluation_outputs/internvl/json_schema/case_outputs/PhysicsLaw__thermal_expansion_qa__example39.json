@@ -1,0 +1,194 @@
+{
+  "case_id": "PhysicsLaw/thermal_expansion_qa/example39",
+  "condition": "json_schema",
+  "served_model": "OpenGVLab/InternVL3-8B",
+  "finish_reason": "stop",
+  "transport_ok": true,
+  "api_called": false,
+  "native_execution_attempted": false,
+  "actual_gate1_ok": false,
+  "actual_native_ok": false,
+  "actual_condition_success": false,
+  "procedural_success": false,
+  "native_attempt_count": 0,
+  "strict_parse_ok": true,
+  "type_normalized_parse_ok": true,
+  "model_parse_ok": true,
+  "parsed_plan": {
+    "ok": true,
+    "steps": [
+      {
+        "skill": "pick",
+        "target": 4
+      },
+      {
+        "skill": "lift"
+      },
+      {
+        "skill": "moveto",
+        "target": 6
+      },
+      {
+        "skill": "lift"
+      },
+      {
+        "skill": "place",
+        "target": 6
+      }
+    ],
+    "status": {
+      "code": "",
+      "label": "",
+      "subtype": "",
+      "detail": ""
+    }
+  },
+  "strict_parsed_plan": {
+    "ok": true,
+    "steps": [
+      {
+        "skill": "pick",
+        "target": 4
+      },
+      {
+        "skill": "lift"
+      },
+      {
+        "skill": "moveto",
+        "target": 6
+      },
+      {
+        "skill": "lift"
+      },
+      {
+        "skill": "place",
+        "target": 6
+      }
+    ],
+    "status": {
+      "code": "",
+      "label": "",
+      "subtype": "",
+      "detail": ""
+    }
+  },
+  "type_normalized_parsed_plan": {
+    "ok": true,
+    "steps": [
+      {
+        "skill": "pick",
+        "target": 4
+      },
+      {
+        "skill": "lift"
+      },
+      {
+        "skill": "moveto",
+        "target": 6
+      },
+      {
+        "skill": "lift"
+      },
+      {
+        "skill": "place",
+        "target": 6
+      }
+    ],
+    "status": {
+      "code": "",
+      "label": "",
+      "subtype": "",
+      "detail": ""
+    }
+  },
+  "normalization_policy": "integer-string-target-only",
+  "target_numeric_cast_applied": false,
+  "raw_steps": [
+    {
+      "skill": "pick",
+      "target": 4
+    },
+    {
+      "skill": "lift"
+    },
+    {
+      "skill": "moveto",
+      "target": 6
+    },
+    {
+      "skill": "lift"
+    },
+    {
+      "skill": "place",
+      "target": 6
+    }
+  ],
+  "normalized_steps": [
+    {
+      "skill": "pick",
+      "target": 4
+    },
+    {
+      "skill": "lift"
+    },
+    {
+      "skill": "moveto",
+      "target": 6
+    },
+    {
+      "skill": "lift"
+    },
+    {
+      "skill": "place",
+      "target": 6
+    }
+  ],
+  "execution_used_type_normalized_plan": false,
+  "json_extraction_status": "direct_json_object",
+  "semantic_repair_applied": false,
+  "fixture_id": "model_eval__PhysicsLaw__thermal_expansion_qa__example39",
+  "family": "thermal_expansion_qa",
+  "fixture_mode": "model_evaluation",
+  "negative_type": "",
+  "source_case_id": "PhysicsLaw/thermal_expansion_qa/example39",
+  "fixture_generated_from_gt": false,
+  "gt_used_during_execution": false,
+  "oracle_used_during_execution": false,
+  "phase_oracle_used": false,
+  "target_oracle_used": false,
+  "phase_source": "vlm_output",
+  "ground_truth_target_used": false,
+  "oracle_builder_read_conditions": false,
+  "adapter_read_conditions": false,
+  "lowerer_read_conditions": false,
+  "operation_sequence_read": false,
+  "expert_sequence_called": false,
+  "target_source": "vlm_numbered_mask",
+  "counts_as_model_evaluation": true,
+  "native_execution_should_run": true,
+  "native_retry_policy": "first_attempt_only",
+  "native_max_attempts": 0,
+  "native_selected_attempt": 0,
+  "native_attempt_summaries": "[]",
+  "expected_gate1_ok": null,
+  "expected_native_ok": null,
+  "expected_condition_success": null,
+  "actual_failure_code": "C3",
+  "actual_failure_subtype": "extra_phase",
+  "actual_failure_detail": "expected 1 steps, got 5",
+  "exception_type": "",
+  "episode_config_added_fields": "",
+  "before_contact_sheet": "",
+  "after_contact_sheet": "",
+  "passed": false,
+  "trace_dir": "/mnt/c/VLABenchProcEval/revision_experiments/schema_decoding_20261021/evaluation_outputs/internvl/json_schema/execution_traces/model_eval__PhysicsLaw__thermal_expansion_qa__example39",
+  "ok": true,
+  "raw_json_schema_valid": true,
+  "raw_json_schema_error": "",
+  "type_normalized_json_schema_valid": true,
+  "type_normalized_json_schema_error": "",
+  "source_sha256": "a09ef6d57db7fc23dda1d26ffb9f463826441206cb06528115a834dc4464e5d8",
+  "source_path": "/mnt/c/VLABenchProcEval/revision_experiments/schema_decoding_20261021/gcp_outputs/internvl/json_schema/case_outputs/PhysicsLaw__thermal_expansion_qa__example39/row.json",
+  "category": "PhysicsLaw",
+  "task_name": "thermal_expansion_qa"
+}

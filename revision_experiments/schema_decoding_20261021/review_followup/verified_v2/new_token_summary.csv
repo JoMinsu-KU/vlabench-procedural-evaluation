@@ -1,0 +1,7 @@
+﻿model,condition,n,truncated,missing_token_counts,completion_min,completion_median,completion_max,completion_mean
+qwen,json_object,322,0,0,6,18.0,60,24.304347826086957
+qwen,json_schema,322,0,0,17,48.0,134,43.72981366459627
+gemma,json_object,322,0,0,16,42.0,109,34.462732919254655
+gemma,json_schema,322,0,0,16,42.0,109,35.3416149068323
+internvl,json_object,322,0,0,6,36.0,48,32.84782608695652
+internvl,json_schema,322,0,0,17,42.0,164,37.22981366459627

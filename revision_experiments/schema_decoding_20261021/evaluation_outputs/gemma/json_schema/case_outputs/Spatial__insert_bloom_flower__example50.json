@@ -1,0 +1,174 @@
+{
+  "case_id": "Spatial/insert_bloom_flower/example50",
+  "condition": "json_schema",
+  "served_model": "google/gemma-3-12b-it",
+  "finish_reason": "stop",
+  "transport_ok": true,
+  "api_called": false,
+  "native_execution_attempted": true,
+  "actual_gate1_ok": true,
+  "actual_native_ok": true,
+  "actual_condition_success": false,
+  "procedural_success": false,
+  "native_attempt_count": 1,
+  "strict_parse_ok": true,
+  "type_normalized_parse_ok": true,
+  "model_parse_ok": true,
+  "parsed_plan": {
+    "ok": true,
+    "steps": [
+      {
+        "skill": "pick",
+        "target": 3
+      },
+      {
+        "skill": "lift"
+      },
+      {
+        "skill": "moveto",
+        "target": 0
+      },
+      {
+        "skill": "lift"
+      }
+    ],
+    "status": {
+      "code": "",
+      "label": "",
+      "subtype": "",
+      "detail": ""
+    }
+  },
+  "strict_parsed_plan": {
+    "ok": true,
+    "steps": [
+      {
+        "skill": "pick",
+        "target": 3
+      },
+      {
+        "skill": "lift"
+      },
+      {
+        "skill": "moveto",
+        "target": 0
+      },
+      {
+        "skill": "lift"
+      }
+    ],
+    "status": {
+      "code": "",
+      "label": "",
+      "subtype": "",
+      "detail": ""
+    }
+  },
+  "type_normalized_parsed_plan": {
+    "ok": true,
+    "steps": [
+      {
+        "skill": "pick",
+        "target": 3
+      },
+      {
+        "skill": "lift"
+      },
+      {
+        "skill": "moveto",
+        "target": 0
+      },
+      {
+        "skill": "lift"
+      }
+    ],
+    "status": {
+      "code": "",
+      "label": "",
+      "subtype": "",
+      "detail": ""
+    }
+  },
+  "normalization_policy": "integer-string-target-only",
+  "target_numeric_cast_applied": false,
+  "raw_steps": [
+    {
+      "skill": "pick",
+      "target": 3
+    },
+    {
+      "skill": "lift"
+    },
+    {
+      "skill": "moveto",
+      "target": 0
+    },
+    {
+      "skill": "lift"
+    }
+  ],
+  "normalized_steps": [
+    {
+      "skill": "pick",
+      "target": 3
+    },
+    {
+      "skill": "lift"
+    },
+    {
+      "skill": "moveto",
+      "target": 0
+    },
+    {
+      "skill": "lift"
+    }
+  ],
+  "execution_used_type_normalized_plan": false,
+  "json_extraction_status": "direct_json_object",
+  "semantic_repair_applied": false,
+  "fixture_id": "model_eval__Spatial__insert_bloom_flower__example50",
+  "family": "insert_bloom_flower",
+  "fixture_mode": "model_evaluation",
+  "negative_type": "",
+  "source_case_id": "Spatial/insert_bloom_flower/example50",
+  "fixture_generated_from_gt": false,
+  "gt_used_during_execution": false,
+  "oracle_used_during_execution": false,
+  "phase_oracle_used": false,
+  "target_oracle_used": false,
+  "phase_source": "vlm_output",
+  "ground_truth_target_used": false,
+  "oracle_builder_read_conditions": false,
+  "adapter_read_conditions": false,
+  "lowerer_read_conditions": false,
+  "operation_sequence_read": false,
+  "expert_sequence_called": false,
+  "target_source": "vlm_numbered_mask",
+  "counts_as_model_evaluation": true,
+  "native_execution_should_run": true,
+  "native_retry_policy": "first_attempt_only",
+  "native_max_attempts": 1,
+  "native_selected_attempt": 1,
+  "native_attempt_summaries": "[{\"attempt\": 1, \"ok\": true, \"execution_completed\": true, \"condition_success\": false, \"exception_type\": \"\", \"trace_length\": 4}]",
+  "expected_gate1_ok": null,
+  "expected_native_ok": null,
+  "expected_condition_success": null,
+  "actual_failure_code": "C1",
+  "actual_failure_subtype": "",
+  "actual_failure_detail": "condition_success=false",
+  "exception_type": "",
+  "episode_config_added_fields": "{\"target_entities\": {\"source\": \"conditions.contain.entities\", \"value\": [\"chrysanthemum\"]}, \"target_entity\": {\"source\": \"conditions.contain.entities[0]\", \"value\": \"chrysanthemum\"}, \"target_container\": {\"source\": \"conditions.contain.container\", \"value\": \"vase_seen\"}, \"target_containers\": {\"source\": \"derived.task.target_container\", \"value\": [\"vase_seen\"]}, \"target_platform\": {\"source\": \"derived.task.target_container\", \"value\": \"vase_seen\"}}",
+  "before_contact_sheet": "",
+  "after_contact_sheet": "/mnt/c/VLABenchProcEval/revision_experiments/schema_decoding_20261021/evaluation_outputs/gemma/json_schema/execution_traces/model_eval__Spatial__insert_bloom_flower__example50/visual_audit/after_contact_sheet.png",
+  "passed": false,
+  "trace_dir": "/mnt/c/VLABenchProcEval/revision_experiments/schema_decoding_20261021/evaluation_outputs/gemma/json_schema/execution_traces/model_eval__Spatial__insert_bloom_flower__example50",
+  "ok": true,
+  "raw_json_schema_valid": true,
+  "raw_json_schema_error": "",
+  "type_normalized_json_schema_valid": true,
+  "type_normalized_json_schema_error": "",
+  "source_sha256": "ae5fc0bf490992f3fefdb50933214f6c8ef1aca9a01d09d5ab101baabe5b5703",
+  "source_path": "/mnt/c/VLABenchProcEval/revision_experiments/schema_decoding_20261021/gcp_outputs/gemma/json_schema/case_outputs/Spatial__insert_bloom_flower__example50/row.json",
+  "category": "Spatial",
+  "task_name": "insert_bloom_flower"
+}

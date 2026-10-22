@@ -1,0 +1,99 @@
+{
+  "case_id": "Spatial/select_chemistry_tube_spatial/example23",
+  "condition": "json_object",
+  "served_model": "Qwen/Qwen3-VL-8B-Instruct",
+  "finish_reason": "stop",
+  "transport_ok": true,
+  "api_called": false,
+  "native_execution_attempted": false,
+  "actual_gate1_ok": false,
+  "actual_native_ok": false,
+  "actual_condition_success": false,
+  "procedural_success": false,
+  "native_attempt_count": 0,
+  "strict_parse_ok": false,
+  "type_normalized_parse_ok": false,
+  "model_parse_ok": false,
+  "parsed_plan": {
+    "ok": false,
+    "status": {
+      "code": "C2",
+      "label": "Parser or Schema Conversion Failure",
+      "subtype": "missing_target",
+      "detail": "step=2, skill=pick"
+    }
+  },
+  "strict_parsed_plan": {
+    "ok": false,
+    "status": {
+      "code": "C2",
+      "label": "Parser or Schema Conversion Failure",
+      "subtype": "missing_target",
+      "detail": "step=2, skill=pick"
+    }
+  },
+  "type_normalized_parsed_plan": {
+    "ok": false,
+    "status": {
+      "code": "C2",
+      "label": "Parser or Schema Conversion Failure",
+      "subtype": "missing_target",
+      "detail": "step=2, skill=pick"
+    }
+  },
+  "normalization_policy": "integer-string-target-only",
+  "target_numeric_cast_applied": false,
+  "raw_steps": [
+    {
+      "skill": "moveto",
+      "target": 3
+    },
+    {
+      "skill": "pick"
+    },
+    {
+      "skill": "lift"
+    },
+    {
+      "skill": "moveto",
+      "target": 0
+    },
+    {
+      "skill": "place"
+    }
+  ],
+  "normalized_steps": [
+    {
+      "skill": "moveto",
+      "target": 3
+    },
+    {
+      "skill": "pick"
+    },
+    {
+      "skill": "lift"
+    },
+    {
+      "skill": "moveto",
+      "target": 0
+    },
+    {
+      "skill": "place"
+    }
+  ],
+  "execution_used_type_normalized_plan": false,
+  "json_extraction_status": "direct_json_object",
+  "semantic_repair_applied": false,
+  "ok": true,
+  "actual_failure_code": "C2",
+  "actual_failure_subtype": "missing_target",
+  "actual_failure_detail": "step=2, skill=pick",
+  "raw_json_schema_valid": false,
+  "raw_json_schema_error": "'place' is not one of ['lift', 'pull', 'pour', 'wait', 'move_offset', 'open_gripper']",
+  "type_normalized_json_schema_valid": false,
+  "type_normalized_json_schema_error": "'place' is not one of ['lift', 'pull', 'pour', 'wait', 'move_offset', 'open_gripper']",
+  "source_sha256": "ac30433d94e00dbf06e54f6c6d5f21e291dd674997e386c6fee6c067cf9f7286",
+  "source_path": "/mnt/c/VLABenchProcEval/revision_experiments/schema_decoding_20261021/gcp_outputs/qwen/json_object/case_outputs/Spatial__select_chemistry_tube_spatial__example23/row.json",
+  "category": "Spatial",
+  "task_name": "select_chemistry_tube_spatial"
+}

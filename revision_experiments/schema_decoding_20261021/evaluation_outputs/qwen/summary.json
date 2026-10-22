@@ -1,0 +1,52 @@
+{
+  "stage": "offline_evaluation",
+  "total_rows": 644,
+  "by_condition": {
+    "json_object": {
+      "rows": 322,
+      "transport_errors": 0,
+      "truncated": 0,
+      "parse_valid": 45,
+      "strict_parse_valid": 45,
+      "raw_json_schema_valid": 45,
+      "type_normalized_json_schema_valid": 45,
+      "numeric_cast_cases": 3,
+      "gate_valid": 4,
+      "native_attempted": 4,
+      "success": 0,
+      "failures": {
+        "missing_phase": 17,
+        "missing_target": 61,
+        "C1": 4,
+        "invalid_top_level_keys": 196,
+        "extra_phase": 13,
+        "phase_skill_mismatch": 3,
+        "incompatible_target_affordance": 7,
+        "invalid_gripper_context": 1,
+        "steps_not_nonempty_list": 20
+      }
+    },
+    "json_schema": {
+      "rows": 322,
+      "transport_errors": 0,
+      "truncated": 0,
+      "parse_valid": 322,
+      "strict_parse_valid": 322,
+      "raw_json_schema_valid": 322,
+      "type_normalized_json_schema_valid": 322,
+      "numeric_cast_cases": 0,
+      "gate_valid": 13,
+      "native_attempted": 13,
+      "success": 6,
+      "failures": {
+        "missing_phase": 40,
+        "phase_skill_mismatch": 62,
+        "C1": 7,
+        "extra_phase": 168,
+        "incompatible_target_affordance": 37,
+        "invalid_gripper_context": 2,
+        "C0": 6
+      }
+    }
+  }
+}

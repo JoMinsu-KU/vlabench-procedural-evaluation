@@ -1,0 +1,7 @@
+﻿model,condition,n,full_first_success,scaffold_first_success,both,full_only,scaffold_only,difference_pp,cluster_ci_low_pp,cluster_ci_high_pp,lost_failure_subtypes
+qwen,phase_oracle,2133,80,427,47,33,380,16.268166901078292,10.269385584988404,22.622137374650887,"{""AttributeError"": 1, ""C1"": 5, ""incompatible_target_affordance"": 3, ""target_slot_count_mismatch"": 24}"
+qwen,target_oracle,2133,80,488,50,30,438,19.12798874824191,7.448702917558121,32.37437621019156,"{""extra_phase"": 30}"
+gemma,phase_oracle,2133,57,344,18,39,326,13.455227379278012,7.094881181845024,20.96946015352987,"{""C1"": 3, ""incompatible_target_affordance"": 34, ""target_out_of_range"": 2}"
+gemma,target_oracle,2133,57,585,45,12,540,24.753867791842474,11.693907047835022,39.09047408716133,"{""C1"": 3, ""extra_phase"": 9}"
+internvl,phase_oracle,2133,40,314,18,22,296,12.845757149554618,7.783502974165751,18.463203789357816,"{""AttributeError"": 12, ""C1"": 3, ""incompatible_target_affordance"": 6, ""target_slot_count_mismatch"": 1}"
+internvl,target_oracle,2133,40,191,26,14,165,7.079231129864041,2.2794043409991045,13.171227369025138,"{""extra_phase"": 12, ""phase_skill_mismatch"": 2}"

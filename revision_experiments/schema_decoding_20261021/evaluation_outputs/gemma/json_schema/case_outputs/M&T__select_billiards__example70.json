@@ -1,0 +1,144 @@
+{
+  "case_id": "M&T/select_billiards/example70",
+  "condition": "json_schema",
+  "served_model": "google/gemma-3-12b-it",
+  "finish_reason": "stop",
+  "transport_ok": true,
+  "api_called": false,
+  "native_execution_attempted": true,
+  "actual_gate1_ok": true,
+  "actual_native_ok": false,
+  "actual_condition_success": false,
+  "procedural_success": false,
+  "native_attempt_count": 1,
+  "strict_parse_ok": true,
+  "type_normalized_parse_ok": true,
+  "model_parse_ok": true,
+  "parsed_plan": {
+    "ok": true,
+    "steps": [
+      {
+        "skill": "pick",
+        "target": 1
+      },
+      {
+        "skill": "place",
+        "target": 5
+      }
+    ],
+    "status": {
+      "code": "",
+      "label": "",
+      "subtype": "",
+      "detail": ""
+    }
+  },
+  "strict_parsed_plan": {
+    "ok": true,
+    "steps": [
+      {
+        "skill": "pick",
+        "target": 1
+      },
+      {
+        "skill": "place",
+        "target": 5
+      }
+    ],
+    "status": {
+      "code": "",
+      "label": "",
+      "subtype": "",
+      "detail": ""
+    }
+  },
+  "type_normalized_parsed_plan": {
+    "ok": true,
+    "steps": [
+      {
+        "skill": "pick",
+        "target": 1
+      },
+      {
+        "skill": "place",
+        "target": 5
+      }
+    ],
+    "status": {
+      "code": "",
+      "label": "",
+      "subtype": "",
+      "detail": ""
+    }
+  },
+  "normalization_policy": "integer-string-target-only",
+  "target_numeric_cast_applied": false,
+  "raw_steps": [
+    {
+      "skill": "pick",
+      "target": 1
+    },
+    {
+      "skill": "place",
+      "target": 5
+    }
+  ],
+  "normalized_steps": [
+    {
+      "skill": "pick",
+      "target": 1
+    },
+    {
+      "skill": "place",
+      "target": 5
+    }
+  ],
+  "execution_used_type_normalized_plan": false,
+  "json_extraction_status": "direct_json_object",
+  "semantic_repair_applied": false,
+  "fixture_id": "model_eval__M&T__select_billiards__example70",
+  "family": "select_billiards",
+  "fixture_mode": "model_evaluation",
+  "negative_type": "",
+  "source_case_id": "M&T/select_billiards/example70",
+  "fixture_generated_from_gt": false,
+  "gt_used_during_execution": false,
+  "oracle_used_during_execution": false,
+  "phase_oracle_used": false,
+  "target_oracle_used": false,
+  "phase_source": "vlm_output",
+  "ground_truth_target_used": false,
+  "oracle_builder_read_conditions": false,
+  "adapter_read_conditions": false,
+  "lowerer_read_conditions": false,
+  "operation_sequence_read": false,
+  "expert_sequence_called": false,
+  "target_source": "vlm_numbered_mask",
+  "counts_as_model_evaluation": true,
+  "native_execution_should_run": true,
+  "native_retry_policy": "first_attempt_only",
+  "native_max_attempts": 1,
+  "native_selected_attempt": 1,
+  "native_attempt_summaries": "[{\"attempt\": 1, \"ok\": false, \"execution_completed\": false, \"condition_success\": false, \"exception_type\": \"AttributeError\", \"trace_length\": 2}]",
+  "expected_gate1_ok": null,
+  "expected_native_ok": null,
+  "expected_condition_success": null,
+  "actual_failure_code": "C5",
+  "actual_failure_subtype": "AttributeError",
+  "actual_failure_detail": "'BilliardBall' object has no attribute 'get_place_point'",
+  "exception_type": "AttributeError",
+  "episode_config_added_fields": "{\"target_entities\": {\"source\": \"conditions.contain.entities\", \"value\": [\"striped_10\"]}, \"target_entity\": {\"source\": \"conditions.contain.entities[0]\", \"value\": \"striped_10\"}, \"target_container\": {\"source\": \"conditions.contain.container\", \"value\": \"billiards_table\"}, \"target_containers\": {\"source\": \"derived.task.target_container\", \"value\": [\"billiards_table\"]}, \"target_platform\": {\"source\": \"derived.task.target_container\", \"value\": \"billiards_table\"}}",
+  "before_contact_sheet": "",
+  "after_contact_sheet": "/mnt/c/VLABenchProcEval/revision_experiments/schema_decoding_20261021/evaluation_outputs/gemma/json_schema/execution_traces/model_eval__M&T__select_billiards__example70/visual_audit/after_contact_sheet.png",
+  "passed": false,
+  "trace_dir": "/mnt/c/VLABenchProcEval/revision_experiments/schema_decoding_20261021/evaluation_outputs/gemma/json_schema/execution_traces/model_eval__M&T__select_billiards__example70",
+  "ok": true,
+  "raw_json_schema_valid": true,
+  "raw_json_schema_error": "",
+  "type_normalized_json_schema_valid": true,
+  "type_normalized_json_schema_error": "",
+  "source_sha256": "bd678641f957414cacb629960b0cf03c60d8354dee0e8bf8c1ff2f4a4b3ac17b",
+  "source_path": "/mnt/c/VLABenchProcEval/revision_experiments/schema_decoding_20261021/gcp_outputs/gemma/json_schema/case_outputs/M&T__select_billiards__example70/row.json",
+  "category": "M&T",
+  "task_name": "select_billiards"
+}

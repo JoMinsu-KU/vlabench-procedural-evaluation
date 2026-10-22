@@ -1,0 +1,52 @@
+{
+  "stage": "offline_evaluation",
+  "total_rows": 644,
+  "by_condition": {
+    "json_object": {
+      "rows": 322,
+      "transport_errors": 0,
+      "truncated": 0,
+      "parse_valid": 282,
+      "strict_parse_valid": 282,
+      "raw_json_schema_valid": 282,
+      "type_normalized_json_schema_valid": 282,
+      "numeric_cast_cases": 0,
+      "gate_valid": 30,
+      "native_attempted": 30,
+      "success": 4,
+      "failures": {
+        "missing_target": 40,
+        "C1": 26,
+        "extra_phase": 94,
+        "incompatible_target_affordance": 90,
+        "target_out_of_range": 3,
+        "C0": 4,
+        "missing_phase": 26,
+        "phase_skill_mismatch": 39
+      }
+    },
+    "json_schema": {
+      "rows": 322,
+      "transport_errors": 0,
+      "truncated": 0,
+      "parse_valid": 322,
+      "strict_parse_valid": 322,
+      "raw_json_schema_valid": 322,
+      "type_normalized_json_schema_valid": 322,
+      "numeric_cast_cases": 0,
+      "gate_valid": 30,
+      "native_attempted": 30,
+      "success": 3,
+      "failures": {
+        "phase_skill_mismatch": 46,
+        "C1": 26,
+        "extra_phase": 120,
+        "incompatible_target_affordance": 100,
+        "target_out_of_range": 3,
+        "C0": 3,
+        "missing_phase": 23,
+        "AttributeError": 1
+      }
+    }
+  }
+}

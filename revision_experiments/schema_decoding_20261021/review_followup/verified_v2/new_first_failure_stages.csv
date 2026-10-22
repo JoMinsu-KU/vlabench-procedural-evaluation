@@ -1,0 +1,7 @@
+﻿model,condition,n,output_schema,reference_phase,target_context,native_exception,goal_condition,success
+qwen,json_object,322,277,33,8,0,4,0
+qwen,json_schema,322,0,270,39,0,7,6
+gemma,json_object,322,40,159,93,0,26,4
+gemma,json_schema,322,0,189,103,1,26,3
+internvl,json_object,322,150,110,33,1,16,12
+internvl,json_schema,322,0,236,55,1,17,13

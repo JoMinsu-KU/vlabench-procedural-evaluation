@@ -1,0 +1,23 @@
+﻿case_id,failure_code,failure_subtype,detail
+CommenSence/select_chemistry_tube_common_sense/example40,C1,,condition_success=false
+CommenSence/select_fruit_common_sense/example16,C5,AttributeError,'Fruit' object has no attribute 'get_place_point'
+CommenSence/select_fruit_common_sense/example22,C3,incompatible_target_affordance,"step=1, skill=pick, class=Plate"
+CommenSence/select_fruit_common_sense/example27,C3,incompatible_target_affordance,"step=1, skill=pick, class=Plate"
+CommenSence/select_fruit_common_sense/example36,C5,AttributeError,'Fruit' object has no attribute 'get_place_point'
+CommenSence/select_fruit_common_sense/example41,C1,,condition_success=false
+CommenSence/select_fruit_common_sense/example54,C5,AttributeError,'Fruit' object has no attribute 'get_place_point'
+CommenSence/select_fruit_common_sense/example6,C5,AttributeError,'Fruit' object has no attribute 'get_place_point'
+CommenSence/select_fruit_common_sense/example61,C5,AttributeError,'Fruit' object has no attribute 'get_place_point'
+CommenSence/select_fruit_common_sense/example66,C3,incompatible_target_affordance,"step=1, skill=pick, class=Plate"
+CommenSence/select_fruit_common_sense/example72,C3,incompatible_target_affordance,"step=1, skill=pick, class=Plate"
+CommenSence/select_fruit_common_sense/example77,C5,AttributeError,'Fruit' object has no attribute 'get_place_point'
+CommenSence/select_fruit_common_sense/example84,C5,AttributeError,'Fruit' object has no attribute 'get_place_point'
+CommenSence/select_fruit_common_sense/example86,C5,AttributeError,'Fruit' object has no attribute 'get_place_point'
+CommenSence/select_fruit_common_sense/example92,C5,AttributeError,'Fruit' object has no attribute 'get_place_point'
+CommenSence/select_fruit_common_sense/example98,C5,AttributeError,'Fruit' object has no attribute 'get_place_point'
+Semantic/select_fruit_semantic/example12,C5,AttributeError,'Fruit' object has no attribute 'get_place_point'
+Semantic/select_fruit_semantic/example43,C3,incompatible_target_affordance,"step=1, skill=pick, class=Plate"
+Semantic/select_fruit_semantic/example88,C3,incompatible_target_affordance,"step=1, skill=pick, class=Plate"
+Semantic/select_fruit_semantic/example92,C5,AttributeError,'Fruit' object has no attribute 'get_place_point'
+Semantic/select_fruit_semantic/example96,C1,,condition_success=false
+Spatial/select_chemistry_tube_spatial/example8,C2,target_slot_count_mismatch,"expected 1 targets, got 2"

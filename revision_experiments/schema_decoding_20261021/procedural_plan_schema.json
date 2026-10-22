@@ -1,0 +1,32 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["steps"],
+  "properties": {
+    "steps": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "anyOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["skill", "target"],
+            "properties": {
+              "skill": {"type": "string", "enum": ["pick", "moveto", "place", "press", "push"]},
+              "target": {"type": "integer"}
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["skill"],
+            "properties": {
+              "skill": {"type": "string", "enum": ["lift", "pull", "pour", "wait", "move_offset", "open_gripper"]}
+            }
+          }
+        ]
+      }
+    }
+  }
+}

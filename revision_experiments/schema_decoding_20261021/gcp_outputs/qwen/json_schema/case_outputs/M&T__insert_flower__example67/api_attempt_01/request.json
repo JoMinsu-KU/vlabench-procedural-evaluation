@@ -1,0 +1,116 @@
+{
+  "model": "Qwen/Qwen3-VL-8B-Instruct",
+  "messages": [
+    {
+      "role": "user",
+      "content": [
+        {
+          "type": "text",
+          "text": "In Skill Lab, we provide a series of robot skills to support efficient automated operations for various tasks. Each skill has a specific call format, which includes the skill name and corresponding parameters.\n\nThe available skills are as follows:\n\n1. **pick**: Used to grasp and pick up a target object.\n   - Call format:\n     ```json\n     {\n       \"skill\": \"pick\",\n       \"target\": Target Number\n     }\n     ```\n\n2. **lift**: Lift the robotic arm vertically.\n   - Call format:\n     ```json\n     {\n       \"skill\": \"lift\"\n     }\n     ```\n\n3. **moveto**: Move the robotic arm to a specified target object or location.\n   - Call format:\n     ```json\n     {\n       \"skill\": \"moveto\",\n       \"target\": Target Number\n     }\n     ```\n\n4. **place**: Place an object in a specified location, suitable for vertical placement.\n   - Call format:\n     ```json\n     {\n       \"skill\": \"place\",\n       \"target\": Target Number\n     }\n     ```\n\n5. **pull**: Pull the robotic arm horizontally.\n   - Call format:\n     ```json\n     {\n       \"skill\": \"pull\"\n     }\n     ```\n\n6. **pour**: Pour a liquid or granular substance.\n   - Call format:\n     ```json\n     {\n       \"skill\": \"pour\"\n     }\n     ```\n\n7. **press**: Press a specified location or button.\n   - Call format:\n     ```json\n     {\n       \"skill\": \"press\",\n       \"target\": Target Number\n     }\n     ```\n\n8. **push**: Push a target object horizontally.\n   - Call format:\n     ```json\n     {\n       \"skill\": \"push\",\n       \"target\": Target Number\n     }\n     ```\n\n9. **wait**: Wait for a task-defined duration.\n   - Call format:\n     ```json\n     {\n       \"skill\": \"wait\"\n     }\n     ```\n\n10. **move_offset**: Move the robotic arm by a task-defined offset.\n   - Call format:\n     ```json\n     {\n       \"skill\": \"move_offset\"\n     }\n     ```\n\n11. **open_gripper**: Open the robotic gripper.\n   - Call format:\n     ```json\n     {\n       \"skill\": \"open_gripper\"\n     }\n     ```\n\nThese call formats ensure that each skill operation has clearly defined parameters, allowing the system to accurately execute the specified automated tasks.\n\n---\n\nYou will receive the following input:\n\n1. **Image input**: Two images\n   - The first image shows four different perspectives of objects (without labels).\n   - The second image contains the same four perspectives of objects, but each view is labeled with a number (representing each object's identifier).\n\n2. **Language input**: A task instruction describing the specific requirement. Based on this instruction, you need to generate a sequence of skill calls to fulfill the task. Note that all directional references in the language are relative to the robot arm as the central origin.\n\n---\n\n### Task Requirements:\n\nBased on the image and language inputs, generate a sequence of skill calls. Each skill call sequence should contain the skill name (extracted from the task instruction), the skill operation parameters (if the skill requires parameters), and the target entity or container number (obtained from the labeled image).\n\n---\n\n### Generation Steps:\n\n1. **Extract Task Instruction**: Identify operation requirements (e.g., adjust, inspect, move) and the target object number or view from the language input.\n\n2. **Combine with Image Information**: Using the labeled image, match the objects described in the task instruction with their corresponding identifiers to determine the target number.\n\n3. **Generate Skill Call Sequence**: Based on the task instruction, use the extracted operation requirements as skill names and assign them the appropriate number information.\n\n4. **Output Format**: Generate a JSON object in the following structure:\n```json\n{\n    \"steps\": [\n        {\n            \"skill\": \"Skill Name 1\",\n            \"target\": Target Number\n        },\n        {\n            \"skill\": \"Skill Name 2\"\n        }\n    ]\n}\n```\n\nFor skills that require parameters, use `\"target\": Target Number`. For skills that do not require parameters, omit the target field.\n\nSince the evaluation process will validate and execute the skill sequence, the output skill call sequence should ideally match one or more of the following patterns to ensure correctness:\n\nSub-skill sequence patterns:\n- [\"pick\", \"place\"]\n- [\"pick\", \"lift\"]\n- [\"pick\", \"pull\"]\n- [\"pick\", \"lift\", \"place\"]\n- [\"pick\", \"lift\", \"moveto\", \"lift\"]\n- [\"pick\", \"lift\", \"moveto\", \"pour\"]\n- [\"pick\", \"lift\", \"moveto\", \"push\"]\n- [\"pick\", \"lift\", \"moveto\", \"push\", \"pull\"]\n- [\"pick\", \"lift\", \"moveto\", \"pour\", \"wait\", \"pull\", \"pour\", \"moveto\", \"move_offset\", \"open_gripper\"]\n- [\"press\"]\n\nFor example, if the output only includes a single \"pick\" skill, it will be considered incorrect during the evaluation.\nPlease pay close attention to spatial information and ensure accurate pattern selection. For example, if the object needs to be picked up and displayed, use the pattern `[\"pick\", \"lift\"]`. If the object needs to be placed directly into a specified location, use the pattern `[\"pick\", \"place\"]`. If the object needs to be inserted into a target location, use the pattern `[\"pick\", \"lift\", \"moveto\", \"lift\"]`.\n"
+        },
+        {
+          "type": "text",
+          "text": "Input picture"
+        },
+        {
+          "type": "image_url",
+          "image_url": {
+            "url": "bundle-file://inputs/M&T__insert_flower__example67/input.png#sha256=c1f295b8dd948cc13f428ff4e1c3772bfdf39c2c78068da79e4e1ee9aa0b81ac"
+          }
+        },
+        {
+          "type": "text",
+          "text": "Input picture with numbered tags"
+        },
+        {
+          "type": "image_url",
+          "image_url": {
+            "url": "bundle-file://inputs/M&T__insert_flower__example67/input_mask.png#sha256=dbe8f98f7c7250970d25fed8883c0414b534511a9fa48bb307a36b496034f5ba"
+          }
+        },
+        {
+          "type": "text",
+          "text": "Language instruction:"
+        },
+        {
+          "type": "text",
+          "text": "Insert the rose into the vase_seen."
+        },
+        {
+          "type": "text",
+          "text": "Please give the output skill sequence"
+        }
+      ]
+    }
+  ],
+  "temperature": 0.0,
+  "max_tokens": 1024,
+  "seed": 0,
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "procedural_plan",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "steps"
+        ],
+        "properties": {
+          "steps": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "skill",
+                    "target"
+                  ],
+                  "properties": {
+                    "skill": {
+                      "type": "string",
+                      "enum": [
+                        "pick",
+                        "moveto",
+                        "place",
+                        "press",
+                        "push"
+                      ]
+                    },
+                    "target": {
+                      "type": "integer"
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "skill"
+                  ],
+                  "properties": {
+                    "skill": {
+                      "type": "string",
+                      "enum": [
+                        "lift",
+                        "pull",
+                        "pour",
+                        "wait",
+                        "move_offset",
+                        "open_gripper"
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

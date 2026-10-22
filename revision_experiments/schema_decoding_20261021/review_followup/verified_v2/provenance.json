@@ -1,0 +1,23 @@
+{
+  "inputs_sha256": {
+    "/mnt/c/VLABenchProcEval/datasets/manifests/verified_subset_2133_cases.json": "6fcea86e2055143f4882eecf79d3723933c19914d0bdda87b97084644bdf161a",
+    "/mnt/c/SILVER/archive/silver_track_ab_20260523/silver-official-guided-evaluation-20260516/track_b/generic_compatible_official/manifest/s0_full_4000_preload_target_official_eligibility_ledger.jsonl": "1e0f63692af025c8d40efc508e01866de25d5b8c9e1c2f6125b8084244476c73",
+    "/mnt/c/VLABenchProcEval/outputs/procedural_eval/qwen_trackb_full_2133_prompt_aligned_20260702/procedural_vlm_execution_results.csv": "1dbafc2775409fe5ee75ad67439171ade4a03014ebaf891ede16afdcedb9adc3",
+    "/mnt/c/VLABenchProcEval/outputs/oracle_ablations/qwen3_vl_8b_oracle_full_2133_20260717/phase_oracle/procedural_vlm_execution_results.csv": "4027ce4d5839dcee8112c7bcf7b2164e44bfa742c75145d750bc180048cecfae",
+    "/mnt/c/VLABenchProcEval/outputs/oracle_ablations/qwen3_vl_8b_oracle_full_2133_20260717/target_oracle/procedural_vlm_execution_results.csv": "f2a95bda4fb3d05afc9ebf593c1b540c9aa8466b4b7619983b776c698acd0f8e",
+    "/mnt/c/VLABenchProcEval/outputs/procedural_eval/gemma_trackb_full_2133_20260704/procedural_vlm_execution_results.csv": "70c39cd5d516dca1aaaf58db0ba1d15837c5f5ebb0905b68964184bc83701b9c",
+    "/mnt/c/VLABenchProcEval/outputs/oracle_ablations/gemma3_12b_oracle_full_2133_20260718/phase_oracle/procedural_vlm_execution_results.csv": "c9c2309ff90bf615973a7662d5cd5350101fde09b08ab4ed99cdaabe134fd1e5",
+    "/mnt/c/VLABenchProcEval/outputs/oracle_ablations/gemma3_12b_oracle_full_2133_20260718/target_oracle/procedural_vlm_execution_results.csv": "2d71eadb05c179f038e554ebd5ba4aacdeaf3cdbd903dcb43bfe1fce3163b15d",
+    "/mnt/c/VLABenchProcEval/outputs/procedural_eval/internvl_trackb_full_2133_20260709/procedural_vlm_execution_results.csv": "f63008ac79ef9b830877b86545e371dc272a2ad740b10a6e0b22d5c27cdd494f",
+    "/mnt/c/VLABenchProcEval/outputs/oracle_ablations/internvl3_8b_oracle_full_2133_20260715/phase_oracle/procedural_vlm_execution_results.csv": "c1ccac9ca794bf9a147a212509a85b113c13538ff1b348f94b56806f52f0d2c7",
+    "/mnt/c/VLABenchProcEval/outputs/oracle_ablations/internvl3_8b_oracle_full_2133_20260715/target_oracle/procedural_vlm_execution_results.csv": "6cc10b13f97b14b53113c05963a919560dcbd078d55308f961aeffaacff57588"
+  },
+  "script_sha256": "56a6befb78ed0188e08095c3c541bb6a815944c39f41244329b893ef29f0adce",
+  "new_rows": 1932,
+  "new_cases": 322,
+  "native_or_model_reruns": 0,
+  "old_manifest_unchanged": true,
+  "bootstrap_repetitions": 20000,
+  "bootstrap_seed": 20261021,
+  "scaffold_differences_are_descriptive_prompt_conditions_not_causal_oracles": true
+}
