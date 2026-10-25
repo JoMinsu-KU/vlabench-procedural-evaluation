@@ -1,0 +1,161 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "table",
+                "xml_path": "obj/meshes/table/table.xml",
+                "position": [
+                    2.3547234088678966e-05,
+                    -5.218463284698252e-05,
+                    0.011998530905160776
+                ],
+                "orientation": [
+                    0.9999999999999984,
+                    -3.4352702057188714e-08,
+                    -1.5507326986442304e-08,
+                    6.04641799283088e-11
+                ],
+                "class": "Table",
+                "materials": [
+                    "stone0"
+                ]
+            },
+            {
+                "name": "card_holder0",
+                "xml_path": null,
+                "position": [
+                    -0.1605209913672406,
+                    0.17040620423963557,
+                    0.7779982933268758
+                ],
+                "orientation": [
+                    0.7071067810653422,
+                    -3.517141359133935e-08,
+                    1.3325708184230658e-08,
+                    0.7071067813077526
+                ],
+                "class": "CardHolder"
+            },
+            {
+                "name": "ace_of_clubs",
+                "xml_path": "obj/meshes/poker/poker_asset.xml",
+                "position": [
+                    -0.1605440057875334,
+                    0.17045720825293426,
+                    0.892556870431448
+                ],
+                "orientation": [
+                    0.499999999999208,
+                    -0.5000000000008579,
+                    0.500000000000791,
+                    0.49999999999914213
+                ],
+                "class": "Poker",
+                "value": "ace",
+                "suite": "clubs"
+            },
+            {
+                "name": "card_holder1",
+                "xml_path": null,
+                "position": [
+                    -0.05371630407176795,
+                    0.08315327166398716,
+                    0.7779983026327542
+                ],
+                "orientation": [
+                    0.7071067810653409,
+                    -3.5171413585822955e-08,
+                    1.3325708184331633e-08,
+                    0.7071067813077538
+                ],
+                "class": "CardHolder"
+            },
+            {
+                "name": "jack_of_diamonds",
+                "xml_path": "obj/meshes/poker/poker_asset.xml",
+                "position": [
+                    -0.0537393185956549,
+                    0.08320427586795198,
+                    0.892556870431448
+                ],
+                "orientation": [
+                    0.499999999999209,
+                    -0.5000000000008573,
+                    0.5000000000007901,
+                    0.49999999999914296
+                ],
+                "class": "Poker",
+                "value": "jack",
+                "suite": "diamonds"
+            },
+            {
+                "name": "card_holder2",
+                "xml_path": null,
+                "position": [
+                    0.07242067527099777,
+                    0.05988814574709658,
+                    0.7779983081424717
+                ],
+                "orientation": [
+                    0.7071067810653388,
+                    -3.517141358274165e-08,
+                    1.3325708184684611e-08,
+                    0.7071067813077558
+                ],
+                "class": "CardHolder"
+            },
+            {
+                "name": "king_of_clubs",
+                "xml_path": "obj/meshes/poker/poker_asset.xml",
+                "position": [
+                    0.07239766068947201,
+                    0.0599391500557611,
+                    0.892556870431448
+                ],
+                "orientation": [
+                    0.4999999999992057,
+                    -0.5000000000008615,
+                    0.5000000000007944,
+                    0.4999999999991395
+                ],
+                "class": "Poker",
+                "value": "king",
+                "suite": "clubs"
+            }
+        ],
+        "scene": {
+            "name": "living_room_0",
+            "position": [
+                -2.0,
+                -2.5,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "floorplane"
+            ]
+        },
+        "instructions": [
+            "Please pick the poker jack of diamonds"
+        ],
+        "conditions": {
+            "is_grasped": {
+                "entities": [
+                    "jack_of_diamonds"
+                ],
+                "robot": "franka"
+            },
+            "lift": {
+                "entities": [
+                    "jack_of_diamonds"
+                ],
+                "target_height": 0.9
+            }
+        }
+    }
+}

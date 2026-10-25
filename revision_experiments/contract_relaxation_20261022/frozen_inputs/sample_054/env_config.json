@@ -1,0 +1,131 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "table",
+                "xml_path": "obj/meshes/table/table.xml",
+                "position": [
+                    2.2742793616914841e-10,
+                    4.597687746757497e-10,
+                    -7.58729504374381e-07
+                ],
+                "orientation": [
+                    1.0,
+                    -1.2470592017821035e-09,
+                    -2.4863251432850314e-10,
+                    -1.6693317766205554e-10
+                ],
+                "class": "Table",
+                "materials": [
+                    "stone0"
+                ]
+            },
+            {
+                "name": "plate_seen",
+                "xml_path": "obj/meshes/tablewares/plates/plate2/plate.xml",
+                "position": [
+                    -0.042769449384197175,
+                    0.23174485536083667,
+                    0.7633901404259704
+                ],
+                "orientation": [
+                    0.9982175962813035,
+                    2.741780149647706e-07,
+                    -1.740454967754768e-06,
+                    0.05967939737691482
+                ],
+                "class": "Plate"
+            },
+            {
+                "name": "orange",
+                "xml_path": "obj/meshes/fruit/orange/orange_8/model.xml",
+                "position": [
+                    0.2501652479440184,
+                    -0.18926499136323133,
+                    0.7934742035655868
+                ],
+                "orientation": [
+                    0.9976939280861523,
+                    0.009877147154429566,
+                    0.0013489630126144096,
+                    0.06713753140311031
+                ],
+                "class": "Fruit"
+            },
+            {
+                "name": "mango",
+                "xml_path": "obj/meshes/fruit/mango/mango_9/model.xml",
+                "position": [
+                    -0.26131403191779357,
+                    -0.19460259400295674,
+                    0.7965903866858857
+                ],
+                "orientation": [
+                    0.9891344427707691,
+                    0.13663060484189474,
+                    0.006954983157681642,
+                    0.05382155845360173
+                ],
+                "class": "Fruit"
+            },
+            {
+                "name": "pear",
+                "xml_path": "obj/meshes/fruit/pear/pear_0/model.xml",
+                "position": [
+                    0.2748975421478091,
+                    0.16951603690773642,
+                    0.7875096849241082
+                ],
+                "orientation": [
+                    0.9909985115654162,
+                    0.0380231587501274,
+                    -0.11121638966933929,
+                    0.06408669239952024
+                ],
+                "class": "Fruit"
+            },
+            {
+                "name": "apple",
+                "xml_path": "obj/meshes/fruit/apple/apple_13/model.xml",
+                "position": [
+                    -0.013496759605053227,
+                    -0.0648411881163465,
+                    0.7904498844287083
+                ],
+                "orientation": [
+                    0.9988526418528993,
+                    -0.011677318007982138,
+                    -0.0016224928766446604,
+                    -0.046415596780494055
+                ],
+                "class": "Fruit"
+            }
+        ],
+        "scene": {
+            "name": "studyroom_0",
+            "position": [
+                -1.5,
+                -1.0,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "floorplane"
+            ]
+        },
+        "instructions": [],
+        "conditions": {
+            "contain": {
+                "container": "plate_seen",
+                "entities": [
+                    "orange"
+                ]
+            }
+        }
+    }
+}

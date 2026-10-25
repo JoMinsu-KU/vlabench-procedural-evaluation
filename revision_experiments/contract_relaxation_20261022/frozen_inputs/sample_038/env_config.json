@@ -1,0 +1,169 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "table",
+                "xml_path": "obj/meshes/table/table.xml",
+                "position": [
+                    -2.6533150224291907e-10,
+                    1.918353494340943e-10,
+                    -8.474420970317581e-07
+                ],
+                "orientation": [
+                    0.9999999999999994,
+                    -4.132174103424557e-09,
+                    -1.6930160991057054e-08,
+                    5.011257295575699e-11
+                ],
+                "class": "Table",
+                "materials": [
+                    "stone4"
+                ]
+            },
+            {
+                "name": "chemistry_tube_stand",
+                "xml_path": "obj/meshes/tube/tube_container/tube_stand.xml",
+                "position": [
+                    -0.10788160764791153,
+                    0.02664848795051753,
+                    0.759998837553451
+                ],
+                "orientation": [
+                    0.9999999999248504,
+                    9.968126889699547e-08,
+                    -7.37819817142771e-09,
+                    1.2259240200675272e-05
+                ],
+                "class": "TubeStand"
+            },
+            {
+                "name": "KMnO4",
+                "xml_path": "obj/meshes/tube/tube/tube.xml",
+                "position": [
+                    -0.027896950011557304,
+                    0.07664756527373424,
+                    0.7592158849549363
+                ],
+                "orientation": [
+                    0.9999995199429982,
+                    -0.0006190704524721859,
+                    0.000757979090574548,
+                    4.830369080267489e-05
+                ],
+                "class": "ChemistryTube",
+                "solution": "KMnO4"
+            },
+            {
+                "name": "KMnO4_tag",
+                "xml_path": "obj/meshes/tube/nametag/nametag.xml",
+                "position": [
+                    -0.02744111766950726,
+                    0.12744374894756458,
+                    0.8582270266559585
+                ],
+                "orientation": [
+                    0.9998931115710196,
+                    -5.150947488322596e-05,
+                    -0.0004825209594613752,
+                    0.014612664134993944
+                ],
+                "class": "NameTag",
+                "content": "KMnO4"
+            },
+            {
+                "name": "CuCl2",
+                "xml_path": "obj/meshes/tube/tube/tube.xml",
+                "position": [
+                    -0.27498452948373736,
+                    -0.02404239107220961,
+                    0.7591310726504019
+                ],
+                "orientation": [
+                    0.9997068704137816,
+                    -0.003931868259901377,
+                    -0.002695858997904122,
+                    -0.023737017582945996
+                ],
+                "class": "ChemistryTube",
+                "solution": "CuCl2"
+            },
+            {
+                "name": "CuCl2_tag",
+                "xml_path": "obj/meshes/tube/nametag/nametag.xml",
+                "position": [
+                    -0.2823328298673982,
+                    0.10921364548780199,
+                    0.8260380675342937
+                ],
+                "orientation": [
+                    0.6085822610032013,
+                    0.1329504547589721,
+                    0.08979175586330414,
+                    0.7771031133322006
+                ],
+                "class": "NameTag",
+                "content": "CuCl2"
+            },
+            {
+                "name": "FeCl3",
+                "xml_path": "obj/meshes/tube/tube/tube.xml",
+                "position": [
+                    -0.1078484872061531,
+                    0.07685869374730794,
+                    0.7612361031864165
+                ],
+                "orientation": [
+                    0.999237097046225,
+                    0.0013068938299274449,
+                    -0.0054694362330388055,
+                    -0.03864713679489698
+                ],
+                "class": "ChemistryTube",
+                "solution": "FeCl3"
+            },
+            {
+                "name": "FeCl3_tag",
+                "xml_path": "obj/meshes/tube/nametag/nametag.xml",
+                "position": [
+                    -0.10789193432175738,
+                    0.1266595034402032,
+                    0.8581974772890703
+                ],
+                "orientation": [
+                    0.9999999999495071,
+                    -2.0558221583889186e-07,
+                    9.424442452628175e-06,
+                    3.481936870207118e-06
+                ],
+                "class": "NameTag",
+                "content": "FeCl3"
+            }
+        ],
+        "scene": {
+            "name": "lab_1",
+            "position": [
+                -4.0,
+                -2.5,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "floorplane"
+            ]
+        },
+        "instructions": [],
+        "conditions": {
+            "not_contain": {
+                "container": "chemistry_tube_stand",
+                "entities": [
+                    "KMnO4"
+                ]
+            }
+        }
+    }
+}

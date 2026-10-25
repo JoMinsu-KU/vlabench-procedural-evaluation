@@ -1,0 +1,65 @@
+{
+  "task_name": "insert_bloom_flower",
+  "env_config_path": "/mnt/c/SILVER/data/public_view/vlabench_vlm4500_public/Spatial/insert_bloom_flower/example40/env_config.json",
+  "executable_steps": [
+    {
+      "index": 0,
+      "skill": "pick",
+      "matched_phase_template": "insert_bloom_flower.phase_1.pick",
+      "phase_cursor_source": "deterministic_task_phase_cursor",
+      "sequence_reordered": false,
+      "missing_phase_inserted": false,
+      "gt_target_used": false,
+      "operation_sequence_used": false,
+      "expert_sequence_called": false,
+      "target": {
+        "number": 4,
+        "entity_name": "tulip",
+        "entity_class": "CommonGraspedEntity",
+        "target_source": "vlm_output"
+      }
+    },
+    {
+      "index": 1,
+      "skill": "lift",
+      "matched_phase_template": "insert_bloom_flower.phase_2.lift",
+      "phase_cursor_source": "deterministic_task_phase_cursor",
+      "sequence_reordered": false,
+      "missing_phase_inserted": false,
+      "gt_target_used": false,
+      "operation_sequence_used": false,
+      "expert_sequence_called": false
+    },
+    {
+      "index": 2,
+      "skill": "moveto",
+      "matched_phase_template": "insert_bloom_flower.phase_3.moveto",
+      "phase_cursor_source": "deterministic_task_phase_cursor",
+      "sequence_reordered": false,
+      "missing_phase_inserted": false,
+      "gt_target_used": false,
+      "operation_sequence_used": false,
+      "expert_sequence_called": false,
+      "target": {
+        "number": 1,
+        "entity_name": "vase_seen",
+        "entity_class": "Vase",
+        "target_source": "vlm_output"
+      }
+    },
+    {
+      "index": 3,
+      "skill": "lift",
+      "matched_phase_template": "insert_bloom_flower.phase_4.lift",
+      "phase_cursor_source": "deterministic_task_phase_cursor",
+      "sequence_reordered": false,
+      "missing_phase_inserted": false,
+      "gt_target_used": false,
+      "operation_sequence_used": false,
+      "expert_sequence_called": false
+    }
+  ],
+  "reset_wait_step": 1,
+  "native_seed": null,
+  "visual_audit_dir": "/mnt/c/SILVER/data/audit/ledger2133_current_adapter_positive_smoke_20260623_after_retry10_full2133_manual/smoke_execution_traces/Spatial_insert_bloom_flower_example40_positive/visual_audit"
+}

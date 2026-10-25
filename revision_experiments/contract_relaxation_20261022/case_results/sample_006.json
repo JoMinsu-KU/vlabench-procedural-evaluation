@@ -1,0 +1,14 @@
+{
+  "audit_id": "sample_006",
+  "model": "qwen",
+  "task_name": "insert_bloom_flower",
+  "case_id": "Spatial/insert_bloom_flower/example17",
+  "original_rejection": "phase_skill_mismatch",
+  "dispatch_category": "unsupported_dispatch",
+  "dispatch_detail": "flower_lift_requires_unobserved_phase_role",
+  "native_attempted": false,
+  "verified_goal": false,
+  "verified_goal_all_stages": false,
+  "verified_goal_with_stage_failure": false,
+  "outcome": "unsupported_dispatch"
+}

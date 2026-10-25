@@ -1,0 +1,153 @@
+{
+  "audit_id": "sample_060",
+  "model": "qwen",
+  "task_name": "select_nth_largest_poker",
+  "case_id": "CommenSence/select_nth_largest_poker/example76",
+  "original_rejection": "extra_phase",
+  "dispatch_category": "runnable",
+  "dispatch_detail": "only_reference_phase_equality_bypassed",
+  "native_attempted": true,
+  "verified_goal": false,
+  "verified_goal_all_stages": false,
+  "verified_goal_with_stage_failure": false,
+  "outcome": "native_exception_or_incomplete",
+  "arms": {
+    "initial_no_action": {
+      "audit_id": "sample_060",
+      "model": "qwen",
+      "case_id": "CommenSence/select_nth_largest_poker/example76",
+      "task_name": "select_nth_largest_poker",
+      "arm": "initial_no_action",
+      "elapsed_sec": 9.012,
+      "raw_final_goal": false,
+      "complete_without_exception": true,
+      "full_trace_identity": true,
+      "trace_is_original_prefix": true,
+      "observed_steps": [],
+      "expected_steps": [],
+      "stage_success_flags": [],
+      "all_stages_success": false,
+      "stage_false_count": 0,
+      "goal_after_complete_execution": false,
+      "goal_and_all_stages_success": false,
+      "goal_with_stage_failure": false,
+      "stage_exception": false,
+      "native_timeout": false,
+      "infrastructure_error": false,
+      "pre_action_load_failure": false,
+      "native_exception": "",
+      "stage_exception_detail": ""
+    },
+    "canonical_control": {
+      "audit_id": "sample_060",
+      "model": "qwen",
+      "case_id": "CommenSence/select_nth_largest_poker/example76",
+      "task_name": "select_nth_largest_poker",
+      "arm": "canonical_control",
+      "elapsed_sec": 28.893,
+      "raw_final_goal": true,
+      "complete_without_exception": true,
+      "full_trace_identity": true,
+      "trace_is_original_prefix": true,
+      "observed_steps": [
+        {
+          "skill": "pick",
+          "target": 2
+        },
+        {
+          "skill": "lift"
+        }
+      ],
+      "expected_steps": [
+        {
+          "skill": "pick",
+          "target": 2
+        },
+        {
+          "skill": "lift"
+        }
+      ],
+      "stage_success_flags": [
+        true,
+        false
+      ],
+      "all_stages_success": false,
+      "stage_false_count": 1,
+      "goal_after_complete_execution": true,
+      "goal_and_all_stages_success": false,
+      "goal_with_stage_failure": true,
+      "stage_exception": false,
+      "native_timeout": false,
+      "infrastructure_error": false,
+      "pre_action_load_failure": false,
+      "native_exception": "",
+      "stage_exception_detail": ""
+    },
+    "alternative": {
+      "audit_id": "sample_060",
+      "model": "qwen",
+      "case_id": "CommenSence/select_nth_largest_poker/example76",
+      "task_name": "select_nth_largest_poker",
+      "arm": "alternative",
+      "elapsed_sec": 36.999,
+      "raw_final_goal": false,
+      "complete_without_exception": false,
+      "full_trace_identity": true,
+      "trace_is_original_prefix": true,
+      "observed_steps": [
+        {
+          "skill": "pick",
+          "target": 4
+        },
+        {
+          "skill": "lift"
+        },
+        {
+          "skill": "moveto",
+          "target": 5
+        },
+        {
+          "skill": "place",
+          "target": 5
+        }
+      ],
+      "expected_steps": [
+        {
+          "skill": "pick",
+          "target": 4
+        },
+        {
+          "skill": "lift"
+        },
+        {
+          "skill": "moveto",
+          "target": 5
+        },
+        {
+          "skill": "place",
+          "target": 5
+        }
+      ],
+      "stage_success_flags": [
+        true,
+        false,
+        true,
+        false
+      ],
+      "all_stages_success": false,
+      "stage_false_count": 2,
+      "goal_after_complete_execution": false,
+      "goal_and_all_stages_success": false,
+      "goal_with_stage_failure": false,
+      "stage_exception": true,
+      "native_timeout": false,
+      "infrastructure_error": false,
+      "pre_action_load_failure": false,
+      "native_exception": "'CardHolder' object has no attribute 'get_place_point'",
+      "stage_exception_detail": "'CardHolder' object has no attribute 'get_place_point'"
+    }
+  },
+  "initial_goal_false_verified": true,
+  "canonical_goal": true,
+  "canonical_all_stages": false
+}

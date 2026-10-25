@@ -1,0 +1,15 @@
+{
+  "remote_analysis_source_sha256": "d0fdec88c8828753ce9fd303acc21dbb59ae24086cafd86b4d3d95077886ffcf",
+  "statistical_function_ast_sha256": {
+    "interval": "90d5c5219f9fbc13e8bcee1f607c3c31f32fc9ef477fa9b5e6222080aff8160d",
+    "safe_div": "f04b1f8708912f747816fc864d49cd4c16523470bb991811ec4e79c8cf9ec9c1",
+    "exact": "97f8cd8a67921ff40afa81db89f8d2b6cb09a7719061fc91a0a3f759d7f9eac7",
+    "adjust_holm": "82c8d0e800aa1a56d812615d64e34e671708201bdee00f52434ce5d3a690c94a",
+    "contrast": "fb0037e8fdddfa69b60ab65467e14d7900ddd0d5393030e98a1e8a8a840c6ea7",
+    "scaffold_simultaneous": "1d279af0a179b2edfa889868afe7038c096ccc7d76dc8639f28223facc85307f"
+  },
+  "statistical_function_AST_unchanged": true,
+  "source_input_files_verified_unchanged": 1956,
+  "baseline_frozen_labels_reproduced": 6399,
+  "scope": "Portable reanalysis of the archived case labels, not new inference or native rollout."
+}

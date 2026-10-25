@@ -1,0 +1,54 @@
+{
+  "task_name": "select_toy_semantic",
+  "env_config_path": "/mnt/c/SILVER/data/public_view/vlabench_vlm4500_public/Semantic/select_toy_semantic/example93/env_config.json",
+  "executable_steps": [
+    {
+      "index": 0,
+      "skill": "pick",
+      "matched_phase_template": "select_toy_semantic.phase_1.pick",
+      "phase_cursor_source": "deterministic_task_phase_cursor",
+      "sequence_reordered": false,
+      "missing_phase_inserted": false,
+      "gt_target_used": false,
+      "operation_sequence_used": false,
+      "expert_sequence_called": false,
+      "target": {
+        "number": 2,
+        "entity_name": "nami",
+        "entity_class": "Toy",
+        "target_source": "vlm_output"
+      }
+    },
+    {
+      "index": 1,
+      "skill": "lift",
+      "matched_phase_template": "select_toy_semantic.phase_2.lift",
+      "phase_cursor_source": "deterministic_task_phase_cursor",
+      "sequence_reordered": false,
+      "missing_phase_inserted": false,
+      "gt_target_used": false,
+      "operation_sequence_used": false,
+      "expert_sequence_called": false
+    },
+    {
+      "index": 2,
+      "skill": "place",
+      "matched_phase_template": "select_toy_semantic.phase_3.place",
+      "phase_cursor_source": "deterministic_task_phase_cursor",
+      "sequence_reordered": false,
+      "missing_phase_inserted": false,
+      "gt_target_used": false,
+      "operation_sequence_used": false,
+      "expert_sequence_called": false,
+      "target": {
+        "number": 1,
+        "entity_name": "giftbox_seen",
+        "entity_class": "CommonContainer",
+        "target_source": "vlm_output"
+      }
+    }
+  ],
+  "reset_wait_step": 1,
+  "native_seed": null,
+  "visual_audit_dir": "/mnt/c/SILVER/data/audit/ledger2133_current_adapter_positive_smoke_20260623_after_retry10_full2133_manual/smoke_execution_traces/Semantic_select_toy_semantic_example93_positive/visual_audit"
+}

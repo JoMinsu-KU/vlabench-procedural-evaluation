@@ -1,0 +1,88 @@
+{
+  "ok": true,
+  "execution_completed": true,
+  "condition_success": true,
+  "trace": [
+    {
+      "skill": "pick",
+      "target": {
+        "number": 2,
+        "entity_name": "queen_of_hearts",
+        "entity_class": "Poker",
+        "target_source": "vlm_output"
+      },
+      "matched_phase_template": "select_poker.phase_1.pick",
+      "stage_success": true,
+      "task_success_signal": false,
+      "waypoint_count": 69,
+      "condition_progress_after_step": false
+    },
+    {
+      "skill": "lift",
+      "target": null,
+      "matched_phase_template": "select_poker.phase_2.lift",
+      "stage_success": false,
+      "task_success_signal": true,
+      "waypoint_count": 9,
+      "condition_progress_after_step": true
+    }
+  ],
+  "stage_exception_policy": {
+    "enabled": true,
+    "name": "official_style_stage_failure_condition_check",
+    "stage_exception_caught": false,
+    "condition_checked_after_stage_exception": false,
+    "condition_success_after_stage_exception": false,
+    "failed_skill": "",
+    "exception_type": "",
+    "exception": "",
+    "example_specific_rule_used": false
+  },
+  "episode_config_audit": {
+    "added_fields": {
+      "target_entities": {
+        "source": "conditions.is_grasped.entities",
+        "value": [
+          "queen_of_hearts"
+        ]
+      },
+      "target_entity": {
+        "source": "conditions.is_grasped.entities[0]",
+        "value": "queen_of_hearts"
+      }
+    },
+    "native_seed": null,
+    "post_load_config_manager_fields": {
+      "target_entity": "queen_of_hearts",
+      "target_entities": [
+        "queen_of_hearts"
+      ]
+    },
+    "reset_task_progress_called": true
+  },
+  "visual_audit": {
+    "before": {
+      "enabled": false,
+      "phase": "before",
+      "images": [],
+      "contact_sheet": "",
+      "skipped_reason": "pre_execution_render_disabled_to_preserve_native_state"
+    },
+    "after": {
+      "enabled": true,
+      "phase": "after",
+      "images": [
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_064/canonical_control/visual_audit/after_camera0.png",
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_064/canonical_control/visual_audit/after_camera1.png",
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_064/canonical_control/visual_audit/after_camera2.png",
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_064/canonical_control/visual_audit/after_camera3.png"
+      ],
+      "contact_sheet": "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_064/canonical_control/visual_audit/after_contact_sheet.png"
+    }
+  },
+  "gt_used_during_execution": false,
+  "operation_sequence_read": false,
+  "expert_sequence_called": false,
+  "stdout": "Checking if can connect to goal at 9 samples\nCan connect to goal\n",
+  "stderr": "Dropped Escape call with ulEscapeCode : 0x03007703\n"
+}

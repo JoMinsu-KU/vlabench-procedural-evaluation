@@ -1,0 +1,133 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "table",
+                "xml_path": "obj/meshes/table/table.xml",
+                "position": [
+                    -4.790034398612299e-10,
+                    -8.834679958707142e-10,
+                    -7.719945760861429e-07
+                ],
+                "orientation": [
+                    1.0,
+                    -8.145015270400569e-09,
+                    3.51426599730511e-09,
+                    5.725274133076223e-11
+                ],
+                "class": "Table",
+                "materials": [
+                    "wood3"
+                ]
+            },
+            {
+                "name": "plate_seen",
+                "xml_path": "obj/meshes/tablewares/plates/plate3/plate.xml",
+                "position": [
+                    0.13102699748656177,
+                    0.28570605457010745,
+                    0.7599381546503199
+                ],
+                "orientation": [
+                    0.9988286515570454,
+                    3.883320600305711e-05,
+                    6.953500112156155e-06,
+                    0.048387222201395505
+                ],
+                "class": "Plate"
+            },
+            {
+                "name": "banana",
+                "xml_path": "obj/meshes/fruit/banana/banana_3/model.xml",
+                "position": [
+                    -0.29062662782677906,
+                    -0.15855222935728322,
+                    0.7739127882773753
+                ],
+                "orientation": [
+                    0.9966479993034423,
+                    0.010326214978704269,
+                    -0.04633776811983768,
+                    0.06662541567849313
+                ],
+                "class": "Fruit"
+            },
+            {
+                "name": "apple",
+                "xml_path": "obj/meshes/fruit/apple/apple_0/model.xml",
+                "position": [
+                    0.2550201361797072,
+                    -0.1751752488523494,
+                    0.7929774425585094
+                ],
+                "orientation": [
+                    0.9988431135271507,
+                    -0.020202858583883987,
+                    0.022129109661816356,
+                    0.037610923546262255
+                ],
+                "class": "Fruit"
+            },
+            {
+                "name": "pear",
+                "xml_path": "obj/meshes/fruit/pear/pear_16/model.xml",
+                "position": [
+                    -0.2567316661176933,
+                    0.3035585553413597,
+                    0.7843177402366998
+                ],
+                "orientation": [
+                    0.9677473041597785,
+                    -0.2450422450161069,
+                    -0.03138992947962351,
+                    0.049336860218415546
+                ],
+                "class": "Fruit"
+            },
+            {
+                "name": "mango",
+                "xml_path": "obj/meshes/fruit/mango/mango_16/model.xml",
+                "position": [
+                    -0.041210509373514545,
+                    0.02511407992844831,
+                    0.7944467983118643
+                ],
+                "orientation": [
+                    0.9823497429550231,
+                    -0.13427788992351264,
+                    0.10253665505240425,
+                    -0.08027867191573143
+                ],
+                "class": "Fruit"
+            }
+        ],
+        "scene": {
+            "name": "studyroom_0",
+            "position": [
+                -1.0,
+                -1.0,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "floorplane"
+            ]
+        },
+        "instructions": [
+            "Put the banana into the plate_seen"
+        ],
+        "conditions": {
+            "contain": {
+                "container": "plate_seen",
+                "entities": [
+                    "banana"
+                ]
+            }
+        }
+    }
+}

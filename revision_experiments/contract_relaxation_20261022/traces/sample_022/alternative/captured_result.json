@@ -1,0 +1,120 @@
+{
+  "ok": false,
+  "execution_completed": false,
+  "condition_success": false,
+  "trace": [
+    {
+      "skill": "pick",
+      "target": {
+        "number": 4,
+        "entity_name": "striped_11",
+        "entity_class": "BilliardBall",
+        "target_source": "archived_vlm_output"
+      },
+      "matched_phase_template": "relaxed_diagnostic.step_1.pick",
+      "stage_success": true,
+      "task_success_signal": false,
+      "waypoint_count": 60,
+      "condition_progress_after_step": false
+    },
+    {
+      "skill": "moveto",
+      "target": {
+        "number": 0,
+        "entity_name": "billiards_table",
+        "entity_class": "BilliardTable",
+        "target_source": "archived_vlm_output"
+      },
+      "matched_phase_template": "relaxed_diagnostic.step_2.moveto",
+      "stage_success": false,
+      "task_success_signal": false,
+      "waypoint_count": 0,
+      "condition_progress_after_step": false,
+      "stage_exception_type": "RTreeError",
+      "stage_exception": "Error in \"Index_CreateWithStream\": IllegalArgumentException: RTree::BulkLoader::bulkLoadUsingSTR: Empty data stream given."
+    }
+  ],
+  "stage_exception_policy": {
+    "enabled": true,
+    "name": "official_style_stage_failure_condition_check",
+    "stage_exception_caught": true,
+    "condition_checked_after_stage_exception": true,
+    "condition_success_after_stage_exception": false,
+    "failed_skill": "moveto",
+    "exception_type": "RTreeError",
+    "exception": "Error in \"Index_CreateWithStream\": IllegalArgumentException: RTree::BulkLoader::bulkLoadUsingSTR: Empty data stream given.",
+    "example_specific_rule_used": false
+  },
+  "episode_config_audit": {
+    "added_fields": {
+      "target_entities": {
+        "source": "conditions.contain.entities",
+        "value": [
+          "solid_7"
+        ]
+      },
+      "target_entity": {
+        "source": "conditions.contain.entities[0]",
+        "value": "solid_7"
+      },
+      "target_container": {
+        "source": "conditions.contain.container",
+        "value": "billiards_table"
+      },
+      "target_containers": {
+        "source": "derived.task.target_container",
+        "value": [
+          "billiards_table"
+        ]
+      },
+      "target_platform": {
+        "source": "derived.task.target_container",
+        "value": "billiards_table"
+      }
+    },
+    "native_seed": null,
+    "post_load_config_manager_fields": {
+      "target_entity": "solid_7",
+      "target_entities": [
+        "solid_7"
+      ],
+      "target_container": "billiards_table"
+    },
+    "post_load_mirrored_fields": {
+      "target_containers": [
+        "billiards_table"
+      ],
+      "target_platform": "billiards_table"
+    },
+    "reset_task_progress_called": true
+  },
+  "visual_audit": {
+    "before": {
+      "enabled": false,
+      "phase": "before",
+      "images": [],
+      "contact_sheet": "",
+      "skipped_reason": "pre_execution_render_disabled_to_preserve_native_state"
+    },
+    "after": {
+      "enabled": true,
+      "phase": "after",
+      "images": [
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_022/alternative/visual_audit/after_camera0.png",
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_022/alternative/visual_audit/after_camera1.png",
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_022/alternative/visual_audit/after_camera2.png",
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_022/alternative/visual_audit/after_camera3.png"
+      ],
+      "contact_sheet": "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_022/alternative/visual_audit/after_contact_sheet.png"
+    }
+  },
+  "gt_used_during_execution": false,
+  "operation_sequence_read": false,
+  "expert_sequence_called": false,
+  "native_exception": true,
+  "exception_type": "RTreeError",
+  "exception": "Error in \"Index_CreateWithStream\": IllegalArgumentException: RTree::BulkLoader::bulkLoadUsingSTR: Empty data stream given.",
+  "traceback": "Traceback (most recent call last):\n  File \"/mnt/c/VLABenchProcEval/procedural_interface/execution/vlabench_native_worker.py\", line 905, in main\n    trace_row = _execute_step(env, task_name, step)\n  File \"/mnt/c/VLABenchProcEval/procedural_interface/execution/vlabench_native_worker.py\", line 704, in _execute_step\n    obs, waypoints, stage_success, task_success = SkillLib.moveto(env, target_pos=target_pos)\n  File \"/home/jms/vlabench_runtime/VLABench/VLABench/utils/skill_lib.py\", line 91, in moveto\n    motion_planning_path = rrt_motion_planning(tuple(start_pos),\n  File \"/home/jms/vlabench_runtime/VLABench/VLABench/algorithms/motion_planning/rrt.py\", line 46, in rrt_motion_planning\n    search_space = SearchSpace(search_dimensions, obstacle_pcd)\n  File \"/home/jms/vlabench_runtime/rrt-algorithms-source/rrt_algorithms/search_space/search_space.py\", line 39, in __init__\n    self.obs = index.Index(obstacle_generator(O), interleaved=True, properties=p)\n  File \"/home/jms/miniforge3/envs/vlabench310_repaired/lib/python3.10/site-packages/rtree/index.py\", line 273, in __init__\n    self.handle = self._create_idx_from_stream(stream)\n  File \"/home/jms/miniforge3/envs/vlabench310_repaired/lib/python3.10/site-packages/rtree/index.py\", line 1263, in _create_idx_from_stream\n    return IndexStreamHandle(self.properties.handle, stream)\n  File \"/home/jms/miniforge3/envs/vlabench310_repaired/lib/python3.10/site-packages/rtree/index.py\", line 1396, in __init__\n    self._ptr = self._create(*args, **kwargs)\n  File \"/home/jms/miniforge3/envs/vlabench310_repaired/lib/python3.10/site-packages/rtree/core.py\", line 25, in check_void\n    raise RTreeError(msg)\nrtree.exceptions.RTreeError: Error in \"Index_CreateWithStream\": IllegalArgumentException: RTree::BulkLoader::bulkLoadUsingSTR: Empty data stream given.\n",
+  "stdout": "Checking if can connect to goal at 3 samples\nCan connect to goal\n",
+  "stderr": "Dropped Escape call with ulEscapeCode : 0x03007703\n"
+}

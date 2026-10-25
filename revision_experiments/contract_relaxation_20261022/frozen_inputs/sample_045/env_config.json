@@ -1,0 +1,101 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "table",
+                "xml_path": "obj/meshes/table/table.xml",
+                "position": [
+                    -2.7326956719466484e-19,
+                    2.757554174308964e-17,
+                    -7.538417574207482e-07
+                ],
+                "orientation": [
+                    1.0,
+                    2.0854202201387413e-17,
+                    3.094983256412916e-20,
+                    -3.1952407150030246e-21
+                ],
+                "class": "Table",
+                "materials": [
+                    "stone4"
+                ]
+            },
+            {
+                "name": "fridge_open",
+                "xml_path": "obj/meshes/containers/fridge/fridge_open/fridge_open_0/mobility.xml",
+                "position": [
+                    0.02068307792951206,
+                    0.40402828707905913,
+                    0.74
+                ],
+                "orientation": [
+                    0.9999999082016993,
+                    0.0,
+                    0.0,
+                    0.00042848173026128984
+                ],
+                "class": "Fridge"
+            },
+            {
+                "name": "juice_seen",
+                "xml_path": "obj/meshes/drinks/juice/boxed_drink_1/model.xml",
+                "position": [
+                    -0.04703435942685791,
+                    0.3544790620172374,
+                    0.8504558945317893
+                ],
+                "orientation": [
+                    0.9984014276549805,
+                    0.0003967209059304353,
+                    -0.00012534766268355733,
+                    -0.0565191662799725
+                ],
+                "class": "Drink"
+            },
+            {
+                "name": "monster",
+                "xml_path": "obj/meshes/drinks/energy_drink/monster/monster.xml",
+                "position": [
+                    0.05662007938396627,
+                    0.3387065357596548,
+                    0.8379798100648878
+                ],
+                "orientation": [
+                    0.9994928006724992,
+                    5.320712594985304e-05,
+                    -1.1915810706199955e-05,
+                    -0.03184554020357151
+                ],
+                "class": "Drink"
+            }
+        ],
+        "scene": {
+            "name": "studyroom_0",
+            "position": [
+                -1.5,
+                1.0,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "floorplane"
+            ]
+        },
+        "instructions": [
+            "Take out the monster from the fridge_open"
+        ],
+        "conditions": {
+            "not_contain": {
+                "container": "fridge_open",
+                "entities": [
+                    "monster"
+                ]
+            }
+        }
+    }
+}

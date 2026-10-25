@@ -1,0 +1,101 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "table",
+                "xml_path": "obj/meshes/table/table.xml",
+                "position": [
+                    2.1391694585247764e-10,
+                    5.137911245132153e-10,
+                    -8.471057078748594e-07
+                ],
+                "orientation": [
+                    0.9999999999999992,
+                    -2.7622698466295907e-09,
+                    1.2798922368947432e-08,
+                    7.806154705845888e-11
+                ],
+                "class": "Table",
+                "materials": [
+                    "stone4"
+                ]
+            },
+            {
+                "name": "chemistry_tube_stand",
+                "xml_path": "obj/meshes/tube/tube_container/tube_stand.xml",
+                "position": [
+                    0.08294726282856824,
+                    0.018901755087626686,
+                    0.7599988452678865
+                ],
+                "orientation": [
+                    0.999999999858601,
+                    6.969813793874242e-08,
+                    -1.4239942380263886e-08,
+                    -1.6816448864511382e-05
+                ],
+                "class": "TubeStand"
+            },
+            {
+                "name": "KMnO4",
+                "xml_path": "obj/meshes/tube/tube/tube.xml",
+                "position": [
+                    -0.0845599778455572,
+                    0.06827780666378824,
+                    0.7591074429157892
+                ],
+                "orientation": [
+                    0.9997489694940969,
+                    -0.003732056418014108,
+                    -0.0009622061578510176,
+                    -0.022071336835244055
+                ],
+                "class": "ChemistryTube",
+                "solution": "KMnO4"
+            },
+            {
+                "name": "K2CrO4",
+                "xml_path": "obj/meshes/tube/tube/tube.xml",
+                "position": [
+                    0.08283127167210885,
+                    -0.0308616057051273,
+                    0.7628845969687323
+                ],
+                "orientation": [
+                    0.9989646787654252,
+                    0.0014395738074195904,
+                    -0.004736489797772048,
+                    -0.04522238240892824
+                ],
+                "class": "ChemistryTube",
+                "solution": "K2CrO4"
+            }
+        ],
+        "scene": {
+            "name": "lab_1",
+            "position": [
+                2.0,
+                2.0,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "floorplane"
+            ]
+        },
+        "instructions": [],
+        "conditions": {
+            "not_contain": {
+                "container": "chemistry_tube_stand",
+                "entities": [
+                    "KMnO4"
+                ]
+            }
+        }
+    }
+}

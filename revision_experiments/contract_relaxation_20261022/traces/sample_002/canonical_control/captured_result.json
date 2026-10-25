@@ -1,0 +1,79 @@
+{
+  "ok": true,
+  "execution_completed": true,
+  "condition_success": true,
+  "trace": [
+    {
+      "skill": "press",
+      "target": {
+        "number": 3,
+        "entity_name": "button1",
+        "entity_class": "Button",
+        "target_source": "vlm_output"
+      },
+      "matched_phase_template": "density_qa.phase_1.press",
+      "stage_success": false,
+      "task_success_signal": true,
+      "waypoint_count": 74,
+      "condition_progress_after_step": true
+    }
+  ],
+  "stage_exception_policy": {
+    "enabled": true,
+    "name": "official_style_stage_failure_condition_check",
+    "stage_exception_caught": false,
+    "condition_checked_after_stage_exception": false,
+    "condition_success_after_stage_exception": false,
+    "failed_skill": "",
+    "exception_type": "",
+    "exception": "",
+    "example_specific_rule_used": false
+  },
+  "episode_config_audit": {
+    "added_fields": {
+      "target_entity": {
+        "source": "conditions.press_button.target_button",
+        "value": "button1"
+      },
+      "target_entities": {
+        "source": "conditions.press_button.target_button",
+        "value": [
+          "button1"
+        ]
+      }
+    },
+    "native_seed": null,
+    "post_load_config_manager_fields": {
+      "target_entity": "button1",
+      "target_entities": [
+        "button1"
+      ]
+    },
+    "reset_task_progress_called": true
+  },
+  "visual_audit": {
+    "before": {
+      "enabled": false,
+      "phase": "before",
+      "images": [],
+      "contact_sheet": "",
+      "skipped_reason": "pre_execution_render_disabled_to_preserve_native_state"
+    },
+    "after": {
+      "enabled": true,
+      "phase": "after",
+      "images": [
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_002/canonical_control/visual_audit/after_camera0.png",
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_002/canonical_control/visual_audit/after_camera1.png",
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_002/canonical_control/visual_audit/after_camera2.png",
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_002/canonical_control/visual_audit/after_camera3.png"
+      ],
+      "contact_sheet": "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_002/canonical_control/visual_audit/after_contact_sheet.png"
+    }
+  },
+  "gt_used_during_execution": false,
+  "operation_sequence_read": false,
+  "expert_sequence_called": false,
+  "stdout": "Checking if can connect to goal at 25 samples\nCan connect to goal\nChecking if can connect to goal at 51 samples\nCan connect to goal\n",
+  "stderr": "Dropped Escape call with ulEscapeCode : 0x03007703\n"
+}

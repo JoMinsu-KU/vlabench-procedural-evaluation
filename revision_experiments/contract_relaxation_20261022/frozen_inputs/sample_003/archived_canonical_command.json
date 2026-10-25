@@ -1,0 +1,26 @@
+{
+  "task_name": "density_qa",
+  "env_config_path": "/mnt/c/SILVER/data/public_view/vlabench_vlm4500_public/PhysicsLaw/density_qa/example71/env_config.json",
+  "executable_steps": [
+    {
+      "index": 0,
+      "skill": "press",
+      "matched_phase_template": "density_qa.phase_1.press",
+      "phase_cursor_source": "deterministic_task_phase_cursor",
+      "sequence_reordered": false,
+      "missing_phase_inserted": false,
+      "gt_target_used": false,
+      "operation_sequence_used": false,
+      "expert_sequence_called": false,
+      "target": {
+        "number": 1,
+        "entity_name": "button0",
+        "entity_class": "Button",
+        "target_source": "vlm_output"
+      }
+    }
+  ],
+  "reset_wait_step": 1,
+  "native_seed": null,
+  "visual_audit_dir": "/mnt/c/SILVER/data/audit/ledger2133_current_adapter_positive_smoke_20260623_after_retry10_full2133_manual/smoke_execution_traces/PhysicsLaw_density_qa_example71_positive/visual_audit"
+}

@@ -1,0 +1,137 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "table",
+                "xml_path": "obj/meshes/table/table.xml",
+                "position": [
+                    1.4661146212614808e-09,
+                    -8.772042635760803e-10,
+                    -8.469473428329245e-07
+                ],
+                "orientation": [
+                    0.9999999999999986,
+                    -2.4110965120619985e-08,
+                    -1.734997615936531e-08,
+                    -9.901860661394181e-11
+                ],
+                "class": "Table",
+                "materials": [
+                    "stone4"
+                ]
+            },
+            {
+                "name": "chemistry_tube_stand",
+                "xml_path": "obj/meshes/tube/tube_container/tube_stand.xml",
+                "position": [
+                    -0.11100149418567712,
+                    0.15547071739306131,
+                    0.7599988295745087
+                ],
+                "orientation": [
+                    0.9999999999396703,
+                    -4.7029213676083536e-08,
+                    -3.099687207454574e-08,
+                    1.0984414011019734e-05
+                ],
+                "class": "TubeStand"
+            },
+            {
+                "name": "CuCl2",
+                "xml_path": "obj/meshes/tube/tube/tube.xml",
+                "position": [
+                    0.05500234455097717,
+                    0.2054364413276411,
+                    0.7731818391586752
+                ],
+                "orientation": [
+                    0.994038386823191,
+                    0.003075700792542071,
+                    -0.005626994437749531,
+                    -0.10884191527247833
+                ],
+                "class": "ChemistryTube",
+                "solution": "CuCl2"
+            },
+            {
+                "name": "CuCl2_tag",
+                "xml_path": "obj/meshes/tube/nametag/nametag.xml",
+                "position": [
+                    0.04899630269343286,
+                    0.2554742417871879,
+                    0.859998830087431
+                ],
+                "orientation": [
+                    0.9999999999396703,
+                    -4.7029213676083536e-08,
+                    -3.099687207454574e-08,
+                    1.0984414011019734e-05
+                ],
+                "class": "NameTag",
+                "content": "CuCl2"
+            },
+            {
+                "name": "KMnO4",
+                "xml_path": "obj/meshes/tube/tube/tube.xml",
+                "position": [
+                    -0.18976628833900994,
+                    0.1055068079020883,
+                    0.7592210388010873
+                ],
+                "orientation": [
+                    0.9984406402797872,
+                    0.0012115204725885397,
+                    -0.044564672494199646,
+                    -0.0335977681002366
+                ],
+                "class": "ChemistryTube",
+                "solution": "KMnO4"
+            },
+            {
+                "name": "KMnO4_tag",
+                "xml_path": "obj/meshes/tube/nametag/nametag.xml",
+                "position": [
+                    -0.19100150036584962,
+                    0.15546896929259407,
+                    0.8599988246150914
+                ],
+                "orientation": [
+                    0.9999999999396703,
+                    -4.7029213676083536e-08,
+                    -3.099687207454574e-08,
+                    1.0984414011019734e-05
+                ],
+                "class": "NameTag",
+                "content": "KMnO4"
+            }
+        ],
+        "scene": {
+            "name": "lab_1",
+            "position": [
+                -4.0,
+                -2.5,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "floorplane"
+            ]
+        },
+        "instructions": [
+            "Take out the CuCl2 solution"
+        ],
+        "conditions": {
+            "not_contain": {
+                "container": "chemistry_tube_stand",
+                "entities": [
+                    "CuCl2"
+                ]
+            }
+        }
+    }
+}

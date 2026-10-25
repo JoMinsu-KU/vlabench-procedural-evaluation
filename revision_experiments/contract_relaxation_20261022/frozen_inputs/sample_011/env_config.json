@@ -1,0 +1,115 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "table",
+                "xml_path": "obj/meshes/table/table.xml",
+                "position": [
+                    -6.801670469107604e-11,
+                    4.963694484568953e-10,
+                    -7.539840690726338e-07
+                ],
+                "orientation": [
+                    1.0,
+                    -9.620702191507701e-11,
+                    4.445107115086879e-11,
+                    1.0293778616511464e-10
+                ],
+                "class": "Table",
+                "materials": [
+                    "stone0"
+                ]
+            },
+            {
+                "name": "vase_seen",
+                "xml_path": "obj/meshes/containers/vases/vase_1/vase.xml",
+                "position": [
+                    0.28020896017114905,
+                    0.22449230444844284,
+                    0.78
+                ],
+                "orientation": [
+                    0.9999237336828081,
+                    0.0,
+                    0.0,
+                    -0.012350174809810668
+                ],
+                "class": "Vase"
+            },
+            {
+                "name": "chrysanthemum",
+                "xml_path": "obj/meshes/flowers/bloom_flower/chrysanthemum/chrysanthemum_0/chrysanthemum_0.xml",
+                "position": [
+                    0.2866799650798518,
+                    -0.06864996893103427,
+                    0.814258020744083
+                ],
+                "orientation": [
+                    0.9974721784630548,
+                    0.068701408033292,
+                    0.01749449745268532,
+                    -0.004828279744397193
+                ],
+                "class": "CommonGraspedEntity"
+            },
+            {
+                "name": "tulip",
+                "xml_path": "obj/meshes/flowers/bloom_flower/tulip/tulip_draft_0/tulip_draft_0.xml",
+                "position": [
+                    -0.055093469406296704,
+                    -0.06723178866870039,
+                    0.8084357209336522
+                ],
+                "orientation": [
+                    0.9984446704493883,
+                    0.03850448375699022,
+                    -0.03941684098737969,
+                    0.008482772447448043
+                ],
+                "class": "CommonGraspedEntity"
+            },
+            {
+                "name": "sunflower",
+                "xml_path": "obj/meshes/flowers/bloom_flower/sunflower/sunflower_2/sunflower_2.xml",
+                "position": [
+                    -0.34281869365362067,
+                    -0.11663318761244804,
+                    0.8017459704952195
+                ],
+                "orientation": [
+                    0.9990960800222013,
+                    4.241524974277663e-17,
+                    -2.2268347903212013e-17,
+                    0.042509091783656056
+                ],
+                "class": "CommonGraspedEntity"
+            }
+        ],
+        "scene": {
+            "name": "bedroom_0",
+            "position": [
+                0.0,
+                1.0,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "default_floor"
+            ]
+        },
+        "instructions": [],
+        "conditions": {
+            "contain": {
+                "container": "vase_seen",
+                "entities": [
+                    "chrysanthemum"
+                ]
+            }
+        }
+    }
+}

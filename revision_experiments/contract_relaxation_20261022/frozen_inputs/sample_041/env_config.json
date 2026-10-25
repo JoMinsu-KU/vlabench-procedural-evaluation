@@ -1,0 +1,137 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "table",
+                "xml_path": "obj/meshes/table/table.xml",
+                "position": [
+                    3.34103712514313e-14,
+                    -3.1131667568285313e-11,
+                    -8.46844367310518e-07
+                ],
+                "orientation": [
+                    0.999999999999999,
+                    -2.591551595916432e-08,
+                    2.7556910311780964e-08,
+                    -3.7967177803683314e-12
+                ],
+                "class": "Table",
+                "materials": [
+                    "stone2"
+                ]
+            },
+            {
+                "name": "chemistry_tube_stand",
+                "xml_path": "obj/meshes/tube/tube_container/tube_stand.xml",
+                "position": [
+                    0.17966402861754036,
+                    0.16886595003959984,
+                    0.7599988187414287
+                ],
+                "orientation": [
+                    0.9999999999993873,
+                    -3.2758936411468914e-08,
+                    2.7887629162973592e-09,
+                    1.1065425401122688e-06
+                ],
+                "class": "TubeStand"
+            },
+            {
+                "name": "CuSO4",
+                "xml_path": "obj/meshes/tube/tube/tube.xml",
+                "position": [
+                    0.1795317810249711,
+                    0.11911194026951759,
+                    0.7634808553816949
+                ],
+                "orientation": [
+                    0.9988629781915477,
+                    0.0014613465455866807,
+                    -0.0039544227153384725,
+                    -0.047486606591471005
+                ],
+                "class": "ChemistryTube",
+                "solution": "CuSO4"
+            },
+            {
+                "name": "I2",
+                "xml_path": "obj/meshes/tube/tube/tube.xml",
+                "position": [
+                    0.10176185550065396,
+                    0.21880230880069074,
+                    0.7591864008801922
+                ],
+                "orientation": [
+                    0.9983819172686571,
+                    0.0007901651243625747,
+                    -0.0510130967784542,
+                    -0.025111488747357667
+                ],
+                "class": "ChemistryTube",
+                "solution": "I2"
+            },
+            {
+                "name": "K2CrO4",
+                "xml_path": "obj/meshes/tube/tube/tube.xml",
+                "position": [
+                    0.3452595953655065,
+                    0.11956983419088385,
+                    0.7769661422534687
+                ],
+                "orientation": [
+                    0.9957506689224022,
+                    0.006763151014799152,
+                    -0.013190771424605516,
+                    -0.09088932103477784
+                ],
+                "class": "ChemistryTube",
+                "solution": "K2CrO4"
+            },
+            {
+                "name": "FeCl3",
+                "xml_path": "obj/meshes/tube/tube/tube.xml",
+                "position": [
+                    0.34576777099595835,
+                    0.2188417135573436,
+                    0.772913276158634
+                ],
+                "orientation": [
+                    0.9940413027549498,
+                    0.002940635765226691,
+                    -0.0067082392694244024,
+                    -0.10875771514905513
+                ],
+                "class": "ChemistryTube",
+                "solution": "FeCl3"
+            }
+        ],
+        "scene": {
+            "name": "lab_1",
+            "position": [
+                6.0,
+                2.0,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "floorplane"
+            ]
+        },
+        "instructions": [
+            "Take out the solution on the 1th row and 3th column"
+        ],
+        "conditions": {
+            "not_contain": {
+                "container": "chemistry_tube_stand",
+                "entities": [
+                    "CuSO4"
+                ]
+            }
+        }
+    }
+}

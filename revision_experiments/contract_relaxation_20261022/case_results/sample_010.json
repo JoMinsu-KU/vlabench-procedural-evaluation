@@ -1,0 +1,14 @@
+{
+  "audit_id": "sample_010",
+  "model": "gemma",
+  "task_name": "insert_flower_common_sense",
+  "case_id": "CommenSence/insert_flower_common_sense/example69",
+  "original_rejection": "extra_phase",
+  "dispatch_category": "unsupported_dispatch",
+  "dispatch_detail": "flower_lift_requires_unobserved_phase_role",
+  "native_attempted": false,
+  "verified_goal": false,
+  "verified_goal_all_stages": false,
+  "verified_goal_with_stage_failure": false,
+  "outcome": "unsupported_dispatch"
+}

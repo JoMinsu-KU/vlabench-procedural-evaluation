@@ -1,0 +1,119 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "billiards_table",
+                "xml_path": "obj/meshes/containers/billiards_table/billiards_table.xml",
+                "position": [
+                    0.014685483749174569,
+                    0.009789860395237753,
+                    -1.5241305283113343e-06
+                ],
+                "orientation": [
+                    0.9999863483160694,
+                    -1.0379097554033792e-09,
+                    -1.0078219179320532e-08,
+                    0.005225244634665284
+                ],
+                "class": "BilliardTable",
+                "target_hole": "container_right_2"
+            },
+            {
+                "name": "solid_7",
+                "xml_path": "obj/meshes/billiard_balls/billiards.xml",
+                "position": [
+                    -0.2603048010893428,
+                    -0.06390162124707884,
+                    0.5880896761739427
+                ],
+                "orientation": [
+                    0.9976238079955749,
+                    -0.001746608746853498,
+                    -0.02811106062433891,
+                    -0.06287650872041246
+                ],
+                "class": "BilliardBall",
+                "value": "solid_7"
+            },
+            {
+                "name": "striped_15",
+                "xml_path": "obj/meshes/billiard_balls/billiards.xml",
+                "position": [
+                    -0.19658403062204038,
+                    0.2623020941690047,
+                    0.5880859935817078
+                ],
+                "orientation": [
+                    0.9967943635264745,
+                    0.0023594190377763794,
+                    -0.027376586575261444,
+                    0.07513955343985715
+                ],
+                "class": "BilliardBall",
+                "value": "striped_15"
+            },
+            {
+                "name": "solid_3",
+                "xml_path": "obj/meshes/billiard_balls/billiards.xml",
+                "position": [
+                    0.25496370108095984,
+                    -0.06281104479054038,
+                    0.5880856312173846
+                ],
+                "orientation": [
+                    0.9995257595156405,
+                    0.0004199002452570039,
+                    -0.027854650256594674,
+                    0.013122431464771352
+                ],
+                "class": "BilliardBall",
+                "value": "solid_3"
+            },
+            {
+                "name": "striped_11",
+                "xml_path": "obj/meshes/billiard_balls/billiards.xml",
+                "position": [
+                    -0.019756100041763352,
+                    -0.001997403432769779,
+                    0.5880906503728351
+                ],
+                "orientation": [
+                    0.9975796246750288,
+                    -0.0016774476506529654,
+                    -0.02804971837491511,
+                    -0.06360260923653531
+                ],
+                "class": "BilliardBall",
+                "value": "striped_11"
+            }
+        ],
+        "scene": {
+            "name": "studyroom_0",
+            "position": [
+                -1.0,
+                1.0,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "floorplane"
+            ]
+        },
+        "instructions": [
+            "Please put the solid_7 in the right top pocket."
+        ],
+        "conditions": {
+            "contain": {
+                "container": "billiards_table",
+                "entities": [
+                    "solid_7"
+                ]
+            }
+        }
+    }
+}

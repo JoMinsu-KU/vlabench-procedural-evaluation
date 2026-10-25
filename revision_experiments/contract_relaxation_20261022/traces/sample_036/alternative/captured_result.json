@@ -1,0 +1,132 @@
+{
+  "ok": true,
+  "execution_completed": true,
+  "condition_success": false,
+  "trace": [
+    {
+      "skill": "pick",
+      "target": {
+        "number": 2,
+        "entity_name": "CuSO4",
+        "entity_class": "ChemistryTube",
+        "target_source": "archived_vlm_output"
+      },
+      "matched_phase_template": "relaxed_diagnostic.step_1.pick",
+      "stage_success": true,
+      "task_success_signal": false,
+      "waypoint_count": 74,
+      "condition_progress_after_step": false
+    },
+    {
+      "skill": "lift",
+      "target": null,
+      "matched_phase_template": "relaxed_diagnostic.step_2.lift",
+      "stage_success": false,
+      "task_success_signal": true,
+      "waypoint_count": 14,
+      "condition_progress_after_step": true
+    },
+    {
+      "skill": "moveto",
+      "target": {
+        "number": 1,
+        "entity_name": "chemistry_tube_stand",
+        "entity_class": "TubeStand",
+        "target_source": "archived_vlm_output"
+      },
+      "matched_phase_template": "relaxed_diagnostic.step_3.moveto",
+      "stage_success": false,
+      "task_success_signal": false,
+      "waypoint_count": 19,
+      "condition_progress_after_step": false
+    },
+    {
+      "skill": "lift",
+      "target": null,
+      "matched_phase_template": "relaxed_diagnostic.step_4.lift",
+      "stage_success": false,
+      "task_success_signal": false,
+      "waypoint_count": 31,
+      "condition_progress_after_step": false
+    }
+  ],
+  "stage_exception_policy": {
+    "enabled": true,
+    "name": "official_style_stage_failure_condition_check",
+    "stage_exception_caught": false,
+    "condition_checked_after_stage_exception": false,
+    "condition_success_after_stage_exception": false,
+    "failed_skill": "",
+    "exception_type": "",
+    "exception": "",
+    "example_specific_rule_used": false
+  },
+  "episode_config_audit": {
+    "added_fields": {
+      "target_container": {
+        "source": "conditions.not_contain.container",
+        "value": "chemistry_tube_stand"
+      },
+      "target_containers": {
+        "source": "derived.task.target_container",
+        "value": [
+          "chemistry_tube_stand"
+        ]
+      },
+      "target_platform": {
+        "source": "derived.task.target_container",
+        "value": "chemistry_tube_stand"
+      },
+      "target_entities": {
+        "source": "conditions.not_contain.entities",
+        "value": [
+          "CuSO4"
+        ]
+      },
+      "target_entity": {
+        "source": "conditions.not_contain.entities[0]",
+        "value": "CuSO4"
+      }
+    },
+    "native_seed": null,
+    "post_load_config_manager_fields": {
+      "target_entity": "CuSO4",
+      "target_entities": [
+        "CuSO4"
+      ],
+      "target_container": "chemistry_tube_stand"
+    },
+    "post_load_mirrored_fields": {
+      "target_containers": [
+        "chemistry_tube_stand"
+      ],
+      "target_platform": "chemistry_tube_stand"
+    },
+    "reset_task_progress_called": true
+  },
+  "visual_audit": {
+    "before": {
+      "enabled": false,
+      "phase": "before",
+      "images": [],
+      "contact_sheet": "",
+      "skipped_reason": "pre_execution_render_disabled_to_preserve_native_state"
+    },
+    "after": {
+      "enabled": true,
+      "phase": "after",
+      "images": [
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_036/alternative/visual_audit/after_camera0.png",
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_036/alternative/visual_audit/after_camera1.png",
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_036/alternative/visual_audit/after_camera2.png",
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_036/alternative/visual_audit/after_camera3.png"
+      ],
+      "contact_sheet": "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_036/alternative/visual_audit/after_contact_sheet.png"
+    }
+  },
+  "gt_used_during_execution": false,
+  "operation_sequence_read": false,
+  "expert_sequence_called": false,
+  "stdout": "Checking if can connect to goal at 9 samples\nCan connect to goal\nChecking if can connect to goal at 31 samples\nCould not connect to goal\nChecking if can connect to goal at 33 samples\nCould not connect to goal\nChecking if can connect to goal at 35 samples\nCould not connect to goal\nChecking if can connect to goal at 37 samples\nCould not connect to goal\nChecking if can connect to goal at 53 samples\nCould not connect to goal\nChecking if can connect to goal at 73 samples\nCould not connect to goal\nChecking if can connect to goal at 81 samples\nCould not connect to goal\nChecking if can connect to goal at 83 samples\nCould not connect to goal\nChecking if can connect to goal at 115 samples\nCould not connect to goal\nChecking if can connect to goal at 161 samples\nCould not connect to goal\nChecking if can connect to goal at 175 samples\nCould not connect to goal\nChecking if can connect to goal at 217 samples\nCould not connect to goal\nChecking if can connect to goal at 219 samples\nCould not connect to goal\nChecking if can connect to goal at 221 samples\nCould not connect to goal\nChecking if can connect to goal at 229 samples\nCould not connect to goal\nChecking if can connect to goal at 237 samples\nCould not connect to goal\nChecking if can connect to goal at 263 samples\nCould not connect to goal\nChecking if can connect to goal at 275 samples\nCould not connect to goal\nChecking if can connect to goal at 291 samples\nCould not connect to goal\nChecking if can connect to goal at 305 samples\nCould not connect to goal\nChecking if can connect to goal at 379 samples\nCould not connect to goal\nChecking if can connect to goal at 393 samples\nCould not connect to goal\nChecking if can connect to goal at 485 samples\nCould not connect to goal\nChecking if can connect to goal at 489 samples\nCould not connect to goal\nChecking if can connect to goal at 495 samples\nCould not connect to goal\nChecking if can connect to goal at 499 samples\nCould not connect to goal\nChecking if can connect to goal at 517 samples\nCould not connect to goal\nChecking if can connect to goal at 519 samples\nCould not connect to goal\nChecking if can connect to goal at 557 samples\nCould not connect to goal\nChecking if can connect to goal at 571 samples\nCould not connect to goal\nChecking if can connect to goal at 583 samples\nCould not connect to goal\nChecking if can connect to goal at 631 samples\nCould not connect to goal\nChecking if can connect to goal at 635 samples\nCould not connect to goal\nChecking if can connect to goal at 647 samples\nCould not connect to goal\nChecking if can connect to goal at 667 samples\nCould not connect to goal\nChecking if can connect to goal at 675 samples\nCould not connect to goal\nChecking if can connect to goal at 751 samples\nCould not connect to goal\nChecking if can connect to goal at 755 samples\nCould not connect to goal\nChecking if can connect to goal at 757 samples\nCould not connect to goal\nChecking if can connect to goal at 775 samples\nCould not connect to goal\nChecking if can connect to goal at 781 samples\nCould not connect to goal\nChecking if can connect to goal at 817 samples\nCould not connect to goal\nChecking if can connect to goal at 819 samples\nCould not connect to goal\nChecking if can connect to goal at 851 samples\nCould not connect to goal\nChecking if can connect to goal at 859 samples\nCould not connect to goal\nChecking if can connect to goal at 869 samples\nCould not connect to goal\nChecking if can connect to goal at 899 samples\nCould not connect to goal\nChecking if can connect to goal at 953 samples\nCould not connect to goal\nChecking if can connect to goal at 963 samples\nCould not connect to goal\nChecking if can connect to goal at 1017 samples\nCould not connect to goal\nChecking if can connect to goal at 1025 samples\nCould not connect to goal\nCould not connect to goal\n",
+  "stderr": "Dropped Escape call with ulEscapeCode : 0x03007703\n"
+}

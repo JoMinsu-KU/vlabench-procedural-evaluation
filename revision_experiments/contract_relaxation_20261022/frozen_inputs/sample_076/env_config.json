@@ -1,0 +1,115 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "table",
+                "xml_path": "obj/meshes/table/table.xml",
+                "position": [
+                    -1.3006163383259095e-08,
+                    -1.1823962627828426e-10,
+                    -7.642088728925896e-07
+                ],
+                "orientation": [
+                    1.0,
+                    3.1906483791563765e-10,
+                    2.9883663486575592e-09,
+                    -4.328325696776436e-10
+                ],
+                "class": "Table",
+                "materials": [
+                    "wood4"
+                ]
+            },
+            {
+                "name": "giftbox_seen",
+                "xml_path": "obj/meshes/containers/boxes/giftbox/giftbox_0/giftbox.xml",
+                "position": [
+                    -0.11059657062009577,
+                    0.13072320122339212,
+                    0.7709990969429062
+                ],
+                "orientation": [
+                    0.9992283005261171,
+                    0.0008113487539621634,
+                    -0.00036658366922774415,
+                    0.039268444803684195
+                ],
+                "class": "CommonContainer"
+            },
+            {
+                "name": "flashman",
+                "xml_path": "obj/meshes/toys/DC/flashman/flashman_0/flashinjustice_2_texturedrigged.xml",
+                "position": [
+                    0.2230894358230947,
+                    -0.168055443361688,
+                    0.7650185080524863
+                ],
+                "orientation": [
+                    0.0004082436599952565,
+                    -0.00041368439449612776,
+                    0.7073874771157415,
+                    0.7068257348329652
+                ],
+                "class": "Toy"
+            },
+            {
+                "name": "wonder_woman",
+                "xml_path": "obj/meshes/toys/DC/wonder_woman/wonder_woman_0/wonder_womantexturedrigged.xml",
+                "position": [
+                    -0.28032326218671727,
+                    -0.14121527201742448,
+                    0.7655945936613697
+                ],
+                "orientation": [
+                    0.706802017017329,
+                    0.7073645106165762,
+                    0.005730174932370275,
+                    -0.005789901177892772
+                ],
+                "class": "Toy"
+            },
+            {
+                "name": "jessie",
+                "xml_path": "obj/meshes/toys/disney/toystory/jessie/jessie_0/disney_infinity_jessie.xml",
+                "position": [
+                    0.2179204528629535,
+                    0.13191812981631584,
+                    0.7651565020090912
+                ],
+                "orientation": [
+                    -0.0014206322768277198,
+                    0.0014043939860495479,
+                    0.7073867211308262,
+                    0.7068239075252375
+                ],
+                "class": "Toy"
+            }
+        ],
+        "scene": {
+            "name": "studyroom_0",
+            "position": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "floorplane"
+            ]
+        },
+        "instructions": [],
+        "conditions": {
+            "contain": {
+                "container": "giftbox_seen",
+                "entities": [
+                    "flashman"
+                ]
+            }
+        }
+    }
+}

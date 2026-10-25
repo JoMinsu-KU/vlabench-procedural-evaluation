@@ -1,0 +1,117 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "table",
+                "xml_path": "obj/meshes/table/table.xml",
+                "position": [
+                    -2.072253838450584e-11,
+                    9.036625858241531e-10,
+                    -1.2354844652759345e-06
+                ],
+                "orientation": [
+                    0.9999999999999599,
+                    -2.8130841476458656e-07,
+                    -1.0705926816194211e-08,
+                    -3.698584449012328e-12
+                ],
+                "class": "Table",
+                "materials": [
+                    "stone"
+                ]
+            },
+            {
+                "name": "shelf_seen",
+                "xml_path": "obj/meshes/containers/shelf/shelf1.xml",
+                "position": [
+                    -0.01267247233260066,
+                    0.3259342435471049,
+                    0.759998530923052
+                ],
+                "orientation": [
+                    0.9998922348885059,
+                    -2.6088906368448107e-07,
+                    -6.290015782307774e-09,
+                    0.014680552087684895
+                ],
+                "class": "Shelf"
+            },
+            {
+                "name": "government_and_information_rights",
+                "xml_path": "obj/meshes/books/bookscan/government_and_information_rights/government_and_information_rights.xml",
+                "position": [
+                    -0.1982751927157135,
+                    0.30529787073731596,
+                    1.170980999512366
+                ],
+                "orientation": [
+                    4.329780281177467e-17,
+                    0.7071067811865476,
+                    0.7071067811865475,
+                    4.329780281177466e-17
+                ],
+                "class": "Book"
+            },
+            {
+                "name": "biopolymer_composites_in_electronics",
+                "xml_path": "obj/meshes/books/bookscan/biopolymer_composites_in_electronics/biopolymer_composites_in_electronics.xml",
+                "position": [
+                    -0.11988264916225701,
+                    0.3045252302754375,
+                    1.170980999512366
+                ],
+                "orientation": [
+                    4.329780281177467e-17,
+                    0.7071067811865476,
+                    0.7071067811865475,
+                    4.329780281177466e-17
+                ],
+                "class": "Book"
+            },
+            {
+                "name": "cotton_the_fabric_that_made_the_modern_world",
+                "xml_path": "obj/meshes/books/bookscan/cotton_the_fabric_that_made_the_modern_world/cotton_the_fabric_that_made_the_modern_world.xml",
+                "position": [
+                    0.03275403039888193,
+                    0.33460059852641416,
+                    1.170980999512366
+                ],
+                "orientation": [
+                    4.329780281177467e-17,
+                    0.7071067811865476,
+                    0.7071067811865475,
+                    4.329780281177466e-17
+                ],
+                "class": "Book"
+            }
+        ],
+        "scene": {
+            "name": "studyroom_0",
+            "position": [
+                -1.5,
+                1.0,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "floorplane"
+            ]
+        },
+        "instructions": [
+            "Please take the book biopolymer_composites_in_electronics"
+        ],
+        "conditions": {
+            "not_contain": {
+                "container": "shelf_seen",
+                "entities": [
+                    "biopolymer_composites_in_electronics"
+                ]
+            }
+        }
+    }
+}

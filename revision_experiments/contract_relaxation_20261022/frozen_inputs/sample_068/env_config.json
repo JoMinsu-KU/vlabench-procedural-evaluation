@@ -1,0 +1,159 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "table",
+                "xml_path": "obj/meshes/table/table.xml",
+                "position": [
+                    3.3387975676513734e-05,
+                    -6.928401763031261e-05,
+                    0.011998531240258797
+                ],
+                "orientation": [
+                    0.9999999999999994,
+                    -4.562640400379579e-08,
+                    -2.1989939870380352e-08,
+                    1.2960421378589579e-11
+                ],
+                "class": "Table",
+                "materials": [
+                    "wood4"
+                ]
+            },
+            {
+                "name": "card_holder0",
+                "xml_path": null,
+                "position": [
+                    -0.1930627402565648,
+                    0.061892297635509234,
+                    0.777998296205676
+                ],
+                "orientation": [
+                    0.7071067810351694,
+                    -4.7695319664741164e-08,
+                    1.67173643676865e-08,
+                    0.7071067813379243
+                ],
+                "class": "CardHolder"
+            },
+            {
+                "name": "king_of_clubs",
+                "xml_path": "obj/meshes/poker/poker_asset.xml",
+                "position": [
+                    -0.19309537275850894,
+                    0.06196001415608454,
+                    0.892556870431448
+                ],
+                "orientation": [
+                    0.49999999999920647,
+                    -0.5000000000008603,
+                    0.5000000000007933,
+                    0.49999999999914035
+                ],
+                "class": "Poker",
+                "value": "king",
+                "suite": "clubs"
+            },
+            {
+                "name": "card_holder1",
+                "xml_path": null,
+                "position": [
+                    -0.07212815121550592,
+                    0.1609274651685492,
+                    0.7779982924876787
+                ],
+                "orientation": [
+                    0.7071067810351699,
+                    -4.769531966772427e-08,
+                    1.6717364367313333e-08,
+                    0.7071067813379235
+                ],
+                "class": "CardHolder"
+            },
+            {
+                "name": "3_of_clubs",
+                "xml_path": "obj/meshes/poker/poker_asset.xml",
+                "position": [
+                    -0.07216078366243578,
+                    0.16099518157727072,
+                    0.892556870431448
+                ],
+                "orientation": [
+                    0.4999999999992079,
+                    -0.5000000000008583,
+                    0.5000000000007913,
+                    0.49999999999914185
+                ],
+                "class": "Poker",
+                "value": "3",
+                "suite": "clubs"
+            },
+            {
+                "name": "card_holder2",
+                "xml_path": null,
+                "position": [
+                    0.06444039181345078,
+                    0.19385554648797007,
+                    0.7779982954887218
+                ],
+                "orientation": [
+                    0.7071067810351696,
+                    -4.769531966543339e-08,
+                    1.671736436736418e-08,
+                    0.707106781337924
+                ],
+                "class": "CardHolder"
+            },
+            {
+                "name": "9_of_diamonds",
+                "xml_path": "obj/meshes/poker/poker_asset.xml",
+                "position": [
+                    0.06440775932527153,
+                    0.19392326298042817,
+                    0.892556870431448
+                ],
+                "orientation": [
+                    0.49999999999920797,
+                    -0.5000000000008583,
+                    0.500000000000791,
+                    0.4999999999991418
+                ],
+                "class": "Poker",
+                "value": "9",
+                "suite": "diamonds"
+            }
+        ],
+        "scene": {
+            "name": "living_room_0",
+            "position": [
+                -2.0,
+                3.5,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "floorplane"
+            ]
+        },
+        "instructions": [],
+        "conditions": {
+            "is_grasped": {
+                "entities": [
+                    "9_of_diamonds"
+                ],
+                "robot": "franka"
+            },
+            "lift": {
+                "entities": [
+                    "9_of_diamonds"
+                ],
+                "target_height": 0.9
+            }
+        }
+    }
+}

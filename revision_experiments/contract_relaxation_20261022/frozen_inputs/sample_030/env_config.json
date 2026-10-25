@@ -1,0 +1,149 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "table",
+                "xml_path": "obj/meshes/table/table.xml",
+                "position": [
+                    9.548592389849628e-10,
+                    -2.532478553187881e-09,
+                    -1.2457460202217842e-06
+                ],
+                "orientation": [
+                    0.9999999999999619,
+                    -2.748214157358543e-07,
+                    1.4145413676372514e-08,
+                    -3.8953554538094387e-11
+                ],
+                "class": "Table",
+                "materials": [
+                    "stone2"
+                ]
+            },
+            {
+                "name": "shelf_seen",
+                "xml_path": "obj/meshes/containers/shelf/shelf1.xml",
+                "position": [
+                    0.01742453610398185,
+                    0.3107436976955712,
+                    0.7599985314558402
+                ],
+                "orientation": [
+                    0.9999826765155855,
+                    -2.530651476209816e-07,
+                    1.6463584757726076e-08,
+                    0.00588614208644807
+                ],
+                "class": "Shelf"
+            },
+            {
+                "name": "introduction_to_electronics",
+                "xml_path": "obj/meshes/books/bookscan/introduction_to_electronics/introduction_to_electronics.xml",
+                "position": [
+                    -0.010650397451465208,
+                    0.32081389062702714,
+                    1.169237838561156
+                ],
+                "orientation": [
+                    1.7686564652403785e-06,
+                    0.700578009391463,
+                    0.7135758213037283,
+                    2.1626176479696994e-06
+                ],
+                "class": "Book"
+            },
+            {
+                "name": "critical_infrastructure_protection_in_homeland_security",
+                "xml_path": "obj/meshes/books/bookscan/critical_infrastructure_protection_in_homeland_security/critical_infrastructure_protection_in_homeland_security.xml",
+                "position": [
+                    0.07347588057688502,
+                    0.29369011084546776,
+                    1.1692378098923084
+                ],
+                "orientation": [
+                    -2.511529387105713e-06,
+                    0.6877063111235732,
+                    0.7259890010385999,
+                    -2.340045862278426e-06
+                ],
+                "class": "Book"
+            },
+            {
+                "name": "cotton_the_fabric_that_made_the_modern_world",
+                "xml_path": "obj/meshes/books/bookscan/cotton_the_fabric_that_made_the_modern_world/cotton_the_fabric_that_made_the_modern_world.xml",
+                "position": [
+                    0.19474429398951543,
+                    0.2923515755248694,
+                    1.1692380148547923
+                ],
+                "orientation": [
+                    -1.5042953237339064e-06,
+                    0.6571254555046739,
+                    0.7537812253714968,
+                    -1.7197139368507713e-06
+                ],
+                "class": "Book"
+            },
+            {
+                "name": "cloud_computing",
+                "xml_path": "obj/meshes/books/bookscan/cloud_computing/cloud_computing.xml",
+                "position": [
+                    -0.22100719929720755,
+                    0.31883396059888297,
+                    0.8782895035233205
+                ],
+                "orientation": [
+                    3.023237091458027e-06,
+                    0.7363612915562153,
+                    0.6765885368888029,
+                    6.260300755502224e-06
+                ],
+                "class": "Book"
+            },
+            {
+                "name": "the_great_divergence_china_europe_and_the_making_of_the_modern_world_economy",
+                "xml_path": "obj/meshes/books/bookscan/the_great_divergence_china_europe_and_the_making_of_the_modern_world_economy/the_great_divergence_china_europe_and_the_making_of_the_modern_world_economy.xml",
+                "position": [
+                    0.18902537087645183,
+                    0.3004146996499552,
+                    0.8782895164700022
+                ],
+                "orientation": [
+                    -2.3350347077346616e-06,
+                    0.6875279496638358,
+                    0.7261579156163274,
+                    -3.6525407446488596e-06
+                ],
+                "class": "Book"
+            }
+        ],
+        "scene": {
+            "name": "studyroom_0",
+            "position": [
+                -1.0,
+                -1.0,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "floorplane"
+            ]
+        },
+        "instructions": [
+            "Please take the first book on the bottom layer"
+        ],
+        "conditions": {
+            "not_contain": {
+                "container": "shelf_seen",
+                "entities": [
+                    "cloud_computing"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+﻿population,model,condition,n,task_clusters,schema_valid,phase_target_valid,native_complete,success
+original_322,Qwen3-VL-8B,json_object,322,34,45,4,4,0
+original_322,Qwen3-VL-8B,json_schema,322,34,322,13,13,6
+original_322,Gemma-3-12B-it,json_object,322,34,282,30,30,4
+original_322,Gemma-3-12B-it,json_schema,322,34,322,30,29,3
+original_322,InternVL3-8B,json_object,322,34,170,29,28,12
+original_322,InternVL3-8B,json_schema,322,34,322,31,30,13
+exclude_overlap_45,Qwen3-VL-8B,json_object,309,34,44,4,4,0
+exclude_overlap_45,Qwen3-VL-8B,json_schema,309,34,309,13,13,6
+exclude_overlap_45,Gemma-3-12B-it,json_object,309,34,272,30,30,4
+exclude_overlap_45,Gemma-3-12B-it,json_schema,309,34,309,30,29,3
+exclude_overlap_45,InternVL3-8B,json_object,309,34,165,29,28,12
+exclude_overlap_45,InternVL3-8B,json_schema,309,34,309,31,30,13

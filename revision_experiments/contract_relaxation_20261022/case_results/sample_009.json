@@ -1,0 +1,162 @@
+{
+  "audit_id": "sample_009",
+  "model": "qwen",
+  "task_name": "insert_flower_common_sense",
+  "case_id": "CommenSence/insert_flower_common_sense/example48",
+  "original_rejection": "missing_phase",
+  "dispatch_category": "runnable",
+  "dispatch_detail": "only_reference_phase_equality_bypassed",
+  "native_attempted": true,
+  "verified_goal": false,
+  "verified_goal_all_stages": false,
+  "verified_goal_with_stage_failure": false,
+  "outcome": "no_goal_with_nontrue_stage_flag",
+  "arms": {
+    "initial_no_action": {
+      "audit_id": "sample_009",
+      "model": "qwen",
+      "case_id": "CommenSence/insert_flower_common_sense/example48",
+      "task_name": "insert_flower_common_sense",
+      "arm": "initial_no_action",
+      "elapsed_sec": 9.604,
+      "raw_final_goal": false,
+      "complete_without_exception": true,
+      "full_trace_identity": true,
+      "trace_is_original_prefix": true,
+      "observed_steps": [],
+      "expected_steps": [],
+      "stage_success_flags": [],
+      "all_stages_success": false,
+      "stage_false_count": 0,
+      "goal_after_complete_execution": false,
+      "goal_and_all_stages_success": false,
+      "goal_with_stage_failure": false,
+      "stage_exception": false,
+      "native_timeout": false,
+      "infrastructure_error": false,
+      "pre_action_load_failure": false,
+      "native_exception": "",
+      "stage_exception_detail": ""
+    },
+    "canonical_control": {
+      "audit_id": "sample_009",
+      "model": "qwen",
+      "case_id": "CommenSence/insert_flower_common_sense/example48",
+      "task_name": "insert_flower_common_sense",
+      "arm": "canonical_control",
+      "elapsed_sec": 61.323,
+      "raw_final_goal": true,
+      "complete_without_exception": true,
+      "full_trace_identity": true,
+      "trace_is_original_prefix": true,
+      "observed_steps": [
+        {
+          "skill": "pick",
+          "target": 2
+        },
+        {
+          "skill": "lift"
+        },
+        {
+          "skill": "moveto",
+          "target": 1
+        },
+        {
+          "skill": "lift"
+        }
+      ],
+      "expected_steps": [
+        {
+          "skill": "pick",
+          "target": 2
+        },
+        {
+          "skill": "lift"
+        },
+        {
+          "skill": "moveto",
+          "target": 1
+        },
+        {
+          "skill": "lift"
+        }
+      ],
+      "stage_success_flags": [
+        true,
+        false,
+        true,
+        false
+      ],
+      "all_stages_success": false,
+      "stage_false_count": 2,
+      "goal_after_complete_execution": true,
+      "goal_and_all_stages_success": false,
+      "goal_with_stage_failure": true,
+      "stage_exception": false,
+      "native_timeout": false,
+      "infrastructure_error": false,
+      "pre_action_load_failure": false,
+      "native_exception": "",
+      "stage_exception_detail": ""
+    },
+    "alternative": {
+      "audit_id": "sample_009",
+      "model": "qwen",
+      "case_id": "CommenSence/insert_flower_common_sense/example48",
+      "task_name": "insert_flower_common_sense",
+      "arm": "alternative",
+      "elapsed_sec": 58.957,
+      "raw_final_goal": false,
+      "complete_without_exception": true,
+      "full_trace_identity": true,
+      "trace_is_original_prefix": true,
+      "observed_steps": [
+        {
+          "skill": "pick",
+          "target": 2
+        },
+        {
+          "skill": "moveto",
+          "target": 1
+        },
+        {
+          "skill": "place",
+          "target": 1
+        }
+      ],
+      "expected_steps": [
+        {
+          "skill": "pick",
+          "target": 2
+        },
+        {
+          "skill": "moveto",
+          "target": 1
+        },
+        {
+          "skill": "place",
+          "target": 1
+        }
+      ],
+      "stage_success_flags": [
+        true,
+        true,
+        false
+      ],
+      "all_stages_success": false,
+      "stage_false_count": 1,
+      "goal_after_complete_execution": false,
+      "goal_and_all_stages_success": false,
+      "goal_with_stage_failure": false,
+      "stage_exception": false,
+      "native_timeout": false,
+      "infrastructure_error": false,
+      "pre_action_load_failure": false,
+      "native_exception": "",
+      "stage_exception_detail": ""
+    }
+  },
+  "initial_goal_false_verified": true,
+  "canonical_goal": true,
+  "canonical_all_stages": false
+}

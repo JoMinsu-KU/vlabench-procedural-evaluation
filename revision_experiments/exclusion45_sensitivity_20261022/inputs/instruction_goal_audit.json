@@ -1,0 +1,990 @@
+{
+  "density": [
+    {
+      "case_id": "PhysicsLaw/density_qa/example4",
+      "instruction": "We are conducting a density experiment. We have three objects with different densities. Choose the object with the medium density.",
+      "associations": [
+        {
+          "geometry": "stone_cylinder",
+          "material": "stone",
+          "button": "button0",
+          "xy_distance": 0.08699647601021894,
+          "next_xy_distance": 0.38009681932536843,
+          "preceding_button_in_saved_components": "button0"
+        },
+        {
+          "geometry": "wood_box",
+          "material": "wood",
+          "button": "button1",
+          "xy_distance": 0.08137952306057533,
+          "next_xy_distance": 0.4029618660828514,
+          "preceding_button_in_saved_components": "button1"
+        },
+        {
+          "geometry": "metal_box",
+          "material": "metal",
+          "button": "button2",
+          "xy_distance": 0.10005436663598204,
+          "next_xy_distance": 0.3542968625054299,
+          "preceding_button_in_saved_components": "button2"
+        }
+      ],
+      "semantic_rank": 1,
+      "semantic_expected_button": "button0",
+      "semantic_expected_material": "stone",
+      "saved_target_button": "button1",
+      "saved_target_material": "wood",
+      "semantic_matches_saved_target": false
+    },
+    {
+      "case_id": "PhysicsLaw/density_qa/example8",
+      "instruction": "We are conducting a density experiment. We have three objects with different densities. Choose the object with the medium density.",
+      "associations": [
+        {
+          "geometry": "wood_box",
+          "material": "wood",
+          "button": "button0",
+          "xy_distance": 0.09898484646761212,
+          "next_xy_distance": 0.42952858548373146,
+          "preceding_button_in_saved_components": "button0"
+        },
+        {
+          "geometry": "metal_sphere",
+          "material": "metal",
+          "button": "button1",
+          "xy_distance": 0.09846539856453347,
+          "next_xy_distance": 0.37187822036438034,
+          "preceding_button_in_saved_components": "button1"
+        },
+        {
+          "geometry": "stone_cylinder",
+          "material": "stone",
+          "button": "button2",
+          "xy_distance": 0.10552620062984013,
+          "next_xy_distance": 0.45209878703791256,
+          "preceding_button_in_saved_components": "button2"
+        }
+      ],
+      "semantic_rank": 1,
+      "semantic_expected_button": "button2",
+      "semantic_expected_material": "stone",
+      "saved_target_button": "button1",
+      "saved_target_material": "metal",
+      "semantic_matches_saved_target": false
+    },
+    {
+      "case_id": "PhysicsLaw/density_qa/example10",
+      "instruction": "Choose the object that can float in the water.",
+      "associations": [
+        {
+          "geometry": "wood_cylinder",
+          "material": "wood",
+          "button": "button0",
+          "xy_distance": 0.08908288483783845,
+          "next_xy_distance": 0.36972382550858357,
+          "preceding_button_in_saved_components": "button0"
+        },
+        {
+          "geometry": "stone_capsule",
+          "material": "stone",
+          "button": "button1",
+          "xy_distance": 0.10470163907800975,
+          "next_xy_distance": 0.41823015331817875,
+          "preceding_button_in_saved_components": "button1"
+        },
+        {
+          "geometry": "metal_box",
+          "material": "metal",
+          "button": "button2",
+          "xy_distance": 0.10469316789392423,
+          "next_xy_distance": 0.43629250995462043,
+          "preceding_button_in_saved_components": "button2"
+        }
+      ],
+      "semantic_rank": 0,
+      "semantic_expected_button": "button0",
+      "semantic_expected_material": "wood",
+      "saved_target_button": "button0",
+      "saved_target_material": "wood",
+      "semantic_matches_saved_target": true
+    },
+    {
+      "case_id": "PhysicsLaw/density_qa/example50",
+      "instruction": "We are conducting a density experiment. We have three objects with different densities. Choose the object with the medium density.",
+      "associations": [
+        {
+          "geometry": "stone_box",
+          "material": "stone",
+          "button": "button0",
+          "xy_distance": 0.10113445780275879,
+          "next_xy_distance": 0.4411483243037141,
+          "preceding_button_in_saved_components": "button0"
+        },
+        {
+          "geometry": "wood_cylinder",
+          "material": "wood",
+          "button": "button1",
+          "xy_distance": 0.11531813439252195,
+          "next_xy_distance": 0.4170483672562171,
+          "preceding_button_in_saved_components": "button1"
+        },
+        {
+          "geometry": "metal_box",
+          "material": "metal",
+          "button": "button2",
+          "xy_distance": 0.11006616203226972,
+          "next_xy_distance": 0.4525623423318917,
+          "preceding_button_in_saved_components": "button2"
+        }
+      ],
+      "semantic_rank": 1,
+      "semantic_expected_button": "button0",
+      "semantic_expected_material": "stone",
+      "saved_target_button": "button1",
+      "saved_target_material": "wood",
+      "semantic_matches_saved_target": false
+    },
+    {
+      "case_id": "PhysicsLaw/density_qa/example62",
+      "instruction": "Choose the object that can float in the water.",
+      "associations": [
+        {
+          "geometry": "wood_box",
+          "material": "wood",
+          "button": "button0",
+          "xy_distance": 0.08121676327310351,
+          "next_xy_distance": 0.45275612057044745,
+          "preceding_button_in_saved_components": "button0"
+        },
+        {
+          "geometry": "stone_box",
+          "material": "stone",
+          "button": "button1",
+          "xy_distance": 0.11119740614027936,
+          "next_xy_distance": 0.3468637313244149,
+          "preceding_button_in_saved_components": "button1"
+        },
+        {
+          "geometry": "metal_cylinder",
+          "material": "metal",
+          "button": "button2",
+          "xy_distance": 0.1153167756944929,
+          "next_xy_distance": 0.40988452530940656,
+          "preceding_button_in_saved_components": "button2"
+        }
+      ],
+      "semantic_rank": 0,
+      "semantic_expected_button": "button0",
+      "semantic_expected_material": "wood",
+      "saved_target_button": "button0",
+      "saved_target_material": "wood",
+      "semantic_matches_saved_target": true
+    },
+    {
+      "case_id": "PhysicsLaw/density_qa/example71",
+      "instruction": "Choose the object that can float in the water.",
+      "associations": [
+        {
+          "geometry": "wood_cylinder",
+          "material": "wood",
+          "button": "button0",
+          "xy_distance": 0.10388022431352593,
+          "next_xy_distance": 0.537622031193099,
+          "preceding_button_in_saved_components": "button0"
+        },
+        {
+          "geometry": "stone_capsule",
+          "material": "stone",
+          "button": "button1",
+          "xy_distance": 0.1098203839702508,
+          "next_xy_distance": 0.39873207037894576,
+          "preceding_button_in_saved_components": "button1"
+        },
+        {
+          "geometry": "metal_cylinder",
+          "material": "metal",
+          "button": "button2",
+          "xy_distance": 0.10926886422835663,
+          "next_xy_distance": 0.4215370833923919,
+          "preceding_button_in_saved_components": "button2"
+        }
+      ],
+      "semantic_rank": 0,
+      "semantic_expected_button": "button0",
+      "semantic_expected_material": "wood",
+      "saved_target_button": "button0",
+      "saved_target_material": "wood",
+      "semantic_matches_saved_target": true
+    },
+    {
+      "case_id": "PhysicsLaw/density_qa/example72",
+      "instruction": "We are conducting a density experiment. We have three objects with different densities. Choose the object with the smallest density.",
+      "associations": [
+        {
+          "geometry": "stone_cylinder",
+          "material": "stone",
+          "button": "button0",
+          "xy_distance": 0.10465817800411753,
+          "next_xy_distance": 0.4483281069629097,
+          "preceding_button_in_saved_components": "button0"
+        },
+        {
+          "geometry": "metal_cylinder",
+          "material": "metal",
+          "button": "button1",
+          "xy_distance": 0.11528604292254017,
+          "next_xy_distance": 0.41423580157495865,
+          "preceding_button_in_saved_components": "button1"
+        },
+        {
+          "geometry": "wood_box",
+          "material": "wood",
+          "button": "button2",
+          "xy_distance": 0.10583871050941575,
+          "next_xy_distance": 0.41006215871673296,
+          "preceding_button_in_saved_components": "button2"
+        }
+      ],
+      "semantic_rank": 0,
+      "semantic_expected_button": "button2",
+      "semantic_expected_material": "wood",
+      "saved_target_button": "button0",
+      "saved_target_material": "stone",
+      "semantic_matches_saved_target": false
+    },
+    {
+      "case_id": "PhysicsLaw/density_qa/example78",
+      "instruction": "Choose the object that can float in the water.",
+      "associations": [
+        {
+          "geometry": "wood_cylinder",
+          "material": "wood",
+          "button": "button0",
+          "xy_distance": 0.087629309913077,
+          "next_xy_distance": 0.44732616571827266,
+          "preceding_button_in_saved_components": "button0"
+        },
+        {
+          "geometry": "metal_cylinder",
+          "material": "metal",
+          "button": "button1",
+          "xy_distance": 0.09980585217394018,
+          "next_xy_distance": 0.36190916405778956,
+          "preceding_button_in_saved_components": "button1"
+        },
+        {
+          "geometry": "stone_cylinder",
+          "material": "stone",
+          "button": "button2",
+          "xy_distance": 0.10150034417266862,
+          "next_xy_distance": 0.39451567547186994,
+          "preceding_button_in_saved_components": "button2"
+        }
+      ],
+      "semantic_rank": 0,
+      "semantic_expected_button": "button0",
+      "semantic_expected_material": "wood",
+      "saved_target_button": "button0",
+      "saved_target_material": "wood",
+      "semantic_matches_saved_target": true
+    },
+    {
+      "case_id": "PhysicsLaw/density_qa/example82",
+      "instruction": "We are conducting a density experiment. We have three objects with different densities. Choose the object with the largest density.",
+      "associations": [
+        {
+          "geometry": "wood_cylinder",
+          "material": "wood",
+          "button": "button0",
+          "xy_distance": 0.08276147103349729,
+          "next_xy_distance": 0.3303055444544018,
+          "preceding_button_in_saved_components": "button0"
+        },
+        {
+          "geometry": "metal_capsule",
+          "material": "metal",
+          "button": "button1",
+          "xy_distance": 0.08994563632727168,
+          "next_xy_distance": 0.3628746869367992,
+          "preceding_button_in_saved_components": "button1"
+        },
+        {
+          "geometry": "stone_box",
+          "material": "stone",
+          "button": "button2",
+          "xy_distance": 0.09528946616630418,
+          "next_xy_distance": 0.4187797936305576,
+          "preceding_button_in_saved_components": "button2"
+        }
+      ],
+      "semantic_rank": 2,
+      "semantic_expected_button": "button1",
+      "semantic_expected_material": "metal",
+      "saved_target_button": "button2",
+      "saved_target_material": "stone",
+      "semantic_matches_saved_target": false
+    }
+  ],
+  "billiards": [
+    {
+      "case_id": "Spatial/select_billiards_spatial/example0",
+      "instruction": "Please put the solid_1 in the container_right_1.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_2",
+      "requested_pocket_ids": [
+        "container_right_1"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example1",
+      "instruction": "Please put the striped_10 in the container_right_2.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_2",
+      "requested_pocket_ids": [
+        "container_right_2"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example2",
+      "instruction": "Please put the solid_3 in the container_right_2.",
+      "table_component_index": 0,
+      "target_hole": "container_right_2",
+      "requested_pocket_ids": [
+        "container_right_2"
+      ],
+      "instruction_matches_target_hole": true,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example4",
+      "instruction": "Please put the striped_14 in the container_right_1.",
+      "table_component_index": 0,
+      "target_hole": "container_right_1",
+      "requested_pocket_ids": [
+        "container_right_1"
+      ],
+      "instruction_matches_target_hole": true,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example6",
+      "instruction": "Please put the solid_5 in the container_right_1.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_1",
+      "requested_pocket_ids": [
+        "container_right_1"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example9",
+      "instruction": "Please put the solid_5 in the container_right_2.",
+      "table_component_index": 0,
+      "target_hole": "container_right_2",
+      "requested_pocket_ids": [
+        "container_right_2"
+      ],
+      "instruction_matches_target_hole": true,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example10",
+      "instruction": "Please put the solid_1 in the container_right_2.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_2",
+      "requested_pocket_ids": [
+        "container_right_2"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example11",
+      "instruction": "Please put the white in the container_right_2.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_1",
+      "requested_pocket_ids": [
+        "container_right_2"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example12",
+      "instruction": "Please put the white in the container_right_1.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_1",
+      "requested_pocket_ids": [
+        "container_right_1"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example13",
+      "instruction": "Please put the solid_7 in the container_right_2.",
+      "table_component_index": 0,
+      "target_hole": "container_right_2",
+      "requested_pocket_ids": [
+        "container_right_2"
+      ],
+      "instruction_matches_target_hole": true,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example14",
+      "instruction": "Please put the white in the container_right_1.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_2",
+      "requested_pocket_ids": [
+        "container_right_1"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example15",
+      "instruction": "Please put the striped_12 in the container_right_1.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_1",
+      "requested_pocket_ids": [
+        "container_right_1"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example16",
+      "instruction": "Please put the solid_7 in the container_right_2.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_2",
+      "requested_pocket_ids": [
+        "container_right_2"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example17",
+      "instruction": "Please put the solid_3 in the container_right_2.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_2",
+      "requested_pocket_ids": [
+        "container_right_2"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example18",
+      "instruction": "Please put the striped_10 in the container_right_2.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_1",
+      "requested_pocket_ids": [
+        "container_right_2"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example19",
+      "instruction": "Please put the solid_5 in the container_right_2.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_1",
+      "requested_pocket_ids": [
+        "container_right_2"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example20",
+      "instruction": "Please put the solid_3 in the container_right_2.",
+      "table_component_index": 0,
+      "target_hole": "container_right_2",
+      "requested_pocket_ids": [
+        "container_right_2"
+      ],
+      "instruction_matches_target_hole": true,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example22",
+      "instruction": "Please put the solid_3 in the container_right_2.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_2",
+      "requested_pocket_ids": [
+        "container_right_2"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example26",
+      "instruction": "Please put the solid_3 in the container_right_2.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_1",
+      "requested_pocket_ids": [
+        "container_right_2"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example27",
+      "instruction": "Please put the solid_3 in the container_right_2.",
+      "table_component_index": 0,
+      "target_hole": "container_right_2",
+      "requested_pocket_ids": [
+        "container_right_2"
+      ],
+      "instruction_matches_target_hole": true,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example28",
+      "instruction": "Please put the striped_10 in the container_right_2.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_2",
+      "requested_pocket_ids": [
+        "container_right_2"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example31",
+      "instruction": "Please put the solid_3 in the container_right_2.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_1",
+      "requested_pocket_ids": [
+        "container_right_2"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example32",
+      "instruction": "Please put the striped_12 in the container_right_1.",
+      "table_component_index": 0,
+      "target_hole": "container_right_1",
+      "requested_pocket_ids": [
+        "container_right_1"
+      ],
+      "instruction_matches_target_hole": true,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example35",
+      "instruction": "Please put the striped_12 in the container_right_2.",
+      "table_component_index": 0,
+      "target_hole": "container_right_2",
+      "requested_pocket_ids": [
+        "container_right_2"
+      ],
+      "instruction_matches_target_hole": true,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example38",
+      "instruction": "Please put the striped_14 in the container_right_2.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_1",
+      "requested_pocket_ids": [
+        "container_right_2"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example39",
+      "instruction": "Please put the striped_12 in the container_right_2.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_1",
+      "requested_pocket_ids": [
+        "container_right_2"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example40",
+      "instruction": "Please put the white in the container_right_1.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_1",
+      "requested_pocket_ids": [
+        "container_right_1"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example41",
+      "instruction": "Please put the white in the container_right_1.",
+      "table_component_index": 0,
+      "target_hole": "container_right_1",
+      "requested_pocket_ids": [
+        "container_right_1"
+      ],
+      "instruction_matches_target_hole": true,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example44",
+      "instruction": "Please put the striped_12 in the container_right_1.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_2",
+      "requested_pocket_ids": [
+        "container_right_1"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example45",
+      "instruction": "Please put the solid_7 in the container_right_1.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_1",
+      "requested_pocket_ids": [
+        "container_right_1"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example47",
+      "instruction": "Please put the striped_10 in the container_right_2.",
+      "table_component_index": 0,
+      "target_hole": "container_right_2",
+      "requested_pocket_ids": [
+        "container_right_2"
+      ],
+      "instruction_matches_target_hole": true,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example49",
+      "instruction": "Please put the solid_5 in the container_right_2.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_2",
+      "requested_pocket_ids": [
+        "container_right_2"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example50",
+      "instruction": "Please put the striped_10 in the container_right_1.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_2",
+      "requested_pocket_ids": [
+        "container_right_1"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example51",
+      "instruction": "Please put the striped_12 in the container_right_1.",
+      "table_component_index": 0,
+      "target_hole": "container_right_1",
+      "requested_pocket_ids": [
+        "container_right_1"
+      ],
+      "instruction_matches_target_hole": true,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example53",
+      "instruction": "Please put the white in the container_right_1.",
+      "table_component_index": 0,
+      "target_hole": "container_right_1",
+      "requested_pocket_ids": [
+        "container_right_1"
+      ],
+      "instruction_matches_target_hole": true,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example54",
+      "instruction": "Please put the striped_12 in the container_right_2.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_2",
+      "requested_pocket_ids": [
+        "container_right_2"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example57",
+      "instruction": "Please put the striped_14 in the container_right_2.",
+      "table_component_index": 0,
+      "target_hole": "container_right_2",
+      "requested_pocket_ids": [
+        "container_right_2"
+      ],
+      "instruction_matches_target_hole": true,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example60",
+      "instruction": "Please put the striped_12 in the container_right_2.",
+      "table_component_index": 0,
+      "target_hole": "container_right_2",
+      "requested_pocket_ids": [
+        "container_right_2"
+      ],
+      "instruction_matches_target_hole": true,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example61",
+      "instruction": "Please put the solid_7 in the container_right_1.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_2",
+      "requested_pocket_ids": [
+        "container_right_1"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example62",
+      "instruction": "Please put the solid_7 in the container_right_2.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_2",
+      "requested_pocket_ids": [
+        "container_right_2"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example63",
+      "instruction": "Please put the solid_3 in the container_right_1.",
+      "table_component_index": 0,
+      "target_hole": "container_right_1",
+      "requested_pocket_ids": [
+        "container_right_1"
+      ],
+      "instruction_matches_target_hole": true,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example64",
+      "instruction": "Please put the solid_1 in the container_right_2.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_1",
+      "requested_pocket_ids": [
+        "container_right_2"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example66",
+      "instruction": "Please put the solid_3 in the container_right_2.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_2",
+      "requested_pocket_ids": [
+        "container_right_2"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example70",
+      "instruction": "Please put the striped_10 in the container_right_2.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_2",
+      "requested_pocket_ids": [
+        "container_right_2"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example73",
+      "instruction": "Please put the solid_7 in the container_right_1.",
+      "table_component_index": 0,
+      "target_hole": "container_right_1",
+      "requested_pocket_ids": [
+        "container_right_1"
+      ],
+      "instruction_matches_target_hole": true,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example74",
+      "instruction": "Please put the solid_1 in the container_right_1.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_2",
+      "requested_pocket_ids": [
+        "container_right_1"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example76",
+      "instruction": "Please put the striped_10 in the container_right_1.",
+      "table_component_index": 0,
+      "target_hole": "container_right_1",
+      "requested_pocket_ids": [
+        "container_right_1"
+      ],
+      "instruction_matches_target_hole": true,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example77",
+      "instruction": "Please put the solid_5 in the container_right_2.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_2",
+      "requested_pocket_ids": [
+        "container_right_2"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example78",
+      "instruction": "Please put the solid_7 in the container_right_2.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_2",
+      "requested_pocket_ids": [
+        "container_right_2"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example79",
+      "instruction": "Please put the solid_7 in the container_right_2.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_1",
+      "requested_pocket_ids": [
+        "container_right_2"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example82",
+      "instruction": "Please put the solid_1 in the container_right_2.",
+      "table_component_index": 0,
+      "target_hole": "container_right_2",
+      "requested_pocket_ids": [
+        "container_right_2"
+      ],
+      "instruction_matches_target_hole": true,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example83",
+      "instruction": "Please put the solid_7 in the container_right_1.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_1",
+      "requested_pocket_ids": [
+        "container_right_1"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example85",
+      "instruction": "Please put the solid_3 in the container_right_1.",
+      "table_component_index": 0,
+      "target_hole": "container_right_1",
+      "requested_pocket_ids": [
+        "container_right_1"
+      ],
+      "instruction_matches_target_hole": true,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example86",
+      "instruction": "Please put the striped_14 in the container_right_1.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_1",
+      "requested_pocket_ids": [
+        "container_right_1"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example87",
+      "instruction": "Please put the solid_1 in the container_right_2.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_2",
+      "requested_pocket_ids": [
+        "container_right_2"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example88",
+      "instruction": "Please put the striped_10 in the container_right_2.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_2",
+      "requested_pocket_ids": [
+        "container_right_2"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example89",
+      "instruction": "Please put the striped_12 in the container_right_1.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_1",
+      "requested_pocket_ids": [
+        "container_right_1"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example92",
+      "instruction": "Please put the solid_7 in the container_right_2.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_2",
+      "requested_pocket_ids": [
+        "container_right_2"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example97",
+      "instruction": "Please put the striped_10 in the container_right_1.",
+      "table_component_index": 0,
+      "target_hole": "container_mid_2",
+      "requested_pocket_ids": [
+        "container_right_1"
+      ],
+      "instruction_matches_target_hole": false,
+      "pocket_component_names": []
+    },
+    {
+      "case_id": "Spatial/select_billiards_spatial/example99",
+      "instruction": "Please put the white in the container_right_2.",
+      "table_component_index": 0,
+      "target_hole": "container_right_2",
+      "requested_pocket_ids": [
+        "container_right_2"
+      ],
+      "instruction_matches_target_hole": true,
+      "pocket_component_names": []
+    }
+  ]
+}

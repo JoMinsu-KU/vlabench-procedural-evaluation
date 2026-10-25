@@ -1,0 +1,85 @@
+{
+  "ok": true,
+  "execution_completed": true,
+  "condition_success": false,
+  "trace": [],
+  "stage_exception_policy": {
+    "enabled": true,
+    "name": "official_style_stage_failure_condition_check",
+    "stage_exception_caught": false,
+    "condition_checked_after_stage_exception": false,
+    "condition_success_after_stage_exception": false,
+    "failed_skill": "",
+    "exception_type": "",
+    "exception": "",
+    "example_specific_rule_used": false
+  },
+  "episode_config_audit": {
+    "added_fields": {
+      "target_entities": {
+        "source": "conditions.contain.entities",
+        "value": [
+          "apple"
+        ]
+      },
+      "target_entity": {
+        "source": "conditions.contain.entities[0]",
+        "value": "apple"
+      },
+      "target_container": {
+        "source": "conditions.contain.container",
+        "value": "plate_seen"
+      },
+      "target_containers": {
+        "source": "derived.task.target_container",
+        "value": [
+          "plate_seen"
+        ]
+      },
+      "target_platform": {
+        "source": "derived.task.target_container",
+        "value": "plate_seen"
+      }
+    },
+    "native_seed": null,
+    "post_load_config_manager_fields": {
+      "target_entity": "apple",
+      "target_entities": [
+        "apple"
+      ],
+      "target_container": "plate_seen"
+    },
+    "post_load_mirrored_fields": {
+      "target_containers": [
+        "plate_seen"
+      ],
+      "target_platform": "plate_seen"
+    },
+    "reset_task_progress_called": true
+  },
+  "visual_audit": {
+    "before": {
+      "enabled": false,
+      "phase": "before",
+      "images": [],
+      "contact_sheet": "",
+      "skipped_reason": "pre_execution_render_disabled_to_preserve_native_state"
+    },
+    "after": {
+      "enabled": true,
+      "phase": "after",
+      "images": [
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_057/initial_no_action/visual_audit/after_camera0.png",
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_057/initial_no_action/visual_audit/after_camera1.png",
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_057/initial_no_action/visual_audit/after_camera2.png",
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_057/initial_no_action/visual_audit/after_camera3.png"
+      ],
+      "contact_sheet": "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_057/initial_no_action/visual_audit/after_contact_sheet.png"
+    }
+  },
+  "gt_used_during_execution": false,
+  "operation_sequence_read": false,
+  "expert_sequence_called": false,
+  "stdout": "",
+  "stderr": "Dropped Escape call with ulEscapeCode : 0x03007703\n"
+}

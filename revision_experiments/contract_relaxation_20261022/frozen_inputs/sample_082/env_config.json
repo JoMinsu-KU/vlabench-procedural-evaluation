@@ -1,0 +1,133 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "table",
+                "xml_path": "obj/meshes/table/table.xml",
+                "position": [
+                    6.896110450893415e-09,
+                    -5.192287217287545e-10,
+                    -7.685988353545028e-07
+                ],
+                "orientation": [
+                    1.0,
+                    -4.704829405698975e-10,
+                    -6.936680383227161e-09,
+                    -3.088909616871899e-09
+                ],
+                "class": "Table",
+                "materials": [
+                    "wood2"
+                ]
+            },
+            {
+                "name": "target_giftbox_seen",
+                "xml_path": "obj/meshes/containers/boxes/giftbox/giftbox_0/giftbox.xml",
+                "position": [
+                    0.07346371830667842,
+                    0.04619470172415003,
+                    0.7709990927846221
+                ],
+                "orientation": [
+                    0.9974570184868596,
+                    0.0007659273209495433,
+                    -0.0004539091763376548,
+                    -0.0712650236308434
+                ],
+                "class": "CommonContainer"
+            },
+            {
+                "name": "another_giftbox_seen",
+                "xml_path": "obj/meshes/containers/boxes/giftbox/giftbox_1/giftbox.xml",
+                "position": [
+                    -0.2711605372093963,
+                    -0.16704552294715724,
+                    0.77099908820385
+                ],
+                "orientation": [
+                    0.9985414649162919,
+                    0.0008166592887261882,
+                    -0.0003546025718649643,
+                    0.053982869203551796
+                ],
+                "class": "CommonContainer"
+            },
+            {
+                "name": "donald",
+                "xml_path": "obj/meshes/toys/disney/mickey/donald/donald_0/donald.xml",
+                "position": [
+                    -0.26616516682775315,
+                    0.131987022300203,
+                    0.7658492618957018
+                ],
+                "orientation": [
+                    0.7067835896558856,
+                    0.7073480273300609,
+                    -0.007574267822789978,
+                    0.007639115941050367
+                ],
+                "class": "Toy"
+            },
+            {
+                "name": "jessie",
+                "xml_path": "obj/meshes/toys/disney/toystory/jessie/jessie_0/disney_infinity_jessie.xml",
+                "position": [
+                    0.22244468194361672,
+                    -0.15541146887773383,
+                    0.7656918037030652
+                ],
+                "orientation": [
+                    0.006113045572585358,
+                    -0.00616582564699556,
+                    0.7073612724813163,
+                    0.7067988705859196
+                ],
+                "class": "Toy"
+            },
+            {
+                "name": "zoro",
+                "xml_path": "obj/meshes/toys/onepiece/zoro/zoro_0/one_piece_zoro_figurine.xml",
+                "position": [
+                    -0.10021314353432555,
+                    -0.04468428882828733,
+                    0.7613254190758503
+                ],
+                "orientation": [
+                    -0.0037828249388725437,
+                    0.0013943795772313047,
+                    0.7111556056464772,
+                    0.7030230796344236
+                ],
+                "class": "Toy"
+            }
+        ],
+        "scene": {
+            "name": "studyroom_0",
+            "position": [
+                -1.0,
+                1.0,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "floorplane"
+            ]
+        },
+        "instructions": [
+            "Put donald into ['right', 'farthest'] giftbox_seen"
+        ],
+        "conditions": {
+            "contain": {
+                "container": "target_giftbox_seen",
+                "entities": [
+                    "donald"
+                ]
+            }
+        }
+    }
+}

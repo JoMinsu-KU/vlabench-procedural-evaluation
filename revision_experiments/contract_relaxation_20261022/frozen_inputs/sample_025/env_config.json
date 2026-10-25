@@ -1,0 +1,117 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "table",
+                "xml_path": "obj/meshes/table/table.xml",
+                "position": [
+                    4.7981292472737444e-11,
+                    7.828075115046724e-10,
+                    -1.2355212755144978e-06
+                ],
+                "orientation": [
+                    0.99999999999995,
+                    -3.13486034279323e-07,
+                    1.3398498529870884e-08,
+                    -4.3477475374334335e-12
+                ],
+                "class": "Table",
+                "materials": [
+                    "stone3"
+                ]
+            },
+            {
+                "name": "shelf_seen",
+                "xml_path": "obj/meshes/containers/shelf/shelf1.xml",
+                "position": [
+                    0.015379261681054985,
+                    0.3664452916393572,
+                    0.759998484365875
+                ],
+                "orientation": [
+                    0.9996632454962917,
+                    -2.931903356773534e-07,
+                    4.709219508303445e-09,
+                    -0.025949867123644367
+                ],
+                "class": "Shelf"
+            },
+            {
+                "name": "scholars_of_contract_law",
+                "xml_path": "obj/meshes/books/bookscan/scholars_of_contract_law/scholars_of_contract_law.xml",
+                "position": [
+                    -0.14302879749693825,
+                    0.3351080024264016,
+                    1.170980999512366
+                ],
+                "orientation": [
+                    4.329780281177467e-17,
+                    0.7071067811865476,
+                    0.7071067811865475,
+                    4.329780281177466e-17
+                ],
+                "class": "Book"
+            },
+            {
+                "name": "biopolymer_composites_in_electronics",
+                "xml_path": "obj/meshes/books/bookscan/biopolymer_composites_in_electronics/biopolymer_composites_in_electronics.xml",
+                "position": [
+                    -0.0729034969380262,
+                    0.36710762903567795,
+                    1.170980999512366
+                ],
+                "orientation": [
+                    4.329780281177467e-17,
+                    0.7071067811865476,
+                    0.7071067811865475,
+                    4.329780281177466e-17
+                ],
+                "class": "Book"
+            },
+            {
+                "name": "flash_mx_bible",
+                "xml_path": "obj/meshes/books/bookscan/flash_mx_bible/flash_mx_bible.xml",
+                "position": [
+                    0.0795425223620199,
+                    0.3430254504725903,
+                    1.170980999512366
+                ],
+                "orientation": [
+                    4.329780281177467e-17,
+                    0.7071067811865476,
+                    0.7071067811865475,
+                    4.329780281177466e-17
+                ],
+                "class": "Book"
+            }
+        ],
+        "scene": {
+            "name": "studyroom_0",
+            "position": [
+                -1.0,
+                1.0,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "floorplane"
+            ]
+        },
+        "instructions": [
+            "Please take the book biopolymer_composites_in_electronics"
+        ],
+        "conditions": {
+            "not_contain": {
+                "container": "shelf_seen",
+                "entities": [
+                    "biopolymer_composites_in_electronics"
+                ]
+            }
+        }
+    }
+}

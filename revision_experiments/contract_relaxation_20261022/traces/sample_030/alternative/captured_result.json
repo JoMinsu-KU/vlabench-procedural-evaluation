@@ -1,0 +1,100 @@
+{
+  "ok": true,
+  "execution_completed": true,
+  "condition_success": false,
+  "trace": [
+    {
+      "skill": "pick",
+      "target": {
+        "number": 5,
+        "entity_name": "cloud_computing",
+        "entity_class": "Book",
+        "target_source": "archived_vlm_output"
+      },
+      "matched_phase_template": "relaxed_diagnostic.step_1.pick",
+      "stage_success": true,
+      "task_success_signal": false,
+      "waypoint_count": 73,
+      "condition_progress_after_step": false
+    }
+  ],
+  "stage_exception_policy": {
+    "enabled": true,
+    "name": "official_style_stage_failure_condition_check",
+    "stage_exception_caught": false,
+    "condition_checked_after_stage_exception": false,
+    "condition_success_after_stage_exception": false,
+    "failed_skill": "",
+    "exception_type": "",
+    "exception": "",
+    "example_specific_rule_used": false
+  },
+  "episode_config_audit": {
+    "added_fields": {
+      "target_container": {
+        "source": "conditions.not_contain.container",
+        "value": "shelf_seen"
+      },
+      "target_containers": {
+        "source": "derived.task.target_container",
+        "value": [
+          "shelf_seen"
+        ]
+      },
+      "target_platform": {
+        "source": "derived.task.target_container",
+        "value": "shelf_seen"
+      },
+      "target_entities": {
+        "source": "conditions.not_contain.entities",
+        "value": [
+          "cloud_computing"
+        ]
+      },
+      "target_entity": {
+        "source": "conditions.not_contain.entities[0]",
+        "value": "cloud_computing"
+      }
+    },
+    "native_seed": null,
+    "post_load_config_manager_fields": {
+      "target_entity": "cloud_computing",
+      "target_entities": [
+        "cloud_computing"
+      ],
+      "target_container": "shelf_seen"
+    },
+    "post_load_mirrored_fields": {
+      "target_containers": [
+        "shelf_seen"
+      ],
+      "target_platform": "shelf_seen"
+    },
+    "reset_task_progress_called": true
+  },
+  "visual_audit": {
+    "before": {
+      "enabled": false,
+      "phase": "before",
+      "images": [],
+      "contact_sheet": "",
+      "skipped_reason": "pre_execution_render_disabled_to_preserve_native_state"
+    },
+    "after": {
+      "enabled": true,
+      "phase": "after",
+      "images": [
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_030/alternative/visual_audit/after_camera0.png",
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_030/alternative/visual_audit/after_camera1.png",
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_030/alternative/visual_audit/after_camera2.png",
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_030/alternative/visual_audit/after_camera3.png"
+      ],
+      "contact_sheet": "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_030/alternative/visual_audit/after_contact_sheet.png"
+    }
+  },
+  "gt_used_during_execution": false,
+  "operation_sequence_read": false,
+  "expert_sequence_called": false,
+  "stdout": "Checking if can connect to goal at 51 samples\nCould not connect to goal\nChecking if can connect to goal at 63 samples\nCould not connect to goal\nChecking if can connect to goal at 75 samples\nCould not connect to goal\nChecking if can connect to goal at 93 samples\nCould not connect to goal\nChecking if can connect to goal at 105 samples\nCould not connect to goal\nChecking if can connect to goal at 109 samples\nCould not connect to goal\nChecking if can connect to goal at 111 samples\nCould not connect to goal\nChecking if can connect to goal at 131 samples\nCould not connect to goal\nChecking if can connect to goal at 141 samples\nCould not connect to goal\nChecking if can connect to goal at 167 samples\nCould not connect to goal\nChecking if can connect to goal at 208 samples\nCould not connect to goal\nChecking if can connect to goal at 220 samples\nCould not connect to goal\nChecking if can connect to goal at 231 samples\nCould not connect to goal\nChecking if can connect to goal at 235 samples\nCould not connect to goal\nChecking if can connect to goal at 249 samples\nCould not connect to goal\nChecking if can connect to goal at 253 samples\nCould not connect to goal\nChecking if can connect to goal at 262 samples\nCould not connect to goal\nChecking if can connect to goal at 264 samples\nCould not connect to goal\nChecking if can connect to goal at 300 samples\nCould not connect to goal\nChecking if can connect to goal at 336 samples\nCould not connect to goal\nChecking if can connect to goal at 338 samples\nCould not connect to goal\nChecking if can connect to goal at 352 samples\nCould not connect to goal\nChecking if can connect to goal at 392 samples\nCould not connect to goal\nChecking if can connect to goal at 394 samples\nCould not connect to goal\nChecking if can connect to goal at 404 samples\nCould not connect to goal\nChecking if can connect to goal at 420 samples\nCould not connect to goal\nChecking if can connect to goal at 436 samples\nCould not connect to goal\nChecking if can connect to goal at 456 samples\nCould not connect to goal\nChecking if can connect to goal at 470 samples\nCould not connect to goal\nChecking if can connect to goal at 480 samples\nCould not connect to goal\nChecking if can connect to goal at 485 samples\nCould not connect to goal\nChecking if can connect to goal at 514 samples\nCould not connect to goal\nChecking if can connect to goal at 544 samples\nCould not connect to goal\nChecking if can connect to goal at 560 samples\nCould not connect to goal\nChecking if can connect to goal at 583 samples\nCould not connect to goal\nChecking if can connect to goal at 613 samples\nCould not connect to goal\nChecking if can connect to goal at 623 samples\nCould not connect to goal\nChecking if can connect to goal at 662 samples\nCould not connect to goal\nChecking if can connect to goal at 706 samples\nCould not connect to goal\nChecking if can connect to goal at 708 samples\nCould not connect to goal\nChecking if can connect to goal at 721 samples\nCould not connect to goal\nChecking if can connect to goal at 736 samples\nCould not connect to goal\nChecking if can connect to goal at 748 samples\nCould not connect to goal\nChecking if can connect to goal at 754 samples\nCould not connect to goal\nChecking if can connect to goal at 765 samples\nCould not connect to goal\nChecking if can connect to goal at 783 samples\nCould not connect to goal\nChecking if can connect to goal at 787 samples\nCould not connect to goal\nChecking if can connect to goal at 791 samples\nCould not connect to goal\nChecking if can connect to goal at 815 samples\nCould not connect to goal\nChecking if can connect to goal at 879 samples\nCould not connect to goal\nChecking if can connect to goal at 897 samples\nCould not connect to goal\nChecking if can connect to goal at 914 samples\nCould not connect to goal\nChecking if can connect to goal at 926 samples\nCould not connect to goal\nChecking if can connect to goal at 937 samples\nCould not connect to goal\nChecking if can connect to goal at 983 samples\nCould not connect to goal\nChecking if can connect to goal at 989 samples\nCould not connect to goal\nChecking if can connect to goal at 1005 samples\nCould not connect to goal\nCould not connect to goal\n",
+  "stderr": "Dropped Escape call with ulEscapeCode : 0x03007703\n/home/jms/vlabench_runtime/VLABench/VLABench/utils/skill_lib.py:184: UserWarning: Gimbal lock detected. Setting third angle to zero since it is not possible to uniquely determine all angles.\n  new_obs, new_waypoints, _, task_success = SkillLib.step_trajectory(env,\n"
+}

@@ -1,0 +1,131 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "table",
+                "xml_path": "obj/meshes/table/table.xml",
+                "position": [
+                    -1.46176701229855e-09,
+                    7.094764121335785e-09,
+                    -1.2350597059219489e-06
+                ],
+                "orientation": [
+                    0.9999999999999611,
+                    -2.683633892804548e-07,
+                    -6.932518211224725e-08,
+                    -2.908220411482735e-10
+                ],
+                "class": "Table",
+                "materials": [
+                    "wood1"
+                ]
+            },
+            {
+                "name": "shelf_seen",
+                "xml_path": "obj/meshes/containers/shelf/shelf1.xml",
+                "position": [
+                    -0.08317539135373413,
+                    0.310368854087492,
+                    0.7599985368687194
+                ],
+                "orientation": [
+                    0.9971563481195376,
+                    -2.5236917593761343e-07,
+                    -4.7378975065168034e-08,
+                    0.0753605825670294
+                ],
+                "class": "Shelf"
+            },
+            {
+                "name": "contract_law_in_japan",
+                "xml_path": "obj/meshes/books/bookscan/contract_law_in_japan/contract_law_in_japan.xml",
+                "position": [
+                    -0.34443529894158476,
+                    0.32382244078520955,
+                    1.170975992820399
+                ],
+                "orientation": [
+                    3.6857908741977674e-05,
+                    0.7015989633854237,
+                    0.7125720246062208,
+                    -5.4466384465170586e-05
+                ],
+                "class": "Book"
+            },
+            {
+                "name": "the_story_of_american_freedom",
+                "xml_path": "obj/meshes/books/bookscan/the_story_of_american_freedom/the_story_of_american_freedom.xml",
+                "position": [
+                    -0.16933522281034807,
+                    0.3437361520917461,
+                    1.170980999512366
+                ],
+                "orientation": [
+                    4.329780281177467e-17,
+                    0.7071067811865476,
+                    0.7071067811865475,
+                    4.329780281177466e-17
+                ],
+                "class": "Book"
+            },
+            {
+                "name": "foundamentals_of_molecular_biology",
+                "xml_path": "obj/meshes/books/bookscan/foundamentals_of_molecular_biology/foundamentals_of_molecular_biology.xml",
+                "position": [
+                    -0.0004406594431115886,
+                    0.3230674969047846,
+                    1.170980999512366
+                ],
+                "orientation": [
+                    4.329780281177467e-17,
+                    0.7071067811865476,
+                    0.7071067811865475,
+                    4.329780281177466e-17
+                ],
+                "class": "Book"
+            },
+            {
+                "name": "data_visualization",
+                "xml_path": "obj/meshes/books/bookscan/data_visualization/data_visualization.xml",
+                "position": [
+                    0.19717730552989138,
+                    0.31787334576231574,
+                    1.170980999512366
+                ],
+                "orientation": [
+                    4.329780281177467e-17,
+                    0.7071067811865476,
+                    0.7071067811865475,
+                    4.329780281177466e-17
+                ],
+                "class": "Book"
+            }
+        ],
+        "scene": {
+            "name": "studyroom_0",
+            "position": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "floorplane"
+            ]
+        },
+        "instructions": [],
+        "conditions": {
+            "not_contain": {
+                "container": "shelf_seen",
+                "entities": [
+                    "contract_law_in_japan"
+                ]
+            }
+        }
+    }
+}

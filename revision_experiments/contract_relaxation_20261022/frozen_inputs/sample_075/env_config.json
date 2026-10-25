@@ -1,0 +1,115 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "table",
+                "xml_path": "obj/meshes/table/table.xml",
+                "position": [
+                    5.589845105098922e-08,
+                    -2.1669373273440433e-09,
+                    -7.916176121090947e-07
+                ],
+                "orientation": [
+                    0.9999999999999996,
+                    4.83926865860517e-09,
+                    1.9795322596850438e-09,
+                    3.4286475212199486e-09
+                ],
+                "class": "Table",
+                "materials": [
+                    "stone0"
+                ]
+            },
+            {
+                "name": "giftbox_seen",
+                "xml_path": "obj/meshes/containers/boxes/giftbox/giftbox_1/giftbox.xml",
+                "position": [
+                    -0.08915945378622127,
+                    -0.03807892871594282,
+                    0.7709990687743685
+                ],
+                "orientation": [
+                    0.9971850897533123,
+                    0.0008239429206768162,
+                    -0.0003373381686246528,
+                    0.07497402279924226
+                ],
+                "class": "CommonContainer"
+            },
+            {
+                "name": "flashman",
+                "xml_path": "obj/meshes/toys/DC/flashman/flashman_0/flashinjustice_2_texturedrigged.xml",
+                "position": [
+                    0.23819436643235734,
+                    0.1454866004952764,
+                    0.7662706570395565
+                ],
+                "orientation": [
+                    0.7067339175720626,
+                    0.7072967572898611,
+                    0.011335319022193896,
+                    -0.011400764147912669
+                ],
+                "class": "Toy"
+            },
+            {
+                "name": "superman",
+                "xml_path": "obj/meshes/toys/DC/superman/superman_0/superman.xml",
+                "position": [
+                    0.20875576246532399,
+                    -0.14630554042688287,
+                    0.7655400976815324
+                ],
+                "orientation": [
+                    0.7068289404181234,
+                    0.707351825213927,
+                    -0.004739705028858259,
+                    0.004876428012393989
+                ],
+                "class": "Toy"
+            },
+            {
+                "name": "hawkeye",
+                "xml_path": "obj/meshes/toys/marvel/hawkeye/hawkeye_0/hawkeye.xml",
+                "position": [
+                    -0.284078947774037,
+                    0.15472553337523795,
+                    0.7649983496619001
+                ],
+                "orientation": [
+                    0.706825216769939,
+                    0.707388232652035,
+                    2.4592544076180733e-05,
+                    2.5273824637251463e-05
+                ],
+                "class": "Toy"
+            }
+        ],
+        "scene": {
+            "name": "studyroom_0",
+            "position": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "floorplane"
+            ]
+        },
+        "instructions": [],
+        "conditions": {
+            "contain": {
+                "container": "giftbox_seen",
+                "entities": [
+                    "flashman"
+                ]
+            }
+        }
+    }
+}

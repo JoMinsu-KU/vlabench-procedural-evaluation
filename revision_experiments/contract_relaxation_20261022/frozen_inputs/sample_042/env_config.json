@@ -1,0 +1,154 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "table",
+                "xml_path": "obj/meshes/table/table.xml",
+                "position": [
+                    -8.842404337003541e-10,
+                    -5.396721666977766e-10,
+                    -8.482436776855992e-07
+                ],
+                "orientation": [
+                    0.9999999999999986,
+                    -2.5234425162040208e-08,
+                    1.6967708388077045e-08,
+                    -3.784963200784018e-11
+                ],
+                "class": "Table",
+                "materials": [
+                    "stone3"
+                ]
+            },
+            {
+                "name": "chemistry_tube_stand",
+                "xml_path": "obj/meshes/tube/tube_container/tube_stand.xml",
+                "position": [
+                    0.10758687272475372,
+                    0.16166078810025214,
+                    0.759998819242598
+                ],
+                "orientation": [
+                    0.9999999999962821,
+                    8.78924430160187e-08,
+                    5.769863779567095e-08,
+                    2.7251551012133577e-06
+                ],
+                "class": "TubeStand"
+            },
+            {
+                "name": "FeCl3",
+                "xml_path": "obj/meshes/tube/tube/tube.xml",
+                "position": [
+                    0.10747881003783592,
+                    0.11189420664430512,
+                    0.7628864044725158
+                ],
+                "orientation": [
+                    0.9989626196743471,
+                    0.001440260466658677,
+                    -0.004769434216164168,
+                    -0.04526436391259644
+                ],
+                "class": "ChemistryTube",
+                "solution": "FeCl3"
+            },
+            {
+                "name": "KMnO4",
+                "xml_path": "obj/meshes/tube/tube/tube.xml",
+                "position": [
+                    0.27380520143243486,
+                    0.21165891568644812,
+                    0.7720723925985868
+                ],
+                "orientation": [
+                    0.99440514623436,
+                    0.0030760728796473714,
+                    -0.007930380139810669,
+                    -0.1052903223905129
+                ],
+                "class": "ChemistryTube",
+                "solution": "KMnO4"
+            },
+            {
+                "name": "CuCl2",
+                "xml_path": "obj/meshes/tube/tube/tube.xml",
+                "position": [
+                    0.27344631885728976,
+                    0.11201378464824789,
+                    0.7774688302848795
+                ],
+                "orientation": [
+                    0.9917889247950302,
+                    0.0041521290895898625,
+                    -0.013258688106575836,
+                    -0.1271286579321663
+                ],
+                "class": "ChemistryTube",
+                "solution": "CuCl2"
+            },
+            {
+                "name": "K2CrO4",
+                "xml_path": "obj/meshes/tube/tube/tube.xml",
+                "position": [
+                    -0.05994889584668313,
+                    0.2110245173461039,
+                    0.759102966619799
+                ],
+                "orientation": [
+                    0.9997428482600139,
+                    -0.003765733609981197,
+                    -0.0008645397861496387,
+                    -0.022345227103160097
+                ],
+                "class": "ChemistryTube",
+                "solution": "K2CrO4"
+            },
+            {
+                "name": "I2",
+                "xml_path": "obj/meshes/tube/tube/tube.xml",
+                "position": [
+                    -0.05954054691538881,
+                    0.1109771016746046,
+                    0.7591277137708198
+                ],
+                "orientation": [
+                    0.9997109683307608,
+                    -0.003901198279086389,
+                    -0.00260512115770085,
+                    -0.023579096566959144
+                ],
+                "class": "ChemistryTube",
+                "solution": "I2"
+            }
+        ],
+        "scene": {
+            "name": "lab_1",
+            "position": [
+                6.0,
+                2.0,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "floorplane"
+            ]
+        },
+        "instructions": [
+            "Take out the solution on the 1th row and 3th column"
+        ],
+        "conditions": {
+            "not_contain": {
+                "container": "chemistry_tube_stand",
+                "entities": [
+                    "FeCl3"
+                ]
+            }
+        }
+    }
+}

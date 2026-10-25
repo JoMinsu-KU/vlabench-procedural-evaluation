@@ -1,0 +1,116 @@
+{
+  "ok": true,
+  "execution_completed": true,
+  "condition_success": false,
+  "trace": [
+    {
+      "skill": "pick",
+      "target": {
+        "number": 4,
+        "entity_name": "wood_sphere",
+        "entity_class": "RandomGeom",
+        "target_source": "archived_vlm_output"
+      },
+      "matched_phase_template": "relaxed_diagnostic.step_1.pick",
+      "stage_success": true,
+      "task_success_signal": false,
+      "waypoint_count": 63,
+      "condition_progress_after_step": false
+    },
+    {
+      "skill": "lift",
+      "target": null,
+      "matched_phase_template": "relaxed_diagnostic.step_2.lift",
+      "stage_success": false,
+      "task_success_signal": false,
+      "waypoint_count": 30,
+      "condition_progress_after_step": false
+    },
+    {
+      "skill": "moveto",
+      "target": {
+        "number": 0,
+        "entity_name": "table",
+        "entity_class": "Table",
+        "target_source": "archived_vlm_output"
+      },
+      "matched_phase_template": "relaxed_diagnostic.step_3.moveto",
+      "stage_success": false,
+      "task_success_signal": false,
+      "waypoint_count": 91,
+      "condition_progress_after_step": false
+    },
+    {
+      "skill": "place",
+      "target": {
+        "number": 0,
+        "entity_name": "table",
+        "entity_class": "Table",
+        "target_source": "archived_vlm_output"
+      },
+      "matched_phase_template": "relaxed_diagnostic.step_4.place",
+      "stage_success": true,
+      "task_success_signal": false,
+      "waypoint_count": 84,
+      "condition_progress_after_step": false
+    }
+  ],
+  "stage_exception_policy": {
+    "enabled": true,
+    "name": "official_style_stage_failure_condition_check",
+    "stage_exception_caught": false,
+    "condition_checked_after_stage_exception": false,
+    "condition_success_after_stage_exception": false,
+    "failed_skill": "",
+    "exception_type": "",
+    "exception": "",
+    "example_specific_rule_used": false
+  },
+  "episode_config_audit": {
+    "added_fields": {
+      "target_entity": {
+        "source": "conditions.press_button.target_button",
+        "value": "button2"
+      },
+      "target_entities": {
+        "source": "conditions.press_button.target_button",
+        "value": [
+          "button2"
+        ]
+      }
+    },
+    "native_seed": null,
+    "post_load_config_manager_fields": {
+      "target_entity": "button2",
+      "target_entities": [
+        "button2"
+      ]
+    },
+    "reset_task_progress_called": true
+  },
+  "visual_audit": {
+    "before": {
+      "enabled": false,
+      "phase": "before",
+      "images": [],
+      "contact_sheet": "",
+      "skipped_reason": "pre_execution_render_disabled_to_preserve_native_state"
+    },
+    "after": {
+      "enabled": true,
+      "phase": "after",
+      "images": [
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_004/alternative/visual_audit/after_camera0.png",
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_004/alternative/visual_audit/after_camera1.png",
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_004/alternative/visual_audit/after_camera2.png",
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_004/alternative/visual_audit/after_camera3.png"
+      ],
+      "contact_sheet": "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_004/alternative/visual_audit/after_contact_sheet.png"
+    }
+  },
+  "gt_used_during_execution": false,
+  "operation_sequence_read": false,
+  "expert_sequence_called": false,
+  "stdout": "Checking if can connect to goal at 9 samples\nCan connect to goal\nChecking if can connect to goal at 11 samples\nCan connect to goal\nChecking if can connect to goal at 15 samples\nCan connect to goal\n",
+  "stderr": "Dropped Escape call with ulEscapeCode : 0x03007703\nWARNING:absl:Failed to converge after 99 steps: err_norm=0.0860226\nWARNING:absl:Failed to converge after 99 steps: err_norm=0.121574\nWARNING:absl:Failed to converge after 99 steps: err_norm=0.0794004\nWARNING:absl:Failed to converge after 99 steps: err_norm=0.132348\nWARNING:absl:Failed to converge after 99 steps: err_norm=0.0579583\nWARNING:absl:Failed to converge after 99 steps: err_norm=0.0836865\nWARNING:absl:Failed to converge after 99 steps: err_norm=0.0825115\nWARNING:absl:Failed to converge after 99 steps: err_norm=0.101043\nWARNING:absl:Failed to converge after 99 steps: err_norm=0.0665554\nWARNING:absl:Failed to converge after 99 steps: err_norm=0.0880601\nWARNING:absl:Failed to converge after 99 steps: err_norm=0.576943\nWARNING:absl:Failed to converge after 99 steps: err_norm=0.137149\nWARNING:absl:Failed to converge after 99 steps: err_norm=0.0896954\nWARNING:absl:Failed to converge after 99 steps: err_norm=0.10505\nWARNING:absl:Failed to converge after 99 steps: err_norm=0.0813119\nWARNING:absl:Failed to converge after 99 steps: err_norm=0.103271\nWARNING:absl:Failed to converge after 99 steps: err_norm=0.179955\nWARNING:absl:Failed to converge after 99 steps: err_norm=0.100327\nWARNING:absl:Failed to converge after 99 steps: err_norm=0.118969\nWARNING:absl:Failed to converge after 99 steps: err_norm=0.101809\nWARNING:absl:Failed to converge after 99 steps: err_norm=0.0975349\nWARNING:absl:Failed to converge after 99 steps: err_norm=0.101321\nWARNING:absl:Failed to converge after 99 steps: err_norm=0.544428\n"
+}

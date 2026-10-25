@@ -1,0 +1,85 @@
+{
+  "ok": true,
+  "execution_completed": true,
+  "condition_success": false,
+  "trace": [],
+  "stage_exception_policy": {
+    "enabled": true,
+    "name": "official_style_stage_failure_condition_check",
+    "stage_exception_caught": false,
+    "condition_checked_after_stage_exception": false,
+    "condition_success_after_stage_exception": false,
+    "failed_skill": "",
+    "exception_type": "",
+    "exception": "",
+    "example_specific_rule_used": false
+  },
+  "episode_config_audit": {
+    "added_fields": {
+      "target_container": {
+        "source": "conditions.not_contain.container",
+        "value": "chemistry_tube_stand"
+      },
+      "target_containers": {
+        "source": "derived.task.target_container",
+        "value": [
+          "chemistry_tube_stand"
+        ]
+      },
+      "target_platform": {
+        "source": "derived.task.target_container",
+        "value": "chemistry_tube_stand"
+      },
+      "target_entities": {
+        "source": "conditions.not_contain.entities",
+        "value": [
+          "CuSO4"
+        ]
+      },
+      "target_entity": {
+        "source": "conditions.not_contain.entities[0]",
+        "value": "CuSO4"
+      }
+    },
+    "native_seed": null,
+    "post_load_config_manager_fields": {
+      "target_entity": "CuSO4",
+      "target_entities": [
+        "CuSO4"
+      ],
+      "target_container": "chemistry_tube_stand"
+    },
+    "post_load_mirrored_fields": {
+      "target_containers": [
+        "chemistry_tube_stand"
+      ],
+      "target_platform": "chemistry_tube_stand"
+    },
+    "reset_task_progress_called": true
+  },
+  "visual_audit": {
+    "before": {
+      "enabled": false,
+      "phase": "before",
+      "images": [],
+      "contact_sheet": "",
+      "skipped_reason": "pre_execution_render_disabled_to_preserve_native_state"
+    },
+    "after": {
+      "enabled": true,
+      "phase": "after",
+      "images": [
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_036/initial_no_action/visual_audit/after_camera0.png",
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_036/initial_no_action/visual_audit/after_camera1.png",
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_036/initial_no_action/visual_audit/after_camera2.png",
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_036/initial_no_action/visual_audit/after_camera3.png"
+      ],
+      "contact_sheet": "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_036/initial_no_action/visual_audit/after_contact_sheet.png"
+    }
+  },
+  "gt_used_during_execution": false,
+  "operation_sequence_read": false,
+  "expert_sequence_called": false,
+  "stdout": "",
+  "stderr": "Dropped Escape call with ulEscapeCode : 0x03007703\n"
+}

@@ -1,0 +1,10 @@
+{
+  "task_name": "select_billiards",
+  "env_config_path": "/mnt/c/SILVER/data/public_view/vlabench_vlm4500_public/M&T/select_billiards/example2/env_config.json",
+  "executable_steps": [],
+  "reset_wait_step": 1,
+  "native_seed": null,
+  "visual_audit_dir": "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_019/initial_no_action/visual_audit",
+  "diagnostic_arm": "initial_no_action",
+  "reference_control_supplied": false
+}

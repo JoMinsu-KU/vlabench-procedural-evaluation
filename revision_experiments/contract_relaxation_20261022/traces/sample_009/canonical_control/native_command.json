@@ -1,0 +1,67 @@
+{
+  "task_name": "insert_flower_common_sense",
+  "env_config_path": "/mnt/c/SILVER/data/public_view/vlabench_vlm4500_public/CommenSence/insert_flower_common_sense/example48/env_config.json",
+  "executable_steps": [
+    {
+      "index": 0,
+      "skill": "pick",
+      "matched_phase_template": "insert_flower_common_sense.phase_1.pick",
+      "phase_cursor_source": "deterministic_task_phase_cursor",
+      "sequence_reordered": false,
+      "missing_phase_inserted": false,
+      "gt_target_used": false,
+      "operation_sequence_used": false,
+      "expert_sequence_called": false,
+      "target": {
+        "number": 2,
+        "entity_name": "chrysanthemum",
+        "entity_class": "CommonGraspedEntity",
+        "target_source": "vlm_output"
+      }
+    },
+    {
+      "index": 1,
+      "skill": "lift",
+      "matched_phase_template": "insert_flower_common_sense.phase_2.lift",
+      "phase_cursor_source": "deterministic_task_phase_cursor",
+      "sequence_reordered": false,
+      "missing_phase_inserted": false,
+      "gt_target_used": false,
+      "operation_sequence_used": false,
+      "expert_sequence_called": false
+    },
+    {
+      "index": 2,
+      "skill": "moveto",
+      "matched_phase_template": "insert_flower_common_sense.phase_3.moveto",
+      "phase_cursor_source": "deterministic_task_phase_cursor",
+      "sequence_reordered": false,
+      "missing_phase_inserted": false,
+      "gt_target_used": false,
+      "operation_sequence_used": false,
+      "expert_sequence_called": false,
+      "target": {
+        "number": 1,
+        "entity_name": "vase_seen",
+        "entity_class": "Vase",
+        "target_source": "vlm_output"
+      }
+    },
+    {
+      "index": 3,
+      "skill": "lift",
+      "matched_phase_template": "insert_flower_common_sense.phase_4.lift",
+      "phase_cursor_source": "deterministic_task_phase_cursor",
+      "sequence_reordered": false,
+      "missing_phase_inserted": false,
+      "gt_target_used": false,
+      "operation_sequence_used": false,
+      "expert_sequence_called": false
+    }
+  ],
+  "reset_wait_step": 1,
+  "native_seed": null,
+  "visual_audit_dir": "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_009/canonical_control/visual_audit",
+  "diagnostic_arm": "canonical_control",
+  "reference_control_supplied": true
+}

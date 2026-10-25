@@ -1,0 +1,115 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "table",
+                "xml_path": "obj/meshes/table/table.xml",
+                "position": [
+                    8.68211375959938e-11,
+                    1.045737896756607e-09,
+                    -1.2354360741358298e-06
+                ],
+                "orientation": [
+                    0.9999999999999726,
+                    -2.3096749674336716e-07,
+                    -4.112773288510334e-08,
+                    -6.174323906589251e-11
+                ],
+                "class": "Table",
+                "materials": [
+                    "stone3"
+                ]
+            },
+            {
+                "name": "shelf_seen",
+                "xml_path": "obj/meshes/containers/shelf/shelf1.xml",
+                "position": [
+                    -0.05221338207888558,
+                    0.26256518728989253,
+                    0.7599985890423239
+                ],
+                "orientation": [
+                    0.9999753860870817,
+                    -2.101202359679661e-07,
+                    -4.29130895517899e-08,
+                    -0.007016211224494039
+                ],
+                "class": "Shelf"
+            },
+            {
+                "name": "biopolymer_composites_in_electronics",
+                "xml_path": "obj/meshes/books/bookscan/biopolymer_composites_in_electronics/biopolymer_composites_in_electronics.xml",
+                "position": [
+                    -0.3428864980317041,
+                    0.25040622270060686,
+                    1.170980999512366
+                ],
+                "orientation": [
+                    4.329780281177467e-17,
+                    0.7071067811865476,
+                    0.7071067811865475,
+                    4.329780281177466e-17
+                ],
+                "class": "Book"
+            },
+            {
+                "name": "government_and_information_rights",
+                "xml_path": "obj/meshes/books/bookscan/government_and_information_rights/government_and_information_rights.xml",
+                "position": [
+                    -0.1308750182134602,
+                    0.2442950829040172,
+                    1.170980999512366
+                ],
+                "orientation": [
+                    4.329780281177467e-17,
+                    0.7071067811865476,
+                    0.7071067811865475,
+                    4.329780281177466e-17
+                ],
+                "class": "Book"
+            },
+            {
+                "name": "steve_jobs",
+                "xml_path": "obj/meshes/books/bookscan/steve_jobs/steve_jobs.xml",
+                "position": [
+                    0.004049964730463117,
+                    0.24065155967752527,
+                    1.170980999512366
+                ],
+                "orientation": [
+                    4.329780281177467e-17,
+                    0.7071067811865476,
+                    0.7071067811865475,
+                    4.329780281177466e-17
+                ],
+                "class": "Book"
+            }
+        ],
+        "scene": {
+            "name": "studyroom_0",
+            "position": [
+                -1.5,
+                1.0,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "floorplane"
+            ]
+        },
+        "instructions": [],
+        "conditions": {
+            "not_contain": {
+                "container": "shelf_seen",
+                "entities": [
+                    "biopolymer_composites_in_electronics"
+                ]
+            }
+        }
+    }
+}

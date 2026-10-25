@@ -1,0 +1,115 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "table",
+                "xml_path": "obj/meshes/table/table.xml",
+                "position": [
+                    5.331795849802842e-11,
+                    7.665142431533375e-10,
+                    -7.542039209202364e-07
+                ],
+                "orientation": [
+                    1.0,
+                    -1.768475942741922e-10,
+                    -1.2819748735538337e-10,
+                    -1.1697690037877903e-12
+                ],
+                "class": "Table",
+                "materials": [
+                    "stone4"
+                ]
+            },
+            {
+                "name": "vase_seen",
+                "xml_path": "obj/meshes/containers/vases/vase_0/vase.xml",
+                "position": [
+                    0.03756638180893547,
+                    0.17812412605139027,
+                    0.78
+                ],
+                "orientation": [
+                    0.9986195764975132,
+                    0.0,
+                    0.0,
+                    -0.052525626468682134
+                ],
+                "class": "Vase"
+            },
+            {
+                "name": "chrysanthemum",
+                "xml_path": "obj/meshes/flowers/bloom_flower/chrysanthemum/chrysanthemum_2/chrysanthemum_2.xml",
+                "position": [
+                    0.277686902791977,
+                    -0.0895332763246117,
+                    0.8150167042517243
+                ],
+                "orientation": [
+                    0.9959164021058504,
+                    0.0762315247057204,
+                    -0.045569437420426184,
+                    0.0162080545027785
+                ],
+                "class": "CommonGraspedEntity"
+            },
+            {
+                "name": "sunflower",
+                "xml_path": "obj/meshes/flowers/bloom_flower/sunflower/sunflower_1/sunflower_1.xml",
+                "position": [
+                    0.005166950083264686,
+                    -0.3097275119921344,
+                    1.0652668034984445
+                ],
+                "orientation": [
+                    -0.06020114180944457,
+                    0.5795000498922342,
+                    0.781095655840362,
+                    -0.22459984667637461
+                ],
+                "class": "CommonGraspedEntity"
+            },
+            {
+                "name": "rose",
+                "xml_path": "obj/meshes/flowers/bloom_flower/rose/rose_0/rose_0.xml",
+                "position": [
+                    -0.32845631936227754,
+                    -0.12654633971678314,
+                    0.8081564380933026
+                ],
+                "orientation": [
+                    0.9991468054576405,
+                    0.03715949125770523,
+                    0.01792362566630958,
+                    -0.001891294856610502
+                ],
+                "class": "CommonGraspedEntity"
+            }
+        ],
+        "scene": {
+            "name": "bedroom_0",
+            "position": [
+                -1.8,
+                -1.0,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "default_floor"
+            ]
+        },
+        "instructions": "Insert the chrysanthemum into the vase_seen.",
+        "conditions": {
+            "contain": {
+                "container": "vase_seen",
+                "entities": [
+                    "chrysanthemum"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,131 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "table",
+                "xml_path": "obj/meshes/table/table.xml",
+                "position": [
+                    4.450847494621571e-09,
+                    2.356180255222411e-10,
+                    -7.739411180378902e-07
+                ],
+                "orientation": [
+                    1.0,
+                    -2.8684222441595823e-09,
+                    -8.85638132048245e-10,
+                    -1.821113316204253e-09
+                ],
+                "class": "Table",
+                "materials": [
+                    "stone0"
+                ]
+            },
+            {
+                "name": "giftbox_seen",
+                "xml_path": "obj/meshes/containers/boxes/giftbox/giftbox_1/giftbox.xml",
+                "position": [
+                    -0.27965177915690886,
+                    -0.03159776188094956,
+                    0.7709990861521299
+                ],
+                "orientation": [
+                    0.9999041006330649,
+                    0.000801750992733099,
+                    -0.0003871217352221236,
+                    0.013820161695539195
+                ],
+                "class": "CommonContainer"
+            },
+            {
+                "name": "ace",
+                "xml_path": "obj/meshes/toys/onepiece/ace/ace_0/ace_one_piece.xml",
+                "position": [
+                    0.20516004744669433,
+                    0.16172924844138914,
+                    0.7651752487721996
+                ],
+                "orientation": [
+                    0.7068240201098926,
+                    0.7073856392830936,
+                    -0.0016494541812287105,
+                    0.0016251869567279332
+                ],
+                "class": "Toy"
+            },
+            {
+                "name": "flashman",
+                "xml_path": "obj/meshes/toys/DC/flashman/flashman_0/flashinjustice_2_texturedrigged.xml",
+                "position": [
+                    0.06752527810804275,
+                    -0.16684727799331675,
+                    0.7654964891887579
+                ],
+                "orientation": [
+                    0.7068114777477533,
+                    0.707374530027264,
+                    0.004384478904184944,
+                    -0.004425555048143124
+                ],
+                "class": "Toy"
+            },
+            {
+                "name": "donald",
+                "xml_path": "obj/meshes/toys/disney/mickey/donald/donald_0/donald.xml",
+                "position": [
+                    -0.10979395658537815,
+                    0.15535836969856312,
+                    0.7662159980695739
+                ],
+                "orientation": [
+                    0.7067413619223503,
+                    0.7073063916701307,
+                    -0.010783717641285773,
+                    0.010864027087352917
+                ],
+                "class": "Toy"
+            },
+            {
+                "name": "hawkeye",
+                "xml_path": "obj/meshes/toys/marvel/hawkeye/hawkeye_0/hawkeye.xml",
+                "position": [
+                    0.23051524545871369,
+                    -0.05043380976328876,
+                    0.7649971613654547
+                ],
+                "orientation": [
+                    -2.5549580026864696e-05,
+                    3.4896445855059813e-06,
+                    0.7073883282292908,
+                    0.7068251215258339
+                ],
+                "class": "Toy"
+            }
+        ],
+        "scene": {
+            "name": "studyroom_0",
+            "position": [
+                -1.0,
+                -1.0,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "floorplane"
+            ]
+        },
+        "instructions": [],
+        "conditions": {
+            "contain": {
+                "container": "giftbox_seen",
+                "entities": [
+                    "ace"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,115 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "table",
+                "xml_path": "obj/meshes/table/table.xml",
+                "position": [
+                    -1.8436499225406224e-09,
+                    2.0251784000796332e-09,
+                    -7.582701243632122e-07
+                ],
+                "orientation": [
+                    1.0,
+                    -1.0379128028457838e-09,
+                    1.4060972202761505e-09,
+                    5.379675936826907e-10
+                ],
+                "class": "Table",
+                "materials": [
+                    "stone3"
+                ]
+            },
+            {
+                "name": "vase_seen",
+                "xml_path": "obj/meshes/containers/vases/vase_0/vase.xml",
+                "position": [
+                    -0.22103023906435737,
+                    0.16410627186628013,
+                    0.78
+                ],
+                "orientation": [
+                    0.9998982671587686,
+                    0.0,
+                    0.0,
+                    -0.014263776950437531
+                ],
+                "class": "Vase"
+            },
+            {
+                "name": "wilted_flower",
+                "xml_path": "obj/meshes/flowers/wilted_flower/wilted_flower_3/wiltered_flower.xml",
+                "position": [
+                    -0.2767008704622322,
+                    -0.10068695490716116,
+                    0.898645006509821
+                ],
+                "orientation": [
+                    0.8651493089195831,
+                    0.050863803187133516,
+                    0.48891309897518465,
+                    -0.09946621764091558
+                ],
+                "class": "CommonGraspedEntity"
+            },
+            {
+                "name": "wilted_flower_1",
+                "xml_path": "obj/meshes/flowers/wilted_flower/wilted_flower_1/wiltered_flower.xml",
+                "position": [
+                    0.018323057724491044,
+                    -0.09192206637167481,
+                    0.8010284027637542
+                ],
+                "orientation": [
+                    0.9975222678107469,
+                    5.355007479362499e-17,
+                    -8.072434715988916e-17,
+                    -0.0703514407933805
+                ],
+                "class": "CommonGraspedEntity"
+            },
+            {
+                "name": "rose",
+                "xml_path": "obj/meshes/flowers/bloom_flower/rose/rose_2/rose.xml",
+                "position": [
+                    0.34080761894686673,
+                    -0.1365772828445987,
+                    0.8048813625091215
+                ],
+                "orientation": [
+                    0.9983873800588786,
+                    0.01185010886481341,
+                    0.013588687084200307,
+                    -0.053829005586094006
+                ],
+                "class": "CommonGraspedEntity"
+            }
+        ],
+        "scene": {
+            "name": "bedroom_0",
+            "position": [
+                0.0,
+                1.0,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "default_floor"
+            ]
+        },
+        "instructions": "Insert the rose into the vase_seen.",
+        "conditions": {
+            "contain": {
+                "container": "vase_seen",
+                "entities": [
+                    "rose"
+                ]
+            }
+        }
+    }
+}

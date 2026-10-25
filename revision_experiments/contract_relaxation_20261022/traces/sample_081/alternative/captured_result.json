@@ -1,0 +1,152 @@
+{
+  "ok": false,
+  "execution_completed": false,
+  "condition_success": false,
+  "trace": [
+    {
+      "skill": "pick",
+      "target": {
+        "number": 5,
+        "entity_name": "donald",
+        "entity_class": "Toy",
+        "target_source": "archived_vlm_output"
+      },
+      "matched_phase_template": "relaxed_diagnostic.step_1.pick",
+      "stage_success": true,
+      "task_success_signal": false,
+      "waypoint_count": 57,
+      "condition_progress_after_step": false
+    },
+    {
+      "skill": "lift",
+      "target": null,
+      "matched_phase_template": "relaxed_diagnostic.step_2.lift",
+      "stage_success": false,
+      "task_success_signal": false,
+      "waypoint_count": 31,
+      "condition_progress_after_step": false
+    },
+    {
+      "skill": "moveto",
+      "target": {
+        "number": 4,
+        "entity_name": "spiderman",
+        "entity_class": "Toy",
+        "target_source": "archived_vlm_output"
+      },
+      "matched_phase_template": "relaxed_diagnostic.step_3.moveto",
+      "stage_success": false,
+      "task_success_signal": false,
+      "waypoint_count": 41,
+      "condition_progress_after_step": false
+    },
+    {
+      "skill": "lift",
+      "target": null,
+      "matched_phase_template": "relaxed_diagnostic.step_4.lift",
+      "stage_success": false,
+      "task_success_signal": false,
+      "waypoint_count": 30,
+      "condition_progress_after_step": false
+    },
+    {
+      "skill": "place",
+      "target": {
+        "number": 4,
+        "entity_name": "spiderman",
+        "entity_class": "Toy",
+        "target_source": "archived_vlm_output"
+      },
+      "matched_phase_template": "relaxed_diagnostic.step_5.place",
+      "stage_success": false,
+      "task_success_signal": false,
+      "waypoint_count": 0,
+      "condition_progress_after_step": false,
+      "stage_exception_type": "AttributeError",
+      "stage_exception": "'Toy' object has no attribute 'get_place_point'"
+    }
+  ],
+  "stage_exception_policy": {
+    "enabled": true,
+    "name": "official_style_stage_failure_condition_check",
+    "stage_exception_caught": true,
+    "condition_checked_after_stage_exception": true,
+    "condition_success_after_stage_exception": false,
+    "failed_skill": "place",
+    "exception_type": "AttributeError",
+    "exception": "'Toy' object has no attribute 'get_place_point'",
+    "example_specific_rule_used": false
+  },
+  "episode_config_audit": {
+    "added_fields": {
+      "target_entities": {
+        "source": "conditions.contain.entities",
+        "value": [
+          "nami"
+        ]
+      },
+      "target_entity": {
+        "source": "conditions.contain.entities[0]",
+        "value": "nami"
+      },
+      "target_container": {
+        "source": "conditions.contain.container",
+        "value": "target_giftbox_seen"
+      },
+      "target_containers": {
+        "source": "derived.task.target_container",
+        "value": [
+          "target_giftbox_seen"
+        ]
+      },
+      "target_platform": {
+        "source": "derived.task.target_container",
+        "value": "target_giftbox_seen"
+      }
+    },
+    "native_seed": null,
+    "post_load_config_manager_fields": {
+      "target_entity": "nami",
+      "target_entities": [
+        "nami"
+      ],
+      "target_container": "target_giftbox_seen"
+    },
+    "post_load_mirrored_fields": {
+      "target_containers": [
+        "target_giftbox_seen"
+      ],
+      "target_platform": "target_giftbox_seen"
+    },
+    "reset_task_progress_called": true
+  },
+  "visual_audit": {
+    "before": {
+      "enabled": false,
+      "phase": "before",
+      "images": [],
+      "contact_sheet": "",
+      "skipped_reason": "pre_execution_render_disabled_to_preserve_native_state"
+    },
+    "after": {
+      "enabled": true,
+      "phase": "after",
+      "images": [
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_081/alternative/visual_audit/after_camera0.png",
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_081/alternative/visual_audit/after_camera1.png",
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_081/alternative/visual_audit/after_camera2.png",
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_081/alternative/visual_audit/after_camera3.png"
+      ],
+      "contact_sheet": "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_081/alternative/visual_audit/after_contact_sheet.png"
+    }
+  },
+  "gt_used_during_execution": false,
+  "operation_sequence_read": false,
+  "expert_sequence_called": false,
+  "native_exception": true,
+  "exception_type": "AttributeError",
+  "exception": "'Toy' object has no attribute 'get_place_point'",
+  "traceback": "Traceback (most recent call last):\n  File \"/mnt/c/VLABenchProcEval/procedural_interface/execution/vlabench_native_worker.py\", line 905, in main\n    trace_row = _execute_step(env, task_name, step)\n  File \"/mnt/c/VLABenchProcEval/procedural_interface/execution/vlabench_native_worker.py\", line 575, in _execute_step\n    obs, waypoints, stage_success, task_success = SkillLib.place(env, target_container_name=target_name)\n  File \"/home/jms/vlabench_runtime/VLABench/VLABench/utils/skill_lib.py\", line 226, in place\n    place_points = target_container.get_place_point(env.physics)\nAttributeError: 'Toy' object has no attribute 'get_place_point'\n",
+  "stdout": "Checking if can connect to goal at 31 samples\nCan connect to goal\nChecking if can connect to goal at 35 samples\nCould not connect to goal\nChecking if can connect to goal at 39 samples\nCould not connect to goal\nChecking if can connect to goal at 45 samples\nCould not connect to goal\nChecking if can connect to goal at 59 samples\nCould not connect to goal\nChecking if can connect to goal at 81 samples\nCould not connect to goal\nChecking if can connect to goal at 135 samples\nCould not connect to goal\nChecking if can connect to goal at 137 samples\nCould not connect to goal\nChecking if can connect to goal at 141 samples\nCould not connect to goal\nChecking if can connect to goal at 151 samples\nCould not connect to goal\nChecking if can connect to goal at 167 samples\nCould not connect to goal\nChecking if can connect to goal at 169 samples\nCould not connect to goal\nChecking if can connect to goal at 213 samples\nCould not connect to goal\nChecking if can connect to goal at 243 samples\nCould not connect to goal\nChecking if can connect to goal at 247 samples\nCould not connect to goal\nChecking if can connect to goal at 265 samples\nCould not connect to goal\nChecking if can connect to goal at 297 samples\nCould not connect to goal\nChecking if can connect to goal at 299 samples\nCould not connect to goal\nChecking if can connect to goal at 311 samples\nCould not connect to goal\nChecking if can connect to goal at 341 samples\nCould not connect to goal\nChecking if can connect to goal at 349 samples\nCould not connect to goal\nChecking if can connect to goal at 369 samples\nCould not connect to goal\nChecking if can connect to goal at 381 samples\nCould not connect to goal\nChecking if can connect to goal at 393 samples\nCould not connect to goal\nChecking if can connect to goal at 395 samples\nCould not connect to goal\nChecking if can connect to goal at 399 samples\nCould not connect to goal\nChecking if can connect to goal at 473 samples\nCould not connect to goal\nChecking if can connect to goal at 487 samples\nCould not connect to goal\nChecking if can connect to goal at 499 samples\nCould not connect to goal\nChecking if can connect to goal at 521 samples\nCould not connect to goal\nChecking if can connect to goal at 555 samples\nCould not connect to goal\nChecking if can connect to goal at 581 samples\nCould not connect to goal\nChecking if can connect to goal at 629 samples\nCould not connect to goal\nChecking if can connect to goal at 631 samples\nCould not connect to goal\nChecking if can connect to goal at 677 samples\nCould not connect to goal\nChecking if can connect to goal at 697 samples\nCould not connect to goal\nChecking if can connect to goal at 717 samples\nCould not connect to goal\nChecking if can connect to goal at 725 samples\nCould not connect to goal\nChecking if can connect to goal at 729 samples\nCould not connect to goal\nChecking if can connect to goal at 745 samples\nCould not connect to goal\nChecking if can connect to goal at 795 samples\nCould not connect to goal\nChecking if can connect to goal at 813 samples\nCould not connect to goal\nChecking if can connect to goal at 815 samples\nCould not connect to goal\nChecking if can connect to goal at 825 samples\nCould not connect to goal\nChecking if can connect to goal at 839 samples\nCould not connect to goal\nChecking if can connect to goal at 859 samples\nCould not connect to goal\nChecking if can connect to goal at 881 samples\nCould not connect to goal\nChecking if can connect to goal at 897 samples\nCould not connect to goal\nChecking if can connect to goal at 923 samples\nCould not connect to goal\nChecking if can connect to goal at 925 samples\nCould not connect to goal\nChecking if can connect to goal at 981 samples\nCould not connect to goal\nChecking if can connect to goal at 1013 samples\nCould not connect to goal\nCould not connect to goal\n",
+  "stderr": "Dropped Escape call with ulEscapeCode : 0x03007703\n"
+}

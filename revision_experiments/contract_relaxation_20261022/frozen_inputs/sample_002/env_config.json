@@ -1,0 +1,152 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "table",
+                "xml_path": "obj/meshes/table/table.xml",
+                "position": [
+                    -1.5348537706784186e-10,
+                    -1.145460384448178e-11,
+                    -7.652105048123719e-07
+                ],
+                "orientation": [
+                    1.0,
+                    -2.205404645631574e-11,
+                    -4.5329401274609283e-10,
+                    -2.8573425584187333e-16
+                ],
+                "class": "Table",
+                "materials": [
+                    "stone2"
+                ]
+            },
+            {
+                "name": "button0",
+                "xml_path": null,
+                "position": [
+                    -0.37357069061844733,
+                    -0.10610971455169607,
+                    0.78
+                ],
+                "orientation": [
+                    0.9975321800294408,
+                    0.0,
+                    0.0,
+                    -0.07021075277841236
+                ],
+                "class": "Button"
+            },
+            {
+                "name": "stone_cylinder",
+                "xml_path": null,
+                "position": [
+                    -0.3611732207175211,
+                    -0.020001122772174865,
+                    0.7891944142755593
+                ],
+                "orientation": [
+                    0.9999999999999998,
+                    -2.187188446051029e-11,
+                    -4.5579603165375735e-10,
+                    2.4207696699782804e-16
+                ],
+                "class": "RandomGeom",
+                "material": "stone",
+                "texture": "stone4"
+            },
+            {
+                "name": "button1",
+                "xml_path": null,
+                "position": [
+                    0.018759053128195584,
+                    -0.008818128911625523,
+                    0.78
+                ],
+                "orientation": [
+                    0.999713683239463,
+                    0.0,
+                    0.0,
+                    -0.023928049310103637
+                ],
+                "class": "Button"
+            },
+            {
+                "name": "wood_box",
+                "xml_path": null,
+                "position": [
+                    0.008862029105784562,
+                    0.07195733573616547,
+                    0.7839786873628098
+                ],
+                "orientation": [
+                    1.0,
+                    -2.1880031153961164e-11,
+                    -4.5567189440057287e-10,
+                    -1.0102445103852022e-15
+                ],
+                "class": "RandomGeom",
+                "material": "wood",
+                "texture": "wood0"
+            },
+            {
+                "name": "button2",
+                "xml_path": null,
+                "position": [
+                    0.3747415105590606,
+                    -0.0968931027247864,
+                    0.78
+                ],
+                "orientation": [
+                    0.998077995892053,
+                    0.0,
+                    0.0,
+                    0.0619702680008966
+                ],
+                "class": "Button"
+            },
+            {
+                "name": "metal_box",
+                "xml_path": null,
+                "position": [
+                    0.3728539376370256,
+                    0.0031434573489762118,
+                    0.7815601263172608
+                ],
+                "orientation": [
+                    1.0,
+                    -2.1881454976537752e-11,
+                    -4.55618948569433e-10,
+                    1.0235733686617477e-15
+                ],
+                "class": "RandomGeom",
+                "material": "metal",
+                "texture": "metal2"
+            }
+        ],
+        "scene": {
+            "name": "lab_1",
+            "position": [
+                2.0,
+                2.0,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "floorplane"
+            ]
+        },
+        "instructions": [
+            "We are conducting a density experiment. We have three objects with different densities. Choose the object with the medium density."
+        ],
+        "conditions": {
+            "press_button": {
+                "target_button": "button1"
+            }
+        }
+    }
+}

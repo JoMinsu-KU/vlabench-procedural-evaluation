@@ -1,0 +1,152 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "table",
+                "xml_path": "obj/meshes/table/table.xml",
+                "position": [
+                    -1.2404348744665592e-10,
+                    -5.0143481609318766e-11,
+                    -7.67844403127557e-07
+                ],
+                "orientation": [
+                    1.0,
+                    1.7609396634273853e-09,
+                    4.3445745680125465e-10,
+                    -1.1745583256074785e-15
+                ],
+                "class": "Table",
+                "materials": [
+                    "stone"
+                ]
+            },
+            {
+                "name": "button0",
+                "xml_path": null,
+                "position": [
+                    -0.3581286343399975,
+                    -0.14257268955724012,
+                    0.78
+                ],
+                "orientation": [
+                    0.9993197987209209,
+                    0.0,
+                    0.0,
+                    -0.03687736276332887
+                ],
+                "class": "Button"
+            },
+            {
+                "name": "stone_box",
+                "xml_path": null,
+                "position": [
+                    -0.3559967675874535,
+                    -0.05267041878486492,
+                    0.8445692578265663
+                ],
+                "orientation": [
+                    0.9999999999999897,
+                    1.0275320009248884e-07,
+                    -9.3281015796775e-08,
+                    -3.506204337660796e-14
+                ],
+                "class": "RandomGeom",
+                "material": "stone",
+                "texture": "stone2"
+            },
+            {
+                "name": "button1",
+                "xml_path": null,
+                "position": [
+                    -0.008792706027694337,
+                    -0.18631405322215774,
+                    0.78
+                ],
+                "orientation": [
+                    0.9973974105137614,
+                    0.0,
+                    0.0,
+                    -0.07209996879640974
+                ],
+                "class": "Button"
+            },
+            {
+                "name": "metal_box",
+                "xml_path": null,
+                "position": [
+                    0.0011511388807123302,
+                    -0.0731915832141508,
+                    0.7890914665722646
+                ],
+                "orientation": [
+                    1.0,
+                    1.7617797160824012e-09,
+                    4.326331285916413e-10,
+                    -6.626072091499687e-16
+                ],
+                "class": "RandomGeom",
+                "material": "metal",
+                "texture": "metal3"
+            },
+            {
+                "name": "button2",
+                "xml_path": null,
+                "position": [
+                    0.3708514622554115,
+                    -0.18212392208667189,
+                    0.78
+                ],
+                "orientation": [
+                    0.9985075574191893,
+                    0.0,
+                    0.0,
+                    -0.05461371418210393
+                ],
+                "class": "Button"
+            },
+            {
+                "name": "wood_cylinder",
+                "xml_path": null,
+                "position": [
+                    0.3528775085409838,
+                    -0.06915802711626808,
+                    0.7832438703615334
+                ],
+                "orientation": [
+                    0.9999999999999724,
+                    4.725651602345609e-08,
+                    2.30591369943705e-07,
+                    3.9464916999473364e-14
+                ],
+                "class": "RandomGeom",
+                "material": "wood",
+                "texture": "wood3"
+            }
+        ],
+        "scene": {
+            "name": "lab_1",
+            "position": [
+                6.0,
+                2.0,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "floorplane"
+            ]
+        },
+        "instructions": [
+            "At room temperature, we conduct an experiment for three objects, each made of three different materials, and ask which of the objects has sound traveling moderately?"
+        ],
+        "conditions": {
+            "press_button": {
+                "target_button": "button0"
+            }
+        }
+    }
+}

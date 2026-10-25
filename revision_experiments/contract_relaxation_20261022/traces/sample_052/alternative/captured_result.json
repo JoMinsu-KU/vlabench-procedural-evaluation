@@ -1,0 +1,128 @@
+{
+  "ok": true,
+  "execution_completed": true,
+  "condition_success": false,
+  "trace": [
+    {
+      "skill": "pick",
+      "target": {
+        "number": 2,
+        "entity_name": "pear",
+        "entity_class": "Fruit",
+        "target_source": "archived_vlm_output"
+      },
+      "matched_phase_template": "relaxed_diagnostic.step_1.pick",
+      "stage_success": true,
+      "task_success_signal": false,
+      "waypoint_count": 78,
+      "condition_progress_after_step": false
+    },
+    {
+      "skill": "moveto",
+      "target": {
+        "number": 1,
+        "entity_name": "plate_seen",
+        "entity_class": "Plate",
+        "target_source": "archived_vlm_output"
+      },
+      "matched_phase_template": "relaxed_diagnostic.step_2.moveto",
+      "stage_success": false,
+      "task_success_signal": false,
+      "waypoint_count": 61,
+      "condition_progress_after_step": false
+    },
+    {
+      "skill": "place",
+      "target": {
+        "number": 1,
+        "entity_name": "plate_seen",
+        "entity_class": "Plate",
+        "target_source": "archived_vlm_output"
+      },
+      "matched_phase_template": "relaxed_diagnostic.step_3.place",
+      "stage_success": true,
+      "task_success_signal": false,
+      "waypoint_count": 20,
+      "condition_progress_after_step": false
+    }
+  ],
+  "stage_exception_policy": {
+    "enabled": true,
+    "name": "official_style_stage_failure_condition_check",
+    "stage_exception_caught": false,
+    "condition_checked_after_stage_exception": false,
+    "condition_success_after_stage_exception": false,
+    "failed_skill": "",
+    "exception_type": "",
+    "exception": "",
+    "example_specific_rule_used": false
+  },
+  "episode_config_audit": {
+    "added_fields": {
+      "target_entities": {
+        "source": "conditions.contain.entities",
+        "value": [
+          "pear"
+        ]
+      },
+      "target_entity": {
+        "source": "conditions.contain.entities[0]",
+        "value": "pear"
+      },
+      "target_container": {
+        "source": "conditions.contain.container",
+        "value": "plate_seen"
+      },
+      "target_containers": {
+        "source": "derived.task.target_container",
+        "value": [
+          "plate_seen"
+        ]
+      },
+      "target_platform": {
+        "source": "derived.task.target_container",
+        "value": "plate_seen"
+      }
+    },
+    "native_seed": null,
+    "post_load_config_manager_fields": {
+      "target_entity": "pear",
+      "target_entities": [
+        "pear"
+      ],
+      "target_container": "plate_seen"
+    },
+    "post_load_mirrored_fields": {
+      "target_containers": [
+        "plate_seen"
+      ],
+      "target_platform": "plate_seen"
+    },
+    "reset_task_progress_called": true
+  },
+  "visual_audit": {
+    "before": {
+      "enabled": false,
+      "phase": "before",
+      "images": [],
+      "contact_sheet": "",
+      "skipped_reason": "pre_execution_render_disabled_to_preserve_native_state"
+    },
+    "after": {
+      "enabled": true,
+      "phase": "after",
+      "images": [
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_052/alternative/visual_audit/after_camera0.png",
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_052/alternative/visual_audit/after_camera1.png",
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_052/alternative/visual_audit/after_camera2.png",
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_052/alternative/visual_audit/after_camera3.png"
+      ],
+      "contact_sheet": "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_052/alternative/visual_audit/after_contact_sheet.png"
+    }
+  },
+  "gt_used_during_execution": false,
+  "operation_sequence_read": false,
+  "expert_sequence_called": false,
+  "stdout": "Checking if can connect to goal at 45 samples\nCan connect to goal\nChecking if can connect to goal at 25 samples\nCan connect to goal\nChecking if can connect to goal at 19 samples\nCan connect to goal\n",
+  "stderr": "Dropped Escape call with ulEscapeCode : 0x03007703\n"
+}

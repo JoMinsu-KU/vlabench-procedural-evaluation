@@ -1,0 +1,131 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "table",
+                "xml_path": "obj/meshes/table/table.xml",
+                "position": [
+                    -1.5555148187629372e-08,
+                    -1.1868212529511726e-10,
+                    -7.65124516648866e-07
+                ],
+                "orientation": [
+                    1.0,
+                    -2.9406096064521215e-10,
+                    -2.3475718585849126e-10,
+                    -9.797597783001525e-10
+                ],
+                "class": "Table",
+                "materials": [
+                    "stone0"
+                ]
+            },
+            {
+                "name": "giftbox_seen",
+                "xml_path": "obj/meshes/containers/boxes/giftbox/giftbox_1/giftbox.xml",
+                "position": [
+                    -0.2688252956511942,
+                    -0.04107852198521105,
+                    0.7709990951807231
+                ],
+                "orientation": [
+                    0.9991101625489522,
+                    0.0007788290915756636,
+                    -0.00043138946362005116,
+                    -0.042167409450712984
+                ],
+                "class": "CommonContainer"
+            },
+            {
+                "name": "nami",
+                "xml_path": "obj/meshes/toys/onepiece/nami/nami_0/nami_one_piece.xml",
+                "position": [
+                    0.2345808068921735,
+                    0.16261971189128285,
+                    0.7650227182611425
+                ],
+                "orientation": [
+                    -0.00029346515062147517,
+                    0.0002433361437799355,
+                    0.7073878465197905,
+                    0.706825501281483
+                ],
+                "class": "Toy"
+            },
+            {
+                "name": "woody",
+                "xml_path": "obj/meshes/toys/disney/toystory/woody/woody_0/woody.xml",
+                "position": [
+                    0.05301261040800987,
+                    -0.13007825679856372,
+                    0.7649988547364805
+                ],
+                "orientation": [
+                    -2.6329240293520624e-05,
+                    -2.6115558327499597e-05,
+                    0.7073881076063742,
+                    0.7068253418220242
+                ],
+                "class": "Toy"
+            },
+            {
+                "name": "wonder_woman",
+                "xml_path": "obj/meshes/toys/DC/wonder_woman/wonder_woman_0/wonder_womantexturedrigged.xml",
+                "position": [
+                    -0.1025282247862359,
+                    0.15283959659742666,
+                    0.765683111262935
+                ],
+                "orientation": [
+                    0.006668249405171002,
+                    -0.006609938506293651,
+                    0.7073568291188014,
+                    0.7067942836935017
+                ],
+                "class": "Toy"
+            },
+            {
+                "name": "aquaman",
+                "xml_path": "obj/meshes/toys/DC/aquaman/aquaman_0/fortnite_aquaman__chapter_2_season_3_bp_skin.xml",
+                "position": [
+                    0.2035992948033517,
+                    -0.052858157320515825,
+                    0.7653537571262751
+                ],
+                "orientation": [
+                    0.0031073844030695156,
+                    -0.0031780950743929112,
+                    0.7073807771867727,
+                    0.7068187037285508
+                ],
+                "class": "Toy"
+            }
+        ],
+        "scene": {
+            "name": "studyroom_0",
+            "position": [
+                -1.0,
+                -1.0,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "floorplane"
+            ]
+        },
+        "instructions": [],
+        "conditions": {
+            "contain": {
+                "container": "giftbox_seen",
+                "entities": [
+                    "nami"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,161 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "table",
+                "xml_path": "obj/meshes/table/table.xml",
+                "position": [
+                    5.562047592330809e-05,
+                    -9.92014627468759e-05,
+                    0.011998532147165845
+                ],
+                "orientation": [
+                    0.9999999999999974,
+                    -6.541482644521423e-08,
+                    -3.669523664323164e-08,
+                    1.7401863084167655e-10
+                ],
+                "class": "Table",
+                "materials": [
+                    "stone2"
+                ]
+            },
+            {
+                "name": "card_holder5",
+                "xml_path": null,
+                "position": [
+                    -0.2191866610016806,
+                    0.19990304433433528,
+                    0.7779982690065887
+                ],
+                "orientation": [
+                    0.7071067807165836,
+                    -7.202142473349898e-08,
+                    2.032748318003624e-08,
+                    0.7071067816565074
+                ],
+                "class": "CardHolder"
+            },
+            {
+                "name": "5_of_spades",
+                "xml_path": "obj/meshes/poker/poker_asset.xml",
+                "position": [
+                    -0.21924102190837577,
+                    0.1999999999999685,
+                    0.892556870431448
+                ],
+                "orientation": [
+                    0.4999999999992134,
+                    -0.5000000000008532,
+                    0.5000000000007866,
+                    0.49999999999914685
+                ],
+                "class": "Poker",
+                "value": "5",
+                "suite": "spades"
+            },
+            {
+                "name": "card_holderking",
+                "xml_path": null,
+                "position": [
+                    -0.11761791651253797,
+                    0.19990304406155926,
+                    0.7779982764596622
+                ],
+                "orientation": [
+                    0.7071067807165756,
+                    -7.20214247246219e-08,
+                    2.0327483181319088e-08,
+                    0.7071067816565162
+                ],
+                "class": "CardHolder"
+            },
+            {
+                "name": "king_of_hearts",
+                "xml_path": "obj/meshes/poker/poker_asset.xml",
+                "position": [
+                    -0.11767227759338804,
+                    0.19999999999996848,
+                    0.8925568704314479
+                ],
+                "orientation": [
+                    0.49999999999921024,
+                    -0.5000000000008561,
+                    0.5000000000007889,
+                    0.4999999999991442
+                ],
+                "class": "Poker",
+                "value": "king",
+                "suite": "hearts"
+            },
+            {
+                "name": "card_holderqueen",
+                "xml_path": null,
+                "position": [
+                    5.436128261762842e-05,
+                    0.19990304374552717,
+                    0.7779982850944068
+                ],
+                "orientation": [
+                    0.7071067807165667,
+                    -7.202142471441198e-08,
+                    2.0327483182732687e-08,
+                    0.7071067816565245
+                ],
+                "class": "CardHolder"
+            },
+            {
+                "name": "queen_of_diamonds",
+                "xml_path": "obj/meshes/poker/poker_asset.xml",
+                "position": [
+                    -3.6263801967422935e-15,
+                    0.19999999999996843,
+                    0.8925568704314483
+                ],
+                "orientation": [
+                    0.499999999999208,
+                    -0.500000000000858,
+                    0.5000000000007908,
+                    0.49999999999914196
+                ],
+                "class": "Poker",
+                "value": "queen",
+                "suite": "diamonds"
+            }
+        ],
+        "scene": {
+            "name": "living_room_0",
+            "position": [
+                -2.0,
+                3.5,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "floorplane"
+            ]
+        },
+        "instructions": [
+            "Please pick the the largest poker"
+        ],
+        "conditions": {
+            "is_grasped": {
+                "entities": [
+                    "king_of_hearts"
+                ],
+                "robot": "franka"
+            },
+            "lift": {
+                "entities": [
+                    "king_of_hearts"
+                ],
+                "target_height": 0.9
+            }
+        }
+    }
+}

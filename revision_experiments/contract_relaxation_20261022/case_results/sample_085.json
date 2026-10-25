@@ -1,0 +1,146 @@
+{
+  "audit_id": "sample_085",
+  "model": "qwen",
+  "task_name": "thermal_expansion_qa",
+  "case_id": "PhysicsLaw/thermal_expansion_qa/example27",
+  "original_rejection": "extra_phase",
+  "dispatch_category": "runnable",
+  "dispatch_detail": "only_reference_phase_equality_bypassed",
+  "native_attempted": true,
+  "verified_goal": false,
+  "verified_goal_all_stages": false,
+  "verified_goal_with_stage_failure": false,
+  "outcome": "native_exception_or_incomplete",
+  "arms": {
+    "initial_no_action": {
+      "audit_id": "sample_085",
+      "model": "qwen",
+      "case_id": "PhysicsLaw/thermal_expansion_qa/example27",
+      "task_name": "thermal_expansion_qa",
+      "arm": "initial_no_action",
+      "elapsed_sec": 7.296,
+      "raw_final_goal": false,
+      "complete_without_exception": true,
+      "full_trace_identity": true,
+      "trace_is_original_prefix": true,
+      "observed_steps": [],
+      "expected_steps": [],
+      "stage_success_flags": [],
+      "all_stages_success": false,
+      "stage_false_count": 0,
+      "goal_after_complete_execution": false,
+      "goal_and_all_stages_success": false,
+      "goal_with_stage_failure": false,
+      "stage_exception": false,
+      "native_timeout": false,
+      "infrastructure_error": false,
+      "pre_action_load_failure": false,
+      "native_exception": "",
+      "stage_exception_detail": ""
+    },
+    "canonical_control": {
+      "audit_id": "sample_085",
+      "model": "qwen",
+      "case_id": "PhysicsLaw/thermal_expansion_qa/example27",
+      "task_name": "thermal_expansion_qa",
+      "arm": "canonical_control",
+      "elapsed_sec": 24.945,
+      "raw_final_goal": true,
+      "complete_without_exception": true,
+      "full_trace_identity": true,
+      "trace_is_original_prefix": true,
+      "observed_steps": [
+        {
+          "skill": "press",
+          "target": 3
+        }
+      ],
+      "expected_steps": [
+        {
+          "skill": "press",
+          "target": 3
+        }
+      ],
+      "stage_success_flags": [
+        false
+      ],
+      "all_stages_success": false,
+      "stage_false_count": 1,
+      "goal_after_complete_execution": true,
+      "goal_and_all_stages_success": false,
+      "goal_with_stage_failure": true,
+      "stage_exception": false,
+      "native_timeout": false,
+      "infrastructure_error": false,
+      "pre_action_load_failure": false,
+      "native_exception": "",
+      "stage_exception_detail": ""
+    },
+    "alternative": {
+      "audit_id": "sample_085",
+      "model": "qwen",
+      "case_id": "PhysicsLaw/thermal_expansion_qa/example27",
+      "task_name": "thermal_expansion_qa",
+      "arm": "alternative",
+      "elapsed_sec": 45.617,
+      "raw_final_goal": false,
+      "complete_without_exception": false,
+      "full_trace_identity": true,
+      "trace_is_original_prefix": true,
+      "observed_steps": [
+        {
+          "skill": "pick",
+          "target": 2
+        },
+        {
+          "skill": "lift"
+        },
+        {
+          "skill": "moveto",
+          "target": 4
+        },
+        {
+          "skill": "place",
+          "target": 4
+        }
+      ],
+      "expected_steps": [
+        {
+          "skill": "pick",
+          "target": 2
+        },
+        {
+          "skill": "lift"
+        },
+        {
+          "skill": "moveto",
+          "target": 4
+        },
+        {
+          "skill": "place",
+          "target": 4
+        }
+      ],
+      "stage_success_flags": [
+        true,
+        false,
+        true,
+        false
+      ],
+      "all_stages_success": false,
+      "stage_false_count": 2,
+      "goal_after_complete_execution": false,
+      "goal_and_all_stages_success": false,
+      "goal_with_stage_failure": false,
+      "stage_exception": true,
+      "native_timeout": false,
+      "infrastructure_error": false,
+      "pre_action_load_failure": false,
+      "native_exception": "'RandomGeom' object has no attribute 'get_place_point'",
+      "stage_exception_detail": "'RandomGeom' object has no attribute 'get_place_point'"
+    }
+  },
+  "initial_goal_false_verified": true,
+  "canonical_goal": true,
+  "canonical_all_stages": false
+}

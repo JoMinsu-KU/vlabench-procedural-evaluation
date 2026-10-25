@@ -1,0 +1,129 @@
+[
+  {
+    "audit_id": "sample_048",
+    "model": "internvl",
+    "case_id": "CommenSence/select_drink_common_sense/example41",
+    "original_plan": [
+      {
+        "skill": "pick",
+        "target": 3
+      },
+      {
+        "skill": "place",
+        "target": 0
+      }
+    ],
+    "stage_flags": [
+      true,
+      true
+    ],
+    "all_stage_goal": true,
+    "canonical_goal": true
+  },
+  {
+    "audit_id": "sample_053",
+    "model": "gemma",
+    "case_id": "M&T/select_fruit/example90",
+    "original_plan": [
+      {
+        "skill": "pick",
+        "target": 2
+      },
+      {
+        "skill": "lift"
+      },
+      {
+        "skill": "moveto",
+        "target": 1
+      },
+      {
+        "skill": "lift"
+      },
+      {
+        "skill": "place",
+        "target": 1
+      }
+    ],
+    "stage_flags": [
+      true,
+      true,
+      false,
+      false,
+      true
+    ],
+    "all_stage_goal": false,
+    "canonical_goal": true
+  },
+  {
+    "audit_id": "sample_054",
+    "model": "qwen",
+    "case_id": "CommenSence/select_fruit_common_sense/example54",
+    "original_plan": [
+      {
+        "skill": "pick",
+        "target": 2
+      },
+      {
+        "skill": "lift"
+      },
+      {
+        "skill": "moveto",
+        "target": 1
+      },
+      {
+        "skill": "place",
+        "target": 1
+      }
+    ],
+    "stage_flags": [
+      true,
+      true,
+      false,
+      true
+    ],
+    "all_stage_goal": false,
+    "canonical_goal": true
+  },
+  {
+    "audit_id": "sample_073",
+    "model": "gemma",
+    "case_id": "M&T/select_toy/example94",
+    "original_plan": [
+      {
+        "skill": "pick",
+        "target": 2
+      },
+      {
+        "skill": "place",
+        "target": 1
+      }
+    ],
+    "stage_flags": [
+      true,
+      true
+    ],
+    "all_stage_goal": true,
+    "canonical_goal": true
+  },
+  {
+    "audit_id": "sample_074",
+    "model": "qwen",
+    "case_id": "CommenSence/select_toy_common_sense/example35",
+    "original_plan": [
+      {
+        "skill": "pick",
+        "target": 2
+      },
+      {
+        "skill": "place",
+        "target": 1
+      }
+    ],
+    "stage_flags": [
+      true,
+      true
+    ],
+    "all_stage_goal": true,
+    "canonical_goal": true
+  }
+]

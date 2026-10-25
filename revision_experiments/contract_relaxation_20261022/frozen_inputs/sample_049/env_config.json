@@ -1,0 +1,99 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "table",
+                "xml_path": "obj/meshes/table/table.xml",
+                "position": [
+                    -1.5645145872378524e-19,
+                    2.7564901836433475e-17,
+                    -7.538417574201983e-07
+                ],
+                "orientation": [
+                    1.0,
+                    2.1050323983674924e-17,
+                    7.375551457020556e-20,
+                    -2.2047161008032804e-21
+                ],
+                "class": "Table",
+                "materials": [
+                    "wood4"
+                ]
+            },
+            {
+                "name": "fridge_open",
+                "xml_path": "obj/meshes/containers/fridge/fridge_open/fridge_open_0/mobility.xml",
+                "position": [
+                    0.04222494884587838,
+                    0.3442661253051534,
+                    0.74
+                ],
+                "orientation": [
+                    0.9998841175865867,
+                    0.0,
+                    0.0,
+                    0.01522338326696333
+                ],
+                "class": "Fridge"
+            },
+            {
+                "name": "jumpstart",
+                "xml_path": "obj/meshes/drinks/energy_drink/jumpstart/jumpstart.xml",
+                "position": [
+                    -0.007083346598590788,
+                    0.30072702188373046,
+                    0.8401313996248262
+                ],
+                "orientation": [
+                    0.9995914304871347,
+                    3.373296992112546e-05,
+                    -1.474163634360907e-06,
+                    -0.028582703801380824
+                ],
+                "class": "Drink"
+            },
+            {
+                "name": "cola",
+                "xml_path": "obj/meshes/drinks/sota_drink/cola/pepsi_1/pepsi.xml",
+                "position": [
+                    0.12026484622123124,
+                    0.2801925908365702,
+                    0.8379785228830811
+                ],
+                "orientation": [
+                    0.9982367366526764,
+                    6.130399438220464e-05,
+                    2.7941162423414042e-05,
+                    0.059358344469220635
+                ],
+                "class": "Drink"
+            }
+        ],
+        "scene": {
+            "name": "studyroom_0",
+            "position": [
+                -1.5,
+                -1.0,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "floorplane"
+            ]
+        },
+        "instructions": [],
+        "conditions": {
+            "not_contain": {
+                "container": "fridge_open",
+                "entities": [
+                    "cola"
+                ]
+            }
+        }
+    }
+}

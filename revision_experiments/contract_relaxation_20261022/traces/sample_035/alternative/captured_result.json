@@ -1,0 +1,157 @@
+{
+  "ok": false,
+  "execution_completed": false,
+  "condition_success": false,
+  "trace": [
+    {
+      "skill": "moveto",
+      "target": {
+        "number": 3,
+        "entity_name": "K2CrO4",
+        "entity_class": "ChemistryTube",
+        "target_source": "archived_vlm_output"
+      },
+      "matched_phase_template": "relaxed_diagnostic.step_1.moveto",
+      "stage_success": false,
+      "task_success_signal": false,
+      "waypoint_count": 42,
+      "condition_progress_after_step": false
+    },
+    {
+      "skill": "pick",
+      "target": {
+        "number": 3,
+        "entity_name": "K2CrO4",
+        "entity_class": "ChemistryTube",
+        "target_source": "archived_vlm_output"
+      },
+      "matched_phase_template": "relaxed_diagnostic.step_2.pick",
+      "stage_success": true,
+      "task_success_signal": false,
+      "waypoint_count": 36,
+      "condition_progress_after_step": false
+    },
+    {
+      "skill": "lift",
+      "target": null,
+      "matched_phase_template": "relaxed_diagnostic.step_3.lift",
+      "stage_success": false,
+      "task_success_signal": false,
+      "waypoint_count": 30,
+      "condition_progress_after_step": false
+    },
+    {
+      "skill": "moveto",
+      "target": {
+        "number": 1,
+        "entity_name": "chemistry_tube_stand",
+        "entity_class": "TubeStand",
+        "target_source": "archived_vlm_output"
+      },
+      "matched_phase_template": "relaxed_diagnostic.step_4.moveto",
+      "stage_success": false,
+      "task_success_signal": false,
+      "waypoint_count": 33,
+      "condition_progress_after_step": false
+    },
+    {
+      "skill": "place",
+      "target": {
+        "number": 1,
+        "entity_name": "chemistry_tube_stand",
+        "entity_class": "TubeStand",
+        "target_source": "archived_vlm_output"
+      },
+      "matched_phase_template": "relaxed_diagnostic.step_5.place",
+      "stage_success": false,
+      "task_success_signal": false,
+      "waypoint_count": 0,
+      "condition_progress_after_step": false,
+      "stage_exception_type": "TypeError",
+      "stage_exception": "cannot unpack non-iterable NoneType object"
+    }
+  ],
+  "stage_exception_policy": {
+    "enabled": true,
+    "name": "official_style_stage_failure_condition_check",
+    "stage_exception_caught": true,
+    "condition_checked_after_stage_exception": true,
+    "condition_success_after_stage_exception": false,
+    "failed_skill": "place",
+    "exception_type": "TypeError",
+    "exception": "cannot unpack non-iterable NoneType object",
+    "example_specific_rule_used": false
+  },
+  "episode_config_audit": {
+    "added_fields": {
+      "target_container": {
+        "source": "conditions.not_contain.container",
+        "value": "chemistry_tube_stand"
+      },
+      "target_containers": {
+        "source": "derived.task.target_container",
+        "value": [
+          "chemistry_tube_stand"
+        ]
+      },
+      "target_platform": {
+        "source": "derived.task.target_container",
+        "value": "chemistry_tube_stand"
+      },
+      "target_entities": {
+        "source": "conditions.not_contain.entities",
+        "value": [
+          "KMnO4"
+        ]
+      },
+      "target_entity": {
+        "source": "conditions.not_contain.entities[0]",
+        "value": "KMnO4"
+      }
+    },
+    "native_seed": null,
+    "post_load_config_manager_fields": {
+      "target_entity": "KMnO4",
+      "target_entities": [
+        "KMnO4"
+      ],
+      "target_container": "chemistry_tube_stand"
+    },
+    "post_load_mirrored_fields": {
+      "target_containers": [
+        "chemistry_tube_stand"
+      ],
+      "target_platform": "chemistry_tube_stand"
+    },
+    "reset_task_progress_called": true
+  },
+  "visual_audit": {
+    "before": {
+      "enabled": false,
+      "phase": "before",
+      "images": [],
+      "contact_sheet": "",
+      "skipped_reason": "pre_execution_render_disabled_to_preserve_native_state"
+    },
+    "after": {
+      "enabled": true,
+      "phase": "after",
+      "images": [
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_035/alternative/visual_audit/after_camera0.png",
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_035/alternative/visual_audit/after_camera1.png",
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_035/alternative/visual_audit/after_camera2.png",
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_035/alternative/visual_audit/after_camera3.png"
+      ],
+      "contact_sheet": "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_035/alternative/visual_audit/after_contact_sheet.png"
+    }
+  },
+  "gt_used_during_execution": false,
+  "operation_sequence_read": false,
+  "expert_sequence_called": false,
+  "native_exception": true,
+  "exception_type": "TypeError",
+  "exception": "cannot unpack non-iterable NoneType object",
+  "traceback": "Traceback (most recent call last):\n  File \"/mnt/c/VLABenchProcEval/procedural_interface/execution/vlabench_native_worker.py\", line 905, in main\n    trace_row = _execute_step(env, task_name, step)\n  File \"/mnt/c/VLABenchProcEval/procedural_interface/execution/vlabench_native_worker.py\", line 575, in _execute_step\n    obs, waypoints, stage_success, task_success = SkillLib.place(env, target_container_name=target_name)\nTypeError: cannot unpack non-iterable NoneType object\n",
+  "stdout": "Checking if can connect to goal at 5 samples\nCould not connect to goal\nChecking if can connect to goal at 9 samples\nCould not connect to goal\nChecking if can connect to goal at 13 samples\nCould not connect to goal\nChecking if can connect to goal at 17 samples\nCould not connect to goal\nChecking if can connect to goal at 27 samples\nCould not connect to goal\nChecking if can connect to goal at 51 samples\nCould not connect to goal\nChecking if can connect to goal at 55 samples\nCould not connect to goal\nChecking if can connect to goal at 87 samples\nCould not connect to goal\nChecking if can connect to goal at 115 samples\nCould not connect to goal\nChecking if can connect to goal at 123 samples\nCould not connect to goal\nChecking if can connect to goal at 129 samples\nCould not connect to goal\nChecking if can connect to goal at 163 samples\nCould not connect to goal\nChecking if can connect to goal at 177 samples\nCould not connect to goal\nChecking if can connect to goal at 179 samples\nCould not connect to goal\nChecking if can connect to goal at 187 samples\nCould not connect to goal\nChecking if can connect to goal at 225 samples\nCould not connect to goal\nChecking if can connect to goal at 231 samples\nCould not connect to goal\nChecking if can connect to goal at 233 samples\nCould not connect to goal\nChecking if can connect to goal at 235 samples\nCould not connect to goal\nChecking if can connect to goal at 257 samples\nCould not connect to goal\nChecking if can connect to goal at 261 samples\nCould not connect to goal\nChecking if can connect to goal at 267 samples\nCould not connect to goal\nChecking if can connect to goal at 273 samples\nCould not connect to goal\nChecking if can connect to goal at 275 samples\nCould not connect to goal\nChecking if can connect to goal at 279 samples\nCould not connect to goal\nChecking if can connect to goal at 283 samples\nCould not connect to goal\nChecking if can connect to goal at 293 samples\nCould not connect to goal\nChecking if can connect to goal at 307 samples\nCould not connect to goal\nChecking if can connect to goal at 313 samples\nCould not connect to goal\nChecking if can connect to goal at 347 samples\nCould not connect to goal\nChecking if can connect to goal at 403 samples\nCould not connect to goal\nChecking if can connect to goal at 435 samples\nCould not connect to goal\nChecking if can connect to goal at 461 samples\nCould not connect to goal\nChecking if can connect to goal at 465 samples\nCould not connect to goal\nChecking if can connect to goal at 467 samples\nCould not connect to goal\nChecking if can connect to goal at 469 samples\nCould not connect to goal\nChecking if can connect to goal at 471 samples\nCould not connect to goal\nChecking if can connect to goal at 481 samples\nCould not connect to goal\nChecking if can connect to goal at 493 samples\nCould not connect to goal\nChecking if can connect to goal at 497 samples\nCould not connect to goal\nChecking if can connect to goal at 531 samples\nCould not connect to goal\nChecking if can connect to goal at 533 samples\nCould not connect to goal\nChecking if can connect to goal at 557 samples\nCould not connect to goal\nChecking if can connect to goal at 563 samples\nCould not connect to goal\nChecking if can connect to goal at 567 samples\nCould not connect to goal\nChecking if can connect to goal at 577 samples\nCould not connect to goal\nChecking if can connect to goal at 601 samples\nCould not connect to goal\nChecking if can connect to goal at 603 samples\nCould not connect to goal\nChecking if can connect to goal at 605 samples\nCould not connect to goal\nChecking if can connect to goal at 631 samples\nCould not connect to goal\nChecking if can connect to goal at 635 samples\nCould not connect to goal\nChecking if can connect to goal at 667 samples\nCould not connect to goal\nChecking if can connect to goal at 677 samples\nCould not connect to goal\nChecking if can connect to goal at 685 samples\nCould not connect to goal\nChecking if can connect to goal at 701 samples\nCould not connect to goal\nChecking if can connect to goal at 709 samples\nCould not connect to goal\nChecking if can connect to goal at 727 samples\nCould not connect to goal\nChecking if can connect to goal at 739 samples\nCould not connect to goal\nChecking if can connect to goal at 747 samples\nCould not connect to goal\nChecking if can connect to goal at 757 samples\nCould not connect to goal\nChecking if can connect to goal at 805 samples\nCould not connect to goal\nChecking if can connect to goal at 815 samples\nCould not connect to goal\nChecking if can connect to goal at 817 samples\nCould not connect to goal\nChecking if can connect to goal at 873 samples\nCould not connect to goal\nChecking if can connect to goal at 877 samples\nCould not connect to goal\nChecking if can connect to goal at 897 samples\nCould not connect to goal\nChecking if can connect to goal at 901 samples\nCould not connect to goal\nChecking if can connect to goal at 975 samples\nCould not connect to goal\nChecking if can connect to goal at 1009 samples\nCould not connect to goal\nCould not connect to goal\nChecking if can connect to goal at 19 samples\nCan connect to goal\nChecking if can connect to goal at 3 samples\nCould not connect to goal\nChecking if can connect to goal at 15 samples\nCould not connect to goal\nChecking if can connect to goal at 23 samples\nCould not connect to goal\nChecking if can connect to goal at 25 samples\nCould not connect to goal\nChecking if can connect to goal at 47 samples\nCould not connect to goal\nChecking if can connect to goal at 65 samples\nCould not connect to goal\nChecking if can connect to goal at 85 samples\nCould not connect to goal\nChecking if can connect to goal at 87 samples\nCould not connect to goal\nChecking if can connect to goal at 119 samples\nCould not connect to goal\nChecking if can connect to goal at 123 samples\nCould not connect to goal\nChecking if can connect to goal at 127 samples\nCould not connect to goal\nChecking if can connect to goal at 133 samples\nCould not connect to goal\nChecking if can connect to goal at 147 samples\nCould not connect to goal\nChecking if can connect to goal at 173 samples\nCould not connect to goal\nChecking if can connect to goal at 265 samples\nCould not connect to goal\nChecking if can connect to goal at 281 samples\nCould not connect to goal\nChecking if can connect to goal at 315 samples\nCould not connect to goal\nChecking if can connect to goal at 325 samples\nCould not connect to goal\nChecking if can connect to goal at 363 samples\nCould not connect to goal\nChecking if can connect to goal at 375 samples\nCould not connect to goal\nChecking if can connect to goal at 407 samples\nCould not connect to goal\nChecking if can connect to goal at 427 samples\nCould not connect to goal\nChecking if can connect to goal at 435 samples\nCould not connect to goal\nChecking if can connect to goal at 513 samples\nCould not connect to goal\nChecking if can connect to goal at 525 samples\nCould not connect to goal\nChecking if can connect to goal at 555 samples\nCould not connect to goal\nChecking if can connect to goal at 567 samples\nCould not connect to goal\nChecking if can connect to goal at 569 samples\nCould not connect to goal\nChecking if can connect to goal at 571 samples\nCould not connect to goal\nChecking if can connect to goal at 575 samples\nCould not connect to goal\nChecking if can connect to goal at 577 samples\nCould not connect to goal\nChecking if can connect to goal at 581 samples\nCould not connect to goal\nChecking if can connect to goal at 621 samples\nCould not connect to goal\nChecking if can connect to goal at 637 samples\nCould not connect to goal\nChecking if can connect to goal at 681 samples\nCould not connect to goal\nChecking if can connect to goal at 685 samples\nCould not connect to goal\nChecking if can connect to goal at 687 samples\nCould not connect to goal\nChecking if can connect to goal at 693 samples\nCould not connect to goal\nChecking if can connect to goal at 739 samples\nCould not connect to goal\nChecking if can connect to goal at 833 samples\nCould not connect to goal\nChecking if can connect to goal at 855 samples\nCould not connect to goal\nChecking if can connect to goal at 863 samples\nCould not connect to goal\nChecking if can connect to goal at 869 samples\nCould not connect to goal\nChecking if can connect to goal at 881 samples\nCould not connect to goal\nChecking if can connect to goal at 951 samples\nCould not connect to goal\nChecking if can connect to goal at 953 samples\nCould not connect to goal\nChecking if can connect to goal at 1003 samples\nCould not connect to goal\nChecking if can connect to goal at 1011 samples\nCould not connect to goal\nCould not connect to goal\ncan not find valid place point, reset the env\n",
+  "stderr": "Dropped Escape call with ulEscapeCode : 0x03007703\n"
+}

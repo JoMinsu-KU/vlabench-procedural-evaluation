@@ -1,0 +1,117 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "table",
+                "xml_path": "obj/meshes/table/table.xml",
+                "position": [
+                    5.35554680850498e-09,
+                    -2.4670125369738982e-11,
+                    -7.649257155112591e-07
+                ],
+                "orientation": [
+                    1.0,
+                    -2.3089303856553806e-10,
+                    9.831052390122657e-11,
+                    -2.1961912486060146e-09
+                ],
+                "class": "Table",
+                "materials": [
+                    "stone4"
+                ]
+            },
+            {
+                "name": "giftbox_seen",
+                "xml_path": "obj/meshes/containers/boxes/giftbox/giftbox_0/giftbox.xml",
+                "position": [
+                    -0.25639123064269215,
+                    -0.03806898579106155,
+                    0.7709990955497781
+                ],
+                "orientation": [
+                    0.9973325772526846,
+                    0.0007651427815105012,
+                    -0.00045522295505225405,
+                    -0.07298587314750336
+                ],
+                "class": "CommonContainer"
+            },
+            {
+                "name": "nami",
+                "xml_path": "obj/meshes/toys/onepiece/nami/nami_0/nami_one_piece.xml",
+                "position": [
+                    0.22153525718875308,
+                    0.1522607433269498,
+                    0.7688946292078728
+                ],
+                "orientation": [
+                    -0.034726691285284106,
+                    0.03475222838001678,
+                    0.7065280135318915,
+                    0.705977694852804
+                ],
+                "class": "Toy"
+            },
+            {
+                "name": "minnie",
+                "xml_path": "obj/meshes/toys/disney/mickey/minnie/minnie_0/disneys_minnie_mouse_-_classic.xml",
+                "position": [
+                    0.05284122811023118,
+                    -0.13127623586777984,
+                    0.7651946915839197
+                ],
+                "orientation": [
+                    0.706820064531199,
+                    0.7073879578471852,
+                    0.0015906899332398963,
+                    -0.0022678567934485716
+                ],
+                "class": "Toy"
+            },
+            {
+                "name": "hulk",
+                "xml_path": "obj/meshes/toys/marvel/hulk/hulk_1/hulk_gym.xml",
+                "position": [
+                    -0.12519377410493443,
+                    0.1338674331276124,
+                    0.7658019945465265
+                ],
+                "orientation": [
+                    0.007288296431459484,
+                    -0.0072491895610279095,
+                    0.7073514234309609,
+                    0.7067873044672138
+                ],
+                "class": "Toy"
+            }
+        ],
+        "scene": {
+            "name": "studyroom_0",
+            "position": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "floorplane"
+            ]
+        },
+        "instructions": [
+            "Put the nami into the giftbox_seen"
+        ],
+        "conditions": {
+            "contain": {
+                "container": "giftbox_seen",
+                "entities": [
+                    "nami"
+                ]
+            }
+        }
+    }
+}

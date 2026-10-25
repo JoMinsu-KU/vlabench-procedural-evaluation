@@ -1,0 +1,131 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "table",
+                "xml_path": "obj/meshes/table/table.xml",
+                "position": [
+                    3.4621399431334995e-09,
+                    1.4162301098070891e-09,
+                    -7.651558993308249e-07
+                ],
+                "orientation": [
+                    1.0,
+                    1.7131396944571426e-10,
+                    -2.466167715868159e-09,
+                    -1.7060100240097453e-09
+                ],
+                "class": "Table",
+                "materials": [
+                    "stone"
+                ]
+            },
+            {
+                "name": "giftbox_seen",
+                "xml_path": "obj/meshes/containers/boxes/giftbox/giftbox_0/giftbox.xml",
+                "position": [
+                    0.21808235590155636,
+                    -0.05071109046632543,
+                    0.7709990963096632
+                ],
+                "orientation": [
+                    0.9977864002251087,
+                    0.0008210405151176837,
+                    -0.0003443342165967775,
+                    0.06649441218809381
+                ],
+                "class": "CommonContainer"
+            },
+            {
+                "name": "mickey",
+                "xml_path": "obj/meshes/toys/disney/mickey/mickey/mickey_0/mickey.xml",
+                "position": [
+                    -0.2603730489865132,
+                    0.13882423536551403,
+                    0.7598789974099127
+                ],
+                "orientation": [
+                    0.7068718931730436,
+                    0.707337318975614,
+                    0.001975300346405579,
+                    0.001463562397225339
+                ],
+                "class": "Toy"
+            },
+            {
+                "name": "flashman",
+                "xml_path": "obj/meshes/toys/DC/flashman/flashman_0/flashinjustice_2_texturedrigged.xml",
+                "position": [
+                    -0.10759933253806328,
+                    -0.13377452840081328,
+                    0.7653178252104786
+                ],
+                "orientation": [
+                    0.7071634636916643,
+                    0.707040707535528,
+                    -0.0017784262766497646,
+                    0.0031797338326582355
+                ],
+                "class": "Toy"
+            },
+            {
+                "name": "thor",
+                "xml_path": "obj/meshes/toys/marvel/thor/thor_0/thortexturedrigged.xml",
+                "position": [
+                    0.06531019178226054,
+                    0.13615007438976198,
+                    0.7650546378171352
+                ],
+                "orientation": [
+                    0.7068268060620968,
+                    0.70738608826165,
+                    -0.0006257893541318674,
+                    0.0006298838139515981
+                ],
+                "class": "Toy"
+            },
+            {
+                "name": "chopper",
+                "xml_path": "obj/meshes/toys/onepiece/chopper/chopper_1/one_piece_pirate_warriors__tony_tony_chopper.xml",
+                "position": [
+                    -0.26904061867066487,
+                    -0.06385396630311617,
+                    0.7649983045139631
+                ],
+                "orientation": [
+                    0.7068258582644346,
+                    0.7073875923824968,
+                    1.0669830304958552e-05,
+                    1.0871737132142484e-05
+                ],
+                "class": "Toy"
+            }
+        ],
+        "scene": {
+            "name": "studyroom_0",
+            "position": [
+                -1.5,
+                1.0,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "floorplane"
+            ]
+        },
+        "instructions": [],
+        "conditions": {
+            "contain": {
+                "container": "giftbox_seen",
+                "entities": [
+                    "mickey"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,149 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "table",
+                "xml_path": "obj/meshes/table/table.xml",
+                "position": [
+                    5.344559949016881e-10,
+                    -2.776633471525818e-09,
+                    -1.2461286088990186e-06
+                ],
+                "orientation": [
+                    0.9999999999999651,
+                    -2.6467034161984703e-07,
+                    1.3679657202371102e-08,
+                    -1.2998287775786055e-10
+                ],
+                "class": "Table",
+                "materials": [
+                    "stone0"
+                ]
+            },
+            {
+                "name": "shelf_seen",
+                "xml_path": "obj/meshes/containers/shelf/shelf1.xml",
+                "position": [
+                    0.01658855116666584,
+                    0.29736453468485424,
+                    0.7599985431703404
+                ],
+                "orientation": [
+                    0.9999479098061711,
+                    -2.40865195637729e-07,
+                    1.1331200445926255e-08,
+                    -0.010206746504632708
+                ],
+                "class": "Shelf"
+            },
+            {
+                "name": "scholars_of_contract_law",
+                "xml_path": "obj/meshes/books/bookscan/scholars_of_contract_law/scholars_of_contract_law.xml",
+                "position": [
+                    -0.11562519495305786,
+                    0.2920008525473812,
+                    1.169253251269843
+                ],
+                "orientation": [
+                    -9.118689593958423e-05,
+                    0.6591826330347229,
+                    0.7519828736195469,
+                    -7.598189928607187e-05
+                ],
+                "class": "Book"
+            },
+            {
+                "name": "critical_infrastructure_protection_in_homeland_security",
+                "xml_path": "obj/meshes/books/bookscan/critical_infrastructure_protection_in_homeland_security/critical_infrastructure_protection_in_homeland_security.xml",
+                "position": [
+                    -0.04082453697707747,
+                    0.3140807512778887,
+                    1.1692381429674148
+                ],
+                "orientation": [
+                    -2.1700413067508237e-06,
+                    0.7569912141320078,
+                    0.6534250544002302,
+                    -2.072682335397871e-06
+                ],
+                "class": "Book"
+            },
+            {
+                "name": "the_adventures_of_huckleberry_finn",
+                "xml_path": "obj/meshes/books/bookscan/the_adventures_of_huckleberry_finn/the_adventures_of_huckleberry_finn.xml",
+                "position": [
+                    0.07700891744886727,
+                    0.308654808835629,
+                    1.1692379310083814
+                ],
+                "orientation": [
+                    -3.992838272748081e-06,
+                    0.724209928937631,
+                    0.6895795666916873,
+                    -3.676145104486222e-06
+                ],
+                "class": "Book"
+            },
+            {
+                "name": "steve_jobs",
+                "xml_path": "obj/meshes/books/bookscan/steve_jobs/steve_jobs.xml",
+                "position": [
+                    -0.015982453720856778,
+                    0.2789527430427538,
+                    0.8782958680890623
+                ],
+                "orientation": [
+                    2.5773826246829394e-05,
+                    0.7230156075370539,
+                    0.6908316937644186,
+                    -3.852426476911006e-05
+                ],
+                "class": "Book"
+            },
+            {
+                "name": "python",
+                "xml_path": "obj/meshes/books/bookscan/python/python.xml",
+                "position": [
+                    0.18128847732210196,
+                    0.30824772835309017,
+                    0.8782900973991091
+                ],
+                "orientation": [
+                    3.3977684924516095e-06,
+                    0.7133940191663648,
+                    0.7007631364489628,
+                    -5.73096024854868e-07
+                ],
+                "class": "Book"
+            }
+        ],
+        "scene": {
+            "name": "studyroom_0",
+            "position": [
+                -1.0,
+                1.0,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "floorplane"
+            ]
+        },
+        "instructions": [
+            "Please take the second book on the top layer"
+        ],
+        "conditions": {
+            "not_contain": {
+                "container": "shelf_seen",
+                "entities": [
+                    "critical_infrastructure_protection_in_homeland_security"
+                ]
+            }
+        }
+    }
+}

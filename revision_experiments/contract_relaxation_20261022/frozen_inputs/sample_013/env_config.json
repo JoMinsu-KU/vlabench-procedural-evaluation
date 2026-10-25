@@ -1,0 +1,115 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "table",
+                "xml_path": "obj/meshes/table/table.xml",
+                "position": [
+                    9.095676580451167e-10,
+                    1.906533534255303e-08,
+                    -7.569660368905477e-07
+                ],
+                "orientation": [
+                    1.0,
+                    -2.346351928642801e-09,
+                    -1.6585278674270302e-09,
+                    -5.543293759776702e-09
+                ],
+                "class": "Table",
+                "materials": [
+                    "stone"
+                ]
+            },
+            {
+                "name": "vase_seen",
+                "xml_path": "obj/meshes/containers/vases/vase_0/vase.xml",
+                "position": [
+                    0.0251678305673015,
+                    0.19874970967497052,
+                    0.78
+                ],
+                "orientation": [
+                    0.9998115048838164,
+                    0.0,
+                    0.0,
+                    0.019415321319987425
+                ],
+                "class": "Vase"
+            },
+            {
+                "name": "tulip",
+                "xml_path": "obj/meshes/flowers/bloom_flower/tulip/tulip_draft_1/tulip_draft_1.xml",
+                "position": [
+                    0.27710926416602594,
+                    -0.11244405999543834,
+                    0.8013398472669324
+                ],
+                "orientation": [
+                    0.9994903846545574,
+                    -1.0386949602058489e-16,
+                    -1.6074308228878936e-16,
+                    -0.03192132489551555
+                ],
+                "class": "CommonGraspedEntity"
+            },
+            {
+                "name": "rose",
+                "xml_path": "obj/meshes/flowers/bloom_flower/rose/rose_1/rose _1.xml",
+                "position": [
+                    -0.4193439109146704,
+                    -0.1874098274886659,
+                    1.5803739066995615
+                ],
+                "orientation": [
+                    -0.3001824464831669,
+                    -0.08728845087561063,
+                    -0.7460343515634386,
+                    -0.5879659611358786
+                ],
+                "class": "CommonGraspedEntity"
+            },
+            {
+                "name": "peony",
+                "xml_path": "obj/meshes/flowers/bloom_flower/peony/peony_0/peony_0.xml",
+                "position": [
+                    -0.3578407942937527,
+                    -0.12325687715988125,
+                    0.8125622489084288
+                ],
+                "orientation": [
+                    0.9953456329382097,
+                    0.09266531523790639,
+                    -0.01167253787561686,
+                    0.023747888374282062
+                ],
+                "class": "CommonGraspedEntity"
+            }
+        ],
+        "scene": {
+            "name": "bedroom_0",
+            "position": [
+                -1.8,
+                -1.0,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "default_floor"
+            ]
+        },
+        "instructions": [],
+        "conditions": {
+            "contain": {
+                "container": "vase_seen",
+                "entities": [
+                    "tulip"
+                ]
+            }
+        }
+    }
+}

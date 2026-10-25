@@ -1,0 +1,39 @@
+{
+  "task_name": "select_book_semantic",
+  "env_config_path": "/mnt/c/SILVER/data/public_view/vlabench_vlm4500_public/Semantic/select_book_semantic/example92/env_config.json",
+  "executable_steps": [
+    {
+      "index": 0,
+      "skill": "pick",
+      "matched_phase_template": "relaxed_diagnostic.step_1.pick",
+      "phase_cursor_source": "archived_model_order_no_reference_phase_assignment",
+      "sequence_reordered": false,
+      "missing_phase_inserted": false,
+      "gt_target_used": false,
+      "operation_sequence_used": false,
+      "expert_sequence_called": false,
+      "target": {
+        "number": 2,
+        "entity_name": "contract_law_in_japan",
+        "entity_class": "Book",
+        "target_source": "archived_vlm_output"
+      }
+    },
+    {
+      "index": 1,
+      "skill": "lift",
+      "matched_phase_template": "relaxed_diagnostic.step_2.lift",
+      "phase_cursor_source": "archived_model_order_no_reference_phase_assignment",
+      "sequence_reordered": false,
+      "missing_phase_inserted": false,
+      "gt_target_used": false,
+      "operation_sequence_used": false,
+      "expert_sequence_called": false
+    }
+  ],
+  "reset_wait_step": 1,
+  "native_seed": null,
+  "visual_audit_dir": "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_027/alternative/visual_audit",
+  "diagnostic_arm": "alternative",
+  "reference_control_supplied": false
+}

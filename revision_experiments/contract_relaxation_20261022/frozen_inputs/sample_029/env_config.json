@@ -1,0 +1,149 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "table",
+                "xml_path": "obj/meshes/table/table.xml",
+                "position": [
+                    -1.729195955670144e-10,
+                    -3.642807167984219e-10,
+                    -1.2439828703600227e-06
+                ],
+                "orientation": [
+                    0.999999999999969,
+                    -2.477993300362677e-07,
+                    -3.267032597260633e-08,
+                    2.8965348794419443e-11
+                ],
+                "class": "Table",
+                "materials": [
+                    "stone3"
+                ]
+            },
+            {
+                "name": "shelf_seen",
+                "xml_path": "obj/meshes/containers/shelf/shelf1.xml",
+                "position": [
+                    -0.03929365820974768,
+                    0.2788615140019787,
+                    0.7599985615201627
+                ],
+                "orientation": [
+                    0.9990381713837647,
+                    -2.2709942094591078e-07,
+                    -1.8972162935111994e-08,
+                    0.04384896940785228
+                ],
+                "class": "Shelf"
+            },
+            {
+                "name": "cybersecurity",
+                "xml_path": "obj/meshes/books/bookscan/cybersecurity/cybersecurity.xml",
+                "position": [
+                    0.20544910470591268,
+                    0.2640592134618033,
+                    1.169238340384811
+                ],
+                "orientation": [
+                    -1.5162783682282797e-06,
+                    0.7315532088838825,
+                    0.681784351951619,
+                    -1.8183831961748554e-06
+                ],
+                "class": "Book"
+            },
+            {
+                "name": "one_hundred_years_of_solitude",
+                "xml_path": "obj/meshes/books/bookscan/one_hundred_years_of_solitude/one_hundred_years_of_solitude.xml",
+                "position": [
+                    -0.30323489654634367,
+                    0.28617762763034155,
+                    0.8782897338118401
+                ],
+                "orientation": [
+                    1.548349551759264e-06,
+                    0.7355998127976467,
+                    0.6774163530714752,
+                    1.0058306259991965e-06
+                ],
+                "class": "Book"
+            },
+            {
+                "name": "opengl",
+                "xml_path": "obj/meshes/books/bookscan/opengl/opengl.xml",
+                "position": [
+                    -0.07349386980050078,
+                    0.28740465048556707,
+                    0.8782893367391615
+                ],
+                "orientation": [
+                    5.187403292875625e-06,
+                    0.7181908107859444,
+                    0.6958462181227381,
+                    -4.6123465235499487e-08
+                ],
+                "class": "Book"
+            },
+            {
+                "name": "electron_transport_in_quantum_dots",
+                "xml_path": "obj/meshes/books/bookscan/electron_transport_in_quantum_dots/electron_transport_in_quantum_dots.xml",
+                "position": [
+                    0.10556679665185234,
+                    0.2642563167155345,
+                    0.8782915332787854
+                ],
+                "orientation": [
+                    9.281889266362197e-06,
+                    0.6663966905519852,
+                    0.7455973784111892,
+                    6.4475321462764834e-06
+                ],
+                "class": "Book"
+            },
+            {
+                "name": "cloud_computing",
+                "xml_path": "obj/meshes/books/bookscan/cloud_computing/cloud_computing.xml",
+                "position": [
+                    0.20455676777085308,
+                    0.27295413538463414,
+                    0.8782892196000466
+                ],
+                "orientation": [
+                    2.8720633916321303e-07,
+                    0.6993530096763843,
+                    0.7147764460699156,
+                    4.0261028549989836e-07
+                ],
+                "class": "Book"
+            }
+        ],
+        "scene": {
+            "name": "studyroom_0",
+            "position": [
+                -1.0,
+                1.0,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "floorplane"
+            ]
+        },
+        "instructions": [
+            "Please take the first book on the bottom layer"
+        ],
+        "conditions": {
+            "not_contain": {
+                "container": "shelf_seen",
+                "entities": [
+                    "one_hundred_years_of_solitude"
+                ]
+            }
+        }
+    }
+}

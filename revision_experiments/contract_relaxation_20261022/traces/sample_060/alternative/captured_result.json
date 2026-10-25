@@ -1,0 +1,122 @@
+{
+  "ok": false,
+  "execution_completed": false,
+  "condition_success": false,
+  "trace": [
+    {
+      "skill": "pick",
+      "target": {
+        "number": 4,
+        "entity_name": "3_of_spades",
+        "entity_class": "Poker",
+        "target_source": "archived_vlm_output"
+      },
+      "matched_phase_template": "relaxed_diagnostic.step_1.pick",
+      "stage_success": true,
+      "task_success_signal": false,
+      "waypoint_count": 68,
+      "condition_progress_after_step": false
+    },
+    {
+      "skill": "lift",
+      "target": null,
+      "matched_phase_template": "relaxed_diagnostic.step_2.lift",
+      "stage_success": false,
+      "task_success_signal": false,
+      "waypoint_count": 31,
+      "condition_progress_after_step": false
+    },
+    {
+      "skill": "moveto",
+      "target": {
+        "number": 5,
+        "entity_name": "card_holder7",
+        "entity_class": "CardHolder",
+        "target_source": "archived_vlm_output"
+      },
+      "matched_phase_template": "relaxed_diagnostic.step_3.moveto",
+      "stage_success": true,
+      "task_success_signal": false,
+      "waypoint_count": 30,
+      "condition_progress_after_step": false
+    },
+    {
+      "skill": "place",
+      "target": {
+        "number": 5,
+        "entity_name": "card_holder7",
+        "entity_class": "CardHolder",
+        "target_source": "archived_vlm_output"
+      },
+      "matched_phase_template": "relaxed_diagnostic.step_4.place",
+      "stage_success": false,
+      "task_success_signal": false,
+      "waypoint_count": 0,
+      "condition_progress_after_step": false,
+      "stage_exception_type": "AttributeError",
+      "stage_exception": "'CardHolder' object has no attribute 'get_place_point'"
+    }
+  ],
+  "stage_exception_policy": {
+    "enabled": true,
+    "name": "official_style_stage_failure_condition_check",
+    "stage_exception_caught": true,
+    "condition_checked_after_stage_exception": true,
+    "condition_success_after_stage_exception": false,
+    "failed_skill": "place",
+    "exception_type": "AttributeError",
+    "exception": "'CardHolder' object has no attribute 'get_place_point'",
+    "example_specific_rule_used": false
+  },
+  "episode_config_audit": {
+    "added_fields": {
+      "target_entities": {
+        "source": "conditions.is_grasped.entities",
+        "value": [
+          "6_of_spades"
+        ]
+      },
+      "target_entity": {
+        "source": "conditions.is_grasped.entities[0]",
+        "value": "6_of_spades"
+      }
+    },
+    "native_seed": null,
+    "post_load_config_manager_fields": {
+      "target_entity": "6_of_spades",
+      "target_entities": [
+        "6_of_spades"
+      ]
+    },
+    "reset_task_progress_called": true
+  },
+  "visual_audit": {
+    "before": {
+      "enabled": false,
+      "phase": "before",
+      "images": [],
+      "contact_sheet": "",
+      "skipped_reason": "pre_execution_render_disabled_to_preserve_native_state"
+    },
+    "after": {
+      "enabled": true,
+      "phase": "after",
+      "images": [
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_060/alternative/visual_audit/after_camera0.png",
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_060/alternative/visual_audit/after_camera1.png",
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_060/alternative/visual_audit/after_camera2.png",
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_060/alternative/visual_audit/after_camera3.png"
+      ],
+      "contact_sheet": "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_060/alternative/visual_audit/after_contact_sheet.png"
+    }
+  },
+  "gt_used_during_execution": false,
+  "operation_sequence_read": false,
+  "expert_sequence_called": false,
+  "native_exception": true,
+  "exception_type": "AttributeError",
+  "exception": "'CardHolder' object has no attribute 'get_place_point'",
+  "traceback": "Traceback (most recent call last):\n  File \"/mnt/c/VLABenchProcEval/procedural_interface/execution/vlabench_native_worker.py\", line 905, in main\n    trace_row = _execute_step(env, task_name, step)\n  File \"/mnt/c/VLABenchProcEval/procedural_interface/execution/vlabench_native_worker.py\", line 575, in _execute_step\n    obs, waypoints, stage_success, task_success = SkillLib.place(env, target_container_name=target_name)\n  File \"/home/jms/vlabench_runtime/VLABench/VLABench/utils/skill_lib.py\", line 226, in place\n    place_points = target_container.get_place_point(env.physics)\nAttributeError: 'CardHolder' object has no attribute 'get_place_point'\n",
+  "stdout": "Checking if can connect to goal at 5 samples\nCan connect to goal\nChecking if can connect to goal at 4 samples\nCould not connect to goal\nChecking if can connect to goal at 14 samples\nCould not connect to goal\nChecking if can connect to goal at 29 samples\nCould not connect to goal\nChecking if can connect to goal at 65 samples\nCould not connect to goal\nChecking if can connect to goal at 81 samples\nCould not connect to goal\nChecking if can connect to goal at 105 samples\nCould not connect to goal\nChecking if can connect to goal at 109 samples\nCould not connect to goal\nChecking if can connect to goal at 113 samples\nCould not connect to goal\nChecking if can connect to goal at 115 samples\nCould not connect to goal\nChecking if can connect to goal at 117 samples\nCould not connect to goal\nChecking if can connect to goal at 121 samples\nCould not connect to goal\nChecking if can connect to goal at 125 samples\nCould not connect to goal\nChecking if can connect to goal at 137 samples\nCould not connect to goal\nChecking if can connect to goal at 143 samples\nCould not connect to goal\nChecking if can connect to goal at 149 samples\nCould not connect to goal\nChecking if can connect to goal at 189 samples\nCould not connect to goal\nChecking if can connect to goal at 231 samples\nCould not connect to goal\nChecking if can connect to goal at 247 samples\nCould not connect to goal\nChecking if can connect to goal at 269 samples\nCould not connect to goal\nChecking if can connect to goal at 273 samples\nCould not connect to goal\nChecking if can connect to goal at 289 samples\nCould not connect to goal\nChecking if can connect to goal at 293 samples\nCould not connect to goal\nChecking if can connect to goal at 345 samples\nCould not connect to goal\nChecking if can connect to goal at 351 samples\nCould not connect to goal\nChecking if can connect to goal at 353 samples\nCould not connect to goal\nChecking if can connect to goal at 377 samples\nCould not connect to goal\nChecking if can connect to goal at 379 samples\nCould not connect to goal\nChecking if can connect to goal at 403 samples\nCould not connect to goal\nChecking if can connect to goal at 429 samples\nCould not connect to goal\nChecking if can connect to goal at 451 samples\nCould not connect to goal\nChecking if can connect to goal at 457 samples\nCould not connect to goal\nChecking if can connect to goal at 473 samples\nCould not connect to goal\nChecking if can connect to goal at 529 samples\nCould not connect to goal\nChecking if can connect to goal at 575 samples\nCould not connect to goal\nChecking if can connect to goal at 583 samples\nCould not connect to goal\nChecking if can connect to goal at 625 samples\nCould not connect to goal\nChecking if can connect to goal at 645 samples\nCould not connect to goal\nChecking if can connect to goal at 663 samples\nCould not connect to goal\nChecking if can connect to goal at 711 samples\nCould not connect to goal\nChecking if can connect to goal at 719 samples\nCould not connect to goal\nChecking if can connect to goal at 729 samples\nCould not connect to goal\nChecking if can connect to goal at 775 samples\nCould not connect to goal\nChecking if can connect to goal at 791 samples\nCould not connect to goal\nChecking if can connect to goal at 793 samples\nCould not connect to goal\nChecking if can connect to goal at 805 samples\nCould not connect to goal\nChecking if can connect to goal at 817 samples\nCould not connect to goal\nChecking if can connect to goal at 823 samples\nCould not connect to goal\nChecking if can connect to goal at 831 samples\nCould not connect to goal\nChecking if can connect to goal at 841 samples\nCould not connect to goal\nChecking if can connect to goal at 865 samples\nCould not connect to goal\nChecking if can connect to goal at 873 samples\nCould not connect to goal\nChecking if can connect to goal at 875 samples\nCould not connect to goal\nChecking if can connect to goal at 879 samples\nCould not connect to goal\nChecking if can connect to goal at 883 samples\nCould not connect to goal\nChecking if can connect to goal at 915 samples\nCould not connect to goal\nChecking if can connect to goal at 927 samples\nCould not connect to goal\nChecking if can connect to goal at 929 samples\nCould not connect to goal\nChecking if can connect to goal at 987 samples\nCould not connect to goal\nChecking if can connect to goal at 1003 samples\nCould not connect to goal\nChecking if can connect to goal at 1009 samples\nCould not connect to goal\nChecking if can connect to goal at 1017 samples\nCould not connect to goal\nCould not connect to goal\n",
+  "stderr": "Dropped Escape call with ulEscapeCode : 0x03007703\n"
+}

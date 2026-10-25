@@ -1,0 +1,14 @@
+{
+  "original_private_archive_sha256": "7d172c765a34a958dd784b2133c17004aa4f4beb3b315bb917b684ec167b8c40",
+  "original_private_archive_files": 2938,
+  "original_archive_verified": true,
+  "dispatcher_source_sha256": "ab9e564699d6c4714bd399cdbc172bad825f591de84cb4c5d128d25311cc23d5",
+  "trace_audit_function_ast_sha256": {
+    "audit": "f4a0501809ee8633de06e5ff1f423548b60263a0fbbfd100ce0b01ad04e62275"
+  },
+  "audit_function_AST_unchanged": true,
+  "runtime_path_adaptation": "Only common.PROJECT is configurable; the dispatch logic is unchanged.",
+  "protected_original_files_unchanged": 519,
+  "new_model_calls": 0,
+  "new_native_calls": 0
+}

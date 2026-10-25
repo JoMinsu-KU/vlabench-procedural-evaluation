@@ -1,0 +1,133 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "table",
+                "xml_path": "obj/meshes/table/table.xml",
+                "position": [
+                    5.043023112101716e-09,
+                    5.384998607691242e-09,
+                    -7.674239575438635e-07
+                ],
+                "orientation": [
+                    1.0,
+                    -8.967042036501406e-10,
+                    -1.517934174060245e-09,
+                    -1.0349742335733572e-09
+                ],
+                "class": "Table",
+                "materials": [
+                    "stone0"
+                ]
+            },
+            {
+                "name": "target_giftbox_seen",
+                "xml_path": "obj/meshes/containers/boxes/giftbox/giftbox_0/giftbox.xml",
+                "position": [
+                    0.23024701275573575,
+                    -0.15268498004329314,
+                    0.7709990939562532
+                ],
+                "orientation": [
+                    0.9990137869885156,
+                    0.0008132165989028661,
+                    -0.00036242258206494013,
+                    0.044392124701343676
+                ],
+                "class": "CommonContainer"
+            },
+            {
+                "name": "another_giftbox_seen",
+                "xml_path": "obj/meshes/containers/boxes/giftbox/giftbox_0/giftbox.xml",
+                "position": [
+                    -0.28120357689254516,
+                    0.1457766752924702,
+                    0.7709990918683006
+                ],
+                "orientation": [
+                    0.9993688175090111,
+                    0.0008099639846619926,
+                    -0.00036963463338909983,
+                    0.035513010562658695
+                ],
+                "class": "CommonContainer"
+            },
+            {
+                "name": "alien",
+                "xml_path": "obj/meshes/toys/disney/toystory/alien/alien_0/toy_story_alien.xml",
+                "position": [
+                    0.03672171940929129,
+                    0.14011383939200828,
+                    0.7649977237652746
+                ],
+                "orientation": [
+                    0.7068303086430454,
+                    0.707382399795633,
+                    0.0007290761672133009,
+                    0.0007236649020137503
+                ],
+                "class": "Toy"
+            },
+            {
+                "name": "slinky_dog",
+                "xml_path": "obj/meshes/toys/disney/toystory/slinky_dog/slinky_dog_0/slinky_dog_for_garry_mod.xml",
+                "position": [
+                    -0.09348914910613845,
+                    -0.14078139024040903,
+                    0.7615585086450501
+                ],
+                "orientation": [
+                    2.8605702639578266e-05,
+                    -2.3287600597027975e-05,
+                    0.7071136681636869,
+                    0.707099893180233
+                ],
+                "class": "Toy"
+            },
+            {
+                "name": "chopper",
+                "xml_path": "obj/meshes/toys/onepiece/chopper/chopper_2/tony_chopper.xml",
+                "position": [
+                    -0.28041374277054787,
+                    -0.045192925407122345,
+                    0.7649984816592144
+                ],
+                "orientation": [
+                    0.7068255910212411,
+                    0.7073878547475001,
+                    -6.041162362225093e-05,
+                    -5.64237448417955e-05
+                ],
+                "class": "Toy"
+            }
+        ],
+        "scene": {
+            "name": "studyroom_0",
+            "position": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "floorplane"
+            ]
+        },
+        "instructions": [
+            "Put alien into ['right', 'nearest'] giftbox_seen"
+        ],
+        "conditions": {
+            "contain": {
+                "container": "target_giftbox_seen",
+                "entities": [
+                    "alien"
+                ]
+            }
+        }
+    }
+}

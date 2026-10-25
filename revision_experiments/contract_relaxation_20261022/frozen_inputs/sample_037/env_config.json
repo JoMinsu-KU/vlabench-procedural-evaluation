@@ -1,0 +1,101 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "table",
+                "xml_path": "obj/meshes/table/table.xml",
+                "position": [
+                    1.8599062134976827e-10,
+                    1.817004238540679e-10,
+                    -8.468560165845988e-07
+                ],
+                "orientation": [
+                    1.0,
+                    -4.936970134507202e-09,
+                    -6.352450210261624e-09,
+                    -6.5202492446405916e-12
+                ],
+                "class": "Table",
+                "materials": [
+                    "wood0"
+                ]
+            },
+            {
+                "name": "chemistry_tube_stand",
+                "xml_path": "obj/meshes/tube/tube_container/tube_stand.xml",
+                "position": [
+                    -0.04004787304832092,
+                    0.03173112469341587,
+                    0.7599988465030573
+                ],
+                "orientation": [
+                    0.999999999858312,
+                    6.731957798108949e-08,
+                    -3.447264236010517e-08,
+                    -1.6833644395216772e-05
+                ],
+                "class": "TubeStand"
+            },
+            {
+                "name": "CuSO4",
+                "xml_path": "obj/meshes/tube/tube/tube.xml",
+                "position": [
+                    -0.207554986280331,
+                    0.08110717024670054,
+                    0.7591074392858175
+                ],
+                "orientation": [
+                    0.9997489694968472,
+                    -0.003732056279410121,
+                    -0.0009622051942671163,
+                    -0.022071336776101784
+                ],
+                "class": "ChemistryTube",
+                "solution": "CuSO4"
+            },
+            {
+                "name": "I2",
+                "xml_path": "obj/meshes/tube/tube/tube.xml",
+                "position": [
+                    -0.040014833899668985,
+                    0.0819409141237402,
+                    0.7612355066686919
+                ],
+                "orientation": [
+                    0.9992389784595801,
+                    0.0013068681197992314,
+                    -0.005455636307629392,
+                    -0.03860041522122201
+                ],
+                "class": "ChemistryTube",
+                "solution": "I2"
+            }
+        ],
+        "scene": {
+            "name": "lab_1",
+            "position": [
+                -4.0,
+                -2.5,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "floorplane"
+            ]
+        },
+        "instructions": [],
+        "conditions": {
+            "not_contain": {
+                "container": "chemistry_tube_stand",
+                "entities": [
+                    "CuSO4"
+                ]
+            }
+        }
+    }
+}

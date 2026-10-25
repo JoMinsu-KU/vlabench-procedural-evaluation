@@ -1,0 +1,56 @@
+{
+  "task_name": "select_drink",
+  "env_config_path": "/mnt/c/SILVER/data/public_view/vlabench_vlm4500_public/M&T/select_drink/example43/env_config.json",
+  "executable_steps": [
+    {
+      "index": 0,
+      "skill": "pick",
+      "matched_phase_template": "relaxed_diagnostic.step_1.pick",
+      "phase_cursor_source": "archived_model_order_no_reference_phase_assignment",
+      "sequence_reordered": false,
+      "missing_phase_inserted": false,
+      "gt_target_used": false,
+      "operation_sequence_used": false,
+      "expert_sequence_called": false,
+      "target": {
+        "number": 3,
+        "entity_name": "monster",
+        "entity_class": "Drink",
+        "target_source": "archived_vlm_output"
+      }
+    },
+    {
+      "index": 1,
+      "skill": "lift",
+      "matched_phase_template": "relaxed_diagnostic.step_2.lift",
+      "phase_cursor_source": "archived_model_order_no_reference_phase_assignment",
+      "sequence_reordered": false,
+      "missing_phase_inserted": false,
+      "gt_target_used": false,
+      "operation_sequence_used": false,
+      "expert_sequence_called": false
+    },
+    {
+      "index": 2,
+      "skill": "moveto",
+      "matched_phase_template": "relaxed_diagnostic.step_3.moveto",
+      "phase_cursor_source": "archived_model_order_no_reference_phase_assignment",
+      "sequence_reordered": false,
+      "missing_phase_inserted": false,
+      "gt_target_used": false,
+      "operation_sequence_used": false,
+      "expert_sequence_called": false,
+      "target": {
+        "number": 1,
+        "entity_name": "fridge_open",
+        "entity_class": "Fridge",
+        "target_source": "archived_vlm_output"
+      }
+    }
+  ],
+  "reset_wait_step": 1,
+  "native_seed": null,
+  "visual_audit_dir": "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_045/alternative/visual_audit",
+  "diagnostic_arm": "alternative",
+  "reference_control_supplied": false
+}

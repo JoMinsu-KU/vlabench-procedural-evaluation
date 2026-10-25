@@ -1,0 +1,115 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "table",
+                "xml_path": "obj/meshes/table/table.xml",
+                "position": [
+                    -8.565334961061324e-12,
+                    -5.495117052375863e-10,
+                    -7.554390389735071e-07
+                ],
+                "orientation": [
+                    1.0,
+                    -2.2909995149714526e-10,
+                    -2.767792337313831e-10,
+                    8.30379208398065e-11
+                ],
+                "class": "Table",
+                "materials": [
+                    "stone3"
+                ]
+            },
+            {
+                "name": "plate_seen",
+                "xml_path": "obj/meshes/tablewares/plates/plate_11/model.xml",
+                "position": [
+                    -0.2838558279598145,
+                    0.2101011245872663,
+                    0.7679295817473726
+                ],
+                "orientation": [
+                    0.9995436113940812,
+                    -0.0016758096211037556,
+                    -0.0011069785068605028,
+                    -0.0301419173573387
+                ],
+                "class": "Plate"
+            },
+            {
+                "name": "banana",
+                "xml_path": "obj/meshes/fruit/banana/banana_3/model.xml",
+                "position": [
+                    0.2491891334092919,
+                    -0.1697755544216688,
+                    0.7739120205473792
+                ],
+                "orientation": [
+                    0.9979169146893764,
+                    0.009260543202950248,
+                    -0.046599593307840595,
+                    0.043641168865705675
+                ],
+                "class": "Fruit"
+            },
+            {
+                "name": "mango",
+                "xml_path": "obj/meshes/fruit/mango/mango_15/model.xml",
+                "position": [
+                    0.2282797447030553,
+                    0.2726399706187945,
+                    0.7862275816288725
+                ],
+                "orientation": [
+                    0.9822525122813774,
+                    -0.037869498869081045,
+                    0.1832001479073637,
+                    0.013550239077081166
+                ],
+                "class": "Fruit"
+            },
+            {
+                "name": "orange",
+                "xml_path": "obj/meshes/fruit/orange/orange_8/model.xml",
+                "position": [
+                    -0.14951233319867982,
+                    -0.17503952260687677,
+                    0.7934743081610124
+                ],
+                "orientation": [
+                    0.9980202763286737,
+                    0.009976117476232218,
+                    9.702302808240655e-05,
+                    -0.06209666418956236
+                ],
+                "class": "Fruit"
+            }
+        ],
+        "scene": {
+            "name": "studyroom_0",
+            "position": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "floorplane"
+            ]
+        },
+        "instructions": [],
+        "conditions": {
+            "contain": {
+                "container": "plate_seen",
+                "entities": [
+                    "banana"
+                ]
+            }
+        }
+    }
+}

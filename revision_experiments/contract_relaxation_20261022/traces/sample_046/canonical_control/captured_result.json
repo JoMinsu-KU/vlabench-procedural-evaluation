@@ -1,0 +1,118 @@
+{
+  "ok": true,
+  "execution_completed": true,
+  "condition_success": true,
+  "trace": [
+    {
+      "skill": "pick",
+      "target": {
+        "number": 2,
+        "entity_name": "cola",
+        "entity_class": "Drink",
+        "target_source": "vlm_output"
+      },
+      "matched_phase_template": "select_drink_common_sense.phase_1.pick",
+      "stage_success": true,
+      "task_success_signal": false,
+      "waypoint_count": 73,
+      "condition_progress_after_step": false
+    },
+    {
+      "skill": "lift",
+      "target": null,
+      "matched_phase_template": "select_drink_common_sense.phase_2.lift",
+      "stage_success": false,
+      "task_success_signal": false,
+      "waypoint_count": 10,
+      "condition_progress_after_step": false
+    },
+    {
+      "skill": "pull",
+      "target": null,
+      "matched_phase_template": "select_drink_common_sense.phase_3.pull",
+      "stage_success": false,
+      "task_success_signal": true,
+      "waypoint_count": 6,
+      "condition_progress_after_step": true
+    }
+  ],
+  "stage_exception_policy": {
+    "enabled": true,
+    "name": "official_style_stage_failure_condition_check",
+    "stage_exception_caught": false,
+    "condition_checked_after_stage_exception": false,
+    "condition_success_after_stage_exception": false,
+    "failed_skill": "",
+    "exception_type": "",
+    "exception": "",
+    "example_specific_rule_used": false
+  },
+  "episode_config_audit": {
+    "added_fields": {
+      "target_container": {
+        "source": "conditions.not_contain.container",
+        "value": "fridge_open"
+      },
+      "target_containers": {
+        "source": "derived.task.target_container",
+        "value": [
+          "fridge_open"
+        ]
+      },
+      "target_platform": {
+        "source": "derived.task.target_container",
+        "value": "fridge_open"
+      },
+      "target_entities": {
+        "source": "conditions.not_contain.entities",
+        "value": [
+          "cola"
+        ]
+      },
+      "target_entity": {
+        "source": "conditions.not_contain.entities[0]",
+        "value": "cola"
+      }
+    },
+    "native_seed": null,
+    "post_load_config_manager_fields": {
+      "target_entity": "cola",
+      "target_entities": [
+        "cola"
+      ],
+      "target_container": "fridge_open"
+    },
+    "post_load_mirrored_fields": {
+      "target_containers": [
+        "fridge_open"
+      ],
+      "target_platform": "fridge_open"
+    },
+    "reset_task_progress_called": true
+  },
+  "visual_audit": {
+    "before": {
+      "enabled": false,
+      "phase": "before",
+      "images": [],
+      "contact_sheet": "",
+      "skipped_reason": "pre_execution_render_disabled_to_preserve_native_state"
+    },
+    "after": {
+      "enabled": true,
+      "phase": "after",
+      "images": [
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_046/canonical_control/visual_audit/after_camera0.png",
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_046/canonical_control/visual_audit/after_camera1.png",
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_046/canonical_control/visual_audit/after_camera2.png",
+        "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_046/canonical_control/visual_audit/after_camera3.png"
+      ],
+      "contact_sheet": "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_046/canonical_control/visual_audit/after_contact_sheet.png"
+    }
+  },
+  "gt_used_during_execution": false,
+  "operation_sequence_read": false,
+  "expert_sequence_called": false,
+  "stdout": "Checking if can connect to goal at 7 samples\nCan connect to goal\n",
+  "stderr": "Dropped Escape call with ulEscapeCode : 0x03007703\n/home/jms/vlabench_runtime/VLABench/VLABench/utils/skill_lib.py:184: UserWarning: Gimbal lock detected. Setting third angle to zero since it is not possible to uniquely determine all angles.\n  new_obs, new_waypoints, _, task_success = SkillLib.step_trajectory(env,\n"
+}

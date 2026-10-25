@@ -1,0 +1,10 @@
+{
+  "task_name": "magnetism_qa",
+  "env_config_path": "/mnt/c/SILVER/data/public_view/vlabench_vlm4500_public/PhysicsLaw/magnetism_qa/example48/env_config.json",
+  "executable_steps": [],
+  "reset_wait_step": 1,
+  "native_seed": null,
+  "visual_audit_dir": "/mnt/c/VLABenchProcEval/revision_experiments/contract_relaxation_task_sample_20261022/replays/sample_017/initial_no_action/visual_audit",
+  "diagnostic_arm": "initial_no_action",
+  "reference_control_supplied": false
+}

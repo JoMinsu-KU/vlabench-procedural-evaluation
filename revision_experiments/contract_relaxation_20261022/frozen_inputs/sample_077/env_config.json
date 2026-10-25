@@ -1,0 +1,131 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "table",
+                "xml_path": "obj/meshes/table/table.xml",
+                "position": [
+                    -9.782155434668851e-09,
+                    -1.7861282805521508e-09,
+                    -7.643987915083927e-07
+                ],
+                "orientation": [
+                    1.0,
+                    6.174395293904785e-10,
+                    -7.575759635897473e-10,
+                    6.431463238445451e-10
+                ],
+                "class": "Table",
+                "materials": [
+                    "wood4"
+                ]
+            },
+            {
+                "name": "giftbox_seen",
+                "xml_path": "obj/meshes/containers/boxes/giftbox/giftbox_1/giftbox.xml",
+                "position": [
+                    0.20213775941274054,
+                    0.1333666313328807,
+                    0.7709990964793347
+                ],
+                "orientation": [
+                    0.9981447459448162,
+                    0.0008190906481863818,
+                    -0.0003489467888497645,
+                    0.06087917106372601
+                ],
+                "class": "CommonContainer"
+            },
+            {
+                "name": "nami",
+                "xml_path": "obj/meshes/toys/onepiece/nami/nami_0/nami_one_piece.xml",
+                "position": [
+                    -0.28648763049454157,
+                    -0.13222458597695957,
+                    0.7649962023856103
+                ],
+                "orientation": [
+                    5.2243024651550435e-06,
+                    -7.519319028216267e-06,
+                    0.7073877730677548,
+                    0.706825677540374
+                ],
+                "class": "Toy"
+            },
+            {
+                "name": "slinky_dog",
+                "xml_path": "obj/meshes/toys/disney/toystory/slinky_dog/slinky_dog_0/slinky_dog_for_garry_mod.xml",
+                "position": [
+                    0.07574178838251452,
+                    -0.16537009673773972,
+                    0.7615694244231559
+                ],
+                "orientation": [
+                    0.707114713335372,
+                    0.7070986995754753,
+                    -0.00032353140224500245,
+                    0.00032645173893083477
+                ],
+                "class": "Toy"
+            },
+            {
+                "name": "minnie",
+                "xml_path": "obj/meshes/toys/disney/mickey/minnie/minnie_1/minnie_mouse.xml",
+                "position": [
+                    -0.10749596805832229,
+                    0.15799936220690303,
+                    0.765129610673538
+                ],
+                "orientation": [
+                    -0.0006262944740804046,
+                    -0.0005992352195183947,
+                    0.7088218102826481,
+                    0.7053870497393697
+                ],
+                "class": "Toy"
+            },
+            {
+                "name": "spiderman",
+                "xml_path": "obj/meshes/toys/marvel/spiderman/spiderman_1/spiderman_classic_textured_rigged.xml",
+                "position": [
+                    -0.0973667129496983,
+                    -0.061223524420747494,
+                    0.7658814222094517
+                ],
+                "orientation": [
+                    -0.00807035565664925,
+                    0.008028134680835592,
+                    0.7073420564051699,
+                    0.7067797631890906
+                ],
+                "class": "Toy"
+            }
+        ],
+        "scene": {
+            "name": "studyroom_0",
+            "position": [
+                -1.0,
+                -1.0,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "floorplane"
+            ]
+        },
+        "instructions": [],
+        "conditions": {
+            "contain": {
+                "container": "giftbox_seen",
+                "entities": [
+                    "nami"
+                ]
+            }
+        }
+    }
+}

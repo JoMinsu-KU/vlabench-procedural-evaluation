@@ -1,0 +1,131 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "table",
+                "xml_path": "obj/meshes/table/table.xml",
+                "position": [
+                    1.6530123893757427e-10,
+                    -5.857681420521423e-10,
+                    -7.558099528322185e-07
+                ],
+                "orientation": [
+                    1.0,
+                    5.580209867333302e-11,
+                    8.200922185740881e-11,
+                    3.0347709533811495e-11
+                ],
+                "class": "Table",
+                "materials": [
+                    "wood0"
+                ]
+            },
+            {
+                "name": "plate_seen",
+                "xml_path": "obj/meshes/tablewares/plates/plate_14/model.xml",
+                "position": [
+                    0.13460770579031475,
+                    -0.1608018772780702,
+                    0.769200578148164
+                ],
+                "orientation": [
+                    0.9994870590598489,
+                    -0.0014018593009717968,
+                    0.0010582111460361928,
+                    0.031977081661190135
+                ],
+                "class": "Plate"
+            },
+            {
+                "name": "apple",
+                "xml_path": "obj/meshes/fruit/apple/apple_20/model.xml",
+                "position": [
+                    -0.2502430436986066,
+                    0.2648436316862602,
+                    0.7909129337208289
+                ],
+                "orientation": [
+                    0.999434496207711,
+                    -0.0004205158310041284,
+                    0.0014622357923535396,
+                    0.03359126111002967
+                ],
+                "class": "Fruit"
+            },
+            {
+                "name": "pear",
+                "xml_path": "obj/meshes/fruit/pear/pear_3/model.xml",
+                "position": [
+                    0.25864470456069405,
+                    0.2963094076457171,
+                    0.7946313834889499
+                ],
+                "orientation": [
+                    0.9982357334133866,
+                    -0.0481114685922368,
+                    -0.0006689914461040468,
+                    -0.03478878521855361
+                ],
+                "class": "Fruit"
+            },
+            {
+                "name": "mango",
+                "xml_path": "obj/meshes/fruit/mango/mango_19/model.xml",
+                "position": [
+                    -0.2538106154508207,
+                    -0.16963935639987945,
+                    0.7931919133449143
+                ],
+                "orientation": [
+                    0.9953376339062243,
+                    -0.06730277853518177,
+                    -0.03147339347103769,
+                    0.061504113966618444
+                ],
+                "class": "Fruit"
+            },
+            {
+                "name": "lemon",
+                "xml_path": "obj/meshes/fruit/lemon/lemon_1/model.xml",
+                "position": [
+                    -0.023133212956225224,
+                    0.07035612319723031,
+                    0.7911180236184102
+                ],
+                "orientation": [
+                    0.9997434231155347,
+                    0.015302112703328635,
+                    -0.004337995014108935,
+                    -0.016128083683602558
+                ],
+                "class": "Fruit"
+            }
+        ],
+        "scene": {
+            "name": "studyroom_0",
+            "position": [
+                -1.5,
+                -1.0,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "floorplane"
+            ]
+        },
+        "instructions": [],
+        "conditions": {
+            "contain": {
+                "container": "plate_seen",
+                "entities": [
+                    "apple"
+                ]
+            }
+        }
+    }
+}

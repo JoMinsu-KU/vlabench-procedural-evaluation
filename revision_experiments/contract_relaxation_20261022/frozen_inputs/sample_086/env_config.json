@@ -1,0 +1,152 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "table",
+                "xml_path": "obj/meshes/table/table.xml",
+                "position": [
+                    1.0203512681322369e-10,
+                    -1.4709316345645955e-11,
+                    -7.619581782338797e-07
+                ],
+                "orientation": [
+                    1.0,
+                    3.257151848380807e-10,
+                    -3.0814057712563537e-09,
+                    2.8056222047639257e-16
+                ],
+                "class": "Table",
+                "materials": [
+                    "wood4"
+                ]
+            },
+            {
+                "name": "button0",
+                "xml_path": null,
+                "position": [
+                    -0.45116315098231863,
+                    -0.08438537410234109,
+                    0.78
+                ],
+                "orientation": [
+                    0.9998520144318866,
+                    0.0,
+                    0.0,
+                    -0.017203175186528228
+                ],
+                "class": "Button"
+            },
+            {
+                "name": "metal_cylinder",
+                "xml_path": null,
+                "position": [
+                    -0.44189094329819456,
+                    0.021360559452168984,
+                    0.7814517528482052
+                ],
+                "orientation": [
+                    1.0,
+                    3.259503176019535e-10,
+                    -3.079946342038373e-09,
+                    2.7499850120143714e-16
+                ],
+                "class": "RandomGeom",
+                "material": "metal",
+                "texture": "metal1"
+            },
+            {
+                "name": "button1",
+                "xml_path": null,
+                "position": [
+                    0.044557363949406556,
+                    -0.15395510103647672,
+                    0.78
+                ],
+                "orientation": [
+                    0.9997781135311186,
+                    0.0,
+                    0.0,
+                    0.021064750275231903
+                ],
+                "class": "Button"
+            },
+            {
+                "name": "stone_box",
+                "xml_path": null,
+                "position": [
+                    0.049772783396382234,
+                    -0.07188265313339759,
+                    0.7855834878031728
+                ],
+                "orientation": [
+                    1.0,
+                    3.25962238236659e-10,
+                    -3.0798906167325308e-09,
+                    7.233658284206332e-16
+                ],
+                "class": "RandomGeom",
+                "material": "stone",
+                "texture": "stone0"
+            },
+            {
+                "name": "button2",
+                "xml_path": null,
+                "position": [
+                    0.4487409931294294,
+                    -0.16768040932288641,
+                    0.78
+                ],
+                "orientation": [
+                    0.9991457553504537,
+                    0.0,
+                    0.0,
+                    -0.04132504767294729
+                ],
+                "class": "Button"
+            },
+            {
+                "name": "wood_sphere",
+                "xml_path": null,
+                "position": [
+                    0.43522850451061423,
+                    -0.07008545367206649,
+                    0.83984080952114
+                ],
+                "orientation": [
+                    0.9999999999823092,
+                    -1.2854097789768582e-07,
+                    5.946843086773122e-06,
+                    1.5506657561320462e-14
+                ],
+                "class": "RandomGeom",
+                "material": "wood",
+                "texture": "wood0"
+            }
+        ],
+        "scene": {
+            "name": "lab_1",
+            "position": [
+                6.0,
+                2.0,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "floorplane"
+            ]
+        },
+        "instructions": [
+            "At room temperature, we conduct an experiment in which the same amount of energy is used to cool three objects, each made of three different materials, and ask who shrinks moderately? Note that if you see stone, think of it as marble, and if you see glass, think of it as quartz glass."
+        ],
+        "conditions": {
+            "press_button": {
+                "target_button": "button1"
+            }
+        }
+    }
+}

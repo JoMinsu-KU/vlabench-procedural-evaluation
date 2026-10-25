@@ -1,0 +1,136 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "billiards_table",
+                "xml_path": "obj/meshes/containers/billiards_table/billiards_table.xml",
+                "position": [
+                    -0.004534268089588124,
+                    -0.018347400241206988,
+                    -1.523741414607481e-06
+                ],
+                "orientation": [
+                    0.998296366751851,
+                    -5.463498174327944e-10,
+                    -9.878053971846279e-09,
+                    0.058346929054191005
+                ],
+                "class": "BilliardTable",
+                "target_hole": "container_mid_1"
+            },
+            {
+                "name": "solid_1",
+                "xml_path": "obj/meshes/billiard_balls/billiards.xml",
+                "position": [
+                    0.2852734332583669,
+                    -0.06028467611299707,
+                    0.5880896377740552
+                ],
+                "orientation": [
+                    0.9988894335242129,
+                    0.0009308933776943283,
+                    -0.027895850462826347,
+                    0.03795859004431741
+                ],
+                "class": "BilliardBall",
+                "value": "solid_1"
+            },
+            {
+                "name": "snooker_blue",
+                "xml_path": "obj/meshes/billiard_balls/billiards.xml",
+                "position": [
+                    0.2600772402859163,
+                    0.29653145307081663,
+                    0.5880899428608514
+                ],
+                "orientation": [
+                    0.9996018347479213,
+                    -1.4753662031801972e-05,
+                    -0.02796623426527081,
+                    -0.0037498655892983664
+                ],
+                "class": "BilliardBall",
+                "value": "snooker_blue"
+            },
+            {
+                "name": "striped_11",
+                "xml_path": "obj/meshes/billiard_balls/billiards.xml",
+                "position": [
+                    -0.26265558698298297,
+                    -0.07110849818103615,
+                    0.5880878736687534
+                ],
+                "orientation": [
+                    0.9970968024233139,
+                    0.004674044839549402,
+                    -0.026511394394446657,
+                    0.07122686199253331
+                ],
+                "class": "BilliardBall",
+                "value": "striped_11"
+            },
+            {
+                "name": "solid_2",
+                "xml_path": "obj/meshes/billiard_balls/billiards.xml",
+                "position": [
+                    -0.2690631010471975,
+                    0.265316737270235,
+                    0.5880906043618166
+                ],
+                "orientation": [
+                    0.9983819038111753,
+                    0.0012421101495910664,
+                    -0.028099323399479455,
+                    0.04942124370390225
+                ],
+                "class": "BilliardBall",
+                "value": "solid_2"
+            },
+            {
+                "name": "solid_3",
+                "xml_path": "obj/meshes/billiard_balls/billiards.xml",
+                "position": [
+                    0.025639519158953756,
+                    -0.0776956277112045,
+                    0.5880910956735526
+                ],
+                "orientation": [
+                    0.9991758967912737,
+                    -0.0006549902967026526,
+                    -0.028175331024354943,
+                    -0.029210425891005434
+                ],
+                "class": "BilliardBall",
+                "value": "solid_3"
+            }
+        ],
+        "scene": {
+            "name": "studyroom_0",
+            "position": [
+                -1.5,
+                -1.0,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "floorplane"
+            ]
+        },
+        "instructions": [
+            "Please put the ball worth 0 score in hole"
+        ],
+        "conditions": {
+            "contain": {
+                "container": "billiards_table",
+                "entities": [
+                    "solid_1"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,135 @@
+{
+    "task": {
+        "components": [
+            {
+                "name": "table",
+                "xml_path": "obj/meshes/table/table.xml",
+                "position": [
+                    2.6847378084151673e-10,
+                    -5.3460707914278734e-11,
+                    -8.465846857852867e-07
+                ],
+                "orientation": [
+                    0.9999999999999993,
+                    -2.0684766938610994e-08,
+                    1.7651105547121653e-08,
+                    -7.176703685653954e-11
+                ],
+                "class": "Table",
+                "materials": [
+                    "wood4"
+                ]
+            },
+            {
+                "name": "chemistry_tube_stand",
+                "xml_path": "obj/meshes/tube/tube_container/tube_stand.xml",
+                "position": [
+                    0.11608866899368639,
+                    0.13600482386970056,
+                    0.7599988298467946
+                ],
+                "orientation": [
+                    0.9999999998390521,
+                    7.887101496111037e-08,
+                    -1.634458546345336e-08,
+                    -1.7941232850354605e-05
+                ],
+                "class": "TubeStand"
+            },
+            {
+                "name": "KMnO4",
+                "xml_path": "obj/meshes/tube/tube/tube.xml",
+                "position": [
+                    -0.051427314363208666,
+                    0.1853850788352482,
+                    0.7591074379847109
+                ],
+                "orientation": [
+                    0.9997489694954194,
+                    -0.0037320549124878564,
+                    -0.000962208055652495,
+                    -0.022071336947175675
+                ],
+                "class": "ChemistryTube",
+                "solution": "KMnO4"
+            },
+            {
+                "name": "KMnO4_tag",
+                "xml_path": "obj/meshes/tube/nametag/nametag.xml",
+                "position": [
+                    -0.08764422402833691,
+                    0.2571967238418731,
+                    0.8843456079121634
+                ],
+                "orientation": [
+                    0.821920773634056,
+                    0.1372824704343825,
+                    -0.4889303269330898,
+                    0.2579668594709975
+                ],
+                "class": "NameTag",
+                "content": "KMnO4"
+            },
+            {
+                "name": "CuSO4",
+                "xml_path": "obj/meshes/tube/tube/tube.xml",
+                "position": [
+                    0.19679383958156124,
+                    0.08793058933707767,
+                    0.7624919877015406
+                ],
+                "orientation": [
+                    0.992851119861788,
+                    -0.010025482400925228,
+                    -0.0026772121252501215,
+                    -0.11890742629062084
+                ],
+                "class": "ChemistryTube",
+                "solution": "CuSO4"
+            },
+            {
+                "name": "CuSO4_tag",
+                "xml_path": "obj/meshes/tube/nametag/nametag.xml",
+                "position": [
+                    0.22193416070037947,
+                    0.12158939195215472,
+                    0.8768258572003583
+                ],
+                "orientation": [
+                    0.019999081862683718,
+                    0.9170987402119108,
+                    -0.24714528113411016,
+                    0.31216846003323057
+                ],
+                "class": "NameTag",
+                "content": "CuSO4"
+            }
+        ],
+        "scene": {
+            "name": "lab_1",
+            "position": [
+                2.0,
+                2.0,
+                0.0
+            ],
+            "orientation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "floor_textures": [
+                "floorplane"
+            ]
+        },
+        "instructions": [],
+        "conditions": {
+            "not_contain": {
+                "container": "chemistry_tube_stand",
+                "entities": [
+                    "KMnO4"
+                ]
+            }
+        }
+    }
+}
