@@ -1,6 +1,36 @@
 # VLABench Symbolic and Reference-Procedure Planning Evaluation
 
-This repository provides code, case-level results, audit evidence, and release checks for two deliberately non-equivalent VLM planning interfaces and two reference-scaffold conditions on VLABench. Every reported comparison uses the same 2,133-case dual-replay-qualified non-complex analysis manifest and the same three model families.
+This repository provides code, case-level results, audit evidence, and release checks for two deliberately non-equivalent VLM planning interfaces and two reference-scaffold conditions on VLABench. The original evaluations use a shared 2,133-case dual-replay-qualified non-complex analysis manifest and three model families. Additional controls use the separately fixed samples described below; they do not replace or change the original results.
+
+## Artifact versions and additional controls
+
+The original artifact remains on `main`. Additional experiments are published on versioned revision branches and releases. Use **`artifact-revision-20261023`** for the complete additional-control code and compact results; it includes the schema-decoding control as well as the relaxed-contract and instruction-goal sensitivity analyses.
+
+| Artifact | Contents | Code and evidence |
+|---|---|---|
+| `artifact-v1.7` | Original 2,133-case symbolic, procedural, scaffold, and frozen-output analyses | [Release](https://github.com/JoMinsu-KU/vlabench-procedural-evaluation/releases/tag/artifact-v1.7) |
+| `artifact-schema-decoding-20261022` | 322 fixed cases, two response formats, three models, and 1,932 generated outputs | [Control documentation](https://github.com/JoMinsu-KU/vlabench-procedural-evaluation/blob/artifact-schema-decoding-20261022/revision_experiments/schema_decoding_20261021/README.md) and [input/native-trace archive](https://github.com/JoMinsu-KU/vlabench-procedural-evaluation/releases/tag/artifact-schema-decoding-20261022) |
+| `artifact-revision-20261023` | The schema control plus 86 fixed contract-rejected plans, 81 runnable alternatives with controls, and the separate 45-case exclusion sensitivity | [Additional-experiment index](https://github.com/JoMinsu-KU/vlabench-procedural-evaluation/blob/artifact-revision-20261023/REVISION_EXPERIMENTS.md) and [evidence release](https://github.com/JoMinsu-KU/vlabench-procedural-evaluation/releases/tag/artifact-revision-20261023) |
+
+The schema experiment compares JSON object and JSON Schema output in one common new serving environment; it is not a before/after rerun of the historical full-manifest inference. The relaxed-contract diagnostic reports native goal attainment separately from reference conformance and native stage flags. The 45-case exclusion is a sensitivity analysis, not a change to the primary 2,133-case manifest. Original outputs, labels, backend, and previous tags are retained.
+
+### Reproduce the additional controls
+
+Clone the complete additional-control version into a new directory. With Python 3.10-3.12 in an isolated environment, run:
+
+```bash
+git clone --branch artifact-revision-20261023 --single-branch https://github.com/JoMinsu-KU/vlabench-procedural-evaluation.git vlabench-procedural-evaluation-revision
+cd vlabench-procedural-evaluation-revision
+python -m pip install -r revision_experiments/requirements-revision-20261023.txt
+python -m pip install -r revision_experiments/schema_decoding_20261021/requirements-reproduction.txt
+python revision_experiments/schema_decoding_20261021/reproduce_revision.py
+python revision_experiments/contract_relaxation_20261022/reproduce.py
+python revision_experiments/exclusion45_sensitivity_20261022/reproduce.py
+```
+
+These commands reanalyze archived outputs and traces without a GPU, model API, or simulator rollout. They create new reproduction outputs and refuse to overwrite existing ones; use the scripts' output-path options for repeat runs. Larger image and native-trace archives are attached to the corresponding releases and should be checked against their `SHA256SUMS.txt` files. The original-artifact instructions below refer to `artifact-v1.7`; each added control has its own [versioned documentation](https://github.com/JoMinsu-KU/vlabench-procedural-evaluation/blob/artifact-revision-20261023/REVISION_EXPERIMENTS.md).
+
+## Original interfaces and scaffold conditions
 
 - **Symbolic evaluation** follows the released VLABench VLM protocol. Generated high-level skill sequences are scored with Skill Recall (SR), Parameter Recall (PR), Skill-Parameter Recall (SPR), and Precise Matching (PM).
 - **Full Reference-Procedure Condition** asks the model to select a benchmark-derived sequence of discrete skills, numeric targets, and order decisions. A target- and order-preserving interface lowers accepted outputs to VLABench SkillLib and MuJoCo execution.
@@ -18,7 +48,7 @@ For continuity with released files and scripts, the manuscript display names map
 | Reference-Phase Scaffold | `phase_oracle` |
 | Reference-Target Scaffold | `target_oracle` |
 
-## Primary results
+## Archived interface and scaffold results
 
 | Model | Symbolic PM=100 (type-normalized) | Symbolic strict sequence equality | Full-procedure first-attempt success | Reference-phase scaffold | Reference-target scaffold |
 |---|---:|---:|---:|---:|---:|
